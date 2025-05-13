@@ -86,3 +86,32 @@ body {
     right: -15px;
   }
 }
+
+/* Untuk layar sangat besar */
+@media (min-width: 1920px) {
+  .hero-section {
+    height: 60vh;
+    min-height: 800px;
+  }
+  
+  .product-categories {
+    gap: 4rem;
+  }
+  
+  .project-card {
+    max-width: 400px;
+  }
+}
+
+/* Untuk mobile */
+@media (max-width: 640px) {
+  .hero-section {
+    height: 50vh;
+    min-height: 400px;
+  }
+  
+  .product-categories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}

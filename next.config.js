@@ -9,7 +9,7 @@ module.exports = {
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        unoptimized: true // Nonaktifkan optimisasi gambar
+        unoptimized: false, // Nonaktifkan optimisasi gambar
       },
   };
   

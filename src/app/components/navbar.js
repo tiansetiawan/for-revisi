@@ -1,10 +1,13 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { FaSearch, FaBell, FaShoppingCart, FaUser, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [language, setLanguage] = useState('Ind');
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -66,12 +69,14 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium relative">
           <li>
+            <Link href="/">
             <button 
               onClick={scrollToTop}
               className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white"
             >
               Beranda
             </button>
+            </Link>
           </li>
 
           {/* Dropdown Produk */}
@@ -84,7 +89,7 @@ export default function Navbar() {
             </button>
             {dropdownOpen && (
               <ul className="absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md py-2 z-50">
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</a></li>
+                <li><Link href="/produk"><span className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</span></Link></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Paving Block</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Block</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Pipe</a></li>
