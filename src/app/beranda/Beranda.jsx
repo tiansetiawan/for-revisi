@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react'; 
+import Link from 'next/link';
 import HeroSection from './HeroSection';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
@@ -31,7 +32,11 @@ const heroSlides = [
 
 // Category Data
 const defaultCategories = [
-  { name: 'Concrete Roof', icon: '/icons/cr-trace.png' },
+  { 
+    name: 'Concrete Roof', 
+    icon: '/icons/cr-trace.png',
+    link: '/produk' // Tambahkan properti link
+  },
   { name: 'Paving Block', icon: '/icons/pv-trace.png' },
   { name: 'Concrete Block', icon: '/icons/cb-trace.png' },
   { name: 'Concrete Pipe', icon: '/icons/cp-trace.png' }
@@ -478,25 +483,36 @@ return (
       </div>
 
     {/* Product Categories Section */}
-    <section className="py-20 text-center">
-      <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
-      <div className="flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
-        {defaultCategories.map((category, index) => (
-          <div key={index} className="flex flex-col items-center group text-[#333333]">
-            <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
-              <Image
-                src={category.icon}
-                alt={category.name}
-                width={90}
-                height={90}
-                className="max-h-12 sm:max-h-14 md:max-h-16 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-              />
-            </div>
-            <span className="mt-3 text-xs sm:text-xs font-medium">{category.name}</span>
+<section className="py-20 text-center">
+  <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
+  <div className="flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
+    {defaultCategories.map((category, index) => (
+      <Link 
+        href={category.link || '/produk'} 
+        key={index}
+        onClick={() => {
+          if (category.name === 'Concrete Roof') {
+            sessionStorage.setItem('autoExpand', 'true');
+            sessionStorage.setItem('activeSubItem', 'Neo'); // Set default subitem
+          }
+        }}
+      >
+        <div className="flex flex-col items-center group text-[#333333] cursor-pointer">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
+            <Image
+              src={category.icon}
+              alt={category.name}
+              width={90}
+              height={90}
+              className="max-h-12 sm:max-h-14 md:max-h-16 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+            />
           </div>
-        ))}
-      </div>
-    </section>
+          <span className="mt-3 text-xs sm:text-xs font-medium">{category.name}</span>
+        </div>
+      </Link>
+    ))}
+  </div>
+</section>
 
     {/* Proyek Cisangkan Section */}
     <section className="py-6 sm:py-10 bg-[#ECEEF0] relative">
