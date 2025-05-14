@@ -3,6 +3,7 @@ import "./globals.css";
 import LoadingWrapper from "./components/LoadingWrapper";
 import Navbar from '@/app/components/navbar';
 import Footer from '@/app/components/Footer';
+import SessionStorageSync from "./components/SessionStorageSync";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
         <LoadingWrapper>
+          <SessionStorageSync/>
           <Navbar />
           {children}
           <Footer />

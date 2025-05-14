@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -114,59 +115,61 @@ useEffect(() => {
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-6 pe-1 py-8">
         {/* Sidebar Menu */}
-        <aside className="w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto">
-  <h1 className="text-lg font-medium mb-4 pb-2">Produk</h1>
-  <ul className="space-y-2 text-sm">
-    {mainProducts.map((item) => (
-      <li key={item}>
-        {item === 'Concrete Roof' ? (
-          <>
-            <button
-              onClick={() => handleMainItemClick(item)}
-              className={`w-full text-left cursor-pointer font-semibold px-2 ${
-                activeItem === item
-                  ? 'text-[#2957A4] border-l-2 border-[#2957A4]'
-                  : 'text-gray-700 hover:text-[#3a4557]'
-              }`}
-            >
-              {item}
-            </button>
-
-            {/* Submenu */}
-            {showSubmenu && activeItem === 'Concrete Roof' && (
-              <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
-                {subProducts.map((sub) => (
-                  <li
-                    key={sub}
-                    onClick={() => handleSubItemClick(sub)}
-                    className={`cursor-pointer ${
-                      activeSubItem === sub
-                        ? 'text-[#2957A4] font-medium'
-                        : 'hover:text-[#2957A4]'
+              <aside className="w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto">
+        <h1 className="text-lg font-medium mb-4 pb-2">Produk</h1>
+        <ul className="space-y-2 text-sm">
+          {mainProducts.map((item) => (
+            <li key={item}>
+              {item === 'Concrete Roof' ? (
+                <>
+                  <button
+                    onClick={() => handleMainItemClick(item)}
+                    className={`w-full text-left cursor-pointer font-semibold px-2 ${
+                      activeItem === item
+                        ? 'text-[#2957A4] border-l-2 border-[#2957A4]'
+                        : 'text-gray-700 hover:text-[#3a4557]'
                     }`}
                   >
-                    {sub}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </>
-        ) : (
-          <button
-            onClick={() => handleMainItemClick(item)}
-            className={`w-full text-left px-2 cursor-pointer ${
-              activeItem === item
-                ? 'text-[#2957A4] border-l-2 border-[#2957A4] font-semibold'
-                : 'text-gray-700 hover:text-[#3a4557]'
-            }`}
-          >
-            {item}
-          </button>
-        )}
-      </li>
-    ))}
-  </ul>
-</aside>
+                    {item}
+                  </button>
+
+                  {/* Submenu */}
+                  {showSubmenu && activeItem === 'Concrete Roof' && (
+                    <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
+                      {subProducts.map((sub) => (
+                        <li key={sub}>
+                          <Link 
+                            href={`/produk/detail?product=${encodeURIComponent(sub)}`}
+                            onClick={() => handleSubItemClick(sub)}
+                            className={`block cursor-pointer ${
+                              activeSubItem === sub
+                                ? 'text-[#2957A4] font-medium'
+                                : 'hover:text-[#2957A4]'
+                            }`}
+                          >
+                            {sub}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <button
+                  onClick={() => handleMainItemClick(item)}
+                  className={`w-full text-left px-2 cursor-pointer ${
+                    activeItem === item
+                      ? 'text-[#2957A4] border-l-2 border-[#2957A4] font-semibold'
+                      : 'text-gray-700 hover:text-[#3a4557]'
+                  }`}
+                >
+                  {item}
+                </button>
+              )}
+            </li>
+          ))}
+        </ul>
+      </aside>
 
         {/* Main Content */}
         <main className="w-full lg:w-5/5 space-y-8">
@@ -219,28 +222,36 @@ useEffect(() => {
     </button>
 
     {/* Kontainer Produk */}
-    <div
-      ref={sliderRef}
-      className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-19 gap-6.5"
-    >
-      {productTypes.map((product) => (
-        <div key={product.name} className="snap-start min-w-0 ps-12.5 group">
-          <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
-<div className="relative w-full h-45 flex items-center justify-center bg-gray-300 overflow-hidden">
-  <Image
-    src={product.image}
-    alt={product.name}
-    fill
-    className="object-cover transition-transform duration-500 group-hover:scale-105"
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-  />
-</div>
-            <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
-              {product.name}
-            </div>
-          </div>
-        </div>
-      ))}
+              <div
+            ref={sliderRef}
+            className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-19 gap-6.5"
+          >
+            {productTypes.map((product) => (
+              <div key={product.name} className="snap-start min-w-0 ps-12.5 group">
+                <Link 
+                  href={`/produk/detail?product=${encodeURIComponent(product.name)}`}
+                  onClick={() => {
+                    sessionStorage.setItem('autoExpand', 'true');
+                    sessionStorage.setItem('activeSubItem', product.name);
+                  }}
+                >
+                  <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
+                    <div className="relative w-full h-45 flex items-center justify-center bg-gray-300 overflow-hidden">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
+                      {product.name}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
     </div>
 
     {/* Tombol Selanjutnya */}

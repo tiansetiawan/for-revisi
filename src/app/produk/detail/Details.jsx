@@ -1,16 +1,30 @@
 'use client';
+import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaCalculator, FaTimes } from 'react-icons/fa';
 
 export default function Details() {
 
-  const [showSubmenu, setShowSubmenu] = useState(false);
+  const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
+
+  useEffect(() => {
+    // Ambil product dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get('product');
+    
+    if (product) {
+      setActiveSubItem(product);
+      // Pertahankan state di sessionStorage
+      sessionStorage.setItem('autoExpand', 'true');
+      sessionStorage.setItem('activeSubItem', product);
+    }
+  }, []);
 
   const handleMainItemClick = (item) => {
     setActiveItem(item);
