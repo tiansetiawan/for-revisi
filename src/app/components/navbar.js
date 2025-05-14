@@ -89,7 +89,12 @@ export default function Navbar() {
             </button>
             {dropdownOpen && (
               <ul className="absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md py-2 z-50">
-                <li><Link href="/produk"><span className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</span></Link></li>
+<Link 
+  href="/produk" 
+  onClick={() => sessionStorage.setItem('autoExpand', 'true')}
+>
+  <span className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</span>
+</Link>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Paving Block</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Block</a></li>
                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Pipe</a></li>
@@ -155,9 +160,12 @@ export default function Navbar() {
               </button>
               {dropdownOpen && (
                 <ul className="ml-4 mt-2 space-y-2">
+                  <li><Link href="/produk?expand=true">
+  <span className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</span>
+</Link></li>
                   <li><a href="#" className="block hover:text-black">Paving Block</a></li>
-                  <li><a href="#" className="block hover:text-black">Kanstein</a></li>
-                  <li><a href="#" className="block hover:text-black">U-Ditch</a></li>
+                  <li><a href="#" className="block hover:text-black">Concrete Block</a></li>
+                  <li><a href="#" className="block hover:text-black">Concrete Pipe</a></li>
                 </ul>
               )}
             </li>
