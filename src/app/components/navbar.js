@@ -102,7 +102,7 @@ export default function Navbar() {
             )}
           </li>
 
-          <li><a href="#" className="rounded-full px-2 py-2 hover:bg-[#0F1E3E] hover:text-white">Perusahaan</a></li>
+          <li><Link href="/perusahaan/tentang" className="rounded-full px-2 py-2 hover:bg-[#0F1E3E] hover:text-white">Perusahaan</Link></li>
           <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Showroom</a></li>
           <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Proyek</a></li>
           <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Blog</a></li>
