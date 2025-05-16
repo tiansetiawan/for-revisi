@@ -173,7 +173,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
 
       {/* Tentang PT. Cisangkan */}
-      <div className="max-w-6xl mx-auto mt-12 text-justify space-y-6 text-sm sm:text-base">
+      <div className="max-w-6xl px-6 sm:px-12 mx-auto mt-12 text-justify space-y-6 text-sm sm:text-base">
         <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] mb-4 pl-4">TENTANG PT. CISANGKAN</h2>
         <p className='text-sm'>
           PT Cisangkan, yang didirikan pada tahun 1974, telah berhasil mempelopori dan secara aktif menciptakan inovasi produk baru dalam produksi beton pra-cetak, yang menjadikan PT Cisangkan sebagai pelopor dalam bidang manufaktur berbasis beton. Sejak saat itu, PT Cisangkan berperan penting dalam pengembangan industri beton, tidak hanya di tingkat lokal, tapi juga di tingkat nasional dan internasional.
