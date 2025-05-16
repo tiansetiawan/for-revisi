@@ -1,5 +1,6 @@
 'use client';;
 import Image from 'next/image';
+import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 
 export default function Sertifikasi() {
@@ -145,13 +146,13 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
 <div className="bg-[#F2F2F2] py-4">
   <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-    <span className="text-[#333]">Tentang Kami</span>
-    <span className="text-[#333]">Sejarah</span>
-    <span className="text-[#2D5DA6] font-bold">Sertifikasi</span>
-    <span className="text-[#333]">Katalog</span>
-    <span className="text-[#333]">Video</span>
-    <span className="text-[#333]">Inovasi</span>
-    <span className="text-[#333]">Karir</span>
+    <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
+    <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
+    <Link href="/perusahaan/sertifikasi" className="text-[#2D5DA6] font-bold">Sertifikasi</Link>
+    <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link>
+    <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link>
+    <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">Inovasi</Link>
+    <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
   </nav>
 </div>
 

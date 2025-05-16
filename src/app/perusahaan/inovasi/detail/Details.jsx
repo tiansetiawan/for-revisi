@@ -30,10 +30,13 @@ const inovasiList = [
   },
 ];
 
-export default function Inovasi() {
+
+
+export default function Details() {
   // State untuk panel unduh
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [data, setData] = useState(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const modalRef = useRef(null);
@@ -97,6 +100,21 @@ export default function Inovasi() {
     }
   };
 
+  useEffect(() => {
+    // Ganti ini dengan API call atau ambil dari context/router
+    const sampleData = {
+      judul: "Lorem ipsum amet nulla in sit pellentesque imperdiet eu purus a ullamcorper amet sit lectus integer faucibus consequat odio quis.",
+      tanggal: "16 Mei 2025",
+      gambar: "/path/to/image.jpg",
+      deskripsi: "Lorem ipsum aliquet mauris interdum orci amet aliquam tellus felis congue auctor tincidunt neque pharetra et euismod eget et nisi iaculis commodo laoreet nisi tristique amet quis aliquam nunc ornare morbi nisi ultrices vivamus aliquam interdum at rutrum non ac arcu faucibus sapien auctor pellentesque nisl amet id est ullamcorper id mauris consequat tellus tellus tempor faucibus dictumst fermentum cursus et pellentesque sollicitudin egestas gravida egestas scelerisque senectus egestas urna orci auctor habitasse egestas vulputate praesent tempor fringilla etiam sed eget sed aliquam mauris sed scelerisque nec massa metus ut pharetra in bibendum commodo morbi ornare velit tincidunt eros at sit nulla tellus potenti turpis adipiscing tortor elementum aliquam in posuere vulputate sem ipsum tellus egestas cursus dapibus neque egestas massa volutpat in sed tincidunt amet sed mauris vel ultricies amet at nisi lobortis leo consectetur interdum leo massa pellentesque venenatis orci sit ac aenean quisque porttitor condimentum orci vel enim facilisis rutrum euismod tempor id dolor non ac amet ipsum maecenas mi nascetur mauris amet nulla at molestie scelerisque vitae leo id enim nunc quam purus id urna viverra commodo est consectetur ullamcorper laoreet orci mauris amet sollicitudin morbi tempus urna eget amet libero ut sed donec amet proin sit magnis tempor suspendisse elit sit nibh ac enim morbi ut erat lacus porta ipsum egestas in a vitae turpis blandit sed aliquam consequat a eget pulvinar vel viverra aliquam ipsum gravida sem massa morbi dolor mauris euismod feugiat pulvinar dictum at arcu id ultrices ut tristique massa malesuada ullamcorper turpis commodo integer odio aliquet ultricies nunc commodo malesuada sapien nullam consectetur sed id facilisi integer morbi odio senectus tincidunt eget risus tellus suscipit fringilla posuere maecenas pellentesque eu sem elementum dictumst amet risus lorem sit at at consequat volutpat id sed dictumst nec orci non id pulvinar purus nibh."
+    };
+
+    setData(sampleData);
+  }, []);
+
+  if (!data) return <div>Loading...</div>;
+
+
 
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
@@ -142,60 +160,49 @@ export default function Inovasi() {
   </nav>
 </div>
 
-      {/* Main Content */}
-    <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
-      <div className="gap-6 items-start mb-20">
-        <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
-          INOVASI
-        </h2>
-        <p className="text-sm text-justify">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
-          ever since the 1500s.
-        </p>
-      </div>
+    <section className="max-w-5xl mx-auto mt-10 px-4 sm:px-6 text-sm sm:text-base mb-16">
+  {/* Judul */}
+      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg uppercase mb-2">
+        {data.judul}
+      </h1>
 
-      {/* Daftar Inovasi */}
-      <div className="flex flex-col gap-10 mb-10">
-        {inovasiList.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col sm:flex-row items-start border-b border-[#CCCCCC] pb-10 gap-6"
-          >
-            {/* Gambar */}
-            <div className="w-full sm:w-[300px] h-[180px] bg-gray-300 flex justify-center items-center">
-              <img
-                src={item.gambar}
-                alt={item.judul}
-                className="w-full h-full object-cover"
-              />
-            </div>
 
-            {/* Konten */}
-            <div className="flex-1">
-              <h3 className="text-lg font-normal mb-2">{item.judul}</h3>
-              <p className="text-sm text-justify mb-4">{item.deskripsi}</p>
-              <a
-                href="/perusahaan/inovasi/detail"
-                className="text-sm text-blue-700 font-medium hover:underline"
-              >
-                Baca lebih banyak &gt;&gt;
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
+  {/* Tanggal */}
+  <p className="text-blue-600 text-sm mb-6">
+    {data?.tanggal || 'DD Month Years'}
+  </p>
 
-        {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
-          <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
-            1
-          </button>
-          <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
-            2
-          </button>
-        </div>
-    </section>
+  {/* Gambar */}
+  <div className="w-full max-w-3xl h-[240px] sm:h-[320px] mx-auto bg-gray-200 flex items-center justify-center mb-8">
+    {data?.gambar ? (
+      <img src={data.gambar} alt={data.judul} className="w-full h-full object-cover" />
+    ) : (
+      <svg className="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm10 2a1 1 0 110 2 1 1 0 010-2zm-4 3a3 3 0 11-6 0 3 3 0 016 0zm-3 4a5 5 0 00-5 5h10a5 5 0 00-5-5z" />
+      </svg>
+    )}
+  </div>
+
+  {/* Konten Deskripsi */}
+  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b">
+    {data?.deskripsi ? (
+      <p>{data.deskripsi}</p>
+    ) : (
+      <>
+        <p><strong>Lorem ipsum</strong> dolor sit amet...</p>
+        <p>...continues dummy text...</p>
+        {/* Tambahkan lebih banyak paragraf dummy jika diperlukan */}
+      </>
+    )}
+  </div>
+
+  {/* Tombol Kembali */}
+  <div className="mt-10">
+    <a href="/perusahaan/inovasi" className="text-sm text-blue-800 font-medium hover:underline">
+      &lt;&lt; Kembali ke Halaman Inovasi
+    </a>
+  </div>
+</section>
     </div>
   );
 }
