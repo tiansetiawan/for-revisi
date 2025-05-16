@@ -1,9 +1,7 @@
-'use client';
-import Link from 'next/link';
+'use client';;
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { FaCalculator, FaTimes } from 'react-icons/fa';
+import LocationMap from '@/app/components/LocationMap';
 
 export default function Tentang() {
 
@@ -146,9 +144,18 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
   {/* Header Section */}
 
-      <div className="bg-[#F2F2F2] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">
-        CONCRETE ROOF
-      </div>
+<div className="bg-[#F2F2F2] py-4">
+  <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+    <span className="text-[#2D5DA6] font-bold">Tentang Kami</span>
+    <span className="text-[#333]">Sejarah</span>
+    <span className="text-[#333]">Sertifikasi</span>
+    <span className="text-[#333]">Katalog</span>
+    <span className="text-[#333]">Video</span>
+    <span className="text-[#333]">Inovasi</span>
+    <span className="text-[#333]">Karir</span>
+  </nav>
+</div>
+
 
       {/* Tentang PT. Cisangkan */}
       <div className="max-w-6xl mx-auto mt-12 text-justify space-y-6 text-sm sm:text-base">
@@ -210,15 +217,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
 {/* Lokasi Map */}
 <div className="mt-10 mb-30">
   <h3 className="font-bold text-sm text-slate-700 mb-4">LOKASI PT. CISANGKAN</h3>
-  <iframe
-    src="https://www.google.com/maps/d/embed?mid=1kaYaS-lYg0adNDaumVPtqF_f9aOK3Kw&ehbc=2E312F&ui=0"
-    width="100%"
-    height="400"
-    className="rounded shadow"
-    allowFullScreen=""
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
+ <LocationMap />
 </div>
 
 {/* Lokasi Fisik */}
