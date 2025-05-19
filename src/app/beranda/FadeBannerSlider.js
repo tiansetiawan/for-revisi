@@ -34,14 +34,6 @@ const FadeBannerSlider = ({
       arrows: false,
       pauseOnHover: false,
       afterChange: (index) => onSlideChange(index),
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            lazyLoad: 'ondemand'
-          }
-        }
-      ]
     };
   
     if (!slides.length) return null;
@@ -49,7 +41,7 @@ const FadeBannerSlider = ({
     return (
         <div className={styles.sliderContainer}>
           <Slider {...settings}>
-            {slides.map((slide) => (
+            {slides.map((slide, index) => (
               <div key={slide.id || slide.image} className={styles.slide}>
                 <div className={styles.imageContainer}>
                   <Image 
@@ -58,14 +50,8 @@ const FadeBannerSlider = ({
                     width={1765}
                     height={823}
                     className={styles.bannerImage}
-                    priority
+                    priority={index === 0}
                   />
-                  {slide.title && (
-                    <div className={styles.overlay}>
-                      <h2 className={styles.title}>{slide.title}</h2>
-                      {slide.subtitle && <p className={styles.subtitle}>{slide.subtitle}</p>}
-                    </div>
-                  )}
                 </div>
               </div>
             ))}
