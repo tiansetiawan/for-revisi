@@ -538,9 +538,9 @@ return (
           <div className="sm:ml-6 text-sm sm:text-base px-3">
             <p>Simak ulasan dari customer kami setelah menggunakan produk dari Cisangkan</p>
             <div className="flex items-center gap-2 mt-1">
-              <a href="#" className="text-[#0B1F3A] font-medium">Tentang Kami</a>
+              <a href="#" className="text-blue-500 hover:text-blue-700 font-medium cursor-pointer">Tentang Kami</a>
               <span className="text-gray-400">•</span>
-              <a href="#" className="text-[#0B1F3A] font-medium">Video lainnya</a>
+              <a href="#" className="text-blue-500 hover:text-blue-700 font-medium cursor-pointer">Video lainnya</a>
             </div>
           </div>
         </div>
