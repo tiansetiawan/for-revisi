@@ -489,7 +489,7 @@ return (
     {/* Product Categories Section */}
 <section className="product-categories-section py-20 text-center">
   <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
-  <div className="flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
+  <div className="category-container flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
     {defaultCategories.map((category, index) => (
       <Link 
         href={category.link || '/produk'} 
@@ -545,7 +545,7 @@ return (
           {/* Title dengan garis bawah */}
           <div className="box-about-top a-from-bottom actived" delay=".5" trigger-anim=".trig-about" style={{opacity: 1, position: 'relative', bottom: '0px'}}>
             <div className="wrapper mb-7" style={{display: 'flex', flexDirection: 'row', alignItems:'center'}}>
-            <div className="left" style={{
+            <div className="left kiri" style={{
     flex: 1,
     display: 'flex',
     alignItems: 'center', // Tambahkan ini
@@ -556,7 +556,7 @@ return (
       lineHeight: '1.2', // Sesuaikan line height
       margin: 0 // Hilangkan margin bottom
     }}>
-      VIDEO<br/>TESTIMONIAL<br/>PRODUK
+      VIDEO TESTIMONIAL PRODUK
     </h3>
   </div>
   <div className="right text-sm sm:text-sm font-medium" style={{
