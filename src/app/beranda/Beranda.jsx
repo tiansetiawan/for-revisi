@@ -276,10 +276,10 @@ const handleCloseVideo = () => {
   const itemsPerSlideMobile = 3;
   const columnsPerSlideMobile = 3;
 
-   // Check mobile device
-   useEffect(() => {
+ // Check mobile device
+  useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+      setIsMobile(window.innerWidth < 768);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -431,62 +431,54 @@ useEffect(() => {
 
 
 return (
-  <main className="px-11">
+  <main className="px-4 sm:px-6 md:px-11">
     {/* Hero Section */}
     <div className="relative w-full">
-      <div className="absolute top-1/2 left-[-2em] right-[-2em] z-20 flex justify-between px-4 mt-[-10rem]">
-    <button
-      onClick={prevSlide}
-      className="bg-[#0B1F3A] p-2 sm:p-3 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none"
-      aria-label="Previous slide"
-    >
-      <FaChevronLeft className="text-sm sm:text-base" />
-    </button>
-    <button
-      onClick={nextSlide}
-      className="bg-[#0B1F3A] p-2 sm:p-3 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none"
-      aria-label="Next slide"
-    >
-      <FaChevronRight className="text-sm sm:text-base" />
-    </button>
-  </div>
+ <div className={`absolute top-1/2 ${isMobile ? 'left-0 right-0 px-2' : 'left-[-2em] right-[-2em]'} z-20 flex justify-between mt-[-5rem] sm:mt-[-8rem] md:mt-[-10rem]`}>
+             <button
+            onClick={prevSlide}
+            className="bg-[#0B1F3A] p-2 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none"
+            aria-label="Previous slide"
+          >
+            <FaChevronLeft className="text-sm sm:text-base" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="bg-[#0B1F3A] p-2 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none"
+            aria-label="Next slide"
+          >
+            <FaChevronRight className="text-sm sm:text-base" />
+          </button>
+        </div>
 
-  <HeroSection 
-    slides={heroSlides}
-    currentSlide={currentSlide}
-    autoPlayDelay={5000}
-    onSlideChange={handleSlideChange}
-  />
+        <HeroSection 
+          slides={heroSlides}
+          currentSlide={currentSlide}
+          autoPlayDelay={5000}
+          onSlideChange={goToSlide}
+        />
 
-  {/* Slide Indicators */}
-  <div className="absolute bottom-[17.5rem] left-1/2 -translate-x-1/2 flex gap-2 z-10">
-    {heroSlides.map((_, idx) => (
-      <button
-        key={idx}
-        onClick={() => {
-          goToSlide(idx);
-          resetAutoPlay();
-        }}
-        className={`h-[5px] rounded-full transition-all duration-300 relative ${
-        idx === currentSlide
-          ? 'w-20 bg-[#0B203F] shadow-[0_3px_3px_rgba(11,32,63,0.2),0_2px_6px_rgba(11,32,63,0.1)]'
-          : 'w-8 bg-[#FFFFFF] shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.05)]'
-      } hover:shadow-[0_3px_4px_rgba(11,32,63,0.15),0_3px_6px_rgba(11,32,63,0.1)]`}
-      aria-label={`Go to slide ${idx + 1}`}
-    >
-      {idx === currentSlide && (
-        <span className="absolute inset-0 rounded-full bg-gradient-to-b from-[#0B203F] to-[#0B203F]/90 shadow-[0_4px_4px_rgba(11,32,63,0.15)]" />
-      )}
-    </button>
-  ))}
-</div>
+        <div className={`absolute ${isMobile ? 'bottom-[5rem]' : 'bottom-[17.5rem]'} left-1/2 -translate-x-1/2 flex gap-2 z-10`}>
+          {heroSlides.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
+              className={`h-[3px] sm:h-[5px] rounded-full transition-all duration-300 relative ${
+                idx === currentSlide
+                  ? `${isMobile ? 'w-6' : 'w-20'} bg-[#0B203F]`
+                  : `${isMobile ? 'w-4' : 'w-8'} bg-white/50`
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
     {/* Product Categories Section */}
 <section className="py-20 text-center">
-  <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
-  <div className="flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
-    {defaultCategories.map((category, index) => (
+<h2 className="text-xl md:text-2xl font-medium mb-6 md:mb-10">TELUSURI PRODUK KAMI</h2>
+        <div className={`${isMobile ? 'grid grid-cols-2 gap-4 px-4' : 'flex flex-wrap justify-center gap-8 md:gap-16 lg:gap-24'}`}>
+          {defaultCategories.map((category, index) => (
       <Link 
         href={category.link || '/produk'} 
         key={index}
@@ -516,7 +508,7 @@ return (
 
     {/* Proyek Cisangkan Section */}
     <section className="py-6 sm:py-10 bg-[#ECEEF0] relative">
-        <h2 className="text-center text-xl sm:text-2xl font-medium mb-4 sm:mb-5">PROYEK CISANGKAN</h2>
+        <h2 className="text-center text-lg sm:text-xl md:text-2xl font-medium mb-4 sm:mb-5">PROYEK CISANGKAN</h2>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-1">
           <div className="relative">
@@ -539,62 +531,19 @@ return (
       <section className="py-6 sm:py-10 relative mt-5 mb-6">
         <div className="w-full">
           {/* Title dengan garis bawah */}
-          <div className="box-about-top a-from-bottom actived" delay=".5" trigger-anim=".trig-about" style={{opacity: 1, position: 'relative', bottom: '0px'}}>
-            <div className="wrapper mb-7" style={{display: 'flex', flexDirection: 'row', alignItems:'center'}}>
-            <div className="left" style={{
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center', // Tambahkan ini
-    height: '100%' // Pastikan height penuh
-  }}>
-    <h3 className="hline text-left text-xl sm:text-2xl font-medium mb-0 px-2" style={{
-      borderLeft: '4px solid #0B203F',
-      lineHeight: '1.2', // Sesuaikan line height
-      margin: 0 // Hilangkan margin bottom
-    }}>
-      VIDEO<br/>TESTIMONIAL<br/>PRODUK
-    </h3>
-  </div>
-  <div className="right text-sm sm:text-sm font-medium" style={{
-    flex: 2,
-    marginRight: '20rem',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center' // Untuk vertikal alignment konten
-  }}>
-    <p style={{
-      margin: '0 0 0.5rem 0', // Sesuaikan margin
-      lineHeight: '1.5'
-    }}>
-      Simak ulasan dari customer kami setelah menggunakan produk dari Cisangkan
-    </p>     
-    <div className="box-link-list" style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem'
-    }}>
-      <a href="#" style={{
-        color: '#0B1F3A',
-        fontWeight: '500',
-        textDecoration: 'none'
-      }}>
-        Tentang Kami
-      </a>
-      <i className="dots" style={{
-        color: '#999',
-        fontSize: '0.8rem'
-      }}>•</i>
-      <a href="#" style={{
-        color: '#0B1F3A',
-        fontWeight: '500',
-        textDecoration: 'none'
-      }}>
-        Video lainnya
-      </a>
-    </div>                  
-  </div>
+ <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl md:text-2xl font-medium border-l-4 border-[#0B203F] pl-2 sm:pl-3 mb-2 sm:mb-0">
+            VIDEO TESTIMONIAL PRODUK
+          </h3>
+          <div className="sm:ml-6 text-sm sm:text-base px-3">
+            <p>Simak ulasan dari customer kami setelah menggunakan produk dari Cisangkan</p>
+            <div className="flex items-center gap-2 mt-1">
+              <a href="#" className="text-[#0B1F3A] font-medium">Tentang Kami</a>
+              <span className="text-gray-400">•</span>
+              <a href="#" className="text-[#0B1F3A] font-medium">Video lainnya</a>
             </div>
           </div>
+        </div>
 
           {/* Video Utama */}
           <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none"> {/* Container dengan background abu-abu */}
