@@ -11,7 +11,7 @@ export default function HeroSection({
   if (!slides.length) return null;
 
   return (
-    <div className="relative w-full h-[400px] md:h-[823px] overflow-hidden mt-[3rem] md:mt-[5.8rem] mb-[-4rem] md:mb-[-14rem]">
+    <div className="parent-container relative w-full h-[400px] md:h-[823px] overflow-hidden mt-[3rem] md:mt-[5.8rem] mb-[-4rem] md:mb-[-14rem]">
       <FadeBannerSlider 
         slides={slides}
         currentSlide={currentSlide}

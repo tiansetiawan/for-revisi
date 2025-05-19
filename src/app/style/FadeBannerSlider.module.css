@@ -84,9 +84,9 @@
     max-width: 100%;
   }
   .imageContainer {
-    position: relative;
-    width: 36rem;
-    height: 26rem;
-    margin-top: 2rem;
+        position: relative;
+        width: 78rem;
+        margin-top: 2rem;
+        margin-left: -2rem;
   }
 }

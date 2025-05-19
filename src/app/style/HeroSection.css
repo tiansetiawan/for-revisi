@@ -22,4 +22,7 @@
   .hero-slide-indicators button.active {
     width: 30px !important;
   }
+  .parent-container {
+    height: 37rem;
+  }
 }
