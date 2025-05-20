@@ -544,28 +544,18 @@ return (
         <div className="w-full">
           {/* Title dengan garis bawah */}
           <div className="box-about-top a-from-bottom actived" delay=".5" trigger-anim=".trig-about" style={{opacity: 1, position: 'relative', bottom: '0px'}}>
-            <div className="wrapper mb-7" style={{display: 'flex', flexDirection: 'row', alignItems:'center'}}>
-            <div className="left kiri" style={{
+            <div className="container-title mb-7 flex flex-row items-cente">
+            <div className="left" style={{
     flex: 1,
     display: 'flex',
     alignItems: 'center', // Tambahkan ini
     height: '100%' // Pastikan height penuh
   }}>
-    <h3 className="hline text-left text-xl sm:text-2xl font-medium mb-0 px-2" style={{
-      borderLeft: '4px solid #0B203F',
-      lineHeight: '1.2', // Sesuaikan line height
-      margin: 0 // Hilangkan margin bottom
-    }}>
+    <h3 className="hline text-left text-xl sm:text-2xl font-medium mb-0 px-2 border-l-4 border-[#0B203F] leading-[1.2] m-0">
       VIDEO TESTIMONIAL PRODUK
     </h3>
   </div>
-  <div className="right text-sm sm:text-sm font-medium" style={{
-    flex: 2,
-    marginRight: '20rem',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center' // Untuk vertikal alignment konten
-  }}>
+  <div className="right text-sm sm:text-sm font-medium flex-[2] mr-80 flex flex-col justify-center">
     <p style={{
       margin: '0 0 0.5rem 0', // Sesuaikan margin
       lineHeight: '1.5'
@@ -636,7 +626,7 @@ return (
           
           {/* Tombol Lihat Semua */}
           <div className="link-allvideo flex justify-between text-sm">
-          <h3 className="hline text-left text-xl sm:text-1xl font-semibold">Video Lainnya</h3> 
+          <h3 className="hline hline2 text-left text-xl sm:text-1xl font-semibold">Video Lainnya</h3> 
             <a href="#" style={{color: '#0B1F3A', textDecoration: 'none'}}>Lihat Semua</a>
             </div>
 
