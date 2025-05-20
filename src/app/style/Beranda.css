@@ -177,6 +177,44 @@
 .box-link-list {
         justify-content: center;
 }
+.link-allvideo {
+padding: 0px 5px;
+}
+
+.video-title {
+text-align: center;
+}
+
+.container-slider-vd {
+padding: 0 1.8rem;
+}
+
+
+.cover-video{
+width: 20rem
+}
+
+.grid-vd {
+        gap: 13rem;
+        width: 20rem;
+}
+
+.cover-video2{
+width:20 rem
+}
+.prevVideoSlide {
+margin-left: 1.5rem;
+}
+
+.nextVideoSlide {
+margin-right: 1.5rem;
+}
+.section-container {
+width: 14rem;
+}
+.container-shortcut {
+gap: 3rem;
+}
 }
 
 /* Additional small mobile adjustments (375px and below) */

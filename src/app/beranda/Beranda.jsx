@@ -626,29 +626,29 @@ return (
           
           {/* Tombol Lihat Semua */}
           <div className="link-allvideo flex justify-between text-sm">
-          <h3 className="hline hline2 text-left text-xl sm:text-1xl font-semibold">Video Lainnya</h3> 
+          <h3 className="text-left text-md sm:text-1xl font-semibold">Video Lainnya</h3> 
             <a href="#" style={{color: '#0B1F3A', textDecoration: 'none'}}>Lihat Semua</a>
             </div>
 
           {/* Daftar Video Lainnya dengan Slider */}
-          <div className="relative">
+          <div className="container-slider-vd relative">
             {/* Navigation buttons */}
             <button 
               onClick={prevVideoSlide}
               disabled={currentVideoSlide === 0}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <FaChevronLeft className="w-5 h-5" />
             </button>
 
             <div 
   ref={videoSliderRef}
-  className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
+  className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
 >
   {videoTestimonials.map((video) => (
-    <div key={video.id} className="group cursor-pointer snap-start">
+    <div key={video.id} className="cover-video group cursor-pointer snap-start">
       <div 
-        className="relative aspect-video bg-gray-200 rounded-none overflow-hidden w-full h-[150px]"
+        className="cover-video2 relative aspect-video bg-gray-200 rounded-none overflow-hidden w-full h-[150px]"
         onClick={() => setSelectedVideo(video.youtubeId)}
       >
         {/* Thumbnail */}
@@ -669,7 +669,7 @@ return (
         </div>
       </div>
       
-      <div className="mt-3 text-left">
+      <div className="video-title mt-3 text-left">
         <p className="text-sm font-medium text-gray-800">{video.title}</p>
         <button 
           className="mt-1 text-xs text-blue-600 hover:text-blue-800 transition-colors"
@@ -693,7 +693,7 @@ return (
             <button 
               onClick={nextVideoSlide}
               disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <FaChevronRight className="w-5 h-5" />
             </button>
@@ -767,7 +767,7 @@ return (
     />
   </a>
 </div>
-          <div className="text-left grid grid-cols-1 md:grid-cols-3 gap-55 px-[5rem]">
+          <div className="container-shortcut text-left grid grid-cols-1 md:grid-cols-3 gap-55 px-[5rem]">
   {[
     {
       title: "Tentang Kami",
@@ -786,7 +786,7 @@ return (
     }
   ].map((item, i) => (
     <div key={i} className='w-60'>
-      <div className="relative w-full h-60 mb-6 rounded-none bg-gray-300 overflow-hidden">
+      <div className="section-container relative w-full h-60 mb-6 rounded-none bg-gray-300 overflow-hidden">
         <Image
           src={item.image}
           alt={item.title}

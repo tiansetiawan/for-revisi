@@ -142,12 +142,14 @@ export default function Navbar() {
         <div className="lg:hidden px-6 pb-4">
           <ul className="flex flex-col space-y-4 text-gray-700 text-sm font-medium">
             <li>
-              <button 
+            <Link href="/">
+            <button 
                 onClick={scrollToTop}
                 className="bg-[#0F1E3E] text-white px-4 py-2 rounded-full inline-block w-fit"
               >
                 Beranda
-              </button>
+            </button>
+            </Link>
             </li>
 
             {/* Dropdown Produk di Mobile */}
@@ -161,7 +163,7 @@ export default function Navbar() {
               {dropdownOpen && (
                 <ul className="ml-4 mt-2 space-y-2">
                   <li><Link href="/produk?expand=true">
-  <span className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</span>
+  <span className="block hover:bg-gray-100">Concrete Roof</span>
 </Link></li>
                   <li><a href="#" className="block hover:text-black">Paving Block</a></li>
                   <li><a href="#" className="block hover:text-black">Concrete Block</a></li>
@@ -170,7 +172,7 @@ export default function Navbar() {
               )}
             </li>
 
-            <li><a href="#" className="hover:text-black">Perusahaan</a></li>
+            <li><a href="/perusahaan/tentang" className="hover:text-black">Perusahaan</a></li>
             <li><a href="#" className="hover:text-black">Showroom</a></li>
             <li><a href="#" className="hover:text-black">Proyek</a></li>
             <li><a href="#" className="hover:text-black">Blog</a></li>
@@ -178,11 +180,11 @@ export default function Navbar() {
 
             <div className="flex items-center space-x-4 mt-4 text-gray-600">
               <FaSearch className="cursor-pointer" />
-              <FaBell className="cursor-pointer" />
+              {/* <FaBell className="cursor-pointer" />
               <FaShoppingCart className="cursor-pointer" />
               <div className="p-1 rounded-full bg-gray-200">
                 <FaUser className="cursor-pointer text-black" />
-              </div>
+              </div> */}
             </div>
             <div className="pt-2">
               <span
