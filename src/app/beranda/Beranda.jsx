@@ -508,7 +508,7 @@ return (
               alt={category.name}
               width={90}
               height={90}
-              className="max-h-12 sm:max-h-14 md:max-h-16 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+              className="icon-categories max-h-12 sm:max-h-14 md:max-h-16 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
             />
           </div>
           <span className="mt-3 text-xs sm:text-xs font-medium">{category.name}</span>

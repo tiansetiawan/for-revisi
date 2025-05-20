@@ -215,6 +215,9 @@ width: 14rem;
 .container-shortcut {
 gap: 3rem;
 }
+.icon-categories {
+width: 4rem;
+}
 }
 
 /* Additional small mobile adjustments (375px and below) */
