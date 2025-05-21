@@ -111,94 +111,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
   }
 };
 
-
-  return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
-      {/* Hero Section - Responsive di semua device */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-      <Image
-          src="/images/produk.png"
-          alt="Produk Genteng Cisangkan"
-          width={1764}
-          height={460}
-          className="w-full h-full object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-          <div className="w-full max-w-6xl mx-auto">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">
-              PRODUK KAMI
-            </h1>
-            <p className="text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-2xl">
-              Kualitas terbaik dengan teknologi modern untuk rumah idaman Anda
-            </p>
-          </div>
-        </div>
-      </div>
-
-  {/* Header Section */}
-
-<div className="bg-[#F2F2F2] py-4">
-  <nav className="flex justify-center space-x-10 text-[1.5rem] font-light tracking-wide">
-    <Link href="/perusahaan/sertifikasi" className="text-[#2D5DA6] font-bold">Store</Link>
-    <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Kiosk</Link>
-  </nav>
-</div> 
-
-    <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base">
-  {/* Header Section */}
-<div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 max-w-6xl mx-auto px-4 mb-10 md:px-0">
-  {/* Kiri: Judul */}
-  <div className="flex items-center w-full md:w-1/2 gap-10">
-    <div className="leading-snug">
-            <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
-              Temukan<br />Store Kami<br />di Kota Anda
-            </h1>
-    </div>
-  <div className="flex flex-col items-center">
-    <Image
-      src="/images/STORE.png" // TANPA /public
-      alt="Store Icon"
-      width={140} // Bisa disesuaikan
-      height={140}
-      className="mb-1"
-    />
-</div>
-
-  </div>
-
-        {/* Kanan: Logo + Dropdowns */}
-        <div className="w-full md:w-1/2">
-          <p className="text-gray-600 text-sm mb-4">
-            Pilih wilayah untuk melihat informasi store dan kiosk kami terdekat
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex flex-col w-full sm:w-1/2">
-              <label className="text-sm font-semibold mb-1">Propinsi</label>
-              <select className="border border-gray-300 rounded px-3 py-2">
-                <option value="">Pilih Propinsi</option>
-              </select>
-            </div>
-            <div className="flex flex-col w-full sm:w-1/2">
-              <label className="text-sm font-semibold mb-1">Semua Kota</label>
-              <select className="border border-gray-300 rounded px-3 py-2">
-                <option value="">Pilih Kota</option>
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-  {/* Grid Store */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mb-5 gap-8">
-  {[
+  const cityItems = [
     {
       city: 'MEDAN',
       stores: [
@@ -289,6 +202,11 @@ const [slopeAngle, setSlopeAngle] = useState('');
           telp: '(021) 8197816',
           maps: 'https://maps.google.com?q=Jl. Ahmad Yani No. 57 Jakarta'
         },
+      ],
+    },
+    {
+      city: 'JAKARTA',
+      stores: [
         {
           name: 'TRI PUTRA ABADI',
           address: 'Jl. Malaka Baru No. 36 Pondok Kopi, Jakarta Timur',
@@ -296,24 +214,44 @@ const [slopeAngle, setSlopeAngle] = useState('');
           hp: '0812 8714 9117',
           maps: 'https://maps.google.com?q=Jl. Malaka Baru No. 36 Pondok Kopi Jakarta'
         },
+      ],
+    },
+    {
+      city: 'JAKARTA',
+      stores: [
         {
           name: 'SINAR BHUANA',
           address: 'Jl. Raya Bogor Km. 20, Kramat Jati, Jakarta Timur',
           hp: '0878 3003 0098',
           maps: 'https://maps.google.com?q=Jl. Raya Bogor Km. 20 Jakarta'
         },
+      ],
+    },
+    {
+      city: 'JAKARTA',
+      stores: [
         {
           name: 'MEKAR JAYA ABADI',
           address: 'Jl. Daan Mogot Km 11 No. 2A, Jakarta Barat',
           hp: '(021) 29037949',
           maps: 'https://maps.google.com?q=Jl. Daan Mogot Km 11 Jakarta'
         },
+      ],
+    },
+    {
+      city: 'JAKARTA',
+      stores: [
         {
           name: 'ADHIGANA GENTENG STORE',
           address: 'Jl. Raya Bogor km. 27 no.14 Gandaria, Jakarta Timur (Seberang Alfa)',
           hp: '0812 1111 1042',
           maps: 'https://maps.google.com?q=Jl. Raya Bogor km. 27 no.14 Gandaria Jakarta'
         },
+      ],
+    },
+    {
+      city: 'JAKARTA',
+      stores: [
         {
           name: 'MAESTRO ATAP GALLERY CIGANJUR',
           address: 'Jl. Moh Kahfi I no. 2 Ciganjur, Kec. Jagakarsa, Jakarta Selatan',
@@ -333,6 +271,11 @@ const [slopeAngle, setSlopeAngle] = useState('');
           hp: '0811 1666 478, 0811 8230 18',
           maps: 'https://maps.google.com?q=Jl. Raya Cileungsi Jonggol Km. 3 Cileungsi'
         },
+      ],
+    },
+    {
+      city: 'BOGOR',
+      stores: [
         {
           name: 'MAESTRO ATAP CIBUBUR',
           address: 'Jl. Alternatif Cibubur No. 633b, Nagrak Kec. Gn Putri, Kab. Bogor',
@@ -341,27 +284,131 @@ const [slopeAngle, setSlopeAngle] = useState('');
         },
       ],
     },
-  ].map((cityItem, idx) => (
-    <div key={idx}>
-      <h3 className="text-[#1E3A8A] font-bold uppercase mb-2">{cityItem.city}</h3>
-      {cityItem.stores.map((store, sIdx) => (
-        <div key={sIdx} className="mb-4 text-gray-800 text-sm">
-          <a className="font-semibold hover:underline "  href={store.maps}
-              target="_blank"
-              rel="noopener noreferrer"
-            >{store.name}</a>
-          <p>
-            <a>
-              {store.address}
-            </a>
-          </p>
-          {store.telp && <p>Telp: {store.telp}</p>}
-          {store.hp && <p>HP: {store.hp}</p>}
+  ];
+
+  // Bagi ke 3 kolom secara vertikal
+const itemsPerColumn = Math.ceil(cityItems.length / 3);
+const columns = [
+  cityItems.slice(0, itemsPerColumn),
+  cityItems.slice(itemsPerColumn, itemsPerColumn * 2),
+  cityItems.slice(itemsPerColumn * 2),
+];
+
+
+
+  return (
+    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+      {/* Hero Section - Responsive di semua device */}
+      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <Image
+          src="/images/produk.png"
+          alt="Produk Genteng Cisangkan"
+          width={1764}
+          height={460}
+          className="w-full h-full object-cover object-center"
+          priority
+          quality={100}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: 'auto',
+            objectFit: 'cover'
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
+          <div className="w-full max-w-6xl mx-auto">
+            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">
+              PRODUK KAMI
+            </h1>
+            <p className="text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-2xl">
+              Kualitas terbaik dengan teknologi modern untuk rumah idaman Anda
+            </p>
+          </div>
         </div>
-      ))}
+      </div>
+
+  {/* Header Section */}
+
+<div className="bg-[#F2F2F2] py-4">
+  <nav className="flex justify-center space-x-10 text-[1.5rem] font-light tracking-wide">
+    <Link href="/perusahaan/sertifikasi" className="text-[#2D5DA6] font-bold">Store</Link>
+    <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Kiosk</Link>
+  </nav>
+</div> 
+
+    <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base">
+  {/* Header Section */}
+<div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 max-w-6xl mx-auto px-4 md:px-0">
+  {/* Kiri: Judul */}
+  <div className="flex items-center w-full md:w-1/2 gap-10">
+    <div className="leading-snug">
+            <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
+              Temukan<br />Store Kami<br />di Kota Anda
+            </h1>
     </div>
-  ))}
+  <div className="flex flex-col items-center">
+    <Image
+      src="/images/STORE.png" // TANPA /public
+      alt="Store Icon"
+      width={140} // Bisa disesuaikan
+      height={140}
+      className="mb-1"
+    />
 </div>
+
+  </div>
+
+        {/* Kanan: Logo + Dropdowns */}
+        <div className="w-full md:w-1/2">
+          <p className="text-gray-600 text-sm mb-4">
+            Pilih wilayah untuk melihat informasi store dan kiosk kami terdekat
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col w-full sm:w-1/2">
+              <label className="text-sm font-semibold mb-1">Propinsi</label>
+              <select className="border border-gray-300 rounded px-3 py-2">
+                <option value="">Pilih Propinsi</option>
+              </select>
+            </div>
+            <div className="flex flex-col w-full sm:w-1/2">
+              <label className="text-sm font-semibold mb-1">Semua Kota</label>
+              <select className="border border-gray-300 rounded px-3 py-2">
+                <option value="">Pilih Kota</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  {/* Grid Store */}
+<div className="min-h-screen bg-gray-50 p-10">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {columns.map((column, colIndex) => (
+          <div key={colIndex} className="space-y-6">
+            {column.map((cityItem, idx) => (
+              <div key={idx}>
+                <h3 className="text-[#1E3A8A] font-bold uppercase mb-2">{cityItem.city}</h3>
+                {cityItem.stores.map((store, sIdx) => (
+                  <div key={sIdx} className="mb-4 text-gray-800 text-sm">
+                    <a
+                      className="font-semibold hover:underline block"
+                      href={store.maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {store.name}
+                    </a>
+                    <p>{store.address}</p>
+                    {store.telp && <p>Telp: {store.telp}</p>}
+                    {store.hp && <p>HP: {store.hp}</p>}
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
 
         {/* Pagination */}
         <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
