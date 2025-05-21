@@ -186,7 +186,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </p>
 
         {/* Visi Misi */}
-        <div className="bg-[#f9f9f9] mt-10 space-y-4">
+        <div className="mt-10 space-y-4">
           <h3 className="font-bold text-sm text-slate-700">Visi</h3>
           <p className='text-sm'>Menjadi perusahaan genteng beton dan paving pilihan utama dan terpercaya di Indonesia</p>
 
