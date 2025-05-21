@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 
 
-export default function Store() {
+export default function Kiosk() {
 
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
@@ -113,83 +113,80 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
   const cityItems = [
     {
-      city: 'MEDAN',
+      city: 'BANDA ACEH & LHOKSUMAWE',
       stores: [
         {
-          name: 'HOMESMART',
-          address: 'PT MEGAMAS PLAZA BANGUNANJl. Jend. Gatot Subroto No. 102 Medan, Sumatera Utara',
-          telp: '(061) 4527588, (061) 4527586',
-          hp: '0813 7028 1999',
-          maps: 'https://maps.google.com?q=Jl. Jend. Gatot Subroto No. 102 Medan'
+          name: 'PT. EVRANDO SUKSES BERSAMA',
+          address: 'Jl. Ngumban Sunbaiti / Melati Roya No.88, Medan',
+          telp: '(081) 8384284',
+          hp: '0813 8139 5045'
         },
       ],
     },
     {
-      city: 'BATAM',
+      city: 'TANJUNG PINANG',
       stores: [
         {
-          name: 'CV BATAM SUPPLY & DISTRIBUSI',
-          address: 'Ruko Mega Mas Blok B No.16 SinCom - Batam Center',
-          telp: '0813 7253 6236',
-          maps: 'https://maps.google.com?q=Ruko Mega Mas Blok B No.16 Batam Center'
+          name: 'PT. CITRA SERAYA',
+          address: 'Jl. Gatot Subrota No.98 A Tanjung Pinang',
+          hp: '085558096268'
         },
       ],
     },
     {
-      city: 'PALEMBANG',
+      city: 'BANGKA BELITUNG',
       stores: [
         {
-          name: 'PT. CELENTANG MULTI ARTHA',
-          address: 'Jl. Brigjen H. Kasim No. B1 Bukit Sangkal Palembang',
-          telp: '(0711) 5612157',
-          hp: '0895 3444 88643',
-          maps: 'https://maps.google.com?q=Jl. Brigjen H. Kasim No. B1 Bukit Sangkal Palembang'
+          name: 'PT. SETIAJAYA MAKMURINDO',
+          address: 'Jl. Mayor Syafri, Rachman No.2 Bangka, Pengkai Pinang, Bangka Belitung',
+          telp: '(077) 422835, (077) 438568',
+          hp: '0813 8999 3973'
         },
       ],
     },
     {
-      city: 'PADANG',
+      city: 'YOGYAKARTA',
       stores: [
         {
-          name: 'CV. HENDRI WIJAYA PHERI',
-          address: 'Jl. Nipah No.10-Padang',
-          telp: '(0751) 28685',
-          hp: '0813 6350 0284',
-          maps: 'https://maps.google.com?q=Jl. Nipah No.10 Padang'
+          name: 'MATAHARI JAYA',
+          address: 'Jl. Parapatitis KM. 4 No. 301 Sewon - Bantul',
+          telp: '(0274) 389868'
+        },
+        {
+          name: 'CV AGNA ASTABAJA',
+          address: 'Jl. Purboyo Krandon Sumberadi Mleti, Sieman (depan kantor Badan Pusat Statistik Kab. Sieman)',
+          hp: '0851 0545 5234'
         },
       ],
     },
     {
-      city: 'BANDAR LAMPUNG',
+      city: 'SAMARINDA',
       stores: [
         {
-          name: 'VICTORIA INDAH',
-          address: 'Jl. Sukarno Hatta 39, Bandar Lampung (Samping Pool Bus Puspa)',
-          hp: '0821 7676 6429',
-          maps: 'https://maps.google.com?q=Jl. Sukarno Hatta 39 Bandar Lampung'
+          name: 'PT KERAMIK JAYA BANGUNAN',
+          address: 'Jl. A. Wahab Syahani No.78, Samarinda (Depan SPBU)',
+          hp: '0852 4695 8522'
         },
       ],
     },
     {
-      city: 'SEMARANG',
+      city: 'MANADO',
       stores: [
         {
-          name: 'CV. SURYA MANDIRI',
-          address: 'Jl. Kanai Raya 10 G Semarang',
-          telp: '(024) 8455257, 8455258',
-          hp: '0857 0303 0108, 0812 2951 8998',
-          maps: 'https://maps.google.com?q=Jl. Kanai Raya 10 G Semarang'
+          name: 'PT WIJAYA BANGUNAN',
+          address: 'Jl. Walter Monginski No.124 Bahu - Manado',
+          telp: '(0431) 825500, (0431) 825700',
+          hp: '0812 4408 8877'
         },
       ],
     },
     {
-      city: 'BALI',
+      city: 'BANDUNG',
       stores: [
         {
-          name: 'CV ANUGERAH PUTRA DEWATA',
-          address: 'Jl. Kargo Permai I no. 198, Denpasar',
-          hp: '0851 0040 4904',
-          maps: 'https://maps.google.com?q=Jl. Kargo Permai I no. 198 Denpasar'
+          name: 'ABADI GENTENG',
+          address: 'Jl. Seekamo Hatia No. 384 Bandung',
+          telp: '(022) 5205152'
         },
       ],
     },
@@ -197,94 +194,57 @@ const [slopeAngle, setSlopeAngle] = useState('');
       city: 'JAKARTA',
       stores: [
         {
-          name: 'TRI PUTRA ABADI',
-          address: 'Jl. Ahmad Yani No. 57 (By Pass) Rawamangun, Jakarta Timur',
-          telp: '(021) 8197816',
-          maps: 'https://maps.google.com?q=Jl. Ahmad Yani No. 57 Jakarta'
+          name: 'GENTENG PILAR MAS',
+          address: 'Jl. Panjahan No.18 (Bypass) Jakarta Timur',
+          hp: '0811 8006 010'
         },
       ],
     },
     {
-      city: 'JAKARTA',
+      city: 'TANGERANG',
       stores: [
         {
-          name: 'TRI PUTRA ABADI',
-          address: 'Jl. Malaka Baru No. 36 Pondok Kopi, Jakarta Timur',
-          telp: '(021) 8619756',
-          hp: '0812 8714 9117',
-          maps: 'https://maps.google.com?q=Jl. Malaka Baru No. 36 Pondok Kopi Jakarta'
+          name: 'PT MITRA TARUMA PERKASA',
+          address: 'Jl. Raya Rewa Burtu No.20, Serpong, Tangerang Selatan',
+          telp: '(021) 758 77060',
+          hp: '0877 7505 1700'
+        },
+        {
+          name: 'SUPER BANGUN JAYA 1',
+          address: 'Jl. Raya Cisauk, Sampara BSD Tangerang Selatan',
+          telp: '(021) 75579999',
+          hp: '0896 7061 4648'
+        },
+        {
+          name: 'SUPER BANGUN JAYA 2',
+          address: 'Jl. Raya Lapen I–2, Surcalita Cisauk, Kab. Tangerang',
+          telp: '(021) 75879999',
+          hp: '0896 7061 4648'
         },
       ],
     },
     {
-      city: 'JAKARTA',
+      city: 'BEKASI',
       stores: [
         {
-          name: 'SINAR BHUANA',
-          address: 'Jl. Raya Bogor Km. 20, Kramat Jati, Jakarta Timur',
-          hp: '0878 3003 0098',
-          maps: 'https://maps.google.com?q=Jl. Raya Bogor Km. 20 Jakarta'
+          name: 'MADJU PRIMA SEJAHTERA',
+          address: 'Jl. Raya Kalimalong No. 36, Bekasi',
+          telp: '(021) 8841210',
+          hp: '0896 8970 2070'
         },
       ],
     },
     {
-      city: 'JAKARTA',
+      city: 'PURWAKARTA',
       stores: [
         {
-          name: 'MEKAR JAYA ABADI',
-          address: 'Jl. Daan Mogot Km 11 No. 2A, Jakarta Barat',
-          hp: '(021) 29037949',
-          maps: 'https://maps.google.com?q=Jl. Daan Mogot Km 11 Jakarta'
+          name: 'ANEKA GENTENG',
+          address: 'Jl. Raya Sodang, Cikampek Purwakarta (Samping Jembatan Timbang Civrang)',
+          hp: '0852 2444 7000, 0818 4711133'
         },
       ],
     },
-    {
-      city: 'JAKARTA',
-      stores: [
-        {
-          name: 'ADHIGANA GENTENG STORE',
-          address: 'Jl. Raya Bogor km. 27 no.14 Gandaria, Jakarta Timur (Seberang Alfa)',
-          hp: '0812 1111 1042',
-          maps: 'https://maps.google.com?q=Jl. Raya Bogor km. 27 no.14 Gandaria Jakarta'
-        },
-      ],
-    },
-    {
-      city: 'JAKARTA',
-      stores: [
-        {
-          name: 'MAESTRO ATAP GALLERY CIGANJUR',
-          address: 'Jl. Moh Kahfi I no. 2 Ciganjur, Kec. Jagakarsa, Jakarta Selatan',
-          telp: '(021) 7871577',
-          hp: '0878 8194 7124',
-          maps: 'https://maps.google.com?q=Jl. Moh Kahfi I no. 2 Ciganjur Jakarta Selatan'
-        },
-      ],
-    },
-    {
-      city: 'BOGOR',
-      stores: [
-        {
-          name: 'CV BURSA GENTENG',
-          address: 'Jl. Raya Cileungsi Jonggol Km. 3 Cileungsi',
-          telp: '(021) 82491388',
-          hp: '0811 1666 478, 0811 8230 18',
-          maps: 'https://maps.google.com?q=Jl. Raya Cileungsi Jonggol Km. 3 Cileungsi'
-        },
-      ],
-    },
-    {
-      city: 'BOGOR',
-      stores: [
-        {
-          name: 'MAESTRO ATAP CIBUBUR',
-          address: 'Jl. Alternatif Cibubur No. 633b, Nagrak Kec. Gn Putri, Kab. Bogor',
-          hp: '0852 1881 8442',
-          maps: 'https://maps.google.com?q=Jl. Alternatif Cibubur No. 633b Bogor'
-        },
-      ],
-    },
-  ];
+];
 
   // Bagi ke 3 kolom secara vertikal
 const itemsPerColumn = Math.ceil(cityItems.length / 3);
@@ -331,8 +291,8 @@ const columns = [
 
 <div className="bg-[#F2F2F2] py-4">
   <nav className="flex justify-center space-x-10 text-[1.5rem] font-light tracking-wide">
-    <Link href="/showroom/store" className="text-[#2D5DA6] font-bold">Store</Link>
-    <Link href="/showroom/kiosk" className="text-[#333] hover:text-[#2D5DA6]">Kiosk</Link>
+    <Link href="/showroom/store" className="text-[#333] hover:text-[#2D5DA6]">Store</Link>
+    <Link href="/showroom/kiosk" className="text-[#2D5DA6] font-bold">Kiosk</Link>
   </nav>
 </div> 
 
@@ -348,7 +308,7 @@ const columns = [
     </div>
   <div className="flex flex-col items-center">
     <Image
-      src="/images/STORE.png" // TANPA /public
+      src="/images/KIOSK.png" // TANPA /public
       alt="Store Icon"
       width={140} // Bisa disesuaikan
       height={140}
