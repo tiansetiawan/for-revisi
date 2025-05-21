@@ -10,6 +10,7 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         unoptimized: false, // Nonaktifkan optimisasi gambar
+        domains: ['img.youtube.com'],
       },
   };
   

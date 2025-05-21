@@ -210,31 +210,41 @@ const handleVideoClick = (videoId) => {
           ].map((video) => (
             <div key={video.id} className="space-y-3 group">
               {/* Video Thumbnail with Hover Effect */}
-              <div 
-                className="relative w-full aspect-video bg-gray-300 overflow-hidden transition-all duration-300 group-hover:shadow-lg cursor-pointer"
-                onClick={() => handleVideoClick(video.id)}
-              >
-                <img
-                  src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                  alt={video.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  onError={(e) => {
-                    e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                  }}
-                />
-                
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300 group-hover:bg-black/20">
-                  <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center transition-all duration-300 group-hover:w-20 group-hover:h-20">
-                    <svg
-                      className="w-8 h-8 text-[#0B203F] fill-current transition-transform duration-300 group-hover:scale-110"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+<div className="relative w-full aspect-video bg-gray-300 overflow-hidden transition-all duration-300 group-hover:shadow-lg cursor-pointer"
+  onClick={() => handleVideoClick(video.id)}
+>
+  <Image
+    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+    alt={video.title}
+    width={1280}
+    height={720}
+    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+onError={(e) => {
+  e.target.onerror = null; // Mencegah infinite loop
+  // Coba beberapa fallback
+  if (e.target.src.includes('maxresdefault.jpg')) {
+    e.target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+  } else if (e.target.src.includes('hqdefault.jpg')) {
+    e.target.src = `https://img.youtube.com/vi/${video.id}/mqdefault.jpg`;
+  } else {
+    e.target.src = '/images/default-video-thumbnail.jpg';
+  }
+}}
+    unoptimized={true} // Opsional: jika ingin mematikan optimisasi Next.js
+  />
+  
+  {/* Play Button */}
+  <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300 group-hover:bg-black/20">
+    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center transition-all duration-300 group-hover:w-20 group-hover:h-20">
+      <svg
+        className="w-8 h-8 text-[#0B203F] fill-current transition-transform duration-300 group-hover:scale-110"
+        viewBox="0 0 24 24"
+      >
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </div>
+  </div>
+</div>
 
               {/* Video Info */}
               <div className="space-y-1">

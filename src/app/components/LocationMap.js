@@ -1,10 +1,9 @@
-'use client'; // Required for client-side components in Next.js 13+
+'use client';
 
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
-// Fix default marker icons in Next.js
 const createMarkerIcon = () => {
   return L.icon({
     iconUrl: '/images/locate cis.png',
@@ -24,7 +23,12 @@ const LocationMap = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Initialize map only once
+    const handleScroll = () => {
+      if (mapRef.current) {
+        mapRef.current.invalidateSize();
+      }
+    };
+
     if (!mapRef.current) {
       mapRef.current = L.map('map-container', {
         zoomControl: false,
@@ -81,17 +85,33 @@ const LocationMap = () => {
           `);
       });
 
-      // Fit map to contain all markers
       const group = L.featureGroup(markersRef.current);
       mapRef.current.fitBounds(group.getBounds().pad(0.2));
 
-      // Add zoom control with better styling
       L.control.zoom({
         position: 'topright'
       }).addTo(mapRef.current);
+
+      // Fix z-index issues
+      const style = document.createElement('style');
+      style.innerHTML = `
+        .leaflet-top, .leaflet-bottom {
+          z-index: 10 !important;
+        }
+        .leaflet-pane {
+          z-index: 1 !important;
+        }
+        .leaflet-control {
+          z-index: 10 !important;
+        }
+      `;
+      document.head.appendChild(style);
+
+      window.addEventListener('scroll', handleScroll);
     }
 
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       if (mapRef.current) {
         mapRef.current.remove();
         mapRef.current = null;
@@ -100,12 +120,15 @@ const LocationMap = () => {
   }, []);
 
   return (
-    <div className="mt-10">
-      <h3 className="font-bold text-lg text-slate-800 mb-4">LOKASI PT. CISANGKAN</h3>
+    <div className="relative z-0">
       <div 
         id="map-container" 
         className="rounded-lg shadow-md border border-gray-200 overflow-hidden"
-        style={{ height: '450px', width: '100%' }}
+        style={{ 
+          height: '450px',
+          width: '100%',
+          marginTop: '19px' // Adjust based on your navbar height
+        }}
       />
     </div>
   );

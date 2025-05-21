@@ -230,21 +230,22 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </div>
 
 {/* Lokasi Map */}
-<div className="mt-10 mb-30">
-  <h3 className="font-bold text-sm text-slate-700 mb-4">LOKASI PT. CISANGKAN</h3>
+<div className="mt-15">
+  <h3 className="font-bold text-sm text-slate-700">LOKASI PT. CISANGKAN</h3>
  <LocationMap />
 </div>
 
 {/* Lokasi Fisik */}
 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 text-center px-2">
-  <div className="group">
-    <div className="overflow-hidden rounded-md">
-      <img 
-        src="/images/bandung.jpg" 
-        alt="Head Office" 
-        className="w-full h-48 object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out" 
-      />
-    </div>
+<div className="group">
+  <div className="overflow-hidden rounded-md relative w-full pb-[100%]"> {/* Padding-bottom 100% untuk rasio 1:1 */}
+    <Image 
+      src="/images/bandung.jpg" 
+      alt="Head Office" 
+      fill
+      className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+    />
+  </div>
     <p className="mt-2 font-bold text-sm/8">HEAD OFFICE & FACTORY</p>
     <p className="text-xs/5">Jl. AH Nasution 107, Cijerah, <br/>Bandung 40221</p>
     <p className="text-xs/5">Phone: +62 22 6025888</p>
@@ -253,12 +254,13 @@ const [slopeAngle, setSlopeAngle] = useState('');
   </div>
 
   <div className="group">
-    <div className="overflow-hidden rounded-md">
-      <img 
+  <div className="overflow-hidden rounded-md relative w-full pb-[100%]"> {/* Padding-bottom 100% untuk rasio 1:1 */}
+    <Image 
         src="/images/purwakarta.jpg" 
         alt="Purwakarta Factory" 
-        className="w-full h-48 object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out" 
-      />
+      fill
+      className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+    />
     </div>
     <p className="mt-2 font-bold text-sm/8">PURWAKARTA FACTORY</p>
     <p className="text-xs/5">JL. Raya Cibatu Km.14,2 <br/>Campaka - Purwakarta 41182</p>
@@ -267,12 +269,13 @@ const [slopeAngle, setSlopeAngle] = useState('');
   </div>
 
   <div className="group">
-    <div className="overflow-hidden rounded-md">
-      <img 
+  <div className="overflow-hidden rounded-md relative w-full pb-[100%]"> {/* Padding-bottom 100% untuk rasio 1:1 */}
+    <Image 
         src="/images/jakarta.jpg" 
-        alt="House of Cisangkan" 
-        className="w-full h-48 object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out" 
-      />
+        alt="House of Cisangkan"  
+      fill
+      className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+    />
     </div>
     <p className="mt-2 font-bold text-sm/8">HOUSE OF CISANGKAN</p>
     <p className="text-xs/5">Kompleks Perkantoran Intercon<br/>Plaza E-16</p>
@@ -281,12 +284,13 @@ const [slopeAngle, setSlopeAngle] = useState('');
   </div>
 
   <div className="group">
-    <div className="overflow-hidden rounded-md">
-      <img 
+  <div className="overflow-hidden rounded-md relative w-full pb-[100%]"> {/* Padding-bottom 100% untuk rasio 1:1 */}
+    <Image 
         src="/images/pasuruan.jpg" 
-        alt="Pasuruan Factory" 
-        className="w-full h-48 object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out" 
-      />
+        alt="Pasuruan Factory"   
+      fill
+      className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+    />
     </div>
     <p className="mt-2 font-bold text-sm/8">PASURUAN FACTORY</p>
     <p className="text-xs/5">Jl. Raya Sedarum KM 18 No. 18A, Nguling<br/>Kab. Pasuruan - Jawa Timur 67185</p>

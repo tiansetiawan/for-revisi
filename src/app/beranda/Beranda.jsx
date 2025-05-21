@@ -432,7 +432,7 @@ useEffect(() => {
 
 
 return (
-<main className="px-4 md:px-11">
+<main className="px-4 md:px-11 2xl:px-16">
   {/* Hero Section */}
   <div className="relative w-full">
     {/* Navigation buttons - hidden on mobile */}
@@ -463,7 +463,7 @@ return (
     />
 
   {/* Slide Indicators */}
-  <div className="hero-slide-indicators absolute bottom-[17.5rem] left-1/2 -translate-x-1/2 flex gap-2 z-10">
+  <div className="hero-slide-indicators absolute bottom-[17.5rem] left-1/2 -translate-x-1/2 flex gap-2 z-10 2xl:bottom-[14rem]">
     {heroSlides.map((_, idx) => (
       <button
         key={idx}
@@ -487,7 +487,7 @@ return (
       </div>
 
     {/* Product Categories Section */}
-<section className="product-categories-section py-20 text-center">
+<section className="product-categories-section py-20 text-center 2xl:mt-10">
   <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
   <div className="category-container flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
     {defaultCategories.map((category, index) => (

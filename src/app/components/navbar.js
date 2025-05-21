@@ -13,7 +13,6 @@ export default function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Fungsi untuk reload halaman Beranda
   const reloadHome = () => {
     if (window.location.pathname === '/') {
       window.location.reload();
@@ -22,14 +21,9 @@ export default function Navbar() {
     }
   };
   
-  // Effect untuk mendeteksi scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -39,7 +33,6 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  // Fungsi untuk scroll ke atas (ke Beranda)
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -48,10 +41,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`bg-white z-50 fixed top-0 right-0 left-0 transition-all duration-300 ${
-      scrolled ? 'shadow-md border-b border-gray-200' : 'shadow-none border-b-0'
+    <nav className={`bg-white fixed top-0 w-full z-[50] transition-all duration-300 ${
+      scrolled ? 'shadow-md border-b border-gray-200' : 'shadow-none'
     }`}>
-      <div className="flex items-center justify-between px-10 py-4">
+      <div className="flex items-center justify-between px-10 py-4 2xl:px-14">
         {/* Logo dengan fungsi reload */}
         <div 
           className="flex items-center space-x-3 cursor-pointer"
