@@ -65,7 +65,7 @@ export default function Navbar() {
             <Link href="/">
             <button 
               onClick={scrollToTop}
-              className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white"
+              className="px-2 py-2 rounded-full cursor-pointer hover:bg-[#0F1E3E] hover:text-white"
             >
               Beranda
             </button>
@@ -75,7 +75,7 @@ export default function Navbar() {
           {/* Dropdown Produk */}
           <li className="relative group">
             <button
-              className="px-2 py-1 flex items-center gap-1 rounded-full hover:bg-[#0F1E3E] hover:text-white"
+              className="px-2 py-1 flex cursor-pointer items-center gap-1 rounded-full hover:bg-[#0F1E3E] hover:text-white"
               onClick={toggleDropdown}
             >
               Produk <FaChevronDown size={10} />
@@ -97,8 +97,8 @@ export default function Navbar() {
 
           <li><Link href="/perusahaan/tentang" className="rounded-full px-2 py-2 hover:bg-[#0F1E3E] hover:text-white">Perusahaan</Link></li>
            <li><Link href="/showroom/store" className="px-2 py-2 rounded-full hover:bg-[rgb(15,30,62)] hover:text-white">Showroom</Link></li>
-          <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Proyek</a></li>
-          <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Blog</a></li>
+          <li><Link href="/proyek" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Proyek</Link></li>
+          <li><Link href="/blog/artikel"  className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Blog</Link></li>
           <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Kontak Kami</a></li>
         </ul>
 
@@ -165,11 +165,11 @@ export default function Navbar() {
               )}
             </li>
 
-            <li><a href="/perusahaan/tentang" className="hover:text-black">Perusahaan</a></li>
-            <li><a href="#" className="hover:text-black">Showroom</a></li>
-            <li><a href="#" className="hover:text-black">Proyek</a></li>
-            <li><a href="#" className="hover:text-black">Blog</a></li>
-            <li><a href="#" className="hover:text-black">Kontak Kami</a></li>
+            <li><Link href="/perusahaan/tentang" className="hover:text-black">Perusahaan</Link></li>
+            <li><Link href="/showroom/store" className="hover:text-black">Showroom</Link></li>
+            <li><Link href="/proyek" className="hover:text-black">Proyek</Link></li>
+            <li><Link href="/blog/artikel" className="hover:text-black">Blog</Link></li>
+            <li><Link href="/kontak" className="hover:text-black">Kontak Kami</Link></li>
 
             <div className="flex items-center space-x-4 mt-4 text-gray-600">
               <FaSearch className="cursor-pointer" />
