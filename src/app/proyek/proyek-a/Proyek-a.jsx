@@ -1,6 +1,5 @@
 'use client';;
 import Image from 'next/image';
-import React from 'react';
 
 export default function ProyekA() {
 
@@ -42,7 +41,7 @@ export default function ProyekA() {
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/produk.png"
-          alt="Produk Genteng Cisangkan"
+          alt="Banner Proyek"
           width={1764}
           height={460}
           className="w-full h-full object-cover object-center"
@@ -56,14 +55,6 @@ export default function ProyekA() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-          <div className="w-full max-w-6xl mx-auto">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">
-              PRODUK KAMI
-            </h1>
-            <p className="text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-2xl">
-              Kualitas terbaik dengan teknologi modern untuk rumah idaman Anda
-            </p>
-          </div>
         </div>
       </div>
       
@@ -97,14 +88,24 @@ export default function ProyekA() {
   ))}
 </div>
 
-        {/* Pagination */}
+       {/* Pagination */}
         <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+            <button
+    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+  >
+    Sebelumnya
+  </button>
           <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
             1
           </button>
           <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
             2
           </button>
+                      <button
+    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+  >
+    Berikutnya
+  </button>
         </div>
           {/* Tombol Kembali */}
   <div className="mt-10">

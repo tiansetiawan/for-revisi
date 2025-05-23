@@ -99,7 +99,7 @@ export default function Navbar() {
            <li><Link href="/showroom/store" className="px-2 py-2 rounded-full hover:bg-[rgb(15,30,62)] hover:text-white">Showroom</Link></li>
           <li><Link href="/proyek" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Proyek</Link></li>
           <li><Link href="/blog/artikel"  className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Blog</Link></li>
-          <li><a href="#" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Kontak Kami</a></li>
+  <li><Link href="/kontak" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Kontak Kami</Link></li>
         </ul>
 
         {/* Right Side */}

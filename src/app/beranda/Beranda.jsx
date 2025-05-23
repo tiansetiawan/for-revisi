@@ -487,7 +487,7 @@ return (
       </div>
 
     {/* Product Categories Section */}
-<section className="product-categories-section py-20 text-center 2xl:mt-10">
+<section className="product-categories-section py-20 text-center 2xl:mt-10 mb-5">
   <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
   <div className="category-container flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
     {defaultCategories.map((category, index) => (

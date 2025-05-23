@@ -1,11 +1,7 @@
-'use client';
+'use client';;
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-
-  // Contoh data dummy
 const inovasiList = [
   {
     id: 1,
@@ -104,7 +100,7 @@ export default function Kegiatan() {
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/produk.png"
-          alt="Produk Genteng Cisangkan"
+          alt="Banner Kegiatan"
           width={1764}
           height={460}
           className="w-full h-full object-cover object-center"
@@ -118,14 +114,6 @@ export default function Kegiatan() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-          <div className="w-full max-w-6xl mx-auto">
-            <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2 drop-shadow-lg">
-              PRODUK KAMI
-            </h1>
-            <p className="text-white text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl opacity-90 max-w-2xl">
-              Kualitas terbaik dengan teknologi modern untuk rumah idaman Anda
-            </p>
-          </div>
         </div>
       </div>
 
@@ -153,7 +141,7 @@ export default function Kegiatan() {
       </div>
 
 {/* Daftar Artikel */}
-<div className="flex flex-col gap-10 mb-2">
+<div className="flex flex-col gap-10 mb-10">
   {inovasiList.map((item) => (
     <div
       key={item.id}
@@ -202,14 +190,24 @@ export default function Kegiatan() {
   ))}
 </div>
 
-        {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-b border-[#E0E0E0] py-2">
+{/* Pagination */}
+        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+            <button
+    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+  >
+    Sebelumnya
+  </button>
           <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
             1
           </button>
           <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
             2
           </button>
+                      <button
+    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+  >
+    Berikutnya
+  </button>
         </div>
     </section>
     </div>

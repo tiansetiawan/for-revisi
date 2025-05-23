@@ -19,6 +19,7 @@ export default function Footer() {
                     <FaInstagram className="bg-white text-black rounded-full box-border size-6 p-1" />
                     <FaFacebookF className="bg-white text-black rounded-full box-border size-6 p-1" />
                     <FaTiktok className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    <FaYoutube className="bg-white text-black rounded-full box-border size-6 p-1" />
                 </div>
                 
                 <div className="text-xs mb-4">
