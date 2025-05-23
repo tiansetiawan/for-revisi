@@ -132,59 +132,72 @@ const proyekData = [
   }
 ];
 
+const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
+  const qualities = {
+    default: 'default',
+    medium: 'mqdefault',
+    high: 'hqdefault',
+    standard: 'sddefault',
+    maxres: 'maxresdefault'
+  };
+  
+  const selectedQuality = qualities[quality] || qualities.high;
+  return `https://img.youtube.com/vi/${youtubeId}/${selectedQuality}.jpg`;
+};
+
+
 // Tambahkan di bagian data (bisa di atas videoTestimonials)
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  thumbnail: "/images/VidTes1.jpg", 
-  youtubeId: "EiLY8P_Lf8o", // Ganti dengan ID YouTube Anda
-  description: "Testimonial pelanggan utama kami"
+  youtubeId: "EiLY8P_Lf8o",
+  description: "Testimonial pelanggan utama kami",
+  thumbnail: getYoutubeThumbnail("EiLY8P_Lf8o", 'maxres') // Kualitas lebih tinggi
 };
+
+
 
 // Video Testimonial Data
 const videoTestimonials = [
   {
     id: 1,
     title: 'Video Testimonial 1',
-    thumbnail: '/images/factory Visit.png',
     youtubeId: 'EiLY8P_Lf8o',
     watchText: 'Lihat lebih banyak'
   },
   {
     id: 2,
     title: 'Video Testimonial 2',
-    thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
     watchText: 'Lihat lebih banyak'
   },
   {
     id: 3,
     title: 'Video Testimonial 3',
-    thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
     watchText: 'Lihat lebih banyak'
   },
   {
     id: 4,
     title: 'Video Testimonial 4',
-    thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
     watchText: 'Lihat lebih banyak'
   },
   {
     id: 5,
     title: 'Video Testimonial 5',
-    thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
     watchText: 'Lihat lebih banyak'
   },
   {
     id: 6,
     title: 'Video Testimonial 6',
-    thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
     watchText: 'Lihat lebih banyak'
   }
-];
+].map(video => ({
+  ...video,
+  thumbnail: getYoutubeThumbnail(video.youtubeId) // Otomatis generate thumbnail
+}));
 
 export default function Beranda() {
     // State tambahan untuk animasi
@@ -227,49 +240,65 @@ const handleCloseVideo = () => {
   };
 
   const VideoPlayer = ({ youtubeId, onClose }) => {
-    const videoUrl = youtubeId === 'main' 
-      ? `https://www.youtube.com/embed/${mainTestimonialVideo.youtubeId}?autoplay=1`
-      : `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
-  
-    return (
+  const [isLoading, setIsLoading] = useState(true);
+  const iframeRef = useRef(null);
+
+  // Membuat URL embed YouTube dengan parameter yang lebih lengkap
+  const videoUrl = youtubeId === 'main' 
+    ? `https://www.youtube.com/embed/${mainTestimonialVideo.youtubeId}?autoplay=1&rel=0&enablejsapi=1&loop=0&playlist=${mainTestimonialVideo.youtubeId}`
+    : `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&enablejsapi=1&loop=0&playlist=${youtubeId}`;
+
+  // Clean up saat komponen unmount
+  useEffect(() => {
+    return () => {
+      if (iframeRef.current) {
+        iframeRef.current.src = '';
+      }
+    };
+  }, []);
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
       <div 
-        className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
-        onClick={onClose} // Tutup modal saat klik di luar
+        className="relative w-full max-w-4xl aspect-video"
+        onClick={(e) => e.stopPropagation()}
       >
-        <div 
-          className="relative w-full max-w-4xl aspect-video"
-          onClick={(e) => e.stopPropagation()} // Prevent close saat klik di dalam player
+        <button 
+          onClick={onClose}
+          className="absolute -top-10 right-0 text-white hover:text-gray-300 z-10"
+          aria-label="Close video"
         >
-          <button 
-            onClick={onClose}
-            className="absolute -top-10 right-0 text-white hover:text-gray-300 z-10"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-          
-          <iframe
-            src={videoUrl}
-            className="w-full h-full"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            onLoad={() => setIsLoading(false)}
-  onError={() => {
-    setIsLoading(false);
-    alert('Gagal memuat video');
-  }}
-          ></iframe>
-          {isLoading && (
-  <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
-  </div>
-)}
-        </div>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          </div>
+        )}
+
+        <iframe
+          ref={iframeRef}
+          src={videoUrl}
+          className="w-full h-full"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          onLoad={() => setIsLoading(false)}
+          onError={() => {
+            setIsLoading(false);
+            alert('Gagal memuat video');
+          }}
+        ></iframe>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
   // Responsive settings
   const itemsPerSlideDesktop = 6;
@@ -591,13 +620,12 @@ return (
           </div>
 
           {/* Video Utama */}
-          <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none"> {/* Container dengan background abu-abu */}
-  <div className="relative w-230 aspect-video bg-gray-200 rounded-none overflow-hidden">
+<div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none">
+  <div className="relative w-full max-w-4xl aspect-video bg-gray-200 rounded-none overflow-hidden">
     {selectedVideo === 'main' ? (
       <iframe
-        src={`https://www.youtube.com/embed/${mainTestimonialVideo.youtubeId}?autoplay=1&rel=0`}
+        src={`https://www.youtube.com/embed/${mainTestimonialVideo.youtubeId}?autoplay=1&rel=0&enablejsapi=1`}
         className="w-full h-full"
-        frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
@@ -618,6 +646,7 @@ return (
           alt={mainTestimonialVideo.title}
           fill
           className="object-cover"
+          unoptimized // Untuk gambar dari external source
         />
       </div>
     )}
