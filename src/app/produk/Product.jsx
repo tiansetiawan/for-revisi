@@ -95,8 +95,6 @@ useEffect(() => {
     <source src="/images/Spanduk Produk.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
-  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-  </div>
 </div>
 
   {/* Header Section */}
