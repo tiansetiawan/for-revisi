@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { FaCalculator, FaTimes } from 'react-icons/fa';
+import { FaCalculator, FaTimes, FaElementor } from 'react-icons/fa';
 
 export default function Details() {
 
@@ -44,9 +44,9 @@ export default function Details() {
  const sliderRef = useRef(null);
 
  const productTypes = [
-  { name: 'Neo', image: '/images/icon photo.png' },
-  { name: 'Victoria', image: '/images/icon photo.png' },
-  { name: 'Victoria Multiline', image: '/images/icon photo.png' }, { name: 'Victoria Slate', image: '/images/icon photo.png' }, { name: 'Victoria Pine', image: '/images/Victoria Pine Clear.png' }];
+  { name: 'Nok Ujung', image: '/images/icon photo.png'},
+  { name: 'Nok Atas', image: '/images/icon photo.png' },
+  { name: 'Apex', image: '/images/icon photo.png' }, { name: 'Starter', image: '/images/icon photo.png' }, { name: 'Nok Samping', image: '/images/icon photo.png' }, { name: 'Nok sammping Ujung', image: '/images/icon photo.png' }, { name: 'Genteng Setengah', image: '/images/icon photo.png' }];
  const visibleSlides = 4; // Number of slides visible at once
 
  const nextSlide = () => {
@@ -285,18 +285,27 @@ const [slopeAngle, setSlopeAngle] = useState('');
               </section>
 
  {/* Tombol Hitung */}
-      <div className='pl-4'>
+      <div className='pl-4 px-44'>
         <button 
           onClick={toggleCalculator}
-          className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
+          className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full"
         >
           <FaCalculator className="text-lg" />
           Hitung Kebutuhan Genteng
         </button>
       </div>
+      <div className='pl-4 px-44'>
+        <a
+          href="/perusahaan/katalog"
+          className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
+        >
+          <FaCalculator className="text-lg" />
+          Unduh Brosur
+        </a>
+      </div>
 
       <div className={`fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50 transition-opacity duration-300 ${showCalculator ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-  <div className={`bg-white rounded-lg p-6 w-75 max-w-sm relative transition-transform duration-300 ${showCalculator ? 'translate-y-0' : 'translate-y-4'}`}>
+  <div className={`bg-transparent p-6 w-75 max-w-sm relative transition-transform duration-300 ${showCalculator ? 'translate-y-0' : 'translate-y-4'}`}>
     {/* Popup Kalkulator */}
 {showCalculator && (
   <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">

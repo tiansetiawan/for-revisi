@@ -15,7 +15,7 @@ export default function Product() {
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
-  const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
+  const subProducts = ['Neo', 'Victoria', 'Dual Slate', 'Floral', 'Excellent', 'Majestic', 'Oriental','New Royal'];
 
 // Gunakan useEffect untuk mengecek state saat komponen dimount
 useEffect(() => {
@@ -48,8 +48,8 @@ useEffect(() => {
 
  const productTypes = [
   { name: 'Neo', image: '/images/icon photo.png'},
-  { name: 'Victoria', image: '/images/icon photo.png' },
-  { name: 'Victoria Multiline', image: '/images/icon photo.png' }, { name: 'Victoria Slate', image: '/images/icon photo.png' }, { name: 'Victoria Pine', image: '/images/Victoria Pine Clear.png' }];
+  { name: 'Victoria Onyx', image: '/images/icon photo.png' },
+  { name: 'Victoria Multiline', image: '/images/icon photo.png' }, { name: 'Victoria Slate', image: '/images/icon photo.png' }, { name: 'Victoria Pine', image: '/images/icon photo.png' }, { name: 'Victoria Classic', image: '/images/icon photo.png' }];
  const visibleSlides = 4; // Number of slides visible at once
 
  const nextSlide = () => {
@@ -79,25 +79,25 @@ useEffect(() => {
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section - Responsive di semua device */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-      <Image
-          src="/images/produk.png"
-          alt="Banner Produk"
-          width={1764}
-          height={460}
-          className="w-full h-full object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
-      </div>
+<div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover object-center"
+    style={{
+      width: '100%',
+      height: 'auto',
+      objectFit: 'cover'
+    }}
+  >
+    <source src="/images/Spanduk Produk.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
+  </div>
+</div>
 
   {/* Header Section */}
 
@@ -169,11 +169,11 @@ useEffect(() => {
           <section className='mb-20'>
             <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">KEUNGGULAN GENTENG CISANGKAN :</h2>
             <p className="text-sm leading-relaxed text-justify ps-5">
-              Genteng CISANGKAN® diproduksi dengan menggunakan proses basah yaitu wet process. Raw material pasir dan semen pilihan akan melewati suatu proses panjang, yaitu menggunakan mesin teknologi Jepang, kemudian setiap keping genteng yang dihasilkan melewati proses rendam (2 x 24 jam lalu curing secara alami (14 – 21 hari), dan setiap keping genteng tersebut akan melewati proses penggosokan dan quality control satu per satu.
+              Genteng CISANGKAN® diproduksi dengan menggunakan proses basah yaitu wet process. Raw material pasir dan semen pilihan akan melewati suatu proses panjang, yaitu menggunakan mesin teknologi Jepang.
               <br /><br />
               Salah satu produk genteng unggulan CISANGKAN® yaitu profil genteng flat Victoria yang tersedia dalam 5 pilihan model/motif presisi dan interlock system satu sama lainnya. Kelebihan genteng flat Victoria lainnya adalah memiliki Gutter line, Two Lines Barrier, Upper Barrier dan Double Protection Bar untuk membendung air hujan.
               <br /><br />
-              Genteng CISANGKAN® dirancang sesuai dengan iklim tropis di Indonesia dan telah lolos pengujian yang mengacu pada SNI 0096 – 2007.
+              Genteng CISANGKAN® dirancang sesuai dengan iklim tropis di Indonesia dan telah lolos pengujian yang mengacu pada SNI 0096 – 2007. Standar bending Test yaitu Kekuatan Lentur &gt; 1200 N.
             </p>
           </section>
 

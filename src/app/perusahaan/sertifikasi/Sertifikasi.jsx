@@ -170,27 +170,27 @@ const [slopeAngle, setSlopeAngle] = useState('');
     {
       src: '/images/SNI.png',
       alt: 'SNI',
-      description: 'Sertifikasi SNI menjamin bahwa produk telah memenuhi standar nasional Indonesia untuk kualitas dan keamanan.',
+      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
     },
     {
       src: '/images/TKDN.png',
       alt: 'TKDN',
-      description: 'Sertifikasi TKDN menunjukkan tingkat komponen dalam negeri, mendukung produk lokal dan industri nasional.',
+      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
     },
     {
       src: '/images/IAPMO.png',
       alt: 'APM',
-      description: 'IAPMO adalah sertifikasi internasional yang memastikan produk plumbing memenuhi standar global.',
+      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
     },
     {
       src: '/images/KAN.png',
       alt: 'KAN',
-      description: 'Akreditasi dari KAN menandakan laboratorium pengujian atau inspeksi telah terverifikasi secara nasional.',
+      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
     },
     {
       src: '/images/GREEN LABEL.png',
       alt: 'Green Label',
-      description: 'Sertifikasi Green Label membuktikan bahwa produk ramah lingkungan dan mendukung keberlanjutan.',
+      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
     },
   ].map((item, index) => (
     <div

@@ -12,19 +12,19 @@ import '@/app/style/Beranda.css'
 // Hero Slides Data
 const heroSlides = [
   {
-    image: '/images/Banner1.jpg',
+    image: '/images/3.jpg',
     // title: 'FLAT ROOF',
     // subtitle: 'Minimalist Look, Maximum Durability.',
     // description: 'Bring a timeless modern vibe to every corner of your roof.',
   },
   {
-    image: '/images/Banner1.jpg',
+    image: '/images/2.jpg',
     // title: 'CLASSIC TILE',
     // subtitle: 'Elegant and Timeless.',
     // description: 'A perfect fit for traditional yet stylish homes.',
   },
   {
-    image: '/images/Banner Home Resize.jpg',
+    image: '/images/1.jpg',
     // title: 'MODERN ROOF',
     // subtitle: 'Sleek, Strong, and Stylish.',
     // description: 'Enhance your home’s architecture with a modern touch.',
@@ -132,11 +132,11 @@ const proyekData = [
   }
 ];
 
-// Tambahkan di bagian data (bisa di atas videoTestimonials)
+// Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  thumbnail: "/images/VidTes1.jpg", 
-  youtubeId: "EiLY8P_Lf8o", // Ganti dengan ID YouTube Anda
+  thumbnail: "/images/VidTes1.jpg",
+  youtubeId: "EiLY8P_Lf8o",
   description: "Testimonial pelanggan utama kami"
 };
 
@@ -147,44 +147,108 @@ const videoTestimonials = [
     title: 'Video Testimonial 1',
     thumbnail: '/images/factory Visit.png',
     youtubeId: 'EiLY8P_Lf8o',
-    watchText: 'Lihat lebih banyak'
+    watchText: 'Lihat lebih banyak',
+    watchLink: '/testimonial/1' // Tambahkan link tujuan
   },
   {
     id: 2,
     title: 'Video Testimonial 2',
     thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak'
+    watchText: 'Lihat lebih banyak',
+    watchLink: '/testimonial/2'
   },
   {
     id: 3,
     title: 'Video Testimonial 3',
     thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak'
+    watchText: 'Lihat lebih banyak',
+    watchLink: '/testimonial/3'
   },
   {
     id: 4,
     title: 'Video Testimonial 4',
     thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak'
+    watchText: 'Lihat lebih banyak',
+    watchLink: '/testimonial/4'
   },
   {
     id: 5,
     title: 'Video Testimonial 5',
     thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak'
+    watchText: 'Lihat lebih banyak',
+    watchLink: '/testimonial/5'
   },
   {
     id: 6,
     title: 'Video Testimonial 6',
     thumbnail: '/images/factory Visit.png',
     youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak'
+    watchText: 'Lihat lebih banyak',
+    watchLink: '/testimonial/6'
   }
 ];
+
+// Handler untuk video
+  const handleVideoSelect = (videoId) => {
+    setIsLoading(true);
+    setSelectedVideo(videoId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseVideo = () => {
+    setIsModalOpen(false);
+    setSelectedVideo(null);
+  };
+
+  const VideoPlayerModal = ({ youtubeId, onClose, isLoading, setIsLoading }) => {
+  const videoUrl = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  
+  return (
+    <div 
+      className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="relative w-full max-w-4xl aspect-video bg-black"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button 
+          onClick={onClose}
+          className="absolute -top-10 right-0 text-white hover:text-gray-300 z-10"
+          aria-label="Tutup video"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-white"></div>
+          </div>
+        )}
+        
+        <iframe
+          src={videoUrl}
+          className={`w-full h-full ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          onLoad={() => setIsLoading(false)}
+          onError={() => {
+            setIsLoading(false);
+            alert('Gagal memuat video');
+          }}
+        />
+      </div>
+    </div>
+  );
+};
+
 
 export default function Beranda() {
     // State tambahan untuk animasi
@@ -201,30 +265,67 @@ export default function Beranda() {
 
   // Video Slider State
   const [currentVideoSlide, setCurrentVideoSlide] = useState(0);
-  const videoSliderRef = useRef(null); // Now this will work
+  const videoSliderRef = useRef(null);
   const totalVideoSlides = videoTestimonials.length;
   const visibleVideoSlides = 5;
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Handler untuk close modal
-const handleCloseVideo = () => {
-  setSelectedVideo(null);
+// Handler untuk video
+  const handleVideoSelect = (videoId) => {
+    setIsLoading(true);
+    setSelectedVideo(videoId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseVideo = () => {
+    setIsModalOpen(false);
+    setSelectedVideo(null);
+  };
+
+
+  // Fungsi untuk slider navigation
+const nextVideoSlide = () => {
+  if (currentVideoSlide < totalVideoSlides - visibleVideoSlides) {
+    setCurrentVideoSlide(currentVideoSlide + 1);
+    const scrollAmount = videoSliderRef.current.offsetWidth / visibleVideoSlides;
+    videoSliderRef.current.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
 };
 
-  const nextVideoSlide = () => {
-    if (currentVideoSlide < totalVideoSlides - visibleVideoSlides) {
-      setCurrentVideoSlide(currentVideoSlide + 1);
-      videoSliderRef.current.scrollLeft += videoSliderRef.current.offsetWidth / visibleVideoSlides;
-    }
-  };
+const prevVideoSlide = () => {
+  if (currentVideoSlide > 0) {
+    setCurrentVideoSlide(currentVideoSlide - 1);
+    const scrollAmount = videoSliderRef.current.offsetWidth / visibleVideoSlides;
+    videoSliderRef.current.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+};
 
-  const prevVideoSlide = () => {
-    if (currentVideoSlide > 0) {
-      setCurrentVideoSlide(currentVideoSlide - 1);
-      videoSliderRef.current.scrollLeft -= videoSliderRef.current.offsetWidth / visibleVideoSlides;
-    }
-  };
+// Fungsi untuk handle scroll event (opsional)
+const handleScroll = () => {
+  if (videoSliderRef.current) {
+    const scrollPosition = videoSliderRef.current.scrollLeft;
+    const itemWidth = videoSliderRef.current.offsetWidth / visibleVideoSlides;
+    const currentSlide = Math.round(scrollPosition / itemWidth);
+    setCurrentVideoSlide(currentSlide);
+  }
+};
+
+// Tambahkan event listener saat komponen mount
+useEffect(() => {
+  const slider = videoSliderRef.current;
+  if (slider) {
+    slider.addEventListener('scroll', handleScroll);
+    return () => slider.removeEventListener('scroll', handleScroll);
+  }
+}, []);
 
   const VideoPlayer = ({ youtubeId, onClose }) => {
     const videoUrl = youtubeId === 'main' 
@@ -540,184 +641,118 @@ return (
       </section>
 
         {/* Video Testimonial Produk */}
-      <section className="py-6 sm:py-10 relative mt-5 mb-6">
-        <div className="w-full">
-          {/* Title dengan garis bawah */}
-          <div className="box-about-top a-from-bottom actived" delay=".5" trigger-anim=".trig-about" style={{opacity: 1, position: 'relative', bottom: '0px'}}>
-            <div className="container-title mb-7 flex flex-row items-cente">
-            <div className="left" style={{
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center', // Tambahkan ini
-    height: '100%' // Pastikan height penuh
-  }}>
-    <h3 className="hline text-left text-xl sm:text-2xl font-medium mb-0 px-2 border-l-4 border-[#0B203F] leading-[1.2] m-0">
-      VIDEO TESTIMONIAL PRODUK
-    </h3>
-  </div>
-  <div className="right text-sm sm:text-sm font-medium flex-[2] mr-80 flex flex-col justify-center">
-    <p style={{
-      margin: '0 0 0.5rem 0', // Sesuaikan margin
-      lineHeight: '1.5'
-    }}>
-      Simak ulasan dari customer kami setelah menggunakan produk dari Cisangkan
-    </p>     
-    <div className="box-link-list" style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem'
-    }}>
-      <a href="#" style={{
-        color: '#2957A4',
-        fontWeight: '500',
-        textDecoration: 'none'
-      }}>
-        Tentang Kami
-      </a>
-      <i className="dots" style={{
-        color: '#999',
-        fontSize: '0.8rem'
-      }}>•</i>
-      <a href="#" style={{
-        color: '#2957A4',
-        fontWeight: '500',
-        textDecoration: 'none'
-      }}>
-        Video lainnya
-      </a>
-    </div>                  
-  </div>
-            </div>
-          </div>
-
-          {/* Video Utama */}
-          <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none"> {/* Container dengan background abu-abu */}
-  <div className="relative w-230 aspect-video bg-gray-200 rounded-none overflow-hidden">
-    {selectedVideo === 'main' ? (
-      <iframe
-        src={`https://www.youtube.com/embed/${mainTestimonialVideo.youtubeId}?autoplay=1&rel=0`}
-        className="w-full h-full"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    ) : (
-      <div 
-        className="absolute inset-0 cursor-pointer"
-        onClick={() => setSelectedVideo('main')}
-      >
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-          <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-            </svg>
-          </div>
-        </div>
-        <Image 
-          src={mainTestimonialVideo.thumbnail}
-          alt={mainTestimonialVideo.title}
-          fill
-          className="object-cover"
-        />
-      </div>
-    )}
-  </div>
-</div>
-          
-          {/* Tombol Lihat Semua */}
-          <div className="link-allvideo flex justify-between text-sm">
-          <h3 className="text-left text-md sm:text-1xl font-semibold">Video Lainnya</h3> 
-            <a href="#" style={{color: '#0B1F3A', textDecoration: 'none'}}>Lihat Semua</a>
-            </div>
-
-          {/* Daftar Video Lainnya dengan Slider */}
-          <div className="container-slider-vd relative">
-            {/* Navigation buttons */}
-            <button 
-              onClick={prevVideoSlide}
-              disabled={currentVideoSlide === 0}
-              className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <FaChevronLeft className="w-5 h-5" />
-            </button>
-
-            <div 
-  ref={videoSliderRef}
-  className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
->
-  {videoTestimonials.map((video) => (
-    <div key={video.id} className="cover-video group cursor-pointer snap-start">
-      <div 
-        className="cover-video2 relative aspect-video bg-gray-200 rounded-none overflow-hidden w-full h-[150px]"
-        onClick={() => setSelectedVideo(video.youtubeId)}
-      >
-        {/* Thumbnail */}
-        <Image 
-          src={video.thumbnail} 
-          alt={video.title}
-          fill
-          className="object-cover"
-        />
-        
-        {/* Play Button */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-          <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center">
-            <svg className="w-6 h-6 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-      
-      <div className="video-title mt-3 text-left">
-        <p className="text-sm font-medium text-gray-800">{video.title}</p>
-        <button 
-          className="mt-1 text-xs text-blue-600 hover:text-blue-800 transition-colors"
-          onClick={() => setSelectedVideo(video.youtubeId)}
+    <section className="py-6 sm:py-10 relative mt-5 mb-6">
+  <div className="w-full">
+    {/* Video Utama */}
+    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none">
+      <div className="relative w-full max-w-4xl aspect-video bg-gray-200 rounded-none overflow-hidden">
+        <div 
+          className="absolute inset-0 cursor-pointer"
+          onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
         >
-          {video.watchText}
-        </button>
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
+            <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
+              <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+              </svg>
+            </div>
+          </div>
+          <Image 
+            src={mainTestimonialVideo.thumbnail}
+            alt={mainTestimonialVideo.title}
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
     </div>
-  ))}
-</div>
+    
+    {/* Tombol Lihat Semua */}
+    <div className="link-allvideo flex justify-between text-sm mb-4">
+      <h3 className="text-left text-md sm:text-1xl font-semibold">Video Lainnya</h3> 
+      <a href="https://www.youtube.com/@pt_cisangkan" className="text-[#0B1F3A] no-underline">
+        Lihat Semua
+      </a>
+    </div>
 
-{/* Video Player Modal */}
-{selectedVideo && (
-  <VideoPlayer 
-  youtubeId={selectedVideo}
-  onClose={handleCloseVideo}
-/>
-)}
+    {/* Daftar Video Lainnya dengan Slider */}
+    <div className="container-slider-vd relative">
+      {/* Navigation buttons */}
+      <button 
+        onClick={prevVideoSlide}
+        disabled={currentVideoSlide === 0}
+        className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        <FaChevronLeft className="w-5 h-5" />
+      </button>
 
-            <button 
-              onClick={nextVideoSlide}
-              disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
-              className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+      <div 
+        ref={videoSliderRef}
+        className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
+      >
+        {videoTestimonials.map((video) => (
+          <div key={video.id} className="cover-video group cursor-pointer snap-start">
+            <div 
+              className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full h-[150px]"
+              onClick={() => handleVideoSelect(video.youtubeId)}
             >
-              <FaChevronRight className="w-5 h-5" />
-            </button>
-
-            {/* CSS untuk menghilangkan scrollbar */}
-            <style jsx>{`
-              .no-scrollbar::-webkit-scrollbar {
-                display: none;
-              }
-              .no-scrollbar {
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-              }
-            `}</style>
+              <Image 
+                src={video.thumbnail} 
+                alt={video.title}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <div className="video-title mt-3 text-left">
+              <p className="text-sm font-medium text-gray-800 line-clamp-2">{video.title}</p>
+              <a 
+                href={video.watchLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 text-xs text-blue-600 hover:text-blue-800 transition-colors"
+              >
+                {video.watchText}
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+
+      <button 
+        onClick={nextVideoSlide}
+        disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
+        className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        <FaChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+    
+    {/* Video Player Modal */}
+    {isModalOpen && (
+      <VideoPlayerModal 
+        youtubeId={selectedVideo}
+        onClose={handleCloseVideo}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
+      />
+    )}
+  </div>
+</section>
   
          {/* Terbaru Section */}
          <section className="py-10 px-4 sm:px-10 bg-[#ECEEF0]">
   <div className="max-w-6xl mx-auto">
     <div className="flex justify-center gap-2 items-center mb-8 px-2">
       <h2 className="text-xl sm:text-2xl font-medium">TERBARU</h2>
-      <p className="text-blue-500 text-sm sm:text-base cursor-pointer hover:underline">Lihat Semua</p>
+      <p className="text-blue-500 text-sm sm:text-base cursor-pointer hover:underline"><a href='/blog/artikel'>Lihat Semua</a></p>
     </div>
     
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -767,42 +802,47 @@ return (
     />
   </a>
 </div>
-          <div className="container-shortcut text-left grid grid-cols-1 md:grid-cols-3 gap-55 px-[5rem]">
+<div className="container-shortcut text-left grid grid-cols-1 md:grid-cols-3 gap-55 px-[5rem]">
   {[
     {
       title: "Tentang Kami",
       image: "/images/icon photo.png",
-      desc: "Lorem ipsum has been the industry's standard dummy.."
+      desc: "Lorem ipsum has been the industry's standard dummy..",
+      link: "/perusahaan/tentang" // Tambahkan link untuk Tentang Kami
     },
     {
       title: "Store",
       image: "/images/icon photo.png",
-      desc: "Lorem ipsum has been the industry's standard dummy.."
+      desc: "Lorem ipsum has been the industry's standard dummy..",
+      link: "/showroom/store" // Tambahkan link untuk Store
     },
     {
       title: "Inovasi", 
       image: "/images/icon photo.png",
-      desc: "Lorem ipsum has been the industry's standard dummy.."
+      desc: "Lorem ipsum has been the industry's standard dummy..",
+      link: "/perusahaan/inovasi" // Tambahkan link untuk Inovasi
     }
   ].map((item, i) => (
-    <div key={i} className='w-60'>
-      <div className="section-container relative w-full h-60 mb-6 rounded-none bg-gray-300 overflow-hidden">
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
-        />
-      </div>
-      <h3 className="text-sm font-semibold mb-2">{item.title}</h3>
-      <p className="text-base text-gray-600 leading-6">{item.desc}</p>
-      <p className="text-blue-500 text-xs mt-1 hover:text-blue-700 transition-colors cursor-pointer">
-        Baca lebih banyak
-      </p>
-    </div>
+    <Link href={item.link} key={i} passHref legacyBehavior>
+      <a className='w-60 block transition-shadow duration-300'>
+        <div className="section-container relative w-full h-60 mb-6 rounded-none bg-gray-300 overflow-hidden">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover hover:scale-105 transition-transform duration-300"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+          />
+        </div>
+        <h3 className="text-sm font-semibold mb-2">{item.title}</h3>
+        <p className="text-base text-gray-600 leading-6">{item.desc}</p>
+        <div className="text-blue-500 text-xs mt-1 hover:text-blue-700 transition-colors">
+          Baca lebih banyak
+        </div>
+      </a>
+    </Link>
   ))}
 </div>
         </section>

@@ -168,10 +168,10 @@ const [slopeAngle, setSlopeAngle] = useState('');
       <div className="max-w-6xl px-6 sm:px-12 mx-auto mt-12 text-justify space-y-6 text-sm sm:text-base">
         <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] mb-4 pl-4">TENTANG PT. CISANGKAN</h2>
         <p className='text-sm'>
-          PT Cisangkan, yang didirikan pada tahun 1974, telah berhasil mempelopori dan secara aktif menciptakan inovasi produk baru dalam produksi beton pra-cetak, yang menjadikan PT Cisangkan sebagai pelopor dalam bidang manufaktur berbasis beton. Sejak saat itu, PT Cisangkan berperan penting dalam pengembangan industri beton, tidak hanya di tingkat lokal, tapi juga di tingkat nasional dan internasional.
+          PT Cisangkan, yang didirikan pada tahun 1975, telah berhasil mempelopori dan secara aktif menciptakan inovasi produk baru dalam produksi beton pra-cetak, yang menjadikan PT Cisangkan sebagai pelopor dalam bidang manufaktur berbasis beton. Sejak saat itu, PT Cisangkan berperan penting dalam pengembangan industri beton, tidak hanya di tingkat lokal, tapi juga di tingkat nasional dan internasional.
         </p>
         <p className='text-sm'>
-          Dari empat kantor yang kini milik sekarang, PT Cisangkan mampu memberikan pelayanan yang baik kepada banyak klien, seperti badan pemerintah, arsitek, pengembang dan juga kontraktor baik di sektor swasta maupun publik. PT Cisangkan sebagai salah satu perusahaan perkakas beton independen terkemuka di Indonesia, juga memberikan layanan internasional untuk memberikan nilai tambah bagi industri konstruksi dalam jenis produk beton pra-cetak apapun.
+          Dari empat kantor yang kini milik sekarang, PT Cisangkan mampu memberikan pelayanan yang baik kepada banyak klien, seperti badan pemerintah, arsitek, pengembang dan juga kontraktor baik di sektor swasta maupun publik. PT Cisangkan sebagai salah satu perusahaan dalam bidang manufaktur berbasis beton independen terkemuka di Indonesia, juga memberikan layanan internasional untuk memberikan nilai tambah bagi industri konstruksi dalam jenis produk beton pra-cetak apapun.
         </p>
         <p className='text-sm'>
           Reputasi kami untuk keunggulan kualitas dan manufaktur, telah menempatkan PT Cisangkan di jajaran teratas penyedia bahan bangunan rumah di Indonesia.
@@ -192,34 +192,65 @@ const [slopeAngle, setSlopeAngle] = useState('');
         <div className="mt-10">
           <h3 className="font-bold text-sm text-slate-700 mb-4">MAKNA CISANGKAN</h3>
 <ul className="grid gap-3 grid-cols-[auto_1fr] items-baseline text-slate-700">
-  <li className='text-sm col-span-1'>C</li>
-  <li className='text-sm'>- Customer Focus</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>C</li>
+  <li className='text-sm'>ustomer Focus</li>
   
-  <li className='text-sm col-span-1'>I</li>
-  <li className='text-sm'>- Innovative</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>I</li>
+  <li className='text-sm'>nnovative</li>
   
-  <li className='text-sm col-span-1'>S</li>
-  <li className='text-sm'>- Service Excellence</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>S</li>
+  <li className='text-sm'>ervice Excellence</li>
   
-  <li className='text-sm col-span-1'>A</li>
-  <li className='text-sm'>- Attractive Design</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>A</li>
+  <li className='text-sm'>ttractive Design</li>
   
-  <li className='text-sm col-span-1'>N</li>
-  <li className='text-sm'>- Endurance</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1'>'N</li>
+  <li className='text-sm'>durance</li>
   
-  <li className='text-sm col-span-1'>G</li>
-  <li className='text-sm'>- Great Performance</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>G</li>
+  <li className='text-sm'>reat Performance</li>
   
-  <li className='text-sm col-span-1'>K</li>
-  <li className='text-sm'>- Key Partner</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>K</li>
+  <li className='text-sm'>ey Partner</li>
   
-  <li className='text-sm col-span-1'>A</li>
-  <li className='text-sm'>- Adaptive</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>A</li>
+  <li className='text-sm'>daptive</li>
   
-  <li className='text-sm col-span-1'>N</li>
-  <li className='text-sm'>- Networking</li>
+  <li className='text-xl font-bold text-[#2D5DA6] col-span-1 text-center'>N</li>
+  <li className='text-sm'>etworking</li>
 </ul>
         </div>
+        {/* <div className="mt-10">
+          <h3 className="font-bold text-sm text-slate-700 mb-4">MAKNA CISANGKAN</h3>
+<ul className="grid gap-3 grid-cols-[auto_1fr] items-baseline text-slate-700">
+  <li className='text-xl col-span-1 text-[#2D5DA6]'>C</li>
+  <li className='text-sm'>- ustomer Focus</li>
+  
+  <li className='text-sm col-span-1'>I</li>
+  <li className='text-sm'>- nnovative</li>
+  
+  <li className='text-sm col-span-1'>S</li>
+  <li className='text-sm'>- ervice Excellence</li>
+  
+  <li className='text-sm col-span-1'>A</li>
+  <li className='text-sm'>- ttractive Design</li>
+  
+  <li className='text-sm col-span-1'>'N</li>
+  <li className='text-sm'>- durance</li>
+  
+  <li className='text-sm col-span-1'>G</li>
+  <li className='text-sm'>- reat Performance</li>
+  
+  <li className='text-sm col-span-1'>K</li>
+  <li className='text-sm'>- ey Partner</li>
+  
+  <li className='text-sm col-span-1'>A</li>
+  <li className='text-sm'>- daptive</li>
+  
+  <li className='text-sm col-span-1'>N</li>
+  <li className='text-sm'>- etworking</li>
+</ul>
+        </div> */}
 
 {/* Lokasi Map */}
 <div className="mt-15">
@@ -239,10 +270,25 @@ const [slopeAngle, setSlopeAngle] = useState('');
     />
   </div>
     <p className="mt-2 font-bold text-sm/8">HEAD OFFICE & FACTORY</p>
-    <p className="text-xs/5">Jl. AH Nasution 107, Cijerah, <br/>Bandung 40221</p>
-    <p className="text-xs/5">Phone: +62 22 6025888</p>
-    <p className="text-xs/5">Fax : +62 22 6030467</p>
-    <p className="text-xs/5">Email: info@cisangkan.com</p>
+    <p className="text-xs/5">Jl. Haji Alpi No 107, Cijerah, <br/>Bandung 40221</p>
+    <p className="text-xs/5">Telp. (022) 6031588 (hunting)</p>
+    <p className="text-xs/5">Fax. (022) 6030467</p>
+  </div>
+
+    <div className="group">
+  <div className="overflow-hidden rounded-md relative w-full pb-[100%]"> {/* Padding-bottom 100% untuk rasio 1:1 */}
+    <Image 
+        src="/images/jakarta.jpg" 
+        alt="House of Cisangkan"  
+      fill
+      className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+    />
+    </div>
+    <p className="mt-2 font-bold text-sm/8">HOUSE OF CISANGKAN</p>
+    <p className="text-xs/5">Kompleks Perkantoran<br/>Intercon Plaza E-16,</p>
+    <p className="text-xs/5">Jl. Meruya Ilir - Jakarta Barat 11630</p>
+    <p className="text-xs">Telp. (021) 5853305 (hunting)</p>
+    <p className="text-xs">Fax. (021) 5307452</p>
   </div>
 
   <div className="group">
@@ -255,24 +301,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
     />
     </div>
     <p className="mt-2 font-bold text-sm/8">PURWAKARTA FACTORY</p>
-    <p className="text-xs/5">JL. Raya Cibatu Km.14,2 <br/>Campaka - Purwakarta 41182</p>
-    <p className="text-xs/5">Phone: +62 264 208143, 2018146, 209630</p>
-    <p className="text-xs">Fax : +62 264 209654</p>
-  </div>
-
-  <div className="group">
-  <div className="overflow-hidden rounded-md relative w-full pb-[100%]"> {/* Padding-bottom 100% untuk rasio 1:1 */}
-    <Image 
-        src="/images/jakarta.jpg" 
-        alt="House of Cisangkan"  
-      fill
-      className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
-    />
-    </div>
-    <p className="mt-2 font-bold text-sm/8">HOUSE OF CISANGKAN</p>
-    <p className="text-xs/5">Kompleks Perkantoran Intercon<br/>Plaza E-16</p>
-    <p className="text-xs/5">Jl. Meruya Ilir, Jakarta Barat 11630</p>
-    <p className="text-xs">Phone : +62 21 5853305</p>
+    <p className="text-xs/5">JL. Raya Cibatu Km.14,2 <br/>Campaka - Purwakarta 41115</p>
+    <p className="text-xs/5">Telp. (0264) 208143, 2018146, 209630</p>
+    <p className="text-xs">Fax. (0264) 209654</p>
   </div>
 
   <div className="group">
@@ -285,8 +316,8 @@ const [slopeAngle, setSlopeAngle] = useState('');
     />
     </div>
     <p className="mt-2 font-bold text-sm/8">PASURUAN FACTORY</p>
-    <p className="text-xs/5">Jl. Raya Sedarum KM 18 No. 18A, Nguling<br/>Kab. Pasuruan - Jawa Timur 67185</p>
-    <p className="text-xs">Phone: +62 343 6408682</p>
+    <p className="text-xs/5">Jl. Raya Sedarum KM 19, No 8A<br/> Nguling, Kab. Pasuruan<br/>Jawa Timur 67185</p>
+    <p className="text-xs">Telp. (0343) 4507786, 4508802, 4507778</p>
   </div>
 </div>
       </div>

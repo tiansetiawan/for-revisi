@@ -9,6 +9,7 @@ export default function Katalog() {
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [telpon, setTelpon] = useState('');
   const modalRef = useRef(null);
 
   // Data katalog
@@ -45,9 +46,10 @@ export default function Katalog() {
       alert('Harap isi nama dan email terlebih dahulu');
       return;
     }
-    console.log(`Download katalog oleh ${name} (${email})`);
+    console.log(`Download katalog oleh ${name} (${email}) (${telpon})`);
     setName('');
     setEmail('');
+    setTelpon('');
     setShowDownloadPanel(false);
   };
 
@@ -123,7 +125,7 @@ export default function Katalog() {
         {/* Heading */}
         <div className="gap-6 items-start mb-20">
           <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
-            KATALOG
+            KATALOG & BROSUR
           </h2>
           <p className="text-sm text-justify">
             Lorem ipsum parturient tristique lobortis at metus libero vulputate morbi ullamcorper senectus tempus at orci et elementum cras tortor aliquet pretium nunc euismod massa nulla bibendum convallis in a egestas erat sed diam dictum orci sed augue enim facilisi placerat montes pretium congue rhoncus magnis bibendum diam maecenas aenean blandit.
@@ -224,6 +226,16 @@ export default function Katalog() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
+                  <input
+                    type="text"
+                    value={telpon}
+                    onChange={(e) => setTelpon(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     required
                   />

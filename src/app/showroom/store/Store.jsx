@@ -117,7 +117,8 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'HOMESMART',
-          address: 'PT MEGAMAS PLAZA BANGUNANJl. Jend. Gatot Subroto No. 102 Medan, Sumatera Utara',
+          address: 'PT MEGAMAS PLAZA BANGUNAN',
+          address2 : 'Jl. Jend. Gatot Subroto No. 102 Medan, Sumatera Utara',
           telp: '(061) 4527588, (061) 4527586',
           hp: '0813 7028 1999',
           maps: 'https://maps.google.com?q=Jl. Jend. Gatot Subroto No. 102 Medan'
@@ -390,7 +391,7 @@ const columns = [
                     >
                       {store.name}
                     </a>
-                    <p>{store.address}</p>
+                    <p>{store.address}<br/>{store.address2}</p>
                     {store.telp && <p>Telp: {store.telp}</p>}
                     {store.hp && <p>HP: {store.hp}</p>}
                   </div>

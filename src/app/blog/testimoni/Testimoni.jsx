@@ -68,8 +68,8 @@ export default function Testimoni() {
 <div className="bg-[#F2F2F2] py-4">
   <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
     <Link href="/blog/artikel" className="text-[#333] hover:text-[#2D5DA6]">Artikel</Link>
-    <Link href="/blog/kegiatan" className="text-[#333] hover:text-[#2D5DA6]">Kegiatan</Link>
-    <Link href="/blog/galeri" className="text-[#333] hover:text-[#2D5DA6]">Galeri</Link>
+    {/* <Link href="/blog/kegiatan" className="text-[#333] hover:text-[#2D5DA6]">Kegiatan</Link>
+    <Link href="/blog/galeri" className="text-[#333] hover:text-[#2D5DA6]">Galeri</Link> */}
     <Link href="/blog/testimoni" className="text-[#2D5DA6] font-bold">Testimoni</Link>
   </nav>
 </div>
