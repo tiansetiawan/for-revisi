@@ -16,6 +16,7 @@ export default function Store() {
   const [selectedCity, setSelectedCity] = useState('');
     const [selectedCityId, setSelectedCityId] = useState('');
   const [cities, setCities] = useState([]);
+    const [cityOptions, setCityOptions] = useState([]);
   
 
 
@@ -418,22 +419,48 @@ const [slopeAngle, setSlopeAngle] = useState('');
     },
   ];
 
+const availableCities = useMemo(() => {
+    return [...new Set(cityItems.map(item => item.city.toUpperCase()))];
+  }, []);
+
+  // Filter kota yang hanya memiliki store
+  useEffect(() => {
+    if (cities.length > 0) {
+      const filtered = cities.filter(city => 
+        availableCities.some(availCity => 
+          city.name.toUpperCase().includes(availCity) || 
+          availCity.includes(city.name.toUpperCase())
+        )
+      );
+      setCityOptions(filtered);
+    } else {
+      setCityOptions([]);
+    }
+  }, [cities, availableCities]);
+
   // Fungsi untuk menangani perubahan kota
   const handleCityChange = (e) => {
     const cityId = e.target.value;
     setSelectedCityId(cityId);
     
-    // Cari nama kota berdasarkan ID
-    const selectedCity = cities.find(city => city.id === cityId);
-    setSelectedCity(selectedCity ? selectedCity.name : '');
+    const selected = cityOptions.find(c => c.id === cityId);
+    if (selected) {
+      // Cari kota yang cocok dari cityItems
+      const matchedCity = availableCities.find(availCity => 
+        selected.name.toUpperCase().includes(availCity) || 
+        availCity.includes(selected.name.toUpperCase())
+      );
+      setSelectedCity(matchedCity || '');
+    } else {
+      setSelectedCity('');
+    }
   };
 
   // Filter store berdasarkan kota yang dipilih
   const filteredStores = useMemo(() => {
     if (!selectedCity) return cityItems;
-    
     return cityItems.filter(item => 
-      item.city.toLowerCase() === selectedCity.toLowerCase()
+      item.city.toUpperCase() === selectedCity.toUpperCase()
     );
   }, [selectedCity, cityItems]);
 
@@ -522,20 +549,20 @@ const [slopeAngle, setSlopeAngle] = useState('');
                   ))}
                 </select>
               </div>
-              <div className="flex flex-col w-full sm:w-1/2">
-                <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
-                <select 
-                  className="border border-gray-300 rounded px-3 py-2"
-                  value={selectedCityId}
-                  onChange={handleCityChange}
-                  disabled={!selectedProvince}
-                >
-                  <option value="">Pilih Kota</option>
-                  {cities.map((city) => (
-                    <option key={city.id} value={city.id}>{city.name}</option>
-                  ))}
-                </select>
-              </div>
+<div className="flex flex-col w-full sm:w-1/2">
+  <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
+  <select 
+    className="border border-gray-300 rounded px-3 py-2"
+    value={selectedCityId}
+    onChange={handleCityChange}
+    disabled={!selectedProvince}
+  >
+    <option value="">Pilih Kota</option>
+    {cityOptions.map((city) => (
+      <option key={city.id} value={city.id}>{city.name}</option>
+    ))}
+  </select>
+</div>
             </div>
           </div>
         </div>
