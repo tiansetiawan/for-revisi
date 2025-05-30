@@ -5,11 +5,21 @@ import { useState, useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 // Gunakan dynamic import untuk komponen yang mungkin menggunakan window
-const LocationMap = dynamic(() => import('@/app/components/LocationMap'), {
-  ssr: false
+const LocationMap = dynamic(() => import('@/app/components/LocationMap'), { 
+  ssr: false,
+  loading: () => <p>Loading map...</p>
 });
 
 export default function Tentang() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return <div>Loading...</div>; // Tampilan fallback untuk SSR
+  }
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
