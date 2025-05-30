@@ -12,7 +12,8 @@ export default function Tentang() {
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
 
-  useEffect(() => {
+useEffect(() => {
+  if (typeof window !== 'undefined') {
     // Ambil product dari URL
     const urlParams = new URLSearchParams(window.location.search);
     const product = urlParams.get('product');
@@ -23,7 +24,9 @@ export default function Tentang() {
       sessionStorage.setItem('autoExpand', 'true');
       sessionStorage.setItem('activeSubItem', product);
     }
-  }, []);
+  }
+}, []);
+
 
   const handleMainItemClick = (item) => {
     setActiveItem(item);
