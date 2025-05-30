@@ -591,7 +591,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </div>
 
 {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
             <button
     className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
   >
@@ -608,7 +608,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
   >
     Berikutnya
   </button>
-        </div>
+        </div> */}
 </section>
 
 
