@@ -1,36 +1,36 @@
-'use client';;
+'use client';
 import Link from "next/link";
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
-import LocationMap from '@/app/components/LocationMap';
+import dynamic from 'next/dynamic';
+
+// Gunakan dynamic import untuk komponen yang mungkin menggunakan window
+const LocationMap = dynamic(() => import('@/app/components/LocationMap'), {
+  ssr: false
+});
 
 export default function Tentang() {
-
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
 
-useEffect(() => {
-  // Coba ambil dari URL terlebih dahulu
-  const urlParams = new URLSearchParams(window.location.search);
-  const productFromUrl = urlParams.get('product');
-
-  if (productFromUrl) {
-    setActiveSubItem(productFromUrl);
-    sessionStorage.setItem('autoExpand', 'true');
-    sessionStorage.setItem('activeSubItem', productFromUrl);
-  } else {
-    // Jika tidak ada di URL, cek sessionStorage
-    const storedProduct = sessionStorage.getItem('activeSubItem');
-    if (storedProduct) {
-      setActiveSubItem(storedProduct);
+ useEffect(() => {
+    // Pastikan kode ini hanya berjalan di sisi klien
+    if (typeof window !== 'undefined') {
+      // Ambil product dari URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const product = urlParams.get('product');
+      
+      if (product) {
+        setActiveSubItem(product);
+        // Pertahankan state di sessionStorage
+        sessionStorage.setItem('autoExpand', 'true');
+        sessionStorage.setItem('activeSubItem', product);
+      }
     }
-  }
-}, []);
-
-
+  }, []);
 
   const handleMainItemClick = (item) => {
     setActiveItem(item);
