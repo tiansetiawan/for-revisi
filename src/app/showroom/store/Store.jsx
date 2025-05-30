@@ -1,7 +1,7 @@
 'use client';;
 import Image from 'next/image';
 import Link from "next/link";
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react'; 
 import axios from 'axios';
 
 export default function Store() {
@@ -13,7 +13,10 @@ export default function Store() {
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
    const [provinces, setProvinces] = useState([]);
   const [selectedProvince, setSelectedProvince] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+    const [selectedCityId, setSelectedCityId] = useState('');
   const [cities, setCities] = useState([]);
+  
 
 
 
@@ -415,13 +418,32 @@ const [slopeAngle, setSlopeAngle] = useState('');
     },
   ];
 
+  // Fungsi untuk menangani perubahan kota
+  const handleCityChange = (e) => {
+    const cityId = e.target.value;
+    setSelectedCityId(cityId);
+    
+    // Cari nama kota berdasarkan ID
+    const selectedCity = cities.find(city => city.id === cityId);
+    setSelectedCity(selectedCity ? selectedCity.name : '');
+  };
+
+  // Filter store berdasarkan kota yang dipilih
+  const filteredStores = useMemo(() => {
+    if (!selectedCity) return cityItems;
+    
+    return cityItems.filter(item => 
+      item.city.toLowerCase() === selectedCity.toLowerCase()
+    );
+  }, [selectedCity, cityItems]);
+
   // Bagi ke 3 kolom secara vertikal
-const itemsPerColumn = Math.ceil(cityItems.length / 3);
-const columns = [
-  cityItems.slice(0, itemsPerColumn),
-  cityItems.slice(itemsPerColumn, itemsPerColumn * 2),
-  cityItems.slice(itemsPerColumn * 2),
-];
+  const itemsPerColumn = Math.ceil(filteredStores.length / 3);
+  const columns = [
+    filteredStores.slice(0, itemsPerColumn),
+    filteredStores.slice(itemsPerColumn, itemsPerColumn * 2),
+    filteredStores.slice(itemsPerColumn * 2),
+  ];
 
 
 
@@ -455,9 +477,9 @@ const columns = [
   </nav>
 </div> 
 
-    <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base">
-  {/* Header Section */}
-<div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 max-w-6xl mx-auto px-4 md:px-0">
+   <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base">
+        {/* Header Section */}
+        <div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 max-w-6xl mx-auto px-4 md:px-0">
   {/* Kiri: Judul */}
   <div className="flex items-center w-full md:w-1/2 gap-10">
     <div className="leading-snug">
@@ -478,66 +500,95 @@ const columns = [
   </div>
 
         {/* Kanan: Logo + Dropdowns */}
-        <div className="w-full md:w-1/2">
-          <p className="text-gray-600 text-sm mb-4">
-            Pilih wilayah untuk melihat informasi STORE dan KIOSK kami terdekat
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-             <div className="flex flex-col w-full sm:w-1/2">
-          <label className="text-sm font-semibold mb-1">Propinsi</label>
-          <select
-            className="border border-gray-300 rounded px-3 py-2"
-            value={selectedProvince}
-            onChange={(e) => setSelectedProvince(e.target.value)}
-          >
-            <option value="">Pilih Propinsi</option>
-            {provinces.map((provinsi) => (
-              <option key={provinsi.id} value={provinsi.id}>{provinsi.name}</option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col w-full sm:w-1/2">
-          <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
-          <select className="border border-gray-300 rounded px-3 py-2">
-            <option value="">Pilih Kota</option>
-            {cities.map((city) => (
-              <option key={city.id} value={city.id}>{city.name}</option>
-            ))}
-          </select>
+                 <div className="w-full md:w-1/2">
+            <p className="text-gray-600 text-sm mb-4">
+              Pilih wilayah untuk melihat informasi STORE dan KIOSK kami terdekat
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col w-full sm:w-1/2">
+                <label className="text-sm font-semibold mb-1">Propinsi</label>
+                <select
+                  className="border border-gray-300 rounded px-3 py-2"
+                  value={selectedProvince}
+                  onChange={(e) => {
+                    setSelectedProvince(e.target.value);
+                    setSelectedCityId('');
+                    setSelectedCity('');
+                  }}
+                >
+                  <option value="">Pilih Propinsi</option>
+                  {provinces.map((provinsi) => (
+                    <option key={provinsi.id} value={provinsi.id}>{provinsi.name}</option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex flex-col w-full sm:w-1/2">
+                <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
+                <select 
+                  className="border border-gray-300 rounded px-3 py-2"
+                  value={selectedCityId}
+                  onChange={handleCityChange}
+                  disabled={!selectedProvince}
+                >
+                  <option value="">Pilih Kota</option>
+                  {cities.map((city) => (
+                    <option key={city.id} value={city.id}>{city.name}</option>
+                  ))}
+                </select>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
   {/* Grid Store */}
-<div className="min-h-screen p-10">
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {columns.map((column, colIndex) => (
-          <div key={colIndex} className="space-y-6">
-            {column.map((cityItem, idx) => (
-              <div key={idx}>
-                <h3 className="text-[#1E3A8A] font-bold uppercase mb-2">{cityItem.city}</h3>
-                {cityItem.stores.map((store, sIdx) => (
-                  <div key={sIdx} className="mb-4 text-gray-800 text-sm">
-                    <a
-                      className="font-semibold hover:underline block"
-                      href={store.maps}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {store.name}
-                    </a>
-                    <p>{store.address}<br/>{store.address2}</p>
-                    {store.telp && <p>Telp: {store.telp}</p>}
-                    {store.hp && <p>HP: {store.hp}</p>}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
+        <div className="min-h-screen p-10">
+{filteredStores.length === 0 ? (
+  <div className="text-center py-10">
+    <div className="inline-block bg-gray-100 px-6 py-4 rounded-lg">
+      <p className="text-gray-600 font-medium">
+        Maaf untuk saat ini STORE kami belum tersedia di kota ini
+      </p>
+      <button 
+        onClick={() => {
+          setSelectedCityId('');
+          setSelectedCity('');
+        }}
+        className="mt-3 text-blue-600 hover:underline text-sm"
+      >
+        Lihat semua store
+      </button>
     </div>
+  </div>
+) : (
+  // Tampilkan store yang tersedia
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              {columns.map((column, colIndex) => (
+                <div key={colIndex} className="space-y-6">
+                  {column.map((cityItem, idx) => (
+                    <div key={idx}>
+                      <h3 className="text-[#1E3A8A] font-bold uppercase mb-2">{cityItem.city}</h3>
+                      {cityItem.stores.map((store, sIdx) => (
+                        <div key={sIdx} className="mb-4 text-gray-800 text-sm">
+                          <a
+                            className="font-semibold hover:underline block"
+                            href={store.maps}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {store.name}
+                          </a>
+                          <p>{store.address}{store.address2 && <><br/>{store.address2}</>}</p>
+                          {store.telp && <p>Telp: {store.telp}</p>}
+                          {store.hp && <p>HP: {store.hp}</p>}
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
 
 {/* Pagination */}
         <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">

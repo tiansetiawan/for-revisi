@@ -110,7 +110,7 @@ const calculateRequirement = () => {
     
     if (calculationType === 'Luas Atap') {
       // Rumus Luas Atap: nilai (m²) × 10
-      calculatedResult = Math.ceil(value * 10);
+      calculatedResult = Math.ceil(value * 8);
     } else {
       // Rumus Luas Bangunan: (Luas Bangunan ÷ cos(sudut)) × Luas Bangunan
       if (!slopeAngle || slopeAngle < 25 || slopeAngle > 45) {
@@ -121,7 +121,7 @@ const calculateRequirement = () => {
       const angleRad = parseFloat(slopeAngle) * Math.PI / 180;
       const cosValue = Math.cos(angleRad);
       const actualRoofArea = value / cosValue;
-      calculatedResult = Math.ceil(actualRoofArea * value);
+      calculatedResult = Math.ceil(actualRoofArea * 8);
     }
     
     setResult(calculatedResult.toString());
