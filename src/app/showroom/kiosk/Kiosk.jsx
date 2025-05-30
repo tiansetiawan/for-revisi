@@ -1,7 +1,8 @@
 'use client';;
 import Image from 'next/image';
 import Link from "next/link";
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 
 
 export default function Kiosk() {
@@ -11,6 +12,26 @@ export default function Kiosk() {
   const [activeSubItem, setActiveSubItem] = useState(null);
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
+   const [provinces, setProvinces] = useState([]);
+  const [selectedProvince, setSelectedProvince] = useState('');
+  const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    // Fetch daftar provinsi
+    axios.get('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
+      .then(res => setProvinces(res.data))
+      .catch(err => console.error('Error fetching provinces:', err));
+  }, []);
+
+  useEffect(() => {
+    if (selectedProvince) {
+      axios.get(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${selectedProvince}.json`)
+        .then(res => setCities(res.data))
+        .catch(err => console.error('Error fetching cities:', err));
+    } else {
+      setCities([]);
+    }
+  }, [selectedProvince]);
 
   useEffect(() => {
     // Ambil product dari URL
@@ -391,17 +412,27 @@ const columns = [
             Pilih wilayah untuk melihat informasi STORE dan KIOSK kami terdekat
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <div className="flex flex-col w-full sm:w-1/2">
-              <label className="text-sm font-semibold mb-1">Propinsi</label>
-              <select className="border border-gray-300 rounded px-3 py-2">
-                <option value="">Pilih Propinsi</option>
-              </select>
-            </div>
-            <div className="flex flex-col w-full sm:w-1/2">
-              <label className="text-sm font-semibold mb-1">Semua Kota</label>
-              <select className="border border-gray-300 rounded px-3 py-2">
-                <option value="">Pilih Kota</option>
-              </select>
+             <div className="flex flex-col w-full sm:w-1/2">
+          <label className="text-sm font-semibold mb-1">Propinsi</label>
+          <select
+            className="border border-gray-300 rounded px-3 py-2"
+            value={selectedProvince}
+            onChange={(e) => setSelectedProvince(e.target.value)}
+          >
+            <option value="">Pilih Propinsi</option>
+            {provinces.map((provinsi) => (
+              <option key={provinsi.id} value={provinsi.id}>{provinsi.name}</option>
+            ))}
+          </select>
+        </div>
+        <div className="flex flex-col w-full sm:w-1/2">
+          <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
+          <select className="border border-gray-300 rounded px-3 py-2">
+            <option value="">Pilih Kota</option>
+            {cities.map((city) => (
+              <option key={city.id} value={city.id}>{city.name}</option>
+            ))}
+          </select>
             </div>
           </div>
         </div>
@@ -438,7 +469,7 @@ const columns = [
     </div>
 
 {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
             <button
     className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
   >
@@ -455,7 +486,7 @@ const columns = [
   >
     Berikutnya
   </button>
-        </div>
+        </div> */}
 </section>
 
 

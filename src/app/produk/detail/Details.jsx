@@ -80,31 +80,48 @@ const [slopeAngle, setSlopeAngle] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [result, setResult] = useState('');
 
-  const toggleCalculator = () => {
-    setShowCalculator(!showCalculator);
-  };
 
-  const calculateRequirement = () => {
+const resetCalculator = () => {
+  setInputValue('');
+  setSlopeAngle('');
+  setResult('');
+  setCalculationType('Luas Atap');
+};
+
+
+const toggleCalculator = () => {
+  setShowCalculator(!showCalculator);
+  // Reset saat modal ditutup
+  if (showCalculator) {
+    resetCalculator();
+  }
+};
+
+const handleCalculationTypeChange = (type) => {
+  resetCalculator();
+  setCalculationType(type);
+};
+
+
+const calculateRequirement = () => {
   const value = parseFloat(inputValue);
   if (!isNaN(value)) {
     let calculatedResult;
     
     if (calculationType === 'Luas Atap') {
-      calculatedResult = Math.ceil(value * 8); // 8 genteng per m2
+      // Rumus Luas Atap: nilai (m²) × 10
+      calculatedResult = Math.ceil(value * 10);
     } else {
-      // Perhitungan luas bangunan
-      let roofArea = value;
-      
-      if (slopeAngle) {
-        const angle = parseFloat(slopeAngle);
-        // Hitung luas atap berdasarkan sudut kemiringan
-        roofArea = value / Math.cos(angle * Math.PI / 180);
-      } else {
-        // Asumsi default 1.5x luas bangunan
-        roofArea = value * 1.5;
+      // Rumus Luas Bangunan: (Luas Bangunan ÷ cos(sudut)) × Luas Bangunan
+      if (!slopeAngle || slopeAngle < 25 || slopeAngle > 45) {
+        alert('Mohon masukkan sudut kemiringan antara 25°-45°');
+        return;
       }
       
-      calculatedResult = Math.ceil(roofArea * 8);
+      const angleRad = parseFloat(slopeAngle) * Math.PI / 180;
+      const cosValue = Math.cos(angleRad);
+      const actualRoofArea = value / cosValue;
+      calculatedResult = Math.ceil(actualRoofArea * value);
     }
     
     setResult(calculatedResult.toString());
@@ -329,7 +346,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
       {/* Title */}
       <h3 className="text-lg font-semibold text-center border-b border-b-gray-400 pb-6 mb-6">Kalkulator Genteng</h3>
 
-      {/* Calculation Type */}
+{/* Calculation Type */}
       <div className="mb-6">
         <p className="text-xs font-bold mb-2">Hitungan dengan:</p>
         <div className="space-y-2">
@@ -337,7 +354,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
             <input
               type="radio"
               checked={calculationType === 'Luas Atap'}
-              onChange={() => setCalculationType('Luas Atap')}
+              onChange={() => handleCalculationTypeChange('Luas Atap')}
               className="h-3 w-3 text-[#0B203F] focus:ring-[#0B203F]"
             />
             Luas Atap
@@ -346,7 +363,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
             <input
               type="radio"
               checked={calculationType === 'Luas Bangunan'}
-              onChange={() => setCalculationType('Luas Bangunan')}
+onChange={() => handleCalculationTypeChange('Luas Bangunan')}
               className="h-3 w-3 text-[#0B203F] focus:ring-[#0B203F]"
             />
             Luas Bangunan
@@ -354,9 +371,11 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </div>
       </div>
 
-      {/* Input Field - Nilai */}
+ {/* Input Field - Nilai */}
       <div className="mb-4">
-        <label className="font-bold block mb-2 text-xs">Masukkan Nilai:</label>
+        <label className="font-bold block mb-2 text-xs">
+          {calculationType === 'Luas Atap' ? 'Luas Atap' : 'Luas Bangunan'}:
+        </label>
         <div className="flex border border-gray-300 rounded">
           <input
             type="number"
@@ -364,32 +383,33 @@ const [slopeAngle, setSlopeAngle] = useState('');
             onChange={(e) => setInputValue(e.target.value)}
             className="px-3 py-2 w-full focus:outline-none text-xs"
             placeholder="0"
+            min="0"
           />
-          <span className="px-3 py-2 bg-gray-300 text-xs">m²</span>
+          <span className="text-xs px-3 py-2 bg-gray-300">m²</span>
         </div>
       </div>
 
-      {/* Panel Tambahan untuk Luas Bangunan */}
-{/* Panel Tambahan untuk Luas Bangunan */}
-{calculationType === 'Luas Bangunan' && (
-  <div className="mb-4">
-    <label className="font-bold block mb-2 text-xs">Sudut Kemiringan Atap:</label>
-    <div className="flex border border-gray-300 rounded">
-      <input
-        type="number"
-        value={slopeAngle}
-        onChange={(e) => setSlopeAngle(e.target.value)}
-        className="px-3 py-2 w-full focus:outline-none text-xs"
-        placeholder="Masukkan sudut (derajat)"
-        min="0"
-        max="90"
-      />
-      <span className="px-3 py-2 bg-gray-300 text-xs">°</span>
-    </div>
-  </div>
-)}
+ {/* Panel Tambahan untuk Luas Bangunan */}
+      {calculationType === 'Luas Bangunan' && (
+        <div className="mb-4">
+          <label className="font-bold block mb-2 text-xs">Sudut Kemiringan Atap:</label>
+          <div className="flex border border-gray-300 rounded">
+            <input
+              type="number"
+              value={slopeAngle}
+              onChange={(e) => setSlopeAngle(e.target.value)}
+              className="px-3 py-2 w-full focus:outline-none text-xs"
+              placeholder="25-45 derajat"
+              min="0"
+              max="90"
+            />
+            <span className="px-4 py-2 bg-gray-300 text-xs">°</span>
+          </div>
+          <p className="text-xs text-gray-500 mt-1">Rekomendasi: 25° - 45°</p>
+        </div>
+      )}
 
-      {/* Result */}
+     {/* Result */}
       {result && (
         <div className='mb-6'>
           <p className="font-bold mb-2 text-xs">Anda Membutuhkan:</p>
@@ -398,7 +418,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
               type="text"
               value={result}
               readOnly
-              className="text-xs px-3 py-2 w-full bg-gray-50 focus:outline-none"
+              className="px-3 py-2 w-full focus:outline-none text-xs"
             />
             <span className="text-xs px-3 py-2 bg-gray-300">pcs</span>
           </div>
@@ -408,7 +428,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
       {/* Calculate Button */}
       <button
         onClick={calculateRequirement}
-        className="w-full bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f]"
+        className="w-full bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] mt-4"
       >
         Hitung
       </button>
