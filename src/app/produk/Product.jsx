@@ -80,7 +80,17 @@ useEffect(() => {
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section - Responsive di semua device */}
 <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-  <video
+        <Image
+          src="/images/Spanduk web Cisangkan.png"
+          alt="Banner Perusahaan"
+          width={1764}
+          height={460}
+          className="w-full h-full object-cover object-center"
+          priority
+          quality={100}
+          sizes="100vw"
+        />
+  {/* <video
     autoPlay
     muted
     loop
@@ -94,7 +104,7 @@ useEffect(() => {
   >
     <source src="/images/Spanduk Produk.mp4" type="video/mp4" />
     Your browser does not support the video tag.
-  </video>
+  </video> */}
 </div>
 
   {/* Header Section */}
