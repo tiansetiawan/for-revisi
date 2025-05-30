@@ -388,7 +388,7 @@ const columns = [
         {/* Kanan: Logo + Dropdowns */}
         <div className="w-full md:w-1/2">
           <p className="text-gray-600 text-sm mb-4">
-            Pilih wilayah untuk melihat informasi store dan kiosk kami terdekat
+            Pilih wilayah untuk melihat informasi STORE dan KIOSK kami terdekat
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="flex flex-col w-full sm:w-1/2">
