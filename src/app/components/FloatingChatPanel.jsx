@@ -46,7 +46,7 @@ export default function FloatingChatPanel() {
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="bg-[#2957A4] text-white p-3 rounded-full shadow-lg hover:bg-[#0B1F3A] transition-colors"
+          className="bg-[#2957A4] text-white p-3 rounded-full shadow-lg hover:bg-[#0B1F3A] hover:scale-105 transition-transform duration-300"
           aria-label="Open chat"
         >
           <svg

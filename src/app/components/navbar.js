@@ -10,8 +10,22 @@ export default function Navbar() {
   const pathname = usePathname();
   const [language, setLanguage] = useState('Ind');
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Fungsi untuk mengecek route aktif
+  const isActive = (href) => {
+    // Handle route dengan query params
+    const basePath = href.split('?')[0];
+    
+    // Cek untuk route produk dan submenu
+    if (href === '/produk' && (pathname.startsWith('/produk') || pathname.startsWith('/proyek/proyek-a'))) {
+      return true;
+    }
+    
+    // Cek exact match atau nested route
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   const reloadHome = () => {
     if (window.location.pathname === '/') {
@@ -30,8 +44,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+    setMobileDropdownOpen(false);
+  };
+
+  const toggleMobileDropdown = (e) => {
+    e.stopPropagation();
+    setMobileDropdownOpen(!mobileDropdownOpen);
+  };
+
+  const closeMobileDropdown = () => {
+    setMobileDropdownOpen(false);
+  };
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -60,46 +85,130 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium relative">
+        <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium">
           <li>
             <Link href="/">
-            <button 
-              onClick={scrollToTop}
-              className="px-2 py-2 rounded-full cursor-pointer hover:bg-[#0F1E3E] hover:text-white"
-            >
-              Beranda
-            </button>
+              <button 
+                onClick={scrollToTop}
+                className={`px-3 py-1 rounded-full cursor-pointer ${
+                  isActive('/') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-[#0F1E3E] hover:text-white'
+                }`}
+              >
+                Beranda
+              </button>
             </Link>
           </li>
 
-          {/* Dropdown Produk */}
+          {/* Dropdown Produk - HOVER */}
           <li className="relative group">
             <button
-              className="px-2 py-1 flex cursor-pointer items-center gap-1 rounded-full hover:bg-[#0F1E3E] hover:text-white"
-              onClick={toggleDropdown}
+              className={`px-3 py-1 flex items-center gap-1 rounded-full ${
+                isActive('/produk') || isActive('/proyek/proyek-a') 
+                  ? 'bg-[#0F1E3E] text-white' 
+                  : 'hover:bg-[#0F1E3E] hover:text-white'
+              }`}
             >
               Produk <FaChevronDown size={10} />
             </button>
-            {dropdownOpen && (
-              <ul className="absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md py-2 z-50">
-<Link 
-  href="/produk" 
-  onClick={() => sessionStorage.setItem('autoExpand', 'true')}
->
-  <span className="block px-4 py-2 hover:bg-gray-100">Concrete Roof</span>
-</Link>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Paving Block</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Block</a></li>
-                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100">Concrete Pipe</a></li>
-              </ul>
-            )}
+            <ul className="absolute top-full left-0 mt-2 w-48 bg-white shadow-md rounded-md py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <li>
+                <Link 
+                  href="/produk" 
+                  onClick={() => sessionStorage.setItem('autoExpand', 'true')}
+                  className={`block px-4 py-2 ${
+                    isActive('/produk') ? 'bg-gray-100 text-[#0F1E3E] font-medium' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Concrete Roof
+                </Link>
+              </li>
+              <li>
+                <a 
+                  href="#" 
+                  className={`block px-4 py-2 ${
+                    isActive('/paving-block') ? 'bg-gray-100 text-[#0F1E3E] font-medium' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Paving Block
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#" 
+                  className={`block px-4 py-2 ${
+                    isActive('/concrete-block') ? 'bg-gray-100 text-[#0F1E3E] font-medium' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Concrete Block
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="#" 
+                  className={`block px-4 py-2 ${
+                    isActive('/concrete-pipe') ? 'bg-gray-100 text-[#0F1E3E] font-medium' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Concrete Pipe
+                </a>
+              </li>
+            </ul>
           </li>
 
-          <li><Link href="/perusahaan/tentang" className="rounded-full px-2 py-2 hover:bg-[#0F1E3E] hover:text-white">Perusahaan</Link></li>
-           <li><Link href="/showroom/store" className="px-2 py-2 rounded-full hover:bg-[rgb(15,30,62)] hover:text-white">Showroom</Link></li>
-          <li><Link href="/proyek" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Proyek</Link></li>
-          <li><Link href="/blog/artikel"  className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Blog</Link></li>
-  <li><Link href="/kontak" className="px-2 py-2 rounded-full hover:bg-[#0F1E3E] hover:text-white">Kontak Kami</Link></li>
+          <li>
+            <Link 
+              href="/perusahaan/tentang" 
+              className={`rounded-full px-3 py-2 ${
+                isActive('/perusahaan') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-[#0F1E3E] hover:text-white'
+              }`}
+            >
+              Perusahaan
+            </Link>
+          </li>
+          
+          <li>
+            <Link 
+              href="/showroom/store" 
+              className={`px-3 py-2 rounded-full ${
+                isActive('/showroom') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-[rgb(15,30,62)] hover:text-white'
+              }`}
+            >
+              Showroom
+            </Link>
+          </li>
+          
+          <li>
+            <Link 
+              href="/proyek" 
+              className={`px-3 py-2 rounded-full ${
+                isActive('/proyek') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-[#0F1E3E] hover:text-white'
+              }`}
+            >
+              Proyek
+            </Link>
+          </li>
+          
+          <li>
+            <Link 
+              href="/blog/artikel" 
+              className={`px-4 py-2 rounded-full ${
+                isActive('/blog') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-[#0F1E3E] hover:text-white'
+              }`}
+            >
+              Blog
+            </Link>
+          </li>
+          
+          <li>
+            <Link 
+              href="/kontak" 
+              className={`px-3 py-2 rounded-full ${
+                isActive('/kontak') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-[#0F1E3E] hover:text-white'
+              }`}
+            >
+              Kontak Kami
+            </Link>
+          </li>
         </ul>
 
         {/* Right Side */}
@@ -130,54 +239,137 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Tetap menggunakan behavior klik */}
       {menuOpen && (
         <div className="lg:hidden px-6 pb-4">
           <ul className="flex flex-col space-y-4 text-gray-700 text-sm font-medium">
             <li>
-            <Link href="/">
-            <button 
-                onClick={scrollToTop}
-                className="bg-[#0F1E3E] text-white px-4 py-2 rounded-full inline-block w-fit"
-              >
-                Beranda
-            </button>
-            </Link>
+              <Link href="/">
+                <button 
+                  onClick={scrollToTop}
+                  className={`px-4 py-2 rounded-full inline-block w-fit ${
+                    isActive('/') ? 'bg-[#0F1E3E] text-white' : 'hover:bg-gray-100'
+                  }`}
+                >
+                  Beranda
+                </button>
+              </Link>
             </li>
 
             {/* Dropdown Produk di Mobile */}
             <li>
               <button
-                onClick={toggleDropdown}
-                className="flex items-center gap-2 hover:text-black"
+                onClick={toggleMobileDropdown}
+                className={`flex items-center gap-2 ${
+                  isActive('/produk') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                }`}
               >
-                Produk <FaChevronDown size={10} className={`transform transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
+                Produk <FaChevronDown size={10} className={`transform transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-              {dropdownOpen && (
+              {mobileDropdownOpen && (
                 <ul className="ml-4 mt-2 space-y-2">
-                  <li><Link href="/produk?expand=true">
-  <span className="block hover:bg-gray-100">Concrete Roof</span>
-</Link></li>
-                  <li><a href="#" className="block hover:text-black">Paving Block</a></li>
-                  <li><a href="#" className="block hover:text-black">Concrete Block</a></li>
-                  <li><a href="#" className="block hover:text-black">Concrete Pipe</a></li>
+                  <li onClick={closeMobileDropdown}>
+                    <Link 
+                      href="/produk?expand=true"
+                      className={`block ${
+                        isActive('/produk') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                      }`}
+                    >
+                      Concrete Roof
+                    </Link>
+                  </li>
+                  <li onClick={closeMobileDropdown}>
+                    <a 
+                      href="#"
+                      className={`block ${
+                        isActive('/paving-block') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                      }`}
+                    >
+                      Paving Block
+                    </a>
+                  </li>
+                  <li onClick={closeMobileDropdown}>
+                    <a 
+                      href="#"
+                      className={`block ${
+                        isActive('/concrete-block') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                      }`}
+                    >
+                      Concrete Block
+                    </a>
+                  </li>
+                  <li onClick={closeMobileDropdown}>
+                    <a 
+                      href="#"
+                      className={`block ${
+                        isActive('/concrete-pipe') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                      }`}
+                    >
+                      Concrete Pipe
+                    </a>
+                  </li>
                 </ul>
               )}
             </li>
 
-            <li><Link href="/perusahaan/tentang" className="hover:text-black">Perusahaan</Link></li>
-            <li><Link href="/showroom/store" className="hover:text-black">Showroom</Link></li>
-            <li><Link href="/proyek" className="hover:text-black">Proyek</Link></li>
-            <li><Link href="/blog/artikel" className="hover:text-black">Blog</Link></li>
-            <li><Link href="/kontak" className="hover:text-black">Kontak Kami</Link></li>
+            <li>
+              <Link 
+                href="/perusahaan/tentang" 
+                className={`block ${
+                  isActive('/perusahaan') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                }`}
+                onClick={closeMobileDropdown}
+              >
+                Perusahaan
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/showroom/store" 
+                className={`block ${
+                  isActive('/showroom') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                }`}
+                onClick={closeMobileDropdown}
+              >
+                Showroom
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/proyek" 
+                className={`block ${
+                  isActive('/proyek') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                }`}
+                onClick={closeMobileDropdown}
+              >
+                Proyek
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/blog/artikel" 
+                className={`block ${
+                  isActive('/blog') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                }`}
+                onClick={closeMobileDropdown}
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/kontak" 
+                className={`block ${
+                  isActive('/kontak') ? 'text-[#0F1E3E] font-medium' : 'hover:text-black'
+                }`}
+                onClick={closeMobileDropdown}
+              >
+                Kontak Kami
+              </Link>
+            </li>
 
             <div className="flex items-center space-x-4 mt-4 text-gray-600">
               <FaSearch className="cursor-pointer" />
-              {/* <FaBell className="cursor-pointer" />
-              <FaShoppingCart className="cursor-pointer" />
-              <div className="p-1 rounded-full bg-gray-200">
-                <FaUser className="cursor-pointer text-black" />
-              </div> */}
             </div>
             <div className="pt-2">
               <span

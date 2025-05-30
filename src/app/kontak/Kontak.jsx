@@ -22,7 +22,7 @@ export default function Kontak() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/Banner Kontak Kami.jpg"
+          src="/images/kontak.jpg"
           alt="Produk Genteng Cisangkan"
           width={1764}
           height={460}
@@ -97,11 +97,11 @@ export default function Kontak() {
             <textarea placeholder="Pesan Anda" className="w-full border rounded px-4 py-2 bg-white" rows="3"></textarea>
           </div>
 
-          <div className="flex items-center gap-4 flex-wrap">
+          <div className="flex">
             <button type="submit" className="bg-[#0B203F] text-white px-6 py-2 rounded hover:bg-blue-800 transition">
               Kirim Pesan
             </button>
-<a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer">
+{/* <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer">
   <FaInstagram className="text-pink-500 cursor-pointer text-md hover:scale-110 transition-transform" />
 </a>
 <a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer">
@@ -115,7 +115,7 @@ export default function Kontak() {
 </a>
 <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
   <FaWhatsapp className="text-green-500 cursor-pointer text-xl hover:scale-110 transition-transform" />
-</a>
+</a> */}
           </div>
         </form>
       </div>

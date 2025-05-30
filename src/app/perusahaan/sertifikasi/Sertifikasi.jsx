@@ -2,10 +2,16 @@
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Sertifikasi() {
 
   const [showSubmenu, setShowSubmenu] = useState(true);
+  const [showDownloadPanel, setShowDownloadPanel] = useState(false);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [telpon, setTelpon] = useState('');
+  const modalRef = useRef(null);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
@@ -111,12 +117,72 @@ const [slopeAngle, setSlopeAngle] = useState('');
 };
 
 
+   // Handle click outside modal
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setShowDownloadPanel(false);
+      }
+    };
+
+    if (showDownloadPanel) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showDownloadPanel]);
+
+  const handleDownload = (e) => {
+    e.preventDefault();
+    if (!name || !email) {
+      alert('Harap isi nama dan email terlebih dahulu');
+      return;
+    }
+    console.log(`Download katalog oleh ${name} (${email}) (${telpon})`);
+    setName('');
+    setEmail('');
+    setTelpon('');
+    setShowDownloadPanel(false);
+  };
+
+  // Variants untuk animasi
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 }
+  };
+
+  const modalVariants = {
+    hidden: { 
+      opacity: 0,
+      y: -50,
+      scale: 0.95
+    },
+    visible: { 
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: 'spring',
+        damping: 25,
+        stiffness: 500
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: 50,
+      scale: 0.95,
+      transition: { duration: 0.2 }
+    }
+  };
+
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section - Responsive di semua device */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
       <Image
-          src="/images/banner sertifikasi.jpg"
+          src="/images/Banner Perusahaan.jpg"
           alt="banner sertifikasi"
           width={1764}
           height={460}
@@ -130,8 +196,6 @@ const [slopeAngle, setSlopeAngle] = useState('');
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
   {/* Header Section */}
@@ -195,8 +259,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
   ].map((item, index) => (
     <div
       key={index}
-      className="border border-gray-300 bg-[#E4EEFF] shadow-sm rounded overflow-hidden"
+      className='flex flex-col items-center text-center'
     >
+      <div className="border border-gray-300 bg-[#E4EEFF] shadow-sm rounded overflow-hidden mb-4">
       <div className="bg-white p-6 flex items-center justify-center h-40 transition-transform duration-300 hover:scale-105">
         <img
           src={item.src}
@@ -209,11 +274,100 @@ const [slopeAngle, setSlopeAngle] = useState('');
           {item.description}
         </p>
       </div>
+      </div>
+      <button 
+                onClick={() => setShowDownloadPanel(true)}
+                className="text-sm text-blue-700 font-medium hover:underline"
+              >
+                Unduh &gt;&gt;
+              </button>
     </div>
   ))}
 </div>
 </section>
+ {/* Download Panel Modal */}
+        {/* Download Panel Modal dengan Animasi */}
+      <AnimatePresence>
+        {showDownloadPanel && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={backdropVariants}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.div
+              ref={modalRef}
+              className="bg-white rounded-lg p-6 w-full max-w-md relative"
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
+              {/* Close Button (X) */}
+              <button
+                onClick={() => setShowDownloadPanel(false)}
+                className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
+                aria-label="Close modal"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
 
+              <h3 className="text-lg font-semibold mb-4 border-b border-[#CCCCCC] pb-6 pr-6">MASUKKAN NAMA DAN EMAIL</h3>
+              <form onSubmit={handleDownload}>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium mb-1">Masukkan Nama</label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
+                  <input
+                    type="text"
+                    value={telpon}
+                    onChange={(e) => setTelpon(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div className="flex justify-end space-x-3">
+                  <button
+                    type="button"
+                    onClick={() => setShowDownloadPanel(false)}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                  >
+                    Batal
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-[#0B203F] text-sm font-medium text-white hover:bg-blue-700 rounded transition-colors"
+                  >
+                    Download
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

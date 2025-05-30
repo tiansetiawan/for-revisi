@@ -101,7 +101,7 @@ export default function Karir() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/produk.png"
+          src="/images/Banner Perusahaan.jpg"
           alt="Banner Karir"
           width={1764}
           height={460}
@@ -115,8 +115,6 @@ export default function Karir() {
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
       {/* Header Section */}

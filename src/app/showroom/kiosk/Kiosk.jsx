@@ -117,9 +117,10 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT. EVRANDO SUKSES BERSAMA',
-          address: 'Jl. Ngumban Sunbaiti / Melati Roya No.88, Medan',
+          address: 'Jl. Ngumban Surbakti / Melati Raya No.88, Medan',
           telp: '(081) 8384284',
-          hp: '0813 8139 5045'
+          hp: '0813 8139 5045',
+          maps: 'https://maps.app.goo.gl/zwfeYKmfxq1KS2sh7'
         },
       ],
     },
@@ -128,8 +129,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT. CITRA SERAYA',
-          address: 'Jl. Gatot Subrota No.98 A Tanjung Pinang',
-          hp: '085558096268'
+          address: 'Jl. Gatot Subroto No.98 A Tanjung Pinang',
+          hp: '085558096268',
+          maps: 'https://maps.app.goo.gl/UfGb8a4Q8TUmBibZ8'
         },
       ],
     },
@@ -138,9 +140,32 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT. SETIAJAYA MAKMURINDO',
-          address: 'Jl. Mayor Syafri, Rachman No.2 Bangka, Pengkai Pinang, Bangka Belitung',
+          address: 'Jl. Mayor Syafri, Rachman No.2 Bangka, Pengkal Pinang, Bangka Belitung',
           telp: '(077) 422835, (077) 438568',
-          hp: '0813 8999 3973'
+          hp: '0813 8999 3973',
+          maps: 'https://maps.app.goo.gl/EY3SVwNFiEzzJL6r9'
+        },
+      ],
+    },
+    {
+      city: 'PURWOKERTO',
+      stores: [
+        {
+          name: 'TB PELITA',
+          address: 'Jl. Jend. Sudirman 724, Sukoharjo',
+          telp: '(0281) 6441079, (0281) 6441015, (0281) 6441045',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'YOGYAKARTA',
+      stores: [
+        {
+          name: 'CV AGNA ASTABAJA',
+          address: 'Jl. Purboyo Krandon Sumberadi Mleati, Sleman (depan kantor Badan Pusat Statistik Kab. Sieman)',
+          hp: '0851 0545 5234',
+          maps: 'https://maps.app.goo.gl/AuXaWnd69ddooJCc7'
         },
       ],
     },
@@ -149,13 +174,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'MATAHARI JAYA',
-          address: 'Jl. Parapatitis KM. 4 No. 301 Sewon - Bantul',
-          telp: '(0274) 389868'
-        },
-        {
-          name: 'CV AGNA ASTABAJA',
-          address: 'Jl. Purboyo Krandon Sumberadi Mleti, Sieman (depan kantor Badan Pusat Statistik Kab. Sieman)',
-          hp: '0851 0545 5234'
+          address: 'Jl. Parangtritis KM. 4 No. 301 Sewon - Bantul',
+          telp: '(0274) 389868',
+          maps: 'https://maps.app.goo.gl/nCmxKoooSnsrHcvq9'
         },
       ],
     },
@@ -164,8 +185,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT KERAMIK JAYA BANGUNAN',
-          address: 'Jl. A. Wahab Syahani No.78, Samarinda (Depan SPBU)',
-          hp: '0852 4695 8522'
+          address: 'Jl. A. Wahab Syahrani No.78, Samarinda (Depan SPBU)',
+          hp: '0852 4695 8522',
+          maps: 'https://maps.app.goo.gl/Hf7P6ijFFgTyg2hY8'
         },
       ],
     },
@@ -174,19 +196,22 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT WIJAYA BANGUNAN',
-          address: 'Jl. Walter Monginski No.124 Bahu - Manado',
+          address: 'Jl. Walter Monginsidi No.124 Bahu - Manado',
           telp: '(0431) 825500, (0431) 825700',
-          hp: '0812 4408 8877'
+          hp: '0812 4408 8877',
+          maps: 'https://maps.app.goo.gl/7zdvYTRLLf1SaTKM6'
         },
       ],
     },
     {
-      city: 'BANDUNG',
+      city: 'JAYAPURA',
       stores: [
         {
-          name: 'ABADI GENTENG',
-          address: 'Jl. Seekamo Hatia No. 384 Bandung',
-          telp: '(022) 5205152'
+          name: '',
+          address: 'Jl. Koti No.72 B',
+          telp: '',
+          hp: '',
+          maps: ''
         },
       ],
     },
@@ -195,8 +220,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'GENTENG PILAR MAS',
-          address: 'Jl. Panjahan No.18 (Bypass) Jakarta Timur',
-          hp: '0811 8006 010'
+          address: 'Jl. Panjaitan No.18 (Bypass) Jakarta Timur',
+          hp: '0811 8006 010',
+          maps: 'https://maps.app.goo.gl/X7JnL8crSiqVPKk6A'
         },
       ],
     },
@@ -205,21 +231,47 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT MITRA TARUMA PERKASA',
-          address: 'Jl. Raya Rewa Burtu No.20, Serpong, Tangerang Selatan',
+          address: 'Jl. Raya Rawa Buntu No.20, Serpong, Tangerang Selatan',
           telp: '(021) 758 77060',
-          hp: '0877 7505 1700'
+          hp: '0877 7505 1700',
+          maps: 'https://maps.app.goo.gl/CB9sSGWJqAYBksnn9'
         },
+      ],
+    },
+    {
+      city: 'TANGERANG',
+      stores: [
+        {
+          name: 'ERA CIPTA BANGUN PERKASA',
+          address: 'Jl. KH. Ahmad Dahlan No.1A',
+          address2: 'Tangerang',
+          telp: '(021) 68742233',
+          hp: '0877 7181 6062',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'TANGERANG',
+      stores: [
         {
           name: 'SUPER BANGUN JAYA 1',
-          address: 'Jl. Raya Cisauk, Sampara BSD Tangerang Selatan',
+          address: 'Jl. Raya Cisauk, Sampora BSD Tangerang Selatan',
           telp: '(021) 75579999',
-          hp: '0896 7061 4648'
+          hp: '0896 7061 4648',
+          maps: 'https://maps.app.goo.gl/BXK5HHTcwECcYLap7'
         },
+      ],
+    },
+    {
+      city: 'TANGERANG',
+      stores: [
         {
           name: 'SUPER BANGUN JAYA 2',
-          address: 'Jl. Raya Lapen I–2, Surcalita Cisauk, Kab. Tangerang',
+          address: 'Jl. Raya Lapan I–2, Suradita Cisauk, Kab. Tangerang',
           telp: '(021) 75879999',
-          hp: '0896 7061 4648'
+          hp: '0896 7061 4648',
+          maps: 'https://maps.app.goo.gl/r19GXxcsPfffkFr47'
         },
       ],
     },
@@ -228,9 +280,10 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'MADJU PRIMA SEJAHTERA',
-          address: 'Jl. Raya Kalimalong No. 36, Bekasi',
+          address: 'Jl. Raya Kalimalang No. 36, Bekasi',
           telp: '(021) 8841210',
-          hp: '0896 8970 2070'
+          hp: '0896 8970 2070',
+          maps: 'https://maps.app.goo.gl/ugAdMcLKUb8hzFdm9'
         },
       ],
     },
@@ -239,8 +292,32 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'ANEKA GENTENG',
-          address: 'Jl. Raya Sodang, Cikampek Purwakarta (Samping Jembatan Timbang Civrang)',
-          hp: '0852 2444 7000, 0818 4711133'
+          address: 'Jl. Raya Sadang, Cikampek Purwakarta (Samping Jembatan Timbang Ciwangi)',
+          hp: '0852 2444 7000, 0818 4711133',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'PURWAKARTA',
+      stores: [
+        {
+          name: 'ANEKA GENTENG',
+          address: 'Jl. Ipik Gandamanah No. 99 B',
+          address2: 'Sukasari Tegal Munjul, Purwakarta',
+          hp: '0818 0222 0608',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'BANDUNG',
+      stores: [
+        {
+          name: 'ABADI GENTENG',
+          address: 'Jl. Soekarno Hatta No. 384 Bandung',
+          telp: '(022) 5205152',
+          maps: 'https://maps.app.goo.gl/LqcoDiHM2jAbAX8Z7'
         },
       ],
     },
@@ -261,8 +338,8 @@ const columns = [
       {/* Hero Section - Responsive di semua device */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
       <Image
-          src="/images/produk.png"
-          alt="Banner Kiosk"
+          src="/images/showroom.jpg"
+          alt="Banner Store"
           width={1764}
           height={460}
           className="w-full h-full object-cover object-center"
@@ -275,8 +352,6 @@ const columns = [
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
   {/* Header Section */}

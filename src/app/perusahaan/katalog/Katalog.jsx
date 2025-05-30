@@ -3,6 +3,10 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 export default function Katalog() {
   // State untuk panel unduh
@@ -20,6 +24,15 @@ export default function Katalog() {
     { id: 4, nama: "Katalog 4", file: "/images/icon photo.png" },
     { id: 5, nama: "Katalog 5", file: "/images/icon photo.png" },
     { id: 6, nama: "Katalog 6", file: "/images/icon photo.png" },
+  ];
+
+  const brosurList = [
+    { id: 1, nama: "Brosur 1", file: "/images/icon photo.png" },
+    { id: 2, nama: "Brosur 2", file: "/images/icon photo.png" },
+    { id: 3, nama: "Brosur 3", file: "/images/icon photo.png" },
+    { id: 4, nama: "Brosur 4", file: "/images/icon photo.png" },
+    { id: 5, nama: "Brosur 5", file: "/images/icon photo.png" },
+    { id: 6, nama: "Brosur 6", file: "/images/icon photo.png" },
   ];
 
 
@@ -83,13 +96,42 @@ export default function Katalog() {
     }
   };
 
+  // Settings untuk slider
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+  // Ref untuk slider
+  const katalogSliderRef = useRef(null);
+  const brosurSliderRef = useRef(null);
+
 
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/produk.png"
+          src="/images/Banner Perusahaan.jpg"
           alt="banner katalog"
           width={1764}
           height={460}
@@ -103,8 +145,6 @@ export default function Katalog() {
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
       {/* Header Section */}
@@ -122,58 +162,108 @@ export default function Katalog() {
 
       {/* Main Content */}
       <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
-        {/* Heading */}
+        {/* Heading Katalog */}
         <div className="gap-6 items-start mb-20">
           <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
-            KATALOG & BROSUR
+            KATALOG
           </h2>
           <p className="text-sm text-justify">
             Lorem ipsum parturient tristique lobortis at metus libero vulputate morbi ullamcorper senectus tempus at orci et elementum cras tortor aliquet pretium nunc euismod massa nulla bibendum convallis in a egestas erat sed diam dictum orci sed augue enim facilisi placerat montes pretium congue rhoncus magnis bibendum diam maecenas aenean blandit.
           </p>
         </div>
 
-        {/* Grid Katalog */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black mb-20">
-          {katalogList.map((item) => (
-            <div key={item.id} className="flex flex-col items-center text-center space-y-2">
-              <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
-                <img
-                  src={item.file}
-                  alt={item.nama}
-                  width={300}
-                  height={419}
-                  className="object-cover w-full h-full"
-                />
+        {/* Slider Katalog */}
+        <div className="relative mb-20 border-b border-gray-300 pb-10">
+          <Slider {...sliderSettings} ref={katalogSliderRef}>
+            {katalogList.map((item) => (
+              <div key={item.id} className="px-2">
+                <div className="flex flex-col items-center text-center space-y-2">
+                  <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
+                    <Image
+                      src={item.file}
+                      alt={item.nama}
+                      width={300}
+                      height={419}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-sm font-semibold">{item.nama}</p>
+                  <button 
+                    onClick={() => setShowDownloadPanel(true)}
+                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
+                  >
+                    Unduh &gt;&gt;
+                  </button>
+                </div>
               </div>
-              <p className="text-sm font-semibold">{item.nama}</p>
-              <button 
-                onClick={() => setShowDownloadPanel(true)}
-                className="text-sm text-blue-700 font-medium hover:underline"
-              >
-                Unduh &gt;&gt;
-              </button>
-            </div>
-          ))}
+            ))}
+          </Slider>
+          
+          {/* Navigation buttons */}
+          <button 
+            onClick={() => katalogSliderRef.current.slickPrev()}
+            className="absolute left-0 top-40 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+          >
+            <FaChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={() => katalogSliderRef.current.slickNext()}
+            className="absolute right-0 top-40 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+          >
+            <FaChevronRight className="w-5 h-5" />
+          </button>
         </div>
 
-{/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
-            <button
-    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
-  >
-    Sebelumnya
-  </button>
-          <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
-            1
+        {/* Heading Brosur */}
+        <div className="gap-6 items-start mb-20">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+            BROSUR
+          </h2>
+          <p className="text-sm text-justify">
+            Lorem ipsum parturient tristique lobortis at metus libero vulputate morbi ullamcorper senectus tempus at orci et elementum cras tortor aliquet pretium nunc euismod massa nulla bibendum convallis in a egestas erat sed diam dictum orci sed augue enim facilisi placerat montes pretium congue rhoncus magnis bibendum diam maecenas aenean blandit.
+          </p>
+        </div>
+
+        {/* Slider Brosur */}
+        <div className="relative mb-20 border-b border-gray-300 pb-10">
+          <Slider {...sliderSettings} ref={brosurSliderRef}>
+            {brosurList.map((item) => (
+              <div key={item.id} className="px-2">
+                <div className="flex flex-col items-center text-center space-y-2">
+                  <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
+                    <Image
+                      src={item.file}
+                      alt={item.nama}
+                      width={300}
+                      height={419}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <p className="text-sm font-semibold">{item.nama}</p>
+                  <button 
+                    onClick={() => setShowDownloadPanel(true)}
+                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
+                  >
+                    Unduh &gt;&gt;
+                  </button>
+                </div>
+              </div>
+            ))}
+          </Slider>
+          
+          {/* Navigation buttons */}
+          <button 
+            onClick={() => brosurSliderRef.current.slickPrev()}
+            className="absolute left-0 top-40 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+          >
+            <FaChevronLeft className="w-5 h-5" />
           </button>
-          <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
-            2
+          <button 
+            onClick={() => brosurSliderRef.current.slickNext()}
+            className="absolute right-0 top-40 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-white shadow-md flex items-center justify-center text-gray-600 hover:bg-gray-100"
+          >
+            <FaChevronRight className="w-5 h-5" />
           </button>
-                      <button
-    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
-  >
-    Berikutnya
-  </button>
         </div>
       </section>
 

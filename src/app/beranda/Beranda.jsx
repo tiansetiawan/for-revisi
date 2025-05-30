@@ -12,7 +12,7 @@ import '@/app/style/Beranda.css'
 // Hero Slides Data
 const heroSlides = [
   {
-    image: '/images/3.jpg',
+    image: '/images/4.jpg',
     // title: 'FLAT ROOF',
     // subtitle: 'Minimalist Look, Maximum Durability.',
     // description: 'Bring a timeless modern vibe to every corner of your roof.',
@@ -135,7 +135,7 @@ const proyekData = [
 // Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  thumbnail: "/images/VidTes1.jpg",
+  thumbnail: "/images/factory Visit.png",
   youtubeId: "EiLY8P_Lf8o",
   description: "Testimonial pelanggan utama kami"
 };
@@ -806,26 +806,26 @@ return (
   {[
     {
       title: "Tentang Kami",
-      image: "/images/icon photo.png",
+      image: "/images/icon-short1.png",
       desc: "Lorem ipsum has been the industry's standard dummy..",
       link: "/perusahaan/tentang" // Tambahkan link untuk Tentang Kami
     },
     {
       title: "Store",
-      image: "/images/icon photo.png",
+      image: "/images/icon-short2.png",
       desc: "Lorem ipsum has been the industry's standard dummy..",
       link: "/showroom/store" // Tambahkan link untuk Store
     },
     {
       title: "Inovasi", 
-      image: "/images/icon photo.png",
+      image: "/images/icon-short3.png",
       desc: "Lorem ipsum has been the industry's standard dummy..",
       link: "/perusahaan/inovasi" // Tambahkan link untuk Inovasi
     }
   ].map((item, i) => (
     <Link href={item.link} key={i} passHref legacyBehavior>
       <a className='w-60 block transition-shadow duration-300'>
-        <div className="section-container relative w-full h-60 mb-6 rounded-none bg-gray-300 overflow-hidden">
+        <div className="section-container relative w-full h-60 mb-6 rounded-none  overflow-hidden">
           <Image
             src={item.image}
             alt={item.title}

@@ -121,7 +121,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           address2 : 'Jl. Jend. Gatot Subroto No. 102 Medan, Sumatera Utara',
           telp: '(061) 4527588, (061) 4527586',
           hp: '0813 7028 1999',
-          maps: 'https://maps.google.com?q=Jl. Jend. Gatot Subroto No. 102 Medan'
+          maps: 'https://maps.app.goo.gl/FAvHUY8G52aHjMAY7'
         },
       ],
     },
@@ -130,9 +130,22 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'CV BATAM SUPPLY & DISTRIBUSI',
-          address: 'Ruko Mega Mas Blok B No.16 SinCom - Batam Center',
+          address: 'Ruko Niaga Mas Blok B No.16',
+          address2: 'SinCom - Batam Center',
           telp: '0813 7253 6236',
-          maps: 'https://maps.google.com?q=Ruko Mega Mas Blok B No.16 Batam Center'
+          maps: 'https://maps.app.goo.gl/rLxxdWiYCneyPnJT8'
+        },
+      ],
+    },
+        {
+      city: 'PADANG',
+      stores: [
+        {
+          name: 'CV. HENDRI WIJAYA PHERI',
+          address: 'Jl. Nipah No.10-Padang',
+          telp: '(0751) 28685',
+          hp: '0813 6350 0284',
+          maps: 'https://maps.app.goo.gl/xFdaMyNWxYKbCx1D7'
         },
       ],
     },
@@ -141,22 +154,11 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'PT. CELENTANG MULTI ARTHA',
-          address: 'Jl. Brigjen H. Kasim No. B1 Bukit Sangkal Palembang',
+          address: 'Jl. Brigjen H. Kasim No. B1',
+          address2: 'Bukit Sangkal Palembang',
           telp: '(0711) 5612157',
           hp: '0895 3444 88643',
-          maps: 'https://maps.google.com?q=Jl. Brigjen H. Kasim No. B1 Bukit Sangkal Palembang'
-        },
-      ],
-    },
-    {
-      city: 'PADANG',
-      stores: [
-        {
-          name: 'CV. HENDRI WIJAYA PHERI',
-          address: 'Jl. Nipah No.10-Padang',
-          telp: '(0751) 28685',
-          hp: '0813 6350 0284',
-          maps: 'https://maps.google.com?q=Jl. Nipah No.10 Padang'
+          maps: 'https://maps.app.goo.gl/K2trdfYynqw9caEQ9'
         },
       ],
     },
@@ -167,7 +169,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           name: 'VICTORIA INDAH',
           address: 'Jl. Sukarno Hatta 39, Bandar Lampung (Samping Pool Bus Puspa)',
           hp: '0821 7676 6429',
-          maps: 'https://maps.google.com?q=Jl. Sukarno Hatta 39 Bandar Lampung'
+          maps: ''
         },
       ],
     },
@@ -179,7 +181,20 @@ const [slopeAngle, setSlopeAngle] = useState('');
           address: 'Jl. Kanai Raya 10 G Semarang',
           telp: '(024) 8455257, 8455258',
           hp: '0857 0303 0108, 0812 2951 8998',
-          maps: 'https://maps.google.com?q=Jl. Kanai Raya 10 G Semarang'
+          maps: 'https://maps.app.goo.gl/xC7yvABATaSybdiy7'
+        },
+      ],
+    },
+     {
+      city: 'SURABAYA',
+      stores: [
+        {
+          name: 'PT LARISSA CITRA NUSA',
+          address: 'Jl. Alon-Alon Contong No. 5A',
+          address2: 'Surabaya',
+          telp: '(031) 5341655 / 5469879',
+          hp: '0812 5951 6039',
+          maps: 'https://maps.app.goo.gl/CJV6SfWgcYxSV6R36'
         },
       ],
     },
@@ -190,7 +205,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           name: 'CV ANUGERAH PUTRA DEWATA',
           address: 'Jl. Kargo Permai I no. 198, Denpasar',
           hp: '0851 0040 4904',
-          maps: 'https://maps.google.com?q=Jl. Kargo Permai I no. 198 Denpasar'
+          maps: ''
         },
       ],
     },
@@ -201,7 +216,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           name: 'TRI PUTRA ABADI',
           address: 'Jl. Ahmad Yani No. 57 (By Pass) Rawamangun, Jakarta Timur',
           telp: '(021) 8197816',
-          maps: 'https://maps.google.com?q=Jl. Ahmad Yani No. 57 Jakarta'
+          maps: ''
         },
       ],
     },
@@ -210,10 +225,11 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'TRI PUTRA ABADI',
-          address: 'Jl. Malaka Baru No. 36 Pondok Kopi, Jakarta Timur',
+          address: 'Jl. Malaka Baru No. 36 Pondok Kopi',
+          address2: 'Jakarta Timur',
           telp: '(021) 8619756',
           hp: '0812 8714 9117',
-          maps: 'https://maps.google.com?q=Jl. Malaka Baru No. 36 Pondok Kopi Jakarta'
+          maps: 'https://maps.app.goo.gl/uq9aQicUMpvbH9H86'
         },
       ],
     },
@@ -222,9 +238,10 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'SINAR BHUANA',
-          address: 'Jl. Raya Bogor Km. 20, Kramat Jati, Jakarta Timur',
+          address: 'Jl. Raya Bogor Km. 20, Kramat Jati',
+          address2: 'Jakarta Timur',
           hp: '0878 3003 0098',
-          maps: 'https://maps.google.com?q=Jl. Raya Bogor Km. 20 Jakarta'
+          maps: 'https://maps.app.goo.gl/6ZjFCMkG7TaF79keA'
         },
       ],
     },
@@ -233,9 +250,10 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'MEKAR JAYA ABADI',
-          address: 'Jl. Daan Mogot Km 11 No. 2A, Jakarta Barat',
+          address: 'Jl. Daan Mogot Km 11 No. 2A',
+          address2: 'Jakarta Barat',
           hp: '(021) 29037949',
-          maps: 'https://maps.google.com?q=Jl. Daan Mogot Km 11 Jakarta'
+          maps: 'https://maps.app.goo.gl/mWPY9jqsu32K8oNY8'
         },
       ],
     },
@@ -246,7 +264,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           name: 'ADHIGANA GENTENG STORE',
           address: 'Jl. Raya Bogor km. 27 no.14 Gandaria, Jakarta Timur (Seberang Alfa)',
           hp: '0812 1111 1042',
-          maps: 'https://maps.google.com?q=Jl. Raya Bogor km. 27 no.14 Gandaria Jakarta'
+          maps: 'https://maps.app.goo.gl/w6Z1RjCiAVJUF5Jw5'
         },
       ],
     },
@@ -258,7 +276,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           address: 'Jl. Moh Kahfi I no. 2 Ciganjur, Kec. Jagakarsa, Jakarta Selatan',
           telp: '(021) 7871577',
           hp: '0878 8194 7124',
-          maps: 'https://maps.google.com?q=Jl. Moh Kahfi I no. 2 Ciganjur Jakarta Selatan'
+          maps: 'https://maps.app.goo.gl/rV5bUGY9WyGkwpdt9'
         },
       ],
     },
@@ -267,21 +285,108 @@ const [slopeAngle, setSlopeAngle] = useState('');
       stores: [
         {
           name: 'CV BURSA GENTENG',
-          address: 'Jl. Raya Cileungsi Jonggol Km. 3 Cileungsi',
+          address: 'Jl. Raya Cileungsi Jonggol Km. 3',
+          address2: 'Cileungsi',
           telp: '(021) 82491388',
           hp: '0811 1666 478, 0811 8230 18',
-          maps: 'https://maps.google.com?q=Jl. Raya Cileungsi Jonggol Km. 3 Cileungsi'
+          maps: 'https://maps.app.goo.gl/3yM4PfYYKZAQsfvc6'
         },
       ],
     },
     {
-      city: 'BOGOR',
+      city: 'TANGERANG',
       stores: [
         {
-          name: 'MAESTRO ATAP CIBUBUR',
-          address: 'Jl. Alternatif Cibubur No. 633b, Nagrak Kec. Gn Putri, Kab. Bogor',
-          hp: '0852 1881 8442',
-          maps: 'https://maps.google.com?q=Jl. Alternatif Cibubur No. 633b Bogor'
+          name: 'TB PILAR MAS',
+          address: 'Jl. Raya Cirendeu No. 9 Cirendeu',
+          address2: 'Tangerang Selatan',
+          hp: '0817 6776 161',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'TANGERANG',
+      stores: [
+        {
+          name: 'DUTA INDAH GENTENG',
+          address: 'Jl. Raya Serpong no. 88 BSD',
+          address2: 'Tangerang Selatan',
+          hp: '(021) 5375625',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'TANGERANG',
+      stores: [
+        {
+          name: 'RITA ROOF',
+          address: 'Jln. Imam Bonjol No. 30',
+          address2: 'Karawaci, Tangerang',
+          hp: '0813 1791 1419',
+          maps: 'https://maps.app.goo.gl/Lbg4ynWT9uEYhH1F8'
+        },
+      ],
+    },
+    {
+      city: 'BEKASI',
+      stores: [
+        {
+          name: 'SINAR HARAPAN',
+          address: 'JI. Wibawamukti 2 Kp. Pedurenan',
+          address2: 'Jatiasih-Bekasi',
+          hp: '0852 8848 4735',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'BEKASI',
+      stores: [
+        {
+          name: 'CAHAYA ATAP SEJATI',
+          address: 'JI. Patriot No. 111',
+          address2: 'Bekasi',
+          telp: '(021) 88963670',
+          hp: '0896 6463 3386',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'BEKASI',
+      stores: [
+        {
+          name: 'MAESTRO ATAP BEKASI',
+          address: 'Jl. Raya Hankam no. 141,Jatiranggon',
+          address2: 'Jati Sampurna, Bekasi',
+          hp: '0856 9485 4422',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'BEKASI',
+      stores: [
+        {
+          name: 'ANEKA ATAP TEDUH LESTARI',
+          address: 'Jl. Raya teluk pucung no.62',
+          address2: 'Kec. Bekasi utara',
+          hp: '0812 8762 00888',
+          maps: ''
+        },
+      ],
+    },
+    {
+      city: 'BANDUNG',
+      stores: [
+        {
+          name: 'MAESTRO ATAP BANDUNG',
+          address: 'Jl. Soekarno-Hatta No. 628',
+          address2: 'Bandung',
+          hp: '0813 2828 4040',
+          maps: ''
         },
       ],
     },
@@ -302,7 +407,7 @@ const columns = [
       {/* Hero Section - Responsive di semua device */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
       <Image
-          src="/images/produk.png"
+          src="/images/showroom.jpg"
           alt="Banner Store"
           width={1764}
           height={460}
@@ -316,8 +421,6 @@ const columns = [
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
   {/* Header Section */}

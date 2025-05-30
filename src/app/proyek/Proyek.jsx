@@ -14,11 +14,10 @@ export default function Proyek() {
   });
   const [showNeoSubmenu, setShowNeoSubmenu] = useState(false);
 const [activeItem, setActiveItem] = useState('Semua Produk');
+const [activeView, setActiveView] = useState('default'); 
   const [activeSubItem, setActiveSubItem] = useState(null);
     const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
-  const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
-
-  const neoProjects = ['Nama Proyek A', 'Nama Proyek B', 'Nama Proyek C'];
+  const subProducts = ['Neo', 'Victoria', 'Dual Slate', 'Floral', 'Excellent', 'Majestic', 'Oriental','New Royal'];
 
 
   // Gunakan useEffect untuk mengecek state saat komponen dimount
@@ -35,15 +34,16 @@ useEffect(() => {
 const handleMainItemClick = (item) => {
   setActiveItem(item);
   setActiveSubItem(null);
+  setActiveView('default'); // Tambahkan ini untuk reset view
 
   if (item === 'Semua Produk') {
-    setShowSubmenu(false);       // Sembunyikan submenu utama
-    setShowNeoSubmenu(false);    // Sembunyikan submenu Neo jika terbuka
+    setShowSubmenu(false);
+    setShowNeoSubmenu(false);
   } else if (item === 'Concrete Roof') {
-    setShowSubmenu(!showSubmenu); // Toggle submenu Concrete Roof
+    setShowSubmenu(!showSubmenu);
   } else {
-    setShowSubmenu(false);       // Untuk item lain, submenu disembunyikan
-    setShowNeoSubmenu(false);    // Pastikan submenu Neo tertutup
+    setShowSubmenu(false);
+    setShowNeoSubmenu(false);
   }
 };
 
@@ -98,6 +98,78 @@ const proyekList = [
     },
 ];
 
+const proyekListneo = [
+    { 
+        id: 1, 
+        nama: "Paving Block", 
+        file: "/images/Gedung Sate.jpg", 
+        tempat: "Proyek 1 - Gedung Sate Bandung",
+        link: "/proyek/proyek-a" // Tambahkan link untuk navigasi
+    },
+    { 
+        id: 2, 
+        nama: "Proyek 2", 
+        file: "/images/icon photo.png", 
+        tempat: "Nama Proyek - Tempat",
+        link: "/proyek/2" 
+    },
+    { 
+        id: 3, 
+        nama: "Proyek 3", 
+        file: "/images/icon photo.png", 
+        tempat: "Nama Proyek - Tempat",
+        link: "/proyek/3" 
+    },
+];
+
+const DefaultProjectView = ({ proyekList }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black mb-20">
+    {proyekList.map((item) => (
+      <a 
+        href={item.link} 
+        key={item.id}
+        className="block border border-[#2957A4] rounded-md overflow-hidden transition-transform duration-300 hover:scale-105 no-underline"
+      >
+        <div className="bg-gray-300 w-full aspect-[6/3] flex items-center justify-center">
+          <img
+            src={item.file}
+            alt={item.nama}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="bg-white px-4 py-3 text-left">
+          <p className="text-sm font-semibold text-black">{item.nama}</p>
+          <p className="text-sm text-blue-700 font-medium">{item.tempat}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+);
+
+const NeoProjectView = ({ proyekListneo }) => (
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black mb-20">
+    {proyekListneo.map((item) => (
+      <a 
+        href={item.link} 
+        key={item.id}
+        className="block border border-[#2957A4] rounded-md overflow-hidden transition-transform duration-300 hover:scale-105 no-underline"
+      >
+        <div className="bg-gray-300 w-full aspect-[6/3] flex items-center justify-center">
+          <img
+            src={item.file}
+            alt={item.nama}
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="bg-white px-4 py-3 text-left">
+          <p className="text-sm font-semibold text-black">{item.nama}</p>
+          <p className="text-sm text-blue-700 font-medium">{item.tempat}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+);
+
   // --- PAGINATION ---
   // const itemsPerPage = 3;
   // const [currentPage, setCurrentPage] = useState(1);
@@ -119,7 +191,7 @@ const proyekList = [
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/produk.png"
+          src="/images/proyek.jpg"
           alt="Banner Proyek"
           width={1764}
           height={460}
@@ -133,8 +205,6 @@ const proyekList = [
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-6 pe-1 py-8">
@@ -177,68 +247,37 @@ const proyekList = [
       <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
     {subProducts.map((sub) => (
       <li key={sub}>
-        {sub === 'Neo' ? (
-          <>
-            <button
-              onClick={() => {
-                handleSubItemClick(sub);
-                setShowNeoSubmenu(!showNeoSubmenu);
-              }}
-              className={`flex items-center w-full text-left cursor-pointer gap-2 ${
-                showNeoSubmenu
-                  ? 'text-[#0B203F] font-semibold'
-                  : 'text-[#0B203F] font-medium hover:text-[#2957A4]'
-              }`}
-            >
-              {/* Arrow hanya tampil saat submenu terbuka */}
-              {showNeoSubmenu && (
-                <svg
-                  className={`w-3 h-3 transition-transform duration-300 ${
-                    showNeoSubmenu ? 'rotate-90' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              )}
-              <span>{sub}</span>
-            </button>
-
-            {showNeoSubmenu && (
-              <ul className="ml-4 mt-2 space-y-2 text-gray-600 text-[10px] pl-2 border-l border-gray-200">
-                {neoProjects.map((project) => (
-                  <li key={project}>
-                    <Link
-                      href={`/proyek/proyek-a`}
-                      className="block hover:text-[#2957A4]"
-                    >
-                      {project}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </>
-        ) : (
-          <Link
-            href={`/produk/detail?product=${encodeURIComponent(sub)}`}
-            onClick={() => handleSubItemClick(sub)}
-            className={`block cursor-pointer ${
-              activeSubItem === sub
-                ? 'text-[#2957A4] font-medium'
-                : 'hover:text-[#2957A4]'
-            }`}
-          >
-            {sub}
-          </Link>
-        )}
+{sub === 'Neo' ? (
+  <>
+    <button
+      onClick={() => {
+        handleSubItemClick(sub);
+        setActiveView('neo');
+      }}
+      className={`flex items-center w-full text-left cursor-pointer gap-2 ${
+        showNeoSubmenu
+          ? 'text-[#0B203F] font-semibold'
+          : 'text-[#2957A4] font-medium hover:text-[#0B203F]'
+      }`}
+    >
+      <span>{sub}</span>
+    </button>
+  </>
+) : (
+  <button
+    onClick={() => {
+      handleSubItemClick(sub);
+      setActiveView('default');
+    }}
+    className={`block cursor-pointer ${
+      activeSubItem === sub
+        ? 'text-[#2957A4] font-medium'
+        : 'hover:text-[#2957A4]'
+    }`}
+  >
+    {sub}
+  </button>
+)}
       </li>
     ))}
   </ul>
@@ -263,58 +302,37 @@ const proyekList = [
       </aside>
 
       {/* Main Content */}
-      <main className="w-full lg:w-5/5 space-y-8">
-      <section className="max-w-6xl mx-auto px-6 sm:px-12 text-sm sm:text-base mb-10">
-        {/* Heading */}
-        <div className="gap-6 items-start mb-10">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
-            PROYEK KAMI
-          </h2>
-        </div>
+    <main className="w-full lg:w-5/5 space-y-8">
+  <section className="max-w-6xl mx-auto px-6 sm:px-12 text-sm sm:text-base mb-10">
+    {/* Heading */}
+    <div className="gap-6 items-start mb-10">
+      <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+        PROYEK KAMI
+      </h2>
+    </div>
 
-{/* Grid Proyek (sesuai UI) */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black mb-20">
-  {proyekList.map((item) => (
-    <a 
-      href={item.link} 
-      key={item.id}
-      className="block border border-[#2957A4] rounded-md overflow-hidden transition-transform duration-300 hover:scale-105 no-underline"
-    >
-      <div className="bg-gray-300 w-full aspect-[6/3] flex items-center justify-center">
-        <img
-          src={item.file}
-          alt={item.nama}
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="bg-white px-4 py-3 text-left">
-        <p className="text-sm font-semibold text-black">{item.nama}</p>
-        <p className="text-sm text-blue-700 font-medium">{item.tempat}</p>
-      </div>
-    </a>
-  ))}
-</div>
+    {/* Render tampilan berdasarkan state */}
+    {activeView === 'default' ? (
+      <DefaultProjectView proyekList={proyekList} />
+    ) : (
+      <NeoProjectView proyekListneo={proyekListneo} />
+    )}
 
-        {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
-            <button
-    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
-  >
-    Sebelumnya
-  </button>
-          <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
-            1
-          </button>
-          <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
-            2
-          </button>
-                      <button
-    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
-  >
-    Berikutnya
-  </button>
-        </div>
-
+    {/* Pagination */}
+    <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+      <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50">
+        Sebelumnya
+      </button>
+      <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
+        1
+      </button>
+      <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
+        2
+      </button>
+      <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50">
+        Berikutnya
+      </button>
+    </div>
         {/* Pagination */}
 {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
   <button

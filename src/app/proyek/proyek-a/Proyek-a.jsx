@@ -38,25 +38,23 @@ export default function ProyekA() {
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-        <Image
-          src="/images/produk.png"
-          alt="Banner Proyek"
-          width={1764}
-          height={460}
-          className="w-full h-full object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
-      </div>
+        <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+              <Image
+                src="/images/proyek.jpg"
+                alt="Banner Proyek"
+                width={1764}
+                height={460}
+                className="w-full h-full object-cover object-center"
+                priority
+                quality={100}
+                sizes="100vw"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
       
             {/* Header Project */}
       <HeaderProject

@@ -116,23 +116,21 @@ const [slopeAngle, setSlopeAngle] = useState('');
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section - Responsive di semua device */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-      <Image
-          src="/images/produk.png"
-          alt="Banner Produk"
-          width={1764}
-          height={460}
-          className="w-full h-full object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full h-full object-cover object-center"
+    style={{
+      width: '100%',
+      height: 'auto',
+      objectFit: 'cover'
+    }}
+  >
+    <source src="/images/Spanduk Produk.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
       </div>
 
   {/* Header Section */}
