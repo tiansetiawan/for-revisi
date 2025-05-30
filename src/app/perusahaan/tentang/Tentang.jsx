@@ -13,19 +13,23 @@ export default function Tentang() {
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
 
 useEffect(() => {
-  if (typeof window !== 'undefined') {
-    // Ambil product dari URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const product = urlParams.get('product');
-    
-    if (product) {
-      setActiveSubItem(product);
-      // Pertahankan state di sessionStorage
-      sessionStorage.setItem('autoExpand', 'true');
-      sessionStorage.setItem('activeSubItem', product);
+  // Coba ambil dari URL terlebih dahulu
+  const urlParams = new URLSearchParams(window.location.search);
+  const productFromUrl = urlParams.get('product');
+
+  if (productFromUrl) {
+    setActiveSubItem(productFromUrl);
+    sessionStorage.setItem('autoExpand', 'true');
+    sessionStorage.setItem('activeSubItem', productFromUrl);
+  } else {
+    // Jika tidak ada di URL, cek sessionStorage
+    const storedProduct = sessionStorage.getItem('activeSubItem');
+    if (storedProduct) {
+      setActiveSubItem(storedProduct);
     }
   }
 }, []);
+
 
 
   const handleMainItemClick = (item) => {
