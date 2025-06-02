@@ -57,8 +57,7 @@ const proyekData = [
     namaProduk: 'Pavingblock',
     namaProyek: 'Alun Alun Kota Depok -',
     tempatProyek: 'Jawa Barat',
-    gambar: '/images/Alun-Alun Depok.jpg',
-    href: '/proyek/alun-alun-depok' // Tambahkan path yang diinginkan
+    gambar: '/images/Alun-Alun Depok.jpg'
   },
   {
     id: 2,
@@ -648,9 +647,10 @@ return (
       </section>
 
         {/* Video Testimonial Produk */}
-    <section className="py-6 sm:py-10 relative mt-5 mb-6">
+    <section className="py-6 sm:py-10 relative mt-10 mb-6">
   <div className="w-full">
     {/* Video Utama */}
+                  <h2 className="text-center text-xl sm:text-2xl font-medium mb-4 sm:mb-5">VIDEO TESTIMONIAL</h2>
     <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none">
       <div className="relative w-full max-w-4xl aspect-video bg-gray-200 rounded-none overflow-hidden">
         <div 

@@ -1,13 +1,13 @@
 'use client';
-import Details from './Details'; // pastikan ini cocok dengan nama file & export
+import DetailsA from './DetailsA'; // pastikan ini cocok dengan nama file & export
 import FloatingChatPanel from '@/app/components/FloatingChatPanel';
 
-export default function DetailPage() {
+export default function DetailsAPage() {
   return (
     <>
     <main>
       <FloatingChatPanel />
-    <Details />
+    <DetailsA />
     </main>
     </>
   );

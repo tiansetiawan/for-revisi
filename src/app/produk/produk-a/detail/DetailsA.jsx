@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaCalculator, FaTimes, FaElementor } from 'react-icons/fa';
 
-export default function Details() {
+export default function DetailsA() {
 
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
