@@ -272,7 +272,7 @@ export default function Tentang() {
           <div className="group">
             <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
               <Image 
-                src="/images/pasuruan.jpg" 
+                src="/images/pasuruan.jpeg" 
                 alt="Pasuruan Factory"   
                 fill
                 className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"

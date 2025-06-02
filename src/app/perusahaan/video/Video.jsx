@@ -169,32 +169,32 @@ const handleVideoClick = (videoId) => {
           {[
             { 
               id: 'dQw4w9WgXcQ', 
-              title: 'Proses Produksi Genteng',
+              title: 'Video Kegiatan 1',
               description: 'Lihat proses pembuatan genteng berkualitas kami'
             },
             { 
               id: '9bZkp7q19f0', 
-              title: 'Instalasi Genteng',
+              title: 'Video Kegiatan 2',
               description: 'Panduan pemasangan genteng yang benar'
             },
             { 
               id: 'JGwWNGJdvx8', 
-              title: 'Keunggulan Produk',
+              title: 'Video Kegiatan 3',
               description: 'Fitur unggulan produk genteng kami'
             },
             { 
               id: 'kJQP7kiw5Fk', 
-              title: 'Testimonial Pelanggan',
+              title: 'Video Kegiatan 4',
               description: 'Apa kata pelanggan tentang produk kami'
             },
             { 
               id: 'RgKAFK5djSk', 
-              title: 'Perawatan Genteng',
+              title: 'Video Kegiatan 5',
               description: 'Cara merawat genteng untuk ketahanan maksimal'
             },
             { 
               id: 'OPf0YbXqDm0', 
-              title: 'Inovasi Terbaru',
+              title: 'Video Kegiatan 6',
               description: 'Teknologi terbaru dalam produk genteng kami'
             }
           ].map((video) => (
@@ -204,7 +204,7 @@ const handleVideoClick = (videoId) => {
   onClick={() => handleVideoClick(video.id)}
 >
   <Image
-    src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+    // src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
     alt={video.title}
     width={1280}
     height={720}

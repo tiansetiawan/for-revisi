@@ -56,42 +56,42 @@ const handleMainItemClick = (item) => {
 const proyekList = [
     { 
         id: 1, 
-        nama: "Paving Block", 
-        file: "/images/Gedung Sate.jpg", 
-        tempat: "Proyek 1 - Gedung Sate Bandung",
+        nama: "Produk 1", 
+       file: "/images/icon photo.png", 
+        tempat: "Nama Proyek - Tempat",
         link: "/proyek/proyek-a" // Tambahkan link untuk navigasi
     },
     { 
         id: 2, 
-        nama: "Proyek 2", 
+        nama: "Produk 2", 
         file: "/images/icon photo.png", 
         tempat: "Nama Proyek - Tempat",
         link: "/proyek/2" 
     },
     { 
         id: 3, 
-        nama: "Proyek 3", 
+        nama: "Produk 3", 
         file: "/images/icon photo.png", 
         tempat: "Nama Proyek - Tempat",
         link: "/proyek/3" 
     },
     { 
         id: 4, 
-        nama: "Proyek 4", 
+        nama: "Produk 4", 
         file: "/images/icon photo.png", 
         tempat: "Nama Proyek - Tempat",
         link: "/proyek/4" 
     },
     { 
         id: 5, 
-        nama: "Proyek 5", 
+        nama: "Produk 5", 
         file: "/images/icon photo.png", 
         tempat: "Nama Proyek - Tempat",
         link: "/proyek/5" 
     },
     { 
         id: 6, 
-        nama: "Proyek 6", 
+        nama: "Produk 6", 
         file: "/images/icon photo.png", 
         tempat: "Nama Proyek - Tempat",
         link: "/proyek/6" 
@@ -101,9 +101,9 @@ const proyekList = [
 const proyekListneo = [
     { 
         id: 1, 
-        nama: "Paving Block", 
-        file: "/images/Gedung Sate.jpg", 
-        tempat: "Proyek 1 - Gedung Sate Bandung",
+        nama: "Produk 6", 
+        file: "/images/icon photo.png", 
+        tempat: "Nama Proyek - Tempat",
         link: "/proyek/proyek-a" // Tambahkan link untuk navigasi
     },
     { 
@@ -231,7 +231,10 @@ const NeoProjectView = ({ proyekListneo }) => (
 {item === 'Concrete Roof' ? (
   <>
     <button
-      onClick={() => handleMainItemClick(item)}
+         onClick={() => {
+        handleSubItemClick(sub);
+        setActiveView('neo');
+      }}
       className={`w-full text-left px-2 cursor-pointer hover:text-[#2957A4] ${
         activeItem === item && showSubmenu
           ? 'text-[#2957A4] border-l-2 border-[#2957A4] font-semibold'
@@ -243,7 +246,7 @@ const NeoProjectView = ({ proyekListneo }) => (
 
                   {/* Submenu */}
 {/* Submenu */}
- {showSubmenu && activeItem === 'Concrete Roof' && (
+ {/* {showSubmenu && activeItem === 'Concrete Roof' && (
       <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
     {subProducts.map((sub) => (
       <li key={sub}>
@@ -281,7 +284,7 @@ const NeoProjectView = ({ proyekListneo }) => (
       </li>
     ))}
   </ul>
-)}
+)} */}
 
                 </>
              ) : (

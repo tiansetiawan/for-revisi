@@ -56,11 +56,11 @@ export default function Kontak() {
     <FaPhone className="text-5xl mx-auto mb-2" />
     <h3 className="font-semibold text-lg">Phone</h3>
     <a href="tel:+6251585652262" className="text-sm hover:underline">
-      +6251585652262
+      +62xxxxxxxxx
     </a>
     <br />
     <a href="tel:+6251585652262" className="text-sm hover:underline">
-      +6251585652262
+      +62xxxxxxxxx
     </a>
   </div>
   <div>

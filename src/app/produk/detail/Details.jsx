@@ -1,16 +1,69 @@
-'use client';;
+'use client';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { FaCalculator, FaTimes, FaElementor } from 'react-icons/fa';
+import { FaCalculator, FaTimes } from 'react-icons/fa';
+
+
+// Data untuk produk NEO
+const NEO_PRODUCT = {
+  name: 'NEO',
+  thumbnails: [
+    {
+      id: 1,
+      thumbImage: '/images/neo.png',
+      largeImage: '/images/neo.png',
+      color: 'Hitam Solid'
+    }
+    // {
+    //   id: 2,
+    //  thumbImage: '/images/icon photo.png',
+    //   largeImage: '/images/icon photo.png',
+    //   color: 'Warna2'
+    // },
+    // {
+    //   id: 3,
+    //  thumbImage: '/images/icon photo.png',
+    //   largeImage: '/images/icon photo.png',
+    //   color: 'Warna3'
+    // }
+  ]
+};
 
 export default function Details() {
 
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
-  const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
-  const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
+  const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Utility'];
+  const subProducts = ['Neo', 'Victoria', 'Dual Slate', 'Floral', 'Excellent', 'Majestic', 'Oriental','New Royal'];
+  const subProductsPaving = ['Square Set', 'Classic Set', 'Altstadt', 'Others', 'Guiding Pave', 'Grass Block'];
+  const victoriaSubProducts = ['Onyx', 'Multiline', 'Slate', 'Pine', 'Classic'];
+    const [activeImage, setActiveImage] = useState('/images/neo.png');
+  const [activeColor, setActiveColor] = useState('Hitam Solid');
+    const [activeThumbnail, setActiveThumbnail] = useState(NEO_PRODUCT.thumbnails[0]);
+
+
+ // Data untuk thumbnail dan warna yang sesuai
+  const thumbnails = [
+    { 
+      image: '/images/neo.png', 
+      largeImage: '/images/neo.png',
+      color: 'Hitam Solid'
+    },
+    { 
+      image: '/images/icon photo.png', 
+      largeImage: '/images/neo-red.png', // Asumsi ada gambar merah
+      color: 'warna' 
+    },
+    // Tambahkan lebih banyak thumbnail jika diperlukan
+  ];
+
+// Perbaiki fungsi handleThumbnailClick
+const handleThumbnailClick = (thumbnail) => {
+  setActiveThumbnail(thumbnail);
+  setActiveColor(thumbnail.color);
+};
 
   useEffect(() => {
     // Ambil product dari URL
@@ -44,9 +97,9 @@ export default function Details() {
  const sliderRef = useRef(null);
 
  const productTypes = [
-  { name: 'Nok Ujung', image: '/images/icon photo.png'},
-  { name: 'Nok Atas', image: '/images/icon photo.png' },
-  { name: 'Apex', image: '/images/icon photo.png' }, { name: 'Starter', image: '/images/icon photo.png' }, { name: 'Nok Samping', image: '/images/icon photo.png' }, { name: 'Nok sammping Ujung', image: '/images/icon photo.png' }, { name: 'Genteng Setengah', image: '/images/icon photo.png' }];
+  { name: 'Nok Ujung', image: '/images/nokujung.png'},
+  { name: 'Nok Atas', image: '/images/nokatas.png' },
+  { name: 'Apex', image: '/images/apex.png' }, { name: 'Starter', image: '/images/starter.png' }, { name: 'Nok Samping', image: '/images/nok samping.png' }, { name: 'Nok sammping Ujung', image: '/images/nok samping ujung.png' }, { name: 'Genteng Setengah', image: '/images/genteng setengah.png' }];
  const visibleSlides = 4; // Number of slides visible at once
 
  const nextSlide = () => {
@@ -133,7 +186,7 @@ const calculateRequirement = () => {
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section - Responsive di semua device */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-        <Image
+        {/* <Image
           src="/images/Spanduk web Cisangkan.png"
           alt="Banner Perusahaan"
           width={1764}
@@ -142,8 +195,8 @@ const calculateRequirement = () => {
           priority
           quality={100}
           sizes="100vw"
-        />
-  {/* <video
+        /> */}
+  <video
     autoPlay
     muted
     loop
@@ -157,7 +210,7 @@ const calculateRequirement = () => {
   >
     <source src="/images/Spanduk Produk.mp4" type="video/mp4" />
     Your browser does not support the video tag.
-  </video> */}
+  </video>
       </div>
 
   {/* Header Section */}
@@ -225,89 +278,95 @@ const calculateRequirement = () => {
        {/* Main Content */}
 <main className="w-full lg:w-5/6 flex flex-col">
   {/* Gambar dan Thumbnail */}
-  <div className="flex flex-col lg:flex-row gap-8 mb-22">
-    {/* Ribbon NEO */}
-    <div className="relative w-full max-w-md">
+       <div className="flex flex-col lg:flex-row gap-8 mb-22">
+        {/* Ribbon NEO */}
+        <div className="relative w-full max-w-md">
       <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10">
-        NEO
+        {NEO_PRODUCT.name}
       </div>
-      <div className="relative aspect-square bg-gray-300 w-full flex items-center justify-center">
-        {/* Gambar besar */}
-        <Image 
-          src="/images/icon photo.png" 
-          alt="Produk NEO" 
+ {/* Gambar Besar */}
+<div className="relative aspect-square bg-white w-full flex items-center justify-center">
+  <Image 
+    src={activeThumbnail.largeImage}
+    alt={`Produk ${NEO_PRODUCT.name}`} 
+    fill
+    className="object-cover transition-opacity duration-300"
+    priority
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+  />
+</div>
+          
+              {/* Thumbnail Container */}
+<div className="mt-4">
+  <div className="flex space-x-3">
+    {NEO_PRODUCT.thumbnails.map((thumbnail) => (
+      <div 
+        key={thumbnail.id}
+        className={`relative w-16 h-16 rounded-xs overflow-hidden transition-all duration-200 cursor-pointer ${
+          activeThumbnail.id === thumbnail.id 
+            ? 'ring-4 ring-blue-500 border-blue-300 scale-95' 
+            : 'border border-gray-300 hover:border-blue-300'
+        }`}
+        onClick={() => handleThumbnailClick(thumbnail)}
+      >
+        <Image
+          src={thumbnail.thumbImage}
+          alt={`Thumbnail ${thumbnail.id}`}
           fill
           className="object-cover"
+          sizes="64px"
         />
+        {activeThumbnail.id === thumbnail.id && (
+          <div className="absolute inset-0 bg-transparent bg-opacity-10"></div>
+        )}
       </div>
-          {/* Thumbnail */}
-    <div className="container-thumbnail items-start w-full max-w-md">
-<div className="mt-4 flex space-x-4">
-  <div className="relative w-16 h-16 bg-gray-200 border-2 border-blue-700 overflow-hidden rounded">
-    <Image 
-      src="/images/icon photo.png" 
-      alt="thumb1" 
-      fill
-      className="object-cover"
-      sizes="64px"
-    />
-  </div>
-  <div className="relative w-16 h-16 bg-gray-300 overflow-hidden rounded">
-    <Image 
-      src="/images/icon photo.png" 
-      alt="thumb2" 
-      fill
-      className="object-cover"
-      sizes="64px"
-    />
+    ))}
   </div>
 </div>
-    </div>
-    </div>
+        </div>
 
-
-   {/* Right Column - Specifications */}
-            <div className="w-full lg:w-1/2 space-y-6 px-6">
-              {/* Spesifikasi */}
-              <section className='mb-14'>
-<h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI :</h2>
-                <div className="space-y-3 pl-4">
-                  {[
-                    { label: 'Lubang Nominal', value: '44 x 37,4 cm' },
-                    { label: 'Lubang Efektif', value: '36 x 34,4 cm' },
-                    { label: 'Berat', value: '5,7 kg' },
-                    { label: 'Pemakaian Genteng', value: '8 bh/m2' },
-                    { label: 'Jarak Antar Reng', value: '36 cm' },
-                    { label: 'Sudut Atap', value: 'Min. 25°' }
-                  ].map((item, index) => (
-                    <div key={index} className="flex">
-                      <p className="w-48 font-medium">{item.label}</p>
-                      <p className="mr-2">:</p>
-                      <p>{item.value}</p>
-                    </div>
-                  ))}
+        {/* Right Column - Specifications */}
+        <div className="w-full lg:w-1/2 space-y-6 px-6">
+          {/* Spesifikasi */}
+          <section className='mb-14'>
+            <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI :</h2>
+            <div className="space-y-3 pl-4">
+              {[
+                { label: 'Lubang Nominal', value: '44 x 37,4 cm' },
+                { label: 'Lubang Efektif', value: '36 x 34,4 cm' },
+                { label: 'Berat', value: '5,7 kg' },
+                { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+                { label: 'Jarak Antar Reng', value: '36 cm' },
+                { label: 'Sudut Atap', value: 'Min. 25°' }
+              ].map((item, index) => (
+                <div key={index} className="flex">
+                  <p className="w-48 font-medium">{item.label}</p>
+                  <p className="mr-2">:</p>
+                  <p>{item.value}</p>
                 </div>
-                <p className="italic mt-4 pl-4">Cara Pemasangan Berselang</p>
-              </section>
+              ))}
+            </div>
+            <p className="italic mt-4 pl-4">Cara Pemasangan Berselang</p>
+          </section>
 
-              {/* Spesifikasi Teknis */}
-              <section className='mb-8'>
-  <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
-                <div className="space-y-3 pl-4">
-                  {[
-                    { label: 'Beban Lentur', value: '1200 N' },
-                    { label: 'Penyerapan Air', value: 'Maks. 10%' },
-                    { label: 'Ketebalan Cat', value: '100 Mikron' },
-                    { label: 'Warna Cat', value: 'Hitam Solid' }
-                  ].map((item, index) => (
-                    <div key={index} className="flex">
-                      <p className="w-48 font-medium">{item.label}</p>
-                      <p className="mr-2">:</p>
-                      <p>{item.value}</p>
-                    </div>
-                  ))}
+          {/* Spesifikasi Teknis - Bagian yang dimodifikasi */}
+          <section className='mb-8'>
+            <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
+            <div className="space-y-3 pl-4">
+              {[
+                { label: 'Beban Lentur', value: '1200 N' },
+                { label: 'Penyerapan Air', value: 'Maks. 10%' },
+                { label: 'Ketebalan Cat', value: '100 Mikron' },
+                { label: 'Warna Cat', value: activeColor } // Menggunakan state activeColor
+              ].map((item, index) => (
+                <div key={index} className="flex">
+                  <p className="w-48 font-medium">{item.label}</p>
+                  <p className="mr-2">:</p>
+                  <p>{item.value}</p>
                 </div>
-              </section>
+              ))}
+            </div>
+          </section>
 
  {/* Tombol Hitung */}
       <div className='pl-4 px-44'>
@@ -405,7 +464,6 @@ onChange={() => handleCalculationTypeChange('Luas Bangunan')}
             />
             <span className="px-4 py-2 bg-gray-300 text-xs">°</span>
           </div>
-          <p className="text-xs text-gray-500 mt-1">Rekomendasi: 25° - 45°</p>
         </div>
       )}
 
@@ -461,12 +519,12 @@ onChange={() => handleCalculationTypeChange('Luas Bangunan')}
         {productTypes.map((product) => (
           <div key={product.name} className="snap-start min-w-0 ps-11 group">
             <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
-  <div className="relative w-full h-45 flex items-center justify-center bg-gray-300 overflow-hidden">
+  <div className="relative w-full h-45 flex items-center justify-center bg-white overflow-hidden">
     <Image
       src={product.image}
       alt={product.name}
       fill
-      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      className="object-scale-down transition-transform duration-500 group-hover:scale-105"
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
   </div>

@@ -5,7 +5,7 @@ export default function ProyekA() {
 
   // Data katalog
   const proyekList = [
-    { id: 1, nama: "Paving Block", file: "/images/Gedung Sate.jpg", tempat:"Proyek 1 - Gedung Sate Bandung" },
+    { id: 1, nama: "Proyek 2", file: "/images/icon photo.png", tempat:"Nama Proyek - Tempat" },
     { id: 2, nama: "Proyek 2", file: "/images/icon photo.png", tempat:"Nama Proyek - Tempat" },
     { id: 3, nama: "Proyek 3", file: "/images/icon photo.png", tempat:"Nama Proyek - Tempat" },
     { id: 4, nama: "Proyek 4", file: "/images/icon photo.png", tempat:"Nama Proyek - Tempat" },
@@ -58,9 +58,9 @@ export default function ProyekA() {
       
             {/* Header Project */}
       <HeaderProject
-        productName="Paving Block"
-        projectName="Gedung Sate"
-        location="Bandung"
+        productName="Produk"
+        projectName="Nama Proyek"
+        location="Tempat"
       />
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-6 pe-1 py-8">

@@ -29,6 +29,12 @@ const heroSlides = [
     // subtitle: 'Sleek, Strong, and Stylish.',
     // description: 'Enhance your home’s architecture with a modern touch.',
   },
+  {
+    image: '/images/5.jpg',
+    // title: 'MODERN ROOF',
+    // subtitle: 'Sleek, Strong, and Stylish.',
+    // description: 'Enhance your home’s architecture with a modern touch.',
+  },
 ];
 
 // Category Data
@@ -40,7 +46,7 @@ const defaultCategories = [
   },
   { name: 'Paving Block', icon: '/icons/pv-trace.png' },
   { name: 'Concrete Block', icon: '/icons/cb-trace.png' },
-  { name: 'Concrete Pipe', icon: '/icons/cp-trace.png' }
+  { name: 'Utility', icon: '/icons/cp-trace.png' }
 ];
 
 
@@ -48,94 +54,95 @@ const defaultCategories = [
 const proyekData = [
   {
     id: 1,
-    namaProduk: 'Flat Roof',
-    namaProyek: 'Kantor Pusat Cisangkan',
-    tempatProyek: 'Bandung',
-    gambar: '/images/Alun-Alun Depok.jpg'
+    namaProduk: 'Pavingblock',
+    namaProyek: 'Alun Alun Kota Depok -',
+    tempatProyek: 'Jawa Barat',
+    gambar: '/images/Alun-Alun Depok.jpg',
+    href: '/proyek/alun-alun-depok' // Tambahkan path yang diinginkan
   },
   {
     id: 2,
-    namaProduk: 'Classic Tile',
-    namaProyek: 'Perumahan Elit',
-    tempatProyek: 'Jakarta',
-    gambar: '/images/Alun-Alun Wado.jpg'
-  },
-  {
-    id: 3,
-    namaProduk: 'Modern Roof',
-    namaProyek: 'Apartemen Taman Kota',
-    tempatProyek: 'Surabaya',
+    namaProduk: 'Sandstein',
+    namaProyek: 'Kawasan Candi Borobudur',
+    tempatProyek: 'Magelang',
     gambar: '/images/Candi Borobudur.jpg'
   },
   {
-    id: 4,
-    namaProduk: 'Concrete Block',
-    namaProyek: 'Pabrik Tekstil',
-    tempatProyek: 'Cirebon',
-    gambar: '/images/Candi Gedong Songo.jpg'
-  },
-  {
-    id: 5,
-    namaProduk: 'Paving Block',
-    namaProyek: 'Area Parkir Mall',
-    tempatProyek: 'Bekasi',
+    id: 3,
+    namaProduk: 'Sandstein',
+    namaProyek: 'Gedung Sate',
+    tempatProyek: 'Bandung',
     gambar: '/images/Gedung Sate.jpg'
   },
   {
+    id: 4,
+    namaProduk: 'Pavingblock',
+    namaProyek: 'Alun-alun Wado',
+    tempatProyek: 'Jawa Barat',
+    gambar: '/images/Alun-Alun Wado.jpg'
+  },
+  {
+    id: 5,
+    namaProduk: 'Sandstein',
+    namaProyek: 'Candi Gedong Songo',
+    tempatProyek: 'Semarang',
+    gambar: '/images/Candi Gedong Songo.jpg'
+  },
+  {
     id: 6,
-    namaProduk: 'Concrete Pipe',
-    namaProyek: 'Proyek Drainase',
-    tempatProyek: 'Bogor',
+    namaProduk: 'Kanstein K.03.1',
+    namaProyek: 'Kawasan Embung KIPP',
+    tempatProyek: 'IKN',
     gambar: '/images/Embung Kipp IKN.jpg'
   },
   {
     id: 7,
-    namaProduk: 'Concrete Block',
-    namaProyek: 'Pabrik Tekstil',
-    tempatProyek: 'Cirebon',
-    gambar: '/images/Istana Presiden IKN.jpg'
+    namaProduk: 'Nama Produk',
+    namaProyek: 'Nama Proyek',
+    tempatProyek: 'Tempat',
+    gambar: '/images/icon photo.png'
   },
   {
     id: 8,
-    namaProduk: 'Paving Block',
-    namaProyek: 'Area Parkir Mall',
-    tempatProyek: 'Bekasi',
-    gambar: '/images/Pelindo Tower.jpg'
+    namaProduk: 'Nama Produk',
+    namaProyek: 'Nama Proyek',
+    tempatProyek: 'Tempat',
+    gambar: '/images/icon photo.png'
   },
   {
     id: 9,
-    namaProduk: 'Concrete Pipe',
-    namaProyek: 'Proyek Drainase',
-    tempatProyek: 'Bogor',
-    gambar: '/images/Trotoar SPAM.jpg'
+    namaProduk: 'Nama Produk',
+    namaProyek: 'Nama Proyek',
+    tempatProyek: 'Tempat',
+    gambar: '/images/icon photo.png'
   },
   {
     id: 10,
-    namaProduk: 'Concrete Block',
-    namaProyek: 'Pabrik Tekstil',
-    tempatProyek: 'Cirebon',
-    gambar: '/images/Unjani.jpg'
+    namaProduk: 'Nama Produk',
+    namaProyek: 'Nama Proyek',
+    tempatProyek: 'Tempat',
+    gambar: '/images/icon photo.png'
   },
   {
     id: 11,
-    namaProduk: 'Paving Block',
-    namaProyek: 'Area Parkir Mall',
-    tempatProyek: 'Bekasi',
-    gambar: '/images/proyek5.jpg'
+    namaProduk: 'Nama Produk',
+    namaProyek: 'Nama Proyek',
+    tempatProyek: 'Tempat',
+    gambar: '/images/icon photo.png'
   },
   {
     id: 12,
-    namaProduk: 'Concrete Pipe',
-    namaProyek: 'Proyek Drainase',
-    tempatProyek: 'Bogor',
-    gambar: '/images/proyek6.jpg'
+    namaProduk: 'Nama Produk',
+    namaProyek: 'Nama Proyek',
+    tempatProyek: 'Tempat',
+    gambar: '/images/icon photo.png'
   }
 ];
 
 // Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  thumbnail: "/images/factory Visit.png",
+  thumbnail: "/images/VidTes1.jpg",
   youtubeId: "EiLY8P_Lf8o",
   description: "Testimonial pelanggan utama kami"
 };
@@ -807,19 +814,19 @@ return (
     {
       title: "Tentang Kami",
       image: "/images/icon-short1.png",
-      desc: "Lorem ipsum has been the industry's standard dummy..",
+      desc: "Kenali lebih dekat PT. Cisangkan dan produk-produknya",
       link: "/perusahaan/tentang" // Tambahkan link untuk Tentang Kami
     },
     {
       title: "Store",
       image: "/images/icon-short2.png",
-      desc: "Lorem ipsum has been the industry's standard dummy..",
+      desc: "Kunjungi Store dan Kiosk Cisangkan di sekitar anda",
       link: "/showroom/store" // Tambahkan link untuk Store
     },
     {
       title: "Inovasi", 
       image: "/images/icon-short3.png",
-      desc: "Lorem ipsum has been the industry's standard dummy..",
+      desc: "Kami menciptakan inovasi untuk lebih memudahkan anda",
       link: "/perusahaan/inovasi" // Tambahkan link untuk Inovasi
     }
   ].map((item, i) => (

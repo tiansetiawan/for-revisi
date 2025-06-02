@@ -149,7 +149,7 @@ export default function Navbar() {
                     isActive('/concrete-pipe') ? 'bg-gray-100 text-[#0F1E3E] font-medium' : 'hover:bg-gray-100'
                   }`}
                 >
-                  Concrete Pipe
+                  Utility
                 </a>
               </li>
             </ul>
