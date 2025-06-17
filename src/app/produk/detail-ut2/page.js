@@ -1,4 +1,5 @@
 'use client';
+import { Suspense } from 'react';
 import DetailsUt2 from './Details-Ut2'; // pastikan ini cocok dengan nama file & export
 import FloatingChatPanel from '@/app/components/FloatingChatPanel';
 
@@ -7,7 +8,9 @@ export default function DetailUt2Page() {
     <>
     <main>
       <FloatingChatPanel />
-    <DetailsUt2 />
+            <Suspense fallback={<div>Loading...</div>}>
+                <DetailsUt2 />
+            </Suspense>
     </main>
     </>
   );
