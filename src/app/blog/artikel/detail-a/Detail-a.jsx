@@ -8,22 +8,8 @@ const inovasiList = [
     judul: "Lorem ipsum",
     deskripsi:
       "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi1.jpg",
-  },
-  {
-    id: 2,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi2.jpg",
-  },
-  {
-    id: 3,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi3.jpg",
-  },
+    gambar: "/images/Cisangkan Run.png",
+  }
 ];
 
 
@@ -108,10 +94,10 @@ export default function DetailA() {
   useEffect(() => {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
-      judul: "Lorem ipsum amet nulla in sit pellentesque imperdiet eu purus a ullamcorper amet sit lectus integer faucibus consequat odio quis.",
+      judul: "CISANGKAN KBP CITY RUN 2025",
       tanggal: "16 Mei 2025",
-      gambar: "/path/to/image.jpg",
-      deskripsi: "Lorem ipsum aliquet mauris interdum orci amet aliquam tellus felis congue auctor tincidunt neque pharetra et euismod eget et nisi iaculis commodo laoreet nisi tristique amet quis aliquam nunc ornare morbi nisi ultrices vivamus aliquam interdum at rutrum non ac arcu faucibus sapien auctor pellentesque nisl amet id est ullamcorper id mauris consequat tellus tellus tempor faucibus dictumst fermentum cursus et pellentesque sollicitudin egestas gravida egestas scelerisque senectus egestas urna orci auctor habitasse egestas vulputate praesent tempor fringilla etiam sed eget sed aliquam mauris sed scelerisque nec massa metus ut pharetra in bibendum commodo morbi ornare velit tincidunt eros at sit nulla tellus potenti turpis adipiscing tortor elementum aliquam in posuere vulputate sem ipsum tellus egestas cursus dapibus neque egestas massa volutpat in sed tincidunt amet sed mauris vel ultricies amet at nisi lobortis leo consectetur interdum leo massa pellentesque venenatis orci sit ac aenean quisque porttitor condimentum orci vel enim facilisis rutrum euismod tempor id dolor non ac amet ipsum maecenas mi nascetur mauris amet nulla at molestie scelerisque vitae leo id enim nunc quam purus id urna viverra commodo est consectetur ullamcorper laoreet orci mauris amet sollicitudin morbi tempus urna eget amet libero ut sed donec amet proin sit magnis tempor suspendisse elit sit nibh ac enim morbi ut erat lacus porta ipsum egestas in a vitae turpis blandit sed aliquam consequat a eget pulvinar vel viverra aliquam ipsum gravida sem massa morbi dolor mauris euismod feugiat pulvinar dictum at arcu id ultrices ut tristique massa malesuada ullamcorper turpis commodo integer odio aliquet ultricies nunc commodo malesuada sapien nullam consectetur sed id facilisi integer morbi odio senectus tincidunt eget risus tellus suscipit fringilla posuere maecenas pellentesque eu sem elementum dictumst amet risus lorem sit at at consequat volutpat id sed dictumst nec orci non id pulvinar purus nibh."
+      gambar: "/images/Cisangkan Run.png",
+      deskripsi: ""
     };
 
     setData(sampleData);
@@ -126,7 +112,7 @@ export default function DetailA() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/produk.png"
+          src="/images/artikel.jpg"
           alt="Banner Artikel"
           width={1764}
           height={460}
@@ -140,8 +126,6 @@ export default function DetailA() {
             objectFit: 'cover'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/20 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
-        </div>
       </div>
 
       {/* Header Section */}
@@ -183,20 +167,54 @@ export default function DetailA() {
       <p>{data.deskripsi}</p>
     ) : (
       <>
-        <p><strong>Lorem ipsum</strong> dolor sit amet...</p>
-        <p>...continues dummy text...</p>
-        {/* Tambahkan lebih banyak paragraf dummy jika diperlukan */}
+        <p><strong>"Run the Celebration!" </strong><br/> Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan.</p>
+  <p>Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan bangga mengumumkan kolaborasi istimewa dengan Kota Baru Parahyangan dalam penyelenggaraan Cisangkan KBP City Run 2025. Acara ini bukan hanya sekadar lomba lari, tetapi juga merupakan perayaan dua tonggak sejarah penting:</p>
+
+  <p>50 Tahun PT Cisangkan: Merayakan setengah abad dedikasi dalam industri paving dan genteng.</p>
+
+  <p>25 Tahun Kota Baru Parahyangan: Mengenang seperempat abad perjalanan sebagai kota mandiri yang modern dan berkelanjutan.</p>
+
+  <p>Dengan semangat kebersamaan, kami mengajak seluruh masyarakat untuk bergabung dalam perayaan ini melalui tema "Run the Celebration!". Mari bersama-sama merayakan pencapaian dan semangat sehat bersama dalam Cisangkan KBP City Run 2025.</p>
+
+  <p>📅 <strong>Informasi Acara</strong><br />
+  Tanggal: Sabtu, 6 September 2025<br />
+  Waktu Mulai: Pukul 15:00 – 21.00 WIB<br />
+  Lokasi: Bumi Hejo, Kota Baru Parahyangan, Kabupaten Bandung Barat</p>
+
+  <p>🏅 <strong>Kategori Lomba</strong><br />
+  Untuk memenuhi berbagai kelompok usia dan tingkat kemampuan, KBP City Run 2025 menawarkan beberapa kategori lomba:</p>
+
+  <p><strong>Speedy Run (Anak-anak):</strong><br />
+  Kategori khusus untuk anak-anak usia 3–13 tahun,<br />
+  dibagi dalam kelompok usia 3–5 tahun, 6–8 tahun, dan 9–13 tahun.</p>
+  
+  <p><strong>5K Pelajar:</strong> Lomba lari sejauh 5 kilometer khusus untuk pelajar.</p>
+  <p><strong>5K Umum:</strong> Lomba lari sejauh 5 kilometer terbuka untuk umum.</p>
+  <p><strong>10K Umum:</strong> Lomba lari sejauh 10 kilometer terbuka untuk umum.</p>
+
+  <p>🎉 <strong>Aktivitas Pasca Lomba</strong><br />
+  Setelah lomba, peserta dapat menikmati berbagai aktivitas menarik di area race village, seperti:<br />
+  <strong>Live Music & Hiburan:</strong> Menikmati penampilan musik dan hiburan lainnya.<br />
+  <strong>Kuliner Lokal:</strong> Mencicipi berbagai makanan dan minuman dari berbagai tenant yang hadir.</p>
+
+  <p>📌 <strong>Pendaftaran & Tiket</strong><br />
+  Pendaftaran dapat dilakukan melalui situs resmi kbpcityrun.com.<br />
+  Pastikan untuk mendaftar segera karena tiket terbatas.</p>
+
+  <p>🔔 <strong>Ayo Bergabung!</strong><br />
+  Jangan lewatkan kesempatan untuk menjadi bagian dari Cisangkan KBP City Run 2025. Ajak keluarga, teman, dan komunitas Anda untuk bersama-sama merayakan olahraga, kesehatan, dan kebersamaan di Kota Baru Parahyangan. Segera daftarkan diri Anda dan raih pengalaman lari yang tak terlupakan!</p>
+
+  <p>Mari lari bersama, sehat bersama, dan jadikan Cisangkan KBP City Run 2025 sebagai bagian dari perjalanan hidup sehat Anda!</p>
       </>
     )}
   </div>
 
-
+{/* 
   <h2 className="text-xl font-semibold mb-6">ARTIKEL TERKAIT</h2>
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
   {[1, 2].map((id) => (
     <div key={id} className="flex gap-4">
-      {/* Gambar Thumbnail */}
       <div className="w-[100px] h-[100px] bg-gray-300 flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +227,6 @@ export default function DetailA() {
         </svg>
       </div>
 
-      {/* Konten Artikel */}
       <div className="flex-1">
         <h3 className="text-md font-semibold mb-1">
           Lorem ipsum auctor lacinia.
@@ -226,7 +243,7 @@ export default function DetailA() {
       </div>
     </div>
   ))}
-</div>
+</div> */}
 </section>
     </div>
   );

@@ -54,48 +54,48 @@ const handleMainItemClick = (item) => {
 
   // Data katalog
 const proyekList = [
-    { 
-        id: 1, 
-        nama: "Produk 1", 
-       file: "/images/icon photo.png", 
-        tempat: "Nama Proyek - Tempat",
-        link: "/proyek/proyek-a" // Tambahkan link untuk navigasi
-    },
-    { 
-        id: 2, 
-        nama: "Produk 2", 
-        file: "/images/icon photo.png", 
-        tempat: "Nama Proyek - Tempat",
-        link: "/proyek/2" 
-    },
-    { 
-        id: 3, 
-        nama: "Produk 3", 
-        file: "/images/icon photo.png", 
-        tempat: "Nama Proyek - Tempat",
-        link: "/proyek/3" 
-    },
-    { 
-        id: 4, 
-        nama: "Produk 4", 
-        file: "/images/icon photo.png", 
-        tempat: "Nama Proyek - Tempat",
-        link: "/proyek/4" 
-    },
-    { 
-        id: 5, 
-        nama: "Produk 5", 
-        file: "/images/icon photo.png", 
-        tempat: "Nama Proyek - Tempat",
-        link: "/proyek/5" 
-    },
-    { 
-        id: 6, 
-        nama: "Produk 6", 
-        file: "/images/icon photo.png", 
-        tempat: "Nama Proyek - Tempat",
-        link: "/proyek/6" 
-    },
+    {
+  id: 1,
+  nama: "Paving Block",
+  file: "/images/Alun-Alun Depok.jpg",
+  tempat: "Alun Alun Kota Depok - Jawa Barat",
+  // link: "/proyek/proyek-a"
+},
+{
+  id: 2,
+  nama: "Sandstein",
+  file: "/images/Candi Borobudur.jpg",
+  tempat: "Kawasan Candi Borobudur - Magelang",
+  // link: "/proyek/2"
+},
+{
+  id: 3,
+  nama: "Sandstein",
+  file: "/images/Gedung Sate.jpg",
+  tempat: "Gedung Sate - Bandung",
+  // link: "/proyek/3"
+},
+{
+  id: 4,
+  nama: "Pavingblock",
+  file: "/images/Alun-Alun Wado.jpg",
+  tempat: "Alun-alun Wado - Jawa Barat",
+  // link: "/proyek/4"
+},
+{
+  id: 5,
+  nama: "Sandstein",
+  file: "/images/Candi Gedong Songo.jpg",
+  tempat: "Candi Gedong Songo - Semarang",
+  // link: "/proyek/5"
+},
+{
+  id: 6,
+  nama: "Kanstein K.03.1",
+  file: "/images/Embung Kipp IKN.jpg",
+  tempat: "Kawasan Embung KIPP - IKN",
+  // link: "/proyek/6"
+},
 ];
 
 const proyekListneo = [
@@ -310,7 +310,7 @@ const NeoProjectView = ({ proyekListneo }) => (
     {/* Heading */}
     <div className="gap-6 items-start mb-10">
       <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
-        PROYEK KAMI
+        GALERI PROYEK KAMI
       </h2>
     </div>
 

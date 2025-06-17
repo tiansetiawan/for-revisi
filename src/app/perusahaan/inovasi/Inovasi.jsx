@@ -5,25 +5,25 @@ import { useState, useRef, useEffect } from 'react';
 const inovasiList = [
   {
     id: 1,
-    judul: "Lorem ipsum",
+    judul: "Genteng Neo Solar: Inovasi Atap Beton Flat Premium dari PT Cisangkan",
     deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi1.jpg",
+      "Dalam era arsitektur modern dan berkelanjutan, kebutuhan akan produk bangunan yang tidak hanya fungsional namun juga estetis semakin meningkat. PT Cisangkan, sebagai pionir produsen Genteng Beton di Indonesia, memperkenalkan Genteng Neo, sebuah inovasi genteng beton flat premium yang dirancang untuk masa depan.",
+    gambar: "/images/gentengneo.jpg",
   },
-  {
-    id: 2,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi2.jpg",
-  },
-  {
-    id: 3,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi3.jpg",
-  },
+  // {
+  //   id: 2,
+  //   judul: "Lorem ipsum",
+  //   deskripsi:
+  //     "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
+  //   gambar: "/images/inovasi2.jpg",
+  // },
+  // {
+  //   id: 3,
+  //   judul: "Lorem ipsum",
+  //   deskripsi:
+  //     "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
+  //   gambar: "/images/inovasi3.jpg",
+  // },
 ];
 
 export default function Inovasi() {
@@ -120,9 +120,9 @@ export default function Inovasi() {
   <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
     <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
     <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-    <Link href="/perusahaan/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link>
-    <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link>
-    <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link>
+    {/* <Link href="/perusahaan/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link> */}
+    {/* <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link> */}
+    {/* <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link> */}
     <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
     <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
   </nav>
@@ -130,15 +130,15 @@ export default function Inovasi() {
 
       {/* Main Content */}
     <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
-      <div className="gap-6 items-start mb-20">
-        <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+      <div className="gap-6 items-start mb-5">
+        <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase ">
           INOVASI
         </h2>
-        <p className="text-sm text-justify">
+        {/* <p className="text-sm text-justify">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text
           ever since the 1500s.
-        </p>
+        </p> */}
       </div>
 
       {/* Daftar Inovasi */}
@@ -174,7 +174,7 @@ export default function Inovasi() {
 
         {/* Pagination */}
        {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
             <button
     className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
   >
@@ -191,7 +191,7 @@ export default function Inovasi() {
   >
     Berikutnya
   </button>
-        </div>
+        </div> */}
     </section>
     </div>
   );

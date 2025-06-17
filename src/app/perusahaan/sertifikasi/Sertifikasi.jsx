@@ -1,16 +1,16 @@
-'use client';;
+'use client';
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Sertifikasi() {
-
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
+  const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
   const modalRef = useRef(null);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
@@ -18,13 +18,11 @@ export default function Sertifikasi() {
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
 
   useEffect(() => {
-    // Ambil product dari URL
     const urlParams = new URLSearchParams(window.location.search);
     const product = urlParams.get('product');
     
     if (product) {
       setActiveSubItem(product);
-      // Pertahankan state di sessionStorage
       sessionStorage.setItem('autoExpand', 'true');
       sessionStorage.setItem('activeSubItem', product);
     }
@@ -44,43 +42,44 @@ export default function Sertifikasi() {
     setActiveSubItem(subItem);
   };
   
- // Slider state for product types
- const [currentSlide, setCurrentSlide] = useState(0);
- const sliderRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
 
- const productTypes = [
-  { name: 'Neo', image: '/images/icon photo.png' },
-  { name: 'Victoria', image: '/images/icon photo.png' },
-  { name: 'Victoria Multiline', image: '/images/icon photo.png' }, { name: 'Victoria Slate', image: '/images/icon photo.png' }, { name: 'Victoria Pine', image: '/images/Victoria Pine Clear.png' }];
- const visibleSlides = 4; // Number of slides visible at once
+  const productTypes = [
+    { name: 'Neo', image: '/images/icon photo.png' },
+    { name: 'Victoria', image: '/images/icon photo.png' },
+    { name: 'Victoria Multiline', image: '/images/icon photo.png' }, 
+    { name: 'Victoria Slate', image: '/images/icon photo.png' }, 
+    { name: 'Victoria Pine', image: '/images/Victoria Pine Clear.png' }
+  ];
+  const visibleSlides = 4;
 
- const nextSlide = () => {
-   if (currentSlide < productTypes.length - visibleSlides) {
-     setCurrentSlide(currentSlide + 1);
-     scrollToSlide(currentSlide + 1);
-   }
- };
+  const nextSlide = () => {
+    if (currentSlide < productTypes.length - visibleSlides) {
+      setCurrentSlide(currentSlide + 1);
+      scrollToSlide(currentSlide + 1);
+    }
+  };
 
- const prevSlide = () => {
-   if (currentSlide > 0) {
-     setCurrentSlide(currentSlide - 1);
-     scrollToSlide(currentSlide - 1);
-   }
- };
+  const prevSlide = () => {
+    if (currentSlide > 0) {
+      setCurrentSlide(currentSlide - 1);
+      scrollToSlide(currentSlide - 1);
+    }
+  };
 
- const scrollToSlide = (slideIndex) => {
-   if (sliderRef.current) {
-     const slideWidth = sliderRef.current.children[0]?.clientWidth || 0;
-     sliderRef.current.scrollTo({
-       left: slideIndex * (slideWidth + 16), // 16px for gap
-       behavior: 'smooth'
-     });
-   }
- };
+  const scrollToSlide = (slideIndex) => {
+    if (sliderRef.current) {
+      const slideWidth = sliderRef.current.children[0]?.clientWidth || 0;
+      sliderRef.current.scrollTo({
+        left: slideIndex * (slideWidth + 16),
+        behavior: 'smooth'
+      });
+    }
+  };
 
-
-const [slopeAngle, setSlopeAngle] = useState('');
-   const [showCalculator, setShowCalculator] = useState(false);
+  const [slopeAngle, setSlopeAngle] = useState('');
+  const [showCalculator, setShowCalculator] = useState(false);
   const [calculationType, setCalculationType] = useState('Luas Atap');
   const [inputValue, setInputValue] = useState('');
   const [result, setResult] = useState('');
@@ -90,34 +89,29 @@ const [slopeAngle, setSlopeAngle] = useState('');
   };
 
   const calculateRequirement = () => {
-  const value = parseFloat(inputValue);
-  if (!isNaN(value)) {
-    let calculatedResult;
-    
-    if (calculationType === 'Luas Atap') {
-      calculatedResult = Math.ceil(value * 8); // 8 genteng per m2
-    } else {
-      // Perhitungan luas bangunan
-      let roofArea = value;
+    const value = parseFloat(inputValue);
+    if (!isNaN(value)) {
+      let calculatedResult;
       
-      if (slopeAngle) {
-        const angle = parseFloat(slopeAngle);
-        // Hitung luas atap berdasarkan sudut kemiringan
-        roofArea = value / Math.cos(angle * Math.PI / 180);
+      if (calculationType === 'Luas Atap') {
+        calculatedResult = Math.ceil(value * 8);
       } else {
-        // Asumsi default 1.5x luas bangunan
-        roofArea = value * 1.5;
+        let roofArea = value;
+        
+        if (slopeAngle) {
+          const angle = parseFloat(slopeAngle);
+          roofArea = value / Math.cos(angle * Math.PI / 180);
+        } else {
+          roofArea = value * 1.5;
+        }
+        
+        calculatedResult = Math.ceil(roofArea * 8);
       }
       
-      calculatedResult = Math.ceil(roofArea * 8);
+      setResult(calculatedResult.toString());
     }
-    
-    setResult(calculatedResult.toString());
-  }
-};
+  };
 
-
-   // Handle click outside modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -140,14 +134,27 @@ const [slopeAngle, setSlopeAngle] = useState('');
       alert('Harap isi nama dan email terlebih dahulu');
       return;
     }
-    console.log(`Download katalog oleh ${name} (${email}) (${telpon})`);
+    console.log(`Download katalog ${currentDownloadItem} oleh ${name} (${email}) (${telpon})`);
     setName('');
     setEmail('');
     setTelpon('');
     setShowDownloadPanel(false);
   };
 
-  // Variants untuk animasi
+  const handleTKDNDownload = () => {
+    // Direct to TKDN official website
+    window.open('https://tkdn.kemenperin.go.id/sertifikat_perush.php?id=vqUH9qalfsZtbUNxr_FTaBzIcQ11dCMcjVMHKpkQJeU,&id_siinas=nHTdkkt3VN7_Y1M_OfKwyLOys7-lTTfsQ6VteJmphdA', '_blank');
+  };
+
+  const openDownloadPanel = (item) => {
+    if (item === 'TKDN') {
+      handleTKDNDownload();
+    } else {
+      setCurrentDownloadItem(item);
+      setShowDownloadPanel(true);
+    }
+  };
+
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 }
@@ -179,9 +186,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
-      {/* Hero Section - Responsive di semua device */}
+      {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-      <Image
+        <Image
           src="/images/Banner Perusahaan.jpg"
           alt="banner sertifikasi"
           width={1764}
@@ -198,95 +205,87 @@ const [slopeAngle, setSlopeAngle] = useState('');
         />
       </div>
 
-  {/* Header Section */}
-
-<div className="bg-[#F2F2F2] py-4">
-  <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-    <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-    <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-    <Link href="/perusahaan/sertifikasi" className="text-[#2D5DA6] font-bold">Sertifikasi</Link>
-    <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link>
-    <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link>
-    <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">Inovasi</Link>
-    <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
-  </nav>
-</div>
-
-     <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
-  {/* Heading */}
-<div className="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-6 items-start mb-10">
-    {/* Kiri: Heading */}
-    <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase">
-      SERTIFIKASI<br />
-      PT CISANGKAN
-    </h2>
-
-    {/* Kanan: Deskripsi */}
-    <p className="text-sm text-justify text-gray-700">
-      Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna
-      odio dolor ut cras hac etiam nunc quis ut neque sodales ut.
-    </p>
-  </div>
-
-{/* Grid Sertifikasi */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
-  {[
-    {
-      src: '/images/SNI.png',
-      alt: 'SNI',
-      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
-    },
-    {
-      src: '/images/TKDN.png',
-      alt: 'TKDN',
-      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
-    },
-    {
-      src: '/images/IAPMO.png',
-      alt: 'APM',
-      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
-    },
-    {
-      src: '/images/KAN.png',
-      alt: 'KAN',
-      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
-    },
-    {
-      src: '/images/GREEN LABEL.png',
-      alt: 'Green Label',
-      description: 'Lorem ipsum pretium et leo feugiat varius risus ut ornare at placerat interdum blandit nibh a orci urna.',
-    },
-  ].map((item, index) => (
-    <div
-      key={index}
-      className='flex flex-col items-center text-center'
-    >
-      <div className="border border-gray-300 bg-[#E4EEFF] shadow-sm rounded overflow-hidden mb-4">
-      <div className="bg-white p-6 flex items-center justify-center h-40 transition-transform duration-300 hover:scale-105">
-        <img
-          src={item.src}
-          alt={item.alt}
-          className="h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
-        />
+      {/* Header Section */}
+      <div className="bg-[#F2F2F2] py-4">
+        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+          <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
+          <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
+          <Link href="/perusahaan/sertifikasi" className="text-[#2D5DA6] font-bold">Sertifikasi</Link>
+          <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">Inovasi</Link>
+          <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
+        </nav>
       </div>
-      <div className="p-4">
-        <p className="font-semibold text-justify text-xs">
-          {item.description}
-        </p>
-      </div>
-      </div>
-      <button 
-                onClick={() => setShowDownloadPanel(true)}
+
+      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
+        {/* Heading */}
+        <div className="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-6 items-start mb-10">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase">
+            SERTIFIKASI<br />
+            PT CISANGKAN
+          </h2>
+        </div>
+
+        {/* Grid Sertifikasi */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
+          {[
+            {
+              id: 'SNI',
+              src: '/images/SNI.png',
+              alt: 'SNI',
+              description: 'SNI adalah standar yang ditetapkan oleh Badan Standardisasi Nasional (BSN) untuk menjamin kualitas, keamanan, dan keandalan produk.',
+            },
+            {
+              id: 'TKDN',
+              src: '/images/TKDN.png',
+              alt: 'TKDN',
+              description: 'TKDN menunjukkan seberapa besar komponen lokal yang digunakan dalam suatu produk atau jasa.',
+            },
+            {
+              id: 'IAPMO',
+              src: '/images/IAPMO.png',
+              alt: 'APM',
+              description: 'Sertifikasi IAPMO merupakan pengakuan internasional terhadap kualitas dan keamanan produk plumbing dan mekanikal.',
+            },
+            {
+              id: 'KAN',
+              src: '/images/KAN.png',
+              alt: 'KAN',
+              description: 'KAN memberikan akreditasi terhadap lembaga sertifikasi dan laboratorium pengujian yang kredibel.',
+            },
+            {
+              id: 'GREEN_LABEL',
+              src: '/images/GREEN LABEL.png',
+              alt: 'Green Label',
+              description: 'Green Label adalah tanda pengakuan bahwa produk kami ramah lingkungan dan berkelanjutan.',
+            },
+          ].map((item, index) => (
+            <div key={index} className='flex flex-col items-center text-center'>
+              <div className="border border-gray-300 bg-[#E4EEFF] shadow-sm rounded overflow-hidden mb-4">
+                <div className="bg-white p-6 flex items-center justify-center h-40 transition-transform duration-300 hover:scale-105">
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="font-semibold text-justify text-xs">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+              <button 
+                onClick={() => openDownloadPanel(item.id)}
                 className="text-sm text-blue-700 font-medium hover:underline"
               >
                 Unduh &gt;&gt;
               </button>
-    </div>
-  ))}
-</div>
-</section>
- {/* Download Panel Modal */}
-        {/* Download Panel Modal dengan Animasi */}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Download Panel Modal */}
       <AnimatePresence>
         {showDownloadPanel && (
           <motion.div
@@ -305,7 +304,6 @@ const [slopeAngle, setSlopeAngle] = useState('');
               animate="visible"
               exit="exit"
             >
-              {/* Close Button (X) */}
               <button
                 onClick={() => setShowDownloadPanel(false)}
                 className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"

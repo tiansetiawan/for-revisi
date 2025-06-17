@@ -99,10 +99,10 @@ export default function Details() {
   useEffect(() => {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
-      judul: "Lorem ipsum amet nulla in sit pellentesque imperdiet eu purus a ullamcorper amet sit lectus integer faucibus consequat odio quis.",
+      judul: "Genteng Neo Solar: Inovasi Atap Beton Flat Premium dari PT Cisangkan",
       tanggal: "16 Mei 2025",
-      gambar: "/path/to/image.jpg",
-      deskripsi: "Lorem ipsum aliquet mauris interdum orci amet aliquam tellus felis congue auctor tincidunt neque pharetra et euismod eget et nisi iaculis commodo laoreet nisi tristique amet quis aliquam nunc ornare morbi nisi ultrices vivamus aliquam interdum at rutrum non ac arcu faucibus sapien auctor pellentesque nisl amet id est ullamcorper id mauris consequat tellus tellus tempor faucibus dictumst fermentum cursus et pellentesque sollicitudin egestas gravida egestas scelerisque senectus egestas urna orci auctor habitasse egestas vulputate praesent tempor fringilla etiam sed eget sed aliquam mauris sed scelerisque nec massa metus ut pharetra in bibendum commodo morbi ornare velit tincidunt eros at sit nulla tellus potenti turpis adipiscing tortor elementum aliquam in posuere vulputate sem ipsum tellus egestas cursus dapibus neque egestas massa volutpat in sed tincidunt amet sed mauris vel ultricies amet at nisi lobortis leo consectetur interdum leo massa pellentesque venenatis orci sit ac aenean quisque porttitor condimentum orci vel enim facilisis rutrum euismod tempor id dolor non ac amet ipsum maecenas mi nascetur mauris amet nulla at molestie scelerisque vitae leo id enim nunc quam purus id urna viverra commodo est consectetur ullamcorper laoreet orci mauris amet sollicitudin morbi tempus urna eget amet libero ut sed donec amet proin sit magnis tempor suspendisse elit sit nibh ac enim morbi ut erat lacus porta ipsum egestas in a vitae turpis blandit sed aliquam consequat a eget pulvinar vel viverra aliquam ipsum gravida sem massa morbi dolor mauris euismod feugiat pulvinar dictum at arcu id ultrices ut tristique massa malesuada ullamcorper turpis commodo integer odio aliquet ultricies nunc commodo malesuada sapien nullam consectetur sed id facilisi integer morbi odio senectus tincidunt eget risus tellus suscipit fringilla posuere maecenas pellentesque eu sem elementum dictumst amet risus lorem sit at at consequat volutpat id sed dictumst nec orci non id pulvinar purus nibh."
+      gambar: "/images/gentengneo1.jpg",
+      deskripsi: ""
     };
 
     setData(sampleData);
@@ -138,9 +138,9 @@ export default function Details() {
   <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
     <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
     <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-    <Link href="/perusahaan/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link>
-    <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link>
-    <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link>
+    {/* <Link href="/perusahaan/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link> */}
+    {/* <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link> */}
+    {/* <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link> */}
     <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
     <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
   </nav>
@@ -175,9 +175,46 @@ export default function Details() {
       <p>{data.deskripsi}</p>
     ) : (
       <>
-        <p><strong>Lorem ipsum</strong> dolor sit amet...</p>
-        <p>...continues dummy text...</p>
-        {/* Tambahkan lebih banyak paragraf dummy jika diperlukan */}
+<p>
+  Dalam era arsitektur modern dan berkelanjutan, kebutuhan akan produk bangunan yang tidak hanya fungsional namun juga estetis semakin meningkat. PT Cisangkan, sebagai pionir produsen Genteng Beton di Indonesia, memperkenalkan Genteng Neo, sebuah inovasi genteng beton flat premium yang dirancang untuk masa depan.
+</p>
+
+<p>
+  Salah satu keunggulan utama Genteng Neo adalah kemampuannya untuk dipasang secara bersamaan dengan solar tile atau genteng surya. Tidak seperti panel surya konvensional yang kerap terlihat menonjol dan merusak tampilan atap, sistem ini menghadirkan visual yang lebih menyatu dan seamless. Konsep ini sangat disukai oleh para arsitek dan perencana, karena memungkinkan pencapaian target efisiensi energi tanpa mengorbankan keindahan bangunan. Dengan begitu, penggunaan solar power bukan lagi sekadar tambahan teknis, melainkan bagian integral dari desain arsitektural itu sendiri.
+</p>
+
+<p>
+  Dari segi teknis, Genteng Neo Solar dirancang dengan dimensi yang optimal yaitu:
+</p>
+
+<ul>
+  <li>Nominal Area: 44 x 37,4 cm</li>
+  <li>Effective Area: 36,6 x 34,4 cm</li>
+  <li>Berat per Lembar: 5,5 – 5,7 kg</li>
+  <li>Kebutuhan Genteng per m²: ±7,95 pcs</li>
+  <li>Jarak Reng: 36 – 36,6 cm</li>
+  <li>Kemiringan Minimum Atap: 25°</li>
+</ul>
+
+<p>
+  Dengan ukuran efektif dan presisi tinggi, genteng ini dirancang untuk memaksimalkan perlindungan cuaca dan mengoptimalkan efisiensi penyerapan energi matahari saat dipadukan dengan solar tile.
+</p>
+
+<p>
+  Genteng Neo hadir dengan tampilan flat yang minimalis dan elegan—sangat sesuai untuk gaya arsitektur modern, tropis, maupun industrial. Bagi para arsitek dan perencana, pilihan ini menjadi solusi ideal karena tidak mengorbankan keindahan desain hanya demi fungsi panel surya.
+</p>
+
+<p>
+  PT Cisangkan juga menyediakan aksesori genteng yang lengkap, mulai dari nok atas, nok samping hingga nok siku yang dapat dipakai untuk berbagai jenis atap dari perisai hingga limas. Aksesori genteng Neo juga dirancang agar serasi dengan sistem Neo Solar. Ini memastikan integrasi yang menyeluruh dan kualitas instalasi terbaik di berbagai tipe bangunan.
+</p>
+
+<p>
+  Genteng Neo Solar dari PT Cisangkan bukan hanya sekadar atap—ini adalah investasi jangka panjang untuk hunian atau bangunan masa depan. Dengan kombinasi antara desain mewah, kekuatan struktural, dan kemampuan integrasi solar system, genteng ini menawarkan solusi sempurna bagi mereka yang ingin membangun rumah berkelanjutan tanpa mengorbankan estetika.
+</p>
+
+<p>
+  Untuk arsitek, developer, dan pemilik rumah yang peduli pada desain sekaligus ingin berkontribusi terhadap lingkungan, Genteng Neo adalah pilihan yang akan memuaskan dari segi visual, fungsionalitas, dan keberlanjutan energi.
+</p>
       </>
     )}
   </div>

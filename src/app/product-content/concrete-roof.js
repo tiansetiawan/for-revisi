@@ -5,23 +5,12 @@ export const ConcreteRoofContent = () => (
     <section className='mb-20'>
       <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">KEUNGGULAN GENTENG CISANGKAN :</h2>
       <p className="text-sm leading-relaxed text-justify ps-5">
-       Genteng CISANGKAN® diproduksi menggunakan wet process, yaitu proses basah
-dengan teknologi mesin dari Jepang. Bahan baku berupa pasir dan semen pilihan
-diproses melalui tahapan panjang dan terkontrol untuk menghasilkan genteng berkualitas
-tinggi.
-        <br /><br />
-        Salah satu produk unggulan CISANGKAN® adalah genteng flat Victoria, yang tersedia
-dalam lima pilihan model dan motif.
-        <br /><br />
-Semua genteng Cisangkan dilengkapi sistem interlock antar genteng untuk
-menghasilkan sambungan yang kokoh dan rapat.
-Kelebihan lain genteng Cisangkan antara lain adalah desain Gutter Line, Two Lines
-Barrier, Upper Barrier, dan Double Protection Bar yang dirancang khusus untuk
-mengalirkan dan menahan air hujan secara optimal.
-        <br /><br />
-Genteng CISANGKAN® dirancang sesuai dengan iklim tropis Indonesia dan telah lulus
-uji kualitas sesuai standar SNI 0096:2007, dengan hasil uji kekuatan lentur &gt; 1200 N.
-      </p>
+  Genteng <strong>CISANGKAN®</strong> diproduksi dengan menggunakan proses basah yaitu <em>wet process</em>. Raw material pasir dan semen pilihan akan melewati suatu proses panjang, yaitu menggunakan mesin teknologi Jepang, kemudian setiap keping genteng yang dihasilkan melewati proses rendaman lalu curing secara alami, dan setiap keping genteng tersebut akan melewati proses penggosokan dan <em>quality control</em> satu per satu. Finishing akhir adalah proses <em>coating</em> dengan cat <em>solvent base</em> sesuai pesanan.
+  <br /><br />
+  Salah satu produk genteng unggulan <strong>CISANGKAN®</strong> yaitu profil genteng flat Victoria yang tersedia dalam 5 pilihan model/motif. Kelebihan tipe ini adalah presisi dan <em>interlocking system</em> satu sama lainnya sehingga memungkinkan terpasang sangat rapi dan kedap terhadap masuknya air hujan yang disebabkan oleh faktor angin. Selain itu kelebihannya yaitu memiliki <strong>Gutter Line</strong> yaitu tali air untuk mengarahkan aliran air hujan, <strong>Two Lines Barrier</strong>, <strong>Upper Barrier</strong> dan <strong>Double Protection Bar</strong> untuk membendung air hujan.
+  <br /><br />
+  Genteng <strong>CISANGKAN®</strong> dirancang sesuai dengan iklim tropis di Indonesia dan telah lolos pengujian yang mengacu pada standar nasional yaitu <strong>SNI 0096 – 2007</strong>. <em>Standar Bending Test</em> yaitu Kekuatan Lentur &gt; 1200 N.
+</p>
     </section>
 
     <section className="flex justify-center">
@@ -36,27 +25,32 @@ uji kualitas sesuai standar SNI 0096:2007, dengan hasil uji kekuatan lentur &gt;
         <li>Beban lentur minimal 1200 N</li>
         <li>Daya serap air &lt; 10%</li>
         <li>Sistem produksi mesin Press Wet System</li>
-        <li>Sistem pengecatan Sprayboot 2 tahap</li>
-        <li>Cat Solvent Based tahan cuaca, air, alkali, sinar UV</li>
+        <li>Sistem pengecatan Sprayboot 2 tahap (Base Coat dan Pigment Top Coat)</li>
+        <li>Finishing menggunakan Cat Solvent Based tahan cuaca, air, alkali, sinar UV</li>
         <li>Ketebalan cat 70 mikron</li>
-        <li>Prosedur & hasil uji mengacu pada ASTM Section 6, Volume 06.01</li>
-        <li>Warna: Hitam, Abu-abu, Kopi, Coklat, Merah</li>
+        <li>Prosedur dan hasil pengujian cat mengacu pada ASTM Section 6, Volume 06.01</li>
+        <li>Terdiri dari banyak varian warna :</li>
+                <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
+          <li className="contents">
+            <span>- Warna Regular</span>
+            <span>: Hitam, Abu-abu, Kopi, Coklat dan Merah</span>
+          </li>
+        </ul>
       </ul>
     </section>
   </>
 );
 
 export const concreteRoofProducts = [
-  { name: 'Neo', image: '/images/neo.png'},
-  { name: 'Victoria Onyx', image: '/images/onyx.png' },
-  { name: 'Victoria Multiline', image: '/images/multilines-2.png' }, 
-  { name: 'Victoria Slate', image: '/images/slates.png' }, 
-  { name: 'Victoria Pine', image: '/images/pines.png' }, 
-  { name: 'Victoria Classic', image: '/images/classic.png' },
-  { name: 'Dual Slate', image: '/images/dualslate.png' }, 
-  { name: 'Floral', image: '/images/floral.png' }, 
-  { name: 'Excellent', image: '/images/excellent.png' },
-  { name: 'Majestic', image: '/images/majestic-2.png' }, 
-  { name: 'Oriental', image: '/images/oriental.png' }, 
-  { name: 'New Royal', image: '/images/newroyal.png' }
+  { name: 'Neo Solar System', image: '/images/Concrete Roof/Neo/neo1.png'},
+  { name: 'Dual Slate', image: '/images/Concrete Roof/Dual Slate/Dual Slate.png' },
+  { name: 'Floral', image: '/images/Concrete Roof/Floral/Floral.png' }, 
+  { name: 'Victoria Onyx', image: '/images/Concrete Roof/Victoria Series/onyx1.png' }, 
+  { name: 'Victoria Multiline', image: '/images/Concrete Roof/Victoria Series/multilines1.png' },
+  { name: 'Victoria Slate', image: '/images/Concrete Roof/Victoria Series/slate1.png' },
+  { name: 'Victoria Pine', image: '/images/Concrete Roof/Victoria Series/pine1.png' },
+  { name: 'Victoria Classic', image: '/images/Concrete Roof/Victoria Series/classic1.png' },
+  { name: 'New Royal', image: '/images/Concrete Roof/New Royal/newroyal.png' }, 
+  { name: 'Oriental', image: '/images/Concrete Roof/Oriental/Oriental.png' },
+  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/Majestic.png' }
 ];

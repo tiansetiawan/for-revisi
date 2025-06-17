@@ -1,52 +1,46 @@
 'use client';
 import { useState, useEffect, useRef } from 'react'; 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import HeroSection from './HeroSection';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import '@/app/style/Beranda.css'
+import '@/app/style/Beranda.css';
 
-// Hero Slides Data
+// Hero Slides Data with URLs
 const heroSlides = [
   {
     image: '/images/4.jpg',
-    // title: 'FLAT ROOF',
-    // subtitle: 'Minimalist Look, Maximum Durability.',
-    // description: 'Bring a timeless modern vibe to every corner of your roof.',
+    url: '/blog/artikel/detail-b',
   },
   {
     image: '/images/2.jpg',
-    // title: 'CLASSIC TILE',
-    // subtitle: 'Elegant and Timeless.',
-    // description: 'A perfect fit for traditional yet stylish homes.',
+    url: '/blog/artikel/detail-a',
   },
   {
     image: '/images/1.jpg',
-    // title: 'MODERN ROOF',
-    // subtitle: 'Sleek, Strong, and Stylish.',
-    // description: 'Enhance your home’s architecture with a modern touch.',
+    url: '/produk?category=Concrete Roof',
   },
   {
     image: '/images/5.jpg',
-    // title: 'MODERN ROOF',
-    // subtitle: 'Sleek, Strong, and Stylish.',
-    // description: 'Enhance your home’s architecture with a modern touch.',
+    url: '/produk?category=Paving Block',
   },
 ];
+
 
 // Category Data
 const defaultCategories = [
   { 
     name: 'Concrete Roof', 
     icon: '/icons/cr-trace.png',
-    link: '/produk' // Tambahkan properti link
+    link: '/produk?category=Concrete Roof' // Tambahkan properti link
   },
-  { name: 'Paving Block', icon: '/icons/pv-trace.png' },
-  { name: 'Concrete Block', icon: '/icons/cb-trace.png' },
-  { name: 'Utility', icon: '/icons/cp-trace.png' }
+  { name: 'Paving Block', icon: '/icons/pv-trace.png',  link: '/produk?category=Paving Block' },
+  { name: 'Concrete Block', icon: '/icons/cb-trace.png',  link: '/produk?category=Concrete Block' },
+  { name: 'Utility', icon: '/icons/cp-trace.png',  link: '/produk?category=Utility' }
 ];
 
 
@@ -55,7 +49,7 @@ const proyekData = [
   {
     id: 1,
     namaProduk: 'Pavingblock',
-    namaProyek: 'Alun Alun Kota Depok -',
+    namaProyek: 'Alun Alun Kota Depok',
     tempatProyek: 'Jawa Barat',
     gambar: '/images/Alun-Alun Depok.jpg'
   },
@@ -150,52 +144,52 @@ const mainTestimonialVideo = {
 const videoTestimonials = [
   {
     id: 1,
-    title: 'Video Testimonial 1',
-    thumbnail: '/images/factory Visit.png',
+    title: 'Cisangkan Menurut Bapak Tony Susianto',
+    thumbnail: '/images/VidTes1.jpg',
     youtubeId: 'EiLY8P_Lf8o',
-    watchText: 'Lihat lebih banyak',
+    watchText: '',
     watchLink: '/testimonial/1' // Tambahkan link tujuan
   },
   {
     id: 2,
-    title: 'Video Testimonial 2',
-    thumbnail: '/images/factory Visit.png',
-    youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak',
-    watchLink: '/testimonial/2'
+    title: 'Cisangkan Menurut Bapak Dedi Haryanto',
+    thumbnail: '/images/tes1.jpg',
+    youtubeId: 'XrAfg8RlA6o',
+    watchText: '',
+    watchLink: '/testimonial/2' // Tambahkan link 
   },
   {
     id: 3,
-    title: 'Video Testimonial 3',
-    thumbnail: '/images/factory Visit.png',
-    youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak',
+    title: 'Testimoni Customer di Pameran Building Technology EXPO',
+    thumbnail: '/images/tes3.jpg',
+    youtubeId: 'Win66lulRJA',
+    watchText: '',
     watchLink: '/testimonial/3'
   },
   {
     id: 4,
-    title: 'Video Testimonial 4',
-    thumbnail: '/images/factory Visit.png',
-    youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak',
+    title: 'Testimoni Customer di Pameran Building Technology EXPO',
+    thumbnail: '/images/tes4.jpg',
+    youtubeId: 'KfRpNP59QmU',
+    watchText: '',
     watchLink: '/testimonial/4'
   },
   {
     id: 5,
-    title: 'Video Testimonial 5',
-    thumbnail: '/images/factory Visit.png',
-    youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak',
+    title: 'Testimoni Customer di Pameran Building Technology EXPO',
+    thumbnail: '/images/tes2.jpg',
+    youtubeId: '725AGp2ou1Y',
+    watchText: '',
     watchLink: '/testimonial/5'
-  },
-  {
-    id: 6,
-    title: 'Video Testimonial 6',
-    thumbnail: '/images/factory Visit.png',
-    youtubeId: 'dQw4w9WgXcQ',
-    watchText: 'Lihat lebih banyak',
-    watchLink: '/testimonial/6'
   }
+  // {
+  //   id: 6,
+  //   title: 'Video Testimonial 6',
+  //   thumbnail: '/images/tes6',
+  //   youtubeId: 'dQw4w9WgXcQ',
+  //   watchText: '',
+  //   watchLink: '/testimonial/6'
+  // }
 ];
 
 // Handler untuk video
@@ -255,8 +249,34 @@ const videoTestimonials = [
   );
 };
 
+const terbaruList = [
+  {
+    id: 1,
+    image: "/images/KBP CityRun.jpg",
+    title: "CISANGKAN KBP CITY RUN 2025",
+    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan..",
+    link: "/blog/artikel/detail-a"
+  },
+  {
+    id: 2,
+    image: "/images/ultah50.jpg",
+    title: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
+    desc: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun..",
+    link: "/blog/artikel/detail-b"
+  },
+  {
+    id: 3,
+    image: "/images/cisflashing.jpg",
+    title: "CIS Flashing: Solusi Flashing Moder",
+    desc: "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran..",
+    link: "/blog/artikel/detail-c"
+  }
+];
+
+
 
 export default function Beranda() {
+    const router = useRouter();
     // State tambahan untuk animasi
     const [isChangingSlide, setIsChangingSlide] = useState(false);
   // Hero Slider State
@@ -277,6 +297,12 @@ export default function Beranda() {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Handle hero slide click
+  const handleHeroSlideClick = (url) => {
+    router.push(url);
+  };
+
 
 // Handler untuk video
   const handleVideoSelect = (videoId) => {
@@ -465,7 +491,7 @@ const ProjectCard = ({ proyek }) => (
         <h3 className="text-base sm:text-lg font-semibold text-white">
           {proyek.namaProduk}
         </h3>
-        <p className="text-sm text-white/90 mt-1">
+        <p className="text-sm text-white/90 mt-1 italic">
           {proyek.namaProyek} – {proyek.tempatProyek}
         </p>
       </div>
@@ -538,6 +564,9 @@ useEffect(() => {
 }, [isAutoPlaying, currentSlide]);
 
 
+
+  
+
 return (
 <main className="px-4 md:px-11 2xl:px-16">
   {/* Hero Section */}
@@ -560,14 +589,15 @@ return (
       </button>
     </div>
 
-    <HeroSection 
-      slides={heroSlides.map(slide => ({
-        ...slide,
-      }))}
-      currentSlide={currentSlide}
-      autoPlayDelay={5000}
-      onSlideChange={handleSlideChange}
-    />
+<HeroSection 
+  slides={heroSlides.map(slide => ({
+    ...slide,
+  }))}
+  currentSlide={currentSlide}
+  autoPlayDelay={5000}
+  onSlideChange={handleSlideChange}
+  onSlideClick={handleHeroSlideClick} // Tambahkan ini
+/>
 
   {/* Slide Indicators */}
   <div className="hero-slide-indicators absolute bottom-[17.5rem] left-1/2 -translate-x-1/2 flex gap-2 z-10 2xl:bottom-[14rem]">
@@ -627,7 +657,8 @@ return (
 
     {/* Proyek Cisangkan Section */}
     <section className="py-6 sm:py-10 bg-[#ECEEF0] relative">
-        <h2 className="text-center text-xl sm:text-2xl font-medium mb-4 sm:mb-5">PROYEK CISANGKAN</h2>
+        <h2 className="text-center text-xl sm:text-2xl font-medium">PROYEK CISANGKAN</h2>
+              <p className="text-center text-blue-500 text-sm sm:text-base cursor-pointer hover:underline mb-4 sm:mb-5"><a href='/proyek'>Lihat Semua</a></p>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-1">
           <div className="relative">
@@ -762,31 +793,26 @@ return (
       <p className="text-blue-500 text-sm sm:text-base cursor-pointer hover:underline"><a href='/blog/artikel'>Lihat Semua</a></p>
     </div>
     
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-  {[...Array(3)].map((_, i) => (
-    <div key={i} className="flex after:w-[1px] after:bg-[#D7D7D7]">
-      <div className="flex p-4">
-        {/* Ganti div placeholder dengan Image */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  {terbaruList.map((item) => (
+    <Link key={item.id} href={item.link} className="flex after:w-[1px] after:bg-[#D7D7D7] hover:bg-white transition rounded-md">
+      <div className="flex p-4 cursor-pointer">
         <div className="relative w-20 h-20 mr-4 flex-shrink-0">
           <Image
-            src={`/images/icon photo.png`} // Ganti dengan path gambar yang sesuai
-            alt={`Testimonial ${i+1}`}
+            src={item.image}
+            alt={item.title}
             width={80}
             height={80}
             className="object-cover"
-            style={{ width: '80px', height: '80px' }} // Memastikan ukuran tetap
+            style={{ width: '80px', height: '80px' }}
           />
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-medium mb-1">
-            Lorem ipsum has been the industry's standard..
-          </h3>
-          <p className="text-xs text-gray-600">
-            when an unknown printer took a galley of type and
-          </p>
+          <h3 className="text-sm font-medium mb-1">{item.title}</h3>
+          <p className="text-xs text-gray-600">{item.desc}</p>
         </div>
       </div>
-    </div>
+    </Link>
   ))}
 </div>
   </div>
@@ -821,7 +847,7 @@ return (
       title: "Store",
       image: "/images/icon-short2.png",
       desc: "Kunjungi Store dan Kiosk Cisangkan di sekitar anda",
-      link: "/showroom/store" // Tambahkan link untuk Store
+      link: "/kontak/store" // Tambahkan link untuk Store
     },
     {
       title: "Inovasi", 
@@ -830,25 +856,28 @@ return (
       link: "/perusahaan/inovasi" // Tambahkan link untuk Inovasi
     }
   ].map((item, i) => (
-    <Link href={item.link} key={i} passHref legacyBehavior>
-      <a className='w-60 block transition-shadow duration-300'>
-        <div className="section-container relative w-full h-60 mb-6 rounded-none  overflow-hidden">
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            className="object-cover hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
-          />
-        </div>
+  <Link
+    href={item.link}
+    key={i}
+    passHref
+    className='w-60 block transition-shadow duration-300'
+  >
+       <div className="section-container relative w-full h-60 mb-6 rounded-none overflow-hidden">
+      <Image
+        src={item.image}
+        alt={item.title}
+        fill
+        className="object-cover hover:scale-105 transition-transform duration-300"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+      />
+    </div>
         <h3 className="text-sm font-semibold mb-2">{item.title}</h3>
         <p className="text-base text-gray-600 leading-6">{item.desc}</p>
         <div className="text-blue-500 text-xs mt-1 hover:text-blue-700 transition-colors">
           Baca lebih banyak
         </div>
-      </a>
     </Link>
   ))}
 </div>

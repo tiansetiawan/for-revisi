@@ -10,7 +10,8 @@ const FadeBannerSlider = ({
     slides = [], 
     currentSlide = 0,
     autoPlayDelay = 5000,
-    onSlideChange
+    onSlideChange,
+    onSlideClick // Tambahkan prop baru untuk handle klik
   }) => {
     const sliderRef = useRef(null);
   
@@ -19,6 +20,13 @@ const FadeBannerSlider = ({
         sliderRef.current.slickGoTo(currentSlide);
       }
     }, [currentSlide]);
+
+    // Handler untuk klik slide
+    const handleSlideClick = (url) => {
+      if (onSlideClick) {
+        onSlideClick(url);
+      }
+    };
   
     const settings = {
       ref: sliderRef,
@@ -42,14 +50,18 @@ const FadeBannerSlider = ({
         <div className={styles.sliderContainer}>
           <Slider {...settings}>
             {slides.map((slide, index) => (
-              <div key={slide.id || slide.image} className={styles.slide}>
+              <div 
+                key={slide.id || slide.image} 
+                className={styles.slide}
+                onClick={() => handleSlideClick(slide.url)} // Tambahkan onClick handler
+              >
                 <div className={styles.imageContainer}>
                   <Image 
                     src={slide.image} 
                     alt={slide.alt || slide.title || 'Banner'} 
                     width={1765}
                     height={823}
-                    className={styles.bannerImage}
+                    className={`${styles.bannerImage} cursor-pointer`} // Tambahkan cursor-pointer
                     priority={index === 0}
                   />
                 </div>

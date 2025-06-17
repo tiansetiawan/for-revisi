@@ -5,24 +5,27 @@ import { useState, useRef, useEffect } from 'react';
 const inovasiList = [
   {
     id: 1,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi1.jpg",
+    judul: "CISANGKAN KBP CITY RUN 2025",
+    tanggal: "16 Juni 2025",
+    url: "/blog/artikel/detail-a", // ← Tambahkan ini
+    deskripsi: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan bangga mengumumkan kolaborasi istimewa dengan Kota Baru Parahyangan dalam penyelenggaraan Cisangkan KBP City Run 2025. Acara ini bukan hanya sekadar lomba lari, tetapi juga merupakan perayaan dua tonggak sejarah penting",
+    gambar: "/images/KBP CityRun.jpg",
   },
   {
     id: 2,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi2.jpg",
+    judul: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
+        tanggal: "16 Juni 2025",
+    url: "/blog/artikel/detail-b",
+    deskripsi: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun perjalanannya membangun Indonesia melalui inovasi dan kualitas di industri beton pracetak. Dengan mengusung semangat “Bangga Berkarya, Bangga Indonesia”, perusahaan ini menegaskan kembali komitmennya sebagai bagian dari kekuatan pembangunan nasional.",
+    gambar: "/images/ultah50.jpg",
   },
   {
     id: 3,
-    judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-    gambar: "/images/inovasi3.jpg",
+    judul: "CIS Flashing: Solusi Flashing Modern, Anti Bocor, dan Tanpa Semen untuk Atap Rumah Anda",
+        tanggal: "16 Juni 2025",
+  url: "/blog/artikel/detail-c",
+    deskripsi: "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.",
+    gambar: "/images/cisflashing.jpg",
   },
 ];
 
@@ -131,11 +134,11 @@ export default function Artikel() {
         <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
           ARTIKEL
         </h2>
-        <p className="text-sm text-justify">
+        {/* <p className="text-sm text-justify">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text
           ever since the 1500s.
-        </p>
+        </p> */}
       </div>
 
 {/* Daftar Artikel */}
@@ -172,24 +175,24 @@ export default function Artikel() {
           {item.judul || "Lorem ipsum auctor lacinia varius magna arcu a id varius."}
         </h3>
         <p className="text-sm text-[#2957A4] mb-2">
-          {item.tanggal || "22 Mei 2025"}
+          {item.tanggal || "16 Juni 2025"}
         </p>
         <p className="text-sm text-justify text-[#333333] mb-3">
           {item.deskripsi || "Lorem ipsum ornare viverra lorem mattis elementum sit viverra vitae est aliquet nisi tristique egestas lorem morbi varius neque magna adipiscing lobortis vivamus velit sed lacus purus sapien amet turpis viverra ipsum aliquam dignissim morbi lacus turpis lacus ornare maecenas in leo blandit libero mauris at posuere mattis porttitor in volutpat tincidunt dignissim in consectetur ac vitae turpis massa suspendisse gravida ac vitae tortor sit eget tristique fermentum consequat cursus diam morbi habitasse id ut molestie sed laoreet placerat scelerisque."}
         </p>
-        <a
-          href="/blog/artikel/detail-a"
-          className="text-sm text-[#2957A4] font-semibold hover:underline"
-        >
-          Lihat Detail &gt;&gt;
-        </a>
+<Link
+  href={item.url}
+  className="text-sm text-[#2957A4] font-semibold hover:underline"
+>
+  Lihat Detail &gt;&gt;
+</Link>
       </div>
     </div>
   ))}
 </div>
 
 {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
             <button
     className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
   >
@@ -206,7 +209,7 @@ export default function Artikel() {
   >
     Berikutnya
   </button>
-        </div>
+        </div> */}
     </section>
     </div>
   );

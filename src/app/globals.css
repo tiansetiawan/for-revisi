@@ -78,6 +78,7 @@ body {
   color: #0B203F;
 }
 
+
 @media (max-width: 640px) {
   .slick-prev {
     left: -15px;

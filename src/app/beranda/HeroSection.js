@@ -6,7 +6,8 @@ export default function HeroSection({
   slides = [], 
   currentSlide = 0,
   autoPlayDelay = 5000,
-  onSlideChange
+  onSlideChange,
+  onSlideClick // Tambahkan prop ini
 }) {
   if (!slides.length) return null;
 
@@ -17,6 +18,7 @@ export default function HeroSection({
         currentSlide={currentSlide}
         autoPlayDelay={autoPlayDelay}
         onSlideChange={onSlideChange}
+        onSlideClick={onSlideClick} // Teruskan prop ke FadeBannerSlider
       />
     </div>
   );

@@ -58,9 +58,9 @@ export default function ProyekA() {
       
             {/* Header Project */}
       <HeaderProject
-        productName="Produk"
-        projectName="Nama Proyek"
-        location="Tempat"
+        productName="Paving Block"
+        projectName="Alun Alun Kota Depok"
+        location="Jawa Barat"
       />
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-6 pe-1 py-8">
