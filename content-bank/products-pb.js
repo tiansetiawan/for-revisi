@@ -1,5 +1,5 @@
 export const pavingBlockSubItems = [
-   {
+  {
     id: 'Truepave',
     name: 'Truepave',
     thumbnails: [
@@ -11,21 +11,20 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Truepave' },
       { label: 'Dimensi', value: '10 x 20 cm' },
       { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
       { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (2.5 kg)
+          ['car', 'car'],         // Untuk 6+ cm (2.9 kg)
+          ['car', 'car'],         // Untuk 8 cm (3.3 kg)
+          ['car', 'car']          // Untuk 10 cm (4.3 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '49 bh/m²' },
+     { label: 'Best Seller', icon: '/icons/BS.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -47,12 +46,18 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Halfpave' },
       { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
+      { label: 'Berat', value: '1,3 kg / 1,7 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (1.3 kg)
+          ['pedestrian', 'car']   // Untuk 8 cm (1.7 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '98 bh/m²' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -74,11 +79,18 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,9 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '28 x 20 x 10 cm' },
+      { label: 'Berat', value: '6,24 kg / 8,25 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (6.24 kg)
+          ['car', 'car']         // Untuk 8 cm (8.25 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '20 bh/m²' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1300 N' },
@@ -89,8 +101,8 @@ export const pavingBlockSubItems = [
     installationNote: 'Pemasangan pola acak'
   },
   {
-    id: 'Full Pave',
-    name: 'Full Pave',
+    id: 'Fullpave',
+    name: 'Fullpave',
     thumbnails: [
       {
         id: 4,
@@ -100,11 +112,18 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,6 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '20 x 20 cm' },
+      { label: 'Berat', value: '5 kg / 6,6 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (5 kg)
+          ['pedestrian', 'car']   // Untuk 8 cm (6.6 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '24,5 bh/m²' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1150 N' },
@@ -126,11 +145,12 @@ export const pavingBlockSubItems = [
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,5 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '20 x 30 cm' },
+      { label: 'Berat', value: '10,5 kg' },
+      { label: 'Tebal', value: '8 cm' },
+      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
+      { label: 'Pemakaian', value: '16 bh/m²' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100 N' },
@@ -143,34 +163,29 @@ export const pavingBlockSubItems = [
 ];
 
 
-export const classicSetSubItems  = [
-   {
+export const classicSetSubItems = [
+  {
     id: 'Classic-End',
     name: 'Classic-End',
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Paving Block/Square Set/truepave.png',
-        largeImage: '/images/Paving Block/Square Set/truepave.png',
+        thumbImage: '/images/Paving Block/Classic Set/classicend.png',
+        largeImage: '/images/Paving Block/Classic Set/classicend.png',
         color: 'Multi Warna'
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Dimensi', value: 'Ø 23,9 cm' },
+      { label: 'Berat', value: '4 kg' },
+      { label: 'Tebal', value: '8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car']  // ↑↩ interpreted as pedestrian and car
+        ]
+      },
+      { label: 'Pemakaian', value: '45 bh/m²' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -186,18 +201,23 @@ export const classicSetSubItems  = [
     thumbnails: [
       {
         id: 2,
-        thumbImage: '/images/Paving Block/Square Set/halfpave.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        thumbImage: '/images/Paving Block/Classic Set/classic-2.png',
+        largeImage: '/images/Paving Block/Classic Set/classic-2.png',
         color: 'Multi Warna'
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
+      { label: 'Dimensi', value: '11 (6) x 12 cm' },
+      { label: 'Berat', value: '1,3 kg / 1,8 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (1,3 kg)
+          ['pedestrian', 'car']   // Untuk 8 cm (1,8 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '92 bh/m²' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -208,30 +228,36 @@ export const classicSetSubItems  = [
     installationNote: ''
   },
   {
-    id: '3Classic-4',
+    id: 'Classic-4',
     name: 'Classic-4',
     thumbnails: [
       {
         id: 3,
-        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
-        largeImage: '/images/Paving Block/Square Set/topiuskup.png',
+        thumbImage: '/images/Paving Block/Classic Set/classic-4.png',
+        largeImage: '/images/Paving Block/Classic Set/classic-4.png',
         color: 'Abu-abu Gelap'
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,9 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '11 (9) x 12 cm' },
+      { label: 'Berat', value: '1,6 kg / 2,1 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (1,6 kg)
+          ['pedestrian', 'car']   // Untuk 8 cm (2,1 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '79 bh/m²' }
     ],
     technicalSpecs: [
-      { label: 'Beban Lentur', value: '1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 8%' },
-      { label: 'Ketebalan Cat', value: '120 Mikron' },
-      { label: 'Warna Cat', value: 'Slate Grey' }
+      { label: 'Beban Lentur', value: '1100-1300 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 12%' },
+      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
-    installationNote: 'Pemasangan pola acak'
+    installationNote: ''
   },
   {
     id: 'Classic-5',
@@ -239,25 +265,31 @@ export const classicSetSubItems  = [
     thumbnails: [
       {
         id: 4,
-        thumbImage: '/images/Paving Block/Square Set/fullpave.png',
-        largeImage: '/images/Paving Block/Square Set/fullpave.png',
+        thumbImage: '/images/Paving Block/Classic Set/classic-5.png',
+        largeImage: '/images/Paving Block/Classic Set/classic-5.png',
         color: 'Coklat'
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,6 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '12 x 12 cm' },
+      { label: 'Berat', value: '1,8 kg / 2,4 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (1,8 kg)
+          ['pedestrian', 'car']   // Untuk 8 cm (2,4 kg)
+        ]
+      },
+      { label: 'Pemakaian', value: '69 bh/m²' }
     ],
     technicalSpecs: [
-      { label: 'Beban Lentur', value: '1150 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 11%' },
-      { label: 'Ketebalan Cat', value: '90 Mikron' },
-      { label: 'Warna Cat', value: 'Pine Wood' }
+      { label: 'Beban Lentur', value: '1100-1300 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 12%' },
+      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
-    installationNote: 'Pemasangan pola berselang'
+    installationNote: ''
   }
 ];
 
@@ -268,8 +300,8 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Paving Block/Square Set/truepave.png',
-        largeImage: '/images/Paving Block/Square Set/truepave.png',
+        thumbImage: '/images/Paving Block/Altstadt/Altstad Centrum.png',
+        largeImage: '/images/Paving Block/Altstadt/Altstad Centrum.png',
         color: 'Multi Warna'
       }
     ],
@@ -304,13 +336,12 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 2,
-        thumbImage: '/images/Paving Block/Square Set/halfpave.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        thumbImage: '/images/Paving Block/Altstadt/altstadts-01.png',
+        largeImage: '/images/Paving Block/Altstadt/altstadts-01.png',
         color: 'Multi Warna'
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Halfpave' },
       { label: 'Dimensi', value: '10 x 10 cm' },
       { label: 'Berat', value: '1,3 kg' },
       { label: 'Tebal', value: '6 cm' },
@@ -331,8 +362,8 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 3,
-        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
-        largeImage: '/images/Paving Block/Square Set/topiuskup.png',
+        thumbImage: '/images/Paving Block/Altstadt/altstadt-02.png',
+        largeImage: '/images/Paving Block/Altstadt/altstadt-02.png',
         color: 'Abu-abu Gelap'
       }
     ],
@@ -357,8 +388,8 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 4,
-        thumbImage: '/images/Paving Block/Square Set/fullpave.png',
-        largeImage: '/images/Paving Block/Square Set/fullpave.png',
+        thumbImage: '/images/Paving Block/Altstadt/altstadt-03.png',
+        largeImage: '/images/Paving Block/Altstadt/altstadt-03.png',
         color: 'Coklat'
       }
     ],
@@ -383,8 +414,8 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 5,
-        thumbImage: '/images/Paving Block/Square Set/rectangularpave.png',
-        largeImage: '/images/Paving Block/Square Set/rectangularpave.png',
+        thumbImage: '/images/Paving Block/Altstadt/altstadt-04.png',
+        largeImage: '/images/Paving Block/Altstadt/altstadt-04.png',
         color: 'Merah'
       }
     ],
@@ -409,8 +440,8 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 5,
-        thumbImage: '/images/Paving Block/Square Set/rectangularpave.png',
-        largeImage: '/images/Paving Block/Square Set/rectangularpave.png',
+        thumbImage: '/images/Paving Block/Altstadt/altstadt-05.png',
+        largeImage: '/images/Paving Block/Altstadt/altstadt-05.png',
         color: 'Merah'
       }
     ],
@@ -435,8 +466,8 @@ export const altstadtSubItems   = [
     thumbnails: [
       {
         id: 5,
-        thumbImage: '/images/Paving Block/Square Set/rectangularpave.png',
-        largeImage: '/images/Paving Block/Square Set/rectangularpave.png',
+        thumbImage: '/images/Paving Block/Altstadt/altstadt-06.png',
+        largeImage: '/images/Paving Block/Altstadt/altstadt-06.png',
         color: 'Merah'
       }
     ],

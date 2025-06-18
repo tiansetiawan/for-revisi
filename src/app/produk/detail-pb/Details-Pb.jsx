@@ -195,15 +195,15 @@ export default function DetailsPb() {
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
   <tr className="bg-[#0B203F] text-white">
     <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
-    <th className="border border-gray-300 px-4 py-2 text-center">Produk</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40">Produk</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Berat</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal</th>
     <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
   </tr>
 </thead>
-<tbody>
+<tbody className='text-sm'>
 {activeItems.map((product) => {
     const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value || '-';
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
