@@ -280,7 +280,9 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
                 <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
               ) : icon === 'car' ? (
                 <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
-              ) : icon === 'lorry' ? (
+              ) : icon === 'garage' ? (
+                <img src="/icons/garage.png" alt="garage" className="w-4 h-4" />
+              ): icon === 'lorry' ? (
                 <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
               ) : icon === 'fuso' ? (
                 <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />

@@ -213,8 +213,8 @@ export const classicSetSubItems = [
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (1,3 kg)
-          ['pedestrian', 'car']   // Untuk 8 cm (1,8 kg)
+          ['pedestrian', 'car'],  
+          ['car', 'lorry']   
         ]
       },
       { label: 'Pemakaian', value: '92 bh/m²' }
@@ -245,8 +245,8 @@ export const classicSetSubItems = [
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (1,6 kg)
-          ['pedestrian', 'car']   // Untuk 8 cm (2,1 kg)
+          ['pedestrian', 'car'],  
+          ['car', 'lorry']   
         ]
       },
       { label: 'Pemakaian', value: '79 bh/m²' }
@@ -277,8 +277,8 @@ export const classicSetSubItems = [
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (1,8 kg)
-          ['pedestrian', 'car']   // Untuk 8 cm (2,4 kg)
+          ['pedestrian', 'car'],  
+          ['car', 'lorry']   
         ]
       },
       { label: 'Pemakaian', value: '69 bh/m²' }
@@ -309,6 +309,12 @@ export const altstadtSubItems = [
       { label: 'Dimensi', value: 'Ø 16,5 cm' },
       { label: 'Berat', value: '2 kg' },
       { label: 'Tebal', value: '8 cm' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '83 bh/m²' }
     ],
     technicalSpecs: [
@@ -334,6 +340,12 @@ export const altstadtSubItems = [
       { label: 'Dimensi', value: '13,5 (6,5) x 10,4 cm' },
       { label: 'Berat', value: '1,8 kg' },
       { label: 'Tebal', value: '8 cm' },
+            { 
+        label: 'Aplikasi', 
+        icons: [
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '95 bh/m²' }
     ],
     technicalSpecs: [
@@ -359,6 +371,12 @@ export const altstadtSubItems = [
       { label: 'Dimensi', value: '13,5 (8,7) x 14 cm' },
       { label: 'Berat', value: '2,7 kg' },
       { label: 'Tebal', value: '8 cm' },
+            { 
+        label: 'Aplikasi', 
+        icons: [
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '65 bh/m²' }
     ],
     technicalSpecs: [
@@ -382,8 +400,15 @@ export const altstadtSubItems = [
     ],
     specifications: [
       { label: 'Dimensi', value: '14 x 7 cm' },
-      { label: 'Berat', value: '1,2 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Berat', value: '1,2 kg / 1,5 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+            { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '101 bh/m²' }
     ],
     technicalSpecs: [
@@ -407,8 +432,15 @@ export const altstadtSubItems = [
     ],
     specifications: [
       { label: 'Dimensi', value: '14 x 14 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Berat', value: '2,5 kg / 3,3 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+                  { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '50 bh/m²' }
     ],
     technicalSpecs: [
@@ -432,8 +464,15 @@ export const altstadtSubItems = [
     ],
     specifications: [
       { label: 'Dimensi', value: '21 x 7 cm' },
-      { label: 'Berat', value: '1,8 kg' },
-      { label: 'Tebal', value: '6 cm' },
+      { label: 'Berat', value: '1,8 kg / 2,4 kg' },
+      { label: 'Tebal', value: '6 cm / 8 cm' },
+                  { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '67 bh/m²' }
     ],
     technicalSpecs: [
@@ -459,6 +498,12 @@ export const altstadtSubItems = [
       { label: 'Dimensi', value: '21 x 14 cm' },
       { label: 'Berat', value: '5,1 kg' },
       { label: 'Tebal', value: '8 cm' },
+                  { 
+        label: 'Aplikasi', 
+        icons: [
+          ['car', 'lorry']
+        ]
+      },
       { label: 'Pemakaian', value: '33 bh/m²' }
     ],
     technicalSpecs: [
@@ -484,21 +529,18 @@ export const othersSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
+    { label: 'Dimensi', value: 's=11 cm' },
+    { label: 'Berat', value: '4,3 kg / 5,8 kg' },
+    { label: 'Tebal', value: '6 cm /  8 cm' },
     { 
       label: 'Aplikasi',
       icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
+        ['car', 'pedestrian'], 
+        ['car', 'lorry']
       ]
     },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Pemakaian', value: '29 bh/m2' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -521,11 +563,17 @@ export const othersSubItems   = [
   ],
   specifications: [
     { label: 'Produk', value: 'Halfpave' },
-    { label: 'Dimensi', value: '10 x 10 cm' },
-    { label: 'Berat', value: '1,3 kg' },
-    { label: 'Tebal', value: '6 cm' },
-    { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-    { label: 'Pemakaian', value: '98 bh/m2' }
+    { label: 'Dimensi', value: '20,6 x 10,2 cm ' },
+    { label: 'Berat', value: '2,5 kg / 3,6 kg' },
+    { label: 'Tebal', value: '6 cm / 8 cm' },
+        { 
+      label: 'Aplikasi',
+      icons: [
+        ['car', 'pedestrian'], 
+        ['car', 'lorry']
+      ]
+    },
+    { label: 'Pemakaian', value: '48 bh/m2' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -547,11 +595,17 @@ export const othersSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Ukuran', value: '44 x 37,4 cm' },
-    { label: 'Berat', value: '5,9 kg' },
-    { label: 'Pemakaian', value: '8 bh/m2' },
-    { label: 'Jarak Antar Reng', value: '36 cm' },
-    { label: 'Sudut Atap', value: 'Min. 25°' }
+    { label: 'Ukuran', value: '13,5 x 20 cm' },
+    { label: 'Berat', value: '2,6 kg / 3,3 kg' },
+        { label: 'Tebal', value: '6 cm / 8 cm' },
+                { 
+      label: 'Aplikasi',
+      icons: [
+        ['car', 'pedestrian'], 
+        ['car', 'lorry']
+      ]
+    },
+    { label: 'Pemakaian', value: '48 bh/m2' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1300 N' },
@@ -576,21 +630,17 @@ export const gudingPaveSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
+    { label: 'Dimensi', value: '30 x 30 cm' },
+    { label: 'Berat', value: '12 kg' },
+    { label: 'Tebal', value: '6 cm' },
     { 
       label: 'Aplikasi',
       icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
+        ['car', 'pedestrian']
       ]
     },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Pemakaian', value: '11 bh/m2' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -612,12 +662,17 @@ export const gudingPaveSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Halfpave' },
-    { label: 'Dimensi', value: '10 x 10 cm' },
-    { label: 'Berat', value: '1,3 kg' },
+    { label: 'Dimensi', value: '30 x 30 cm' },
+    { label: 'Berat', value: '12 kg' },
     { label: 'Tebal', value: '6 cm' },
-    { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-    { label: 'Pemakaian', value: '98 bh/m2' }
+    { 
+      label: 'Aplikasi',
+      icons: [
+        ['car', 'pedestrian']
+      ]
+    },
+    { label: 'Pemakaian', value: '11 bh/m2' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -642,21 +697,17 @@ export const grassBlockSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
+    { label: 'Dimensi', value: '45 x 30 cm' },
+    { label: 'Berat', value: '14,5 kg' },
+    { label: 'Tebal', value: '6 cm' },
     { 
       label: 'Aplikasi',
       icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
+        ['pedestrian', 'garage']      
       ]
     },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Pemakaian', value: '7,5 bh/m2' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -678,12 +729,16 @@ export const grassBlockSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Halfpave' },
-    { label: 'Dimensi', value: '10 x 10 cm' },
-    { label: 'Berat', value: '1,3 kg' },
-    { label: 'Tebal', value: '6 cm' },
-    { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-    { label: 'Pemakaian', value: '98 bh/m2' }
+    { label: 'Dimensi', value: '40 x 40 cm' },
+    { label: 'Berat', value: '17,5 kg' },
+    { label: 'Tebal', value: '8 cm' },
+        { 
+      label: 'Aplikasi',
+      icons: [
+        ['pedestrian', 'garage']      
+      ]
+    },
+    { label: 'Pemakaian', value: '6,25 bh/m2' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -705,11 +760,16 @@ export const grassBlockSubItems   = [
     }
   ],
   specifications: [
-    { label: 'Ukuran', value: '44 x 37,4 cm' },
-    { label: 'Berat', value: '5,9 kg' },
-    { label: 'Pemakaian', value: '8 bh/m2' },
-    { label: 'Jarak Antar Reng', value: '36 cm' },
-    { label: 'Sudut Atap', value: 'Min. 25°' }
+    { label: 'Ukuran', value: '30 x 30 cm' },
+    { label: 'Berat', value: '13,5 kg' },
+    { label: 'Tebal', value: '10 cm' },
+        { 
+      label: 'Aplikasi',
+      icons: [
+        ['pedestrian', 'garage']      
+      ]
+    },
+    { label: 'Pemakaian', value: '11 bh/m2' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1300 N' },
@@ -720,264 +780,6 @@ export const grassBlockSubItems   = [
   installationNote: 'Pemasangan pola acak'
 }
 ];
-
-
-export const kansteinWetSubItems  = [
-   {
-    id: 'K.01.1',
-    name: 'K.01.1',
-    thumbnails: [
-      {
-        id: 1,
-        thumbImage: '/images/Paving Block/Tali Air/K.01.1.png',
-        largeImage: '/images/Paving Block/Tali Air/K.01.1.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-  {
-    id: 'K.01.3',
-    name: 'K.01.3',
-    thumbnails: [
-      {
-        id: 2,
-        thumbImage: '/images/Paving Block/Tali Air/K.01.3.png',
-        largeImage: '/images/Paving Block/Tali Air/K.01.3.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-     {
-    id: 'K.02.1',
-    name: 'K.02.1',
-    thumbnails: [
-      {
-        id: 3,
-        thumbImage: '/images/Paving Block/Tali Air/K.02.1.png',
-        largeImage: '/images/Paving Block/Tali Air/K.02.1.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-  {
-    id: 'K.02.2',
-    name: 'K.02.2',
-    thumbnails: [
-      {
-        id: 4,
-        thumbImage: '/images/Paving Block/Tali Air/K.02.2.png',
-        largeImage: '/images/Paving Block/Tali Air/K.02.2.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-     {
-    id: 'K.02.3',
-    name: 'K.02.3',
-    thumbnails: [
-      {
-        id: 5,
-        thumbImage: '/images/Paving Block/Tali Air/K.02.3.png',
-        largeImage: '/images/Paving Block/Tali Air/K.02.3.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-  {
-    id: 'K.03.1 (Tahu)',
-    name: 'K.03.1 (Tahu)',
-    thumbnails: [
-      {
-        id: 6,
-        thumbImage: '/images/Paving Block/Tali Air/K.03.1 (Tahu).png',
-        largeImage: '/images/Paving Block/Tali Air/K.03.1 (Tahu).png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-     {
-    id: 'K.03.2 (Tahu)',
-    name: 'K.03.2 (Tahu)',
-    thumbnails: [
-      {
-        id: 7,
-        thumbImage: '/images/Paving Block/Tali Air/K.03.2 (Tahu).png',
-        largeImage: '/images/Paving Block/Tali Air/K.03.2 (Tahu).png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-  {
-    id: 'K.03.3 (Tahu)',
-    name: 'K.03.3 (Tahu)',
-    thumbnails: [
-      {
-        id: 8,
-        thumbImage: '/images/Paving Block/Tali Air/K.03.3 (Tahu).png',
-        largeImage: '/images/Paving Block/Tali Air/K.03.3 (Tahu).png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  }
-];
-
-
 
 export const productsPbContent = {
   'Paving Block Variant': {
@@ -1103,7 +905,7 @@ export const productsPbContent = {
       { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
     installationNote: '',
-    type: altstadtSubItems.map(item => ({
+    type: othersSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id
@@ -1135,7 +937,7 @@ export const productsPbContent = {
       { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
     installationNote: '',
-    type: altstadtSubItems.map(item => ({
+    type: gudingPaveSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id
@@ -1167,7 +969,7 @@ export const productsPbContent = {
       { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
     installationNote: '',
-    type: altstadtSubItems.map(item => ({
+    type: grassBlockSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id
