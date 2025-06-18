@@ -19,8 +19,8 @@ export const pavingBlockSubItems = [
         icons: [
           ['pedestrian', 'car'],  // Untuk 6 cm (2.5 kg)
           ['car', 'lorry'],         // Untuk 6+ cm (2.9 kg)
-          ['car', 'truck'],         // Untuk 8 cm (3.3 kg)
-          ['truck', 'factory', 'ship']          // Untuk 10 cm (4.3 kg)
+          ['car', 'lorry'],         // Untuk 8 cm (3.3 kg)
+          ['fuso', 'factory', 'harbor']          // Untuk 10 cm (4.3 kg)
         ]
       },
       { label: 'Pemakaian', value: '49 bh/m²' },
@@ -86,7 +86,7 @@ export const pavingBlockSubItems = [
         label: 'Aplikasi', 
         icons: [
           ['pedestrian', 'car'],  // Untuk 6 cm (6.24 kg)
-          ['car', 'truck']         // Untuk 8 cm (8.25 kg)
+          ['car', 'fuso']         // Untuk 8 cm (8.25 kg)
         ]
       },
       { label: 'Pemakaian', value: '20 bh/m²' },

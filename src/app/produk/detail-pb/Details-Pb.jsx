@@ -263,6 +263,14 @@ export default function DetailsPb() {
                           <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
                         ) : icon === 'car' ? (
                           <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                        ) : icon === 'lorry' ? (
+                          <img key={iconIndex} src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+                        ) : icon === 'fuso' ? (
+                          <img key={iconIndex} src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+                        ) : icon === 'factory' ? (
+                          <img key={iconIndex} src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+                        ) : icon === 'harbor' ? (
+                          <img key={iconIndex} src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
                         ) : null
                       ))
                     : application.icons?.map((icon, iconIndex) => (
