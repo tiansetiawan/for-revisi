@@ -5,39 +5,36 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Paving Block/Square Set/halfpave.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
         color: 'Multi Warna'
       },
       {
         id: 2,
-        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
         color: 'Multi Warna'
       },
       {
         id: 3,
-        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
         color: 'Multi Warna'
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
+      { label: 'Dimensi', value: '60 x 40 x 5 cm / 40 x 40 x 5 cm / 20 x 40 x 5 cm' },
+      { label: 'Berat', value: '25,5 kg / 17 kg / 8,5 kg' },
       { 
         label: 'Aplikasi', 
         icons: [
-          ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-          ['pedestrian', 'car'],  // Untuk 6+ cm
-          ['car', 'car'],         // Untuk 8 cm
-          ['car', 'car']          // Untuk 10 cm
+          ['pedestrian', 'garage'],  
+          ['pedestrian', 'garage'],  
+          ['pedestrian', 'garage']      
         ]
       },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -53,8 +50,8 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 2,
-        thumbImage: '/images/Paving Block/Square Set/halfpave.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/spectra-pave.png',
+        largeImage: '/images/Paving Block/Concrete Tile/spectra-pave.png',
         color: 'Multi Warna'
       }
     ],
@@ -80,8 +77,8 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 3,
-        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
-        largeImage: '/images/Paving Block/Square Set/topiuskup.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/cladding-tile.png',
+        largeImage: '/images/Paving Block/Concrete Tile/cladding-tile.png',
         color: 'Abu-abu Gelap'
       }
     ],
@@ -101,13 +98,13 @@ export const concreteTileSubItems = [
     installationNote: 'Pemasangan pola acak'
   },
   {
-    id: 'Cladiing',
-    name: 'Cladiing',
+    id: 'Clading',
+    name: 'Clading',
     thumbnails: [
       {
         id: 4,
-        thumbImage: '/images/Paving Block/Square Set/fullpave.png',
-        largeImage: '/images/Paving Block/Square Set/fullpave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/clading.png',
+        largeImage: '/images/Paving Block/Concrete Tile/clading.png',
         color: 'Coklat'
       }
     ],

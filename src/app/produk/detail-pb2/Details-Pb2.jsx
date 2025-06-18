@@ -7,6 +7,7 @@ import { productsPb2Content, concreteTileSubItems } from '../../../../content-ba
 import Link from 'next/link';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
+import ApplicationModal from '../../components/ApplicationModal';
 
 export default function DetailsPb2() {
   const router = useRouter();
@@ -16,6 +17,8 @@ export default function DetailsPb2() {
   const sliderRef = useRef(null);
   const visibleSlides = 4;
   const [activeThumbnails, setActiveThumbnails] = useState({});
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
 
 const handleThumbnailClick = (productId, thumbIndex) => {
   setActiveThumbnails(prev => ({
@@ -202,7 +205,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
 </thead>
       <tbody>
   {concreteTileSubItems.map((product) => {
-    const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value || '-';
+    const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value.split('/').map(w => w.trim()) || ['-'];
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
     const thicknesses = product.specifications.find(spec => spec.label === 'Tebal')?.value.split('/').map(t => t.trim()) || ['-'];
     const usage = product.specifications.find(spec => spec.label === 'Pemakaian')?.value || '-';
@@ -303,23 +306,87 @@ const handleThumbnailClick = (productId, thumbIndex) => {
                 {usage}
               </td>
             ) : null}
-<td className="border border-gray-300 px-4 py-2 text-center">
+<td className="border border-gray-300 px-4 py-2 text-center relative">
   {application ? (
     <div className="flex gap-1 justify-center">
       {Array.isArray(application.icons?.[0]) 
         ? application.icons[i]?.map((icon, iconIndex) => (
-            icon === 'pedestrian' ? (
-              <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-            ) : icon === 'car' ? (
-              <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-            ) : null
+            <div 
+              key={iconIndex}
+              className="relative"
+              onMouseEnter={(e) => {
+                setHoveredIcon(icon);
+                const rect = e.currentTarget.getBoundingClientRect();
+                setHoverPosition({
+                  x: rect.left + rect.width / 2,
+                  y: rect.top
+                });
+              }}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {icon === 'pedestrian' ? (
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+              ) : icon === 'car' ? (
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+              ) : icon === 'garage' ? (
+                <img src="/icons/garage.png" alt="garage" className="w-4 h-4" />
+              ): icon === 'lorry' ? (
+                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+              ) : icon === 'fuso' ? (
+                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+              ) : icon === 'factory' ? (
+                <img src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+              ) : icon === 'harbor' ? (
+                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
+              ) : null}
+              
+              {hoveredIcon === icon && (
+                <div 
+                  className="fixed z-50"
+                  style={{
+                    left: `${hoverPosition.x}px`,
+                    top: `${hoverPosition.y}px`,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  <ApplicationModal applicationType={icon} />
+                </div>
+              )}
+            </div>
           ))
         : application.icons?.map((icon, iconIndex) => (
-            icon === 'pedestrian' ? (
-              <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-            ) : icon === 'car' ? (
-              <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-            ) : null
+            <div 
+              key={iconIndex}
+              className="relative"
+              onMouseEnter={(e) => {
+                setHoveredIcon(icon);
+                const rect = e.currentTarget.getBoundingClientRect();
+                setHoverPosition({
+                  x: rect.left + rect.width / 2,
+                  y: rect.top
+                });
+              }}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {icon === 'pedestrian' ? (
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+              ) : icon === 'car' ? (
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+              ) : null}
+              
+              {hoveredIcon === icon && (
+                <div 
+                  className="fixed z-50"
+                  style={{
+                    left: `${hoverPosition.x}px`,
+                    top: `${hoverPosition.y}px`,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  <ApplicationModal applicationType={icon} />
+                </div>
+              )}
+            </div>
           ))
       }
     </div>
