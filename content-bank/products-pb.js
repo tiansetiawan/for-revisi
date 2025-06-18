@@ -684,6 +684,7 @@ export const gudingPaveSubItems   = [
 }
 ];
 
+
 export const grassBlockSubItems   = [
    {
   id: 'Grass Block 6',
@@ -779,6 +780,73 @@ export const grassBlockSubItems   = [
   ],
   installationNote: 'Pemasangan pola acak'
 }
+];
+
+export const guidingTilesSubItems  = [
+   {
+    id: 'Bar Tile',
+    name: 'Bar Tile',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Paving Block/Guiding Tiles/Bar Tile.png',
+        largeImage: '/images/Paving Block/Guiding Tiles/Bar Tile.png',
+        color: 'Multi Warna'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '30 x 30 cm' },
+      { label: 'Berat', value: '6,2 kg' },
+      { label: 'Tebal', value: '3 cm' },
+       { 
+      label: 'Aplikasi', 
+      icons: [
+        ['pedestrian']       
+      ]
+    },
+      { label: 'Pemakaian', value: '11 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1100-1300 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 12%' },
+      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+    ],
+    installationNote: ''
+  },
+  {
+    id: 'Dot Tile',
+    name: 'Dot Tile',
+    thumbnails: [
+      {
+        id: 2,
+        thumbImage: '/images/Paving Block/Guiding Tiles/Dot Tile.png',
+        largeImage: '/images/Paving Block/Guiding Tiles/Dot Tile.png',
+        color: 'Multi Warna'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '30 x 30 cm' },
+      { label: 'Berat', value: '6,2 kg' },
+      { label: 'Tebal', value: '3 cm' },
+       { 
+      label: 'Aplikasi', 
+      icons: [
+        ['pedestrian']       
+      ]
+    },
+      { label: 'Pemakaian', value: '11 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1100-1300 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 12%' },
+      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+    ],
+    installationNote: ''
+  }
 ];
 
 export const productsPbContent = {
@@ -970,6 +1038,37 @@ export const productsPbContent = {
     ],
     installationNote: '',
     type: grassBlockSubItems.map(item => ({
+      name: item.name,
+      image: item.thumbnails[0].thumbImage,
+      id: item.id
+    }))
+  },
+  'Guiding Tiles': {
+    name: 'GUIDING TILES',
+    category: 'Paving Block',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Paving Block/Guiding Tile/guidingtiles.png',
+        largeImage: '/images/Paving Block/Guiding Tile/guidingtiles.png',
+        color: 'Multi Warna'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '10 x 20 cm' },
+      { label: 'Berat', value: '2,5 kg' },
+      { label: 'Tebal', value: '6 cm' },
+      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
+      { label: 'Pemakaian', value: '49 bh/m2' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1100-1300 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 12%' },
+      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+    ],
+    installationNote: '',
+    type: guidingTilesSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id

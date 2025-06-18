@@ -116,71 +116,6 @@ export const concreteTileSubItems = [
   }
 ];
 
-export const guidingTilesSubItems  = [
-   {
-    id: 'Bar Tile',
-    name: 'Bar Tile',
-    thumbnails: [
-      {
-        id: 1,
-        thumbImage: '/images/Paving Block/Square Set/truepave.png',
-        largeImage: '/images/Paving Block/Square Set/truepave.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  },
-  {
-    id: 'Dot Tile',
-    name: 'Dot Tile',
-    thumbnails: [
-      {
-        id: 2,
-        thumbImage: '/images/Paving Block/Square Set/halfpave.png',
-        largeImage: '/images/Paving Block/Square Set/halfpave.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: ''
-  }
-];
 
 export const productsPb2Content = {
   'Concrete Tile': {
@@ -211,38 +146,6 @@ export const productsPb2Content = {
     ],
     installationNote: '',
     type: pavingBlockSubItems.map(item => ({
-      name: item.name,
-      image: item.thumbnails[0].thumbImage,
-      id: item.id
-    }))
-  },
-  'Guiding Tiles': {
-    name: 'GUIDING TILES',
-    category: 'Paving Block',
-    thumbnails: [
-      {
-        id: 1,
-        thumbImage: '/images/Paving Block/Classic Set/classicend.png',
-        largeImage: '/images/Paving Block/Classic Set/classicend.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: '',
-    type: classicSetSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id

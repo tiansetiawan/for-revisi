@@ -10,7 +10,8 @@ import {
   grassBlockSubItems,
   gudingPaveSubItems,
   othersSubItems,
-  taliAirSubItems 
+  taliAirSubItems, 
+  guidingTilesSubItems,
 } from '../../../../content-bank/products-pb';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
@@ -52,6 +53,9 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
           break;
         case 'Others':
           items = othersSubItems;
+          break;
+        case 'Guiding Tiles':
+          items = guidingTilesSubItems;
           break;
         case 'Tali Air':
           items = taliAirSubItems;
