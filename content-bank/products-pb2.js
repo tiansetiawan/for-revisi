@@ -1,12 +1,24 @@
 export const concreteTileSubItems = [
-   {
+{
     id: 'Sandstein',
     name: 'Sandstein',
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Paving Block/Square Set/truepave.png',
-        largeImage: '/images/Paving Block/Square Set/truepave.png',
+        thumbImage: '/images/Paving Block/Square Set/halfpave.png',
+        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        color: 'Multi Warna'
+      },
+      {
+        id: 2,
+        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
+        largeImage: '/images/Paving Block/Square Set/halfpave.png',
+        color: 'Multi Warna'
+      },
+      {
+        id: 3,
+        thumbImage: '/images/Paving Block/Square Set/topiuskup.png',
+        largeImage: '/images/Paving Block/Square Set/halfpave.png',
         color: 'Multi Warna'
       }
     ],
@@ -15,15 +27,15 @@ export const concreteTileSubItems = [
       { label: 'Dimensi', value: '10 x 20 cm' },
       { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
       { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-       { 
-      label: 'Aplikasi', 
-      icons: [
-        ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
-        ['pedestrian', 'car'],  // Untuk 6+ cm
-        ['car', 'car'],         // Untuk 8 cm
-        ['car', 'car']          // Untuk 10 cm
-      ]
-    },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'car'],  // Untuk 6 cm (sesuai dengan weight pertama)
+          ['pedestrian', 'car'],  // Untuk 6+ cm
+          ['car', 'car'],         // Untuk 8 cm
+          ['car', 'car']          // Untuk 10 cm
+        ]
+      },
       { label: 'Pemakaian', value: '49 bh/m2' },
       { label: 'Best Seller', icon: '/icons/BS.png' }
     ],
@@ -124,28 +136,26 @@ export const productsPb2Content = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Paving Block/Square Set/truepave.png',
-        largeImage: '/images/Paving Block/Square Set/truepave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
         color: 'Multi Warna'
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu Produk mengacu pada standar SNI 0028-1987-A kategori peringkat 1' },
+      { value: 'Kuat lentur rata-rata 35 kg/cm2' },
+      { value: 'Hanya diperuntukkan untuk pedestrian' },
+      { value: 'Tidak disarankan dilindas kendaraan' }
     ],
     technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu produk mengacu pada standar SNI 03-0691-1996' },
+      { value: 'Ketahanan aus rata-rata min 0,09 mm/menit' },
+      { value: 'Penyerapan air rata-rata 3%' }
     ],
     installationNote: '',
-    type: pavingBlockSubItems.map(item => ({
+    type: concreteTileSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id

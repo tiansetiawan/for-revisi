@@ -75,7 +75,7 @@ export default function ProductSidebar({ onItemChange }) {
         { name: "Others", url: "/produk/detail-pb?product=Others&category=Paving Block" },
         { name: "Guiding Pave", url: "/produk/detail-pb?product=Guiding Pave&category=Paving Block" },
         { name: "Grass Block", url: "/produk/detail-pb?product=Grass Block&category=Paving Block" },
-        { name: "Concrete Tile", url: "/produk/detail-pb?product=Concrete Tile&category=Paving Block" },
+        { name: "Concrete Tile", url: "/produk/detail-pb2?product=Concrete Tile&category=Paving Block" },
         { name: "Guiding Tiles", url: "/produk/detail-pb?product=Guiding Tiles&category=Paving Block" },
         { name: "Kanstein Wet Process", url: "/produk/detail-pb?product=Kanstein Wet Process&category=Paving Block" },
         { name: "Kanstein Dry Process", url: "/produk/detail-pb?product=Kanstein Dry Process&category=Paving Block" },
