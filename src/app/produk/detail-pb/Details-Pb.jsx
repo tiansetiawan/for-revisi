@@ -14,6 +14,7 @@ import {
 } from '../../../../content-bank/products-pb';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
+import ApplicationModal from '../../components/ApplicationModal';
 
 export default function DetailsPb() {
   const router = useRouter();
@@ -23,6 +24,9 @@ export default function DetailsPb() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   const visibleSlides = 4;
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
+  
 
   // Initialize product from URL
   useEffect(() => {
@@ -254,36 +258,90 @@ export default function DetailsPb() {
                 {usage}
               </td>
             ) : null}
- <td className="border border-gray-300 px-4 py-2 text-center">
-              {application ? (
-                <div className="flex gap-1 justify-center">
-                  {Array.isArray(application.icons?.[0]) 
-                    ? application.icons[i]?.map((icon, iconIndex) => (
-                        icon === 'pedestrian' ? (
-                          <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-                        ) : icon === 'car' ? (
-                          <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-                        ) : icon === 'lorry' ? (
-                          <img key={iconIndex} src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
-                        ) : icon === 'fuso' ? (
-                          <img key={iconIndex} src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
-                        ) : icon === 'factory' ? (
-                          <img key={iconIndex} src="/icons/factory.png" alt="factory" className="w-4 h-4" />
-                        ) : icon === 'harbor' ? (
-                          <img key={iconIndex} src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
-                        ) : null
-                      ))
-                    : application.icons?.map((icon, iconIndex) => (
-                        icon === 'pedestrian' ? (
-                          <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-                        ) : icon === 'car' ? (
-                          <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-                        ) : null
-                      ))
-                  }
+<td className="border border-gray-300 px-4 py-2 text-center relative">
+  {application ? (
+    <div className="flex gap-1 justify-center">
+      {Array.isArray(application.icons?.[0]) 
+        ? application.icons[i]?.map((icon, iconIndex) => (
+            <div 
+              key={iconIndex}
+              className="relative"
+              onMouseEnter={(e) => {
+                setHoveredIcon(icon);
+                const rect = e.currentTarget.getBoundingClientRect();
+                setHoverPosition({
+                  x: rect.left + rect.width / 2,
+                  y: rect.top
+                });
+              }}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {icon === 'pedestrian' ? (
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+              ) : icon === 'car' ? (
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+              ) : icon === 'lorry' ? (
+                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+              ) : icon === 'fuso' ? (
+                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+              ) : icon === 'factory' ? (
+                <img src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+              ) : icon === 'harbor' ? (
+                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
+              ) : null}
+              
+              {hoveredIcon === icon && (
+                <div 
+                  className="fixed z-50"
+                  style={{
+                    left: `${hoverPosition.x}px`,
+                    top: `${hoverPosition.y}px`,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  <ApplicationModal applicationType={icon} />
                 </div>
-              ) : '-'}
-            </td>
+              )}
+            </div>
+          ))
+        : application.icons?.map((icon, iconIndex) => (
+            <div 
+              key={iconIndex}
+              className="relative"
+              onMouseEnter={(e) => {
+                setHoveredIcon(icon);
+                const rect = e.currentTarget.getBoundingClientRect();
+                setHoverPosition({
+                  x: rect.left + rect.width / 2,
+                  y: rect.top
+                });
+              }}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {icon === 'pedestrian' ? (
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+              ) : icon === 'car' ? (
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+              ) : null}
+              
+              {hoveredIcon === icon && (
+                <div 
+                  className="fixed z-50"
+                  style={{
+                    left: `${hoverPosition.x}px`,
+                    top: `${hoverPosition.y}px`,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  <ApplicationModal applicationType={icon} />
+                </div>
+              )}
+            </div>
+          ))
+      }
+    </div>
+  ) : '-'}
+</td>
           </tr>
         ))}
       </React.Fragment>
