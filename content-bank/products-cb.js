@@ -1,60 +1,98 @@
-export const concreteBlockSubItems = [
+export const ventilationBlockSubItems = [
   {
-    id: 'Regular Half 10.02',
-    name: 'Regular Half 10.02',
+    id: 'Roster R-01',
+    name: 'Roster R-01',
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/Regular Half 10.02.png',
-        largeImage: '/images/Concrete Block/Regular Half 10.02.png',
+        thumbImage: '/images/Concrete Block/VB/Roster R-01.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-01.png',
         color: 'Hitam'
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Aplikasi', icons: [
-        ['pedestrian', 'car'],  // For 6 cm
-        ['pedestrian', 'car'],  // For 6+ cm
-        ['car', 'car'],         // For 8 cm
-        ['car', 'car']          // For 10 cm
-      ]},
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '3,6 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
       { label: 'Penyerapan Air', value: 'Maks. 10%' },
       { label: 'Ketebalan Cat', value: '100 Mikron' },
       { label: 'Warna Cat', value: 'Hitam Solid' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Best Seller', icon: '' }
     ],
     installationNote: 'Pemasangan pola diagonal'
   },
   {
-    id: 'Bond Beam 10.03',
-    name: 'Bond Beam 10.03',
+    id: 'Roster R-04',
+    name: 'Roster R-04',
     thumbnails: [
       {
-        id: 1,
-        thumbImage: '/images/Concrete Block/Bond Beam 10.03.png',
-        largeImage: '/images/Concrete Block/Bond Beam 10.03.png',
+        id: 2,
+        thumbImage: '/images/Concrete Block/VB/Roster R-04.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-04.png',
+        color: 'Hitam'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '28 x 7,5 x 10 cm' },
+      { label: 'Berat', value: '2,4 kg' },
+      { label: 'Pemakaian', value: '47 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-06',
+    name: 'Roster R-06',
+    thumbnails: [
+      {
+        id: 3,
+        thumbImage: '/images/Concrete Block/VB/Roster R-06.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-06.png',
+        color: 'Hitam'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '30 x 14 x 15,5 cm' },
+      { label: 'Berat', value: '9,8/pasang' },
+      { label: 'Pemakaian', value: '20 pasang/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-08',
+    name: 'Roster R-08',
+    thumbnails: [
+      {
+        id: 4,
+        thumbImage: '/images/Concrete Block/VB/Roster R-08.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-08.png',
         color: 'Abu-abu'
       }
     ],
    specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Aplikasi', icons: [
-        ['pedestrian', 'car'],  // For 6 cm
-        ['pedestrian', 'car'],  // For 6+ cm
-        ['car', 'car'],         // For 8 cm
-        ['car', 'car']          // For 10 cm
-      ]},
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Dimensi', value: '39 x 9 x 19 cm' },
+      { label: 'Berat', value: '10/pasang' },
+      { label: 'Pemakaian', value: '12,5 pasang/m2' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -69,24 +107,352 @@ export const concreteBlockSubItems = [
     name: 'C-Pillar 10.04',
     thumbnails: [
       {
-        id: 1,
-        thumbImage: '/images/Concrete Block/C-Pillar 10.04.png',
-        largeImage: '/images/Concrete Block/C-Pillar 10.04.png',
+        id: 5,
+        thumbImage: '/images/Concrete Block/VB/Roster R-09.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-09.png',
         color: 'Abu-abu Gelap'
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Aplikasi', icons: [
-        ['pedestrian', 'car'],  // For 6 cm
-        ['pedestrian', 'car'],  // For 6+ cm
-        ['car', 'car'],         // For 8 cm
-        ['car', 'car']          // For 10 cm
-      ]},
-      { label: 'Pemakaian', value: '49 bh/m2' },
+      { label: 'Dimensi', value: '15 x 15 x 15 cm' },
+      { label: 'Berat', value: '3,5 kg' },
+      { label: 'Pemakaian', value: '44 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-11',
+    name: 'Roster R-11',
+    thumbnails: [
+      {
+        id: 6,
+        thumbImage: '/images/Concrete Block/VB/Roster R-11.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-11.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '4,2 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-13',
+    name: 'Roster R-13',
+    thumbnails: [
+      {
+        id: 7,
+        thumbImage: '/images/Concrete Block/VB/Roster R-13.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-13.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '4,5 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-18',
+    name: 'Roster R-18',
+    thumbnails: [
+      {
+        id: 9,
+        thumbImage: '/images/Concrete Block/VB/Roster R-18.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-18.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '5,2 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
       { label: 'Best Seller', icon: '/icons/BS.png' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-19',
+    name: 'Roster R-19',
+    thumbnails: [
+      {
+        id: 10,
+        thumbImage: '/images/Concrete Block/VB/Roster R-19.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-19.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '5,75 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-20',
+    name: 'Roster R-20',
+    thumbnails: [
+      {
+        id: 8,
+        thumbImage: '/images/Concrete Block/VB/Roster R-20.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-20.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '4,6 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  }
+];
+
+
+export const ventilation3DBlockSubItems = [
+    {
+    id: 'Roster R-19',
+    name: 'Roster R-19',
+    thumbnails: [
+      {
+        id: 10,
+        thumbImage: '/images/Concrete Block/VB/Roster R-19.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-19.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '5,75 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-20',
+    name: 'Roster R-20',
+    thumbnails: [
+      {
+        id: 8,
+        thumbImage: '/images/Concrete Block/VB/Roster R-20.png',
+        largeImage: '/images/Concrete Block/VB/Roster R-20.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '4,6 kg' },
+      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Roster R-21',
+    name: 'Roster R-21',
+    thumbnails: [
+      {
+        id: 3,
+        thumbImage: '/images/Concrete Block/VB3D/Roster R-21.png',
+        largeImage: '/images/Concrete Block/VB3D/Roster R-21.png',
+        color: 'Hitam'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 9 cm' },
+      { label: 'Berat', value: '9,5 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  }
+];
+export const concreteBlockSubItems = [
+  {
+    id: 'Regular Half 10.01',
+    name: 'Regular Half 10.01',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Regular Half 10.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Half 10.01.png',
+        color: 'Hitam'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 9 cm' },
+      { label: 'Berat', value: '9,5 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Regular Full Tembus 10.01 B',
+    name: 'Regular Full Tembus 10.01 B',
+    thumbnails: [
+      {
+        id: 2,
+        thumbImage: '/images/Concrete Block/CB/Regular Full Tembus 10.01 B.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full Tembus 10.01 B.png',
+        color: 'Hitam'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 9 cm' },
+      { label: 'Berat', value: '10 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Regular Half 10.02',
+    name: 'Regular Half 10.02',
+    thumbnails: [
+      {
+        id: 3,
+        thumbImage: '/images/Concrete Block/CB/Regular Half 10.02.png',
+        largeImage: '/images/Concrete Block/CB/Regular Half 10.02.png',
+        color: 'Hitam'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '19 x 19 x 9 cm' },
+      { label: 'Berat', value: '5,2 kg' },
+      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Bond Beam 10.03',
+    name: 'Bond Beam 10.03',
+    thumbnails: [
+      {
+        id: 4,
+        thumbImage: '/images/Concrete Block/CB/Bond Beam 10.03.png',
+        largeImage: '/images/Concrete Block/CB/Bond Beam 10.03.png',
+        color: 'Abu-abu'
+      }
+    ],
+   specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 9 cm' },
+      { label: 'Berat', value: '10 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'C-Pillar 10.04',
+    name: 'C-Pillar 10.04',
+    thumbnails: [
+      {
+        id: 5,
+        thumbImage: '/images/Concrete Block/CB/C-Pillar 10.04.png',
+        largeImage: '/images/Concrete Block/CB/C-Pillar 10.04.png',
+        color: 'Abu-abu Gelap'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '30 x 19 x 6 cm' },
+      { label: 'Berat', value: '3,7 kg' },
+      { label: 'Pemakaian', value: '17,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -101,24 +467,317 @@ export const concreteBlockSubItems = [
     name: 'Open End 10.05',
     thumbnails: [
       {
-        id: 1,
-        thumbImage: '/images/Concrete Block/Open End 10.05.png',
-        largeImage: '/images/Concrete Block/Open End 10.05.png',
+        id: 6,
+        thumbImage: '/images/Concrete Block/CB/Open End 10.05.png',
+        largeImage: '/images/Concrete Block/CB/Open End 10.05.png',
         color: 'Coklat'
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-      { label: 'Aplikasi', icons: [
-        ['pedestrian', 'car'],  // For 6 cm
-        ['pedestrian', 'car'],  // For 6+ cm
-        ['car', 'car'],         // For 8 cm
-        ['car', 'car']          // For 10 cm
-      ]},
-      { label: 'Pemakaian', value: '49 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Dimensi', value: '39 x 19 x 9 cm' },
+      { label: 'Berat', value: '9,5 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Regular Full 15.01',
+    name: 'Regular Full 15.01 / Regular Full 15.01 B (Tembus)',
+    thumbnails: [
+      {
+        id: 7,
+        thumbImage: '/images/Concrete Block/CB/Regular Half 15.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Half 15.01.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 14 cm' },
+      { label: 'Berat', value: '13,75 kg / 12,5 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Regular Full 15.02',
+    name: 'Regular Full 15.02 / Regular Full 15.02 B (Tembus)',
+    thumbnails: [
+      {
+        id: 8,
+        thumbImage: '/images/Concrete Block/CB/Regular Full 15.02.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 15.02.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '19 x 19 x 14 cm' },
+      { label: 'Berat', value: '6,3 kg' },
+      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Bond Bean 15.03',
+    name: 'Bond Bean 15.03',
+    thumbnails: [
+      {
+        id: 9,
+        thumbImage: '/images/Concrete Block/CB/Bond Bean 15.03.png',
+        largeImage: '/images/Concrete Block/CB/Bond Bean 15.03.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 14 cm' },
+      { label: 'Berat', value: '14 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Reguler Full 20.01',
+    name: 'Reguler Full 20.01',
+    thumbnails: [
+      {
+        id: 10,
+        thumbImage: '/images/Concrete Block/CB/Reguler Full 20.01.png',
+        largeImage: '/images/Concrete Block/CB/Reguler Full 20.01.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 19 cm' },
+      { label: 'Berat', value: '20 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Reguler Full 20.01 B (Tembus)',
+    name: 'Reguler Full 20.01 B (Tembus)',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Reguler Full 20.01 B (Tembus).png',
+        largeImage: '/images/Concrete Block/CB/Reguler Full 20.01 B (Tembus).png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 19 cm' },
+      { label: 'Berat', value: '15 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Regular Half 20.02',
+    name: 'Regular Half 20.02',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Regular Half 20.02.png',
+        largeImage: '/images/Concrete Block/CB/Regular Half 20.02.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '19 x 19 x 19 cm' },
+      { label: 'Berat', value: '10,2 kg' },
+      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Regular Half 20.02 (Tembus)',
+    name: 'Regular Half 20.02 (Tembus)',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Regular Half 20.02 (Tembus).png',
+        largeImage: '/images/Concrete Block/CB/Regular Half 20.02 (Tembus).png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '19 x 19 x 19 cm' },
+      { label: 'Berat', value: '8 kg' },
+      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Bond Beam 20.03',
+    name: 'Bond Beam 20.03',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Bond Beam 20.03.png',
+        largeImage: '/images/Concrete Block/CB/Bond Beam 20.03.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 19 cm' },
+      { label: 'Berat', value: '18,5 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Grooved Ribbed Block G.10.01',
+    name: 'Grooved Ribbed Block G.10.01',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Grooved Ribbed Block G.10.01.png',
+        largeImage: '/images/Concrete Block/CB/Grooved Ribbed Block G.10.01.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 10 cm' },
+      { label: 'Berat', value: '11 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Grooved Ribbed Paver G.04.01',
+    name: 'Grooved Ribbed Paver G.04.01',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Grooved Ribbed Paver G.04.01.png',
+        largeImage: '/images/Concrete Block/CB/Grooved Ribbed Paver G.04.01.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 4 cm' },
+      { label: 'Berat', value: '5,6 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Split Ribbed Block S.12.01',
+    name: 'Split Ribbed Block S.12.01',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Split Ribbed Block S.12.01.png',
+        largeImage: '/images/Concrete Block/CB/Split Ribbed Block S.12.01.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 12 cm' },
+      { label: 'Berat', value: '12 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
+    ],
+    technicalSpecs: [
+      { label: 'Beban Lentur', value: '1200 N' },
+      { label: 'Penyerapan Air', value: 'Maks. 10%' },
+      { label: 'Ketebalan Cat', value: '100 Mikron' },
+      { label: 'Warna Cat', value: 'Hitam Solid' }
+    ],
+    installationNote: 'Pemasangan pola diagonal'
+  },
+  {
+    id: 'Split Ribbed Paver S.05.01',
+    name: 'Split Ribbed Paver S.05.01',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Concrete Block/CB/Split Ribbed Paver S.05.01.png',
+        largeImage: '/images/Concrete Block/CB/Split Ribbed Paver S.05.01.png',
+        color: 'Coklat'
+      }
+    ],
+    specifications: [
+      { label: 'Dimensi', value: '39 x 19 x 15 cm' },
+      { label: 'Berat', value: '6 kg' },
+      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -137,8 +796,8 @@ export const productsCbContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/Regular Full 10.01.png',
-        largeImage: '/images/Concrete Block/Regular Full 10.01.png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
         color: 'Multi Warna'
       }
     ],
@@ -148,7 +807,7 @@ export const productsCbContent = {
       // { label: 'Tebal', value: '6 cm' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
       { label: 'Pemakaian', value: '12,5 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -169,8 +828,8 @@ export const productsCbContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/Regular Full 10.01.png',
-        largeImage: '/images/Concrete Block/Regular Full 10.01.png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
         color: 'Multi Warna'
       }
     ],
@@ -180,7 +839,7 @@ export const productsCbContent = {
       // { label: 'Tebal', value: '6 cm' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
       { label: 'Pemakaian', value: '12,5 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -189,7 +848,7 @@ export const productsCbContent = {
       { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
     installationNote: '',
-    type: concreteBlockSubItems.map(item => ({
+    type: ventilationBlockSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id
@@ -201,8 +860,8 @@ export const productsCbContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/Regular Full 10.01.png',
-        largeImage: '/images/Concrete Block/Regular Full 10.01.png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
         color: 'Multi Warna'
       }
     ],
@@ -212,7 +871,7 @@ export const productsCbContent = {
       // { label: 'Tebal', value: '6 cm' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
       { label: 'Pemakaian', value: '12,5 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -221,7 +880,7 @@ export const productsCbContent = {
       { label: 'Warna Variasi', value: '5 Pilihan Warna' }
     ],
     installationNote: '',
-    type: concreteBlockSubItems.map(item => ({
+    type: ventilation3DBlockSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id

@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaCalculator, FaTimes } from "react-icons/fa";
-import { productsCbContent, concreteBlockSubItems } from "../../../../content-bank/products-cb";
+import { productsCbContent, concreteBlockSubItems, ventilationBlockSubItems, ventilation3DBlockSubItems} from "../../../../content-bank/products-cb";
 import Link from "next/link";
 import ProductSidebar from "../../components/ProductSidebar";
 import { useRouter } from "next/navigation";
@@ -14,18 +14,38 @@ export default function DetailsCb() {
   const router = useRouter();
   const [currentProduct, setCurrentProduct] = useState(productsCbContent["Concrete Block Variant"]);
   const [activeThumbnail, setActiveThumbnail] = useState(productsCbContent["Concrete Block Variant"].thumbnails[0]);
+    const [activeItems, setActiveItems] = useState(concreteBlockSubItems);
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   const visibleSlides = 4;
 
   // Initialize product from URL
-  useEffect(() => {
-    const product = searchParams.get("product");
-    const subItem = searchParams.get("subItem");
+   useEffect(() => {
+     const urlParams = new URLSearchParams(window.location.search);
+     const product = urlParams.get("product");
+     const subItem = urlParams.get("subItem");
+ 
 
     if (product && productsCbContent[product]) {
-      if (product === "Concrete Block Variant" && subItem) {
-        const selectedSubItem = concreteBlockSubItems.find((item) => item.id === subItem);
+      // Tentukan items yang aktif berdasarkan produk
+      let items;
+      switch (product) {
+        case "Concrete Block":
+          items = concreteBlockSubItems;
+          break;
+        case "Ventilation Block":
+          items = ventilationBlockSubItems;
+          break;
+        case "Ventilation Block 3D":
+          items = ventilation3DBlockSubItems;
+          break;
+        default:
+          items = concreteBlockSubItems;
+      }
+      setActiveItems(items);
+
+      if (subItem) {
+        const selectedSubItem = items.find((item) => item.id === subItem);
         if (selectedSubItem) {
           setCurrentProduct({
             ...productsCbContent[product],
@@ -42,33 +62,41 @@ export default function DetailsCb() {
       setCurrentProduct(productsCbContent[product]);
       setActiveThumbnail(productsCbContent[product].thumbnails[0]);
     }
-  }, [searchParams]);
+  }, []);
 
   const handleThumbnailClick = (thumbnail) => {
     setActiveThumbnail(thumbnail);
   };
 
  const handleProductTypeClick = (product) => {
-    if (currentProduct.name === "REGULAR FULL 10.01" || product.id) {
-      const selectedSubItem = concreteBlockSubItems.find((item) => item.id === product.id);
-      if (selectedSubItem) {
-        const subProduct = {
-          ...currentProduct,
-          name: selectedSubItem.name,
-          thumbnails: selectedSubItem.thumbnails,
-          specifications: [...currentProduct.specifications.filter((spec) => !["Lubang Efektif", "Jarak Antar Reng", "Sudut Atap"].includes(spec.label)), ...selectedSubItem.specifications],
-          technicalSpecs: [...currentProduct.technicalSpecs.filter((tech) => !["Ketebalan Cat", "Warna Cat"].includes(tech.label)), ...selectedSubItem.technicalSpecs],
-          installationNote: selectedSubItem.installationNote,
-        };
-
-        setCurrentProduct(subProduct);
-        setActiveThumbnail(selectedSubItem.thumbnails[0]);
-
-        // Update URL
-        router.push(`?product=${encodeURIComponent(currentProduct.name)}&subItem=${encodeURIComponent(selectedSubItem.id)}`);
-      }
-    } else {
-      router.push(`/produk/detail?product=${encodeURIComponent(product.name)}&category=${encodeURIComponent(currentProduct.category)}`);
+    const selectedSubItem = activeItems.find(item => item.id === product.id);
+    if (selectedSubItem) {
+      const subProduct = {
+        ...currentProduct,
+        name: selectedSubItem.name,
+        thumbnails: selectedSubItem.thumbnails,
+        specifications: [
+          ...currentProduct.specifications.filter(spec => 
+            !['Lubang Efektif', 'Jarak Antar Reng', 'Sudut Atap'].includes(spec.label)
+          ),
+          ...selectedSubItem.specifications
+        ],
+        technicalSpecs: [
+          ...currentProduct.technicalSpecs.filter(tech => 
+            !['Ketebalan Cat', 'Warna Cat'].includes(tech.label)
+          ),
+          ...selectedSubItem.technicalSpecs
+        ],
+        installationNote: selectedSubItem.installationNote
+      };
+      
+      setCurrentProduct(subProduct);
+      setActiveThumbnail(selectedSubItem.thumbnails[0]);
+      
+      // Update URL
+      const url = new URL(window.location.href);
+      url.searchParams.set('subItem', selectedSubItem.id);
+      window.history.pushState({}, '', url);
     }
   };
 
@@ -146,12 +174,12 @@ export default function DetailsCb() {
                         <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
                         <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
                         {/* <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal</th> */}
-                        <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th>
+                        {/* <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th> */}
                         <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      {concreteBlockSubItems.map((product) => {
+<tbody className='text-sm'>
+{activeItems.map((product) => {
                         const dimensions = product.specifications.find((spec) => spec.label === "Dimensi" || spec.label === "Ukuran")?.value || "-";
                         const weights = product.specifications
                           .find((spec) => spec.label === "Berat")
@@ -199,29 +227,6 @@ export default function DetailsCb() {
                                     {usage}
                                   </td>
                                 ) : null}
-                                <td className="border border-gray-300 px-4 py-2 text-center">
-                                  {application ? (
-                                    <div className="flex gap-1 justify-center">
-                                      {Array.isArray(application.icons?.[0])
-                                        ? application.icons[i]?.map((icon, iconIndex) =>
-                                            icon === "pedestrian" ? (
-                                              <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-                                            ) : icon === "car" ? (
-                                              <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-                                            ) : null
-                                          )
-                                        : application.icons?.map((icon, iconIndex) =>
-                                            icon === "pedestrian" ? (
-                                              <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-                                            ) : icon === "car" ? (
-                                              <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-                                            ) : null
-                                          )}
-                                    </div>
-                                  ) : (
-                                    "-"
-                                  )}
-                                </td>
                               </tr>
                             ))}
                           </React.Fragment>
