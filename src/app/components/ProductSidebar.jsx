@@ -77,9 +77,9 @@ export default function ProductSidebar({ onItemChange }) {
         { name: "Grass Block", url: "/produk/detail-pb?product=Grass Block&category=Paving Block" },
         { name: "Concrete Tile", url: "/produk/detail-pb2?product=Concrete Tile&category=Paving Block" },
         { name: "Guiding Tiles", url: "/produk/detail-pb?product=Guiding Tiles&category=Paving Block" },
-        { name: "Kanstein Wet Process", url: "/produk/detail-pb?product=Kanstein Wet Process&category=Paving Block" },
-        { name: "Kanstein Dry Process", url: "/produk/detail-pb?product=Kanstein Dry Process&category=Paving Block" },
-        { name: "Tali Air", url: "/produk/detail-pb?product=Tali Air&category=Paving Block" },
+        { name: "Kanstein Wet Process", url: "/produk/detail-pb3?product=Kanstein Wet Process&category=Paving Block" },
+        { name: "Kanstein Dry Process", url: "/produk/detail-pb3?product=Kanstein Dry Process&category=Paving Block" },
+        { name: "Tali Air", url: "/produk/detail-pb3?product=Tali Air&category=Paving Block" },
       ],
       "Concrete Block": [
         { name: "Concrete Block", url: "/produk/detail-cb?product=Concrete Block&category=Concrete Block" },

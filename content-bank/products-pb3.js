@@ -11,10 +11,10 @@ export const taliAirSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '20 x 40 x 8 cm, Lubang = 4 x 11 cm' },
+    { label: 'Berat', value: '11 kg' },
+    { label: 'Pemakaian', value: '1 bh/titik' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -36,10 +36,10 @@ export const taliAirSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '40 x 20 x 25 cm, Lubang = 17 cm' },
+    { label: 'Berat', value: '27 kg' },
+    { label: 'Pemakaian', value: '1 bh/titik' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -61,10 +61,10 @@ export const taliAirSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '40 x 20 x 25 cm, Lubang = 17 cm' },
+    { label: 'Berat', value: '27,5 kg' },
+    { label: 'Pemakaian', value: '1 bh/titik' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -89,21 +89,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 14 x 21 cm' },
+    { label: 'Berat', value: '35 kg' },
+    { label: 'Pemakaian', value: '1 bh/lot' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -125,21 +114,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 14 x 15 cm' },
+    { label: 'Berat', value: '24 kg' },
+    { label: 'Pemakaian', value: '1 bh/lot' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -161,21 +139,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 14 x 30 cm' },
+    { label: 'Berat', value: '51 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -197,21 +164,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '20 x 14 x 30 cm' },
+    { label: 'Berat', value: '17,1 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -233,21 +189,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 14 x 30 cm' },
+    { label: 'Berat', value: '41,5 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -269,21 +214,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 30 x 23 cm' },
+    { label: 'Berat', value: '80 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -305,21 +239,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '20 x 30 x 23 cm' },
+    { label: 'Berat', value: '20,5 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -341,21 +264,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 30 x 23 cm' },
+    { label: 'Berat', value: '75 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -377,21 +289,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 14 x 21 cm' },
+    { label: 'Berat', value: '36 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -413,21 +314,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '20 x 14 x 21 cm' },
+    { label: 'Berat', value: '12 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -449,21 +339,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 14 x 21 cm' },
+    { label: 'Berat', value: '27,5 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -485,21 +364,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+    { label: 'Dimensi', value: '60 x 24 x 15 cm' },
+    { label: 'Berat', value: '31,5 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -521,21 +389,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '20 x 24 x 15 cm' },
+    { label: 'Berat', value: '10,5 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -557,21 +414,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '60 x 24 x 15 cm' },
+    { label: 'Berat', value: '30 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -593,21 +439,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '60 x 30 x 18 cm' },
+    { label: 'Berat', value: '50 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -629,21 +464,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '60 x 30 x 18 cm' },
+    { label: 'Berat', value: '46 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -665,21 +489,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '40 x 15 x 30 cm' },
+    { label: 'Berat', value: '38 kg' },
+    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -701,21 +514,35 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '20 x 15 x 30 cm' },
+    { label: 'Berat', value: '19 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
+  ],
+  technicalSpecs: [
+    { label: 'Beban Lentur', value: '1100-1300 N' },
+    { label: 'Penyerapan Air', value: 'Maks. 12%' },
+    { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+    { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+  ],
+  installationNote: ''
+},
+  {
+  id: 'K.11.3 (DKI)',
+  name: 'K.11.3 (DKI)',
+  thumbnails: [
+    {
+      id: 19,
+      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.3 (DKI).png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/K.11.3 (DKI).png',
+      color: 'Multi Warna'
+    }
+  ],
+  specifications: [
+        { label: 'Dimensi', value: '40 x 15 x 30 cm' },
+    { label: 'Berat', value: '32 kg' },
+    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -730,28 +557,17 @@ export const kansteinWetprocessSubItems  = [
   name: 'K.12.1',
   thumbnails: [
     {
-      id: 19,
+      id: 20,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.12.1.png',
       penampangImage: '/images/Paving Block/Kanstein Wet/K.12.1.png',
       color: 'Multi Warna'
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '50 x 25 x 30 cm' },
+    { label: 'Berat', value: '78 kg' },
+    { label: 'Pemakaian', value: '2 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -766,28 +582,17 @@ export const kansteinWetprocessSubItems  = [
   name: 'K.12.3',
   thumbnails: [
     {
-      id: 20,
+      id: 22,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.12.3.png',
       penampangImage: '/images/Paving Block/Kanstein Wet/K.12.3.png',
       color: 'Multi Warna'
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '50 x 25 x 30 cm' },
+    { label: 'Berat', value: '57 kg' },
+    { label: 'Pemakaian', value: '2 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -802,28 +607,17 @@ export const kansteinWetprocessSubItems  = [
   name: 'K.13.1',
   thumbnails: [
     {
-      id: 22,
+      id: 23,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.13.1.png',
       penampangImage: '/images/Paving Block/Kanstein Wet/K.13.1.png',
       color: 'Multi Warna'
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '60 x 22 x 25 cm' },
+    { label: 'Berat', value: '67 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -845,21 +639,10 @@ export const kansteinWetprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '60 x 22 x 25 cm' },
+    { label: 'Berat', value: '53,5 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -884,21 +667,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '40 x 6 x 15,5 cm' },
+    { label: 'Berat', value: '7,5 kg' },
+    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -920,21 +692,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '⌀60 cm' },
+    { label: 'Berat', value: '8 kg' },
+    { label: 'Pemakaian', value: '4 bh/⌀ ' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -956,21 +717,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '39 x 9 x 20 cm' },
+    { label: 'Berat', value: '14,5 kg' },
+    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -992,21 +742,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '19 x 9 x 20 cm' },
+    { label: 'Berat', value: '7 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1028,21 +767,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '30 x 9 x 20 cm' },
+    { label: 'Berat', value: '13,5 kg' },
+    { label: 'Pemakaian', value: '4 bh/⌀' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1064,21 +792,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '40 x 15 x 25 cm' },
+    { label: 'Berat', value: '31 kg' },
+    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1100,21 +817,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '20 x 15 x 25 cm' },
+    { label: 'Berat', value: '16,5 kg' },
+    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1136,21 +842,10 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-    { label: 'Produk', value: 'Truepave' },
-    { label: 'Dimensi', value: '10 x 20 cm' },
-    { label: 'Berat', value: '2,5 kg / 2,9 kg / 3,3 kg / 4,3 kg' },
-    { label: 'Tebal', value: '6 cm / 6+ cm / 8 cm / 10 cm' },
-    { 
-      label: 'Aplikasi',
-      icons: [
-        ['pedestrian', 'car'], // Untuk 6 cm
-        ['pedestrian', 'car'], // Untuk 6+ cm
-        ['car', 'car'],        // Untuk 8 cm
-        ['car', 'car']         // Untuk 10 cm
-      ]
-    },
-    { label: 'Pemakaian', value: '49 bh/m2' },
-    { label: 'Best Seller', icon: '/icons/BS.png' }
+        { label: 'Dimensi', value: '40 x 15 x 25 cm' },
+    { label: 'Berat', value: '25 kg' },
+    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -1165,38 +860,6 @@ export const kansteinDryprocessSubItems  = [
 
 
 export const productsPb3Content = {
-  'Tali Air': {
-    name: 'TALI AIR',
-    category: 'Paving Block',
-    thumbnails: [
-      {
-        id: 1,
-        thumbImage: '/images/Paving Block/Altstadt/Altstad Centrum.png',
-        penampangImage: '/images/Paving Block/Altstadt/Altstad Centrum.png',
-        color: 'Multi Warna'
-      }
-    ],
-    specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
-    ],
-    installationNote: '',
-    type: altstadtSubItems.map(item => ({
-      name: item.name,
-      image: item.thumbnails[0].thumbImage,
-      id: item.id
-    }))
-  },
   'Kanstein Wet Process': {
     name: 'KANSTEIN WET PROCESS',
     category: 'Paving Block',
@@ -1209,21 +872,19 @@ export const productsPb3Content = {
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' }
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu Produk mengacu pada standar SNI 2442-2008' },
+      { value: 'Mutu beton K-300 (wet process)' },
+      { value: 'Mutu beton K-225 (dry process)' }
     ],
     technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu produk mengacu pada standar SNI 03-0691-1996' },
+      { value: 'Ketahanan aus rata-rata min 0,09 mm/menit' },
+      { value: 'Penyerapan air rata-rata 3%' }
     ],
     installationNote: '',
-    type: altstadtSubItems.map(item => ({
+    type: kansteinWetprocessSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id
@@ -1241,21 +902,49 @@ export const productsPb3Content = {
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Truepave' },
-      { label: 'Dimensi', value: '10 x 20 cm' },
-      { label: 'Berat', value: '2,5 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' }
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu Produk mengacu pada standar SNI 2442-2008' },
+      { value: 'Mutu beton K-300 (wet process)' },
+      { value: 'Mutu beton K-225 (dry process)' }
     ],
     technicalSpecs: [
-      { label: 'Beban Lentur', value: '1100-1300 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 12%' },
-      { label: 'Ketebalan Cat', value: '80-120 Mikron' },
-      { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu produk mengacu pada standar SNI 03-0691-1996' },
+      { value: 'Ketahanan aus rata-rata min 0,09 mm/menit' },
+      { value: 'Penyerapan air rata-rata 3%' }
     ],
     installationNote: '',
-    type: altstadtSubItems.map(item => ({
+    type: kansteinDryprocessSubItems.map(item => ({
+      name: item.name,
+      image: item.thumbnails[0].thumbImage,
+      id: item.id
+    }))
+  },
+  'Tali Air': {
+    name: 'TALI AIR',
+    category: 'Paving Block',
+    thumbnails: [
+      {
+        id: 1,
+        thumbImage: '/images/Paving Block/Altstadt/Altstad Centrum.png',
+        penampangImage: '/images/Paving Block/Altstadt/Altstad Centrum.png',
+        color: 'Multi Warna'
+      }
+    ],
+    specifications: [
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu Produk mengacu pada standar SNI 2442-2008' },
+      { value: 'Mutu beton K-300 (wet process)' },
+      { value: 'Mutu beton K-225 (dry process)' }
+    ],
+    technicalSpecs: [
+      { value: 'Bahan dasar campuran beton' },
+      { value: 'Mutu produk mengacu pada standar SNI 03-0691-1996' },
+      { value: 'Ketahanan aus rata-rata min 0,09 mm/menit' },
+      { value: 'Penyerapan air rata-rata 3%' }
+    ],
+    installationNote: '',
+    type: taliAirSubItems.map(item => ({
       name: item.name,
       image: item.thumbnails[0].thumbImage,
       id: item.id

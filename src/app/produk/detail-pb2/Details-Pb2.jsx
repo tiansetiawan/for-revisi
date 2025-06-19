@@ -196,19 +196,21 @@ const handleThumbnailClick = (productId, thumbIndex) => {
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
   <tr className="bg-[#0B203F] text-white">
     <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
-    <th className="border border-gray-300 px-4 py-2 text-center">Produk</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Produk</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
-    <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-20">Warna</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Pemakaian</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-20">Aplikasi</th>
   </tr>
 </thead>
-      <tbody>
+      <tbody className='text-sm'>
   {concreteTileSubItems.map((product) => {
     const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value.split('/').map(w => w.trim()) || ['-'];
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
     const thicknesses = product.specifications.find(spec => spec.label === 'Tebal')?.value.split('/').map(t => t.trim()) || ['-'];
-    const usage = product.specifications.find(spec => spec.label === 'Pemakaian')?.value || '-';
+    const color = product.specifications.find(spec => spec.label === 'Warna')?.value || '-';
+    const usage = product.specifications.find(spec => spec.label === 'Pemakaian')?.value.split(':').map(t => t.trim()) || ['-'];
     const application = product.specifications.find(spec => spec.label === 'Aplikasi');
     const bestSellerIcon = product.specifications.find(spec => spec.label === 'Best Seller' && spec.icon)?.icon;
 
@@ -292,20 +294,23 @@ const handleThumbnailClick = (productId, thumbIndex) => {
     {product.name}
   </div>
 </td>
-                <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
+                {/* <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
                   {dimensions}
-                </td>
+                </td> */}
               </>
             ) : null}
+            <td className="border border-gray-300 px-4 py-2 text-center">
+              {dimensions[i] || dimensions[0]}
+            </td>
             <td className="border border-gray-300 px-4 py-2 text-center">{weight}</td>
-            {/* <td className="border border-gray-300 px-4 py-2 text-center">
-              {thicknesses[i] || thicknesses[0]}
-            </td> */}
             {i === 0 ? (
               <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
-                {usage}
+                {color}
               </td>
             ) : null}
+            <td className="border border-gray-300 px-4 py-2 text-center">
+              {usage[i] || usage[0]}
+            </td>
 <td className="border border-gray-300 px-4 py-2 text-center relative">
   {application ? (
     <div className="flex gap-1 justify-center">

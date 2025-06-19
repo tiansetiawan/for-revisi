@@ -1,20 +1,34 @@
 'use client';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { FaCalculator, FaTimes } from 'react-icons/fa';
-import { productsPbContent, pavingBlockSubItems } from '../../../../content-bank/products-pb';
-import Link from 'next/link';
+import { FaCalculator } from 'react-icons/fa';
+import {
+  productsPb3Content, kansteinWetprocessSubItems,
+  kansteinDryprocessSubItems,
+  taliAirSubItems,
+} from '../../../../content-bank/products-pb3';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
+// import ApplicationModal from '../../components/ApplicationModal';
 
-export default function DetailsPb2() {
+export default function DetailsPb3() {
   const router = useRouter();
-  const [currentProduct, setCurrentProduct] = useState(productsPbContent['Paving Block Variant']);
-  const [activeThumbnail, setActiveThumbnail] = useState(productsPbContent['Paving Block Variant'].thumbnails[0]);
+  const [currentProduct, setCurrentProduct] = useState(productsPb3Content['Kanstein Wet Process']);
+  const [activeThumbnail, setActiveThumbnail] = useState(productsPb3Content['Kanstein Wet Process'].thumbnails[0]);
+  const [activeItems, setActiveItems] = useState(kansteinWetprocessSubItems); // Tambahkan state ini
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   const visibleSlides = 4;
+  const [activeThumbnails, setActiveThumbnails] = useState({});
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+  const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
+
+const handleThumbnailClick = (productId, thumbIndex) => {
+  setActiveThumbnails(prev => ({
+    ...prev,
+    [productId]: thumbIndex
+  }));
+};
 
 
   // Initialize product from URL
@@ -23,22 +37,39 @@ export default function DetailsPb2() {
     const product = urlParams.get('product');
     const subItem = urlParams.get('subItem');
 
-    if (product && productsPbContent[product]) {
-      if (product === 'Paving Block Variant' && subItem) {
-        const selectedSubItem = pavingBlockSubItems.find(item => item.id === subItem);
+if (product && productsPb3Content[product]) {
+      // Tentukan items yang aktif berdasarkan produk
+      let items;
+      switch(product) {
+        case 'Kanstein Wet Process':
+          items = kansteinWetprocessSubItems;
+          break;
+        case 'Kanstein Dry Process':
+          items = kansteinDryprocessSubItems;
+          break;
+        case 'Tali Air':
+          items = taliAirSubItems;
+          break;
+        default:
+          items = kansteinWetprocessSubItems;
+      }
+      setActiveItems(items);
+
+      if (subItem) {
+        const selectedSubItem = items.find(item => item.id === subItem);
         if (selectedSubItem) {
           setCurrentProduct({
-            ...productsPbContent[product],
+            ...productsPb3Content[product],
             name: selectedSubItem.name,
             thumbnails: selectedSubItem.thumbnails,
             specifications: [
-              ...productsPbContent[product].specifications.filter(spec => 
+              ...productsPb3Content[product].specifications.filter(spec => 
                 !['Lubang Efektif', 'Jarak Antar Reng', 'Sudut Atap'].includes(spec.label)
               ),
               ...selectedSubItem.specifications
             ],
             technicalSpecs: [
-              ...productsPbContent[product].technicalSpecs.filter(tech => 
+              ...productsPb3Content[product].technicalSpecs.filter(tech => 
                 !['Ketebalan Cat', 'Warna Cat'].includes(tech.label)
               ),
               ...selectedSubItem.technicalSpecs
@@ -49,49 +80,41 @@ export default function DetailsPb2() {
           return;
         }
       }
-      setCurrentProduct(productsPbContent[product]);
-      setActiveThumbnail(productsPbContent[product].thumbnails[0]);
+      setCurrentProduct(productsPb3Content[product]);
+      setActiveThumbnail(productsPb3Content[product].thumbnails[0]);
     }
   }, []);
 
-  const handleThumbnailClick = (thumbnail) => {
-    setActiveThumbnail(thumbnail);
-  };
 
-  const handleProductTypeClick = (product) => {
-    if (currentProduct.name === 'TRUEPAVE' || product.id) {
-      const selectedSubItem = pavingBlockSubItems.find(item => item.id === product.id);
-      if (selectedSubItem) {
-        const subProduct = {
-          ...currentProduct,
-          name: selectedSubItem.name,
-          thumbnails: selectedSubItem.thumbnails,
-          specifications: [
-            ...currentProduct.specifications.filter(spec => 
-              !['Lubang Efektif', 'Jarak Antar Reng', 'Sudut Atap'].includes(spec.label)
-            ),
-            ...selectedSubItem.specifications
-          ],
-          technicalSpecs: [
-            ...currentProduct.technicalSpecs.filter(tech => 
-              !['Ketebalan Cat', 'Warna Cat'].includes(tech.label)
-            ),
-            ...selectedSubItem.technicalSpecs
-          ],
-          installationNote: selectedSubItem.installationNote
-        };
-        
-        setCurrentProduct(subProduct);
-        setActiveThumbnail(selectedSubItem.thumbnails[0]);
-        
-        // Update URL
-        const url = new URL(window.location.href);
-        url.searchParams.set('subItem', selectedSubItem.id);
-        window.history.pushState({}, '', url);
-      }
-    } else {
-      // Navigate to other product details
-      router.push(`/produk/detail?product=${encodeURIComponent(product.name)}&category=${encodeURIComponent(currentProduct.category)}`);
+   const handleProductTypeClick = (product) => {
+    const selectedSubItem = activeItems.find(item => item.id === product.id);
+    if (selectedSubItem) {
+      const subProduct = {
+        ...currentProduct,
+        name: selectedSubItem.name,
+        thumbnails: selectedSubItem.thumbnails,
+        specifications: [
+          ...currentProduct.specifications.filter(spec => 
+            !['Lubang Efektif', 'Jarak Antar Reng', 'Sudut Atap'].includes(spec.label)
+          ),
+          ...selectedSubItem.specifications
+        ],
+        technicalSpecs: [
+          ...currentProduct.technicalSpecs.filter(tech => 
+            !['Ketebalan Cat', 'Warna Cat'].includes(tech.label)
+          ),
+          ...selectedSubItem.technicalSpecs
+        ],
+        installationNote: selectedSubItem.installationNote
+      };
+      
+      setCurrentProduct(subProduct);
+      setActiveThumbnail(selectedSubItem.thumbnails[0]);
+      
+      // Update URL
+      const url = new URL(window.location.href);
+      url.searchParams.set('subItem', selectedSubItem.id);
+      window.history.pushState({}, '', url);
     }
   };
 
@@ -165,27 +188,47 @@ export default function DetailsPb2() {
  <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4">
   {currentProduct.name}
 </div>    
-  
+  {/* Spesifikasi Teknis */}
+  <section className="mb-10">
+    <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
+    <ul className="list-disc pl-8 text-sm text-gray-700 space-y-1">
+      {currentProduct.specifications?.map((item, index) => (
+        <li key={index}>{item.value}</li>
+      ))}
+    </ul>
+  </section>
+
+  {/* Spesifikasi Sandstein */}
+  {/* <section className="mb-15">
+    <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS SANDSTEIN :</h2>
+    <ul className="list-disc pl-8 text-sm text-gray-700 space-y-1">
+      {currentProduct.technicalSpecs?.map((item, index) => (
+        <li key={index}>{item.value}</li>
+      ))}
+    </ul>
+  </section> */}
 <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
   <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
   <tr className="bg-[#0B203F] text-white">
     <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
-    <th className="border border-gray-300 px-4 py-2 text-center">Produk</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-60">Penampang</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Produk</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal</th>
-    <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
+    {/* <th className="border border-gray-300 px-4 py-2 text-center w-20">Warna</th> */}
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Pemakaian</th>
+    {/* <th className="border border-gray-300 px-4 py-2 text-center w-20">Aplikasi</th> */}
   </tr>
 </thead>
-      <tbody>
-  {pavingBlockSubItems.map((product) => {
-    const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value || '-';
+      <tbody className='text-sm'>
+{activeItems.map((product) => {
+    const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value.split('/').map(w => w.trim()) || ['-'];
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
     const thicknesses = product.specifications.find(spec => spec.label === 'Tebal')?.value.split('/').map(t => t.trim()) || ['-'];
-    const usage = product.specifications.find(spec => spec.label === 'Pemakaian')?.value || '-';
-    const application = product.specifications.find(spec => spec.label === 'Aplikasi');
+    // const color = product.specifications.find(spec => spec.label === 'Warna')?.value || '-';
+    const usage = product.specifications.find(spec => spec.label === 'Pemakaian')?.value.split(':').map(t => t.trim()) || ['-'];
+    // const application = product.specifications.find(spec => spec.label === 'Aplikasi');
     const bestSellerIcon = product.specifications.find(spec => spec.label === 'Best Seller' && spec.icon)?.icon;
 
     return (
@@ -194,16 +237,100 @@ export default function DetailsPb2() {
           <tr key={`${product.id}-${i}`} className="hover:bg-gray-50">
             {i === 0 ? (
               <>
-                <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
-                  <div className="relative w-40 h-40 mx-auto">
-                    <Image
-                      src={product.thumbnails[0].thumbImage}
-                      alt={product.name}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </td>
+{/* Thumbnail gallery shoppe style*/}
+{/* <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
+  <div className="flex flex-col items-center gap-2">
+    <div className="relative w-40 h-40 mx-auto">
+      <Image
+        src={product.thumbnails[activeThumbnails[product.id] || 0].thumbImage}
+        alt={product.name}
+        fill
+        className="object-contain"
+      />
+    </div>
+    
+    <div className="flex flex-wrap justify-center gap-1 mt-2">
+      {product.thumbnails.map((thumbnail, index) => (
+        <button 
+          key={index}
+          onClick={() => handleThumbnailClick(product.id, index)}
+          className={`relative w-8 h-8 ${(activeThumbnails[product.id] || 0) === index ? 'ring-2 ring-blue-500' : ''}`}
+        >
+          <Image
+            src={thumbnail.thumbImage}
+            alt={`Thumbnail ${index + 1}`}
+            fill
+            className="object-cover"
+          />
+        </button>
+      ))}
+    </div>
+  </div>
+</td> */}
+<td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
+  <div className="flex divide-x divide-gray-300">
+    {/* Hitung jumlah kolom yang dibutuhkan (maksimal 3 kolom) */}
+    {(() => {
+      const columnCount = Math.min(3, Math.ceil(product.thumbnails.length / 3));
+      const itemsPerColumn = Math.ceil(product.thumbnails.length / columnCount);
+      
+      return Array.from({ length: columnCount }).map((_, col) => {
+        const startIndex = col * itemsPerColumn;
+        const endIndex = startIndex + itemsPerColumn;
+        const colItems = product.thumbnails.slice(startIndex, endIndex);
+        
+        return (
+          <div key={col} className="flex-1 px-2 first:pl-0 last:pr-0">
+            <div className="space-y-2">
+              {colItems.map((thumbnail, index) => (
+                <div key={startIndex + index} className="relative w-30 h-30 mx-auto">
+                  <Image
+                    src={thumbnail.thumbImage}
+                    alt={`${product.name} - ${startIndex + index + 1}`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      });
+    })()}
+  </div>
+</td>
+<td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
+  <div className="flex divide-x divide-gray-300">
+    {/* Hitung jumlah kolom yang dibutuhkan (maksimal 3 kolom) */}
+    {(() => {
+      const columnCount = Math.min(3, Math.ceil(product.thumbnails.length / 3));
+      const itemsPerColumn = Math.ceil(product.thumbnails.length / columnCount);
+      
+      return Array.from({ length: columnCount }).map((_, col) => {
+        const startIndex = col * itemsPerColumn;
+        const endIndex = startIndex + itemsPerColumn;
+        const colItems = product.thumbnails.slice(startIndex, endIndex);
+        
+        return (
+          <div key={col} className="flex-1 px-2 first:pl-0 last:pr-0">
+            <div className="space-y-2">
+              {colItems.map((thumbnail, index) => (
+                <div key={startIndex + index} className="relative w-30 h-30 mx-auto">
+                  <Image
+                    src={thumbnail.penampangImage}
+                    alt={`${product.name} - ${startIndex + index + 1}`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      });
+    })()}
+  </div>
+</td>
 <td rowSpan={weights.length} className="relative border border-gray-300 px-4 py-2 font-medium text-center">
   <div className="flex flex-col justify-center items-center relative">
         {bestSellerIcon && (
@@ -216,42 +343,109 @@ export default function DetailsPb2() {
     {product.name}
   </div>
 </td>
+                {/* <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
+                  {dimensions}
+                </td> */}
+              </>
+            ) : null}
                 <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
                   {dimensions}
                 </td>
-              </>
-            ) : null}
             <td className="border border-gray-300 px-4 py-2 text-center">{weight}</td>
-            <td className="border border-gray-300 px-4 py-2 text-center">
-              {thicknesses[i] || thicknesses[0]}
-            </td>
-            {i === 0 ? (
+            {/* {i === 0 ? (
               <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
-                {usage}
+                {color}
               </td>
-            ) : null}
-<td className="border border-gray-300 px-4 py-2 text-center">
+            ) : null} */}
+            <td className="border border-gray-300 px-4 py-2 text-center">
+              {usage[i] || usage[0]}
+            </td>
+{/* <td className="border border-gray-300 px-4 py-2 text-center relative">
   {application ? (
     <div className="flex gap-1 justify-center">
       {Array.isArray(application.icons?.[0]) 
         ? application.icons[i]?.map((icon, iconIndex) => (
-            icon === 'pedestrian' ? (
-              <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-            ) : icon === 'car' ? (
-              <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-            ) : null
+            <div 
+              key={iconIndex}
+              className="relative"
+              onMouseEnter={(e) => {
+                setHoveredIcon(icon);
+                const rect = e.currentTarget.getBoundingClientRect();
+                setHoverPosition({
+                  x: rect.left + rect.width / 2,
+                  y: rect.top
+                });
+              }}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {icon === 'pedestrian' ? (
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+              ) : icon === 'car' ? (
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+              ) : icon === 'garage' ? (
+                <img src="/icons/garage.png" alt="garage" className="w-4 h-4" />
+              ): icon === 'lorry' ? (
+                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+              ) : icon === 'fuso' ? (
+                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+              ) : icon === 'factory' ? (
+                <img src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+              ) : icon === 'harbor' ? (
+                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
+              ) : null}
+              
+              {hoveredIcon === icon && (
+                <div 
+                  className="fixed z-50"
+                  style={{
+                    left: `${hoverPosition.x}px`,
+                    top: `${hoverPosition.y}px`,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  <ApplicationModal applicationType={icon} />
+                </div>
+              )}
+            </div>
           ))
         : application.icons?.map((icon, iconIndex) => (
-            icon === 'pedestrian' ? (
-              <img key={iconIndex} src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
-            ) : icon === 'car' ? (
-              <img key={iconIndex} src="/icons/car.png" alt="Car" className="w-4 h-4" />
-            ) : null
+            <div 
+              key={iconIndex}
+              className="relative"
+              onMouseEnter={(e) => {
+                setHoveredIcon(icon);
+                const rect = e.currentTarget.getBoundingClientRect();
+                setHoverPosition({
+                  x: rect.left + rect.width / 2,
+                  y: rect.top
+                });
+              }}
+              onMouseLeave={() => setHoveredIcon(null)}
+            >
+              {icon === 'pedestrian' ? (
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+              ) : icon === 'car' ? (
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+              ) : null}
+              
+              {hoveredIcon === icon && (
+                <div 
+                  className="fixed z-50"
+                  style={{
+                    left: `${hoverPosition.x}px`,
+                    top: `${hoverPosition.y}px`,
+                    transform: 'translateX(-50%)'
+                  }}
+                >
+                  <ApplicationModal applicationType={icon} />
+                </div>
+              )}
+            </div>
           ))
       }
     </div>
   ) : '-'}
-</td>
+</td> */}
           </tr>
         ))}
       </React.Fragment>

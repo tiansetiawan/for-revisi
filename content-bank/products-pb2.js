@@ -33,7 +33,8 @@ export const concreteTileSubItems = [
           ['pedestrian', 'garage']      
         ]
       },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '4,16 bh/m2 : 6,25 bh/m2 : 12,5 bh/m2' },
+      { label: 'Warna', value: '-' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -56,12 +57,17 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Produk', value: 'Halfpave' },
-      { label: 'Dimensi', value: '10 x 10 cm' },
-      { label: 'Berat', value: '1,3 kg' },
-      { label: 'Tebal', value: '6 cm' },
-      { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '98 bh/m2' }
+      { label: 'Dimensi', value: '30 x 30 x 6 cm' },
+      { label: 'Berat', value: '11,5 kg' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian', 'garage']     
+        ]
+      },
+      { label: 'Pemakaian', value: '11 bh/m2' },
+      { label: 'Warna', value: 'Natural, Regular, Khusus' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -83,11 +89,17 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,9 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '30 x 30 x 1,5 cm' },
+      { label: 'Berat', value: '4,2 kg' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian']     
+        ]
+      },
+      { label: 'Pemakaian', value: '11 bh/m2' },
+      { label: 'Warna', value: 'Natural' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1300 N' },
@@ -99,7 +111,7 @@ export const concreteTileSubItems = [
   },
   {
     id: 'Clading',
-    name: 'Clading',
+    name: 'Clading △',
     thumbnails: [
       {
         id: 4,
@@ -109,11 +121,17 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Ukuran', value: '44 x 37,4 cm' },
-      { label: 'Berat', value: '5,6 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
-      { label: 'Jarak Antar Reng', value: '36 cm' },
-      { label: 'Sudut Atap', value: 'Min. 25°' }
+      { label: 'Dimensi', value: '30 x 30 x 1,5 cm' },
+      { label: 'Berat', value: '2,52 kg' },
+      { 
+        label: 'Aplikasi', 
+        icons: [
+          ['pedestrian']     
+        ]
+      },
+      { label: 'Pemakaian', value: '20 bh/m2' },
+      { label: 'Warna', value: 'Natural' },
+      { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1150 N' },
