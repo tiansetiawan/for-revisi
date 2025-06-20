@@ -14,9 +14,9 @@ export const victoriaSeriesSubItems = [
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -35,8 +35,8 @@ export const victoriaSeriesSubItems = [
      thumbnails: [
       {
         id: 2,
-        thumbImage: '/images/Concrete Roof/Victoria Series/multiline.png',
-        largeImage: '/images/Concrete Roof/Victoria Series/multiline.png',
+        thumbImage: '/images/Concrete Roof/Victoria Series/multilines1.png',
+        largeImage: '/images/Concrete Roof/Victoria Series/multilines1.png',
         color: 'Multi Warna'
       }
     ],
@@ -44,9 +44,9 @@ export const victoriaSeriesSubItems = [
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -74,9 +74,9 @@ export const victoriaSeriesSubItems = [
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -104,9 +104,9 @@ export const victoriaSeriesSubItems = [
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -134,9 +134,9 @@ export const victoriaSeriesSubItems = [
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -167,9 +167,9 @@ export const productsVsContent = {
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -206,8 +206,8 @@ export const productsVsContent = {
     thumbnails: [
       {
         id: 2,
-        thumbImage: '/images/Concrete Roof/Victoria Series/multiline1.png',
-        largeImage: '/images/Concrete Roof/Victoria Series/multiline1.png',
+        thumbImage: '/images/Concrete Roof/Victoria Series/multilines1.png',
+        largeImage: '/images/Concrete Roof/Victoria Series/multilines1.png',
         color: 'Hitam Solid'
       }
     ],
@@ -215,9 +215,9 @@ export const productsVsContent = {
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -263,9 +263,9 @@ export const productsVsContent = {
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -311,9 +311,9 @@ export const productsVsContent = {
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -359,9 +359,9 @@ export const productsVsContent = {
       { label: 'Luas Nominal', value: '33 x 42 cm' },
       { label: 'Luas Efektif', value: '25,9 x 39,1 cm' },
       { label: 'Berat', value: '4,8 kg' },
-      { label: 'Pemakaian Genteng', value: '9,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '4 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '9,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '4 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '25,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],

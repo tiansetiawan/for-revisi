@@ -15,7 +15,7 @@ export const productsContent = {
       { label: 'Luas Nominal', value: '44 x 37,4 cm' },
       { label: 'Luas Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -42,17 +42,17 @@ export const productsContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/dualslate.png',
-        largeImage: '/images/dualslate.png',
+        thumbImage: '/images/Concrete Roof/Dual Slate/Dual Slate.png',
+        largeImage: '/images/Concrete Roof/Dual Slate/Dual Slate.png',
         color: 'Hitam Solid'
       }
     ],
     specifications: [
       { label: 'Luas Nominal', value: '43,4 x 35,5 cm' },
       { label: 'Berat', value: '5 kg' },
-      { label: 'Pemakaian Genteng', value: '8,5 - 8,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '3 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '8,5 - 8,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '3 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '36,5 - 37,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -90,7 +90,7 @@ export const productsContent = {
       { label: 'Luas Nominal', value: '44 x 37,4 cm' },
       { label: 'Luas Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -126,7 +126,7 @@ export const productsContent = {
       { label: 'Luas Nominal', value: '44 x 37,4 cm' },
       { label: 'Luas Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -162,7 +162,7 @@ export const productsContent = {
       { label: 'Luas Nominal', value: '44 x 37,4 cm' },
       { label: 'Luas Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -198,7 +198,7 @@ export const productsContent = {
       { label: 'Luas Nominal', value: '44 x 37,4 cm' },
       { label: 'Luas Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],

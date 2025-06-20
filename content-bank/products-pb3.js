@@ -141,7 +141,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 14 x 30 cm' },
     { label: 'Berat', value: '51 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -166,7 +166,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '20 x 14 x 30 cm' },
     { label: 'Berat', value: '17,1 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -191,7 +191,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 14 x 30 cm' },
     { label: 'Berat', value: '41,5 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -216,7 +216,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 30 x 23 cm' },
     { label: 'Berat', value: '80 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -241,7 +241,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '20 x 30 x 23 cm' },
     { label: 'Berat', value: '20,5 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -266,7 +266,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 30 x 23 cm' },
     { label: 'Berat', value: '75 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -291,7 +291,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 14 x 21 cm' },
     { label: 'Berat', value: '36 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -316,7 +316,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '20 x 14 x 21 cm' },
     { label: 'Berat', value: '12 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -341,7 +341,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 14 x 21 cm' },
     { label: 'Berat', value: '27,5 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -366,7 +366,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
     { label: 'Dimensi', value: '60 x 24 x 15 cm' },
     { label: 'Berat', value: '31,5 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -391,7 +391,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '20 x 24 x 15 cm' },
     { label: 'Berat', value: '10,5 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -416,7 +416,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '60 x 24 x 15 cm' },
     { label: 'Berat', value: '30 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -441,7 +441,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '60 x 30 x 18 cm' },
     { label: 'Berat', value: '50 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -466,7 +466,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '60 x 30 x 18 cm' },
     { label: 'Berat', value: '46 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -491,8 +491,9 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '40 x 15 x 30 cm' },
     { label: 'Berat', value: '38 kg' },
-    { label: 'Pemakaian', value: '2,5 bh/m1' },
-    { label: 'Best Seller', icon: '' }
+    { label: 'Pemakaian', value: '2,5 bh/m¹' },
+    { label: 'Best Seller', icon: '' },
+    { label: 'New Product', icon: '/icons/BS.png' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -516,7 +517,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '20 x 15 x 30 cm' },
     { label: 'Berat', value: '19 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -541,7 +542,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '40 x 15 x 30 cm' },
     { label: 'Berat', value: '32 kg' },
-    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Pemakaian', value: '2,5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -566,7 +567,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '50 x 25 x 30 cm' },
     { label: 'Berat', value: '78 kg' },
-    { label: 'Pemakaian', value: '2 bh/m1' },
+    { label: 'Pemakaian', value: '2 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -591,7 +592,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '50 x 25 x 30 cm' },
     { label: 'Berat', value: '57 kg' },
-    { label: 'Pemakaian', value: '2 bh/m1' },
+    { label: 'Pemakaian', value: '2 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -616,7 +617,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '60 x 22 x 25 cm' },
     { label: 'Berat', value: '67 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -641,7 +642,7 @@ export const kansteinWetprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '60 x 22 x 25 cm' },
     { label: 'Berat', value: '53,5 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m1' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -669,7 +670,7 @@ export const kansteinDryprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '40 x 6 x 15,5 cm' },
     { label: 'Berat', value: '7,5 kg' },
-    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Pemakaian', value: '2,5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -692,9 +693,9 @@ export const kansteinDryprocessSubItems  = [
     }
   ],
   specifications: [
-        { label: 'Dimensi', value: '⌀60 cm' },
+        { label: 'Dimensi', value: 'Ø 60 cm' },
     { label: 'Berat', value: '8 kg' },
-    { label: 'Pemakaian', value: '4 bh/⌀ ' },
+    { label: 'Pemakaian', value: '4 bh/Ø ' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -719,7 +720,7 @@ export const kansteinDryprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '39 x 9 x 20 cm' },
     { label: 'Berat', value: '14,5 kg' },
-    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Pemakaian', value: '2,5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -744,7 +745,7 @@ export const kansteinDryprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '19 x 9 x 20 cm' },
     { label: 'Berat', value: '7 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -794,8 +795,10 @@ export const kansteinDryprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '40 x 15 x 25 cm' },
     { label: 'Berat', value: '31 kg' },
-    { label: 'Pemakaian', value: '2,5 bh/m1' },
-    { label: 'Best Seller', icon: '' }
+    { label: 'Pemakaian', value: '2,5 bh/m¹' },
+    { label: 'Best Seller', icon: '' },
+        { label: 'Best Seller', icon: '' },
+    { label: 'New Product', icon: '/icons/BS.png' }
   ],
   technicalSpecs: [
     { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -819,7 +822,7 @@ export const kansteinDryprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '20 x 15 x 25 cm' },
     { label: 'Berat', value: '16,5 kg' },
-    { label: 'Pemakaian', value: '5 bh/m1' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -844,7 +847,7 @@ export const kansteinDryprocessSubItems  = [
   specifications: [
         { label: 'Dimensi', value: '40 x 15 x 25 cm' },
     { label: 'Berat', value: '25 kg' },
-    { label: 'Pemakaian', value: '2,5 bh/m1' },
+    { label: 'Pemakaian', value: '2,5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [

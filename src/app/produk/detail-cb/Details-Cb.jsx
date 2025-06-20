@@ -191,8 +191,7 @@ export default function DetailsCb() {
                           .map((t) => t.trim()) || ["-"];
                         const usage = product.specifications.find((spec) => spec.label === "Pemakaian")?.value || "-";
                         const application = product.specifications.find((spec) => spec.label === "Aplikasi");
-                        const bestSellerIcon = product.specifications.find((spec) => spec.label === "Best Seller" && spec.icon)?.icon;
-
+                        const bestSellerIcon = product.specifications.find((spec) => spec.label === "Best Seller" && spec.icon)?.icon || product.specifications.find((spec) => spec.label === "New Product" && spec.icon)?.icon;
                         return (
                           <React.Fragment key={product.id}>
                             {weights.map((weight, i) => (

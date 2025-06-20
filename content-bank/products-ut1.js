@@ -13,7 +13,7 @@ export const utilitySubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -39,7 +39,7 @@ export const utilitySubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,8 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -65,7 +65,7 @@ export const utilitySubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,9 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -91,7 +91,7 @@ export const utilitySubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,6 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -117,7 +117,7 @@ export const utilitySubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,5 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -147,7 +147,7 @@ export const productsUtContent = {
       { label: 'Lubang Nominal', value: '44 x 37,4 cm' },
       { label: 'Lubang Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -183,7 +183,7 @@ export const productsUtContent = {
       { label: 'Lubang Nominal', value: '44 x 37,4 cm' },
       { label: 'Lubang Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -220,7 +220,7 @@ export const productsUtContent = {
       { label: 'Berat', value: '2,5 kg' },
       // { label: 'Tebal', value: '6 cm' },
       // { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' }
+      { label: 'Pemakaian', value: '49 bh/m²' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },
@@ -252,25 +252,27 @@ export const productsUtContent = {
         headers: ['Ø Dalam (cm)', 'Tebal Dinding (cm)', 'Ø Luar (cm)', 'Panjang Efektif (cm)', 'Berat (kg) – Concrete Pipe', 'Greffel'],
         rows: [
           ['20', '3,5', '27', '100', '60', '32'],
-          ['30', '5,1', '39,5', '100', '100', '60'],
+          ['30', '5,1', '39,5', '100', '120', '60'],
           ['40', '5,4', '51,5', '100', '160', '95'],
           ['50', '6,9', '64,5', '100', '275', '-'],
+          ['', '', '', '50', '138', '-'],
           ['60', '9', '78', '100', '435', '-'],
-          ['70', '11', '100', '100', '725', '-'],
-          ['80', '12,5', '125', '100', '900', '-'],
-          ['80', '12,5', '125', '50', '450', '-']
+          ['80', '11', '102', '100', '725', '-'],
+          ['', '', '', '50', '363', '-'],
+          ['100', '12,5', '125', '100', '900', '-'],
+          ['', '', '', '50', '450', '-']
         ]
       },
       reinforcement: {
         title: 'Reinforcement Concrete Pipe',
-        headers: ['Ø Dalam (cm)', 'Tebal Dinding (cm)', 'Ø Luar (cm)', 'Panjang Efektif (cm)', 'Berat (kg)', 'Reinforced – Main', 'Reinforced – Sengkang'],
+        headers: ['(cm)', 'Tebal Dinding (cm)', '& Luar (cm)', 'Panjang Efektif (cm)', 'Berat (kg)', 'Reinforced – Main', 'Reinforced – Sengkang'],
         rows: [
           ['30', '5,1', '39,5', '100', '115', '6 Ø 6', '6 Ø 6'],
           ['40', '5,4', '51,5', '100', '150', '6 Ø 6', '6 Ø 6'],
           ['50', '6,9', '64,5', '100', '275', '6 Ø 6', '6 Ø 6'],
-          ['60', '9', '78', '100', '400', '6 Ø 6', '8 Ø 6'],
-          ['70', '11', '100', '100', '700', '6 Ø 8', '10 Ø 6'],
-          ['80', '12,5', '125', '100', '860', '6 Ø 8', '10 Ø 8']
+          ['60', '9', '78', '100', '425', '6 Ø 6', '8 Ø 6'],
+          ['80', '11', '102', '100', '700', '6 Ø 8', '10 Ø 8'],
+          ['100', '12,5', '125', '100', '860', '6 Ø 8', '10 Ø 6']
         ]
       }
     }

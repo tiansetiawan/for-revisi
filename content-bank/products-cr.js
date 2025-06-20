@@ -14,9 +14,9 @@ export const productsCrContent = {
     specifications: [
       { label: 'Luas Nominal', value: '43,4 x 35,5 cm' },
       { label: 'Berat', value: '5 kg' },
-      { label: 'Pemakaian Genteng', value: '8,5 - 8,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '3 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '8,5 - 8,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '2,5 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '3 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '36,5 - 37,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -55,9 +55,9 @@ export const productsCrContent = {
       { label: 'Luas Nominal', value: '43,4 x 35,5 cm' },
       { label: 'Luas Efektif', value: '37,5 x 30 cm' },
       { label: 'Berat', value: '4,9 kg' },
-      { label: 'Pemakaian Genteng', value: '8,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '3 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '8,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '3 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '37,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -93,9 +93,9 @@ export const productsCrContent = {
       { label: 'Luas Nominal', value: '36,5 x 31,5 cm' },
       { label: 'Luas Efektif', value: '30 x 26,5 cm' },
       { label: 'Berat', value: '3,9 kg' },
-      { label: 'Pemakaian Genteng', value: '12 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '3 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '12 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '3 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '30 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -117,7 +117,7 @@ export const productsCrContent = {
       { name: 'Tepi Kanan', image: '/images/Concrete Roof/New Royal/nrtepikanan.jpg'},
       { name: 'Tepi Kiri', image: '/images/Concrete Roof/New Royal/nrtepikiri.jpg'},
       { name: 'Genteng Bawah', image: '/images/Concrete Roof/New Royal/nrgentengbawah.jpg'},
-      { name: 'Starter Motif', image: '/images/Concrete Roof/New Royal/nrstertermotifjpg'},
+      { name: 'Starter Motif', image: '/images/Concrete Roof/New Royal/nrstertermotif.jpg'},
       { name: 'Genteng Bawah Motif', image: '/images/Concrete Roof/New Royal/nrgentengbawahmotif.jpg'}
     ]
   },
@@ -136,9 +136,9 @@ export const productsCrContent = {
       { label: 'Luas Nominal', value: '36,8 x 30,6 cm' },
       { label: 'Luas Efektif', value: '31,5 x 27 cm' },
       { label: 'Berat', value: '3,6 kg' },
-      { label: 'Pemakaian Genteng', value: '12 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '3 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '12 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '3 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '31,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -180,9 +180,9 @@ export const productsCrContent = {
       { label: 'Luas Nominal', value: '42 x 33,5 cm' },
       { label: 'Luas Efektif', value: '36,7 x 30,3 cm' },
       { label: 'Berat', value: '4,5 kg' },
-      { label: 'Pemakaian Genteng', value: '8,8 bh/m2' },
-      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m1' },
-      { label: 'Pemakaian Nok Samping', value: '3 bh/m1' },
+      { label: 'Pemakaian Genteng', value: '8,8 bh/m²' },
+      { label: 'Pemakaian Nok Atas/Bawah', value: '3 bh/m¹' },
+      { label: 'Pemakaian Nok Samping', value: '3 bh/m¹' },
       { label: 'Jarak Antar Reng', value: '36,5 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],

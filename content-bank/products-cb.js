@@ -13,7 +13,7 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '3,6 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -39,7 +39,7 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '28 x 7,5 x 10 cm' },
       { label: 'Berat', value: '2,4 kg' },
-      { label: 'Pemakaian', value: '47 bh/m2' },
+      { label: 'Pemakaian', value: '47 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -64,8 +64,8 @@ export const ventilationBlockSubItems = [
     ],
     specifications: [
       { label: 'Dimensi', value: '30 x 14 x 15,5 cm' },
-      { label: 'Berat', value: '9,8/pasang' },
-      { label: 'Pemakaian', value: '20 pasang/m2' },
+      { label: 'Berat', value: '9,8 kg per pasang' },
+      { label: 'Pemakaian', value: '20 pasang/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -90,8 +90,8 @@ export const ventilationBlockSubItems = [
     ],
    specifications: [
       { label: 'Dimensi', value: '39 x 9 x 19 cm' },
-      { label: 'Berat', value: '10/pasang' },
-      { label: 'Pemakaian', value: '12,5 pasang/m2' },
+      { label: 'Berat', value: '10 kg per pasang' },
+      { label: 'Pemakaian', value: '12,5 pasang/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -116,7 +116,7 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '15 x 15 x 15 cm' },
       { label: 'Berat', value: '3,5 kg' },
-      { label: 'Pemakaian', value: '44 bh/m2' },
+      { label: 'Pemakaian', value: '44 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -141,7 +141,7 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '4,2 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -166,7 +166,7 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '4,5 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -191,8 +191,9 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '5,2 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
-      { label: 'Best Seller', icon: '/icons/BS.png' }
+      { label: 'Pemakaian', value: '24 bh/m²' },
+        { label: 'Best Seller', icon: '' },
+    { label: 'New Product', icon: '/icons/BS.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -216,8 +217,9 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '5,75 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
-      { label: 'Best Seller', icon: '' }
+      { label: 'Pemakaian', value: '24 bh/m²' },
+      { label: 'Best Seller', icon: '' },
+    { label: 'New Product', icon: '/icons/BS.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -241,8 +243,9 @@ export const ventilationBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '4,6 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
-      { label: 'Best Seller', icon: '' }
+      { label: 'Pemakaian', value: '24 bh/m²' },
+        { label: 'Best Seller', icon: '' },
+    { label: 'New Product', icon: '/icons/BS.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -270,7 +273,7 @@ export const ventilation3DBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '5,75 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -295,7 +298,7 @@ export const ventilation3DBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '4,6 kg' },
-      { label: 'Pemakaian', value: '24 bh/m2' },
+      { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -320,7 +323,7 @@ export const ventilation3DBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 9 cm' },
       { label: 'Berat', value: '9,5 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -348,7 +351,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 9 cm' },
       { label: 'Berat', value: '9,5 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -374,7 +377,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 9 cm' },
       { label: 'Berat', value: '10 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -400,7 +403,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '19 x 19 x 9 cm' },
       { label: 'Berat', value: '5,2 kg' },
-      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Pemakaian', value: '25 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -426,7 +429,7 @@ export const concreteBlockSubItems = [
    specifications: [
       { label: 'Dimensi', value: '39 x 19 x 9 cm' },
       { label: 'Berat', value: '10 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -451,7 +454,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '30 x 19 x 6 cm' },
       { label: 'Berat', value: '3,7 kg' },
-      { label: 'Pemakaian', value: '17,5 bh/m2' },
+      { label: 'Pemakaian', value: '17,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -476,7 +479,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 9 cm' },
       { label: 'Berat', value: '9,5 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -501,7 +504,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 14 cm' },
       { label: 'Berat', value: '13,75 kg / 12,5 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -526,7 +529,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '19 x 19 x 14 cm' },
       { label: 'Berat', value: '6,3 kg' },
-      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Pemakaian', value: '25 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -551,7 +554,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 14 cm' },
       { label: 'Berat', value: '14 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -576,7 +579,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 19 cm' },
       { label: 'Berat', value: '20 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -601,7 +604,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 19 cm' },
       { label: 'Berat', value: '15 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -626,7 +629,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '19 x 19 x 19 cm' },
       { label: 'Berat', value: '10,2 kg' },
-      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Pemakaian', value: '25 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -651,7 +654,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '19 x 19 x 19 cm' },
       { label: 'Berat', value: '8 kg' },
-      { label: 'Pemakaian', value: '25 bh/m2' },
+      { label: 'Pemakaian', value: '25 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -676,7 +679,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 19 cm' },
       { label: 'Berat', value: '18,5 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -701,7 +704,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 10 cm' },
       { label: 'Berat', value: '11 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -726,7 +729,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 4 cm' },
       { label: 'Berat', value: '5,6 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -751,7 +754,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 12 cm' },
       { label: 'Berat', value: '12 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -776,7 +779,7 @@ export const concreteBlockSubItems = [
     specifications: [
       { label: 'Dimensi', value: '39 x 19 x 15 cm' },
       { label: 'Berat', value: '6 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -806,7 +809,7 @@ export const productsCbContent = {
       { label: 'Berat', value: '9,5 kg' },
       // { label: 'Tebal', value: '6 cm' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -838,7 +841,7 @@ export const productsCbContent = {
       { label: 'Berat', value: '9,5 kg' },
       // { label: 'Tebal', value: '6 cm' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -870,7 +873,7 @@ export const productsCbContent = {
       { label: 'Berat', value: '9,5 kg' },
       // { label: 'Tebal', value: '6 cm' },
       { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '12,5 bh/m2' },
+      { label: 'Pemakaian', value: '12,5 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [

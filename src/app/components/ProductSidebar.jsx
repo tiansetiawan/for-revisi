@@ -32,9 +32,9 @@ export default function ProductSidebar({ onItemChange }) {
   const productConfig = {
     mainProducts: [
       { name: "Concrete Roof", url: "/produk?category=Concrete Roof" },
-      { name: "Paving Block", url: "/produk?category=Paving Block" },
-      { name: "Concrete Block", url: "/produk?category=Concrete Block" },
-      { name: "Utility", url: "/produk?category=Utility" },
+      { name: "Paving Block", url: "/produk/produk-pv?category=Paving Block" },
+      { name: "Concrete Block", url: "/produk/produk-pv?category=Concrete Block" },
+      { name: "Utility", url: "/produk/produk-pv?category=Utility" },
     ],
     subProducts: {
       "Concrete Roof": [

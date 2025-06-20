@@ -213,7 +213,7 @@ export default function DetailsUt2() {
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className='text-sm'>
             {table.rows.map((row, rowIdx) => (
               <tr key={rowIdx} className="even:bg-gray-50">
                 {row.map((cell, cellIdx) => (

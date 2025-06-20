@@ -13,7 +13,7 @@ export const utility2SubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -39,7 +39,7 @@ export const utility2SubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,8 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -65,7 +65,7 @@ export const utility2SubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,9 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -91,7 +91,7 @@ export const utility2SubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,6 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -117,7 +117,7 @@ export const utility2SubItems = [
     specifications: [
       { label: 'Ukuran', value: '44 x 37,4 cm' },
       { label: 'Berat', value: '5,5 kg' },
-      { label: 'Pemakaian', value: '8 bh/m2' },
+      { label: 'Pemakaian', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -147,7 +147,7 @@ export const productsUt2Content = {
       { label: 'Lubang Nominal', value: '44 x 37,4 cm' },
       { label: 'Lubang Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -183,7 +183,7 @@ export const productsUt2Content = {
       { label: 'Lubang Nominal', value: '44 x 37,4 cm' },
       { label: 'Lubang Efektif', value: '36 x 34,4 cm' },
       { label: 'Berat', value: '5,7 kg' },
-      { label: 'Pemakaian Genteng', value: '8 bh/m2' },
+      { label: 'Pemakaian Genteng', value: '8 bh/m²' },
       { label: 'Jarak Antar Reng', value: '36 cm' },
       { label: 'Sudut Atap', value: 'Min. 25°' }
     ],
@@ -220,7 +220,7 @@ export const productsUt2Content = {
       { label: 'Berat', value: '2,5 kg' },
       // { label: 'Tebal', value: '6 cm' },
       // { label: 'Aplikasi', icons: ['pedestrian', 'car'] },
-      { label: 'Pemakaian', value: '49 bh/m2' }
+      { label: 'Pemakaian', value: '49 bh/m²' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1100-1300 N' },

@@ -33,7 +33,7 @@ export const concreteTileSubItems = [
           ['pedestrian', 'garage']      
         ]
       },
-      { label: 'Pemakaian', value: '4,16 bh/m2 : 6,25 bh/m2 : 12,5 bh/m2' },
+      { label: 'Pemakaian', value: '4,16 bh/m² : 6,25 bh/m² : 12,5 bh/m²' },
       { label: 'Warna', value: '-' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -65,7 +65,7 @@ export const concreteTileSubItems = [
           ['pedestrian', 'garage']     
         ]
       },
-      { label: 'Pemakaian', value: '11 bh/m2' },
+      { label: 'Pemakaian', value: '11 bh/m²' },
       { label: 'Warna', value: 'Natural, Regular, Khusus' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -97,7 +97,7 @@ export const concreteTileSubItems = [
           ['pedestrian']     
         ]
       },
-      { label: 'Pemakaian', value: '11 bh/m2' },
+      { label: 'Pemakaian', value: '11 bh/m²' },
       { label: 'Warna', value: 'Natural' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -129,7 +129,7 @@ export const concreteTileSubItems = [
           ['pedestrian']     
         ]
       },
-      { label: 'Pemakaian', value: '20 bh/m2' },
+      { label: 'Pemakaian', value: '20 bh/m²' },
       { label: 'Warna', value: 'Natural' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -159,7 +159,7 @@ export const productsPb2Content = {
     specifications: [
       { value: 'Bahan dasar campuran beton' },
       { value: 'Mutu Produk mengacu pada standar SNI 0028-1987-A kategori peringkat 1' },
-      { value: 'Kuat lentur rata-rata 35 kg/cm2' },
+      { value: 'Kuat lentur rata-rata 35 kg/cm²' },
       { value: 'Hanya diperuntukkan untuk pedestrian' },
       { value: 'Tidak disarankan dilindas kendaraan' }
     ],
