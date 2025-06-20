@@ -83,8 +83,8 @@ export const ventilationBlockSubItems = [
     thumbnails: [
       {
         id: 4,
-        thumbImage: '/images/Concrete Block/VB/Roster R-08.png',
-        largeImage: '/images/Concrete Block/VB/Roster R-08.png',
+        thumbImage: '/images/Concrete Block/VB/Roster-08.png',
+        largeImage: '/images/Concrete Block/VB/Roster-08.png',
         color: 'Abu-abu'
       }
     ],
@@ -103,17 +103,17 @@ export const ventilationBlockSubItems = [
     installationNote: 'Pemasangan pola diagonal'
   },
   {
-    id: 'C-Pillar 10.04',
-    name: 'C-Pillar 10.04',
+    id: 'Roster R-09',
+    name: 'Roster R-09',
     thumbnails: [
       {
-        id: 5,
+        id: 4,
         thumbImage: '/images/Concrete Block/VB/Roster R-09.png',
         largeImage: '/images/Concrete Block/VB/Roster R-09.png',
-        color: 'Abu-abu Gelap'
+        color: 'Abu-abu'
       }
     ],
-    specifications: [
+   specifications: [
       { label: 'Dimensi', value: '15 x 15 x 15 cm' },
       { label: 'Berat', value: '3,5 kg' },
       { label: 'Pemakaian', value: '44 bh/m²' },
@@ -202,15 +202,19 @@ export const ventilationBlockSubItems = [
       { label: 'Warna Cat', value: 'Hitam Solid' }
     ],
     installationNote: 'Pemasangan pola diagonal'
-  },
+  }
+];
+
+
+export const ventilation3DBlockSubItems = [
   {
     id: 'Roster R-19',
     name: 'Roster R-19',
     thumbnails: [
       {
         id: 10,
-        thumbImage: '/images/Concrete Block/VB/Roster R-19.png',
-        largeImage: '/images/Concrete Block/VB/Roster R-19.png',
+        thumbImage: '/images/Concrete Block/VB3D/Roster R-19.png',
+        largeImage: '/images/Concrete Block/VB3D/Roster R-19.png',
         color: 'Coklat'
       }
     ],
@@ -235,8 +239,8 @@ export const ventilationBlockSubItems = [
     thumbnails: [
       {
         id: 8,
-        thumbImage: '/images/Concrete Block/VB/Roster R-20.png',
-        largeImage: '/images/Concrete Block/VB/Roster R-20.png',
+        thumbImage: '/images/Concrete Block/VB3D/Roster R-20.png',
+        largeImage: '/images/Concrete Block/VB3D/Roster R-20.png',
         color: 'Coklat'
       }
     ],
@@ -254,60 +258,6 @@ export const ventilationBlockSubItems = [
       { label: 'Warna Cat', value: 'Hitam Solid' }
     ],
     installationNote: 'Pemasangan pola diagonal'
-  }
-];
-
-
-export const ventilation3DBlockSubItems = [
-    {
-    id: 'Roster R-19',
-    name: 'Roster R-19',
-    thumbnails: [
-      {
-        id: 10,
-        thumbImage: '/images/Concrete Block/VB/Roster R-19.png',
-        largeImage: '/images/Concrete Block/VB/Roster R-19.png',
-        color: 'Coklat'
-      }
-    ],
-    specifications: [
-      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
-      { label: 'Berat', value: '5,75 kg' },
-      { label: 'Pemakaian', value: '24 bh/m²' },
-      { label: 'Best Seller', icon: '' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1200 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 10%' },
-      { label: 'Ketebalan Cat', value: '100 Mikron' },
-      { label: 'Warna Cat', value: 'Hitam Solid' }
-    ],
-    installationNote: 'Pemasangan pola diagonal'
-  },
-  {
-    id: 'Roster R-20',
-    name: 'Roster R-20',
-    thumbnails: [
-      {
-        id: 8,
-        thumbImage: '/images/Concrete Block/VB/Roster R-20.png',
-        largeImage: '/images/Concrete Block/VB/Roster R-20.png',
-        color: 'Coklat'
-      }
-    ],
-    specifications: [
-      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
-      { label: 'Berat', value: '4,6 kg' },
-      { label: 'Pemakaian', value: '24 bh/m²' },
-      { label: 'Best Seller', icon: '' }
-    ],
-    technicalSpecs: [
-      { label: 'Beban Lentur', value: '1200 N' },
-      { label: 'Penyerapan Air', value: 'Maks. 10%' },
-      { label: 'Ketebalan Cat', value: '100 Mikron' },
-      { label: 'Warna Cat', value: 'Hitam Solid' }
-    ],
-    installationNote: 'Pemasangan pola diagonal'
   },
   {
     id: 'Roster R-21',
@@ -315,15 +265,15 @@ export const ventilation3DBlockSubItems = [
     thumbnails: [
       {
         id: 3,
-        thumbImage: '/images/Concrete Block/VB3D/Roster R-21.png',
-        largeImage: '/images/Concrete Block/VB3D/Roster R-21.png',
+        thumbImage: '/images/Concrete Block/VB3D/Roster R-21.jpeg',
+        largeImage: '/images/Concrete Block/VB3D/Roster R-21.jpeg',
         color: 'Hitam'
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '39 x 19 x 9 cm' },
-      { label: 'Berat', value: '9,5 kg' },
-      { label: 'Pemakaian', value: '12,5 bh/m²' },
+      { label: 'Dimensi', value: '20 x 20 x 10 cm' },
+      { label: 'Berat', value: '4 kg' },
+      { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' }
     ],
     technicalSpecs: [
@@ -338,13 +288,13 @@ export const ventilation3DBlockSubItems = [
 ];
 export const concreteBlockSubItems = [
   {
-    id: 'Regular Half 10.01',
-    name: 'Regular Half 10.01',
+    id: 'Regular Full 10.01',
+    name: 'Regular Full 10.01',
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/CB/Regular Half 10.01.png',
-        largeImage: '/images/Concrete Block/CB/Regular Half 10.01.png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 10.01.png',
         color: 'Hitam'
       }
     ],
@@ -496,8 +446,8 @@ export const concreteBlockSubItems = [
     thumbnails: [
       {
         id: 7,
-        thumbImage: '/images/Concrete Block/CB/Regular Half 15.01.png',
-        largeImage: '/images/Concrete Block/CB/Regular Half 15.01.png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 15.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 15.01.png',
         color: 'Coklat'
       }
     ],
@@ -571,8 +521,8 @@ export const concreteBlockSubItems = [
     thumbnails: [
       {
         id: 10,
-        thumbImage: '/images/Concrete Block/CB/Reguler Full 20.01.png',
-        largeImage: '/images/Concrete Block/CB/Reguler Full 20.01.png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 20.01.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 20.01.png',
         color: 'Coklat'
       }
     ],
@@ -596,8 +546,8 @@ export const concreteBlockSubItems = [
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/CB/Reguler Full 20.01 B (Tembus).png',
-        largeImage: '/images/Concrete Block/CB/Reguler Full 20.01 B (Tembus).png',
+        thumbImage: '/images/Concrete Block/CB/Regular Full 20.01 B Tembus.png',
+        largeImage: '/images/Concrete Block/CB/Regular Full 20.01 B Tembus.png',
         color: 'Coklat'
       }
     ],
@@ -646,8 +596,8 @@ export const concreteBlockSubItems = [
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Block/CB/Regular Half 20.02 (Tembus).png',
-        largeImage: '/images/Concrete Block/CB/Regular Half 20.02 (Tembus).png',
+        thumbImage: '/images/Concrete Block/CB/Regular Half 20.02 B (Tembus).png',
+        largeImage: '/images/Concrete Block/CB/Regular Half 20.02 B (Tembus).png',
         color: 'Coklat'
       }
     ],

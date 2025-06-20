@@ -52,5 +52,6 @@ export const concreteRoofProducts = [
   { name: 'Victoria Classic', image: '/images/Concrete Roof/Victoria Series/classic1.png' },
   { name: 'New Royal', image: '/images/Concrete Roof/New Royal/newroyal.png' }, 
   { name: 'Oriental', image: '/images/Concrete Roof/Oriental/Oriental.png' },
-  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/Majestic.png' }
+  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/Majestic.png' },
+  { name: '', image: '' },
 ];

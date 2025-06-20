@@ -47,6 +47,42 @@ export default function Product() {
     }
   };
 
+const getDetailPath = (category, productName) => {
+  if (category === 'Concrete Roof') {
+    // Handle Neo Solar System khusus
+    if (productName === 'Neo Solar System') return 'detail';
+    
+    // Handle Victoria Series
+    if (productName.startsWith('Victoria ')) return 'detail-victoria';
+    
+    // Handle Majestic variants
+    if (productName.includes('Majestic')) return 'detail-cr';
+    
+    // Handle produk lainnya
+    const mainProducts = ['Dual Slate', 'Floral', 'New Royal', 'Oriental'];
+    if (mainProducts.includes(productName)) return 'detail-cr';
+    
+    return 'detail-cr';
+  }
+  
+  // Then handle other categories...
+  switch(category) {
+    case 'Paving Block': 
+      if (['Kanstein Wet Process', 'Kanstein Dry Process', 'Tali Air'].includes(productName)) {
+        return 'detail-pb3';
+      } else if (productName === 'Concrete Tile') {
+        return 'detail-pb2';
+      }
+      return 'detail-pb';
+    case 'Concrete Block': return 'detail-cb';
+    case 'Utility':
+      if (productName === 'Concrete Pipe') return 'detail-ut1';
+      if (productName === 'Ciswell') return 'detail-ut2';
+      return 'detail-ut';
+    default: return 'detail';
+  }
+};
+
   const nextSlide = () => {
     const products = getCurrentProducts();
     if (currentSlide < products.length - visibleSlides) {
@@ -103,10 +139,18 @@ export default function Product() {
               >
                 {getCurrentProducts().map((product) => (
                   <div key={product.name} className="snap-start min-w-0 ps-12.5 group">
-                    <Link 
-                      href={`/produk/detail?product=${encodeURIComponent(product.name)}&category=${encodeURIComponent(activeItem)}`}
-                      className="block"
-                    >
+<Link 
+  href={`/produk/${getDetailPath(activeItem, product.name)}?product=${
+    encodeURIComponent(
+      product.name.startsWith('Victoria ') 
+        ? product.name.replace('Victoria ', '') 
+        : product.name.includes('Majestic')
+          ? 'Majestic' // Standardisasi nama untuk routing
+          : product.name
+    )
+  }&category=${encodeURIComponent(activeItem)}`}
+  className="block"
+>
                       <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
                         <div className="relative w-full h-45 flex items-center justify-center bg-white overflow-hidden">
                           <Image
