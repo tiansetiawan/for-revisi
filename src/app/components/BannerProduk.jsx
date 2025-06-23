@@ -32,11 +32,11 @@ const getMediaSource = () => {
       case "Classic":
         return { type: "image", src: "/images/banners/sub-products/classic.jpg" };
       case "New Royal":
-        return { type: "image", src: "/images/banners/sub-products/new-royal.jpg" };
+        return { type: "image", src: "/images/banner genteng gelombang.jpg" };
       case "Oriental":
-        return { type: "image", src: "/images/banners/sub-products/oriental.jpg" };
+        return { type: "image", src: "/images/banner genteng gelombang.jpg" };
       case "Majestic":
-        return { type: "image", src: "/images/banners/sub-products/majestic.jpg" };
+        return { type: "image", src: "/images/banner genteng gelombang.jpg" };;
 
       // Paving Block Products
       case "Square Set":
