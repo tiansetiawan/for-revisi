@@ -11,6 +11,7 @@ export default function Sertifikasi() {
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
   const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
+  const [downloadHistory, setDownloadHistory] = useState([]);
   const modalRef = useRef(null);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
@@ -128,21 +129,84 @@ export default function Sertifikasi() {
     };
   }, [showDownloadPanel]);
 
-  const handleDownload = (e) => {
-    e.preventDefault();
-    if (!name || !email) {
-      alert('Harap isi nama dan email terlebih dahulu');
-      return;
+const handleDownload = async (e) => {
+  e.preventDefault();
+  if (!name || !email) {
+    alert('Harap isi nama dan email terlebih dahulu');
+    return;
+  }
+
+  try {
+    // 1. Simpan data ke server (jika menggunakan API)
+    let saveSuccess = true;
+    
+    try {
+      const response = await fetch('/api/downloads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          document: currentDownloadItem,
+          name,
+          email,
+          phone: telpon
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+    } catch (saveError) {
+      console.warn('Gagal menyimpan data, melanjutkan download...', saveError);
+      saveSuccess = false;
     }
-    console.log(`Download katalog ${currentDownloadItem} oleh ${name} (${email}) (${telpon})`);
+
+    // 2. Proses download file
+    const fileMap = {
+      'SNI': '/downloads/Flyer Roster R-21.pdf',
+      'TKDN': '/downloads/tkdn-certificate.pdf',
+      'IAPMO': '/downloads/iapm-certificate.pdf',
+      'KAN': '/downloads/kan-certificate.pdf',
+      'GREEN_LABEL': '/downloads/green-label-certificate.pdf'
+    };
+
+    const fileUrl = fileMap[currentDownloadItem] || '/downloads/Flyer Roster R-21.pdf';
+    const fileName = fileUrl.split('/').pop();
+
+    // Debugging
+    console.log('Memulai download:', fileUrl);
+
+    // Method 1: Menggunakan window.open
+    window.open(fileUrl, '_blank');
+    
+    // Method Alternatif (jika Method 1 gagal)
+    // const link = document.createElement('a');
+    // link.href = fileUrl;
+    // link.download = fileName;
+    // document.body.appendChild(link);
+    // link.click();
+    // setTimeout(() => document.body.removeChild(link), 100);
+
+    // 3. Reset form
     setName('');
     setEmail('');
     setTelpon('');
     setShowDownloadPanel(false);
-  };
+
+    console.log(`Proses download ${currentDownloadItem} selesai`);
+
+    if (!saveSuccess) {
+      alert('Download berhasil, tetapi data tidak tersimpan di server');
+    }
+
+  } catch (error) {
+    console.error('Error dalam proses download:', error);
+    alert(`Error: ${error.message}`);
+  }
+};
 
   const handleTKDNDownload = () => {
-    // Direct to TKDN official website
     window.open('https://tkdn.kemenperin.go.id/sertifikat_perush.php?id=vqUH9qalfsZtbUNxr_FTaBzIcQ11dCMcjVMHKpkQJeU,&id_siinas=nHTdkkt3VN7_Y1M_OfKwyLOys7-lTTfsQ6VteJmphdA', '_blank');
   };
 
@@ -208,12 +272,8 @@ export default function Sertifikasi() {
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
         <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-          {/* <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link> */}
-    <Link href="/informasi/sertifikasi" className="text-[#2D5DA6] font-bold">Sertifikasi</Link>
-    <Link href="/informasi/katalog" className="text-[#333] hover:text-[#2D5DA6] ">Katalog</Link>
-       {/* <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link> */}
-          {/* <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">Inovasi</Link>
-          <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link> */}
+          <Link href="/informasi/sertifikasi" className="text-[#2D5DA6] font-bold">Sertifikasi</Link>
+          <Link href="/informasi/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link>
         </nav>
       </div>
 
