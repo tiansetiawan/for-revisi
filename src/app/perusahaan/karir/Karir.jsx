@@ -133,13 +133,13 @@ export default function Karir() {
       {/* Main Content */}
 <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
   {/* Heading */}
-  <div className="gap-6 items-start mb-20">
+  <div className="gap-6 items-start mb-5">
     <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
       KARIR
     </h2>
-    <p className="text-sm text-justify">
+    {/* <p className="text-sm text-justify">
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-    </p>
+    </p> */}
   </div>
 
   {/* Daftar Karir */}

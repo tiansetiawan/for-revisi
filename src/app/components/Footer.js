@@ -4,6 +4,7 @@ import {
     FaTiktok,
     FaYoutube,
 } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Footer() {
     return (
@@ -43,38 +44,81 @@ export default function Footer() {
                         <div>
                             <h3 className="mb-2 text-sm font-bold">Produk</h3>
                             <ul className="space-y-1 text-gray-400 text-[12px]">
-                                <li className='hover:cursor-pointer'>Atap</li>
-                                <li className='hover:cursor-pointer'>Dinding</li>
-                                <li className='hover:cursor-pointer'>Lantai</li>
-                                <li className='hover:cursor-pointer'>Utilitas</li>
+<li>
+                <Link href="/produk?category=Concrete Roof" className='hover:cursor-pointer'>
+                  Concrete Roof
+                </Link>
+              </li>
+<li>
+                <Link href="/produk/produk-pv?category=Paving Block" className='hover:cursor-pointer'>
+                  Paving Block
+                </Link>
+              </li>
+  <li>
+                <Link href="/produk/produk-pv?category=Concrete Block" className='hover:cursor-pointer'>
+                  Concrete Block
+                </Link>
+              </li>
+<li>
+                <Link href="/produk/produk-pv?category=Utility" className='hover:cursor-pointer'>
+                  Utility
+                </Link>
+              </li>
                             </ul>
                         </div>
                         <div>
                             <h3 className="mb-2 text-sm font-bold">Perusahaan</h3>
                             <ul className="space-y-1 text-gray-400 text-[12px]">
-                                <li className='hover:cursor-pointer'>Tentang Kami</li>
-                                <li className='hover:cursor-pointer'>Sejarah</li>
-                                <li className='hover:cursor-pointer'>Sertifikasi</li>
-                                <li className='hover:cursor-pointer'>Katalog</li>
-                                <li className='hover:cursor-pointer'>Video</li>
-                                <li className='hover:cursor-pointer'>Karir</li>
+                                <li>
+                <Link href="/perusahaan/tentang" className='hover:cursor-pointer'>
+                Tentang Kami
+                </Link>
+                </li>
+                                <li>
+                <Link href="/perusahaan/sejarah" className='hover:cursor-pointer'>
+                                    Sejarah
+                                    </Link>
+                                    </li>
+                                <li>
+                <Link href="/perusahaan/inovasi" className='hover:cursor-pointer'>
+                                    Inovasi
+                                    </Link>
+                                    </li>
+                               <li>
+                <Link href="/perusahaan/karir" className='hover:cursor-pointer'>
+                                    Karir
+                                    </Link>
+                                    </li>
                             </ul>
                         </div>
                         <div>
-                            <h3 className="mb-2 text-sm font-bold">Showroom</h3>
+                            <h3 className="mb-2 text-sm font-bold">Informasi</h3>
                             <ul className="space-y-1 text-gray-400 text-[12px]">
-                                <li className='hover:cursor-pointer'>Store</li>
-                                <li className='hover:cursor-pointer'>Kiosk</li>
+                               <li>
+                <Link href="/informasi/sertifikasi" className='hover:cursor-pointer'>
+                                    Sertifikasi
+                                    </Link>
+                                    </li>
+                                <li>
+                <Link href="/informasi/katalog" className='hover:cursor-pointer'>
+                                    Katalog
+                                    </Link>
+                                    </li>
                             </ul>
                         </div>
                         <div>
-                            <h3 className="mb-2 text-sm font-bold">Blog</h3>
+                            <h3 className="mb-2 text-sm font-bold">Berita</h3>
                             <ul className="space-y-1 text-gray-400 text-[12px]">
-                                <li className='hover:cursor-pointer'>Artikel</li>
-                                <li className='hover:cursor-pointer'>Kegiatan</li>
-                                <li className='hover:cursor-pointer'>Inovasi</li>
-                                <li className='hover:cursor-pointer'>Galeri</li>
-                                <li className='hover:cursor-pointer'>Testimoni</li>
+                                <li>
+                <Link href="/blog/artikel" className='hover:cursor-pointer'>
+                                    Artikel
+                                    </Link>
+                                    </li>
+                                <li>
+                <Link href="/blog/testimoni" className='hover:cursor-pointer'>
+                                    Testimoni
+                                    </Link>
+                                    </li>
                             </ul>
                         </div>
                     </div>

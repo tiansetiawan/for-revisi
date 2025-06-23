@@ -38,9 +38,9 @@ const defaultCategories = [
     icon: '/icons/cr-trace.png',
     link: '/produk?category=Concrete Roof' // Tambahkan properti link
   },
-  { name: 'Paving Block', icon: '/icons/pv-trace.png',  link: '/produk?category=Paving Block' },
-  { name: 'Concrete Block', icon: '/icons/cb-trace.png',  link: '/produk?category=Concrete Block' },
-  { name: 'Utility', icon: '/icons/cp-trace.png',  link: '/produk?category=Utility' }
+  { name: 'Paving Block', icon: '/icons/pv-trace.png',  link: '/produk/produk-pv?category=Paving Block' },
+  { name: 'Concrete Block', icon: '/icons/cb-trace.png',  link: '/produk/produk-pv?category=Concrete Block' },
+  { name: 'Utility', icon: '/icons/cp-trace.png',  link: '/produk/produk-pv?category=Utility' }
 ];
 
 
@@ -135,7 +135,6 @@ const proyekData = [
 // Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  thumbnail: "/images/VidTes1.jpg",
   youtubeId: "EiLY8P_Lf8o",
   description: "Testimonial pelanggan utama kami"
 };
@@ -145,7 +144,6 @@ const videoTestimonials = [
   {
     id: 1,
     title: 'Cisangkan Menurut Bapak Tony Susianto',
-    thumbnail: '/images/VidTes1.jpg',
     youtubeId: 'EiLY8P_Lf8o',
     watchText: '',
     watchLink: '/testimonial/1' // Tambahkan link tujuan
@@ -153,7 +151,6 @@ const videoTestimonials = [
   {
     id: 2,
     title: 'Cisangkan Menurut Bapak Dedi Haryanto',
-    thumbnail: '/images/tes1.jpg',
     youtubeId: 'XrAfg8RlA6o',
     watchText: '',
     watchLink: '/testimonial/2' // Tambahkan link 
@@ -161,7 +158,6 @@ const videoTestimonials = [
   {
     id: 3,
     title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    thumbnail: '/images/tes3.jpg',
     youtubeId: 'Win66lulRJA',
     watchText: '',
     watchLink: '/testimonial/3'
@@ -169,7 +165,6 @@ const videoTestimonials = [
   {
     id: 4,
     title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    thumbnail: '/images/tes4.jpg',
     youtubeId: 'KfRpNP59QmU',
     watchText: '',
     watchLink: '/testimonial/4'
@@ -177,20 +172,39 @@ const videoTestimonials = [
   {
     id: 5,
     title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    thumbnail: '/images/tes2.jpg',
     youtubeId: '725AGp2ou1Y',
     watchText: '',
     watchLink: '/testimonial/5'
-  }
+  },
+  {
+    id: 6,
+    title: 'Testimoni Customer di Pameran Building Technology EXPO',
+    youtubeId: '725AGp2ou1Y',
+    watchText: '',
+    watchLink: '/testimonial/5'
+  },
   // {
-  //   id: 6,
-  //   title: 'Video Testimonial 6',
-  //   thumbnail: '/images/tes6',
-  //   youtubeId: 'dQw4w9WgXcQ',
+  //   id: 7,
+  //   title: 'Video Testimonial 7',
+  //   youtubeId: '725AGp2ou1Y',
   //   watchText: '',
-  //   watchLink: '/testimonial/6'
+  //   watchLink: '/testimonial/7'
   // }
 ];
+
+const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
+  const qualities = ['maxresdefault', 'sddefault', 'hqdefault', 'mqdefault', 'default'];
+  const selectedIndex = qualities.indexOf(quality);
+  
+  // Coba dari kualitas tertinggi ke terendah
+  for (let i = selectedIndex; i < qualities.length; i++) {
+    const url = `https://img.youtube.com/vi/${youtubeId}/${qualities[i]}.jpg`;
+    // Di production, Anda mungkin perlu implementasi pengecekan yang lebih baik
+    return url;
+  }
+  
+  return `https://img.youtube.com/vi/${youtubeId}/default.jpg`;
+};
 
 // Handler untuk video
   const handleVideoSelect = (videoId) => {
@@ -681,27 +695,48 @@ return (
     <section className="py-6 sm:py-10 relative mt-10 mb-6">
   <div className="w-full">
     {/* Video Utama */}
-                  <h2 className="text-center text-xl sm:text-2xl font-medium mb-4 sm:mb-5">VIDEO TESTIMONIAL</h2>
+                 <div className="max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
+    
+    {/* Kiri: Judul */}
+    <div className="pl-4 border-l-4 border-[#0B203F]">
+      <h2 className="text-left text-xl sm:text-2xl font-medium leading-tight uppercase">
+        VIDEO TESTIMONIAL PRODUK
+      </h2>
+    </div>
+
+    {/* Kanan: Deskripsi dan Link */}
+    <div className="text-gray-700 text-sm sm:text-base">
+      <p className="text-left mb-8">
+        Simak ulasan dari costumer kami setelah menggunakan produk dari Cisangkan
+      </p>
+      {/* <div className="flex gap-3 text-sm font-medium">
+        <a href="/tentang-kami" className="text-blue-700 hover:underline">Tentang Kami</a>
+        <span className="text-gray-400">•</span>
+        <a href="/video-lainnya" className="text-blue-700 hover:underline">Video lainnya</a>
+      </div> */}
+    </div>
+
+  </div>
     <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none">
       <div className="relative w-full max-w-4xl aspect-video bg-gray-200 rounded-none overflow-hidden">
-        <div 
-          className="absolute inset-0 cursor-pointer"
-          onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
-        >
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-            <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center">
-              <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-              </svg>
-            </div>
-          </div>
-          <Image 
-            src={mainTestimonialVideo.thumbnail}
-            alt={mainTestimonialVideo.title}
-            fill
-            className="object-cover"
-          />
-        </div>
+      <div 
+  className="absolute inset-0 cursor-pointer"
+  onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
+>
+  <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
+    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
+      <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+      </svg>
+    </div>
+  </div>
+<Image 
+  src={getYoutubeThumbnail(mainTestimonialVideo.youtubeId, 'maxresdefault')}
+  alt={mainTestimonialVideo.title}
+  fill
+  className="object-cover shadow-lg rounded-md"
+/>
+</div>
       </div>
     </div>
     
@@ -713,65 +748,67 @@ return (
       </a>
     </div>
 
-    {/* Daftar Video Lainnya dengan Slider */}
-    <div className="container-slider-vd relative">
-      {/* Navigation buttons */}
-      <button 
-        onClick={prevVideoSlide}
-        disabled={currentVideoSlide === 0}
-        className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        <FaChevronLeft className="w-5 h-5" />
-      </button>
+   {/* Daftar Video Lainnya dengan Slider */}
+<div className="container-slider-vd relative">
+  {/* Navigation buttons */}
+  <button 
+    onClick={prevVideoSlide}
+    disabled={currentVideoSlide === 0}
+    className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    <FaChevronLeft className="w-5 h-5" />
+  </button>
 
-      <div 
-        ref={videoSliderRef}
-        className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
-      >
-        {videoTestimonials.map((video) => (
-          <div key={video.id} className="cover-video group cursor-pointer snap-start">
-            <div 
-              className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full h-[150px]"
-              onClick={() => handleVideoSelect(video.youtubeId)}
-            >
-              <Image 
-                src={video.thumbnail} 
-                alt={video.title}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-                  </svg>
-                </div>
-              </div>
-            </div>
-            
-            <div className="video-title mt-3 text-left">
-              <p className="text-sm font-medium text-gray-800 line-clamp-2">{video.title}</p>
-              <a 
-                href={video.watchLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 text-xs text-blue-600 hover:text-blue-800 transition-colors"
-              >
-                {video.watchText}
-              </a>
+  <div 
+    ref={videoSliderRef}
+    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
+  >
+    {videoTestimonials.map((video) => (
+      <div key={video.id} className="cover-video group cursor-pointer snap-start">
+        <div 
+          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full h-[150px]"
+          onClick={() => handleVideoSelect(video.youtubeId)}
+        >
+            <Image 
+    key={video.id}
+    src={getYoutubeThumbnail(video.youtubeId)}
+    alt={video.title}
+    fill
+    className="object-cover shadow-lg rounded-md"
+  />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center">
+              <svg className="w-6 h-6 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+              </svg>
             </div>
           </div>
-        ))}
+        </div>
+        
+        <div className="video-title mt-3 text-left">
+          <p className="text-sm font-medium text-gray-800 line-clamp-2">{video.title}</p>
+          <a 
+            href={video.watchLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 text-xs text-blue-600 hover:text-blue-800 transition-colors"
+          >
+            {video.watchText}
+          </a>
+        </div>
       </div>
+    ))}
+  </div>
 
-      <button 
-        onClick={nextVideoSlide}
-        disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
-        className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        <FaChevronRight className="w-5 h-5" />
-      </button>
-    </div>
+  <button 
+    onClick={nextVideoSlide}
+    disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
+    className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+  >
+    <FaChevronRight className="w-5 h-5" />
+  </button>
+</div>
+
     
     {/* Video Player Modal */}
     {isModalOpen && (

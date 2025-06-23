@@ -4,27 +4,27 @@ import React, { useState, useRef, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { FaCalculator, FaTimes } from "react-icons/fa";
-import { productsCbContent, concreteBlockSubItems, ventilationBlockSubItems, ventilation3DBlockSubItems} from "../../../../content-bank/products-cb";
+import { productsCbContent, concreteBlockSubItems, ventilationBlockSubItems, ventilation3DBlockSubItems } from "../../../../content-bank/products-cb";
 import Link from "next/link";
 import ProductSidebar from "../../components/ProductSidebar";
 import { useRouter } from "next/navigation";
+import BannerProduk from '../../components/BannerProduk';
 
 export default function DetailsCb() {
-    const searchParams = useSearchParams();
+  const searchParams = useSearchParams();
   const router = useRouter();
   const [currentProduct, setCurrentProduct] = useState(productsCbContent["Concrete Block Variant"]);
   const [activeThumbnail, setActiveThumbnail] = useState(productsCbContent["Concrete Block Variant"].thumbnails[0]);
-    const [activeItems, setActiveItems] = useState(concreteBlockSubItems);
+  const [activeItems, setActiveItems] = useState(concreteBlockSubItems);
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   const visibleSlides = 4;
 
   // Initialize product from URL
-   useEffect(() => {
-     const urlParams = new URLSearchParams(window.location.search);
-     const product = urlParams.get("product");
-     const subItem = urlParams.get("subItem");
- 
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get("product");
+    const subItem = urlParams.get("subItem");
 
     if (product && productsCbContent[product]) {
       // Tentukan items yang aktif berdasarkan produk
@@ -68,35 +68,25 @@ export default function DetailsCb() {
     setActiveThumbnail(thumbnail);
   };
 
- const handleProductTypeClick = (product) => {
-    const selectedSubItem = activeItems.find(item => item.id === product.id);
+  const handleProductTypeClick = (product) => {
+    const selectedSubItem = activeItems.find((item) => item.id === product.id);
     if (selectedSubItem) {
       const subProduct = {
         ...currentProduct,
         name: selectedSubItem.name,
         thumbnails: selectedSubItem.thumbnails,
-        specifications: [
-          ...currentProduct.specifications.filter(spec => 
-            !['Lubang Efektif', 'Jarak Antar Reng', 'Sudut Atap'].includes(spec.label)
-          ),
-          ...selectedSubItem.specifications
-        ],
-        technicalSpecs: [
-          ...currentProduct.technicalSpecs.filter(tech => 
-            !['Ketebalan Cat', 'Warna Cat'].includes(tech.label)
-          ),
-          ...selectedSubItem.technicalSpecs
-        ],
-        installationNote: selectedSubItem.installationNote
+        specifications: [...currentProduct.specifications.filter((spec) => !["Lubang Efektif", "Jarak Antar Reng", "Sudut Atap"].includes(spec.label)), ...selectedSubItem.specifications],
+        technicalSpecs: [...currentProduct.technicalSpecs.filter((tech) => !["Ketebalan Cat", "Warna Cat"].includes(tech.label)), ...selectedSubItem.technicalSpecs],
+        installationNote: selectedSubItem.installationNote,
       };
-      
+
       setCurrentProduct(subProduct);
       setActiveThumbnail(selectedSubItem.thumbnails[0]);
-      
+
       // Update URL
       const url = new URL(window.location.href);
-      url.searchParams.set('subItem', selectedSubItem.id);
-      window.history.pushState({}, '', url);
+      url.searchParams.set("subItem", selectedSubItem.id);
+      window.history.pushState({}, "", url);
     }
   };
 
@@ -128,29 +118,7 @@ export default function DetailsCb() {
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-        {/* <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover object-center"
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-        >
-          <source src="/images/Banner Neo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
-        <Image
-          src="/images/Spanduk web Cisangkan.png"
-          alt="Banner Detail Produk"
-          width={1764}
-          height={460}
-          className="w-full h-full object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-        />
-      </div>
+<BannerProduk kategori={currentProduct.category} />
 
       {/* Header Section */}
       <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">{currentProduct.category.toUpperCase()}</div>
@@ -178,8 +146,8 @@ export default function DetailsCb() {
                         <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
                       </tr>
                     </thead>
-<tbody className='text-sm'>
-{activeItems.map((product) => {
+                    <tbody className="text-sm">
+                      {activeItems.map((product) => {
                         const dimensions = product.specifications.find((spec) => spec.label === "Dimensi" || spec.label === "Ukuran")?.value || "-";
                         const weights = product.specifications
                           .find((spec) => spec.label === "Berat")

@@ -7,6 +7,7 @@ import { productsUtContent, utilitySubItems } from '../../../../content-bank/pro
 import Link from 'next/link';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
+import BannerProduk from '../../components/BannerProduk';
 
 export default function DetailsUt1() {
   const router = useRouter();
@@ -124,29 +125,7 @@ export default function DetailsUt1() {
  return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
-        {/* <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover object-center"
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-        >
-          <source src="/images/Banner Neo.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
-        <Image
-          src="/images/Spanduk web Cisangkan.png"
-          alt="Banner Detail Produk"
-          width={1764}
-          height={460}
-          className="w-full h-full object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-        />
-      </div>
+     <BannerProduk kategori={currentProduct.category} />
 
       {/* Header Section */}
       <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">

@@ -96,27 +96,27 @@ export default function Navbar() {
               </li>
               <li>
   <Link 
-    href="/produk?category=Paving Block" 
+    href="/produk/produk-pv?category=Paving Block" 
     onClick={() => sessionStorage.setItem("autoExpand", "true")} 
-    className={`block px-4 py-2 ${isActive("/produk?category=Paving Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:bg-gray-100"}`}
+    className={`block px-4 py-2 ${isActive("/produk/produk-pv?category=Paving Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:bg-gray-100"}`}
   >
     Paving Block
   </Link>
 </li>
 <li>
   <Link 
-    href="/produk?category=Concrete Block" 
+    href="/produk/produk-pv?category=Concrete Block" 
     onClick={() => sessionStorage.setItem("autoExpand", "true")} 
-    className={`block px-4 py-2 ${isActive("/produk?category=Concrete Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:bg-gray-100"}`}
+    className={`block px-4 py-2 ${isActive("/produk/produk-pv?category=Concrete Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:bg-gray-100"}`}
   >
     Concrete Block
   </Link>
 </li>
 <li>
   <Link 
-    href="/produk?category=Utility" 
+    href="/produk/produk-pv?category=Utility" 
     onClick={() => sessionStorage.setItem("autoExpand", "true")} 
-    className={`block px-4 py-2 ${isActive("/produk?category=Utility") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:bg-gray-100"}`}
+    className={`block px-4 py-2 ${isActive("/produk/produk-pv?category=Utility") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:bg-gray-100"}`}
   >
     Utility
   </Link>

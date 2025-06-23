@@ -83,8 +83,8 @@ export default function ProductSidebar({ onItemChange }) {
       ],
       "Concrete Block": [
         { name: "Concrete Block", url: "/produk/detail-cb?product=Concrete Block&category=Concrete Block" },
-        { name: "Ventilation Block", url: "/produk/detail-cb?product=Ventilation Block&category=Concrete Block"},
-        { name: "Ventilation Block 3D", url: "/produk/detail-cb?product=Ventilation Block 3D&category=Concrete Block"},
+        { name: "Ventilation Block", url: "/produk/detail-cb?product=Ventilation Block&category=Concrete Block" },
+        { name: "Ventilation Block 3D", url: "/produk/detail-cb?product=Ventilation Block 3D&category=Concrete Block" },
       ],
       Utility: [
         { name: "Concrete Pipe", url: "/produk/detail-ut1?product=Concrete Pipe&category=Utility" },
