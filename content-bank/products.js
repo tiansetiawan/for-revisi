@@ -29,8 +29,8 @@ export const productsContent = {
     accessories: [
       { name: 'Nok Atas', image: '/images/Concrete Roof/Neo/neo nokatas.jpg' },
       { name: 'Nok Ujung', image: '/images/Concrete Roof/Neo/neo nokujung.jpg' },
-      { name: 'Apex', image: '/images/Concrete Roof/Neo/apex.jpg' },
       { name: 'Starter', image: '/images/Concrete Roof/Neo/neo starter.jpg' },
+      { name: 'Apex', image: '/images/Concrete Roof/Neo/apex.jpg' },
       { name: 'Nok Samping', image: '/images/Concrete Roof/Neo/neo noksamping.jpg' },
       { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Neo/neo noksampingujung.jpg' },
       { name: 'Genteng Setengah', image: '/images/Concrete Roof/Neo/neo genteng setengah.png' }

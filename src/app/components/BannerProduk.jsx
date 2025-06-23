@@ -40,27 +40,27 @@ const getMediaSource = () => {
 
       // Paving Block Products
       case "Square Set":
-        return { type: "image", src: "/images/banners/sub-products/square-set.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Classic Set":
-        return { type: "image", src: "/images/banners/sub-products/classic-set.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Altstadt":
-        return { type: "image", src: "/images/banners/sub-products/altstadt.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Others":
-        return { type: "image", src: "/images/banners/sub-products/paving-others.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Guiding Pave":
-        return { type: "image", src: "/images/banners/sub-products/guiding-pave.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Grass Block":
-        return { type: "image", src: "/images/banners/sub-products/grass-block.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Concrete Tile":
-        return { type: "image", src: "/images/banners/sub-products/concrete-tile.jpg" };
+        return { type: "image", src: "/images/BannerPb.jpg" };
       case "Guiding Tiles":
-        return { type: "image", src: "/images/banners/sub-products/guiding-tiles.jpg" };
+        return { type: "image", src: "/images/BannerPb.jpg" };
       case "Kanstein Wet Process":
-        return { type: "image", src: "/images/banners/sub-products/kanstein-wet.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Kanstein Dry Process":
-        return { type: "image", src: "/images/banners/sub-products/kanstein-dry.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
       case "Tali Air":
-        return { type: "image", src: "/images/banners/sub-products/tali-air.jpg" };
+        return { type: "image", src: "/images/banner pavingblock.jpg" };
 
       // Concrete Block Products
       case "Concrete Block":

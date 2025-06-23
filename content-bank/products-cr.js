@@ -74,9 +74,9 @@ export const productsCrContent = {
       { name: 'Nok Atas', image: '/images/Concrete Roof/Floral/flnokatas.jpg' },
       { name: 'Nok Ujung', image: '/images/Concrete Roof/Floral/flnokujung.jpg'},
       { name: 'Starter', image: '/images/Concrete Roof/Floral/flstarter.jpg'},
+      { name: 'Apex', image: '/images/Concrete Roof/Floral/flapex.jpg'},
       { name: 'Nok Samping', image: '/images/Concrete Roof/Floral/flnoksamping.jpg'},
-      { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Floral/flnoksampingujung.jpg'},
-      { name: 'Apex', image: '/images/Concrete Roof/Floral/flapex.jpg'}
+      { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Floral/flnoksampingujung.jpg'}
     ]
   },
   'New Royal': {
@@ -113,8 +113,8 @@ export const productsCrContent = {
       { name: 'Nok Ujung', image: '/images/Concrete Roof/New Royal/nrnokujung.jpg'},
       { name: 'Starter', image: '/images/Concrete Roof/New Royal/nrstarter.jpg'},
       { name: 'Starter Pinggul', image: '/images/Concrete Roof/New Royal/nrstarterpinggul.jpg'},
-      { name: 'Nok Samping', image: '/images/Concrete Roof/New Royal/nrnoksamping.jpg'},
       { name: 'Apex', image: '/images/Concrete Roof/New Royal/nrapex.jpg'},
+      { name: 'Nok Samping', image: '/images/Concrete Roof/New Royal/nrnoksamping.jpg'},
       { name: 'Tepi Kanan', image: '/images/Concrete Roof/New Royal/nrtepikanan.jpg'},
       { name: 'Tepi Kiri', image: '/images/Concrete Roof/New Royal/nrtepikiri.jpg'},
       { name: 'Genteng Bawah', image: '/images/Concrete Roof/New Royal/nrgentengbawah.jpg'},
@@ -156,8 +156,8 @@ export const productsCrContent = {
       { name: 'Nok Ujung', image: '/images/Concrete Roof/Oriental/orinokujung.jpg'},
       { name: 'Starter', image: '/images/Concrete Roof/Oriental/oristarter.jpg'},
       { name: 'Starter Pinggul', image: '/images/Concrete Roof/Oriental/oristarterpinggul.jpg'},
-      { name: 'Nok Samping', image: '/images/Concrete Roof/Oriental/noksamping.jpg'},
       { name: 'Apex', image: '/images/Concrete Roof/Oriental/oriapex.jpg'},
+      { name: 'Nok Samping', image: '/images/Concrete Roof/Oriental/noksamping.jpg'},
       { name: 'Tepi Kanan', image: '/images/Concrete Roof/Oriental/oritepikanan.jpg'},
       { name: 'Tepi Kiri', image: '/images/Concrete Roof/Oriental/oritepikiri.jpg'},
       { name: 'Genteng Kanan', image: '/images/Concrete Roof/Oriental/origentengkanan.jpg'},
@@ -199,9 +199,9 @@ export const productsCrContent = {
       { name: 'Nok Atas', image: '/images/Concrete Roof/Majestic/mjnokatas.jpg' },
       { name: 'Nok Ujung', image: '/images/Concrete Roof/Majestic/mjnokujung.jpg'},
       { name: 'Starter', image: '/images/Concrete Roof/Majestic/mjstarter.jpg'},
+      { name: 'Apex', image: '/images/Concrete Roof/Majestic/mjapex.jpg'},
       { name: 'Nok Samping', image: '/images/Concrete Roof/Majestic/mjnoksamping.jpg'},
       { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Majestic/mjnoksampingujung.jpg'},
-      { name: 'Apex', image: '/images/Concrete Roof/Majestic/mjapex.jpg'},
       { name: 'Tepi Kanan', image: '/images/Concrete Roof/Majestic/mjtepikanan.jpg'},
       { name: 'Tepi Kiri', image: '/images/Concrete Roof/Majestic/mjtepikiri.jpg'},
       { name: 'Genteng Kanan', image: '/images/Concrete Roof/Majestic/mjgentengkanan.jpg'},

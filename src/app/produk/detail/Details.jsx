@@ -42,29 +42,31 @@ export default function Details() {
   };
 
   // Slider functions
-  const nextSlide = () => {
-    if (currentSlide < currentProduct.accessories.length - visibleSlides) {
-      setCurrentSlide(currentSlide + 1);
-      scrollToSlide(currentSlide + 1);
-    }
-  };
+const nextSlide = () => {
+  const maxSlide = Math.max(0, currentProduct.accessories.length - visibleSlides);
+  if (currentSlide < maxSlide) {
+    setCurrentSlide(currentSlide + 1);
+    scrollToSlide(currentSlide + 1);
+  }
+};
 
-  const prevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-      scrollToSlide(currentSlide - 1);
-    }
-  };
+const prevSlide = () => {
+  if (currentSlide > 0) {
+    setCurrentSlide(currentSlide - 1);
+    scrollToSlide(currentSlide - 1);
+  }
+};
 
-  const scrollToSlide = (slideIndex) => {
-    if (sliderRef.current) {
-      const slideWidth = sliderRef.current.children[0]?.clientWidth || 0;
-      sliderRef.current.scrollTo({
-        left: slideIndex * (slideWidth + 16),
-        behavior: 'smooth'
-      });
-    }
-  };
+const scrollToSlide = (slideIndex) => {
+  if (sliderRef.current) {
+    const containerWidth = sliderRef.current.clientWidth;
+    const scrollAmount = (containerWidth / visibleSlides) * slideIndex;
+    sliderRef.current.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth"
+    });
+  }
+};
 
   // Calculator functions
   const resetCalculator = () => {
@@ -349,61 +351,61 @@ const calculateRequirement = () => {
             </div>
           </div>
           
-          {/* Aksesoris Section */}
-          <section className="mt-12">
-            <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-2">AKSESORIS :</h2>
-            
-            <div className="relative">
-              <button
-                onClick={prevSlide}
-                disabled={currentSlide === 0}
-                className="absolute left-[1.5rem] top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <FaChevronLeft className="w-5 h-5" />
-              </button>
-              
-              <div
-                ref={sliderRef}
-                className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5"
-              >
-                {currentProduct.accessories.map((product) => (
-                  <div key={product.name} className="snap-start min-w-0 ps-11 group">
-                    <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
-<div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
-  <Image
-    src={product.image}
-    alt={product.name}
-    fill
-    className="object-scale-down transition-transform duration-500 group-hover:scale-105"
-  />
-</div>
-                      <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
-                        {product.name}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <button
-                onClick={nextSlide}
-                disabled={currentSlide >= currentProduct.accessories.length - visibleSlides}
-                className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                <FaChevronRight className="w-5 h-5" />
-              </button>
-              
-              <style jsx>{`
-                .no-scrollbar::-webkit-scrollbar {
-                  display: none;
-                }
-                .no-scrollbar {
-                  -ms-overflow-style: none;
-                  scrollbar-width: none;
-                }
-              `}</style>
-            </div>
-          </section>
+         {/* Product Accesories */}
+                 <section className="mt-12">
+                             <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-2">AKSESORIS :</h2>
+                             
+                             <div className="relative">
+                               <button
+                                 onClick={prevSlide}
+                                 disabled={currentSlide === 0}
+                                 className="absolute left-[1.5rem] top-1/2 -translate-y-1/2 -translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+                               >
+                                 <FaChevronLeft className="w-5 h-5" />
+                               </button>
+                               
+                               <div
+                                 ref={sliderRef}
+                                 className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5"
+                               >
+                                 {currentProduct.accessories.map((product) => (
+                                   <div key={product.name} className="snap-start min-w-0 ps-11 group">
+                                     <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
+                 <div className="relative w-full aspect-[4/3] bg-white overflow-hidden">
+                   <Image
+                     src={product.image}
+                     alt={product.name}
+                     fill
+                     className="object-scale-down transition-transform duration-500 group-hover:scale-105"
+                   />
+                 </div>
+                                       <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
+                                         {product.name}
+                                       </div>
+                                     </div>
+                                   </div>
+                                 ))}
+                               </div>
+                               
+        <button
+          onClick={nextSlide}
+          disabled={currentSlide >= Math.max(0, currentProduct.accessories.length - visibleSlides)}
+          className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <FaChevronRight className="w-5 h-5" />
+        </button>
+                               
+                               <style jsx>{`
+                                 .no-scrollbar::-webkit-scrollbar {
+                                   display: none;
+                                 }
+                                 .no-scrollbar {
+                                   -ms-overflow-style: none;
+                                   scrollbar-width: none;
+                                 }
+                               `}</style>
+                             </div>
+                           </section>
         </main>
       </div>
     </div>
