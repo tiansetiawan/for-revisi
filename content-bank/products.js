@@ -27,13 +27,13 @@ export const productsContent = {
     ],
     installationNote: 'Cara Pemasangan Berselang',
     accessories: [
-      { name: 'Nok Ujung', image: '/images/Concrete Roof/Neo/neo nokujung.jpg' },
       { name: 'Nok Atas', image: '/images/Concrete Roof/Neo/neo nokatas.jpg' },
+      { name: 'Nok Ujung', image: '/images/Concrete Roof/Neo/neo nokujung.jpg' },
       { name: 'Apex', image: '/images/Concrete Roof/Neo/apex.jpg' },
       { name: 'Starter', image: '/images/Concrete Roof/Neo/neo starter.jpg' },
       { name: 'Nok Samping', image: '/images/Concrete Roof/Neo/neo noksamping.jpg' },
-      { name: 'Nok sammping Ujung', image: '/images/Concrete Roof/Neo/neo noksampingujung.jpg' },
-      { name: 'Genteng Setengah', image: '/images/Concrete Roof/Neo/neo genteng setengah.jpg' }
+      { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Neo/neo noksampingujung.jpg' },
+      { name: 'Genteng Setengah', image: '/images/Concrete Roof/Neo/neo genteng setengah.png' }
     ]
   },
   'Dual Slate': {
@@ -71,7 +71,7 @@ export const productsContent = {
       { name: 'Apex', image: '/images/apex.png' },
       { name: 'Starter', image: '/images/starter.png' },
       { name: 'Nok Samping', image: '/images/nok samping.png' },
-      { name: 'Nok sammping Ujung', image: '/images/nok samping ujung.png' },
+      { name: 'Nok Samping Ujung', image: '/images/nok samping ujung.png' },
       { name: 'Genteng Setengah', image: '/images/genteng setengah.png' }
     ]
   },
@@ -107,7 +107,7 @@ export const productsContent = {
       { name: 'Apex', image: '/images/apex.png' },
       { name: 'Starter', image: '/images/starter.png' },
       { name: 'Nok Samping', image: '/images/nok samping.png' },
-      { name: 'Nok sammping Ujung', image: '/images/nok samping ujung.png' },
+      { name: 'Nok Samping Ujung', image: '/images/nok samping ujung.png' },
       { name: 'Genteng Setengah', image: '/images/genteng setengah.png' }
     ]
   },
@@ -143,7 +143,7 @@ export const productsContent = {
       { name: 'Apex', image: '/images/apex.png' },
       { name: 'Starter', image: '/images/starter.png' },
       { name: 'Nok Samping', image: '/images/nok samping.png' },
-      { name: 'Nok sammping Ujung', image: '/images/nok samping ujung.png' },
+      { name: 'Nok Samping Ujung', image: '/images/nok samping ujung.png' },
       { name: 'Genteng Setengah', image: '/images/genteng setengah.png' }
     ]
   },
@@ -179,7 +179,7 @@ export const productsContent = {
       { name: 'Apex', image: '/images/apex.png' },
       { name: 'Starter', image: '/images/starter.png' },
       { name: 'Nok Samping', image: '/images/nok samping.png' },
-      { name: 'Nok sammping Ujung', image: '/images/nok samping ujung.png' },
+      { name: 'Nok Samping Ujung', image: '/images/nok samping ujung.png' },
       { name: 'Genteng Setengah', image: '/images/genteng setengah.png' }
     ]
   },
@@ -215,7 +215,7 @@ export const productsContent = {
       { name: 'Apex', image: '/images/apex.png' },
       { name: 'Starter', image: '/images/starter.png' },
       { name: 'Nok Samping', image: '/images/nok samping.png' },
-      { name: 'Nok sammping Ujung', image: '/images/nok samping ujung.png' },
+      { name: 'Nok Samping Ujung', image: '/images/nok samping ujung.png' },
       { name: 'Genteng Setengah', image: '/images/genteng setengah.png' }
     ]
   }

@@ -32,12 +32,13 @@ export const productsCrContent = {
       { name: 'Nok Atas', image: '/images/Concrete Roof/Dual Slate/dsnokatas.jpg' },
       { name: 'Nok Ujung', image: '/images/Concrete Roof/Dual Slate/dsnokujung.jpg'},
       { name: 'Starter', image: '/images/Concrete Roof/Dual Slate/dstarter.jpg'},
-      { name: 'Nok Samping', image: '/images/Concrete Roof/Dual Slate/dsnoksamping.jpg'},
-      { name: 'Nok sammping Ujung', image: '/images/Concrete Roof/Dual Slate/dsnoksampingujung.jpg'},
       { name: 'Apex', image: '/images/Concrete Roof/Dual Slate/dsapex.jpg'},
       { name: 'Apex 4 Way', image: '/images/Concrete Roof/Dual Slate/dsapex4way.jpg'},
+      { name: 'Nok Samping', image: '/images/Concrete Roof/Dual Slate/dsnoksamping.jpg'},
+      { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Dual Slate/dsnoksampingujung.jpg'},
       { name: 'Nok Siku', image: '/images/Concrete Roof/Dual Slate/dsnoksiku.jpg'},
-      { name: 'Starter Siku', image: '/images/Concrete Roof/Dual Slate/dstarersiku.jpg'}
+      { name: 'Starter Siku', image: '/images/Concrete Roof/Dual Slate/dstartersiku.jpg'},
+      { name: 'Starters Siku', image: '/images/Concrete Roof/Dual Slate/dstartersiku.jpg'},
     ]
   },
   'Floral': {
@@ -74,7 +75,7 @@ export const productsCrContent = {
       { name: 'Nok Ujung', image: '/images/Concrete Roof/Floral/flnokujung.jpg'},
       { name: 'Starter', image: '/images/Concrete Roof/Floral/flstarter.jpg'},
       { name: 'Nok Samping', image: '/images/Concrete Roof/Floral/flnoksamping.jpg'},
-      { name: 'Nok sammping Ujung', image: '/images/Concrete Roof/Floral/flnoksampingujung.jpg'},
+      { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Floral/flnoksampingujung.jpg'},
       { name: 'Apex', image: '/images/Concrete Roof/Floral/flapex.jpg'}
     ]
   },

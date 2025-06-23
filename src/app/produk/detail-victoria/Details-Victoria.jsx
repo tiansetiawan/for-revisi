@@ -101,29 +101,31 @@ export default function DetailsVS() {
   };
 
   // Slider functions
-  const nextSlide = () => {
-    if (currentSlide < currentProduct.type.length - visibleSlides) {
-      setCurrentSlide(currentSlide + 1);
-      scrollToSlide(currentSlide + 1);
-    }
-  };
+const nextSlide = () => {
+  const maxSlide = Math.max(0, currentProduct.accessories.length - visibleSlides);
+  if (currentSlide < maxSlide) {
+    setCurrentSlide(currentSlide + 1);
+    scrollToSlide(currentSlide + 1);
+  }
+};
 
-  const prevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-      scrollToSlide(currentSlide - 1);
-    }
-  };
+const prevSlide = () => {
+  if (currentSlide > 0) {
+    setCurrentSlide(currentSlide - 1);
+    scrollToSlide(currentSlide - 1);
+  }
+};
 
-  const scrollToSlide = (slideIndex) => {
-    if (sliderRef.current) {
-      const slideWidth = sliderRef.current.children[0]?.clientWidth || 0;
-      sliderRef.current.scrollTo({
-        left: slideIndex * (slideWidth + 16),
-        behavior: 'smooth'
-      });
-    }
-  };
+const scrollToSlide = (slideIndex) => {
+  if (sliderRef.current) {
+    const containerWidth = sliderRef.current.clientWidth;
+    const scrollAmount = (containerWidth / visibleSlides) * slideIndex;
+    sliderRef.current.scrollTo({
+      left: scrollAmount,
+      behavior: "smooth"
+    });
+  }
+};
 
   // Calculator functions
   const resetCalculator = () => {
@@ -143,28 +145,50 @@ export default function DetailsVS() {
     setCalculationType(type);
   };
 
-  const calculateRequirement = () => {
-    const value = parseFloat(inputValue);
-    if (!isNaN(value)) {
-      let calculatedResult;
+const calculateRequirement = () => {
+  const value = parseFloat(inputValue);
+  if (!isNaN(value)) {
+    let calculatedResult;
+    
+    // Ambil nilai pemakaian genteng dari produk saat ini
+    const usagePerSqm = currentProduct.specifications.find(
+      spec => spec.label === 'Pemakaian Genteng'
+    )?.value;
+    
+    // Fungsi untuk ekstrak nilai tertinggi dari range
+    const extractHighestUsageValue = (usageString) => {
+      // Temukan semua angka (termasuk desimal dengan koma/titik)
+      const numbers = usageString.match(/[\d,\.]+/g);
       
-      if (calculationType === 'Luas Atap') {
-        calculatedResult = Math.ceil(value * 8);
-      } else {
-        if (!slopeAngle || slopeAngle < 25 || slopeAngle > 45) {
-          alert('Mohon masukkan sudut kemiringan antara 25°-45°');
-          return;
-        }
-        
-        const angleRad = parseFloat(slopeAngle) * Math.PI / 180;
-        const cosValue = Math.cos(angleRad);
-        const actualRoofArea = value / cosValue;
-        calculatedResult = Math.ceil(actualRoofArea * 8);
+      if (!numbers) return 8; // Default jika tidak ditemukan
+      
+      // Konversi semua angka ke float dan cari yang tertinggi
+      const floatValues = numbers.map(num => 
+        parseFloat(num.replace(',', '.'))
+      ).filter(num => !isNaN(num));
+      
+      return floatValues.length > 0 ? Math.max(...floatValues) : 8;
+    };
+    
+    const usageValue = usagePerSqm ? extractHighestUsageValue(usagePerSqm) : 8;
+    
+    if (calculationType === 'Luas Atap') {
+      calculatedResult = Math.ceil(value * usageValue);
+    } else {
+      if (!slopeAngle || slopeAngle < 25 || slopeAngle > 45) {
+        alert('Mohon masukkan sudut kemiringan antara 25°-45°');
+        return;
       }
       
-      setResult(calculatedResult.toString());
+      const angleRad = parseFloat(slopeAngle) * Math.PI / 180;
+      const cosValue = Math.cos(angleRad);
+      const actualRoofArea = value / cosValue;
+      calculatedResult = Math.ceil(actualRoofArea * usageValue);
     }
-  };
+    
+    setResult(calculatedResult.toString());
+  }
+};
 
  return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
@@ -462,13 +486,13 @@ export default function DetailsVS() {
                          ))}
                        </div>
                        
-                       <button
-                         onClick={nextSlide}
-                         disabled={currentSlide >= currentProduct.accessories.length - visibleSlides}
-                         className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
-                       >
-                         <FaChevronRight className="w-5 h-5" />
-                       </button>
+<button
+  onClick={nextSlide}
+  disabled={currentSlide >= Math.max(0, currentProduct.accessories.length - visibleSlides)}
+  className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+>
+  <FaChevronRight className="w-5 h-5" />
+</button>
                        
                        <style jsx>{`
                          .no-scrollbar::-webkit-scrollbar {
