@@ -223,7 +223,7 @@ export const ventilation3DBlockSubItems = [
       { label: 'Berat', value: '5,75 kg' },
       { label: 'Pemakaian', value: '24 bh/m²' },
       { label: 'Best Seller', icon: '' },
-    { label: 'New Product', icon: '/icons/BS.png' }
+    { label: 'New Product', icon: '/icons/NP.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
@@ -249,7 +249,7 @@ export const ventilation3DBlockSubItems = [
       { label: 'Berat', value: '4,6 kg' },
       { label: 'Pemakaian', value: '24 bh/m²' },
         { label: 'Best Seller', icon: '' },
-    { label: 'New Product', icon: '/icons/BS.png' }
+    { label: 'New Product', icon: '/icons/NP.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },

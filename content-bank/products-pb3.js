@@ -5,8 +5,8 @@ export const taliAirSubItems  = [
   thumbnails: [
     {
       id: 1,
-      thumbImage: '/images/Paving Block/Tali Air/Grill 01.1 (bertulang).png',
-      penampangImage: '/images/Paving Block/Tali Air/Grill 01.1 (bertulang).png',
+      thumbImage: '/images/Paving Block/Tali Air/Grill Bertulang.png',
+      penampangImage: '/images/Paving Block/Tali Air/P.Grill 01.1 (bertulang).png',
       color: 'Multi Warna'
     }
   ],
@@ -31,7 +31,7 @@ export const taliAirSubItems  = [
     {
       id: 2,
       thumbImage: '/images/Paving Block/Tali Air/Box 01.1.png',
-      penampangImage: '/images/Paving Block/Tali Air/Box 01.1.png',
+      penampangImage: '/images/Paving Block/Tali Air/P.Box 01.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -56,7 +56,7 @@ export const taliAirSubItems  = [
     {
       id: 3,
       thumbImage: '/images/Paving Block/Tali Air/Box Grill Besi.png',
-      penampangImage: '/images/Paving Block/Tali Air/Box Grill Besi.png',
+      penampangImage: '/images/Paving Block/Tali Air/P.Box Grill Besi.png',
       color: 'Multi Warna'
     }
   ],
@@ -134,7 +134,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 3,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.05.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.05.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.05.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -159,7 +159,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 4,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.05.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.05.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.05.2.png',
       color: 'Multi Warna'
     }
   ],
@@ -184,7 +184,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 5,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.05.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.05.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.05.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -209,7 +209,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 6,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.06.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.06.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.06.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -234,7 +234,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 7,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.06.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.06.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.06.2.png',
       color: 'Multi Warna'
     }
   ],
@@ -259,7 +259,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 8,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.06.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.06.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.06.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -284,7 +284,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 9,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.08.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.08.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.08.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -309,7 +309,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 10,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.08.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.08.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.08.2.png',
       color: 'Multi Warna'
     }
   ],
@@ -334,7 +334,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 11,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.08.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.08.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.08.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -359,7 +359,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 12,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.09.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.09.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.09.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -384,7 +384,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 13,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.09.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.09.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.09.2.png',
       color: 'Multi Warna'
     }
   ],
@@ -408,8 +408,8 @@ export const kansteinWetprocessSubItems  = [
   thumbnails: [
     {
       id: 14,
-      thumbImage: '/images/Paving Block/Kanstein Wet/K.09.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.09.2.png',
+      thumbImage: '/images/Paving Block/Kanstein Wet/K.09.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.09.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -434,13 +434,13 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 14,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.10.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.10.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.10.1.png',
       color: 'Multi Warna'
     }
   ],
   specifications: [
-        { label: 'Dimensi', value: '60 x 24 x 15 cm' },
-    { label: 'Berat', value: '30 kg' },
+        { label: 'Dimensi', value: '60 x 30 x 18 cm' },
+    { label: 'Berat', value: '50 kg' },
     { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
@@ -459,14 +459,14 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 15,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.10.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.10.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.10.2.png',
       color: 'Multi Warna'
     }
   ],
   specifications: [
-        { label: 'Dimensi', value: '60 x 30 x 18 cm' },
-    { label: 'Berat', value: '50 kg' },
-    { label: 'Pemakaian', value: '1,66 bh/m¹' },
+        { label: 'Dimensi', value: '20 x 30 x 18 cm' },
+    { label: 'Berat', value: '18 kg' },
+    { label: 'Pemakaian', value: '5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [
@@ -484,7 +484,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 16,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.10.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.10.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.10.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -508,8 +508,8 @@ export const kansteinWetprocessSubItems  = [
   thumbnails: [
     {
       id: 17,
-      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.1 (DKI).png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.11.1 (DKI).png',
+      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.1 DKI.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.11.1 DKI.png',
       color: 'Multi Warna'
     }
   ],
@@ -534,8 +534,8 @@ export const kansteinWetprocessSubItems  = [
   thumbnails: [
     {
       id: 18,
-      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.2 (DKI).png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.11.2 (DKI).png',
+      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.2 DKI.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.11.2 DKI.png',
       color: 'Multi Warna'
     }
   ],
@@ -559,8 +559,8 @@ export const kansteinWetprocessSubItems  = [
   thumbnails: [
     {
       id: 19,
-      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.3 (DKI).png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.11.3 (DKI).png',
+      thumbImage: '/images/Paving Block/Kanstein Wet/K.11.3 DKI.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.11.3 DKI.png',
       color: 'Multi Warna'
     }
   ],
@@ -585,7 +585,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 20,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.12.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.12.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.12.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -610,7 +610,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 22,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.12.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.12.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.12.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -635,7 +635,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 23,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.13.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.13.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.13.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -660,7 +660,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 23,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.13.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/K.13.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.13.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -688,13 +688,13 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 1,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.01.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.01.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.01.1.png',
       color: 'Multi Warna'
     }
   ],
   specifications: [
         { label: 'Dimensi', value: '40 x 6 x 15,5 cm' },
-    { label: 'Berat', value: '7,5 kg' },
+    { label: 'Berat', value: '7,6 kg' },
     { label: 'Pemakaian', value: '2,5 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
@@ -713,7 +713,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 2,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.01.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.01.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.01.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -738,7 +738,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 3,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.02.1.png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.02.1.png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.02.1.png',
       color: 'Multi Warna'
     }
   ],
@@ -763,7 +763,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 4,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.02.2.png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.02.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.02.2.png',
       color: 'Multi Warna'
     }
   ],
@@ -788,7 +788,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 5,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.02.3.png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.02.3.png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.02.3.png',
       color: 'Multi Warna'
     }
   ],
@@ -813,7 +813,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 6,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.03.1 (Tahu).png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.03.1 (Tahu).png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.03.1 (Tahu).png',
       color: 'Multi Warna'
     }
   ],
@@ -840,7 +840,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 7,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.03.2 (Tahu).png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.03.2 (Tahu).png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.03.2 (Tahu).png',
       color: 'Multi Warna'
     }
   ],
@@ -865,7 +865,7 @@ export const kansteinDryprocessSubItems  = [
     {
       id: 8,
       thumbImage: '/images/Paving Block/Kanstein Dry/K.03.3 (Tahu).png',
-      penampangImage: '/images/Paving Block/Kanstein Dry/K.03.3 (Tahu).png',
+      penampangImage: '/images/Paving Block/Kanstein Dry/P.K.03.3 (Tahu).png',
       color: 'Multi Warna'
     }
   ],
