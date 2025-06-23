@@ -624,8 +624,8 @@ export const gudingPaveSubItems   = [
   thumbnails: [
     {
       id: 1,
-      thumbImage: '/images/Paving Block/Guiding Pave/barpave.png',
-      largeImage: '/images/Paving Block/Guiding Pave/barpave.png',
+      thumbImage: '/images/Paving Block/Guiding Pave/Bar Pave.png',
+      largeImage: '/images/Paving Block/Guiding Pave/Bar Pave.png',
       color: 'Multi Warna'
     }
   ],
@@ -656,8 +656,8 @@ export const gudingPaveSubItems   = [
   thumbnails: [
     {
       id: 2,
-      thumbImage: '/images/Paving Block/Guiding Pave/dotpave.png',
-      largeImage: '/images/Paving Block/Guiding Pave/dotpave.png',
+      thumbImage: '/images/Paving Block/Guiding Pave/Dot Pave.png',
+      largeImage: '/images/Paving Block/Guiding Pave/Dot Pave.png',
       color: 'Multi Warna'
     }
   ],
@@ -692,8 +692,8 @@ export const grassBlockSubItems   = [
   thumbnails: [
     {
       id: 1,
-      thumbImage: '/images/Paving Block/Grass Block/grass-block-6.png',
-      largeImage: '/images/Paving Block/Grass Block/grass-block-6.png',
+      thumbImage: '/images/Paving Block/Grass Block/Grass Block 6.png',
+      largeImage: '/images/Paving Block/Grass Block/Grass Block 6.png',
       color: 'Multi Warna'
     }
   ],
@@ -755,8 +755,8 @@ export const grassBlockSubItems   = [
   thumbnails: [
     {
       id: 3,
-      thumbImage: '/images/Paving Block/Grass Block/grass-block-10.2.png',
-      largeImage: '/images/Paving Block/Grass Block/grass-block-10.2.png',
+      thumbImage: '/images/Paving Block/Grass Block/Grass Block 10.2.png',
+      largeImage: '/images/Paving Block/Grass Block/Grass Block 10.2.png',
       color: 'Abu-abu Gelap'
     }
   ],

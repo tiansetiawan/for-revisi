@@ -83,8 +83,8 @@ export const kansteinWetprocessSubItems  = [
   thumbnails: [
     {
       id: 1,
-      thumbImage: '/images/Paving Block/Kanstein Wet/Kanstein Car Stopper 1.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/Kanstein Car Stopper 1.png',
+      thumbImage: '/images/Paving Block/Kanstein Wet/Kanstein Car Stopper.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.Kanstein Car  Stopper.png',
       color: 'Multi Warna'
     }
   ],
@@ -108,8 +108,8 @@ export const kansteinWetprocessSubItems  = [
   thumbnails: [
     {
       id: 2,
-      thumbImage: '/images/Paving Block/Kanstein Wet/Kanstein Car Stopper 2.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/Kanstein Car Stopper 2.png',
+      thumbImage: '/images/Paving Block/Kanstein Wet/Kanstein Car Stopper.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.Kanstein Car  Stopper.png',
       color: 'Multi Warna'
     }
   ],
@@ -392,6 +392,31 @@ export const kansteinWetprocessSubItems  = [
         { label: 'Dimensi', value: '20 x 24 x 15 cm' },
     { label: 'Berat', value: '10,5 kg' },
     { label: 'Pemakaian', value: '5 bh/m¹' },
+    { label: 'Best Seller', icon: '' }
+  ],
+  technicalSpecs: [
+    { label: 'Beban Lentur', value: '1100-1300 N' },
+    { label: 'Penyerapan Air', value: 'Maks. 12%' },
+    { label: 'Ketebalan Cat', value: '80-120 Mikron' },
+    { label: 'Warna Variasi', value: '5 Pilihan Warna' }
+  ],
+  installationNote: ''
+},
+{
+  id: 'K.09.3',
+  name: 'K.09.3',
+  thumbnails: [
+    {
+      id: 14,
+      thumbImage: '/images/Paving Block/Kanstein Wet/K.09.2.png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/K.09.2.png',
+      color: 'Multi Warna'
+    }
+  ],
+  specifications: [
+        { label: 'Dimensi', value: '60 x 24 x 15 cm' },
+    { label: 'Berat', value: '30 kg' },
+    { label: 'Pemakaian', value: '1,66 bh/m¹' },
     { label: 'Best Seller', icon: '' }
   ],
   technicalSpecs: [

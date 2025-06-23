@@ -5,20 +5,20 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
-        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/Sanstein.png',
+        largeImage: '/images/Paving Block/Concrete Tile/Sanstein.png',
         color: 'Multi Warna'
       },
       {
         id: 2,
-        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
-        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/Sanstein2.png',
+        largeImage: '/images/Paving Block/Concrete Tile/Sanstein2.png',
         color: 'Multi Warna'
       },
       {
         id: 3,
-        thumbImage: '/images/Paving Block/Concrete Tile/sandstein.png',
-        largeImage: '/images/Paving Block/Concrete Tile/sandstein.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/Sandstein3.png',
+        largeImage: '/images/Paving Block/Concrete Tile/Sandstein3.png',
         color: 'Multi Warna'
       }
     ],
@@ -51,8 +51,8 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 2,
-        thumbImage: '/images/Paving Block/Concrete Tile/spectra-pave.png',
-        largeImage: '/images/Paving Block/Concrete Tile/spectra-pave.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/Spectra Pave.png',
+        largeImage: '/images/Paving Block/Concrete Tile/Spectra Pave.png',
         color: 'Multi Warna'
       }
     ],
@@ -83,8 +83,8 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 3,
-        thumbImage: '/images/Paving Block/Concrete Tile/cladding-tile.png',
-        largeImage: '/images/Paving Block/Concrete Tile/cladding-tile.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/Cladding Tile.png',
+        largeImage: '/images/Paving Block/Concrete Tile/Cladding Tile.png',
         color: 'Abu-abu Gelap'
       }
     ],
@@ -115,8 +115,8 @@ export const concreteTileSubItems = [
     thumbnails: [
       {
         id: 4,
-        thumbImage: '/images/Paving Block/Concrete Tile/clading.png',
-        largeImage: '/images/Paving Block/Concrete Tile/clading.png',
+        thumbImage: '/images/Paving Block/Concrete Tile/Cladding Tile Triangle.png',
+        largeImage: '/images/Paving Block/Concrete Tile/Cladding Tile Triangle.png',
         color: 'Coklat'
       }
     ],
