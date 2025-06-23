@@ -14,23 +14,23 @@ const getMediaSource = () => {
     switch (product) {
       // Concrete Roof Products
       case "Neo Solar System":
-        return { type: "image", src: "/images/banners/sub-products/neo-solar-system.jpg" };
+        return { type: "image", src: "/images/Banner Neo Statis.jpg" };
       case "Dual Slate":
-        return { type: "image", src: "/images/banners/sub-products/dual-slate.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Floral":
-        return { type: "image", src: "/images/banners/sub-products/floral.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Victoria Series":
-        return { type: "image", src: "/images/banners/sub-products/victoria-series.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Onyx":
-        return { type: "image", src: "/images/banners/sub-products/onyx.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Multiline":
-        return { type: "image", src: "/images/banners/sub-products/multiline.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Slate":
-        return { type: "image", src: "/images/banners/sub-products/slate.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Pine":
-        return { type: "image", src: "/images/banners/sub-products/pine.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Classic":
-        return { type: "image", src: "/images/banners/sub-products/classic.jpg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.pngg" };
       case "New Royal":
         return { type: "image", src: "/images/banner genteng gelombang.jpg" };
       case "Oriental":
@@ -64,17 +64,17 @@ const getMediaSource = () => {
 
       // Concrete Block Products
       case "Concrete Block":
-        return { type: "image", src: "/images/banners/sub-products/concrete-block.jpg" };
+        return { type: "image", src: "/images/BannerCb.jpg" };
       case "Ventilation Block":
-        return { type: "image", src: "/images/banners/sub-products/ventilation-block.jpg" };
+        return { type: "image", src: "/images/banner roster.jpg" };
       case "Ventilation Block 3D":
-        return { type: "image", src: "/images/banners/sub-products/ventilation-block-3d.jpg" };
+        return { type: "image", src: "/images/banner roster.jpg" };
 
       // Utility Products
       case "Concrete Pipe":
-        return { type: "image", src: "/images/banners/sub-products/concrete-pipe.jpg" };
+        return { type: "image", src: "/images/banner concrete pipe.jpg" };
       case "Ciswell":
-        return { type: "image", src: "/images/banners/sub-products/ciswell.jpg" };
+        return { type: "image", src: "/images/banner ciswell.png" };
 
       // Fallback untuk sub produk yang tidak memiliki banner khusus
       default:
@@ -97,7 +97,7 @@ const getMediaSource = () => {
       case "Paving Block":
         return {
           type: "image",
-          src: "/images/BannerPb.jpg",
+          src: "/images/banner pavingblock.jpg",
         };
       case "Concrete Block":
         return {
@@ -107,7 +107,7 @@ const getMediaSource = () => {
       case "Utility":
         return {
           type: "image",
-          src: "/images/BannerCb.jpg",
+          src: "/images/banner ciswell.png",
         };
       default:
         return {

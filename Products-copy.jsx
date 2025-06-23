@@ -1,63 +1,53 @@
-"use client";
-import { useState, useRef, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+'use client';
+import { useState, useRef, useEffect } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { 
   ConcreteRoofContent, concreteRoofProducts,
   PavingBlockContent, pavingBlockProducts,
   ConcreteBlockContent, concreteBlockProducts,
   UtilityContent, utilityProducts
 } from '../product-content';
-import Link from "next/link";
+import Link from 'next/link';
 import Image from 'next/image';
-import BannerProduk from "../components/BannerProduk";
-import ProductSidebar from "../components/ProductSidebar";
-import { useSearchParams } from "next/navigation";
+import BannerProduk from '../components/BannerProduk';
+import ProductSidebar from '../components/ProductSidebar';
+import { useSearchParams } from 'next/navigation';
 
 export default function Product() {
   const searchParams = useSearchParams();
-  const [activeItem, setActiveItem] = useState("Concrete Roof");
+  const [activeItem, setActiveItem] = useState('Concrete Roof');
   const productSliderRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const visibleSlides = 4;
 
   useEffect(() => {
-    const category = searchParams.get("category");
-    if (category && ["Concrete Roof", "Paving Block", "Concrete Block", "Utility"].includes(category)) {
+    const category = searchParams.get('category');
+    if (category && ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Utility'].includes(category)) {
       setActiveItem(category);
     }
   }, [searchParams]);
 
-  const getCurrentProducts = () => {
-    switch (activeItem) {
-      case "Concrete Roof":
-        return concreteRoofProducts;
-      case "Paving Block":
-        return pavingBlockProducts;
-      case "Concrete Block":
-        return concreteBlockProducts;
-      case "Utility":
-        return utilityProducts;
-      default:
-        return [];
+ const getCurrentProducts = () => {
+    switch(activeItem) {
+      case 'Concrete Roof': return concreteRoofProducts;
+      case 'Paving Block': return pavingBlockProducts;
+      case 'Concrete Block': return concreteBlockProducts;
+      case 'Utility': return utilityProducts;
+      default: return [];
     }
   };
 
   const getCurrentContent = () => {
-    switch (activeItem) {
-      case "Concrete Roof":
-        return <ConcreteRoofContent />;
-      case "Paving Block":
-        return <PavingBlockContent />;
-      case "Concrete Block":
-        return <ConcreteBlockContent />;
-      case "Utility":
-        return <UtilityContent />;
-      default:
-        return <div className="text-center py-10">Pilih kategori produk</div>;
+    switch(activeItem) {
+      case 'Concrete Roof': return <ConcreteRoofContent />;
+      case 'Paving Block': return <PavingBlockContent />;
+      case 'Concrete Block': return <ConcreteBlockContent />;
+      case 'Utility': return <UtilityContent />;
+      default: return <div className="text-center py-10">Pilih kategori produk</div>;
     }
   };
 
-  const getDetailPath = (category, productName) => {
+const getDetailPath = (category, productName) => {
   if (category === 'Concrete Roof') {
     // Handle Neo Solar System khusus
     if (productName === 'Neo Solar System') return 'detail';
@@ -113,7 +103,7 @@ export default function Product() {
       const slideWidth = productSliderRef.current.children[0]?.clientWidth || 0;
       productSliderRef.current.scrollTo({
         left: slideIndex * (slideWidth + 16),
-        behavior: "smooth",
+        behavior: 'smooth'
       });
     }
   };
@@ -122,7 +112,9 @@ export default function Product() {
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
       <BannerProduk kategori={activeItem} />
 
-      <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">{activeItem.toUpperCase()}</div>
+      <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">
+        {activeItem.toUpperCase()}
+      </div>
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
         <ProductSidebar onItemChange={setActiveItem} />
@@ -141,7 +133,7 @@ export default function Product() {
                 <FaChevronLeft className="w-5 h-5" />
               </button>
 
-  <div
+              <div
                 ref={productSliderRef}
                 className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7 ml-[-29px]"
               >
@@ -160,21 +152,15 @@ export default function Product() {
   className="block"
 >
                       <div className="w-50 bg-gray-300 rounded-xl overflow-hidden shadow hover:shadow-lg transition flex flex-col items-center">
-<div className="relative w-full h-45 flex items-center justify-center bg-white overflow-hidden">
-  {product.image ? (
-    <Image
-      src={product.image}
-      alt={product.name}
-      fill
-      className="object-scale-down transition-transform duration-500 group-hover:scale-105"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    />
-  ) : (
-    <div className="w-full h-full flex items-center justify-center bg-gray-100">
-      <span className="text-gray-500">No Image</span>
-    </div>
-  )}
-</div>
+                        <div className="relative w-full h-45 flex items-center justify-center bg-white overflow-hidden">
+                          <Image
+                            src={product.image}
+                            alt={product.name}
+                            fill
+                            className="object-scale-down transition-transform duration-500 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        </div>
                         <div className="w-full text-center text-sm font-medium bg-[#E5ECF6] py-2 rounded-b-xl">
                           {product.name}
                         </div>

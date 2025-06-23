@@ -147,59 +147,79 @@ export default function DetailsCb() {
                       </tr>
                     </thead>
                     <tbody className="text-sm">
-                      {activeItems.map((product) => {
-                        const dimensions = product.specifications.find((spec) => spec.label === "Dimensi" || spec.label === "Ukuran")?.value || "-";
-                        const weights = product.specifications
-                          .find((spec) => spec.label === "Berat")
-                          ?.value.split("/")
-                          .map((w) => w.trim()) || ["-"];
-                        const thicknesses = product.specifications
-                          .find((spec) => spec.label === "Tebal")
-                          ?.value.split("/")
-                          .map((t) => t.trim()) || ["-"];
-                        const usage = product.specifications.find((spec) => spec.label === "Pemakaian")?.value || "-";
-                        const application = product.specifications.find((spec) => spec.label === "Aplikasi");
-                        const bestSellerIcon = product.specifications.find((spec) => spec.label === "Best Seller" && spec.icon)?.icon || product.specifications.find((spec) => spec.label === "New Product" && spec.icon)?.icon;
-                        return (
-                          <React.Fragment key={product.id}>
-                            {weights.map((weight, i) => (
-                              <tr key={`${product.id}-${i}`} className="hover:bg-gray-50">
-                                {i === 0 ? (
-                                  <>
-                                    <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
-                                      <div className="relative w-40 h-40 mx-auto">
-                                        <Image src={product.thumbnails[0].thumbImage} alt={product.name} fill className="object-contain" />
-                                      </div>
-                                    </td>
-                                    <td rowSpan={weights.length} className="relative border border-gray-300 px-4 py-2 font-medium text-center">
-                                      <div className="flex flex-col justify-center items-center relative">
-                                        {bestSellerIcon && (
-                                          <img
-                                            src={bestSellerIcon}
-                                            alt="Best Seller"
-                                            className="absolute -top-12 w-12 h-12" // Sesuaikan ukuran dan posisi
-                                          />
-                                        )}
-                                        {product.name}
-                                      </div>
-                                    </td>
-                                    <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
-                                      {dimensions}
-                                    </td>
-                                  </>
-                                ) : null}
-                                <td className="border border-gray-300 px-4 py-2 text-center">{weight}</td>
-                                {i === 0 ? (
-                                  <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2 text-center">
-                                    {usage}
-                                  </td>
-                                ) : null}
-                              </tr>
-                            ))}
-                          </React.Fragment>
-                        );
-                      })}
-                    </tbody>
+  {activeItems.map((product) => {
+    const dimensions = product.specifications.find((spec) => spec.label === "Dimensi" || spec.label === "Ukuran")?.value || "-";
+    const weights = product.specifications
+      .find((spec) => spec.label === "Berat")
+      ?.value.split("/")
+      .map((w) => w.trim()) || ["-"];
+    const thicknesses = product.specifications
+      .find((spec) => spec.label === "Tebal")
+      ?.value.split("/")
+      .map((t) => t.trim()) || ["-"];
+    const usage = product.specifications.find((spec) => spec.label === "Pemakaian")?.value || "-";
+    const application = product.specifications.find((spec) => spec.label === "Aplikasi");
+    const bestSellerIcon = product.specifications.find((spec) => spec.label === "Best Seller" && spec.icon)?.icon || product.specifications.find((spec) => spec.label === "New Product" && spec.icon)?.icon;
+    
+    // Split the product name by "/" to handle multiple names
+    const productNames = product.name.split("/").map(name => name.trim());
+    const maxRows = Math.max(weights.length, productNames.length);
+
+    return (
+      <React.Fragment key={product.id}>
+        {Array.from({ length: maxRows }).map((_, i) => (
+          <tr key={`${product.id}-${i}`} className="hover:bg-gray-50">
+            {i === 0 ? (
+              <>
+                <td rowSpan={maxRows} className="border border-gray-300 px-4 py-2">
+                  <div className="relative w-40 h-40 mx-auto">
+                    <Image 
+                      src={product.thumbnails[0].thumbImage} 
+                      alt={product.name} 
+                      fill 
+                      className="object-contain" 
+                    />
+                  </div>
+                </td>
+              </>
+            ) : null}
+            
+            {/* Product Name Cell - show different name for each row if available */}
+            <td className="border border-gray-300 px-4 py-2 font-medium text-center">
+              <div className="flex flex-col justify-center items-center relative">
+                {i === 0 && bestSellerIcon && (
+                  <img
+                    src={bestSellerIcon}
+                    alt="Best Seller"
+                    className="absolute -top-12 w-12 h-12"
+                  />
+                )}
+                {productNames[i] || productNames[0]}
+              </div>
+            </td>
+
+            {i === 0 ? (
+              <td rowSpan={maxRows} className="border border-gray-300 px-4 py-2 text-center">
+                {dimensions}
+              </td>
+            ) : null}
+
+            {/* Weight Cell - show different weight for each row if available */}
+            <td className="border border-gray-300 px-4 py-2 text-center">
+              {weights[i] || weights[0]}
+            </td>
+
+            {i === 0 ? (
+              <td rowSpan={maxRows} className="border border-gray-300 px-4 py-2 text-center">
+                {usage}
+              </td>
+            ) : null}
+          </tr>
+        ))}
+      </React.Fragment>
+    );
+  })}
+</tbody>
                   </table>
                 </div>
 
