@@ -88,48 +88,48 @@ const proyekData = [
     tempatProyek: 'IKN',
     gambar: '/images/Embung Kipp IKN.jpg'
   },
-  {
-    id: 7,
-    namaProduk: 'Nama Produk',
-    namaProyek: 'Nama Proyek',
-    tempatProyek: 'Tempat',
-    gambar: '/images/icon photo.png'
-  },
-  {
-    id: 8,
-    namaProduk: 'Nama Produk',
-    namaProyek: 'Nama Proyek',
-    tempatProyek: 'Tempat',
-    gambar: '/images/icon photo.png'
-  },
-  {
-    id: 9,
-    namaProduk: 'Nama Produk',
-    namaProyek: 'Nama Proyek',
-    tempatProyek: 'Tempat',
-    gambar: '/images/icon photo.png'
-  },
-  {
-    id: 10,
-    namaProduk: 'Nama Produk',
-    namaProyek: 'Nama Proyek',
-    tempatProyek: 'Tempat',
-    gambar: '/images/icon photo.png'
-  },
-  {
-    id: 11,
-    namaProduk: 'Nama Produk',
-    namaProyek: 'Nama Proyek',
-    tempatProyek: 'Tempat',
-    gambar: '/images/icon photo.png'
-  },
-  {
-    id: 12,
-    namaProduk: 'Nama Produk',
-    namaProyek: 'Nama Proyek',
-    tempatProyek: 'Tempat',
-    gambar: '/images/icon photo.png'
-  }
+  // {
+  //   id: 7,
+  //   namaProduk: 'Nama Produk',
+  //   namaProyek: 'Nama Proyek',
+  //   tempatProyek: 'Tempat',
+  //   gambar: '/images/icon photo.png'
+  // },
+  // {
+  //   id: 8,
+  //   namaProduk: 'Nama Produk',
+  //   namaProyek: 'Nama Proyek',
+  //   tempatProyek: 'Tempat',
+  //   gambar: '/images/icon photo.png'
+  // },
+  // {
+  //   id: 9,
+  //   namaProduk: 'Nama Produk',
+  //   namaProyek: 'Nama Proyek',
+  //   tempatProyek: 'Tempat',
+  //   gambar: '/images/icon photo.png'
+  // },
+  // {
+  //   id: 10,
+  //   namaProduk: 'Nama Produk',
+  //   namaProyek: 'Nama Proyek',
+  //   tempatProyek: 'Tempat',
+  //   gambar: '/images/icon photo.png'
+  // },
+  // {
+  //   id: 11,
+  //   namaProduk: 'Nama Produk',
+  //   namaProyek: 'Nama Proyek',
+  //   tempatProyek: 'Tempat',
+  //   gambar: '/images/icon photo.png'
+  // },
+  // {
+  //   id: 12,
+  //   namaProduk: 'Nama Produk',
+  //   namaProyek: 'Nama Proyek',
+  //   tempatProyek: 'Tempat',
+  //   gambar: '/images/icon photo.png'
+  // }
 ];
 
 // Video Testimonial Data

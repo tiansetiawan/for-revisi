@@ -15,128 +15,94 @@ import {
 
 
 export default function Store() {
+
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
   const [activeSubItem, setActiveSubItem] = useState(null);
   const mainProducts = ['Concrete Roof', 'Paving Block', 'Concrete Block', 'Concrete Pipe'];
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
-  const [provinces, setProvinces] = useState([]);
+   const [provinces, setProvinces] = useState([]);
   const [selectedProvince, setSelectedProvince] = useState('');
   const [selectedCity, setSelectedCity] = useState('');
-  const [selectedCityId, setSelectedCityId] = useState('');
+    const [selectedCityId, setSelectedCityId] = useState('');
   const [cities, setCities] = useState([]);
-  const [cityOptions, setCityOptions] = useState([]);
-  const [selectedCityName, setSelectedCityName] = useState('');
+    const [cityOptions, setCityOptions] = useState([]);
+    
   
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null);
+const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+  message: ''
+});
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitStatus, setSubmitStatus] = useState(null);
 
-  // City matching configuration
-  const cityMatchingConfig = {
-    'JAKARTA': ['JAKARTA TIMUR', 'JAKARTA BARAT', 'JAKARTA SELATAN', 'JAKARTA PUSAT', 'JAKARTA UTARA'],
-    'BANDUNG': ['KOTA BANDUNG'],
-    'SURABAYA': ['KOTA SURABAYA'],
-    // Add more mappings as needed
-  };
-
-  const normalizeCityName = (cityName) => {
-    // Remove 'KOTA' or 'KAB.' and trim whitespace
-    return cityName.replace(/KOTA|KAB\.?/gi, '').trim().toUpperCase();
-  };
-
-  const getCityVariations = (cityName) => {
-    const normalized = normalizeCityName(cityName);
-    const variations = new Set([normalized]);
-    
-    // Add common variations
-    if (normalized.includes('TIMUR')) variations.add('TIMUR');
-    if (normalized.includes('BARAT')) variations.add('BARAT');
-    if (normalized.includes('SELATAN')) variations.add('SELATAN');
-    if (normalized.includes('UTARA')) variations.add('UTARA');
-    if (normalized.includes('PUSAT')) variations.add('PUSAT');
-    
-    // Add configured variations
-    for (const [key, values] of Object.entries(cityMatchingConfig)) {
-      if (normalized.includes(key)) {
-        values.forEach(v => variations.add(v));
-      }
-    }
-    
-    return Array.from(variations);
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  setFormData(prev => ({
+    ...prev,
+    [name]: value
+  }));
+};
 
 const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Gagal mengirim pesan');
-      }
-
-      setSubmitStatus({ type: 'success', message: 'Pesan berhasil dikirim!' });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: ''
-      });
-
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus({ 
-        type: 'error', 
-        message: error.message || 'Terjadi kesalahan saat mengirim pesan'
-      });
-    } finally {
-      setIsSubmitting(false);
+    if (!response.ok) {
+      throw new Error(data.error || 'Gagal mengirim pesan');
     }
-  };
+
+    setSubmitStatus({ type: 'success', message: 'Pesan berhasil dikirim!' });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      message: ''
+    });
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+    setSubmitStatus({ 
+      type: 'error', 
+      message: error.message || 'Terjadi kesalahan saat mengirim pesan'
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
 
 
   useEffect(() => {
+    // Fetch daftar provinsi
     axios.get('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
       .then(res => setProvinces(res.data))
       .catch(err => console.error('Error fetching provinces:', err));
   }, []);
 
-useEffect(() => {
+  useEffect(() => {
     if (selectedProvince) {
       axios.get(`https://www.emsifa.com/api-wilayah-indonesia/api/regencies/${selectedProvince}.json`)
-        .then(res => {
-          setCityOptions(res.data);
-        })
+        .then(res => setCities(res.data))
         .catch(err => console.error('Error fetching cities:', err));
     } else {
-      setCityOptions([]);
+      setCities([]);
     }
   }, [selectedProvince]);
 
@@ -521,55 +487,50 @@ const [slopeAngle, setSlopeAngle] = useState('');
     },
   ];
 
-// const availableCities = useMemo(() => {
-//     return [...new Set(cityItems.map(item => item.city.toUpperCase()))];
-//   }, []);
+const availableCities = useMemo(() => {
+    return [...new Set(cityItems.map(item => item.city.toUpperCase()))];
+  }, []);
 
   // Filter kota yang hanya memiliki store
-  // useEffect(() => {
-  //   if (cities.length > 0) {
-  //     const filtered = cities.filter(city => 
-  //       availableCities.some(availCity => 
-  //         city.name.toUpperCase().includes(availCity) || 
-  //         availCity.includes(city.name.toUpperCase())
-  //       )
-  //     );
-  //     setCityOptions(filtered);
-  //   } else {
-  //     setCityOptions([]);
-  //   }
-  // }, [cities, availableCities]);
+  useEffect(() => {
+    if (cities.length > 0) {
+      const filtered = cities.filter(city => 
+        availableCities.some(availCity => 
+          city.name.toUpperCase().includes(availCity) || 
+          availCity.includes(city.name.toUpperCase())
+        )
+      );
+      setCityOptions(filtered);
+    } else {
+      setCityOptions([]);
+    }
+  }, [cities, availableCities]);
 
   // Fungsi untuk menangani perubahan kota
   const handleCityChange = (e) => {
     const cityId = e.target.value;
-    const selectedCityData = cityOptions.find(c => c.id === cityId);
-    
     setSelectedCityId(cityId);
-    setSelectedCityName(selectedCityData ? selectedCityData.name : '');
-    setSelectedCity('');
+    
+    const selected = cityOptions.find(c => c.id === cityId);
+    if (selected) {
+      // Cari kota yang cocok dari cityItems
+      const matchedCity = availableCities.find(availCity => 
+        selected.name.toUpperCase().includes(availCity) || 
+        availCity.includes(selected.name.toUpperCase())
+      );
+      setSelectedCity(matchedCity || '');
+    } else {
+      setSelectedCity('');
+    }
   };
 
-// Filter store berdasarkan kota yang dipilih
- const filteredStores = useMemo(() => {
-    if (!selectedCityName) return cityItems;
-    
-    const cityVariations = getCityVariations(selectedCityName);
-    
-    return cityItems.filter(item => {
-      // Check if city name matches any variation
-      const itemCityNormalized = normalizeCityName(item.city);
-      if (cityVariations.some(variation => itemCityNormalized.includes(variation))) {
-        return true;
-      }
-      
-      // Check if any store address matches any variation
-      return item.stores.some(store => {
-        const fullAddress = `${store.address} ${store.address2 || ''}`.toUpperCase();
-        return cityVariations.some(variation => fullAddress.includes(variation));
-      });
-    });
-  }, [selectedCityName, cityItems]);
+  // Filter store berdasarkan kota yang dipilih
+const filteredStores = useMemo(() => {
+  if (!selectedCity) return cityItems;
+  return cityItems.filter(item => 
+    item.city.toUpperCase() === selectedCity.toUpperCase()
+  );
+}, [selectedCity, cityItems]);
 
   // Bagi ke 3 kolom secara vertikal
   const itemsPerColumn = Math.ceil(filteredStores.length / 3);
@@ -579,10 +540,11 @@ const [slopeAngle, setSlopeAngle] = useState('');
     filteredStores.slice(itemsPerColumn * 2),
   ];
 
-  
+
+
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
-      {/* Hero Section */}
+      {/* Hero Section - Responsive di semua device */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/kontak.jpg"
@@ -599,39 +561,43 @@ const [slopeAngle, setSlopeAngle] = useState('');
             objectFit: 'cover'
           }}
         />
+        <div className="absolute inset-0 flex items-end pb-6 sm:pb-8 md:pb-12 lg:items-center lg:justify-center lg:pb-0 px-4 sm:px-6">
+        </div>
       </div>
 
   {/* Header Section */}
 
-      <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1.5rem] font-light tracking-wide">
-          <Link href="/kontak/store" className="text-[#2D5DA6] font-bold">Store</Link>
-          <Link href="/kontak/kiosk" className="text-[#333] hover:text-[#2D5DA6]">Kiosk</Link>
-        </nav>
-      </div> 
+<div className="bg-[#F2F2F2] py-4">
+  <nav className="flex justify-center space-x-10 text-[1.5rem] font-light tracking-wide">
+    <Link href="/kontak/store" className="text-[#2D5DA6] font-bold">Store</Link>
+    <Link href="/kontak/kiosk" className="text-[#333] hover:text-[#2D5DA6]">Kiosk</Link>
+  </nav>
+</div> 
 
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base border-b border-[#CCCCCC]">
+   <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base border-b border-[#CCCCCC]">
         {/* Header Section */}
         <div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 max-w-6xl mx-auto px-4 md:px-0">
-          <div className="flex items-center w-full md:w-1/2 gap-10">
-            <div className="leading-snug">
-              <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
-                Temukan<br />Store Kami<br />di Kota Anda
-              </h1>
-            </div>
-            <div className="flex flex-col items-center">
-              <Image
-                src="/images/STORE.png"
-                alt="Store Icon"
-                width={140}
-                height={140}
-                className="mb-1"
-              />
-            </div>
-          </div>
+  {/* Kiri: Judul */}
+  <div className="flex items-center w-full md:w-1/2 gap-10">
+    <div className="leading-snug">
+            <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
+              Temukan<br />Store Kami<br />di Kota Anda
+            </h1>
+    </div>
+  <div className="flex flex-col items-center">
+    <Image
+      src="/images/STORE.png" // TANPA /public
+      alt="Store Icon"
+      width={140} // Bisa disesuaikan
+      height={140}
+      className="mb-1"
+    />
+</div>
+
+  </div>
 
         {/* Kanan: Logo + Dropdowns */}
-          <div className="w-full md:w-1/2">
+                 <div className="w-full md:w-1/2">
             <p className="text-gray-600 text-sm mb-4">
               Pilih wilayah untuk melihat informasi STORE dan KIOSK kami terdekat
             </p>
@@ -644,7 +610,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
                   onChange={(e) => {
                     setSelectedProvince(e.target.value);
                     setSelectedCityId('');
-                    setSelectedCityName('');
+                    setSelectedCity('');
                   }}
                 >
                   <option value="">Pilih Propinsi</option>
@@ -653,47 +619,48 @@ const [slopeAngle, setSlopeAngle] = useState('');
                   ))}
                 </select>
               </div>
-              <div className="flex flex-col w-full sm:w-1/2">
-                <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
-                <select 
-                  className="border border-gray-300 rounded px-3 py-2"
-                  value={selectedCityId}
-                  onChange={handleCityChange}
-                  disabled={!selectedProvince}
-                >
-                  <option value="">Pilih Kota</option>
-                  {cityOptions.map((city) => (
-                    <option key={city.id} value={city.id}>{city.name}</option>
-                  ))}
-                </select>
-              </div>
+<div className="flex flex-col w-full sm:w-1/2">
+  <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
+  <select 
+    className="border border-gray-300 rounded px-3 py-2"
+    value={selectedCityId}
+    onChange={handleCityChange}
+    disabled={!selectedProvince}
+  >
+    <option value="">Pilih Kota</option>
+    {cityOptions.map((city) => (
+      <option key={city.id} value={city.id}>{city.name}</option>
+    ))}
+  </select>
+</div>
             </div>
           </div>
         </div>
 
-        {/* Grid Store */}
+  {/* Grid Store */}
         <div className="min-h-screen p-10">
-          {selectedCityName && filteredStores.length === 0 ? (
-            <div className="text-center py-10 col-span-3">
-              <div className="inline-block bg-gray-100 px-6 py-4 rounded-lg">
-                <p className="text-gray-600 font-medium">
-                  Maaf untuk saat ini STORE kami belum tersedia di {selectedCityName}
-                </p>
-                <button 
-                  onClick={() => {
-                    setSelectedCityId('');
-                    setSelectedCityName('');
-                    setSelectedProvince('');
-                  }}
-                  className="mt-3 text-blue-600 hover:underline text-sm"
-                >
-                  Lihat semua store
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {columns.map((column, colIndex) => (
+{filteredStores.length === 0 && selectedCity ? (
+  <div className="text-center py-10 col-span-3">
+    <div className="inline-block bg-gray-100 px-6 py-4 rounded-lg">
+      <p className="text-gray-600 font-medium">
+        Maaf untuk saat ini STORE kami belum tersedia di {selectedCity}
+      </p>
+      <button 
+        onClick={() => {
+          setSelectedCityId('');
+          setSelectedCity('');
+          setSelectedProvince('');
+        }}
+        className="mt-3 text-blue-600 hover:underline text-sm"
+      >
+        Lihat semua store
+      </button>
+    </div>
+  </div>
+) : (
+  // Tampilkan store yang tersedia
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    {columns.map((column, colIndex) => (
                 <div key={colIndex} className="space-y-6">
                   {column.map((cityItem, idx) => (
                     <div key={idx}>
@@ -720,7 +687,27 @@ const [slopeAngle, setSlopeAngle] = useState('');
             </div>
           )}
         </div>
-      </section>
+
+{/* Pagination */}
+        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+            <button
+    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+  >
+    Sebelumnya
+  </button>
+          <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
+            1
+          </button>
+          <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
+            2
+          </button>
+                      <button
+    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+  >
+    Berikutnya
+  </button>
+        </div> */}
+</section>
    {/* Main Content */}
     <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
             <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">Kontak Kami</h2>
