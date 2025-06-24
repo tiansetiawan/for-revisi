@@ -1,4 +1,4 @@
-'use client';;
+'use client';
 import Image from 'next/image';
 import Link from "next/link";
 import React, { useState, useRef, useEffect, useMemo } from 'react'; 
@@ -14,7 +14,7 @@ import {
 } from 'react-icons/fa';
 
 
-export default function Kiosk() {
+export default function Store() {
 
   const [showSubmenu, setShowSubmenu] = useState(true);
   const [activeItem, setActiveItem] = useState('Concrete Roof');
@@ -23,9 +23,68 @@ export default function Kiosk() {
   const subProducts = ['Neo', 'Victoria', 'Dust Stone', 'Excelent', 'Majestic', 'Crown', 'New Royal'];
    const [provinces, setProvinces] = useState([]);
   const [selectedProvince, setSelectedProvince] = useState('');
-    const [selectedCity, setSelectedCity] = useState('');
-      const [selectedCityId, setSelectedCityId] = useState('');
+  const [selectedCity, setSelectedCity] = useState('');
+    const [selectedCityId, setSelectedCityId] = useState('');
   const [cities, setCities] = useState([]);
+    const [cityOptions, setCityOptions] = useState([]);
+  
+const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+  message: ''
+});
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [submitStatus, setSubmitStatus] = useState(null);
+
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  setFormData(prev => ({
+    ...prev,
+    [name]: value
+  }));
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Gagal mengirim pesan');
+    }
+
+    setSubmitStatus({ type: 'success', message: 'Pesan berhasil dikirim!' });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      message: ''
+    });
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+    setSubmitStatus({ 
+      type: 'error', 
+      message: error.message || 'Terjadi kesalahan saat mengirim pesan'
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   useEffect(() => {
     // Fetch daftar provinsi
@@ -547,84 +606,144 @@ const [slopeAngle, setSlopeAngle] = useState('');
      </button>
            </div> */}
    </section>
- <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
-            <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">Kontak Kami</h2>
-      <p className="text-sm text-justify">
-        Kami selalu berusaha untuk memberikan pelayanan yang terbaik, mohon kirimkan informasi dan saran Anda kepada Kami
-        dengan mengisi formulir dibawah ini.
-      </p>
-
-      <div className="bg-gray-100 p-6 sm:p-10 rounded-lg flex flex-col sm:flex-row gap-10 mt-10">
-{/* Kontak Info */}
-<div className="w-full sm:w-1/3 text-center mx-auto flex flex-col items-center justify-center space-y-10">
-  <div>
-    <FaPhone className="text-5xl mx-auto mb-2" />
-    <h3 className="font-semibold text-lg">Phone</h3>
-    <a href="tel:+6251585652262" className="text-sm hover:underline">
-      +62xxxxxxxxx
-    </a>
-    <br />
-    <a href="tel:+6251585652262" className="text-sm hover:underline">
-      +62xxxxxxxxx
-    </a>
-  </div>
-  <div>
-    <FaEnvelope className="text-5xl mx-auto mb-2" />
-    <h3 className="font-semibold text-lg">Email</h3>
-    <a href="mailto:info@cisangkan.com" className="text-sm hover:underline">
-      Email : info@cisangkan.com
-    </a>
-  </div>
-</div>
-
-        {/* Form */}
-        <form className="flex-1 space-y-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="block mb-1 text-gray-700">Nama</label>
-              <input type="text" placeholder="Nama Anda" className="w-full border rounded px-4 py-2 bg-white" />
-            </div>
-            <div>
-              <label className="block mb-1 text-gray-700">Email</label>
-              <input type="email" placeholder="Email Anda" className="w-full border rounded px-4 py-2 bg-white" />
-            </div>
-          </div>
-          <div>
-            <label className="block mb-1 text-gray-700">Telepon</label>
-            <input type="text" placeholder="Telepon Anda" className="w-full border rounded px-4 py-2 bg-white" />
-          </div>
-          <div>
-            <label className="block mb-1 text-gray-700">Alamat</label>
-            <textarea placeholder="Alamat Anda" className="w-full border rounded px-4 py-2 bg-white" rows="2"></textarea>
-          </div>
-          <div>
-            <label className="block mb-1 text-gray-700">Pesan</label>
-            <textarea placeholder="Pesan Anda" className="w-full border rounded px-4 py-2 bg-white" rows="3"></textarea>
-          </div>
-
-          <div className="flex">
-            <button type="submit" className="bg-[#0B203F] text-white px-6 py-2 rounded hover:bg-blue-800 transition">
-              Kirim Pesan
-            </button>
-{/* <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer">
-  <FaInstagram className="text-pink-500 cursor-pointer text-md hover:scale-110 transition-transform" />
-</a>
-<a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer">
-  <FaFacebookF className="text-blue-600 cursor-pointer text-md hover:scale-110 transition-transform" />
-</a>
-<a href="https://www.tiktok.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer">
-  <FaTiktok className="text-black cursor-pointer text-md hover:scale-110 transition-transform" />
-</a>
-<a href="https://www.youtube.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer">
-  <FaYoutube className="text-red-600 cursor-pointer text-xl hover:scale-110 transition-transform" />
-</a>
-<a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
-  <FaWhatsapp className="text-green-500 cursor-pointer text-xl hover:scale-110 transition-transform" />
-</a> */}
-          </div>
-        </form>
-      </div>
-    </section>
-    </div>
-  );
-}
+ {/* Main Content */}
+     <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
+             <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">Kontak Kami</h2>
+       <p className="text-sm text-justify">
+         Kami selalu berusaha untuk memberikan pelayanan yang terbaik, mohon kirimkan informasi dan saran Anda kepada Kami
+         dengan mengisi formulir dibawah ini.
+       </p>
+ 
+       <div className="bg-gray-100 p-6 sm:p-10 rounded-lg flex flex-col sm:flex-row gap-10 mt-10">
+ {/* Kontak Info */}
+ <div className="w-full sm:w-1/3 text-center mx-auto flex flex-col items-center justify-center space-y-10">
+   <div>
+     <FaPhone className="text-5xl mx-auto mb-2" />
+     <h3 className="font-semibold text-lg">Phone</h3>
+     <a href="tel:+6251585652262" className="text-sm hover:underline">
+       +62xxxxxxxxx
+     </a>
+     <br />
+     <a href="tel:+6251585652262" className="text-sm hover:underline">
+       +62xxxxxxxxx
+     </a>
+   </div>
+   <div>
+     <FaEnvelope className="text-5xl mx-auto mb-2" />
+     <h3 className="font-semibold text-lg">Email</h3>
+     <a href="mailto:info@cisangkan.com" className="text-sm hover:underline">
+       Email : info@cisangkan.com
+     </a>
+   </div>
+ </div>
+ 
+         {/* Form */}
+         <form onSubmit={handleSubmit} className="flex-1 space-y-4">
+   {submitStatus && (
+     <div className={`p-3 rounded ${
+       submitStatus.type === 'success' 
+         ? 'bg-green-100 text-green-800' 
+         : 'bg-red-100 text-red-800'
+     }`}>
+       {submitStatus.message}
+     </div>
+   )}
+ 
+   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+     <div>
+       <label className="block mb-1 text-gray-700">Nama</label>
+       <input 
+         type="text" 
+         name="name"
+         value={formData.name}
+         onChange={handleInputChange}
+         placeholder="Nama Anda" 
+         className="w-full border rounded px-4 py-2 bg-white" 
+         required
+       />
+     </div>
+     <div>
+       <label className="block mb-1 text-gray-700">Email</label>
+       <input 
+         type="email" 
+         name="email"
+         value={formData.email}
+         onChange={handleInputChange}
+         placeholder="Email Anda" 
+         className="w-full border rounded px-4 py-2 bg-white" 
+         required
+       />
+     </div>
+   </div>
+   
+   <div>
+     <label className="block mb-1 text-gray-700">Telepon</label>
+     <input 
+       type="tel" 
+       name="phone"
+       value={formData.phone}
+       onChange={handleInputChange}
+       placeholder="Telepon Anda" 
+       className="w-full border rounded px-4 py-2 bg-white" 
+     />
+   </div>
+   
+   <div>
+     <label className="block mb-1 text-gray-700">Alamat</label>
+     <textarea 
+       name="address"
+       value={formData.address}
+       onChange={handleInputChange}
+       placeholder="Alamat Anda" 
+       className="w-full border rounded px-4 py-2 bg-white" 
+       rows="2"
+     ></textarea>
+   </div>
+   
+   <div>
+     <label className="block mb-1 text-gray-700">Pesan</label>
+     <textarea 
+       name="message"
+       value={formData.message}
+       onChange={handleInputChange}
+       placeholder="Pesan Anda" 
+       className="w-full border rounded px-4 py-2 bg-white" 
+       rows="3"
+       required
+     ></textarea>
+   </div>
+ 
+   <div className="flex items-center gap-4">
+     <button 
+       type="submit" 
+       className="bg-[#0B203F] text-white px-6 py-2 rounded hover:bg-blue-800 transition disabled:opacity-50"
+       disabled={isSubmitting}
+     >
+       {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
+     </button>
+     
+     {/* <div className="flex gap-3">
+       <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer">
+         <FaInstagram className="text-pink-500 cursor-pointer text-xl hover:scale-110 transition-transform" />
+       </a>
+       <a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer">
+         <FaFacebookF className="text-blue-600 cursor-pointer text-xl hover:scale-110 transition-transform" />
+       </a>
+       <a href="https://www.tiktok.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer">
+         <FaTiktok className="text-black cursor-pointer text-xl hover:scale-110 transition-transform" />
+       </a>
+       <a href="https://www.youtube.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer">
+         <FaYoutube className="text-red-600 cursor-pointer text-xl hover:scale-110 transition-transform" />
+       </a>
+       <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer">
+         <FaWhatsapp className="text-green-500 cursor-pointer text-xl hover:scale-110 transition-transform" />
+       </a>
+     </div> */}
+   </div>
+ </form>
+       </div>
+     </section>
+ 
+     </div>
+   );
+ }

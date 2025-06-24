@@ -52,25 +52,34 @@ const handleSubmit = async (e) => {
   setSubmitStatus(null);
 
   try {
-    const response = await axios.post('/api/contact', formData);
-    
-    if (response.data.success) {
-      setSubmitStatus({ type: 'success', message: 'Pesan berhasil dikirim!' });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: ''
-      });
-    } else {
-      setSubmitStatus({ type: 'error', message: response.data.error || 'Gagal mengirim pesan' });
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Gagal mengirim pesan');
     }
+
+    setSubmitStatus({ type: 'success', message: 'Pesan berhasil dikirim!' });
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      message: ''
+    });
+
   } catch (error) {
     console.error('Form submission error:', error);
     setSubmitStatus({ 
       type: 'error', 
-      message: error.response?.data?.error || 'Terjadi kesalahan saat mengirim pesan'
+      message: error.message || 'Terjadi kesalahan saat mengirim pesan'
     });
   } finally {
     setIsSubmitting(false);
