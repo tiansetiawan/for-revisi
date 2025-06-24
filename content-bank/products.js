@@ -6,8 +6,8 @@ export const productsContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Neo/neo1.png',
-        largeImage: '/images/Concrete Roof/Neo/neo1.png',
+        thumbImage: '/images/Concrete Roof/Neo/neo 2.png',
+        largeImage: '/images/Concrete Roof/Neo/neo 2.png',
         color: 'Hitam Solid'
       }
     ],

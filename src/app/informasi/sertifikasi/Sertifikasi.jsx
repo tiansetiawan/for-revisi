@@ -159,14 +159,14 @@ const handleDownload = async (e) => {
 
     // 2. Process file download
     const fileMap = {
-      'SNI': '/downloads/Flyer Roster R-21.pdf',
+      'SNI': '/downloads/SNI-0096-2007-GENTENG BETON.pdf',
       'TKDN': '/downloads/tkdn-certificate.pdf',
       'IAPMO': '/downloads/iapm-certificate.pdf',
       'KAN': '/downloads/kan-certificate.pdf',
       'GREEN_LABEL': '/downloads/green-label-certificate.pdf'
     };
 
-    const fileUrl = fileMap[currentDownloadItem] || '/downloads/Flyer Roster R-21.pdf';
+    const fileUrl = fileMap[currentDownloadItem] || '/downloads/SNI-0096-2007-GENTENG BETON.pdf';
     const fileName = fileUrl.split('/').pop();
 
     // Method 1: Using window.open (works best in most cases)

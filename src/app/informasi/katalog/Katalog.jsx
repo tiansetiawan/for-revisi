@@ -15,21 +15,21 @@ export default function Katalog() {
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
   const modalRef = useRef(null);
+  const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
 
   // Data katalog
   const katalogList = [
-    { id: 1, nama: "Katalog Concrete Roof", file: "/images/Katalog cr.png" },
-    { id: 2, nama: "Katalog Paving Block", file: "/images/Katalog pb.png" },
-    { id: 3, nama: "Katalog Concrete Block", file: "/images/Katalog cb.png" },
-    { id: 4, nama: "Katalog Concrete Pipe", file: "/images/Katalog cp.png" },
+    { id: 1, nama: "Katalog Concrete Roof", image: "/images/Katalog cr.png", file: "/downloads/katalog/Katalog Concrete Roof Baru.pdf" },
+    { id: 2, nama: "Katalog Paving Block", image: "/images/Katalog pb.png" , file: "/downloads/katalog/Katalog Paving Block Digital.pdf" },
+    { id: 3, nama: "Katalog Concrete Block", image: "/images/Katalog cb.png" , file: "/downloads/katalog/Katalog Concrete Block Digital.pdf" },
+    { id: 4, nama: "Katalog Concrete Pipe", image: "/images/Katalog cp.png", file: "/downloads/katalog/Katalog Concrete Pipe Baru.pdf" },
   ];
 
   const brosurList = [
-    { id: 1, nama: "Flyer Roster R-21", file: "/images/Flyer Roster R-21.png" },
-    { id: 2, nama: "Flyer Sandstein (Gedong Songo)", file: "/images/Flyer Sandstein (Gedong Songo).png" },
-    { id: 3, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", file: "/images/Flyer Sandstein (Grand Outlet, Karawang ALT 2).png" },
-    { id: 4, nama: "Flyer Truepave", file: "/images/Flyer Truepave.png" },
-    { id: 5, nama: "Flyer Victoria & Dual Slate", file: "/images/Flyer Victoria & Dual Slate.png" },
+    { id: 1, nama: "Flyer Roster R-21", image: "/images/Flyer Roster R-21.png", file: "/downloads/brosur/Flyer Roster R-21.pdf" },
+    { id: 2, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
+    { id: 3, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
+    { id: 4, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer Victoria & Dual Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
   ];
 
 
@@ -50,18 +50,59 @@ export default function Katalog() {
     };
   }, [showDownloadPanel]);
 
-  const handleDownload = (e) => {
-    e.preventDefault();
-    if (!name || !email) {
-      alert('Harap isi nama dan email terlebih dahulu');
-      return;
-    }
-    console.log(`Download katalog oleh ${name} (${email}) (${telpon})`);
+const handleDownload = async (e) => {
+  e.preventDefault();
+  
+  if (!name || !email) {
+    alert('Harap isi nama dan email terlebih dahulu');
+    return;
+  }
+
+  try {
+    // 1. Simpan data ke server
+    const saveResponse = await fetch('/api/downloads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        document: currentDownloadItem.nama,
+        name,
+        email,
+        phone: telpon
+      })
+    });
+
+    if (!saveResponse.ok) throw new Error('Gagal menyimpan data');
+
+    // 2. Download file
+    const pdfUrl = currentDownloadItem.file;
+    
+    // Method 1: Buka di tab baru
+    window.open(pdfUrl, '_blank');
+    
+    // Method 2: Force download
+    // const a = document.createElement('a');
+    // a.href = pdfUrl;
+    // a.download = pdfUrl.split('/').pop();
+    // document.body.appendChild(a);
+    // a.click();
+    // document.body.removeChild(a);
+
+    // 3. Reset form
     setName('');
     setEmail('');
     setTelpon('');
     setShowDownloadPanel(false);
-  };
+
+  } catch (error) {
+    console.error('Error:', error);
+    alert(`Error: ${error.message}`);
+  }
+};
+
+const openDownloadPanel = (item) => {
+  setCurrentDownloadItem(item);
+  setShowDownloadPanel(true);
+};
 
   // Variants untuk animasi
   const backdropVariants = {
@@ -177,7 +218,7 @@ export default function Katalog() {
                 <div className="flex flex-col items-center text-center space-y-2">
                   <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
                     <Image
-                      src={item.file}
+                      src={item.image}
                       alt={item.nama}
                       width={300}
                       height={419}
@@ -185,12 +226,12 @@ export default function Katalog() {
                     />
                   </div>
                   <p className="text-sm font-semibold">{item.nama}</p>
-                  <button 
-                    onClick={() => setShowDownloadPanel(true)}
-                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
-                  >
-                    Unduh &gt;&gt;
-                  </button>
+<button 
+  onClick={() => openDownloadPanel(item)}
+  className="text-sm text-blue-700 font-medium hover:underline mb-5"
+>
+  Unduh &gt;&gt;
+</button>
                 </div>
               </div>
             ))}
@@ -229,7 +270,7 @@ export default function Katalog() {
                 <div className="flex flex-col items-center text-center space-y-2">
                   <div className="w-70 h-80 aspect-[3/4] overflow-hidden rounded shadow-md transition-transform duration-300 hover:scale-105 mb-8">
                     <Image
-                      src={item.file}
+                      src={item.image}
                       alt={item.nama}
                       width={300}
                       height={419}
@@ -237,12 +278,12 @@ export default function Katalog() {
                     />
                   </div>
                   <p className="text-sm font-semibold">{item.nama}</p>
-                  <button 
-                    onClick={() => setShowDownloadPanel(true)}
-                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
-                  >
-                    Unduh &gt;&gt;
-                  </button>
+<button 
+  onClick={() => openDownloadPanel(item)}
+  className="text-sm text-blue-700 font-medium hover:underline mb-5"
+>
+  Unduh &gt;&gt;
+</button>
                 </div>
               </div>
             ))}
