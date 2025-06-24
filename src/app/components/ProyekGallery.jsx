@@ -19,8 +19,9 @@ export default function ProyekGallery({ proyekList }) {
             />
           </div>
           <div className="bg-white px-4 py-3 text-left">
-            <p className="text-sm font-semibold text-black">{item.nama}</p>
-            <p className="text-sm text-blue-700 font-medium">{item.tempat}</p>
+            <p className="text-sm font-semibold text-black mb-2">{item.nama}</p>
+            <p className="text-xs text-blue-700 font-medium">{item.lokasi}</p>
+            <p className="text-xs text-blue-700 font-medium">{item.tempat}</p>
           </div>
         </Link>
       ))}
