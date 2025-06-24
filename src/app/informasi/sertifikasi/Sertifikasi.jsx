@@ -137,32 +137,27 @@ const handleDownload = async (e) => {
   }
 
   try {
-    // 1. Simpan data ke server (jika menggunakan API)
-    let saveSuccess = true;
+    // 1. Save data to server
+    const saveResponse = await fetch('/api/downloads', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        document: currentDownloadItem,
+        name,
+        email,
+        phone: telpon
+      })
+    });
+
+    const saveResult = await saveResponse.json();
     
-    try {
-      const response = await fetch('/api/downloads', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          document: currentDownloadItem,
-          name,
-          email,
-          phone: telpon
-        })
-      });
-      
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-    } catch (saveError) {
-      console.warn('Gagal menyimpan data, melanjutkan download...', saveError);
-      saveSuccess = false;
+    if (!saveResponse.ok) {
+      throw new Error(saveResult.error || 'Gagal menyimpan data');
     }
 
-    // 2. Proses download file
+    // 2. Process file download
     const fileMap = {
       'SNI': '/downloads/Flyer Roster R-21.pdf',
       'TKDN': '/downloads/tkdn-certificate.pdf',
@@ -174,13 +169,10 @@ const handleDownload = async (e) => {
     const fileUrl = fileMap[currentDownloadItem] || '/downloads/Flyer Roster R-21.pdf';
     const fileName = fileUrl.split('/').pop();
 
-    // Debugging
-    console.log('Memulai download:', fileUrl);
-
-    // Method 1: Menggunakan window.open
+    // Method 1: Using window.open (works best in most cases)
     window.open(fileUrl, '_blank');
-    
-    // Method Alternatif (jika Method 1 gagal)
+
+    // Method 2: Alternative download method
     // const link = document.createElement('a');
     // link.href = fileUrl;
     // link.download = fileName;
@@ -194,14 +186,10 @@ const handleDownload = async (e) => {
     setTelpon('');
     setShowDownloadPanel(false);
 
-    console.log(`Proses download ${currentDownloadItem} selesai`);
-
-    if (!saveSuccess) {
-      alert('Download berhasil, tetapi data tidak tersimpan di server');
-    }
+    console.log('Download dan penyimpanan data berhasil');
 
   } catch (error) {
-    console.error('Error dalam proses download:', error);
+    console.error('Error:', error);
     alert(`Error: ${error.message}`);
   }
 };
