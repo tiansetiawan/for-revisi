@@ -6,8 +6,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Dual Slate/Dual Slate.png',
-        largeImage: '/images/Concrete Roof/Dual Slate/Dual Slate.png',
+        thumbImage: '/images/Concrete Roof/Dual Slate/dualslate 1.png',
+        largeImage: '/images/Concrete Roof/Dual Slate/dualslate 1.png',
         color: 'Hitam Solid'
       }
     ],
@@ -47,8 +47,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Floral/Floral.png',
-        largeImage: '/images/Concrete Roof/Floral/Floral.png',
+        thumbImage: '/images/Concrete Roof/Floral/floral 1.png',
+        largeImage: '/images/Concrete Roof/Floral/floral 1.png',
         color: 'Hitam Solid'
       }
     ],
@@ -85,8 +85,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/New Royal/newroyal.png',
-        largeImage: '/images/Concrete Roof/New Royal/newroyal.png',
+        thumbImage: '/images/Concrete Roof/New Royal/new royal 1.png',
+        largeImage: '/images/Concrete Roof/New Royal/new royal 1.png',
         color: 'Hitam Solid'
       }
     ],
@@ -128,8 +128,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Oriental/Oriental.png',
-        largeImage: '/images/Concrete Roof/Oriental/Oriental.png',
+        thumbImage: '/images/Concrete Roof/Oriental/oriental 1.png',
+        largeImage: '/images/Concrete Roof/Oriental/oriental 1.png',
         color: 'Hitam Solid'
       }
     ],
@@ -172,8 +172,8 @@ export const productsCrContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Majestic/Majestic.png',
-        largeImage: '/images/Concrete Roof/Majestic/Majestic.png',
+        thumbImage: '/images/Concrete Roof/Majestic/majestic 1.png',
+        largeImage: '/images/Concrete Roof/Majestic/majestic 1.png',
         color: 'Hitam Solid'
       }
     ],

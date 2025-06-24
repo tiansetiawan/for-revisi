@@ -107,7 +107,7 @@ const getMediaSource = () => {
       case "Utility":
         return {
           type: "image",
-          src: "/images/banner ciswell.png",
+          src: "/images/banner concrete pipe.jpg",
         };
       default:
         return {

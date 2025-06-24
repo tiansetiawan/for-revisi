@@ -42,8 +42,8 @@ export const productsContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Dual Slate/Dual Slate.png',
-        largeImage: '/images/Concrete Roof/Dual Slate/Dual Slate.png',
+        thumbImage: '/images/Concrete Roof/Dual Slate/dualslate 1.pn',
+        largeImage: '/images/Concrete Roof/Dual Slate/dualslate 1.pn',
         color: 'Hitam Solid'
       }
     ],
@@ -81,8 +81,8 @@ export const productsContent = {
     thumbnails: [
       {
         id: 1,
-        thumbImage: '/images/Concrete Roof/Floral/Floral.jpg',
-        largeImage: '/images/Concrete Roof/Floral/Floral.jpg',
+        thumbImage: '/images/Concrete Roof/Floral/floral 1.png',
+        largeImage: '/images/Concrete Roof/Floral/floral 1.png',
         color: 'Hitam Solid'
       }
     ],

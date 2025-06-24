@@ -42,16 +42,16 @@ export const ConcreteRoofContent = () => (
 );
 
 export const concreteRoofProducts = [
-  { name: 'Neo Solar System', image: '/images/Concrete Roof/Neo/neo1.png'},
-  { name: 'Dual Slate', image: '/images/Concrete Roof/Dual Slate/Dual Slate.png' },
-  { name: 'Floral', image: '/images/Concrete Roof/Floral/Floral.png' }, 
+  { name: 'Neo Solar System', image: '/images/Concrete Roof/Neo/neo 2.png'},
+  { name: 'Dual Slate', image: '/images/Concrete Roof/Dual Slate/dualslate 1.png' },
+  { name: 'Floral', image: '/images/Concrete Roof/Floral/floral 1.png' }, 
   { name: 'Victoria Onyx', image: '/images/Concrete Roof/Victoria Series/onyx1.png' }, 
   { name: 'Victoria Multiline', image: '/images/Concrete Roof/Victoria Series/multilines1.png' },
   { name: 'Victoria Slate', image: '/images/Concrete Roof/Victoria Series/slate1.png' },
   { name: 'Victoria Pine', image: '/images/Concrete Roof/Victoria Series/pine1.png' },
   { name: 'Victoria Classic', image: '/images/Concrete Roof/Victoria Series/classic1.png' },
-  { name: 'New Royal', image: '/images/Concrete Roof/New Royal/newroyal.png' }, 
-  { name: 'Oriental', image: '/images/Concrete Roof/Oriental/Oriental.png' },
-  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/Majestic.png' },
+  { name: 'New Royal', image: '/images/Concrete Roof/New Royal/new royal 1.png' }, 
+  { name: 'Oriental', image: '/images/Concrete Roof/Oriental/oriental 1.png' },
+  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/majestic 1.png' },
   { name: '', image: '' },
 ];
