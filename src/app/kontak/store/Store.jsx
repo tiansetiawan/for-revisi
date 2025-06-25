@@ -46,11 +46,6 @@ export default function Store() {
     // Add more mappings as needed
   };
 
-  const normalizeCityName = (cityName) => {
-    // Remove 'KOTA' or 'KAB.' and trim whitespace
-    return cityName.replace(/KOTA|KAB\.?/gi, '').trim().toUpperCase();
-  };
-
   const getCityVariations = (cityName) => {
     const normalized = normalizeCityName(cityName);
     const variations = new Set([normalized]);
@@ -550,23 +545,37 @@ const [slopeAngle, setSlopeAngle] = useState('');
     setSelectedCity('');
   };
 
-// Filter store berdasarkan kota yang dipilih
- const filteredStores = useMemo(() => {
+  const normalizeCityName = (cityName) => {
+    return cityName.replace(/KOTA|KAB\.?/gi, '').trim().toLowerCase();
+  };
+
+  const getStrictCityKeywords = (cityName) => {
+    const normalized = normalizeCityName(cityName);
+    
+    // Special handling for Jakarta areas
+    if (normalized.includes('jakarta')) {
+      return [normalized]; // Use the full phrase like "jakarta selatan"
+    }
+    return normalized.split(' ');
+  };
+
+  const filteredStores = useMemo(() => {
     if (!selectedCityName) return cityItems;
     
-    const cityVariations = getCityVariations(selectedCityName);
+    const searchKeywords = getStrictCityKeywords(selectedCityName);
     
     return cityItems.filter(item => {
-      // Check if city name matches any variation
-      const itemCityNormalized = normalizeCityName(item.city);
-      if (cityVariations.some(variation => itemCityNormalized.includes(variation))) {
+      const itemCity = normalizeCityName(item.city);
+      
+      // 1. Exact city name match
+      if (searchKeywords.some(keyword => itemCity === keyword)) {
         return true;
       }
       
-      // Check if any store address matches any variation
+      // 2. Address contains ALL keywords in order
       return item.stores.some(store => {
-        const fullAddress = `${store.address} ${store.address2 || ''}`.toUpperCase();
-        return cityVariations.some(variation => fullAddress.includes(variation));
+        const fullAddress = `${store.address} ${store.address2 || ''}`.toLowerCase();
+        return searchKeywords.every(keyword => fullAddress.includes(keyword));
       });
     });
   }, [selectedCityName, cityItems]);
