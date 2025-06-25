@@ -19,14 +19,14 @@ const inovasiList = [
     deskripsi: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun perjalanannya membangun Indonesia melalui inovasi dan kualitas di industri beton pracetak. Dengan mengusung semangat “Bangga Berkarya, Bangga Indonesia”, perusahaan ini menegaskan kembali komitmennya sebagai bagian dari kekuatan pembangunan nasional.",
     gambar: "/images/ultah50.jpg",
   },
-  {
-    id: 3,
-    judul: "CIS Flashing: Solusi Flashing Modern, Anti Bocor, dan Tanpa Semen untuk Atap Rumah Anda",
-        tanggal: "16 Juni 2025",
-  url: "/blog/artikel/detail-c",
-    deskripsi: "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.",
-    gambar: "/images/cisflashing.jpg",
-  },
+  // {
+  //   id: 3,
+  //   judul: "CIS Flashing: Solusi Flashing Modern, Anti Bocor, dan Tanpa Semen untuk Atap Rumah Anda",
+  //       tanggal: "16 Juni 2025",
+  // url: "/blog/artikel/detail-c",
+  //   deskripsi: "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.",
+  //   gambar: "/images/cisflashing.jpg",
+  // },
 ];
 
 export default function Artikel() {

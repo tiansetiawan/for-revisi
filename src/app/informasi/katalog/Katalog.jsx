@@ -30,6 +30,7 @@ export default function Katalog() {
     { id: 2, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
     { id: 3, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
     { id: 4, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer Victoria & Dual Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
+    { id: 5, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
   ];
 
 

@@ -6,17 +6,19 @@ const inovasiList = [
   {
     id: 1,
     judul: "Genteng Neo Solar: Inovasi Atap Beton Flat Premium dari PT Cisangkan",
+    url: "/perusahaan/inovasi/detail",
     deskripsi:
       "Dalam era arsitektur modern dan berkelanjutan, kebutuhan akan produk bangunan yang tidak hanya fungsional namun juga estetis semakin meningkat. PT Cisangkan, sebagai pionir produsen Genteng Beton di Indonesia, memperkenalkan Genteng Neo, sebuah inovasi genteng beton flat premium yang dirancang untuk masa depan.",
     gambar: "/images/gentengneo.jpg",
   },
-  // {
-  //   id: 2,
-  //   judul: "Lorem ipsum",
-  //   deskripsi:
-  //     "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
-  //   gambar: "/images/inovasi2.jpg",
-  // },
+  {
+    id: 2,
+    judul: "CIS Flashing: Solusi Flashing Modern, Anti Bocor, dan Tanpa Semen untuk Atap Rumah Anda",
+    url: "/perusahaan/inovasi/detail-b",
+    deskripsi:
+      "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.",
+    gambar: "/images/cisflashing.jpg",
+  },
   // {
   //   id: 3,
   //   judul: "Lorem ipsum",
@@ -161,12 +163,12 @@ export default function Inovasi() {
             <div className="flex-1">
               <h3 className="text-lg font-normal mb-2">{item.judul}</h3>
               <p className="text-sm text-justify mb-4">{item.deskripsi}</p>
-              <a
-                href="/perusahaan/inovasi/detail"
+              <Link
+                href={item.url}
                 className="text-sm text-blue-700 font-medium hover:underline"
               >
                 Baca lebih banyak &gt;&gt;
-              </a>
+              </Link>
             </div>
           </div>
         ))}
