@@ -17,7 +17,7 @@ const inovasiList = [
     url: "/perusahaan/inovasi/detail-b",
     deskripsi:
       "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.",
-    gambar: "/images/cisflashing.jpg",
+    gambar: "/images/cis flashing.png",
   },
   // {
   //   id: 3,

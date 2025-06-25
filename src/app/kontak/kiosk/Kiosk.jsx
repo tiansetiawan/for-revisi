@@ -480,7 +480,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
      <div className="flex items-center w-full md:w-1/2 gap-10">
        <div className="leading-snug">
                <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
-                 Temukan<br />Store Kami<br />di Kota Anda
+                 Temukan<br />Kiosk Kami<br />di Kota Anda
                </h1>
        </div>
      <div className="flex flex-col items-center">
@@ -498,7 +498,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
            {/* Kanan: Logo + Dropdowns */}
                     <div className="w-full md:w-1/2">
                <p className="text-gray-600 text-sm mb-4">
-                 Pilih wilayah untuk melihat informasi STORE dan KIOSK kami terdekat
+                 Pilih wilayah untuk melihat informasi KIOSK kami terdekat
                </p>
                <div className="flex flex-col sm:flex-row gap-4">
                  <div className="flex flex-col w-full sm:w-1/2">
@@ -542,7 +542,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
      <div className="text-center py-10">
        <div className="inline-block bg-gray-100 px-6 py-4 rounded-lg">
          <p className="text-gray-600 font-medium">
-           Maaf untuk saat ini STORE kami belum tersedia di kota ini
+           Maaf untuk saat ini KIOSK kami belum tersedia di kota ini
          </p>
          <button 
            onClick={() => {
@@ -551,7 +551,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
            }}
            className="mt-3 text-blue-600 hover:underline text-sm"
          >
-           Lihat semua store
+           Lihat semua KIOSK
          </button>
        </div>
      </div>
