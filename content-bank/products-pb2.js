@@ -167,7 +167,13 @@ export const productsPb2Content = {
       { value: 'Bahan dasar campuran beton' },
       { value: 'Mutu produk mengacu pada standar SNI 03-0691-1996' },
       { value: 'Ketahanan aus rata-rata min 0,09 mm/menit' },
-      { value: 'Penyerapan air rata-rata 3%' }
+      { value: 'Penyerapan air rata-rata 3%' },
+      { value: 'Varian Warna :' }
+    ],
+    technicalSpecs2: [
+      { value: '- Natural' },
+      { value: '- Regular : Merah dan Putih' },
+      { value: '- Khusus  : Putih' }
     ],
     installationNote: '',
     type: concreteTileSubItems.map(item => ({

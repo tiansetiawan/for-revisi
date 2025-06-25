@@ -30,7 +30,7 @@ const getMediaSource = () => {
       case "Pine":
         return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Classic":
-        return { type: "image", src: "/images/Spanduk web Cisangkan.pngg" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "New Royal":
         return { type: "image", src: "/images/banner genteng gelombang.jpg" };
       case "Oriental":

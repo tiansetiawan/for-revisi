@@ -240,7 +240,7 @@ export default function DetailsCb() {
               </section> */}
 
               <div className="pl-1">
-                <a href="/perusahaan/katalog" className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2">
+                <a href="/informasi/katalog" className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2">
                   <FaCalculator className="text-lg" />
                   Unduh Brosur
                 </a>

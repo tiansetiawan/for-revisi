@@ -170,6 +170,11 @@ const handleThumbnailClick = (productId, thumbIndex) => {
         <li key={index}>{item.value}</li>
       ))}
     </ul>
+    <ul className="pl-8 text-sm text-gray-700 space-y-1">
+      {currentProduct.technicalSpecs2?.map((item, index) => (
+        <li key={index}>{item.value}</li>
+      ))}
+    </ul>
   </section>
 <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
   <table className="w-full border-collapse">
@@ -405,7 +410,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
               </section> */}
 <div className='pl-1'>
   <a
-    href="/perusahaan/katalog"
+    href="/informasi/katalog"
     className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
   >
     <FaCalculator className="text-lg" />

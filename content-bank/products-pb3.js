@@ -535,7 +535,7 @@ export const kansteinWetprocessSubItems  = [
     {
       id: 18,
       thumbImage: '/images/Paving Block/Kanstein Wet/K.11.2 DKI.png',
-      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.11.2 (DKI).png',
+      penampangImage: '/images/Paving Block/Kanstein Wet/P.K.11.1 (DKI).png',
       color: 'Multi Warna'
     }
   ],

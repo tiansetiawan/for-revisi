@@ -38,7 +38,6 @@ export const productsCrContent = {
       { name: 'Nok Samping Ujung', image: '/images/Concrete Roof/Dual Slate/dsnoksampingujung.jpg'},
       { name: 'Nok Siku', image: '/images/Concrete Roof/Dual Slate/dsnoksiku.jpg'},
       { name: 'Starter Siku', image: '/images/Concrete Roof/Dual Slate/dstartersiku.jpg'},
-      { name: 'Starters Siku', image: '/images/Concrete Roof/Dual Slate/dstartersiku.jpg'},
     ]
   },
   'Floral': {

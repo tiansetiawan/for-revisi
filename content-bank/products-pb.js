@@ -816,8 +816,8 @@ export const guidingTilesSubItems  = [
     installationNote: ''
   },
   {
-    id: 'Dot Tile (Difable Tile)',
-    name: 'Dot Tile (Difable Tile)',
+    id: 'Dot Tile',
+    name: 'Dot Tile',
     thumbnails: [
       {
         id: 2,

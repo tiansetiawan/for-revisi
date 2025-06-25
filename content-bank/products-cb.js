@@ -265,8 +265,8 @@ export const ventilation3DBlockSubItems = [
     thumbnails: [
       {
         id: 3,
-        thumbImage: '/images/Concrete Block/VB3D/Roster R-21.jpeg',
-        largeImage: '/images/Concrete Block/VB3D/Roster R-21.jpeg',
+        thumbImage: '/images/Concrete Block/VB3D/Roster R-21.png',
+        largeImage: '/images/Concrete Block/VB3D/Roster R-21.png',
         color: 'Hitam'
       }
     ],
@@ -274,7 +274,8 @@ export const ventilation3DBlockSubItems = [
       { label: 'Dimensi', value: '20 x 20 x 10 cm' },
       { label: 'Berat', value: '4 kg' },
       { label: 'Pemakaian', value: '24 bh/m²' },
-      { label: 'Best Seller', icon: '' }
+      { label: 'Best Seller', icon: '' },
+      { label: 'New Product', icon: '/icons/NP.png' }
     ],
     technicalSpecs: [
       { label: 'Beban Lentur', value: '1200 N' },
