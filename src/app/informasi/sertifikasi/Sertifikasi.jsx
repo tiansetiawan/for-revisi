@@ -295,12 +295,12 @@ const handleDownload = async (e) => {
               alt: 'APM',
               description: 'Sertifikasi IAPMO merupakan pengakuan internasional terhadap kualitas dan keamanan produk plumbing dan mekanikal.',
             },
-            {
-              id: 'KAN',
-              src: '/images/KAN.png',
-              alt: 'KAN',
-              description: 'KAN memberikan akreditasi terhadap lembaga sertifikasi dan laboratorium pengujian yang kredibel.',
-            },
+            // {
+            //   id: 'KAN',
+            //   src: '/images/KAN.png',
+            //   alt: 'KAN',
+            //   description: 'KAN memberikan akreditasi terhadap lembaga sertifikasi dan laboratorium pengujian yang kredibel.',
+            // },
             {
               id: 'GREEN_LABEL',
               src: '/images/GREEN LABEL.png',
