@@ -140,7 +140,6 @@ export default function Product() {
               >
                 <FaChevronLeft className="w-5 h-5" />
               </button>
-
   <div
                 ref={productSliderRef}
                 className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7 ml-[-29px]"

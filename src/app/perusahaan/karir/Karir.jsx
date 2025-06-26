@@ -14,23 +14,23 @@ export default function Karir() {
   const karirList = [
     {
     id: 1,
-    nama: "Staff Administrasi",
-    penempatan: "Bandung",
-    bidang: "Administrasi",
-    kebutuhan: "2 Orang",
+    nama: "Lead Regional Representative",
+    penempatan: "Medan",
+    bidang: "Sales & Marketing",
+    kebutuhan: "1 Orang",
   },
   {
     id: 2,
-    nama: "Marketing Executive",
-    penempatan: "Jakarta",
-    bidang: "Pemasaran",
-    kebutuhan: "3 Orang",
+    nama: "Marketing Specifier",
+    penempatan: "Bandung",
+    bidang: "Sales & Marketing",
+    kebutuhan: "1 Orang",
   },
   {
     id: 3,
-    nama: "Desain Grafis",
-    penempatan: "Yogyakarta",
-    bidang: "Kreatif",
+    nama: "HR Staff",
+    penempatan: "Bandung",
+    bidang: "Human Resources",
     kebutuhan: "1 Orang",
   },
 ];
@@ -176,7 +176,7 @@ export default function Karir() {
   </div>
 
 {/* Pagination */}
-        <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
             <button
     className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
   >
@@ -193,7 +193,7 @@ export default function Karir() {
   >
     Berikutnya
   </button>
-        </div>
+        </div> */}
 </section>
     </div>
   );

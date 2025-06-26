@@ -13,24 +13,29 @@ export default function Testimoni() {
 
   const testimonials = [
     {
-      title: 'Tony Susianto / Owner Adabaru Land',
-      text: 'Satu hal kenapa kami memakai produk Cisangkan, karena kualitas dan service, jadi untuk order sedikit dan banyak selalu ontime kalau kita minta. Itu yang menjadi keunggulan Cisangkan.',
+      title: 'Bpk. Prana Ariantoraya (Senior Arsitek Prahasta Cakra Utama)',
+      text: 'Kami memilih Cisangkan karena mutu beton yang bagus!',
       imagePosition: 'left',
-      imageUrl: '/images/tony.jpg' // Added image path
+      imageUrl: '/images/testimoni/208.jpg' // Added image path
     },
     {
-      title: 'Dedi Haryanto / Project Manager San Diego Hills',
-      text: 'Produknya sampai sejauh ini cukup bagus, cukup presisi dan lebih baik dibandingkan dengan kompetitor lain.',
+      title: 'Ibu Ir. Puji Andriyani ,MM (Pimpro Astadasa Propertindo)',
+      text: 'Konsep desain dapat dikoordinasikan dengan tim desain Cisangkan untuk mewujudkan bentuk dan pola yang diinginkan, didukung oleh mutu beton yang baik serta warna menarik yang dapat dibentuk secara dinamis.',
       imagePosition: 'right',
-      imageUrl: '/images/dedy.jpg' // Added image path
+      imageUrl: '/images/testimoni/209.jpg' // Added image path
     },
-    // Uncomment and add more testimonials as needed
-    // {
-    //   title: 'Lorem ipsum et pellentesque non mattis nec.',
-    //   text: 'Lorem ipsum molestie arcu integer feugiat vestibulum elementum duis ut vulputate metus euismod aliquam amet mattis in viverra eu enim et ultricies luctus massa auctor netus maecenas morbi massa laoreet consectetur et risus semper odio venenatis faucibus sed id lectus.',
-    //   imagePosition: 'left',
-    //   imageUrl: '/images/testimoni/sample.jpg'
-    // },
+        {
+      title: 'Bpk. Rubianto (Kontraktor Proyek Sarae Hills)',
+      text: 'Selama 20 tahun kami menggunakan produk Cisangkan dan kami tidak pernah kecewa baik dari warna dan kekuatan beton.',
+      imagePosition: 'left',
+      imageUrl: '/images/testimoni/210.jpg' // Added image path
+    },
+    {
+      title: 'Ibu Inawati (Direktur Gaya Makmur Mobil)',
+      text: 'Produk Cisangkan memiliki berbagai macam tipe, selain itu tim jasa pemasangan dari cisangkan juga bagus dapat mengerjakan sesuai timeline yang di sepakati dan terorganisir dengan baik.',
+      imagePosition: 'right',
+      imageUrl: '/images/testimoni/211.jpg' // Added image path
+    },
   ];
 
   return (

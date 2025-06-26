@@ -159,11 +159,11 @@ const handleDownload = async (e) => {
 
     // 2. Process file download
     const fileMap = {
-      'SNI': '/downloads/SNI-0096-2007-GENTENG BETON.pdf',
+      'SNI': '/downloads/13. Sertifikat SNI Genteng No.CPCB-0433.pdf',
       'TKDN': '/downloads/tkdn-certificate.pdf',
-      'IAPMO': '/downloads/iapm-certificate.pdf',
+      'IAPMO': '/downloads/40. SERT ISO 9001 - PT. Cisangkan.pdf',
       'KAN': '/downloads/kan-certificate.pdf',
-      'GREEN_LABEL': '/downloads/green-label-certificate.pdf'
+      'GREEN_LABEL': '/downloads/48. Sertifikat Green Label.pdf'
     };
 
     const fileUrl = fileMap[currentDownloadItem] || '/downloads/SNI-0096-2007-GENTENG BETON.pdf';
@@ -241,7 +241,7 @@ const handleDownload = async (e) => {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/Banner Perusahaan.jpg"
+          src="/images/Banner Informasi.jpg"
           alt="banner sertifikasi"
           width={1764}
           height={460}

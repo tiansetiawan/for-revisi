@@ -69,67 +69,67 @@ const proyekData = [
   },
   {
     id: 4,
-    namaProduk: 'Pavingblock',
+    namaProduk: 'Truepave',
     namaProyek: 'Alun-alun Wado',
     tempatProyek: 'Jawa Barat',
     gambar: '/images/proyek/Paving Block/Alun-Alun Wado.jpg'
   },
   {
     id: 5,
-    namaProduk: 'Sandstein',
+    namaProduk: 'Concrete Tile Sandstein, Tactile',
     namaProyek: 'Candi Gedong Songo',
     tempatProyek: 'Semarang',
-    gambar: '/images/Candi Gedong Songo.jpg'
+    gambar: '/images/proyek/Paving Block/Candi Gedong Songo.jpg'
   },
   {
     id: 6,
-    namaProduk: 'Kanstein K.03.1',
+    namaProduk: 'Kanstein K.03',
     namaProyek: 'Kawasan Embung KIPP',
     tempatProyek: 'IKN',
-    gambar: '/images/Embung Kipp IKN.jpg'
+    gambar: '/images/proyek/Paving Block/Embung Kipp IKN.jpg'
   },
-  // {
-  //   id: 7,
-  //   namaProduk: 'Nama Produk',
-  //   namaProyek: 'Nama Proyek',
-  //   tempatProyek: 'Tempat',
-  //   gambar: '/images/icon photo.png'
-  // },
-  // {
-  //   id: 8,
-  //   namaProduk: 'Nama Produk',
-  //   namaProyek: 'Nama Proyek',
-  //   tempatProyek: 'Tempat',
-  //   gambar: '/images/icon photo.png'
-  // },
-  // {
-  //   id: 9,
-  //   namaProduk: 'Nama Produk',
-  //   namaProyek: 'Nama Proyek',
-  //   tempatProyek: 'Tempat',
-  //   gambar: '/images/icon photo.png'
-  // },
-  // {
-  //   id: 10,
-  //   namaProduk: 'Nama Produk',
-  //   namaProyek: 'Nama Proyek',
-  //   tempatProyek: 'Tempat',
-  //   gambar: '/images/icon photo.png'
-  // },
-  // {
-  //   id: 11,
-  //   namaProduk: 'Nama Produk',
-  //   namaProyek: 'Nama Proyek',
-  //   tempatProyek: 'Tempat',
-  //   gambar: '/images/icon photo.png'
-  // },
-  // {
-  //   id: 12,
-  //   namaProduk: 'Nama Produk',
-  //   namaProyek: 'Nama Proyek',
-  //   tempatProyek: 'Tempat',
-  //   gambar: '/images/icon photo.png'
-  // }
+  {
+    id: 7,
+    namaProduk: 'Roster R-20',
+    namaProyek: 'Roster Sportclub PIK',
+    tempatProyek: 'Jakarta',
+    gambar: '/images/proyek/Concrete Block/roster sportclub PIK-2 R-20.jpg'
+  },
+  {
+    id: 8,
+    namaProduk: 'Roster R-20',
+    namaProyek: 'Roster Istana Presiden',
+    tempatProyek: 'IKN',
+    gambar: '/images/proyek/Concrete Block/roster istana presiden R-20.jpg'
+  },
+  {
+    id: 9,
+    namaProduk: 'Concrete Tile Sandstein, Kanstein K.03, Tactile',
+    namaProyek: 'Trotoar SPAM Sepaku',
+    tempatProyek: 'IKN',
+    gambar: '/images/proyek/Paving Block/Trotoar SPAM.jpg'
+  },
+  {
+    id: 10,
+    namaProduk: 'Truepave',
+    namaProyek: 'Pelindo Tower',
+    tempatProyek: 'Jakarta',
+    gambar: '/images/proyek/Paving Block/Pelindo Tower.jpg'
+  },
+  {
+    id: 11,
+    namaProduk: 'Truepave, Clssic, Kanstein K.02, Tactile',
+    namaProyek: 'Universitas Jenderal Achmad Yani',
+    tempatProyek: 'Cimahi',
+    gambar: '/images/proyek/Paving Block/Unjani.jpg'
+  },
+  {
+    id: 12,
+    namaProduk: 'Victoria Multiline',
+    namaProyek: 'Kahatex Gempol',
+    tempatProyek: 'Cimahi',
+    gambar: '/images/proyek/Concrete Roof/VS Kahatex Gempol.jpg'
+  }
 ];
 
 // Video Testimonial Data
@@ -283,7 +283,7 @@ const terbaruList = [
     image: "/images/cisflashing.jpg",
     title: "CIS Flashing: Solusi Flashing Moder",
     desc: "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran..",
-    link: "/blog/artikel/detail-c"
+    link: "/perusahaan/inovasi/detail-b"
   }
 ];
 
