@@ -145,7 +145,7 @@ export default function ProyekGallery({ proyekList }) {
       >
         {selectedProyek && (
           <div className="relative w-full h-full flex items-center justify-center p-4">
-            <button
+            <motion.button
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedProyek(null);
@@ -157,7 +157,7 @@ export default function ProyekGallery({ proyekList }) {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
-            </button>
+            </motion.button>
             
             <div 
               className="relative bg-black flex items-center justify-center"
