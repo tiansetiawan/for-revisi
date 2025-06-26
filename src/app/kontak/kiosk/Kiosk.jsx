@@ -618,15 +618,15 @@ const [slopeAngle, setSlopeAngle] = useState('');
  {/* Kontak Info */}
  <div className="w-full sm:w-1/3 text-center mx-auto flex flex-col items-center justify-center space-y-10">
    <div>
-     <FaPhone className="text-5xl mx-auto mb-2" />
-     <h3 className="font-semibold text-lg">Phone</h3>
-     <a href="tel:+6251585652262" className="text-sm hover:underline">
-       +62xxxxxxxxx
-     </a>
-     <br />
-     <a href="tel:+6251585652262" className="text-sm hover:underline">
-       +62xxxxxxxxx
-     </a>
+    <FaPhone className="text-5xl mx-auto mb-2" />
+    <h3 className="font-semibold text-lg">Phone</h3>
+    <a href="tel:+6251585652262" className="text-sm hover:underline">
+      (022)6031588
+    </a>
+    <br />
+    <a href="tel:+6251585652262" className="text-sm hover:underline">
+      (022)6030467
+    </a>
    </div>
    <div>
      <FaEnvelope className="text-5xl mx-auto mb-2" />
