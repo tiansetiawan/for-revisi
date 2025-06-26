@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image'; // Import komponen Image dari Next.js
 
 export default function ProyekGallery({ proyekList }) {
   const [selectedProyek, setSelectedProyek] = useState(null);
@@ -18,7 +19,7 @@ export default function ProyekGallery({ proyekList }) {
   useEffect(() => {
     if (!selectedProyek) return;
 
-    const img = new Image();
+    const img = new window.Image(); // Tambahkan window untuk menghindari error SSR
     img.src = selectedProyek.file;
     img.onload = () => {
       const maxWidth = window.innerWidth * 0.9;
@@ -73,11 +74,14 @@ export default function ProyekGallery({ proyekList }) {
             whileTap={{ scale: 0.98 }}
           >
             <div className="bg-gray-300 w-full aspect-[6/3] flex items-center justify-center">
-              <img
+              <Image
                 src={item.file}
                 alt={item.nama}
                 className="w-full h-full object-cover"
                 loading="lazy"
+                width={600} // tambahkan width
+                height={300} // tambahkan height
+                unoptimized={true} // jika gambar dari sumber eksternal
               />
             </div>
             <div className="bg-white px-4 py-3 text-left">
@@ -168,18 +172,24 @@ export default function ProyekGallery({ proyekList }) {
                 maxHeight: '90vh'
               }}
             >
-              <motion.img
-                src={selectedProyek.file}
-                alt={selectedProyek.nama}
-                className="object-contain"
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 style={{
                   width: '100%',
-                  height: '100%'
+                  height: '100%',
+                  position: 'relative'
                 }}
-              />
+              >
+                <Image
+                  src={selectedProyek.file}
+                  alt={selectedProyek.nama}
+                  className="object-contain"
+                  fill
+                  unoptimized={true} // jika gambar dari sumber eksternal
+                />
+              </motion.div>
             </div>
             
             <motion.div 

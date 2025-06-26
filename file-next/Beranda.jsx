@@ -135,7 +135,7 @@ const proyekData = [
 // Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  youtubeId: "ee86Me6eOx4",
+  youtubeId: "EiLY8P_Lf8o",
   description: "Testimonial pelanggan utama kami"
 };
 
@@ -731,7 +731,7 @@ return (
     </div>
   </div>
 <Image 
-  src="/images/factory Visit.png"
+  src={getYoutubeThumbnail(mainTestimonialVideo.youtubeId, 'maxresdefault')}
   alt={mainTestimonialVideo.title}
   fill
   className="object-cover shadow-lg rounded-md"

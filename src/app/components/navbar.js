@@ -1,10 +1,11 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { FaSearch, FaBell, FaShoppingCart, FaUser, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaBell, FaShoppingCart, FaUser, FaSearch, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import SearchBar from "./SearchBar";
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -155,7 +156,7 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Right Side */}
+{/* Right Side - Diperbarui */}
         <div className="hidden lg:flex items-center space-x-4 mr-4 text-gray-600 text-sm">
           <div>
             <span className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} onClick={() => setLanguage("Eng")}>
@@ -166,7 +167,7 @@ export default function Navbar() {
               Ind
             </span>
           </div>
-          <FaSearch className="cursor-pointer hover:text-black" />
+          <SearchBar /> {/* Ganti FaSearch dengan komponen SearchBar */}
         </div>
 
         {/* Hamburger Menu */}
@@ -247,15 +248,15 @@ export default function Navbar() {
             <div className="flex items-center space-x-4 mt-4 text-gray-600">
               <FaSearch className="cursor-pointer" />
             </div>
-            <div className="pt-2">
-              <span className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} onClick={() => setLanguage("Eng")}>
-                Eng
-              </span>
-              {" / "}
-              <span className={`cursor-pointer ${language === "Ind" ? "text-black font-bold" : "text-gray-400"}`} onClick={() => setLanguage("Ind")}>
-                Ind
-              </span>
-            </div>
+<div className="pt-2">
+            <span className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} onClick={() => setLanguage("Eng")}>
+              Eng
+            </span>
+            {" / "}
+            <span className={`cursor-pointer ${language === "Ind" ? "text-black font-bold" : "text-gray-400"}`} onClick={() => setLanguage("Ind")}>
+              Ind
+            </span>
+          </div>
           </ul>
         </div>
       )}
