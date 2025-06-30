@@ -1,19 +1,30 @@
 "use client";
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ScreenSaver({ onComplete }) {
   const [show, setShow] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
   const videoRef = useRef(null);
+
+  const handleClose = () => {
+    setIsExiting(true);
+    videoRef.current?.pause();
+    
+    // Delay sebelum memanggil onComplete untuk memberi waktu animasi fade out
+    setTimeout(() => {
+      setShow(false);
+      onComplete?.();
+    }, 500); // Sesuaikan dengan durasi fade out
+  };
 
   useEffect(() => {
     const video = videoRef.current;
     let fallbackTimer;
 
     const handleVideoEnd = () => {
-      cleanup();
-      setShow(false);
-      onComplete?.();
+      handleClose();
     };
 
     const cleanup = () => {
@@ -27,19 +38,16 @@ export default function ScreenSaver({ onComplete }) {
     if (video) {
       video.addEventListener('ended', handleVideoEnd);
       
-      // Gunakan promise untuk handle autoplay
       const playPromise = video.play();
       
       if (playPromise !== undefined) {
         playPromise
           .then(() => {
-            // Autoplay berhasil
             console.log("Video autoplay started");
           })
           .catch(error => {
             console.error("Autoplay prevented:", error);
-            // Fallback jika autoplay diblokir
-            fallbackTimer = setTimeout(handleVideoEnd, 8000);
+            fallbackTimer = setTimeout(handleClose, 8000);
           });
       }
     }
@@ -50,32 +58,63 @@ export default function ScreenSaver({ onComplete }) {
   if (!show) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] bg-black  flex items-center justify-center">
-        <Image
-          src="/videos/party.gif"
-          alt="banner sertifikasi"
-          width={1764}
-          height={460}
-          className="scale-70 object-cover object-center"
-          priority
-          quality={100}
-          sizes="100vw"
-          style={{
-            width: '100%',
-            height: 'auto',
-            objectFit: 'cover'
+    <AnimatePresence>
+      {!isExiting ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed inset-0 z-[60] bg-black/70 flex items-center justify-center"
+        >
+          <motion.div
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="w-full h-full relative"
+          >
+            <Image
+              src="/videos/Untitled 19-2.gif"
+              alt="banner sertifikasi"
+              fill
+              className="object-cover object-center"
+              priority
+              quality={100}
+              sizes="100vw"
+            />
+          </motion.div>
+          
+          <motion.button 
+            onClick={handleClose}
+            className="absolute bottom-8 right-8 bg-white/30 text-white px-4 py-2 rounded-full hover:bg-white/40 transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Lewati
+          </motion.button>
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="fixed inset-0 z-[60] bg-black/70 flex items-center justify-center"
+          onAnimationComplete={() => {
+            setShow(false);
+            onComplete?.();
           }}
-        />
-      <button 
-        onClick={() => {
-          videoRef.current?.pause();
-          setShow(false);
-          onComplete?.();
-        }}
-        className="absolute bottom-8 right-8 bg-white/30 text-white px-4 py-2 rounded-full hover:bg-white/40 transition"
-      >
-        Lewati
-      </button>
-    </div>
+        >
+          <Image
+            src="/videos/Untitled 19-2.gif"
+            alt="banner sertifikasi"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={100}
+            sizes="100vw"
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
