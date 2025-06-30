@@ -235,3 +235,7 @@ width: 4rem;
     width: 30px !important;
   }
 }
+
+@media only screen and (min-width: 1920px) {
+  
+}

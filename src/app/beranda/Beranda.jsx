@@ -586,20 +586,20 @@ return (
   {/* Hero Section */}
   <div className="relative w-full">
     {/* Navigation buttons - hidden on mobile */}
-    <div className="hidden md:flex absolute top-1/2 left-[-2em] right-[-2em] z-20 justify-between px-4 mt-[-10rem]">
+    <div className="hidden md:flex absolute top-1/2 left-[-2em] right-[-2em] z-20 justify-between px-4 mt-[-10rem] 2xl:mt-[-2rem] 2xl:left-[-3em] 2xl:right-[-3em]">
       <button
         onClick={prevSlide}
-        className="btn-hero-lf bg-[#0B1F3A] p-2 sm:p-3 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none"
+        className="btn-hero-lf bg-[#0B1F3A] p-2 sm:p-3 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none 2xl:p-5"
         aria-label="Previous slide"
       >
-        <FaChevronLeft className="text-sm sm:text-base" />
+        <FaChevronLeft className="text-sm sm:text-base 2xl:text-xl" />
       </button>
       <button
         onClick={nextSlide}
-        className="btn-hero-rg bg-[#0B1F3A] p-2 sm:p-3 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none"
+        className="btn-hero-rg bg-[#0B1F3A] p-2 sm:p-3 text-white hover:bg-[#404b6b] transition-colors duration-200 rounded-none 2xl:p-5"
         aria-label="Next slide"
       >
-        <FaChevronRight className="text-sm sm:text-base" />
+        <FaChevronRight className="text-sm sm:text-base 2xl:text-xl" />
       </button>
     </div>
 
@@ -614,7 +614,7 @@ return (
 />
 
   {/* Slide Indicators */}
-  <div className="hero-slide-indicators absolute bottom-[17.5rem] left-1/2 -translate-x-1/2 flex gap-2 z-10 2xl:bottom-[14rem]">
+  <div className="hero-slide-indicators absolute bottom-[17.5rem] left-1/2 -translate-x-1/2 flex gap-2 z-10 2xl:bottom-[3rem] 2xl:gap-3">
     {heroSlides.map((_, idx) => (
       <button
         key={idx}
@@ -624,8 +624,8 @@ return (
         }}
         className={`h-[5px] rounded-full transition-all duration-300 relative ${
         idx === currentSlide
-          ? 'w-20 bg-[#0B203F] shadow-[0_3px_3px_rgba(11,32,63,0.2),0_2px_6px_rgba(11,32,63,0.1)]'
-          : 'w-8 bg-[#FFFFFF] shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.05)]'
+          ? 'w-20 2xl:w-30 bg-[#0B203F] shadow-[0_3px_3px_rgba(11,32,63,0.2),0_2px_6px_rgba(11,32,63,0.1)]'
+          : 'w-8 2xl:18 bg-[#FFFFFF] shadow-[0_1px_3px_rgba(0,0,0,0.1),0_1px_3px_rgba(0,0,0,0.05)]'
       } hover:shadow-[0_3px_4px_rgba(11,32,63,0.15),0_3px_6px_rgba(11,32,63,0.1)]`}
       aria-label={`Go to slide ${idx + 1}`}
     >
@@ -638,8 +638,8 @@ return (
       </div>
 
     {/* Product Categories Section */}
-<section className="product-categories-section py-20 text-center 2xl:mt-10">
-  <h2 className="text-2xl font-medium mb-10">TELUSURI PRODUK KAMI</h2>
+<section className="product-categories-section py-20 text-center 2xl:mt-55">
+  <h2 className="text-2xl font-medium mb-10 2xl:mb-15 2xl:text-[2rem]">TELUSURI PRODUK KAMI</h2>
   <div className="category-container flex flex-wrap justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-40">
     {defaultCategories.map((category, index) => (
       <Link 
@@ -653,13 +653,13 @@ return (
         }}
       >
         <div className="flex flex-col items-center group text-[#333333] cursor-pointer">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-48 2xl:h-48 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
             <Image
               src={category.icon}
               alt={category.name}
               width={90}
               height={90}
-              className="icon-categories max-h-12 sm:max-h-14 md:max-h-16 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+              className="icon-categories max-h-12 sm:max-h-14 md:max-h-16 2xl:max-h-20 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
             />
           </div>
           <span className="mt-3 text-xs sm:text-xs font-medium">{category.name}</span>
