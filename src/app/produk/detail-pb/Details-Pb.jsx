@@ -10,7 +10,6 @@ import {
   grassBlockSubItems,
   gudingPaveSubItems,
   othersSubItems,
-  taliAirSubItems, 
   guidingTilesSubItems,
 } from '../../../../content-bank/products-pb';
 import ProductSidebar from '../../components/ProductSidebar';

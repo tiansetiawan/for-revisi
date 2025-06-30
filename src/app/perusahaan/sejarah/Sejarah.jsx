@@ -86,7 +86,7 @@ export default function Sejarah() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/Banner Perusahaan.jpg"
+          src="/images/sejarah.jpg"
           alt="Sejarah Cisangkan"
           width={1764}
           height={460}

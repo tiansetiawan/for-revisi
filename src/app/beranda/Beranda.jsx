@@ -659,10 +659,10 @@ return (
               alt={category.name}
               width={90}
               height={90}
-              className="icon-categories max-h-12 sm:max-h-14 md:max-h-16 2xl:max-h-20 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+              className="icon-categories max-h-12 sm:max-h-14 md:max-h-16 2xl:max-h-[15rem] transition-all duration-300 group-hover:brightness-0 group-hover:invert"
             />
           </div>
-          <span className="mt-3 text-xs sm:text-xs font-medium">{category.name}</span>
+          <span className="mt-3 text-xs sm:text-xs 2xl:text-xl font-medium">{category.name}</span>
         </div>
       </Link>
     ))}
@@ -671,7 +671,7 @@ return (
 
     {/* Proyek Cisangkan Section */}
     <section className="py-6 sm:py-10 bg-[#ECEEF0] relative">
-        <h2 className="text-center text-xl sm:text-2xl font-medium">PROYEK CISANGKAN</h2>
+        <h2 className="text-center text-xl sm:text-2xl font-medium 2xl:text-[2rem]">PROYEK CISANGKAN</h2>
               <p className="text-center text-blue-500 text-sm sm:text-base cursor-pointer hover:underline mb-4 sm:mb-5"><a href='/proyek'>Lihat Semua</a></p>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-1">
@@ -695,18 +695,18 @@ return (
     <section className="py-6 sm:py-10 relative mt-10 mb-6">
   <div className="w-full">
     {/* Video Utama */}
-                 <div className="max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
+    <div className="max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
     
     {/* Kiri: Judul */}
     <div className="pl-4 border-l-4 border-[#0B203F]">
-      <h2 className="text-left text-xl sm:text-2xl font-medium leading-tight uppercase">
+      <h2 className="text-left text-xl sm:text-2xl 2xl:text-[2rem] font-medium leading-tight uppercase">
         VIDEO TESTIMONIAL PRODUK
       </h2>
     </div>
 
     {/* Kanan: Deskripsi dan Link */}
     <div className="text-gray-700 text-sm sm:text-base">
-      <p className="text-left mb-8">
+      <p className="text-left mb-8 2xl:text-xl">
         Simak ulasan dari costumer kami setelah menggunakan produk dari Cisangkan
       </p>
       {/* <div className="flex gap-3 text-sm font-medium">
