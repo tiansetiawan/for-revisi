@@ -121,19 +121,22 @@ export default function Sejarah() {
     <div className="flex items-start mb-4">
       <div>
         <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4">
-          SEJARAH TENTANG<br />
+          SEJARAH & PERKEMBANGAN<br />
           PT. CISANGKAN
         </h2>
       </div>
     </div>
     <p className="text-sm text-justify mb-4">
-   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam dolorem molestiae cum quis fugiat cupiditate, odit, autem eius nostrum officia eveniet officiis amet ducimus! Hic, eum? Ad nostrum deserunt quos.
+PT Cisangkan didirikan pada tahun 1975 di Bandung, Jawa Barat, sebagai perusahaan yang memfokuskan diri pada produksi beton pracetak. PT Cisangkan memproduksi berbagai elemen beton pracetak untuk kebutuhan infrastruktur dan konstruksi dasar. Produk-produk seperti genteng beton, paving block, kanstin, dan saluran air menjadi andalan perusahaan dalam memenuhi kebutuhan pembangunan, baik di sektor swasta maupun pemerintah. Dengan komitmen terhadap mutu dan ketepatan produksi, Cisangkan perlahan-lahan membangun reputasi sebagai salah satu produsen beton pracetak yang terpercaya di Indonesia.
     </p>
     <p className="text-sm text-justify mb-4">
-     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni esse nihil molestiae itaque accusamus deleniti unde. Ut autem labore velit.
+Seiring dengan meningkatnya permintaan dan standar kualitas yang semakin tinggi, PT Cisangkan melakukan berbagai investasi strategis, khususnya dalam bidang teknologi manufaktur. Sejak awal berdiri, cisangkan sudah menjalin kerja sama dengan produsen mesin beton asal Jerman, guna mengimplementasikan sistem produksi berteknologi tinggi. Memasuki tahun 2000, Penggunaan mesin otomatis HESS seperti RH 600 A hingga RH 1500-4 VA secara signifikan meningkatkan kapasitas produksi, konsistensi mutu, serta presisi produk—mendorong perusahaan untuk bersaing di tingkat nasional maupun internasional.
+    </p>
+    <p className="text-sm text-justify mb-4">
+PT Cisangkan sekarang dikenal sebagai pemimpin industri beton pracetak di Indonesia. Dengan fasilitas produksi yang tersebar di Bandung, Purwakarta dan Pasuruan, perusahaan terus memperluas jangkauan pasar dan memperkuat jaringan distribusinya. Tidak hanya berfokus pada inovasi produk dan teknologi, PT Cisangkan juga menjunjung tinggi pengembangan sumber daya manusia, tanggung jawab sosial perusahaan, serta tata kelola perusahaan yang beretika dan berkelanjutan.
     </p>
     <p className="text-sm text-justify">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate corporis consequatur nemo repudiandae eum consequuntur nisi expedita, quia aspernatur quod voluptatum nobis harum temporibus adipisci beatae dolorum perspiciatis. Voluptatum nesciunt ad velit eligendi. Quam consectetur, a in possimus corrupti perferendis est perspiciatis eligendi nesciunt odio culpa incidunt sit modi. Earum.
+Transformasi PT Cisangkan dari sebuah perusahaan lokal di Bandung menjadi pemain nasional yang berpengaruh merupakan cerminan dari komitmen jangka panjang terhadap kualitas, integritas, dan inovasi. Dengan pengalaman lebih dari lima dekade, PT Cisangkan terus bergerak maju sebagai mitra terpercaya dalam menyediakan solusi beton pracetak untuk pembangunan Indonesia.
     </p>
   </div>
       </section>
