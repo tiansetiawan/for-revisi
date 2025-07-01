@@ -9,6 +9,18 @@ export const productsContent = {
         thumbImage: '/images/Concrete Roof/Neo/neo 2.png',
         largeImage: '/images/Concrete Roof/Neo/neo 2.png',
         color: 'Hitam Solid'
+      },
+            {
+        id: 2,
+        thumbImage: '/images/Concrete Roof/Neo/neo 3.png',
+        largeImage: '/images/Concrete Roof/Neo/neo 3.png',
+        color: 'Hitam Solid'
+      },
+                  {
+        id: 3,
+        thumbImage: '/images/Concrete Roof/Neo/neo 1.png',
+        largeImage: '/images/Concrete Roof/Neo/neo 1.png',
+        color: 'Hitam Solid'
       }
     ],
     specifications: [

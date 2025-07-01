@@ -142,7 +142,7 @@ export default function Product() {
               </button>
   <div
                 ref={productSliderRef}
-                className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7 ml-[-29px]"
+                className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7 ml-[-29px] mr-[-2rem]"
               >
                 {getCurrentProducts().map((product) => (
                   <div key={product.name} className="snap-start min-w-0 ps-12.5 group">
@@ -186,7 +186,7 @@ export default function Product() {
               <button
                 onClick={nextSlide}
                 disabled={currentSlide >= getCurrentProducts().length - visibleSlides}
-                className="absolute right-[1.5rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute right-[-0.2rem] top-1/2 -translate-y-1/2 translate-x-6 z-10 w-10 h-10 bg-[#0B203F] text-white rounded-none flex items-center justify-center hover:opacity-80 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <FaChevronRight className="w-5 h-5" />
               </button>
