@@ -73,7 +73,7 @@ export default function ScreenSaver({ onComplete }) {
             transition={{ duration: 0.3 }}
             className="w-full h-full relative"
           >
-            <Image
+            {/* <Image
               src="/videos/Untitled 19-2.gif"
               alt="banner sertifikasi"
               fill
@@ -81,7 +81,23 @@ export default function ScreenSaver({ onComplete }) {
               priority
               quality={100}
               sizes="100vw"
-            />
+            /> */}
+
+            <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop={false}
+          playsInline
+          className="w-full h-full object-cover"
+          onEnded={() => {
+            setShow(false);
+            if (onComplete) onComplete();
+          }}
+        >
+          <source src="/videos/50th Aniv.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung tag video.
+        </video>
           </motion.div>
           
           <motion.button 
@@ -104,7 +120,7 @@ export default function ScreenSaver({ onComplete }) {
             onComplete?.();
           }}
         >
-          <Image
+          {/* <Image
             src="/videos/Untitled 19-2.gif"
             alt="banner sertifikasi"
             fill
@@ -112,7 +128,23 @@ export default function ScreenSaver({ onComplete }) {
             priority
             quality={100}
             sizes="100vw"
-          />
+          /> */}
+
+           <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop={false}
+          playsInline
+          className="w-full h-full object-cover"
+          onEnded={() => {
+            setShow(false);
+            if (onComplete) onComplete();
+          }}
+        >
+          <source src="/videos/50th Aniv.mp4" type="video/mp4" />
+          Browser Anda tidak mendukung tag video.
+        </video>
         </motion.div>
       )}
     </AnimatePresence>
