@@ -112,7 +112,7 @@ export default function DetailA() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/artikel.jpg"
+          src="/images/artikel-4.jpg"
           alt="Banner Artikel"
           width={1764}
           height={460}

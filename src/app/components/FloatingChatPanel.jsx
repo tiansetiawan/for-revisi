@@ -248,7 +248,7 @@ export default function FloatingChatPanel() {
 
           {/* Admin Info */}
           <div className="text-center text-xs text-gray-500 p-2 bg-gray-100">
-            <a className='flex gap-2 justify-center' href="https://wa.me/62xxxxxxx" target="_blank" rel="noopener noreferrer">
+            <a className='flex gap-2 justify-center' href="https://wa.me/6281214983517" target="_blank" rel="noopener noreferrer">
               <Image src="/icons/icons8-whatsapp.svg" alt="WhatsApp" width={15} height={15} />
               Hubungi Admin
             </a>

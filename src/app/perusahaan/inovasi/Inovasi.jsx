@@ -1,7 +1,9 @@
-'use client';;
+'use client';
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
 const inovasiList = [
   {
     id: 1,
@@ -21,22 +23,78 @@ const inovasiList = [
   },
   // {
   //   id: 3,
-  //   judul: "Lorem ipsum",
+  //   judul: "Inovasi Ketiga: Solusi Terbaru untuk Konstruksi Modern",
+  //   url: "/perusahaan/inovasi/detail-c",
   //   deskripsi:
-  //     "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
+  //     "Inovasi terbaru kami menghadirkan solusi konstruksi yang lebih efisien dan ramah lingkungan. Dengan teknologi mutakhir, produk ini dirancang untuk memenuhi kebutuhan pasar yang terus berkembang.",
   //   gambar: "/images/inovasi3.jpg",
+  // },
+  // {
+  //   id: 4,
+  //   judul: "Inovasi Keempat: Material Bangunan Masa Depan",
+  //   url: "/perusahaan/inovasi/detail-d",
+  //   deskripsi:
+  //     "Material bangunan inovatif kami menawarkan kekuatan dan daya tahan yang unggul, sekaligus mengurangi dampak lingkungan. Solusi tepat untuk proyek konstruksi berkelanjutan.",
+  //   gambar: "/images/inovasi4.jpg",
+  // },
+  // {
+  //   id: 5,
+  //   judul: "Inovasi Kelima: Sistem Instalasi Revolusioner",
+  //   url: "/perusahaan/inovasi/detail-e",
+  //   deskripsi:
+  //     "Sistem instalasi baru kami memungkinkan pemasangan yang lebih cepat dan presisi. Mengurangi waktu pengerjaan tanpa mengorbankan kualitas hasil akhir.",
+  //   gambar: "/images/inovasi5.jpg",
+  // },
+  // {
+  //   id: 6,
+  //   judul: "Inovasi Keenam: Teknologi Anti Bocor Generasi Terbaru",
+  //   url: "/perusahaan/inovasi/detail-f",
+  //   deskripsi:
+  //     "Dengan teknologi anti bocor generasi terbaru, produk ini memberikan perlindungan maksimal terhadap cuaca ekstrim. Solusi ideal untuk iklim tropis Indonesia.",
+  //   gambar: "/images/inovasi6.jpg",
   // },
 ];
 
 export default function Inovasi() {
-  // State untuk panel unduh
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const modalRef = useRef(null);
 
-   // Handle click outside modal
+  // Konfigurasi pagination
+  const itemsPerPage = 5;
+  const totalItems = inovasiList.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  
+  // Hitung item yang ditampilkan berdasarkan halaman saat ini
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = inovasiList.slice(startIndex, endIndex);
+
+  // Handle page change with scroll to top and fade effect
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+    // Scroll ke atas dengan smooth
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      handlePageChange(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      handlePageChange(currentPage + 1);
+    }
+  };
+
+  // Handle click outside modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -65,37 +123,6 @@ export default function Inovasi() {
     setShowDownloadPanel(false);
   };
 
-  // Variants untuk animasi
-  const backdropVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-  };
-
-  const modalVariants = {
-    hidden: { 
-      opacity: 0,
-      y: -50,
-      scale: 0.95
-    },
-    visible: { 
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: 'spring',
-        damping: 25,
-        stiffness: 500
-      }
-    },
-    exit: {
-      opacity: 0,
-      y: 50,
-      scale: 0.95,
-      transition: { duration: 0.2 }
-    }
-  };
-
-
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
@@ -118,83 +145,98 @@ export default function Inovasi() {
       </div>
 
       {/* Header Section */}
-<div className="bg-[#F2F2F2] py-4">
-  <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-    <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-    <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-    {/* <Link href="/perusahaan/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link> */}
-    {/* <Link href="/perusahaan/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link> */}
-    {/* <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link> */}
-    <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
-    <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
-  </nav>
-</div>
+      <div className="bg-[#F2F2F2] py-4">
+        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+          <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
+          <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
+          <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
+          <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
+        </nav>
+      </div>
 
       {/* Main Content */}
-    <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
-      <div className="gap-6 items-start mb-5">
-        <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase ">
-          INOVASI
-        </h2>
-        {/* <p className="text-sm text-justify">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
-          ever since the 1500s.
-        </p> */}
-      </div>
+      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+        <div className="gap-6 items-start mb-5">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase">
+            INOVASI
+          </h2>
+        </div>
 
-      {/* Daftar Inovasi */}
-      <div className="flex flex-col gap-10 mb-10">
-        {inovasiList.map((item) => (
-          <div
-            key={item.id}
-            className="flex flex-col sm:flex-row items-start border-b border-[#CCCCCC] pb-10 gap-6"
+        {/* Daftar Inovasi dengan efek fade in */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex flex-col gap-10 mb-10"
           >
-            {/* Gambar */}
-            <div className="w-full sm:w-[300px] h-[180px] bg-gray-300 flex justify-center items-center">
-              <img
-                src={item.gambar}
-                alt={item.judul}
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Konten */}
-            <div className="flex-1">
-              <h3 className="text-lg font-normal mb-2">{item.judul}</h3>
-              <p className="text-sm text-justify mb-4">{item.deskripsi}</p>
-              <Link
-                href={item.url}
-                className="text-sm text-blue-700 font-medium hover:underline"
+            {currentItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col sm:flex-row items-start border-b border-[#CCCCCC] pb-10 gap-6"
               >
-                Baca lebih banyak &gt;&gt;
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div>
+                {/* Gambar */}
+                <div className="w-full sm:w-[300px] h-[180px] bg-gray-300 flex justify-center items-center">
+                  <img
+                    src={item.gambar}
+                    alt={item.judul}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
 
-        {/* Pagination */}
-       {/* Pagination */}
-        {/* <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
+                {/* Konten */}
+                <div className="flex-1">
+                  <h3 className="text-lg font-normal mb-2">{item.judul}</h3>
+                  <p className="text-sm text-justify mb-4">{item.deskripsi}</p>
+                  <Link
+                    href={item.url}
+                    className="text-sm text-blue-700 font-medium hover:underline"
+                  >
+                    Baca lebih banyak &gt;&gt;
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Pagination - hanya muncul jika item lebih dari itemsPerPage */}
+        {totalItems > itemsPerPage && (
+          <div className="flex justify-center items-center gap-2 text-sm border-y border-[#E0E0E0] py-2">
             <button
-    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
-  >
-    Sebelumnya
-  </button>
-          <button className="px-3 py-1 border border-gray-300 rounded-none bg-[#0B203F] text-white text-xs">
-            1
-          </button>
-          <button className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs">
-            2
-          </button>
-                      <button
-    className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
-  >
-    Berikutnya
-  </button>
-        </div> */}
-    </section>
+              onClick={handlePrevPage}
+              disabled={currentPage === 1}
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Sebelumnya
+            </button>
+            
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`px-3 py-1 border border-gray-300 rounded-none text-xs ${
+                  currentPage === page 
+                    ? 'bg-[#0B203F] text-white' 
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+            
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages}
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Berikutnya
+            </button>
+          </div>
+        )}
+      </section>
     </div>
   );
 }
