@@ -1,10 +1,9 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect, useCallback } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function ProductSidebar({ onItemChange }) {
-  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [activeItem, setActiveItem] = useState("Concrete Roof");
@@ -29,6 +28,7 @@ export default function ProductSidebar({ onItemChange }) {
     Utility: {},
   });
 
+  // Definisikan productConfig
   const productConfig = {
     mainProducts: [
       { name: "Concrete Roof", url: "/produk?category=Concrete Roof" },
@@ -93,66 +93,94 @@ export default function ProductSidebar({ onItemChange }) {
     },
   };
 
-  const getMainProducts = () => productConfig.mainProducts.map((item) => item.name);
-  const getMainProductUrl = (name) => productConfig.mainProducts.find((item) => item.name === name)?.url || "#";
-  const getSubProducts = (category) => productConfig.subProducts[category]?.map((item) => item.name) || [];
-  const getSubProductUrl = (category, name) => {
+  // Definisikan semua fungsi helper di awal komponen
+  const getMainProducts = useCallback(() => productConfig.mainProducts.map((item) => item.name), []);
+  const getMainProductUrl = useCallback((name) => 
+    productConfig.mainProducts.find((item) => item.name === name)?.url || "#", []);
+  const getSubProducts = useCallback((category) => 
+    productConfig.subProducts[category]?.map((item) => item.name) || [], []);
+  const getSubProductUrl = useCallback((category, name) => {
     const product = productConfig.subProducts[category]?.find((item) => item.name === name);
     return product?.url || "#";
-  };
-  const getSubItems = (category, subProduct) => {
+  }, []);
+  const getSubItems = useCallback((category, subProduct) => {
     const product = productConfig.subProducts[category]?.find((item) => item.name === subProduct);
     return product?.subItems || [];
-  };
+  }, []);
 
-  const handleMainItemClick = (item, e) => {
-    e.preventDefault();
-    const url = getMainProductUrl(item);
-    setActiveItem(item);
-    setActiveSubItem(null);
-    setExpandedItems((prev) => ({
-      ...Object.fromEntries(Object.keys(prev).map((key) => [key, false])),
-      [item]: true,
-    }));
-    if (onItemChange) onItemChange(item);
-    router.push(url);
-  };
-
-  const handleSubItemClick = (category, subItem, e) => {
-    e.preventDefault();
-    const url = getSubProductUrl(category, subItem);
-    setActiveSubItem(subItem);
-    if (url && url !== "#") {
-      router.push(url);
+  // Fungsi navigasi dengan FULL PAGE RELOAD
+  const navigateTo = useCallback((url) => {
+    if (url === "#" || url === window.location.href.split('#')[0]) {
+      return;
     }
-  };
+    
+    // Simpan state yang perlu dipertahankan
+    sessionStorage.setItem('sidebarState', JSON.stringify({
+      activeItem,
+      activeSubItem,
+      expandedItems,
+      expandedSubItems
+    }));
+    
+    // Force full page reload
+    window.location.assign(url);
+  }, [activeItem, activeSubItem, expandedItems, expandedSubItems]);
 
+  // Sinkronisasi state saat komponen mount
   useEffect(() => {
+    const savedState = sessionStorage.getItem('sidebarState');
+    if (savedState) {
+      const { activeItem, activeSubItem, expandedItems, expandedSubItems } = JSON.parse(savedState);
+      setActiveItem(activeItem);
+      setActiveSubItem(activeSubItem);
+      setExpandedItems(expandedItems);
+      setExpandedSubItems(expandedSubItems);
+      sessionStorage.removeItem('sidebarState');
+    }
+
     const category = searchParams.get("category");
     const product = searchParams.get("product");
-    const storedItem = sessionStorage.getItem("activeItem");
-    const storedSubItem = sessionStorage.getItem("activeSubItem");
 
     if (category && getMainProducts().includes(category)) {
       setActiveItem(category);
-      setExpandedItems((prev) => ({ ...prev, [category]: true }));
+      setExpandedItems(prev => ({ 
+        ...Object.fromEntries(Object.keys(prev).map(key => [key, false])),
+        [category]: true 
+      }));
       if (onItemChange) onItemChange(category);
-    } else if (storedItem) {
-      setActiveItem(storedItem);
-      setExpandedItems((prev) => ({ ...prev, [storedItem]: true }));
     }
 
     if (product) {
       setActiveSubItem(product);
-    } else if (storedSubItem) {
-      setActiveSubItem(storedSubItem);
     }
-  }, [pathname, searchParams]);
+  }, [searchParams, getMainProducts, onItemChange]);
 
-  const renderSubItems = (items, category, parentName = null) => {
+  const handleMainItemClick = useCallback((item, e) => {
+    e.preventDefault();
+    const url = getMainProductUrl(item);
+    setActiveItem(item);
+    setActiveSubItem(null);
+    setExpandedItems(prev => ({
+      ...Object.fromEntries(Object.keys(prev).map(key => [key, false])),
+      [item]: true,
+    }));
+    navigateTo(url);
+  }, [getMainProductUrl, navigateTo]);
+
+  const handleSubItemClick = useCallback((category, subItem, e) => {
+    e.preventDefault();
+    const url = getSubProductUrl(category, subItem);
+    setActiveSubItem(subItem);
+    navigateTo(url);
+  }, [getSubProductUrl, navigateTo]);
+
+  // Render sub-items
+  const renderSubItems = useCallback((items, category, parentName = null) => {
     return items.map((item) => {
       const hasSubItems = item.subItems && item.subItems.length > 0;
-      const isExpanded = parentName ? expandedSubItems[category]?.[parentName]?.[item.name] : expandedSubItems[category]?.[item.name];
+      const isExpanded = parentName 
+        ? expandedSubItems[category]?.[parentName]?.[item.name] 
+        : expandedSubItems[category]?.[item.name];
 
       return (
         <li key={item.name}>
@@ -162,7 +190,7 @@ export default function ProductSidebar({ onItemChange }) {
                 onClick={(e) => {
                   e.preventDefault();
                   if (parentName) {
-                    setExpandedSubItems((prev) => ({
+                    setExpandedSubItems(prev => ({
                       ...prev,
                       [category]: {
                         ...prev[category],
@@ -173,7 +201,7 @@ export default function ProductSidebar({ onItemChange }) {
                       },
                     }));
                   } else {
-                    setExpandedSubItems((prev) => ({
+                    setExpandedSubItems(prev => ({
                       ...prev,
                       [category]: {
                         ...prev[category],
@@ -182,31 +210,39 @@ export default function ProductSidebar({ onItemChange }) {
                     }));
                   }
                 }}
-                className={`flex items-center justify-between cursor-pointer ${activeSubItem === item.name ? "text-[#2957A4] font-medium" : "hover:text-[#2957A4]"}`}
+                className={`flex items-center justify-between cursor-pointer ${
+                  activeSubItem === item.name ? "text-[#2957A4] font-medium" : "hover:text-[#2957A4]"
+                }`}
               >
                 <span>{item.name}</span>
                 {hasSubItems && <span className="px-2 text-gray-500">{isExpanded ? "−" : "+"}</span>}
               </div>
 
-              {isExpanded && hasSubItems && <ul className="ml-4 mt-1 space-y-2">{renderSubItems(item.subItems, category, item.name)}</ul>}
+              {isExpanded && hasSubItems && (
+                <ul className="ml-4 mt-1 space-y-2">
+                  {renderSubItems(item.subItems, category, item.name)}
+                </ul>
+              )}
             </>
           ) : (
-            <Link
+            <a
               href={item.url}
               onClick={(e) => {
                 e.preventDefault();
                 setActiveSubItem(item.name);
-                router.push(item.url);
+                navigateTo(item.url);
               }}
-              className={`block cursor-pointer ${activeSubItem === item.name ? "text-[#2957A4] font-medium" : "hover:text-[#2957A4]"}`}
+              className={`block cursor-pointer ${
+                activeSubItem === item.name ? "text-[#2957A4] font-medium" : "hover:text-[#2957A4]"
+              }`}
             >
               {item.name}
-            </Link>
+            </a>
           )}
         </li>
       );
     });
-  };
+  }, [activeSubItem, expandedSubItems, navigateTo]);
 
   return (
     <aside className="w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto pr-5">
@@ -215,17 +251,21 @@ export default function ProductSidebar({ onItemChange }) {
         {getMainProducts().map((item) => (
           <li key={item}>
             <div className="flex items-center justify-between">
-              <Link
+              <a
                 href={getMainProductUrl(item)}
                 onClick={(e) => handleMainItemClick(item, e)}
-                className={`w-full text-left px-2 cursor-pointer ${activeItem === item ? "text-[#2957A4] border-l-2 border-[#2957A4] font-semibold" : "text-gray-700 hover:text-[#3a4557]"}`}
+                className={`w-full text-left px-2 cursor-pointer ${
+                  activeItem === item 
+                    ? "text-[#2957A4] border-l-2 border-[#2957A4] font-semibold" 
+                    : "text-gray-700 hover:text-[#3a4557]"
+                }`}
               >
                 {item}
-              </Link>
+              </a>
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  setExpandedItems((prev) => ({
+                  setExpandedItems(prev => ({
                     ...prev,
                     [item]: !prev[item],
                   }));
@@ -236,7 +276,11 @@ export default function ProductSidebar({ onItemChange }) {
               </button>
             </div>
 
-            {expandedItems[item] && <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">{renderSubItems(productConfig.subProducts[item], item)}</ul>}
+            {expandedItems[item] && (
+              <ul className="ml-4 mt-2 space-y-3 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
+                {renderSubItems(productConfig.subProducts[item], item)}
+              </ul>
+            )}
           </li>
         ))}
       </ul>
