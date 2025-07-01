@@ -16,8 +16,10 @@ const FloatingChatPanel = dynamic(() => import('@/app/components/FloatingChatPan
 export default function TentangPage() {
   return (
     <main>
+      <LoadingWrapper>
       <Tentang />
       <FloatingChatPanel />
+      </LoadingWrapper>
     </main>
   );
 }

@@ -2,24 +2,37 @@
 import { useState, useEffect } from 'react';
 import ReactModal from 'react-modal';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image'; // Import komponen Image dari Next.js
+import Image from 'next/image';
 
 export default function ProyekGallery({ proyekList }) {
   const [selectedProyek, setSelectedProyek] = useState(null);
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
+  const [displayedProyek, setDisplayedProyek] = useState([]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Inisialisasi modal
+  // Inisialisasi modal dan handle perubahan proyekList
   useEffect(() => {
     if (typeof window !== 'undefined') {
       ReactModal.setAppElement('body');
     }
-  }, []);
+
+    // Handle fade transition when proyekList changes
+    if (proyekList.length > 0) {
+      setIsTransitioning(true);
+      const timer = setTimeout(() => {
+        setDisplayedProyek(proyekList);
+        setIsTransitioning(false);
+      }, 100); // Match this with animation duration
+
+      return () => clearTimeout(timer);
+    }
+  }, [proyekList]);
 
   // Hitung ukuran gambar saat dipilih
   useEffect(() => {
     if (!selectedProyek) return;
 
-    const img = new window.Image(); // Tambahkan window untuk menghindari error SSR
+    const img = new window.Image();
     img.src = selectedProyek.file;
     img.onload = () => {
       const maxWidth = window.innerWidth * 0.9;
@@ -63,37 +76,47 @@ export default function ProyekGallery({ proyekList }) {
 
   return (
     <>
-      {/* Grid Gallery */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black mb-20">
-        {proyekList.map((item) => (
-          <motion.div 
-            key={item.id}
-            className="block border border-[#2957A4] rounded-md overflow-hidden transition-transform duration-300 hover:scale-105 no-underline cursor-pointer"
-            onClick={() => handleImageClick(item)}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <div className="bg-gray-300 w-full aspect-[6/3] flex items-center justify-center">
-              <Image
-                src={item.file}
-                alt={item.nama}
-                className="w-full h-full object-cover"
-                loading="lazy"
-                width={600} // tambahkan width
-                height={300} // tambahkan height
-                unoptimized={true} // jika gambar dari sumber eksternal
-              />
-            </div>
-            <div className="bg-white px-4 py-3 text-left">
-              <p className="text-sm font-semibold text-black mb-2">{item.nama}</p>
-              <p className="text-xs text-blue-700 font-medium">{item.lokasi}</p>
-              <p className="text-xs text-blue-700 font-medium">{item.tempat}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+      {/* Grid Gallery dengan AnimatePresence untuk fade effect */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={JSON.stringify(displayedProyek.map(p => p.id))} // Unique key based on current items
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isTransitioning ? 0 : 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black mb-20"
+        >
+          {displayedProyek.map((item) => (
+            <motion.div 
+              key={item.id}
+              className="block border border-[#2957A4] rounded-md overflow-hidden transition-transform duration-300 hover:scale-105 no-underline cursor-pointer"
+              onClick={() => handleImageClick(item)}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              layout // Add layout animation for smooth repositioning
+            >
+              <div className="bg-gray-300 w-full aspect-[6/3] flex items-center justify-center">
+                <Image
+                  src={item.file}
+                  alt={item.nama}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  width={600}
+                  height={300}
+                  unoptimized={true}
+                />
+              </div>
+              <div className="bg-white px-4 py-3 text-left">
+                <p className="text-sm font-semibold text-black mb-2">{item.nama}</p>
+                <p className="text-xs text-blue-700 font-medium">{item.lokasi}</p>
+                <p className="text-xs text-blue-700 font-medium">{item.tempat}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Image Modal dengan Animasi */}
+      {/* Image Modal dengan Animasi (tetap sama) */}
       <ReactModal
         isOpen={!!selectedProyek}
         onRequestClose={() => setSelectedProyek(null)}
@@ -187,7 +210,7 @@ export default function ProyekGallery({ proyekList }) {
                   alt={selectedProyek.nama}
                   className="object-contain"
                   fill
-                  unoptimized={true} // jika gambar dari sumber eksternal
+                  unoptimized={true}
                 />
               </motion.div>
             </div>

@@ -5,7 +5,6 @@ import Footer from '@/app/components/Footer';
 import SessionStorageSync from "./components/SessionStorageSync";
 
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -35,9 +34,11 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
           <SessionStorageSync/>
+
           <Navbar />
           {children}
           <Footer />
+   
       </body>
     </html>
   );

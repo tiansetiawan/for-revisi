@@ -67,6 +67,11 @@ const getFilteredProyek = () => {
           sizes="100vw"
         />
       </div>
+            {/* Header Section */}
+            <div className="bg-[#F2F2F2] py-4">
+              <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+              </nav>
+            </div>
 
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-6 pe-1 py-8">
         <SidebarProyek
