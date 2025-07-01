@@ -5,7 +5,7 @@ import LoadingWrapper2 from './components/LoadingWrapper2';
 export default function Home() {
   return (
     <>
-    <LoadingWrapper2>
+      <LoadingWrapper2>
       <FloatingChatPanel />
       <Beranda />
       </LoadingWrapper2>

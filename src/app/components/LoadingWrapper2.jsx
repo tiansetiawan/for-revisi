@@ -2,61 +2,51 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import ScreenSaver from './ScreenSaver';
+import FloatingScreenSaver from './FloatingScreenSaver';
 
 export default function LoadingWrapper({ children }) {
-  const [loadingState, setLoadingState] = useState({
-    isLoading: true,
+  const [screensaverState, setScreensaverState] = useState({
+    show: false,
     isExiting: false
   });
   const pathname = usePathname();
 
   useEffect(() => {
-    // Reset state saat route berubah
-    setLoadingState({ isLoading: true, isExiting: false });
+    if (pathname === '/') {
+      const timer = setTimeout(() => {
+        setScreensaverState({ show: true, isExiting: false });
+      }, 0); // Muncul setelah 1 detik
 
-    const timer = setTimeout(() => {
-      // Trigger fade out animation
-      setLoadingState(prev => ({ ...prev, isExiting: true }));
-      
-      // Wait for animation to complete before hiding
-      const completeTimer = setTimeout(() => {
-        setLoadingState({ isLoading: false, isExiting: false });
-      }, 500); // Match this with fadeOut duration
-      
-      return () => clearTimeout(completeTimer);
-    }, 10000); // Total durasi sebelum fade out (10 detik)
-
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, [pathname]);
+
+  const handleComplete = () => {
+    setScreensaverState(prev => ({ ...prev, isExiting: true }));
+    setTimeout(() => {
+      setScreensaverState({ show: false, isExiting: false });
+    }, 500);
+  };
 
   return (
     <>
+      {children}
+      
       <AnimatePresence>
-        {loadingState.isLoading && (
+        {screensaverState.show && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ 
-              opacity: loadingState.isExiting ? 0 : 1,
+              opacity: screensaverState.isExiting ? 0 : 1,
               transition: { duration: 0.5 }
             }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            key="screensaver"
+            className="fixed inset-0 z-[9999]"
           >
-            <ScreenSaver 
-              onComplete={() => {
-                setLoadingState(prev => ({ ...prev, isExiting: true }));
-                setTimeout(() => {
-                  setLoadingState({ isLoading: false, isExiting: false });
-                }, 500);
-              }}
-            />
+            <FloatingScreenSaver onComplete={handleComplete} />
           </motion.div>
         )}
       </AnimatePresence>
-
-      {!loadingState.isLoading && children}
     </>
   );
 }
