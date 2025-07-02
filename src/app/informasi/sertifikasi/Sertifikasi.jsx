@@ -137,7 +137,7 @@ const handleDownload = async (e) => {
   }
 
   try {
-    // 1. Save data to server
+    // 1. Save data to Google Sheet
     const saveResponse = await fetch('/api/downloads', {
       method: 'POST',
       headers: {
@@ -167,18 +167,7 @@ const handleDownload = async (e) => {
     };
 
     const fileUrl = fileMap[currentDownloadItem] || '/downloads/SNI-0096-2007-GENTENG BETON.pdf';
-    const fileName = fileUrl.split('/').pop();
-
-    // Method 1: Using window.open (works best in most cases)
     window.open(fileUrl, '_blank');
-
-    // Method 2: Alternative download method
-    // const link = document.createElement('a');
-    // link.href = fileUrl;
-    // link.download = fileName;
-    // document.body.appendChild(link);
-    // link.click();
-    // setTimeout(() => document.body.removeChild(link), 100);
 
     // 3. Reset form
     setName('');
