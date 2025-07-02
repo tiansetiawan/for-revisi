@@ -95,7 +95,7 @@ export default function ScreenSaver({ onComplete }) {
             if (onComplete) onComplete();
           }}
         >
-          <source src="/videos/50th Aniv.mp4" type="video/mp4" />
+          <source src="/videos/50th Aniv-2.mp4" type="video/mp4" />
           Browser Anda tidak mendukung tag video.
         </video>
           </motion.div>

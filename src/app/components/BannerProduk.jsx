@@ -16,21 +16,21 @@ const getMediaSource = () => {
       case "Neo Solar System":
         return { type: "image", src: "/images/Banner Neo Statis.jpg" };
       case "Dual Slate":
-        return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Floral":
-         return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Victoria Series":
-        return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Onyx":
-         return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Multiline":
-        return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Slate":
-       return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Pine":
-       return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "Classic":
-       return { type: "image", src: "/videos/Spanduk web Cisangkan.gif" };
+        return { type: "image", src: "/images/Spanduk web Cisangkan.png" };
       case "New Royal":
         return { type: "image", src: "/images/banner genteng gelombang.jpg" };
       case "Oriental":
@@ -92,7 +92,7 @@ const getMediaSource = () => {
       case "Concrete Roof":
         return {
           type: "image",
-          src: "/videos/Spanduk web Cisangkan.gif",
+          src: "/images/Spanduk web Cisangkan.png",
         };
       case "Paving Block":
         return {
