@@ -30,7 +30,7 @@ export const proyekByKategori = {
     {
       id: 11,
       nama: "Dual Slate",
-      file: "/images/proyek/Concrete Roof/DS genteng summarecon bogor.jpeg",
+      file: "/images/proyek/Concrete Roof/DS genteng summarecon bogor.jpg",
       lokasi: "Summarecon Bogor",
       tempat: "Bogor",
       kategori: "Concrete Roof",
