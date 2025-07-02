@@ -98,7 +98,7 @@ export default function Karir() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/Banner Perusahaan.jpg"
+          src="/images/karir.jpg"
           alt="Banner Karir"
           width={1764}
           height={460}
