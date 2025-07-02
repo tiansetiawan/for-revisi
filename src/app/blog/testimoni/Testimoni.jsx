@@ -9,48 +9,48 @@ export default function Testimoni() {
   const [currentPage, setCurrentPage] = useState(1);
 
   const testimonials = [
-    {
+        {
       id: 1,
-      title: 'Bpk. Prana Ariantoraya (Senior Arsitek Prahasta Cakra Utama)',
+      title: 'Bapak Gatot Eko (Project Manager Residential SinarmasLand Housing-1)',
+      text: 'Secara produk Cisangkan bisa diandalkan, terbukti sampai saat ini masih bisa eksis mensupport project-project kami.',
+      imagePosition: 'left',
+      imageUrl: '/images/testimoni/206.jpg'
+    },
+    {
+      id: 2,
+      title: 'Ibu Fathma Diansari Lubis (Landscape Design Section Head, ASG)',
+      text: 'Cisangkan merupakan salah satu penyedia pavingblock dengan kualitas warna yang cukup baik dan banyak varian, sehingga mampu mengakomodir design yang kami buat.',
+      imagePosition: 'right',
+      imageUrl: '/images/testimoni/207.jpg'
+    },
+    {
+      id: 3,
+      title: 'Bapak Prana Ariantoraya (Senior Arsitek Prahasta Cakra Utama)',
       text: 'Kami memilih Cisangkan karena mutu beton yang bagus!',
       imagePosition: 'left',
       imageUrl: '/images/testimoni/208.jpg'
     },
     {
-      id: 2,
+      id: 4,
       title: 'Ibu Ir. Puji Andriyani ,MM (Pimpro Astadasa Propertindo)',
       text: 'Konsep desain dapat dikoordinasikan dengan tim desain Cisangkan untuk mewujudkan bentuk dan pola yang diinginkan, didukung oleh mutu beton yang baik serta warna menarik yang dapat dibentuk secara dinamis.',
       imagePosition: 'right',
       imageUrl: '/images/testimoni/209.jpg'
     },
     {
-      id: 3,
-      title: 'Bpk. Rubianto (Kontraktor Proyek Sarae Hills)',
+      id: 5,
+      title: 'Bapak Rubianto (Kontraktor Proyek Sarae Hills)',
       text: 'Selama 20 tahun kami menggunakan produk Cisangkan dan kami tidak pernah kecewa baik dari warna dan kekuatan beton.',
       imagePosition: 'left',
       imageUrl: '/images/testimoni/210.jpg'
     },
     {
-      id: 4,
+      id: 6,
       title: 'Ibu Inawati (Direktur Gaya Makmur Mobil)',
       text: 'Produk Cisangkan memiliki berbagai macam tipe, selain itu tim jasa pemasangan dari cisangkan juga bagus dapat mengerjakan sesuai timeline yang di sepakati dan terorganisir dengan baik.',
       imagePosition: 'right',
       imageUrl: '/images/testimoni/211.jpg'
     },
-    // {
-    //   id: 5,
-    //   title: 'Bpk. Hendra Wijaya (Project Manager PT Bangun Sejahtera)',
-    //   text: 'Kualitas produk Cisangkan konsisten dari tahun ke tahun, membuat kami percaya untuk terus bekerjasama.',
-    //   imagePosition: 'left',
-    //   imageUrl: '/images/testimoni/212.jpg'
-    // },
-    // {
-    //   id: 6,
-    //   title: 'Ibu Siti Nurhaliza (Owner Villa Alam Indah)',
-    //   text: 'Desain produk Cisangkan sangat estetik dan tahan lama, cocok untuk proyek-proyek premium kami.',
-    //   imagePosition: 'right',
-    //   imageUrl: '/images/testimoni/213.jpg'
-    // }
   ];
 
   // Konfigurasi pagination
