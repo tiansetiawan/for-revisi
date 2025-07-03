@@ -128,7 +128,7 @@ export default function Inovasi() {
       {/* Hero Section */}
       <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
-          src="/images/Banner Perusahaan.jpg"
+          src="/images/inovasi.jpg"
           alt="Banner Inovasi"
           width={1764}
           height={460}

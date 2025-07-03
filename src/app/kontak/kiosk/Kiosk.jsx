@@ -46,45 +46,53 @@ export default function Store() {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        formType: 'Kiosk' // Menandai ini dari form Kiosk
+      })
+    });
 
-      const data = await response.json();
+    const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Gagal mengirim pesan');
-      }
-
-      setSubmitStatus({ type: 'success', message: 'Pesan berhasil dikirim!' });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        message: ''
-      });
-
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus({ 
-        type: 'error', 
-        message: error.message || 'Terjadi kesalahan saat mengirim pesan'
-      });
-    } finally {
-      setIsSubmitting(false);
+    if (!response.ok) {
+      throw new Error(data.error || 'Gagal mengirim pesan');
     }
-  };
+
+    setSubmitStatus({ 
+      type: 'success', 
+      message: 'Terima kasih! Pesan Anda telah terkirim.' 
+    });
+    
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      message: ''
+    });
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+    setSubmitStatus({ 
+      type: 'error', 
+      message: error.message || 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.' 
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   useEffect(() => {
     axios.get('https://www.emsifa.com/api-wilayah-indonesia/api/provinces.json')
