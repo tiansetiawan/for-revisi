@@ -95,7 +95,7 @@ export default function DetailB() {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
       judul: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
-      tanggal: "16 Mei 2025",
+      tanggal: "16 Juni 2025",
       gambar: "/images/3.jpg",
       deskripsi: ""
     };

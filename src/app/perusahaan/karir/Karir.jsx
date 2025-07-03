@@ -11,21 +11,21 @@ export default function Karir() {
 
   // Data katalog
   const karirList = [
-    {
-      id: 1,
-      nama: "Lead Regional Representative",
-      penempatan: "Medan",
-      bidang: "Sales & Marketing",
-      kebutuhan: "1 Orang",
-      url: "/perusahaan/karir/lead-regional-representative" // URL detail
-    },
+    // {
+    //   id: 1,
+    //   nama: "Lead Regional Representative",
+    //   penempatan: "Medan",
+    //   bidang: "Sales & Marketing",
+    //   kebutuhan: "1 Orang",
+    //   url: "/perusahaan/karir/lead-regional-representative" // URL detail
+    // },
     {
       id: 2,
       nama: "Marketing Specifier",
-      penempatan: "Bandung",
+      penempatan: "Jakarta",
       bidang: "Sales & Marketing",
       kebutuhan: "1 Orang",
-      url: "/perusahaan/karir/marketing-specifier"
+      url: "https://id.jobstreet.com/id/job/85266843?type=standard&ref=search-standalone&origin=cardTitle#sol=687d691d14dc9a2077f8f58ba848889f917130c9"
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ export default function Karir() {
       penempatan: "Bandung",
       bidang: "Human Resources",
       kebutuhan: "1 Orang",
-      url: "/perusahaan/karir/hr-staff"
+      url: "https://id.jobstreet.com/id/job/84847024?type=standard&ref=search-standalone&origin=cardTitle#sol=45485e3c319116df0c4f5f2f81f8f532e819e489"
     },
     // {
     //   id: 4,

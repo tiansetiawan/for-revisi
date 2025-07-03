@@ -44,6 +44,7 @@ export default function Store() {
     }));
   };
 
+<<<<<<< HEAD
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 const [submitStatus, setSubmitStatus] = useState(null);
@@ -64,13 +65,38 @@ const handleSubmit = async (e) => {
 
     const data = await response.json();
 
+=======
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus(null);
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        ...formData,
+        formType: 'Kiosk' // Menandai ini dari form Kiosk
+      })
+    });
+
+    const data = await response.json();
+
+>>>>>>> 234f8bd6a699a91fb8ab0ce9da1a8d3221bdae58
     if (!response.ok) {
       throw new Error(data.error || 'Gagal mengirim pesan');
     }
 
     setSubmitStatus({ 
       type: 'success', 
+<<<<<<< HEAD
       message: 'Terima kasih! Pesan Anda telah terkirim. Tim kami akan segera menghubungi Anda.' 
+=======
+      message: 'Terima kasih! Pesan Anda telah terkirim.' 
+>>>>>>> 234f8bd6a699a91fb8ab0ce9da1a8d3221bdae58
     });
     
     // Reset form

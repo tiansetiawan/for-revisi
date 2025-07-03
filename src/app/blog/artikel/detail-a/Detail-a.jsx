@@ -95,7 +95,7 @@ export default function DetailA() {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
       judul: "CISANGKAN KBP CITY RUN 2025",
-      tanggal: "16 Mei 2025",
+      tanggal: "16 Juni 2025",
       gambar: "/images/Cisangkan Run.png",
       deskripsi: ""
     };

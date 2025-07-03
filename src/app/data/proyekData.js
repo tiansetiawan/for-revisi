@@ -162,6 +162,9 @@ export const proyekByKategori = {
       kategori: "Concrete Block"
     },
   ],
+  'Concrete Pipe': [
+    {},
+  ],
   // ... kategori lainnya
 };
 
