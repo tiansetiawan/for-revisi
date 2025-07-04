@@ -674,7 +674,7 @@ return (
         <h2 className="text-center text-xl sm:text-2xl font-medium 2xl:text-[2rem]">PROYEK CISANGKAN</h2>
               <p className="text-center text-blue-500 text-sm sm:text-base cursor-pointer hover:underline mb-4 sm:mb-5"><a href='/proyek'>Lihat Semua</a></p>
         
-        <div className="mx-auto px-4 max-w-8xl sm:px-1 2xl:px-30">
+        <div className="mx-auto px-4 max-w-6xl 2xl:max-w-8xl sm:px-1 2xl:px-30">
           <div className="relative">
             <Slider 
               {...ProyekSliderSettings}
