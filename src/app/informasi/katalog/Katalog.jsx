@@ -14,15 +14,16 @@ export default function Katalog() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
-    const [phoneError, setPhoneError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [isDownloading, setIsDownloading] = useState(false);
   const modalRef = useRef(null);
   const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
 
   // Data katalog
   const katalogList = [
     { id: 1, nama: "Katalog Concrete Roof", image: "/images/Katalog cr.png", file: "/downloads/katalog/Katalog Concrete Roof Baru.pdf" },
-    { id: 2, nama: "Katalog Paving Block", image: "/images/Katalog pb.png" , file: "/downloads/katalog/Katalog Paving Block Digital.pdf" },
-    { id: 3, nama: "Katalog Concrete Block", image: "/images/Katalog cb.png" , file: "/downloads/katalog/Katalog Concrete Block Digital.pdf" },
+    { id: 2, nama: "Katalog Paving Block", image: "/images/Katalog pb.png", file: "/downloads/katalog/Katalog Paving Block Digital.pdf" },
+    { id: 3, nama: "Katalog Concrete Block", image: "/images/Katalog cb.png", file: "/downloads/katalog/Katalog Concrete Block Digital.pdf" },
     { id: 4, nama: "Katalog Concrete Pipe", image: "/images/Katalog cp.png", file: "/downloads/katalog/Katalog Concrete Pipe Baru.pdf" },
   ];
 
@@ -31,11 +32,10 @@ export default function Katalog() {
     { id: 2, nama: "Flyer Sandstein (Grand Outlet, Karawang ALT 2)", image: "/images/Flyer Sandstein (Grand Outlet, Karawang ALT 2).png", file: "/downloads/brosur/Flyer Sandstein (Grand Outlet, Karawang ALT 2).pdf"},
     { id: 3, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
     { id: 4, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer Victoria & Dual Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
-    { id: 5, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
+    { id: 5, nama: "Flyer Neo Solar System", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
   ];
 
-
-   // Handle click outside modal
+  // Handle click outside modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -52,7 +52,20 @@ export default function Katalog() {
     };
   }, [showDownloadPanel]);
 
-  const handleDownload = async (e) => {
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    // Hanya menerima angka
+    if (/^\d*$/.test(value)) {
+      setTelpon(value);
+      if (value && !value.startsWith('62')) {
+        setPhoneError('Nomor handphone harus diawali dengan 62');
+      } else {
+        setPhoneError('');
+      }
+    }
+  };
+
+const handleDownload = async (e) => {
     e.preventDefault();
     
     // Validasi nomor handphone
@@ -68,64 +81,45 @@ export default function Katalog() {
       return;
     }
 
+    setIsDownloading(true); // Set loading state to true
+
     try {
-    // 1. Simpan data ke server
-    const saveResponse = await fetch('/api/downloads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        document: currentDownloadItem.nama,
-        name,
-        email,
-        phone: telpon
-      })
-    });
+      // 1. Simpan data ke server
+      const saveResponse = await fetch('/api/downloads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          document: currentDownloadItem.nama,
+          name,
+          email,
+          phone: telpon
+        })
+      });
 
-    if (!saveResponse.ok) throw new Error('Gagal menyimpan data');
+      if (!saveResponse.ok) throw new Error('Gagal menyimpan data');
 
-    // 2. Download file
-    const pdfUrl = currentDownloadItem.file;
-    
-    // Method 1: Buka di tab baru
-    window.open(pdfUrl, '_blank');
-    
-    // Method 2: Force download
-    // const a = document.createElement('a');
-    // a.href = pdfUrl;
-    // a.download = pdfUrl.split('/').pop();
-    // document.body.appendChild(a);
-    // a.click();
-    // document.body.removeChild(a);
+      // 2. Download file
+      const pdfUrl = currentDownloadItem.file;
+      window.open(pdfUrl, '_blank');
 
-    // 3. Reset form
-    setName('');
-    setEmail('');
-    setTelpon('');
-    setShowDownloadPanel(false);
+      // 3. Reset form
+      setName('');
+      setEmail('');
+      setTelpon('');
+      setShowDownloadPanel(false);
 
-  } catch (error) {
-    console.error('Error:', error);
-    alert(`Error: ${error.message}`);
-  }
-};
-
- const handlePhoneChange = (e) => {
-    const value = e.target.value;
-    // Hanya menerima angka
-    if (/^\d*$/.test(value)) {
-      setTelpon(value);
-      if (value && !value.startsWith('62')) {
-        setPhoneError('Nomor handphone harus diawali dengan 62');
-      } else {
-        setPhoneError('');
-      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert(`Error: ${error.message}`);
+    } finally {
+      setIsDownloading(false); // Set loading state to false when done
     }
   };
 
-const openDownloadPanel = (item) => {
-  setCurrentDownloadItem(item);
-  setShowDownloadPanel(true);
-};
+  const openDownloadPanel = (item) => {
+    setCurrentDownloadItem(item);
+    setShowDownloadPanel(true);
+  };
 
   // Variants untuk animasi
   const backdropVariants = {
@@ -186,7 +180,6 @@ const openDownloadPanel = (item) => {
   const katalogSliderRef = useRef(null);
   const brosurSliderRef = useRef(null);
 
-
   return (
     <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
@@ -209,17 +202,12 @@ const openDownloadPanel = (item) => {
       </div>
 
       {/* Header Section */}
-<div className="bg-[#F2F2F2] py-4">
-  <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
-    {/* <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-    <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link> */}
-    <Link href="/informasi/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link>
-    <Link href="/informasi/katalog" className="text-[#2D5DA6] font-bold">Katalog</Link>
-    {/* <Link href="/perusahaan/video" className="text-[#333] hover:text-[#2D5DA6]">Video</Link> */}
-    {/* <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">Inovasi</Link>
-    <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link> */}
-  </nav>
-</div>
+      <div className="bg-[#F2F2F2] py-4">
+        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+          <Link href="/informasi/sertifikasi" className="text-[#333] hover:text-[#2D5DA6]">Sertifikasi</Link>
+          <Link href="/informasi/katalog" className="text-[#2D5DA6] font-bold">Katalog</Link>
+        </nav>
+      </div>
 
       {/* Main Content */}
       <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
@@ -228,9 +216,6 @@ const openDownloadPanel = (item) => {
           <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
             KATALOG
           </h2>
-          {/* <p className="text-sm text-justify">
-            Lorem ipsum parturient tristique lobortis at metus libero vulputate morbi ullamcorper senectus tempus at orci et elementum cras tortor aliquet pretium nunc euismod massa nulla bibendum convallis in a egestas erat sed diam dictum orci sed augue enim facilisi placerat montes pretium congue rhoncus magnis bibendum diam maecenas aenean blandit.
-          </p> */}
         </div>
 
         {/* Slider Katalog */}
@@ -249,12 +234,12 @@ const openDownloadPanel = (item) => {
                     />
                   </div>
                   <p className="text-sm font-semibold">{item.nama}</p>
-<button 
-  onClick={() => openDownloadPanel(item)}
-  className="text-sm text-blue-700 font-medium hover:underline mb-5"
->
-  Unduh &gt;&gt;
-</button>
+                  <button 
+                    onClick={() => openDownloadPanel(item)}
+                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
+                  >
+                    Unduh &gt;&gt;
+                  </button>
                 </div>
               </div>
             ))}
@@ -280,9 +265,6 @@ const openDownloadPanel = (item) => {
           <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
             BROSUR
           </h2>
-          {/* <p className="text-sm text-justify">
-            Lorem ipsum parturient tristique lobortis at metus libero vulputate morbi ullamcorper senectus tempus at orci et elementum cras tortor aliquet pretium nunc euismod massa nulla bibendum convallis in a egestas erat sed diam dictum orci sed augue enim facilisi placerat montes pretium congue rhoncus magnis bibendum diam maecenas aenean blandit.
-          </p> */}
         </div>
 
         {/* Slider Brosur */}
@@ -301,12 +283,12 @@ const openDownloadPanel = (item) => {
                     />
                   </div>
                   <p className="text-sm font-semibold">{item.nama}</p>
-<button 
-  onClick={() => openDownloadPanel(item)}
-  className="text-sm text-blue-700 font-medium hover:underline mb-5"
->
-  Unduh &gt;&gt;
-</button>
+                  <button 
+                    onClick={() => openDownloadPanel(item)}
+                    className="text-sm text-blue-700 font-medium hover:underline mb-5"
+                  >
+                    Unduh &gt;&gt;
+                  </button>
                 </div>
               </div>
             ))}
@@ -329,7 +311,6 @@ const openDownloadPanel = (item) => {
       </section>
 
       {/* Download Panel Modal */}
-        {/* Download Panel Modal dengan Animasi */}
       <AnimatePresence>
         {showDownloadPanel && (
           <motion.div
@@ -360,41 +341,41 @@ const openDownloadPanel = (item) => {
               </button>
 
               <h3 className="text-lg font-semibold mb-4 border-b border-[#CCCCCC] pb-6 pr-6">MASUKKAN NAMA DAN EMAIL</h3>
-  <form onSubmit={handleDownload}>
-    <div className="mb-4">
-      <label className="block text-sm font-medium mb-1">Masukkan Nama</label>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-        required
-      />
-    </div>
-    <div className="mb-4">
-      <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-        required
-      />
-    </div>
-    <div className="mb-6">
-      <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
-      <input
-        type="text"
-        value={telpon}
-        onChange={handlePhoneChange}
-        className={`w-full px-3 py-2 border ${phoneError ? 'border-red-500' : 'border-gray-300'} rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500`}
-        placeholder="62xxxxxxxxxx"
-        required
-      />
-      {phoneError && (
-        <p className="mt-1 text-sm text-red-600">{phoneError}</p>
-      )}
-    </div>
+              <form onSubmit={handleDownload}>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium mb-1">Masukkan Nama</label>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    required
+                  />
+                </div>
+                <div className="mb-6">
+                  <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
+                  <input
+                    type="text"
+                    value={telpon}
+                    onChange={handlePhoneChange}
+                    className={`w-full px-3 py-2 border ${phoneError ? 'border-red-500' : 'border-gray-300'} rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500`}
+                    placeholder="62xxxxxxxxxx"
+                    required
+                  />
+                  {phoneError && (
+                    <p className="mt-1 text-sm text-red-600">{phoneError}</p>
+                  )}
+                </div>
                 <div className="flex justify-end space-x-3">
                   <button
                     type="button"
@@ -403,12 +384,23 @@ const openDownloadPanel = (item) => {
                   >
                     Batal
                   </button>
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-[#0B203F] text-sm font-medium text-white hover:bg-blue-700 rounded transition-colors"
-                  >
-                    Download
-                  </button>
+<button
+      type="submit"
+      className="px-4 py-2 bg-[#0B203F] text-sm font-medium text-white hover:bg-blue-700 rounded transition-colors flex items-center justify-center min-w-[100px]"
+      disabled={isDownloading}
+    >
+      {isDownloading ? (
+        <>
+          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Memproses...
+        </>
+      ) : (
+        'Download'
+      )}
+    </button>
                 </div>
               </form>
             </motion.div>

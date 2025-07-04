@@ -11,6 +11,7 @@ export default function Sertifikasi() {
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
   const [phoneError, setPhoneError] = useState('');
+  const [isDownloading, setIsDownloading] = useState(false);
   const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
   const [downloadHistory, setDownloadHistory] = useState([]);
   const modalRef = useRef(null);
@@ -142,9 +143,10 @@ export default function Sertifikasi() {
     }
   };
 
-  const handleDownload = async (e) => {
+const handleDownload = async (e) => {
     e.preventDefault();
     
+    // Validasi nomor handphone
     if (telpon && !telpon.startsWith('62')) {
       setPhoneError('Nomor handphone harus diawali dengan 62');
       return;
@@ -157,7 +159,10 @@ export default function Sertifikasi() {
       return;
     }
 
+    setIsDownloading(true); // Set loading state to true
+
     try {
+      // 1. Save data to Google Sheet
       const saveResponse = await fetch('/api/downloads', {
         method: 'POST',
         headers: {
@@ -171,12 +176,9 @@ export default function Sertifikasi() {
         })
       });
 
-      const saveResult = await saveResponse.json();
-      
-      if (!saveResponse.ok) {
-        throw new Error(saveResult.error || 'Gagal menyimpan data');
-      }
+      if (!saveResponse.ok) throw new Error('Gagal menyimpan data');
 
+      // 2. Process file download
       const fileMap = {
         'SNI': '/downloads/13. Sertifikat SNI Genteng No.CPCB-0433.pdf',
         'TKDN': '/downloads/tkdn-certificate.pdf',
@@ -188,6 +190,7 @@ export default function Sertifikasi() {
       const fileUrl = fileMap[currentDownloadItem] || '/downloads/SNI-0096-2007-GENTENG BETON.pdf';
       window.open(fileUrl, '_blank');
 
+      // 3. Reset form
       setName('');
       setEmail('');
       setTelpon('');
@@ -196,6 +199,8 @@ export default function Sertifikasi() {
     } catch (error) {
       console.error('Error:', error);
       alert(`Error: ${error.message}`);
+    } finally {
+      setIsDownloading(false); // Set loading state to false when done
     }
   };
 
@@ -406,12 +411,23 @@ export default function Sertifikasi() {
                   >
                     Batal
                   </button>
-                  <button
-                    type="submit"
-                    className="px-4 py-2 bg-[#0B203F] text-sm font-medium text-white hover:bg-blue-700 rounded transition-colors"
-                  >
-                    Download
-                  </button>
+ <button
+      type="submit"
+      className="px-4 py-2 bg-[#0B203F] text-sm font-medium text-white hover:bg-blue-700 rounded transition-colors flex items-center justify-center min-w-[100px]"
+      disabled={isDownloading}
+    >
+      {isDownloading ? (
+        <>
+          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          Memproses...
+        </>
+      ) : (
+        'Download'
+      )}
+    </button>
                 </div>
               </form>
             </motion.div>
