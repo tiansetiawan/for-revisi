@@ -14,29 +14,41 @@ const getMediaSource = () => {
     switch (product) {
       // Concrete Roof Products
       case "Neo Solar System":
-        return { type: "video", src: "/images/banners/sub-products/Banner Neo.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Banner Neo Statis.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Banner Neo.mp4" };
       case "Dual Slate":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Floral":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Victoria Series":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Onyx":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Multiline":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Slate":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Pine":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Classic":
-        return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "New Royal":
-        return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
+        return { type: "iamge", src: "/images/banners/sub-products/banner genteng gelombang.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
       case "Oriental":
-        return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/banner genteng gelombang.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
       case "Majestic":
-        return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
+        return { type: "image", src: "/images/banners/sub-products/banner genteng gelombang.jpg" };
+        // return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
 
       // Paving Block Products
       case "Square Set":
@@ -91,8 +103,10 @@ const getMediaSource = () => {
     switch (kategori) {
       case "Concrete Roof":
         return {
-          type: "video",
-          src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
+          type: "image",
+          src: "/images/banners/sub-products/Spanduk web Cisangkan.png",
+          // type: "video",
+          // src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
         };
       case "Paving Block":
         return {

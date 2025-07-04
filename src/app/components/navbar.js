@@ -71,11 +71,11 @@ export default function Navbar() {
       <div className="flex items-center justify-between px-10 py-4 2xl:px-14">
         {/* Logo dengan fungsi reload */}
         <div className="flex items-center space-x-3 cursor-pointer" onClick={reloadHome}>
-          <Image src="/logo.png" alt="Cisangkan Logo" width={200} height={200} className="hover:opacity-80 transition-opacity" />
+          <Image src="/logo.png" alt="Cisangkan Logo" width={200} height={200} className="hover:opacity-80 transition-opacity 2xl:w-60" />
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium">
+        <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium 2xl:gap-2 2xl:text-xl">
           <li>
             <Link href="/">
               <button onClick={scrollToTop} className={`px-3 py-1 rounded-full cursor-pointer ${isActive("/") ? "bg-[#0F1E3E] text-white" : "hover:bg-[#0F1E3E] hover:text-white"}`}>
@@ -157,7 +157,7 @@ export default function Navbar() {
         </ul>
 
 {/* Right Side - Diperbarui */}
-        <div className="hidden lg:flex items-center space-x-4 mr-4 text-gray-600 text-sm">
+        <div className="hidden lg:flex items-center space-x-4 mr-4 text-gray-600 text-sm 2xl:text-xl">
           <div>
             <span className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} onClick={() => setLanguage("Eng")}>
               Eng
