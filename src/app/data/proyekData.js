@@ -21,7 +21,7 @@ export const proyekByKategori = {
     {
       id: 10,
       nama: "Dual Slate",
-      file: "/images/proyek/Concrete Roof/DS Banjar Wijaya.jpg",
+      file: "/images/proyek/Concrete Roof/Banjar Wijaya.jpg",
       lokasi: "Banjar Wijaya",
       tempat: "",
       kategori: "Concrete Roof",
