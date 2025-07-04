@@ -14,6 +14,7 @@ export default function Katalog() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
+    const [phoneError, setPhoneError] = useState('');
   const modalRef = useRef(null);
   const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
 
@@ -51,15 +52,23 @@ export default function Katalog() {
     };
   }, [showDownloadPanel]);
 
-const handleDownload = async (e) => {
-  e.preventDefault();
-  
-  if (!name || !email) {
-    alert('Harap isi nama dan email terlebih dahulu');
-    return;
-  }
+  const handleDownload = async (e) => {
+    e.preventDefault();
+    
+    // Validasi nomor handphone
+    if (telpon && !telpon.startsWith('62')) {
+      setPhoneError('Nomor handphone harus diawali dengan 62');
+      return;
+    } else {
+      setPhoneError('');
+    }
 
-  try {
+    if (!name || !email) {
+      alert('Harap isi nama dan email terlebih dahulu');
+      return;
+    }
+
+    try {
     // 1. Simpan data ke server
     const saveResponse = await fetch('/api/downloads', {
       method: 'POST',
@@ -99,6 +108,19 @@ const handleDownload = async (e) => {
     alert(`Error: ${error.message}`);
   }
 };
+
+ const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    // Hanya menerima angka
+    if (/^\d*$/.test(value)) {
+      setTelpon(value);
+      if (value && !value.startsWith('62')) {
+        setPhoneError('Nomor handphone harus diawali dengan 62');
+      } else {
+        setPhoneError('');
+      }
+    }
+  };
 
 const openDownloadPanel = (item) => {
   setCurrentDownloadItem(item);
@@ -338,37 +360,41 @@ const openDownloadPanel = (item) => {
               </button>
 
               <h3 className="text-lg font-semibold mb-4 border-b border-[#CCCCCC] pb-6 pr-6">MASUKKAN NAMA DAN EMAIL</h3>
-              <form onSubmit={handleDownload}>
-                <div className="mb-4">
-                  <label className="block text-sm font-medium mb-1">Masukkan Nama</label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    required
-                  />
-                </div>
-                <div className="mb-6">
-                  <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
-                  <input
-                    type="text"
-                    value={telpon}
-                    onChange={(e) => setTelpon(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                    required
-                  />
-                </div>
+  <form onSubmit={handleDownload}>
+    <div className="mb-4">
+      <label className="block text-sm font-medium mb-1">Masukkan Nama</label>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        required
+      />
+    </div>
+    <div className="mb-4">
+      <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        required
+      />
+    </div>
+    <div className="mb-6">
+      <label className="block text-sm font-medium mb-1">Masukkan No Telp./Hp</label>
+      <input
+        type="text"
+        value={telpon}
+        onChange={handlePhoneChange}
+        className={`w-full px-3 py-2 border ${phoneError ? 'border-red-500' : 'border-gray-300'} rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500`}
+        placeholder="62xxxxxxxxxx"
+        required
+      />
+      {phoneError && (
+        <p className="mt-1 text-sm text-red-600">{phoneError}</p>
+      )}
+    </div>
                 <div className="flex justify-end space-x-3">
                   <button
                     type="button"

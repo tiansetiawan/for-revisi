@@ -653,7 +653,7 @@ return (
         }}
       >
         <div className="flex flex-col items-center group text-[#333333] cursor-pointer">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-48 2xl:h-48 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-45 2xl:h-45 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
             <Image
               src={category.icon}
               alt={category.name}
@@ -674,7 +674,7 @@ return (
         <h2 className="text-center text-xl sm:text-2xl font-medium 2xl:text-[2rem]">PROYEK CISANGKAN</h2>
               <p className="text-center text-blue-500 text-sm sm:text-base cursor-pointer hover:underline mb-4 sm:mb-5"><a href='/proyek'>Lihat Semua</a></p>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-1">
+        <div className="mx-auto px-4 max-w-8xl sm:px-1 2xl:px-30">
           <div className="relative">
             <Slider 
               {...ProyekSliderSettings}

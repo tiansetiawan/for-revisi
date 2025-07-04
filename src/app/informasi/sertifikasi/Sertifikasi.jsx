@@ -10,6 +10,7 @@ export default function Sertifikasi() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [telpon, setTelpon] = useState('');
+  const [phoneError, setPhoneError] = useState('');
   const [currentDownloadItem, setCurrentDownloadItem] = useState(null);
   const [downloadHistory, setDownloadHistory] = useState([]);
   const modalRef = useRef(null);
@@ -129,59 +130,74 @@ export default function Sertifikasi() {
     };
   }, [showDownloadPanel]);
 
-const handleDownload = async (e) => {
-  e.preventDefault();
-  if (!name || !email) {
-    alert('Harap isi nama dan email terlebih dahulu');
-    return;
-  }
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setTelpon(value);
+      if (value && !value.startsWith('62')) {
+        setPhoneError('Nomor handphone harus diawali dengan 62');
+      } else {
+        setPhoneError('');
+      }
+    }
+  };
 
-  try {
-    // 1. Save data to Google Sheet
-    const saveResponse = await fetch('/api/downloads', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        document: currentDownloadItem,
-        name,
-        email,
-        phone: telpon
-      })
-    });
-
-    const saveResult = await saveResponse.json();
+  const handleDownload = async (e) => {
+    e.preventDefault();
     
-    if (!saveResponse.ok) {
-      throw new Error(saveResult.error || 'Gagal menyimpan data');
+    if (telpon && !telpon.startsWith('62')) {
+      setPhoneError('Nomor handphone harus diawali dengan 62');
+      return;
+    } else {
+      setPhoneError('');
     }
 
-    // 2. Process file download
-    const fileMap = {
-      'SNI': '/downloads/13. Sertifikat SNI Genteng No.CPCB-0433.pdf',
-      'TKDN': '/downloads/tkdn-certificate.pdf',
-      'IAPMO': '/downloads/40. SERT ISO 9001 - PT. Cisangkan.pdf',
-      'KAN': '/downloads/kan-certificate.pdf',
-      'GREEN_LABEL': '/downloads/48. Sertifikat Green Label.pdf'
-    };
+    if (!name || !email) {
+      alert('Harap isi nama dan email terlebih dahulu');
+      return;
+    }
 
-    const fileUrl = fileMap[currentDownloadItem] || '/downloads/SNI-0096-2007-GENTENG BETON.pdf';
-    window.open(fileUrl, '_blank');
+    try {
+      const saveResponse = await fetch('/api/downloads', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          document: currentDownloadItem,
+          name,
+          email,
+          phone: telpon
+        })
+      });
 
-    // 3. Reset form
-    setName('');
-    setEmail('');
-    setTelpon('');
-    setShowDownloadPanel(false);
+      const saveResult = await saveResponse.json();
+      
+      if (!saveResponse.ok) {
+        throw new Error(saveResult.error || 'Gagal menyimpan data');
+      }
 
-    console.log('Download dan penyimpanan data berhasil');
+      const fileMap = {
+        'SNI': '/downloads/13. Sertifikat SNI Genteng No.CPCB-0433.pdf',
+        'TKDN': '/downloads/tkdn-certificate.pdf',
+        'IAPMO': '/downloads/40. SERT ISO 9001 - PT. Cisangkan.pdf',
+        'KAN': '/downloads/kan-certificate.pdf',
+        'GREEN_LABEL': '/downloads/48. Sertifikat Green Label.pdf'
+      };
 
-  } catch (error) {
-    console.error('Error:', error);
-    alert(`Error: ${error.message}`);
-  }
-};
+      const fileUrl = fileMap[currentDownloadItem] || '/downloads/SNI-0096-2007-GENTENG BETON.pdf';
+      window.open(fileUrl, '_blank');
+
+      setName('');
+      setEmail('');
+      setTelpon('');
+      setShowDownloadPanel(false);
+
+    } catch (error) {
+      console.error('Error:', error);
+      alert(`Error: ${error.message}`);
+    }
+  };
 
   const handleTKDNDownload = () => {
     window.open('https://tkdn.kemenperin.go.id/sertifikat_perush.php?id=vqUH9qalfsZtbUNxr_FTaBzIcQ11dCMcjVMHKpkQJeU,&id_siinas=nHTdkkt3VN7_Y1M_OfKwyLOys7-lTTfsQ6VteJmphdA', '_blank');
@@ -284,12 +300,6 @@ const handleDownload = async (e) => {
               alt: 'APM',
               description: 'Sertifikasi IAPMO merupakan pengakuan internasional terhadap kualitas dan keamanan produk plumbing dan mekanikal.',
             },
-            // {
-            //   id: 'KAN',
-            //   src: '/images/KAN.png',
-            //   alt: 'KAN',
-            //   description: 'KAN memberikan akreditasi terhadap lembaga sertifikasi dan laboratorium pengujian yang kredibel.',
-            // },
             {
               id: 'GREEN_LABEL',
               src: '/images/GREEN LABEL.png',
@@ -364,7 +374,7 @@ const handleDownload = async (e) => {
                     required
                   />
                 </div>
-                <div className="mb-6">
+                <div className="mb-4">
                   <label className="block text-sm font-medium mb-1">Masukkan Alamat Email</label>
                   <input
                     type="email"
@@ -379,10 +389,14 @@ const handleDownload = async (e) => {
                   <input
                     type="text"
                     value={telpon}
-                    onChange={(e) => setTelpon(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+                    onChange={handlePhoneChange}
+                    className={`w-full px-3 py-2 border ${phoneError ? 'border-red-500' : 'border-gray-300'} rounded transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500`}
+                    placeholder="62xxxxxxxxxx"
                     required
                   />
+                  {phoneError && (
+                    <p className="mt-1 text-sm text-red-600">{phoneError}</p>
+                  )}
                 </div>
                 <div className="flex justify-end space-x-3">
                   <button
