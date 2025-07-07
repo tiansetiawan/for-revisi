@@ -2,6 +2,9 @@
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 
+// URL video dari Vercel Blob Storage
+const BLOB_VIDEO_URL = "https://1e6pmf63ntsaxxu5.public.blob.vercel-storage.com/50Th%20Aniv-2-XYndveJsKDruj2LwJJNSF0vzbb1iov.mp4";
+
 export default function FullscreenScreenSaver({ onComplete }) {
   const videoRef = useRef(null);
 
@@ -23,6 +26,7 @@ export default function FullscreenScreenSaver({ onComplete }) {
     if (video) {
       video.addEventListener('ended', handleVideoEnd);
       
+      // Auto-play dengan error handling
       const playPromise = video.play();
       
       if (playPromise !== undefined) {
@@ -32,6 +36,7 @@ export default function FullscreenScreenSaver({ onComplete }) {
           })
           .catch(error => {
             console.error("Autoplay prevented:", error);
+            // Fallback: lanjutkan setelah 15 detik jika autoplay diblokir
             fallbackTimer = setTimeout(onComplete, 15000);
           });
       }
@@ -54,8 +59,13 @@ export default function FullscreenScreenSaver({ onComplete }) {
         loop={false}
         playsInline
         className="w-full h-full object-cover"
+        // Key untuk memastikan video reload saat URL berubah
+        key={BLOB_VIDEO_URL}
       >
-        <source src="/videos/50th Aniv-2.mp4" type="video/mp4" />
+        <source 
+          src={BLOB_VIDEO_URL} 
+          type="video/mp4" 
+        />
         Browser Anda tidak mendukung tag video.
       </video>
       
