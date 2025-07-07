@@ -103,10 +103,10 @@ const getMediaSource = () => {
     switch (kategori) {
       case "Concrete Roof":
         return {
-          type: "image",
-          src: "/images/banners/sub-products/Spanduk web Cisangkan.png",
-          // type: "video",
-          // src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
+          // type: "image",
+          // src: "/images/banners/sub-products/Spanduk web Cisangkan.png",
+          type: "video",
+          src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
         };
       case "Paving Block":
         return {
