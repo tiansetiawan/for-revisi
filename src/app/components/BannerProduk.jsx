@@ -14,8 +14,8 @@ const getMediaSource = () => {
     switch (product) {
       // Concrete Roof Products
       case "Neo Solar System":
-        return { type: "image", src: "/images/banners/sub-products/Banner Neo Statis.jpg" };
-        // return { type: "video", src: "/images/banners/sub-products/Banner Neo.mp4" };
+        // return { type: "image", src: "/images/banners/sub-products/Banner Neo Statis.jpg" };
+        return { type: "video", src: "/images/banners/sub-products/Banner Neo.mp4" };
       case "Dual Slate":
         return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
