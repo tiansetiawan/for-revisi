@@ -17,31 +17,31 @@ const getMediaSource = () => {
         return { type: "image", src: "/images/banners/sub-products/Banner Neo Statis.jpg" };
         // return { type: "video", src: "/images/banners/sub-products/Banner Neo.mp4" };
       case "Dual Slate":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Floral":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Victoria Series":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Onyx":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Multiline":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Slate":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Pine":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "Classic":
-        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/Spanduk web Cisangkan.png" };
         // return { type: "video", src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4" };
       case "New Royal":
-        return { type: "iamge", src: "/images/banners/sub-products/banner genteng gelombang.jpg" };
+        return { type: "image", src: "/images/banners/sub-products/banner genteng gelombang.jpg" };
         // return { type: "video", src: "/images/banners/sub-products/banner genteng gelombang.mp4" };
       case "Oriental":
         return { type: "image", src: "/images/banners/sub-products/banner genteng gelombang.jpg" };
