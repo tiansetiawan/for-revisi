@@ -548,20 +548,20 @@ const ProyekSliderSettings = {
 const ProyekNextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className={`absolute ${isMobile ? 'right-2' : 'right-[-4.5rem]'} top-1/2 -translate-y-1/2 z-10 bg-[#0B1F3A] hover:bg-[#0B203F] text-white p-2 sm:p-3 rounded-none shadow-lg transition-all duration-300`}
+    className={`absolute ${isMobile ? 'right-2' : 'right-[-4.5rem] 2xl:right-[-7rem]'} 2xl:top-100 top-1/2 -translate-y-1/2 z-10 bg-[#0B1F3A] hover:bg-[#0B203F] text-white p-2 sm:p-3 2xl:p-5 rounded-none shadow-lg transition-all duration-300`}
     aria-label="Next projects"
   >
-    <FaChevronRight className="text-sm sm:text-base" />
+    <FaChevronRight className="text-sm sm:text-base 2xl:text-2xl" />
   </button>
 );
 
 const ProyekPrevArrow = ({ onClick }) => (
   <button
     onClick={onClick}
-    className={`absolute ${isMobile ? 'left-2' : 'left-[-4.5rem]'} top-1/2 -translate-y-1/2 z-10 bg-[#0B1F3A] hover:bg-[#0B203F] text-white p-2 sm:p-3 rounded-none shadow-lg transition-all duration-300`}
+    className={`absolute ${isMobile ? 'left-2' : 'left-[-4.5rem] 2xl:left-[-7rem]'} 2xl:top-100 top-1/2 -translate-y-1/2 z-10 bg-[#0B1F3A] hover:bg-[#0B203F] text-white p-2 sm:p-3 2xl:p-5 rounded-none shadow-lg transition-all duration-300`}
     aria-label="Previous projects"
   >
-    <FaChevronLeft className="text-sm sm:text-base" />
+    <FaChevronLeft className="text-sm sm:text-base 2xl:text-2xl" />
   </button>
 );
 
@@ -674,21 +674,22 @@ return (
         <h2 className="text-center text-xl sm:text-2xl font-medium 2xl:text-[2rem]">PROYEK CISANGKAN</h2>
               <p className="text-center text-blue-500 text-sm sm:text-base cursor-pointer hover:underline mb-4 sm:mb-5"><a href='/proyek'>Lihat Semua</a></p>
         
-        <div className="mx-auto px-4 max-w-6xl 2xl:max-w-8xl sm:px-1 2xl:px-30">
-          <div className="relative">
-            <Slider 
-              {...ProyekSliderSettings}
-              nextArrow={<ProyekNextArrow />}
-              prevArrow={<ProyekPrevArrow />}
-            >
-              {proyekData.map((proyek) => (
-                <div key={proyek.id} className="px-2 mb-4 h-full">
-                  <ProjectCard proyek={proyek} />
-                </div>
-              ))}
-            </Slider>
-          </div>
+<div className="mx-auto px-4 sm:px-1 xl:px-14 max-w-screen-2xl">
+  <div className="mx-auto relative 2xl:w-[100rem] w-full 2xl:right-22">
+    <Slider 
+      {...ProyekSliderSettings}
+      nextArrow={<ProyekNextArrow />}
+      prevArrow={<ProyekPrevArrow />}
+    >
+      {proyekData.map((proyek) => (
+        <div key={proyek.id} className="px-2 mb-4 h-full">
+          <ProjectCard proyek={proyek} />
         </div>
+      ))}
+    </Slider>
+  </div>
+</div>
+
       </section>
 
         {/* Video Testimonial Produk */}
