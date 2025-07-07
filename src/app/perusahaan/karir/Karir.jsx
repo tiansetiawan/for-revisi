@@ -29,11 +29,11 @@ export default function Karir() {
     },
     {
       id: 3,
-      nama: "HR Staff",
+      nama: "Corporate Secretary",
       penempatan: "Bandung",
-      bidang: "Human Resources",
+      bidang: "Asisten Pribadi, Asisten Eksekutif & Sekretarial (Administrasi & Dukungan Perkantoran)",
       kebutuhan: "1 Orang",
-      url: "https://id.jobstreet.com/id/job/84847024?type=standard&ref=search-standalone&origin=cardTitle#sol=45485e3c319116df0c4f5f2f81f8f532e819e489"
+      url: "https://id.jobstreet.com/id/job/85417012?type=standard&ref=search-standalone&origin=cardTitle#sol=0e5be54b40d1233246861ea9aa16ca9c815f0335"
     },
     // {
     //   id: 4,
