@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const ConcreteBlockContent = () => {
   // Data array untuk langkah-langkah pemasangan
@@ -57,7 +58,7 @@ export const ConcreteBlockContent = () => {
         <ul className="text-sm leading-relaxed space-y-1 ps-9 list-disc">
           <li className="ps-3">Bahan dasar campuran beton</li>
           <li className="ps-3">
-            Mutu Produk mengacu pada SNI 03 - 0349 - 1989 Kategori peringkat I
+            Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 03 - 0349 - 1989</Link> Kategori peringkat I
           </li>
           <li className="ps-3">
             Kuat tekan rata-rata 70 kg/cm²
@@ -66,13 +67,13 @@ export const ConcreteBlockContent = () => {
             Penyerapan air rata-rata 25%
           </li>
           <li className="ps-3">
-            Hasil uji insulasi bunyi mengacu pada SNI 03 - 6386 - 2000 dengan hasil Rw = 53 dB
+            <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Hasil uji insulasi bunyi</Link> mengacu pada SNI 03 - 6386 - 2000 dengan hasil Rw = 53 dB
           </li>
           <li className="ps-3">
-            Hasil uji transmitansi thermal rata-rata mengacu pada SNI 03 - 6389 - 2000 dengan hasil OTTV (<em>overall thermal transfer value</em>) &lt; 45 watt/m² (<em>bangunan hemat energi</em>)
+            <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Hasil uji transmitansi thermal</Link> rata-rata mengacu pada SNI 03 - 6389 - 2000 dengan hasil OTTV (<em>overall thermal transfer value</em>) &lt; 45 watt/m² (<em>bangunan hemat energi</em>)
           </li>
           <li className="ps-3">
-            Hasil ketahanan api mengacu pada SNI 1741 : 2008, dan mempunyai ketahanan api lebih dari 2 jam
+            <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Hasil ketahanan api</Link> mengacu pada SNI 1741 : 2008, dan mempunyai ketahanan api lebih dari 2 jam
           </li>
         </ul>
       </section>

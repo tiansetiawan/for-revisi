@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const ConcreteRoofContent = () => (
   <>
@@ -21,14 +22,14 @@ export const ConcreteRoofContent = () => (
       <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
       <ul className="list-disc list-inside text-sm leading-relaxed space-y-1">
         <li>Bahan dasar campuran Beton</li>
-        <li>Mutu Produk mengacu pada SNI 0096:2007</li>
+        <li>Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 0096:2007</Link></li>
         <li>Beban lentur minimal 1200 N</li>
         <li>Daya serap air &lt; 10%</li>
         <li>Sistem produksi mesin Press Wet System</li>
         <li>Sistem pengecatan Sprayboot 2 tahap (Base Coat dan Pigment Top Coat)</li>
         <li>Finishing menggunakan Cat Solvent Based tahan cuaca, air, alkali, sinar UV</li>
         <li>Ketebalan cat 70 mikron</li>
-        <li>Prosedur dan hasil pengujian cat mengacu pada ASTM Section 6, Volume 06.01</li>
+        <li>Prosedur dan <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">hasil pengujian</Link> cat mengacu pada ASTM Section 6, Volume 06.01</li>
         <li>Terdiri dari banyak varian warna :</li>
                 <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">
@@ -42,7 +43,7 @@ export const ConcreteRoofContent = () => (
 );
 
 export const concreteRoofProducts = [
-  { name: 'Neo Solar System', image: '/images/Concrete Roof/Neo/neo 2.png'},
+  { name: 'Genteng Neo (Premium)', image: '/images/Concrete Roof/Neo/neo 2.png'},
   { name: 'Dual Slate', image: '/images/Concrete Roof/Dual Slate/dualslate 1.png' },
   { name: 'Floral', image: '/images/Concrete Roof/Floral/floral 1.png' }, 
   { name: 'Victoria Onyx', image: '/images/Concrete Roof/Victoria Series/onyx1.png' }, 
@@ -50,8 +51,8 @@ export const concreteRoofProducts = [
   { name: 'Victoria Slate', image: '/images/Concrete Roof/Victoria Series/slate1.png' },
   { name: 'Victoria Pine', image: '/images/Concrete Roof/Victoria Series/pine1.png' },
   { name: 'Victoria Classic', image: '/images/Concrete Roof/Victoria Series/classic1.png' },
-  { name: 'New Royal', image: '/images/Concrete Roof/New Royal/new royal 1.png' }, 
-  { name: 'Oriental', image: '/images/Concrete Roof/Oriental/oriental 1.png' },
-  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/majestic 1.png' },
+  { name: 'New Royal', image: '/images/Concrete Roof/New Royal/newroyal-sw.png' }, 
+  { name: 'Oriental', image: '/images/Concrete Roof/Oriental/oriental-sw.png' },
+  { name: 'Majestic', image: '/images/Concrete Roof/Majestic/Majestic-black.png' },
   { name: '', image: '' },
 ];

@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const taliAirSubItems  = [
    {
   id: 'Grill 01.1 (bertulang)',
@@ -901,7 +902,16 @@ export const productsPb3Content = {
     ],
     specifications: [
       { value: 'Bahan dasar campuran beton' },
-      { value: 'Mutu Produk mengacu pada standar SNI 2442-2008' },
+      {
+  value: (
+    <>
+      Mutu Produk mengacu pada standar{' '}
+      <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">
+        SNI 2442-2008
+      </Link>{' '}
+    </>
+  )
+},
       { value: 'Mutu beton K-300 (wet process)' },
       { value: 'Mutu beton K-225 (dry process)' }
     ],
@@ -931,7 +941,16 @@ export const productsPb3Content = {
     ],
     specifications: [
       { value: 'Bahan dasar campuran beton' },
-      { value: 'Mutu Produk mengacu pada standar SNI 2442-2008' },
+      {
+  value: (
+    <>
+      Mutu Produk mengacu pada standar{' '}
+      <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">
+        SNI 2442-2008
+      </Link>{' '}
+    </>
+  )
+},
       { value: 'Mutu beton K-300 (wet process)' },
       { value: 'Mutu beton K-225 (dry process)' }
     ],

@@ -60,7 +60,7 @@ export default function Product() {
   const getDetailPath = (category, productName) => {
   if (category === 'Concrete Roof') {
     // Handle Neo Solar System khusus
-    if (productName === 'Neo Solar System') return 'detail';
+    if (productName === 'Genteng Neo (Premium)') return 'detail';
     
     // Handle Victoria Series
     if (productName.startsWith('Victoria ')) return 'detail-victoria';

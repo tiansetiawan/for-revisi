@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const PavingBlockContent = () => (
   <>
@@ -7,7 +8,7 @@ export const PavingBlockContent = () => (
       <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
       <ul className="text-sm leading-relaxed space-y-1 ps-9 list-none">
         <li className="ps-3 list-disc">Bahan dasar campuran Beton</li>
-        <li className="ps-3 list-disc">Toleransi dimensi mengacu pada B56717-1 : 1993</li>
+        <li className="ps-3 list-disc">Toleransi dimensi mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">B56717-1 : 1993</Link></li>
         <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">
             <span>- Panjang/Lebar</span>
@@ -18,7 +19,7 @@ export const PavingBlockContent = () => (
             <span>: 3 mm</span>
           </li>
         </ul>
-        <li className="ps-3 list-disc">Mutu Produk mengacu pada SNI 03-0691-1996</li>
+        <li className="ps-3 list-disc">Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 03-0691-1996</Link></li>
         <li className="ps-3 list-disc">Kategori Peringkat 1</li>
         <li className="ps-3 list-disc">Kuat Tekan rata-rata :</li>
         <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
@@ -33,7 +34,7 @@ export const PavingBlockContent = () => (
         </ul>
         <li className="ps-3 list-disc">Penyerapan air rata-rata 3%</li>
         <li className="ps-3 list-disc">Ketahanan aus rata-rata 0.09 mm/menit</li>
-        <li className="ps-3 list-disc">Kuat lentur tipe Truepave (AS/NZS 4456.5:2003) 50 Kgf/cm2</li>
+        <li className="ps-3 list-disc">Kuat lentur tipe Truepave (<Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">AS/NZS 4456.5:2003</Link>) 50 Kgf/cm2</li>
         <li className="ps-3 list-disc">Diproduksi menggunakan mesin otomatis dengan sistem Vibrating dan Compressing</li>
         <li className="ps-3 list-disc">Proses Produksi dilengkapi dengan alat pengendali kandungan air (Water Moisture Control) dan teknologi pengembunan (Fogging)</li>
         <li className="ps-3 list-disc">Produk terdiri dari banyak varian warna</li>

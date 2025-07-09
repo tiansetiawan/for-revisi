@@ -10,8 +10,8 @@ import BannerProduk from '../../components/BannerProduk';
 
 export default function Details() {
   // Product content state
-  const [currentProduct, setCurrentProduct] = useState(productsContent['Neo Solar System']);
-  const [activeThumbnail, setActiveThumbnail] = useState(productsContent['Neo Solar System'].thumbnails[0]);
+  const [currentProduct, setCurrentProduct] = useState(productsContent['Genteng Neo (Premium)']);
+  const [activeThumbnail, setActiveThumbnail] = useState(productsContent['Genteng Neo (Premium)'].thumbnails[0]);
   
   // Slider state
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -116,8 +116,8 @@ const calculateRequirement = () => {
     if (calculationType === 'Luas Atap') {
       calculatedResult = Math.ceil(value * usageValue);
     } else {
-      if (!slopeAngle || slopeAngle < 25 || slopeAngle > 45) {
-        alert('Mohon masukkan sudut kemiringan antara 25°-45°');
+      if (!slopeAngle || slopeAngle < 20 || slopeAngle > 75) {
+        alert('Mohon masukkan sudut kemiringan min 20°');
         return;
       }
       
@@ -315,7 +315,7 @@ const calculateRequirement = () => {
                             value={slopeAngle}
                             onChange={(e) => setSlopeAngle(e.target.value)}
                             className="px-3 py-2 w-full focus:outline-none text-xs"
-                            placeholder="25-45 derajat"
+                            placeholder="min 20 derajat"
                             min="0"
                             max="90"
                           />

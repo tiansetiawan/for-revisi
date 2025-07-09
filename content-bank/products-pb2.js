@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 export const concreteTileSubItems = [
 {
     id: 'Sandstein',
@@ -158,14 +160,33 @@ export const productsPb2Content = {
     ],
     specifications: [
       { value: 'Bahan dasar campuran beton' },
-      { value: 'Mutu Produk mengacu pada standar SNI 0028-1987-A kategori peringkat 1' },
+      {
+  value: (
+    <>
+      Mutu Produk mengacu pada standar{' '}
+      <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">
+        SNI 0028-1987-A
+      </Link>{' '}
+      kategori peringkat 1
+    </>
+  )
+},
       { value: 'Kuat lentur rata-rata 35 kg/cm²' },
       { value: 'Hanya diperuntukkan untuk pedestrian' },
       { value: 'Tidak disarankan dilindas kendaraan' }
     ],
     technicalSpecs: [
       { value: 'Bahan dasar campuran beton' },
-      { value: 'Mutu produk mengacu pada standar SNI 03-0691-1996' },
+            {
+  value: (
+    <>
+      Mutu Produk mengacu pada standar{' '}
+      <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">
+        SNI 03-0691-1996
+      </Link>{' '}
+    </>
+  )
+},
       { value: 'Ketahanan aus rata-rata min 0,09 mm/menit' },
       { value: 'Penyerapan air rata-rata 3%' },
       { value: 'Varian Warna :' }

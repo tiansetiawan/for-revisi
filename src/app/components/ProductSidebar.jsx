@@ -35,10 +35,11 @@ export default function ProductSidebar({ onItemChange }) {
       { name: "Paving Block", url: "/produk/produk-pv?category=Paving Block" },
       { name: "Concrete Block", url: "/produk/produk-pv?category=Concrete Block" },
       { name: "Utility", url: "/produk/produk-pv?category=Utility" },
+      { name: "Solusi Bocor", url: "/produk/produk-pv?category=Solusi Bocor" },
     ],
     subProducts: {
       "Concrete Roof": [
-        { name: "Neo Solar System", url: "/produk/detail?product=Neo Solar System&category=Concrete Roof" },
+        { name: "Genteng Neo (Premium)", url: "/produk/detail?product=Genteng Neo (Premium)&category=Concrete Roof" },
         {
           name: "Flat Tile",
           url: "#",
@@ -86,9 +87,13 @@ export default function ProductSidebar({ onItemChange }) {
         { name: "Ventilation Block", url: "/produk/detail-cb?product=Ventilation Block&category=Concrete Block" },
         { name: "Ventilation Block 3D", url: "/produk/detail-cb?product=Ventilation Block 3D&category=Concrete Block" },
       ],
-      Utility: [
+      "Utility": [
         { name: "Concrete Pipe", url: "/produk/detail-ut1?product=Concrete Pipe&category=Utility" },
         { name: "Ciswell", url: "/produk/detail-ut2?product=Ciswell&category=Utility" },
+      ],
+      "Solusi Bocor": [
+        { name: "Dry System", url: "/produk/detail-ut1?product=Dry System&category=Solusi Bocor" },
+        { name: "CIS Flashing", url: "/produk/detail-ut2?product=CIS Flashing&category=Solusi Bocor" },
       ],
     },
   };

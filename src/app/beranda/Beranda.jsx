@@ -551,7 +551,7 @@ const ProyekNextArrow = ({ onClick }) => (
     className={`absolute ${isMobile ? 'right-2' : 'right-[-4.5rem] 2xl:right-[-7rem]'} 2xl:top-100 top-1/2 -translate-y-1/2 z-10 bg-[#0B1F3A] hover:bg-[#0B203F] text-white p-2 sm:p-3 2xl:p-5 rounded-none shadow-lg transition-all duration-300`}
     aria-label="Next projects"
   >
-    <FaChevronRight className="text-sm sm:text-base 2xl:text-2xl" />
+    <FaChevronRight className="text-sm sm:text-base 2xl:text-2xl"/>
   </button>
 );
 
