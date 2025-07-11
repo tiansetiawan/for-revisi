@@ -165,6 +165,21 @@ useEffect(() => {
     }
   };
 
+  useEffect(() => {
+  const shouldScroll = sessionStorage.getItem('shouldScrollToKontak');
+  
+  if (shouldScroll === 'true') {
+    const kontakSection = document.getElementById('kontak-state');
+    if (kontakSection) {
+      // Delay sedikit untuk memastikan halaman selesai render
+      setTimeout(() => {
+        kontakSection.scrollIntoView({ behavior: 'smooth' });
+        sessionStorage.removeItem('shouldScrollToKontak');
+      }, 300);
+    }
+  }
+}, []);
+
   const handleSubItemClick = (subItem) => {
     setActiveSubItem(subItem);
   };
@@ -763,7 +778,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </div>
       </section>
    {/* Main Content */}
-    <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
+    <section id="kontak-state" className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
             <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">Kontak Kami</h2>
       <p className="text-sm text-justify">
         Kami selalu berusaha untuk memberikan pelayanan yang terbaik, mohon kirimkan informasi dan saran Anda kepada Kami

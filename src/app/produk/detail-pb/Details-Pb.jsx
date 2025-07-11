@@ -16,6 +16,8 @@ import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
 import ApplicationModal from '../../components/ApplicationModal';
 import BannerProduk from '../../components/BannerProduk';
+import Link from 'next/link';
+
 
 export default function DetailsPb() {
   const router = useRouter();
@@ -179,7 +181,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   </div>
 
   {/* Container Ikon */}
-{(currentProduct.name === 'ALTSTADT' || currentProduct.name === 'CLASSIC SET') && (
+{/* {(currentProduct.name === 'ALTSTADT' || currentProduct.name === 'CLASSIC SET') && (
                     <div className="flex items-center h-[40px]">
                       <Image
                         src="/icons/app verif.png"
@@ -189,7 +191,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
                         className="object-contain"
                       />
                     </div>
-                  )}
+                  )} */}
 </div>
 
   
@@ -378,14 +380,19 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
     Unduh Brosur
   </a>
 {(currentProduct.name === 'ALTSTADT' || currentProduct.name === 'CLASSIC SET') && (
-                  <a
-                    href="/kontak" // Diarahkan ke halaman kontak
-                    className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
-                  >
-                    <FaPhone className="text-lg" />
-                    Jasa Pemasangan
-                  </a>
-                )}
+  <Link 
+    href="/kontak/store#kontak-state"
+    scroll={false} // Nonaktifkan scroll otomatis Next.js
+    className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
+    onClick={(e) => {
+      // Simpan state bahwa kita ingin scroll ke section
+      sessionStorage.setItem('shouldScrollToKontak', 'true');
+    }}
+  >
+    <FaPhone className="text-lg" />
+    Jasa Pemasangan
+  </Link>
+)}
 </div>
             </div>
           </div>

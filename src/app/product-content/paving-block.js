@@ -25,16 +25,16 @@ export const PavingBlockContent = () => (
         <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">
             <span>- Tebal 6 & 8 cm</span>
-            <span>= 450 kg/cm2</span>
+            <span>= <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">450 kg/cm2</Link></span>
           </li>
           <li className="contents">
             <span>- Tebal 10 cm</span>
-            <span>= 500 kg/cm2</span>
+            <span>= <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">500 kg/cm2</Link></span>
           </li>
         </ul>
         <li className="ps-3 list-disc">Penyerapan air rata-rata 3%</li>
         <li className="ps-3 list-disc">Ketahanan aus rata-rata 0.09 mm/menit</li>
-        <li className="ps-3 list-disc">Kuat lentur tipe Truepave (AS/NZS 4456.5:2003) 50 Kgf/cm2</li>
+        <li className="ps-3 list-disc"><Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Kuat lentur</Link> tipe Truepave (AS/NZS 4456.5:2003) 50 Kgf/cm2</li>
         <li className="ps-3 list-disc">Diproduksi menggunakan mesin otomatis dengan sistem Vibrating dan Compressing</li>
         <li className="ps-3 list-disc">Proses Produksi dilengkapi dengan alat pengendali kandungan air (Water Moisture Control) dan teknologi pengembunan (Fogging)</li>
         <li className="ps-3 list-disc">Produk terdiri dari banyak varian warna</li>

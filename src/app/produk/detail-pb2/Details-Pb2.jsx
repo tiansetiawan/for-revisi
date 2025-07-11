@@ -156,7 +156,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
   </div>
 
   {/* Container Ikon */}
-{(currentProduct.name === 'CONCRETE TILE') && (
+{/* {(currentProduct.name === 'CONCRETE TILE') && (
                     <div className="flex items-center h-[40px]">
                       <Image
                         src="/icons/app verif.png"
@@ -166,7 +166,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
                         className="object-contain"
                       />
                     </div>
-                  )}
+                  )} */}
 </div>    
   {/* Spesifikasi Teknis */}
   <section className="mb-15">

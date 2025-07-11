@@ -23,13 +23,13 @@ export const ConcreteRoofContent = () => (
       <ul className="list-disc list-inside text-sm leading-relaxed space-y-1">
         <li>Bahan dasar campuran Beton</li>
         <li>Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 0096:2007</Link></li>
-        <li>Beban lentur minimal 1200 N</li>
+        <li><Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Beban lentur</Link> minimal 1200 N</li>
         <li>Daya serap air &lt; 10%</li>
         <li>Sistem produksi mesin Press Wet System</li>
         <li>Sistem pengecatan Sprayboot 2 tahap (Base Coat dan Pigment Top Coat)</li>
         <li>Finishing menggunakan Cat Solvent Based tahan cuaca, air, alkali, sinar UV</li>
-        <li>Ketebalan cat 70 mikron</li>
-        <li>Prosedur dan <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">hasil pengujian</Link> cat mengacu pada ASTM Section 6, Volume 06.01</li>
+        <li>Ketebalan cat 70 mikron dan 100 mikron (tipe premium)</li>
+        <li>Prosedur dan hasil pengujian cat mengacu pada ASTM Section 6, Volume 06.01</li>
         <li>Terdiri dari banyak varian warna :</li>
                 <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">

@@ -74,7 +74,7 @@ export default function ProductSidebar({ onItemChange }) {
           ],
         },
                 {
-          name: "Weathershield",
+          name: "Cat Genteng",
           url: "#",
           subItems: [
         { name: "Water Base", url: "/produk/detail-cr?product=Water Base&category=Concrete Roof" },
