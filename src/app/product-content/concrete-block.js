@@ -67,13 +67,30 @@ export const ConcreteBlockContent = () => {
             Penyerapan air rata-rata 25%
           </li>
           <li className="ps-3">
-            <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Hasil uji insulasi bunyi</Link> mengacu pada SNI 03 - 6386 - 2000 dengan hasil Rw = 53 dB
+            <a 
+  href="/downloads/HasilTest-InsulasiBunyi-CB10.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-semibold hover:cursor-pointer hover:underline"
+>
+  Hasil uji insulasi bunyi
+</a> mengacu pada SNI 03 - 6386 - 2000 dengan hasil Rw = 53 dB
           </li>
           <li className="ps-3">
-            <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Hasil uji transmitansi thermal</Link> rata-rata mengacu pada SNI 03 - 6389 - 2000 dengan hasil OTTV (<em>overall thermal transfer value</em>) &lt; 45 watt/m² (<em>bangunan hemat energi</em>)
+                        <a 
+  href="/downloads/uji transmitasi thermal 2012.pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-semibold hover:cursor-pointer hover:underline"
+>Hasil uji transmitansi thermal</a> rata-rata mengacu pada SNI 03 - 6389 - 2000 dengan hasil OTTV (<em>overall thermal transfer value</em>) &lt; 45 watt/m² (<em>bangunan hemat energi</em>)
           </li>
           <li className="ps-3">
-            <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Hasil ketahanan api</Link> mengacu pada SNI 1741 : 2008, dan mempunyai ketahanan api lebih dari 2 jam
+            <a 
+  href="/downloads/LHU PNBP BSB 2024 - 84 PT CISANGKAN 10092024_UJI TINGKAT KETAHANAN API-BATA BETON BERLUBANG .pdf" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="font-semibold hover:cursor-pointer hover:underline"
+>Hasil ketahanan api</a> mengacu pada SNI 1741 : 2008, dan mempunyai ketahanan api lebih dari 2 jam
           </li>
         </ul>
       </section>

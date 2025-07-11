@@ -136,14 +136,14 @@ export default function DetailsCb() {
                 <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
                   <table className="w-full border-collapse">
                     <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
-                      <tr className="bg-[#0B203F] text-white">
+                      <tr className="bg-[#0B203F] text-white text-sm">
                         <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
                         <th className="border border-gray-300 px-4 py-2 text-center">Produk</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
-                        <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi (cm)</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Berat (Kg)</th>
                         {/* <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal</th> */}
                         {/* <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian</th> */}
-                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
+                        <th className="border border-gray-300 px-4 py-2 text-center w-40">Pemakaian (bh/m²)</th>
                       </tr>
                     </thead>
                     <tbody className="text-sm">
@@ -240,7 +240,7 @@ export default function DetailsCb() {
               </section> */}
 
               <div className="pl-1">
-                <a href="/informasi/katalog" className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2">
+                <a href="/informasi/katalog#brosur-section" className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2">
                   <FaCalculator className="text-lg" />
                   Unduh Brosur
                 </a>

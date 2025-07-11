@@ -25,8 +25,8 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '60 x 40 x 5 cm / 40 x 40 x 5 cm / 20 x 40 x 5 cm' },
-      { label: 'Berat', value: '25,5 kg / 17 kg / 8,5 kg' },
+      { label: 'Dimensi', value: '60 x 40 x 5  / 40 x 40 x 5  / 20 x 40 x 5 ' },
+      { label: 'Berat', value: '25,5  / 17  / 8,5 ' },
       { 
         label: 'Aplikasi', 
         icons: [
@@ -35,7 +35,7 @@ export const concreteTileSubItems = [
           ['pedestrian', 'garage']      
         ]
       },
-      { label: 'Pemakaian', value: '4,16 bh/m² : 6,25 bh/m² : 12,5 bh/m²' },
+      { label: 'Pemakaian', value: '4,16  : 6,25  : 12,5 ' },
       { label: 'Warna', value: '-' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -59,15 +59,15 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '30 x 30 x 6 cm' },
-      { label: 'Berat', value: '11,5 kg' },
+      { label: 'Dimensi', value: '30 x 30 x 6 ' },
+      { label: 'Berat', value: '11,5 ' },
       { 
         label: 'Aplikasi', 
         icons: [
           ['pedestrian', 'garage']     
         ]
       },
-      { label: 'Pemakaian', value: '11 bh/m²' },
+      { label: 'Pemakaian', value: '11 ' },
       { label: 'Warna', value: 'Natural, Regular, Khusus' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -91,15 +91,15 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '30 x 30 x 1,5 cm' },
-      { label: 'Berat', value: '4,2 kg' },
+      { label: 'Dimensi', value: '30 x 30 x 1,5 ' },
+      { label: 'Berat', value: '4,2 ' },
       { 
         label: 'Aplikasi', 
         icons: [
           ['pedestrian']     
         ]
       },
-      { label: 'Pemakaian', value: '11 bh/m²' },
+      { label: 'Pemakaian', value: '11 ' },
       { label: 'Warna', value: 'Natural' },
       { label: 'Best Seller', icon: '' }
     ],
@@ -123,15 +123,15 @@ export const concreteTileSubItems = [
       }
     ],
     specifications: [
-      { label: 'Dimensi', value: '30 x 30 x 1,5 cm' },
-      { label: 'Berat', value: '2,52 kg' },
+      { label: 'Dimensi', value: '30 x 30 x 1,5 ' },
+      { label: 'Berat', value: '2,52 ' },
       { 
         label: 'Aplikasi', 
         icons: [
           ['pedestrian']     
         ]
       },
-      { label: 'Pemakaian', value: '20 bh/m²' },
+      { label: 'Pemakaian', value: '20 ' },
       { label: 'Warna', value: 'Natural' },
       { label: 'Best Seller', icon: '' }
     ],

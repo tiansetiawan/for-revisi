@@ -1,13 +1,14 @@
 'use client';
 import FadeBannerSlider from './FadeBannerSlider';
-import '@/app/style/HeroSection.css'
+import '@/app/style/HeroSection.css';
+import { motion } from 'framer-motion';
 
 export default function HeroSection({ 
   slides = [], 
   currentSlide = 0,
   autoPlayDelay = 5000,
   onSlideChange,
-  onSlideClick // Tambahkan prop ini
+  onSlideClick
 }) {
   if (!slides.length) return null;
 
@@ -18,7 +19,7 @@ export default function HeroSection({
         currentSlide={currentSlide}
         autoPlayDelay={autoPlayDelay}
         onSlideChange={onSlideChange}
-        onSlideClick={onSlideClick} // Teruskan prop ke FadeBannerSlider
+        onSlideClick={onSlideClick}
       />
     </div>
   );

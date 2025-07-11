@@ -15,18 +15,22 @@ const heroSlides = [
   {
     image: '/images/4.jpg',
     url: '/blog/artikel/detail-b',
+    location: ''
   },
   {
     image: '/images/2.jpg',
     url: '/blog/artikel/detail-a',
+    location: ''
   },
   {
     image: '/images/1.jpg',
     url: '/produk?category=Concrete Roof',
+    location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
     url: '/produk?category=Paving Block',
+    location: 'Tag location'
   },
 ];
 
@@ -606,11 +610,12 @@ return (
 <HeroSection 
   slides={heroSlides.map(slide => ({
     ...slide,
+    location: slide.location // Pastikan properti location diteruskan
   }))}
   currentSlide={currentSlide}
   autoPlayDelay={5000}
   onSlideChange={handleSlideChange}
-  onSlideClick={handleHeroSlideClick} // Tambahkan ini
+  onSlideClick={handleHeroSlideClick}
 />
 
   {/* Slide Indicators */}
@@ -718,8 +723,8 @@ return (
     </div>
 
   </div>
-    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 rounded-none">
-      <div className="relative w-full max-w-4xl aspect-video bg-gray-200 rounded-none overflow-hidden">
+    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 2xl:h-240 rounded-none xl:px-40 2xl:px-60">
+      <div className="relative w-full max-auto aspect-video bg-gray-200 rounded-none overflow-hidden max-w-screen-2xl">
       <div 
   className="absolute inset-0 cursor-pointer"
   onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
@@ -762,12 +767,12 @@ return (
 
   <div 
     ref={videoSliderRef}
-    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4"
+    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 2xl:gap-26"
   >
     {videoTestimonials.map((video) => (
       <div key={video.id} className="cover-video group cursor-pointer snap-start">
         <div 
-          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full h-[150px]"
+          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full xl:h-[150px] 2xl:h-[300px] 2xl:w-100"
           onClick={() => handleVideoSelect(video.youtubeId)}
         >
             <Image 
@@ -787,7 +792,7 @@ return (
         </div>
         
         <div className="video-title mt-3 text-left">
-          <p className="text-sm font-medium text-gray-800 line-clamp-2">{video.title}</p>
+          <p className="text-sm 2xl:text-md font-medium text-gray-800 line-clamp-2">{video.title}</p>
           <a 
             href={video.watchLink}
             target="_blank"

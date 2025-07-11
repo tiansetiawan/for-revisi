@@ -16,10 +16,8 @@ export default function ProductSidebar({ onItemChange }) {
   });
   const [expandedSubItems, setExpandedSubItems] = useState({
     "Concrete Roof": {
-      "Flat Tile": {
-        "Victoria Series": false,
-      },
-      "Genteng Gelombang": {},
+      "Flat Tile": false,
+      "Genteng Gelombang": false,
     },
     "Paving Block": {},
     "Concrete Block": {
@@ -35,7 +33,6 @@ export default function ProductSidebar({ onItemChange }) {
       { name: "Paving Block", url: "/produk/produk-pv?category=Paving Block" },
       { name: "Concrete Block", url: "/produk/produk-pv?category=Concrete Block" },
       { name: "Utility", url: "/produk/produk-pv?category=Utility" },
-      { name: "Solusi Bocor", url: "/produk/produk-pv?category=Solusi Bocor" },
     ],
     subProducts: {
       "Concrete Roof": [
@@ -68,6 +65,23 @@ export default function ProductSidebar({ onItemChange }) {
             { name: "Majestic", url: "/produk/detail-cr?product=Majestic&category=Concrete Roof" },
           ],
         },
+        {
+          name: "Solusi Bocor",
+          url: "#",
+          subItems: [
+        { name: "Dry System", url: "/produk/detail-cr?product=Dry System&category=Concrete Roof" },
+        { name: "CIS Flashing", url: "/produk/detail-cr?product=CIS Flashing&category=Concrete Roof" },
+          ],
+        },
+                {
+          name: "Weathershield",
+          url: "#",
+          subItems: [
+        { name: "Water Base", url: "/produk/detail-cr?product=Water Base&category=Concrete Roof" },
+        { name: "Solvent Base", url: "/produk/detail-cr?product=Solvent Base&category=Concrete Roof" },
+          ],
+        },
+        { name: "Panel Surya", url: "/produk/detail-cr?product=Panel Surya&category=Concrete Roof" },
       ],
       "Paving Block": [
         { name: "Square Set", url: "/produk/detail-pb?product=Square Set&category=Paving Block" },
@@ -89,11 +103,12 @@ export default function ProductSidebar({ onItemChange }) {
       ],
       "Utility": [
         { name: "Concrete Pipe", url: "/produk/detail-ut1?product=Concrete Pipe&category=Utility" },
-        { name: "Ciswell", url: "/produk/detail-ut2?product=Ciswell&category=Utility" },
-      ],
-      "Solusi Bocor": [
-        { name: "Dry System", url: "/produk/detail-ut1?product=Dry System&category=Solusi Bocor" },
-        { name: "CIS Flashing", url: "/produk/detail-ut2?product=CIS Flashing&category=Solusi Bocor" },
+        { name: "High Pressure", url: "/produk/detail-ut1?product=High Pressure&category=Utility" },
+        { name: "Low Pressure", url: "/produk/detail-ut1?product=Low Pressure&category=Utility" },
+        { name: "U-Ditch", url: "/produk/detail-ut1?product=U-Ditch&category=Utility" },
+        { name: "Tutup", url: "/produk/detail-ut1?product=Tutup&category=Utility" },
+        { name: "Box Culvert", url: "/produk/detail-ut1?product=Box Culvert&category=Utility" },
+        { name: "Sumur Resapan", url: "/produk/detail-ut2?product=Sumur Resapan&category=Utility" },
       ],
     },
   };

@@ -242,15 +242,15 @@ const calculateRequirement = () => {
                   Hitung Kebutuhan Genteng
                 </button>
               </div>
-              <div className='pl-4 px-44'>
-                <a
-                  href="/informasi/katalog"
-                  className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
-                >
-                  <FaCalculator className="text-lg" />
-                  Unduh Brosur
-                </a>
-              </div>
+<div className='pl-4 px-44'>
+  <a
+    href="/informasi/katalog#brosur-section" 
+    className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
+  >
+    <FaCalculator className="text-lg" />
+    Unduh Brosur
+  </a>
+</div>
 
               {/* Kalkulator Popup */}
               {showCalculator && (

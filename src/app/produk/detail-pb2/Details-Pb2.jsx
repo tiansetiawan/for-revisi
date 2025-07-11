@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaChevronLeft, FaChevronRight, FaPhone } from 'react-icons/fa';
 import { FaCalculator, FaTimes } from 'react-icons/fa';
 import { productsPb2Content, concreteTileSubItems } from '../../../../content-bank/products-pb2';
 import Link from 'next/link';
@@ -149,8 +149,24 @@ const handleThumbnailClick = (productId, thumbIndex) => {
             {/* Product Specifications */}
             <div className="w-auto lg:w-1/2 space-y-6 px-6">
               <section className='mb-5 mt-5'>
- <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4">
-  {currentProduct.name}
+<div className="flex items-center gap-2 h-20"> {/* memastikan alignment vertikal */}
+  {/* Container Teks */}
+  <div className="flex items-center justify-center min-w-max bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 h-[40px]">
+    {currentProduct.name}
+  </div>
+
+  {/* Container Ikon */}
+{(currentProduct.name === 'CONCRETE TILE') && (
+                    <div className="flex items-center h-[40px]">
+                      <Image
+                        src="/icons/app verif.png"
+                        alt="application verified"
+                        width={100}
+                        height={40}
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
 </div>    
   {/* Spesifikasi Teknis */}
   <section className="mb-15">
@@ -179,13 +195,13 @@ const handleThumbnailClick = (productId, thumbIndex) => {
 <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
   <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
-  <tr className="bg-[#0B203F] text-white">
+  <tr className="bg-[#0B203F] text-white text-sm">
     <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-30">Produk</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi (cm)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-20">Berat (Kg)</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-20">Warna</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Pemakaian</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-30">Pemakaian (bh/m²)</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-20">Aplikasi</th>
   </tr>
 </thead>
@@ -408,14 +424,23 @@ const handleThumbnailClick = (productId, thumbIndex) => {
                   ))}
                 </div>
               </section> */}
-<div className='pl-1'>
+<div className='pl-1 flex gap-5'>
   <a
-    href="/informasi/katalog"
+    href="/informasi/katalog#brosur-section"
     className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
   >
     <FaCalculator className="text-lg" />
     Unduh Brosur
   </a>
+{(currentProduct.name === 'CONCRETE TILE') && (
+                  <a
+                    href="/kontak" // Diarahkan ke halaman kontak
+                    className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
+                  >
+                    <FaPhone className="text-lg" />
+                    Jasa Pemasangan
+                  </a>
+                )}
 </div>
             </div>
           </div>

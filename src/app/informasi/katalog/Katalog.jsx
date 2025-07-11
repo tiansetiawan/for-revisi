@@ -261,7 +261,7 @@ const handleDownload = async (e) => {
         </div>
 
         {/* Heading Brosur */}
-        <div className="gap-6 items-start mb-10">
+        <div id="brosur-section" className="gap-6 items-start mb-10">
           <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
             BROSUR
           </h2>

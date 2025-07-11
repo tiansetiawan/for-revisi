@@ -34,7 +34,7 @@ export const PavingBlockContent = () => (
         </ul>
         <li className="ps-3 list-disc">Penyerapan air rata-rata 3%</li>
         <li className="ps-3 list-disc">Ketahanan aus rata-rata 0.09 mm/menit</li>
-        <li className="ps-3 list-disc">Kuat lentur tipe Truepave (<Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">AS/NZS 4456.5:2003</Link>) 50 Kgf/cm2</li>
+        <li className="ps-3 list-disc">Kuat lentur tipe Truepave (AS/NZS 4456.5:2003) 50 Kgf/cm2</li>
         <li className="ps-3 list-disc">Diproduksi menggunakan mesin otomatis dengan sistem Vibrating dan Compressing</li>
         <li className="ps-3 list-disc">Proses Produksi dilengkapi dengan alat pengendali kandungan air (Water Moisture Control) dan teknologi pengembunan (Fogging)</li>
         <li className="ps-3 list-disc">Produk terdiri dari banyak varian warna</li>
