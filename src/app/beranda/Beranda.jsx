@@ -11,24 +11,29 @@ import 'slick-carousel/slick/slick-theme.css';
 import '@/app/style/Beranda.css';
 
 // Hero Slides Data with URLs
+// Hero Slides Data with URLs
 const heroSlides = [
   {
     image: '/images/4.jpg',
+    mobileImage: '/images/mobile/4-mobile.jpg', // Tambahkan path untuk mobile
     url: '/blog/artikel/detail-b',
     location: ''
   },
   {
     image: '/images/2.jpg',
+    mobileImage: '/images/beranda-mb2.png',
     url: '/blog/artikel/detail-a',
     location: ''
   },
   {
     image: '/images/1.jpg',
+    mobileImage: '/images/beranda-mb1.png',
     url: '/produk?category=Concrete Roof',
     location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
+    mobileImage: '/images/beranda-mb3.png',
     url: '/produk?category=Paving Block',
     location: 'Tag location'
   },
@@ -723,7 +728,7 @@ return (
     </div>
 
   </div>
-    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 mb-5 2xl:h-240 rounded-none xl:px-40 2xl:px-60">
+    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 2xl:py-13 mb-5 2xl:h-240 rounded-none xl:px-40 2xl:px-60">
       <div className="relative w-full max-auto aspect-video bg-gray-200 rounded-none overflow-hidden max-w-screen-2xl">
       <div 
   className="absolute inset-0 cursor-pointer"
@@ -755,24 +760,24 @@ return (
     </div>
 
    {/* Daftar Video Lainnya dengan Slider */}
-<div className="container-slider-vd relative">
+<div className="container-slider-vd relative 2xl:px-5">
   {/* Navigation buttons */}
   <button 
     onClick={prevVideoSlide}
     disabled={currentVideoSlide === 0}
-    className="prevVideoSlide absolute left-0 top-22 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+    className="prevVideoSlide absolute left-0 top-22 2xl:top-30 -translate-y-1/2 -translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
   >
-    <FaChevronLeft className="w-5 h-5" />
+    <FaChevronLeft className="w-5 h-5 2xl:w-8 2xl:h-8" />
   </button>
 
   <div 
     ref={videoSliderRef}
-    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 2xl:gap-26"
+    className="grid-vd grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/5)] gap-21 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 2xl:gap-25"
   >
     {videoTestimonials.map((video) => (
       <div key={video.id} className="cover-video group cursor-pointer snap-start">
         <div 
-          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full xl:h-[150px] 2xl:h-[300px] 2xl:w-100"
+          className="cover-video2 relative aspect-video bg-gray-200 overflow-hidden w-full xl:h-[150px] 2xl:h-[222px] 2xl:w-100"
           onClick={() => handleVideoSelect(video.youtubeId)}
         >
             <Image 
@@ -809,9 +814,9 @@ return (
   <button 
     onClick={nextVideoSlide}
     disabled={currentVideoSlide >= totalVideoSlides - visibleVideoSlides}
-    className="nextVideoSlide absolute right-0 top-22 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+    className="nextVideoSlide absolute right-0 top-22 2xl:top-30 -translate-y-1/2 translate-x-6 z-10 w-8 h-8 rounded-full bg-transparent flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
   >
-    <FaChevronRight className="w-5 h-5" />
+    <FaChevronRight className="w-5 h-5 2xl:w-8 2xl:h-8" />
   </button>
 </div>
 
@@ -830,9 +835,9 @@ return (
   
          {/* Terbaru Section */}
          <section className="py-10 px-4 sm:px-10 bg-[#ECEEF0]">
-  <div className="max-w-6xl mx-auto">
+  <div className="mx-auto max-w-screen-2xl xl:px-4 2xl:mb-8">
     <div className="flex justify-center gap-2 items-center mb-8 px-2">
-      <h2 className="text-xl sm:text-2xl font-medium">TERBARU</h2>
+      <h2 className="text-xl sm:text-2xl 2xl:text-[2rem] font-medium">TERBARU</h2>
       <p className="text-blue-500 text-sm sm:text-base cursor-pointer hover:underline"><a href='/blog/artikel'>Lihat Semua</a></p>
     </div>
     
@@ -840,19 +845,17 @@ return (
   {terbaruList.map((item) => (
     <Link key={item.id} href={item.link} className="flex after:w-[1px] after:bg-[#D7D7D7] hover:bg-white transition rounded-md">
       <div className="flex p-4 cursor-pointer">
-        <div className="relative w-20 h-20 mr-4 flex-shrink-0">
+        <div className="relative w-20 h-20 2xl:w-30 2xl:h-30 mr-4 flex-shrink-0">
           <Image
             src={item.image}
             alt={item.title}
-            width={80}
-            height={80}
+            fill
             className="object-cover"
-            style={{ width: '80px', height: '80px' }}
           />
         </div>
         <div className="flex-1">
-          <h3 className="text-sm font-medium mb-1">{item.title}</h3>
-          <p className="text-xs text-gray-600">{item.desc}</p>
+          <h3 className="xl:text-sm 2xl:text-lg font-medium mb-1">{item.title}</h3>
+          <p className="xl:text-xs text-sm text-gray-600">{item.desc}</p>
         </div>
       </div>
     </Link>
@@ -863,7 +866,7 @@ return (
   
        {/* E-Commerce Section */}
         <section className="py-20 text-center">
-        <h2 className="text-2xl font-semibold mb-4">CISANGKAN OFFICIAL E-COMMERCE</h2>
+        <h2 className="xl:text-2xl font-semibold mb-4 2xl:text-3xl 2xl:mt-5">CISANGKAN OFFICIAL E-COMMERCE</h2>
         <div className="flex justify-center mb-20">
   <a 
     href="https://www.tokopedia.com/cisangkan" 
@@ -874,7 +877,7 @@ return (
     <img 
       src="/tokopedia-logo.png" 
       alt="Tokopedia" 
-      className="h-15" 
+      className="xl:h-15 2xl:h-20" 
     />
   </a>
 </div>
@@ -905,7 +908,7 @@ return (
     passHref
     className='w-60 block transition-shadow duration-300'
   >
-       <div className="section-container relative w-full h-60 mb-6 rounded-none overflow-hidden">
+       <div className="section-container relative xl:w-full xl:h-60 2xl:w-[22rem] 2xl:h-100 mb-6 rounded-none overflow-hidden 2xl:mt-9">
       <Image
         src={item.image}
         alt={item.title}

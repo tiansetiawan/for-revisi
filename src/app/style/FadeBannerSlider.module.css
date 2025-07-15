@@ -19,7 +19,7 @@
 .bannerImage {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .overlay {
@@ -101,10 +101,22 @@
     max-width: 100%;
   }
   .imageContainer {
-        position: relative;
-        width: 78rem;
-        margin-top: 2rem;
-        margin-left: -2rem;
+    width: 100%;
+  }
+  
+  .bannerImage {
+    object-fit: fill;
+    object-position: center;
+    margin-top: 3rem;
+  }
+    .locationOverlay {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 0.2rem 0.4rem;
+  }
+  
+  .locationText {
+    font-size: 0.7rem;
   }
 }
 

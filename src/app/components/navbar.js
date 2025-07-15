@@ -75,7 +75,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium 2xl:gap-2 2xl:text-xl">
+        <ul className="hidden lg:flex items-center space-x-6 text-gray-700 text-sm font-medium 2xl:gap-2 2xl:text-lg">
           <li>
             <Link href="/">
               <button onClick={scrollToTop} className={`px-3 py-1 rounded-full cursor-pointer ${isActive("/") ? "bg-[#0F1E3E] text-white" : "hover:bg-[#0F1E3E] hover:text-white"}`}>
@@ -157,7 +157,7 @@ export default function Navbar() {
         </ul>
 
 {/* Right Side - Diperbarui */}
-        <div className="hidden lg:flex items-center space-x-4 mr-4 text-gray-600 text-sm 2xl:text-xl">
+        <div className="hidden lg:flex items-center space-x-4 mr-4 text-gray-600 text-sm 2xl:text-lg">
           <div>
             <span className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} onClick={() => setLanguage("Eng")}>
               Eng

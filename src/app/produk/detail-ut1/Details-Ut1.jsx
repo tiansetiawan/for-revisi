@@ -60,7 +60,7 @@ export default function DetailsUt1() {
   };
 
   const handleProductTypeClick = (product) => {
-    if (currentProduct.name === 'CONCRETE PIPE' || product.id) {
+    if (currentProduct.name === 'LOW PRESSURE' || product.id) {
       const selectedSubItem = utilitySubItems.find(item => item.id === product.id);
       if (selectedSubItem) {
         const subProduct = {

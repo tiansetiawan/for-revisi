@@ -23,7 +23,9 @@ export default function ProductSidebar({ onItemChange }) {
     "Concrete Block": {
       "Ventilation Block": {},
     },
-    Utility: {},
+    Utility: {
+      "Concrete Pipe": false,
+    },
   });
 
   // Definisikan productConfig
@@ -102,9 +104,14 @@ export default function ProductSidebar({ onItemChange }) {
         { name: "Ventilation Block 3D", url: "/produk/detail-cb?product=Ventilation Block 3D&category=Concrete Block" },
       ],
       "Utility": [
-        { name: "Concrete Pipe", url: "/produk/detail-ut1?product=Concrete Pipe&category=Utility" },
+        {
+          name: "Concrete Pipe",
+          url: "#",
+          subItems: [
         { name: "High Pressure", url: "/produk/detail-ut1?product=High Pressure&category=Utility" },
         { name: "Low Pressure", url: "/produk/detail-ut1?product=Low Pressure&category=Utility" },
+          ],
+        },
         { name: "U-Ditch", url: "/produk/detail-ut1?product=U-Ditch&category=Utility" },
         { name: "Tutup", url: "/produk/detail-ut1?product=Tutup&category=Utility" },
         { name: "Box Culvert", url: "/produk/detail-ut1?product=Box Culvert&category=Utility" },

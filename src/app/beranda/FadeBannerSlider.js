@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from '../style/FadeBannerSlider.module.css';
+import { useMediaQuery } from 'react-responsive';
 
 const FadeBannerSlider = ({ 
   slides = [], 
@@ -17,6 +18,7 @@ const FadeBannerSlider = ({
   const sliderRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
+  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -50,14 +52,11 @@ const FadeBannerSlider = ({
 
   if (!slides.length) return null;
 
-  return (
+   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {slides.map((slide, index) => (
-          <div 
-            key={slide.id || slide.image} 
-            className={styles.slide}
-          >
+          <div key={slide.id || slide.image} className={styles.slide}>
             <div 
               className={styles.imageContainer}
               onClick={() => handleSlideClick(slide.url)}
@@ -65,10 +64,10 @@ const FadeBannerSlider = ({
               onMouseLeave={() => setIsHovered(false)}
             >
               <Image 
-                src={slide.image} 
+                src={isMobile && slide.mobileImage ? slide.mobileImage : slide.image}
                 alt={slide.alt || slide.title || 'Banner'} 
-                width={1765}
-                height={823}
+                width={isMobile ? 430 : 1765}
+                height={isMobile ? 621 : 823}
                 className={`${styles.bannerImage} cursor-pointer`}
                 priority={index === 0}
               />
