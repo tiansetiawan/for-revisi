@@ -728,27 +728,29 @@ return (
     </div>
 
   </div>
-    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 2xl:py-13 mb-5 2xl:h-240 rounded-none xl:px-40 2xl:px-60">
-      <div className="relative w-full max-auto aspect-video bg-gray-200 rounded-none overflow-hidden max-w-screen-2xl">
-      <div 
-  className="absolute inset-0 cursor-pointer"
-  onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
->
-  <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
-    <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
-      <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
-      </svg>
-    </div>
-  </div>
-<Image 
-  src="/images/factory Visit.png"
-  alt={mainTestimonialVideo.title}
-  fill
-  className="object-cover shadow-lg rounded-md"
-/>
-</div>
+    <div className="flex justify-center bg-[#ECEEF0] p-6 py-7 2xl:py-13 mb-5 2xl:h-205 rounded-none xl:px-40 2xl:px-60">
+<div className="relative w-full max-auto aspect-video bg-[#09172b] overflow-hidden max-w-screen-2xl">
+  <div 
+    className="absolute inset-0 cursor-pointer"
+    onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
+  >
+    <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
+      <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
+        <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
+        </svg>
       </div>
+    </div>
+    
+    {/* Image dengan zoom dan center tanpa crop */}
+    <Image 
+      src="/images/factory Visit.png"
+      alt={mainTestimonialVideo.title}
+      fill
+      className="object-contain transition-transform duration-500 hover:scale-110"
+    />
+  </div>
+</div>
     </div>
     
     {/* Tombol Lihat Semua */}
