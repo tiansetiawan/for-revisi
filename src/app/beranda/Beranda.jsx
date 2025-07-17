@@ -278,7 +278,7 @@ const terbaruList = [
     image: "/images/thumbnail-visit.jpg",
     title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
-    link: "/perusahaan/inovasi/detail-c"
+    link: "/blog/artikel/detail-c"
   },
   {
     id: 2,
@@ -908,7 +908,7 @@ return (
     href={item.link}
     key={i}
     passHref
-    className='w-60 block transition-shadow duration-300'
+    className='xl:w-60 2xl:w-88 block transition-shadow duration-300'
   >
        <div className="section-container relative xl:w-full xl:h-60 2xl:w-[22rem] 2xl:h-100 mb-6 rounded-none overflow-hidden 2xl:mt-9">
       <Image
@@ -921,9 +921,9 @@ return (
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
       />
     </div>
-        <h3 className="text-sm font-semibold mb-2">{item.title}</h3>
-        <p className="text-base text-gray-600 leading-6">{item.desc}</p>
-        <div className="text-blue-500 text-xs mt-1 hover:text-blue-700 transition-colors">
+        <h3 className="xl:text-sm 2xl:text-lg font-semibold mb-2">{item.title}</h3>
+        <p className="xl:text-base 2xl:text-md text-gray-600 leading-6">{item.desc}</p>
+        <div className="text-blue-500 xl:text-xs 2xl:text-sm mt-1 hover:text-blue-700 transition-colors">
           Baca lebih banyak
         </div>
     </Link>
