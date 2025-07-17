@@ -278,14 +278,14 @@ const terbaruList = [
     image: "/images/thumbnail-visit.jpg",
     title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
-    link: "/perusahaan/inovasi/detail-b"
+    link: "/perusahaan/inovasi/detail-c"
   },
   {
     id: 2,
     image: "/images/KBP CityRun.jpg",
     title: "CISANGKAN KBP CITY RUN 2025",
     desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan...",
-    link: "/blog/artikel/detail-c"
+    link: "/blog/artikel/detail-a"
   },
   {
     id: 3,
