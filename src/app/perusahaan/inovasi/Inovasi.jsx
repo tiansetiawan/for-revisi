@@ -155,9 +155,9 @@ export default function Inovasi() {
       </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
         <div className="gap-6 items-start mb-5">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase 2xl:text-2xl">
             INOVASI
           </h2>
         </div>
@@ -188,11 +188,11 @@ export default function Inovasi() {
 
                 {/* Konten */}
                 <div className="flex-1">
-                  <h3 className="text-lg font-normal mb-2">{item.judul}</h3>
-                  <p className="text-sm text-justify mb-4">{item.deskripsi}</p>
+                  <h3 className="text-lg font-normal mb-2 2xl:text-xl">{item.judul}</h3>
+                  <p className="text-sm 2xl:text-base text-justify mb-4">{item.deskripsi}</p>
                   <Link
                     href={item.url}
-                    className="text-sm text-blue-700 font-medium hover:underline"
+                    className="text-sm 2xl:text-base text-blue-700 font-medium hover:underline"
                   >
                     Baca lebih banyak &gt;&gt;
                   </Link>

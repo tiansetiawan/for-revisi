@@ -125,10 +125,10 @@ export default function Karir() {
       </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-10">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
         {/* Heading */}
         <div className="gap-6 items-start mb-5">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">
             KARIR
           </h2>
         </div>
@@ -149,8 +149,8 @@ export default function Karir() {
                 className="border border-gray-200 shadow-sm p-6 flex justify-between items-start"
               >
                 <div>
-                  <h3 className="font-semibold uppercase mb-4">{item.nama}</h3>
-                  <div className="space-y-1 text-sm">
+                  <h3 className="font-semibold uppercase mb-4 xl:text-sm 2xl:text-lg">{item.nama}</h3>
+                  <div className="space-y-1 text-sm 2xl:text-base">
                     <div className="flex">
                       <span className="w-40">Penempatan</span>
                       <span>: {item.penempatan}</span>
@@ -168,7 +168,7 @@ export default function Karir() {
                 <div>
                   <Link
                     href={item.url}
-                    className="bg-[#0B203F] hover:bg-[#14325f] text-white px-4 py-2 text-sm rounded inline-block"
+                    className="bg-[#0B203F] hover:bg-[#14325f] text-white px-4 py-2 text-sm 2xl:text-base rounded inline-block"
                   >
                     Selengkapnya
                   </Link>
