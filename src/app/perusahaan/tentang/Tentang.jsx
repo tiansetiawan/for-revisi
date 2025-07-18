@@ -141,7 +141,7 @@ export default function Tentang() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <nav className="flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
           <Link href="/perusahaan/tentang" className="text-[#2D5DA6] font-bold hover:underline">
             Tentang Kami
           </Link>
@@ -222,8 +222,8 @@ export default function Tentang() {
         </div>
 
         {/* Lokasi Fisik */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 text-center px-2">
-          <div className="group">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 text-center px-2 2xl:items-baseline 2xl:justify-items-center">
+          <div className="group 2xl:w-80">
             <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
               <Image 
                 src="/images/bandung.jpg" 
@@ -238,7 +238,7 @@ export default function Tentang() {
             <p className="text-xs/5 2xl:text-sm">Fax. (022) 6030467</p>
           </div>
 
-          <div className="group">
+          <div className="group 2xl:w-80">
             <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
               <Image 
                 src="/images/jakarta.jpg" 
@@ -254,7 +254,7 @@ export default function Tentang() {
             <p className="text-xs/5 2xl:text-sm">Fax. (021) 5307452</p>
           </div>
 
-          <div className="group">
+          <div className="group 2xl:w-80">
             <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
               <Image 
                 src="/images/purwakarta.jpg" 
@@ -269,7 +269,7 @@ export default function Tentang() {
             <p className="text-xs/5 2xl:text-sm">Fax. (0264) 209654</p>
           </div>
 
-          <div className="group">
+          <div className="group 2xl:w-80">
             <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
               <Image 
                 src="/images/pasuruan.jpeg" 
