@@ -7,7 +7,7 @@ import { FaPlay, FaTimes } from 'react-icons/fa';
 // Video Data
 const mainArticleVideo = {
   title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
-  youtubeId: "ee86Me6eOx4", // Ganti dengan ID YouTube Anda
+  youtubeId: "3aoOTnMFbhM", // Ganti dengan ID YouTube Anda
   description: "Kunjungan pabrik Cisangkan Purwakarta"
 };
 
