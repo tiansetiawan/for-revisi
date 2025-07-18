@@ -381,7 +381,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   </a>
 {(currentProduct.name === 'ALTSTADT' || currentProduct.name === 'CLASSIC SET') && (
   <Link 
-    href="/kontak/store#kontak-state"
+    href="/kontak#kontak-state"
     scroll={false} // Nonaktifkan scroll otomatis Next.js
     className="w-fit bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2"
     onClick={(e) => {
