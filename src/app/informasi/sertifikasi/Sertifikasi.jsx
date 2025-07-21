@@ -205,23 +205,23 @@ export default function Sertifikasi() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide 2xl:text-lg">
           <Link href="/informasi/sertifikasi" className="text-[#2D5DA6] font-bold">Sertifikasi</Link>
           <Link href="/informasi/katalog" className="text-[#333] hover:text-[#2D5DA6]">Katalog</Link>
         </nav>
       </div>
 
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-sm sm:text-base mb-20">
         {/* Heading */}
         <div className="grid grid-cols-1 sm:grid-cols-[200px_1fr] gap-6 items-start mb-10">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase 2xl:text-2xl">
             SERTIFIKASI<br />
             PT CISANGKAN
           </h2>
         </div>
 
         {/* Grid Sertifikasi */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black 2xl:gap-14">
           {[
             {
               id: 'SNI',
@@ -250,22 +250,22 @@ export default function Sertifikasi() {
           ].map((item, index) => (
             <div key={index} className='flex flex-col items-center text-center'>
               <div className="border border-gray-300 bg-[#E4EEFF] shadow-sm rounded overflow-hidden mb-4">
-                <div className="bg-white p-6 flex items-center justify-center h-40 transition-transform duration-300 hover:scale-105">
+                <div className="bg-white p-6 flex items-center justify-center h-40 2xl:h-60 transition-transform duration-300 hover:scale-105">
                   <img
                     src={item.src}
                     alt={item.alt}
                     className="h-full object-contain transition-transform duration-300 ease-in-out hover:scale-110"
                   />
                 </div>
-                <div className="p-4">
-                  <p className="font-semibold text-justify text-xs">
+                <div className="p-4 2xl:h-24">
+                  <p className="font-semibold text-justify text-xs 2xl:text-sm">
                     {item.description}
                   </p>
                 </div>
               </div>
               <button 
                 onClick={() => handleCertificationClick(item.id)}
-                className="text-sm text-blue-700 font-medium hover:underline"
+                className="text-sm 2xl:text-lg text-blue-700 font-medium hover:underline"
               >
                 Unduh &gt;&gt;
               </button>

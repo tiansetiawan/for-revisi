@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const artikelList = [
-    {
+  {
     id: 1,
     judul: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     tanggal: "11 Juli 2025",
@@ -29,14 +29,14 @@ const artikelList = [
     deskripsi: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun perjalanannya membangun Indonesia melalui inovasi dan kualitas di industri beton pracetak. Dengan mengusung semangat 'Bangga Berkarya, Bangga Indonesia', perusahaan ini menegaskan kembali komitmennya sebagai bagian dari kekuatan pembangunan nasional.",
     gambar: "/images/ultah50.jpg",
   },
-  // {
-  //   id: 4,
-  //   judul: "Penghargaan Green Industry 2025",
-  //   tanggal: "5 April 2025",
-  //   url: "/blog/artikel/detail-d",
-  //   deskripsi: "PT Cisangkan meraih penghargaan Green Industry 2025 untuk kategori material bangunan berkelanjutan. Penghargaan ini diberikan atas komitmen perusahaan dalam mengurangi jejak karbon.",
-  //   gambar: "/images/green-award.jpg",
-  // },
+  {
+    id: 4,
+    judul: "Inovasi Terbaru Produk Genteng Beton",
+    tanggal: "10 Mei 2025",
+    url: "/blog/artikel/detail-c",
+    deskripsi: "PT Cisangkan meluncurkan produk genteng beton terbaru dengan teknologi anti bocor yang lebih baik. Produk ini dirancang khusus untuk iklim tropis Indonesia dengan daya tahan yang lebih kuat.",
+    gambar: "/images/inovasi-genteng.jpg",
+  },
   // {
   //   id: 5,
   //   judul: "Workshop Konstruksi Modern",
