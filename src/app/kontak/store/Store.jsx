@@ -666,9 +666,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </nav>
       </div> 
 
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 mb-10 text-sm sm:text-base border-b border-[#CCCCCC]">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-sm sm:text-base mb-10 border-b border-[#CCCCCC]">
         {/* Header Section */}
-        <div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 max-w-6xl mx-auto px-4 md:px-0">
+        <div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 mx-auto px-4 md:px-0">
           <div className="flex items-center w-full md:w-1/2 gap-10">
             <div className="leading-snug">
               <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
@@ -688,12 +688,12 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
         {/* Kanan: Logo + Dropdowns */}
           <div className="w-full md:w-1/2">
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-gray-600 text-sm 2xl:text-base mb-4">
               Pilih wilayah untuk melihat informasi STORE kami terdekat
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex flex-col w-full sm:w-1/2">
-                <label className="text-sm font-semibold mb-1">Propinsi</label>
+                <label className="text-sm 2xl:text-base font-semibold mb-1">Propinsi</label>
                 <select
                   className="border border-gray-300 rounded px-3 py-2"
                   value={selectedProvince}
@@ -710,7 +710,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
                 </select>
               </div>
               <div className="flex flex-col w-full sm:w-1/2">
-                <label className="text-sm font-semibold mb-1">Kota/Kabupaten</label>
+                <label className="text-sm 2xl:text-base font-semibold mb-1">Kota/Kabupaten</label>
                 <select 
                   className="border border-gray-300 rounded px-3 py-2"
                   value={selectedCityId}
@@ -732,7 +732,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
           {selectedCityName && filteredStores.length === 0 ? (
             <div className="text-center py-10 col-span-3">
               <div className="inline-block bg-gray-100 px-6 py-4 rounded-lg">
-                <p className="text-gray-600 font-medium">
+                <p className="text-gray-600 font-medium 2xl:text-lg">
                   Maaf untuk saat ini STORE kami belum tersedia di {selectedCityName}
                 </p>
                 <button 
@@ -741,30 +741,30 @@ const [slopeAngle, setSlopeAngle] = useState('');
                     setSelectedCityName('');
                     setSelectedProvince('');
                   }}
-                  className="mt-3 text-blue-600 hover:underline text-sm"
+                  className="mt-3 text-blue-600 hover:underline text-sm 2xl:text-base"
                 >
                   Lihat semua store
                 </button>
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-20 2xl:gap-24">
               {columns.map((column, colIndex) => (
                 <div key={colIndex} className="space-y-6">
                   {column.map((cityItem, idx) => (
                     <div key={idx}>
-                      <h3 className="text-[#1E3A8A] font-bold uppercase mb-2">{cityItem.city}</h3>
+                      <h3 className="text-[#1E3A8A] font-bold uppercase mb-2 2xl:text-lg">{cityItem.city}</h3>
                       {cityItem.stores.map((store, sIdx) => (
                         <div key={sIdx} className="mb-4 text-gray-800 text-sm">
                           <a
-                            className="font-semibold hover:underline block"
+                            className="font-semibold hover:underline block 2xl:text-base"
                             href={store.maps}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             {store.name}
                           </a>
-                          <p>{store.address}{store.address2 && <><br/>{store.address2}</>}</p>
+                          <p className='2xl:text-sm'>{store.address}{store.address2 && <><br/>{store.address2}</>}</p>
                           {store.telp && <p>Telp: {store.telp}</p>}
                           {store.hp && <p>HP: {store.hp}</p>}
                         </div>
@@ -778,9 +778,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
         </div>
       </section>
    {/* Main Content */}
-    <section id="kontak-state" className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-20">
-            <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">Kontak Kami</h2>
-      <p className="text-sm text-justify">
+    <section id="kontak-state" className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-sm sm:text-base mb-20">
+            <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">Kontak Kami</h2>
+      <p className="text-sm text-justify 2xl:text-base">
         Kami selalu berusaha untuk memberikan pelayanan yang terbaik, mohon kirimkan informasi dan saran Anda kepada Kami
         dengan mengisi formulir dibawah ini.
       </p>
@@ -789,20 +789,20 @@ const [slopeAngle, setSlopeAngle] = useState('');
 {/* Kontak Info */}
 <div className="w-full sm:w-1/3 text-center mx-auto flex flex-col items-center justify-center space-y-10">
   <div>
-    <FaPhone className="text-5xl mx-auto mb-2" />
-    <h3 className="font-semibold text-lg">Phone</h3>
-    <a href="tel:+6251585652262" className="text-sm hover:underline">
+    <FaPhone className="text-5xl mx-auto mb-2 2xl:text-7xl" />
+    <h3 className="font-semibold text-lg 2xl:text-xl">Phone</h3>
+    <a href="tel:+6251585652262" className="text-sm 2xl:text-base hover:underline">
       (022)6031588
     </a>
     <br />
-    <a href="tel:+6251585652262" className="text-sm hover:underline">
+    <a href="tel:+6251585652262" className="text-sm 2xl:text-base hover:underline">
       (022)6030467
     </a>
   </div>
   <div>
-    <FaEnvelope className="text-5xl mx-auto mb-2" />
-    <h3 className="font-semibold text-lg">Email</h3>
-    <a href="mailto:info@cisangkan.com" className="text-sm hover:underline">
+    <FaEnvelope className="text-5xl mx-auto mb-2 2xl:text-7xl" />
+    <h3 className="font-semibold text-lg 2xl:text-xl">Email</h3>
+    <a href="mailto:info@cisangkan.com" className="text-sm hover:underline 2xl:text-base">
       Email : info@cisangkan.com
     </a>
   </div>
@@ -822,63 +822,63 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
     <div>
-      <label className="block mb-1 text-gray-700">Nama</label>
+      <label className="block mb-1 text-gray-700 2xl:text-lg">Nama</label>
       <input 
         type="text" 
         name="name"
         value={formData.name}
         onChange={handleInputChange}
         placeholder="Nama Anda" 
-        className="w-full border rounded px-4 py-2 bg-white" 
+        className="w-full border rounded px-4 py-2 2xl:py-4 bg-white" 
         required
       />
     </div>
     <div>
-      <label className="block mb-1 text-gray-700">Email</label>
+      <label className="block mb-1 text-gray-700 2xl:text-lg">Email</label>
       <input 
         type="email" 
         name="email"
         value={formData.email}
         onChange={handleInputChange}
         placeholder="Email Anda" 
-        className="w-full border rounded px-4 py-2 bg-white" 
+        className="w-full border rounded px-4 py-2 2xl:py-4 bg-white" 
         required
       />
     </div>
   </div>
   
   <div>
-    <label className="block mb-1 text-gray-700">Telepon</label>
+    <label className="block mb-1 text-gray-700 2xl:text-lg">Telepon</label>
     <input 
       type="tel" 
       name="phone"
       value={formData.phone}
       onChange={handleInputChange}
       placeholder="Telepon Anda" 
-      className="w-full border rounded px-4 py-2 bg-white" 
+      className="w-full border rounded px-4 py-2 2xl:py-4 bg-white" 
     />
   </div>
   
   <div>
-    <label className="block mb-1 text-gray-700">Alamat</label>
+    <label className="block mb-1 text-gray-700 2xl:text-lg">Alamat</label>
     <textarea 
       name="address"
       value={formData.address}
       onChange={handleInputChange}
       placeholder="Alamat Anda" 
-      className="w-full border rounded px-4 py-2 bg-white" 
+      className="w-full border rounded px-4 py-2 2xl:py-4 bg-white" 
       rows="2"
     ></textarea>
   </div>
   
   <div>
-    <label className="block mb-1 text-gray-700">Pesan</label>
+    <label className="block mb-1 text-gray-700 2xl:text-lg">Pesan</label>
     <textarea 
       name="message"
       value={formData.message}
       onChange={handleInputChange}
       placeholder="Pesan Anda" 
-      className="w-full border rounded px-4 py-2 bg-white" 
+      className="w-full border rounded px-4 py-2 2xl:py-4 bg-white" 
       rows="3"
       required
     ></textarea>
@@ -887,7 +887,7 @@ const [slopeAngle, setSlopeAngle] = useState('');
   <div className="flex items-center gap-4">
     <button 
       type="submit" 
-      className="bg-[#0B203F] text-white px-6 py-2 rounded hover:bg-blue-800 transition disabled:opacity-50"
+      className="bg-[#0B203F] text-white px-6 py-2 2xl:py-4 rounded hover:bg-blue-800 transition disabled:opacity-50"
       disabled={isSubmitting}
     >
       {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
