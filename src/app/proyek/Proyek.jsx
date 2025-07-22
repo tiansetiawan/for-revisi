@@ -73,7 +73,7 @@ const getFilteredProyek = () => {
               </nav>
             </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-6 pe-1 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-6 pe-1 py-8">
         <SidebarProyek
           activeItem={activeItem}
           setActiveItem={setActiveItem}
@@ -83,8 +83,8 @@ const getFilteredProyek = () => {
         />
 
         <main className="w-full lg:w-5/5 space-y-8">
-          <section className="max-w-6xl mx-auto px-6 sm:px-12 text-sm sm:text-base mb-10">
-            <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+          <section className="xl:px-12 mx-auto px-6 sm:px-12 text-sm sm:text-base mb-10">
+            <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">
               {getGalleryTitle()}
             </h2>
             
@@ -96,7 +96,7 @@ const getFilteredProyek = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+                  className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50"
                 >
                   Sebelumnya
                 </button>
@@ -105,7 +105,7 @@ const getFilteredProyek = () => {
                   <button
                     key={page}
                     onClick={() => handlePageChange(page)}
-                    className={`px-3 py-1 text-xs ${
+                    className={`px-3 py-1 text-xs 2xl:text-sm ${
                       currentPage === page
                         ? 'border border-gray-300 rounded-none bg-[#0B203F] text-white'
                         : 'text-gray-700 hover:bg-gray-100'
@@ -118,7 +118,7 @@ const getFilteredProyek = () => {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50"
+                  className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50"
                 >
                   Berikutnya
                 </button>

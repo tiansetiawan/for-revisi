@@ -208,7 +208,7 @@ export default function Inovasi() {
             <button
               onClick={handlePrevPage}
               disabled={currentPage === 1}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Sebelumnya
             </button>
@@ -217,7 +217,7 @@ export default function Inovasi() {
               <button
                 key={page}
                 onClick={() => handlePageChange(page)}
-                className={`px-3 py-1 border border-gray-300 rounded-none text-xs ${
+                className={`px-3 py-1 border border-gray-300 rounded-none text-xs 2xl:text-sm ${
                   currentPage === page 
                     ? 'bg-[#0B203F] text-white' 
                     : 'text-gray-700 hover:bg-gray-100'
@@ -230,7 +230,7 @@ export default function Inovasi() {
             <button
               onClick={handleNextPage}
               disabled={currentPage === totalPages}
-              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-3 py-1 text-gray-700 hover:bg-gray-100 text-xs 2xl:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Berikutnya
             </button>

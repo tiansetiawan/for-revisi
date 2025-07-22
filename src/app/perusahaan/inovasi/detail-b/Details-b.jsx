@@ -146,20 +146,20 @@ export default function Detailsb() {
   </nav>
 </div>
 
-    <section className="max-w-5xl mx-auto mt-10 px-4 sm:px-6 text-sm sm:text-base mb-16">
+    <section className="xl:px-24 mx-auto mt-12 sm:px-12 text-justify text-sm sm:text-base mb-16">
   {/* Judul */}
-      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg uppercase mb-2">
+      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
         {data.judul}
       </h1>
 
 
   {/* Tanggal */}
-  <p className="text-blue-600 text-sm mb-6">
+  <p className="text-blue-600 text-sm 2xl:text-base mb-6">
     {data?.tanggal || 'DD Month Years'}
   </p>
 
   {/* Gambar */}
-  <div className="w-full max-w-3xl h-[240px] sm:h-[320px] mx-auto bg-gray-200 flex items-center justify-center mb-8">
+  <div className="h-[240px] w-full xl:px-40 xl:h-[320px] 2xl:h-[450px] mx-auto flex items-center justify-center mb-8">
     {data?.gambar ? (
       <img src={data.gambar} alt={data.judul} className="w-full h-full object-cover" />
     ) : (
@@ -170,7 +170,7 @@ export default function Detailsb() {
   </div>
 
   {/* Konten Deskripsi */}
-  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b">
+  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b 2xl:text-base">
     {data?.deskripsi ? (
       <p>{data.deskripsi}</p>
     ) : (
@@ -262,7 +262,7 @@ export default function Detailsb() {
 
   {/* Tombol Kembali */}
   <div className="mt-10">
-    <a href="/perusahaan/inovasi" className="text-sm text-blue-800 font-medium hover:underline">
+    <a href="/perusahaan/inovasi" className="text-sm 2xl:text-base text-blue-800 font-medium hover:underline">
       &lt;&lt; Kembali ke Halaman Inovasi
     </a>
   </div>

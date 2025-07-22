@@ -108,16 +108,16 @@ export default function Testimoni() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <nav className="2xl:text-lg flex justify-center space-x-10 text-[1rem] font-light tracking-wide">
           <Link href="/blog/artikel" className="text-[#333] hover:text-[#2D5DA6]">Artikel</Link>
           <Link href="/blog/testimoni" className="text-[#2D5DA6] font-bold">Testimoni</Link>
         </nav>
       </div>
 
       {/* Main Content */}
-      <section className="max-w-6xl mx-auto mt-12 px-6 sm:px-12 text-sm sm:text-base mb-5">
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-5">
         <div className="gap-6 items-start mb-10">
-          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5">
+          <h2 className="text-xl sm:text-xl font-semibold leading-snug border-l-4 border-[#0B203F] pl-4 uppercase mb-5 2xl:text-2xl">
             TESTIMONI
           </h2>
         </div>
@@ -136,10 +136,10 @@ export default function Testimoni() {
                 key={item.id}
                 className={`flex flex-col ${
                   item.imagePosition === 'left' ? 'sm:flex-row' : 'sm:flex-row-reverse'
-                } items-start sm:items-center justify-between gap-6 sm:gap-0 mb-18 border-b border-gray-300`}
+                } items-start sm:items-center justify-between gap-6 2xl:gap-1 sm:gap-0 mb-18 border-b border-gray-300`}
               >
                 {/* Gambar */}
-                <div className="w-full sm:w-1/5">
+                <div className="w-full sm:w-1/5 2xl:w-2/8">
                   <div className="relative w-full aspect-video">
                     {item.imageUrl ? (
                       <Image
@@ -171,9 +171,9 @@ export default function Testimoni() {
                 </div>
 
                 {/* Teks */}
-                <div className="w-full sm:w-2/3 text-sm text-justify" style={{width:'50rem'}}>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-gray-700">{item.text}</p>
+                <div className="w-full xl:w-[-1/2]  text-sm text-justify">
+                  <h3 className="font-semibold mb-2 2xl:text-lg">{item.title}</h3>
+                  <p className="text-gray-700 2xl:text-base">{item.text}</p>
                 </div>
               </div>
             ))}
