@@ -80,7 +80,7 @@ export default function ProductPv() {
         {activeItem.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar onItemChange={setActiveItem} />
 
         <main className="w-full lg:w-5/6 space-y-8 ps-5 pe-5">

@@ -4,8 +4,8 @@ import Link from 'next/link';
 export const ConcreteRoofContent = () => (
   <>
     <section className='mb-20'>
-      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">KEUNGGULAN GENTENG CISANGKAN :</h2>
-      <p className="text-sm leading-relaxed text-justify ps-5">
+      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">KEUNGGULAN GENTENG CISANGKAN :</h2>
+      <p className="text-sm 2xl:text-base leading-relaxed text-justify ps-5">
   Genteng <strong>CISANGKAN®</strong> diproduksi dengan menggunakan proses basah yaitu <em>wet process</em>. Raw material pasir dan semen pilihan akan melewati suatu proses panjang, yaitu menggunakan mesin teknologi Jepang, kemudian setiap keping genteng yang dihasilkan melewati proses rendaman lalu curing secara alami, dan setiap keping genteng tersebut akan melewati proses penggosokan dan <em>quality control</em> satu per satu. Finishing akhir adalah proses <em>coating</em> dengan cat <em>solvent base</em> sesuai pesanan.
   <br /><br />
   Salah satu produk genteng unggulan <strong>CISANGKAN®</strong> yaitu profil genteng flat Victoria yang tersedia dalam 5 pilihan model/motif. Kelebihan tipe ini adalah presisi dan <em>interlocking system</em> satu sama lainnya sehingga memungkinkan terpasang sangat rapi dan kedap terhadap masuknya air hujan yang disebabkan oleh faktor angin. Selain itu kelebihannya yaitu memiliki <strong>Gutter Line</strong> yaitu tali air untuk mengarahkan aliran air hujan, <strong>Two Lines Barrier</strong>, <strong>Upper Barrier</strong> dan <strong>Double Protection Bar</strong> untuk membendung air hujan.
@@ -15,12 +15,12 @@ export const ConcreteRoofContent = () => (
     </section>
 
     <section className="flex justify-center">
-      <Image src="/images/part descriptsion product.jpg" alt="Genteng Label Kiri" width={600} height={500} />
+      <Image src="/images/part descriptsion product.jpg" alt="Genteng Label Kiri" width={600} height={500} className='2xl:w-[55rem]' />
     </section>
 
     <section className='mb-15'>
-      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI TEKNIS :</h2>
-      <ul className="list-disc list-inside text-sm leading-relaxed space-y-1">
+      <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">SPESIFIKASI TEKNIS :</h2>
+      <ul className="list-disc list-inside text-sm leading-relaxed space-y-1 2xl:text-base">
         <li>Bahan dasar campuran Beton</li>
         <li>Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 0096:2007</Link></li>
         <li><Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">Beban lentur</Link> minimal 1200 N</li>

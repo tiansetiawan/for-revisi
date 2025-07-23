@@ -273,8 +273,8 @@ export default function ProductSidebar({ onItemChange }) {
 
   return (
     <aside className="w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto pr-5">
-      <h1 className="text-lg font-medium mb-4 pb-2">Produk</h1>
-      <ul className="space-y-2 text-sm">
+      <h1 className="text-lg font-medium mb-4 pb-2 2xl:text-xl">Produk</h1>
+      <ul className="space-y-2 text-sm 2xl:text-base">
         {getMainProducts().map((item) => (
           <li key={item}>
             <div className="flex items-center justify-between">
