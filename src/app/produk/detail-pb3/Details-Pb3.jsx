@@ -169,7 +169,7 @@ export default function DetailsPb3() {
                         {/* <th className="border border-gray-300 px-4 py-2 text-center w-20">Aplikasi</th> */}
                       </tr>
                     </thead>
-                    <tbody className="text-sm">
+                    <tbody className="text-sm 2xl:text-base">
                       {activeItems.map((product) => {
                         const dimensions = product.specifications
                           .find((spec) => spec.label === "Dimensi" || spec.label === "Ukuran")
@@ -243,7 +243,7 @@ export default function DetailsPb3() {
                                               <div key={col} className="flex-1 px-2 first:pl-0 last:pr-0">
                                                 <div className="space-y-2">
                                                   {colItems.map((thumbnail, index) => (
-                                                    <div key={startIndex + index} className="relative w-30 h-30 mx-auto">
+                                                    <div key={startIndex + index} className="relative w-30 h-30 2xl:w-41 2xl:h-41 mx-auto">
                                                       <Image src={thumbnail.thumbImage} alt={`${product.name} - ${startIndex + index + 1}`} fill className="object-contain" />
                                                     </div>
                                                   ))}
@@ -270,7 +270,7 @@ export default function DetailsPb3() {
                                               <div key={col} className="flex-1 px-2 first:pl-0 last:pr-0">
                                                 <div className="space-y-2">
                                                   {colItems.map((thumbnail, index) => (
-                                                    <div key={startIndex + index} className="relative w-30 h-30 mx-auto">
+                                                    <div key={startIndex + index} className="relative w-30 h-30 2xl:w-41 2xl:h-41 mx-auto">
                                                       <Image src={thumbnail.penampangImage} alt={`${product.name} - ${startIndex + index + 1}`} fill className="object-contain" />
                                                     </div>
                                                   ))}

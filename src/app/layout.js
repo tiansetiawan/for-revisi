@@ -27,6 +27,7 @@ export const metadata = {
       url: '/apple-touch-icon-precomposed.png', // Opsional
     },
   },
+
 };
 
 export default function RootLayout({ children }) {
@@ -43,3 +44,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
