@@ -33,9 +33,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <head>
+          <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var ahrefs_analytics_script = document.createElement('script');
+                ahrefs_analytics_script.async = true;
+                ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+                ahrefs_analytics_script.setAttribute('data-key', 'qtLJTglbhK9QiMuck0C+uw');
+                document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body>
           <SessionStorageSync/>
-
           <Navbar />
           {children}
           <Footer />
