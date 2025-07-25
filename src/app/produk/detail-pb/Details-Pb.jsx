@@ -165,7 +165,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
         {currentProduct.category.toUpperCase()}
       </div>
 
-      <div className="flex flex-col lg:flex-row max-w-7xl mx-auto ps-2 pe-2 py-8">
+      <div className="flex flex-col lg:flex-row mx-auto ps-2 pe-2 2xl:ps-6 2xl:pe-1 py-8">
         <ProductSidebar />
         
         <main className="w-full lg:w-5/6 flex flex-col">
@@ -173,10 +173,10 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
           <div className="relative gap-8 mb-22">
             {/* Product Specifications */}
             <div className="w-auto lg:w-1/2 space-y-6 px-6">
-              <section className='mb-5 mt-5'>
+              <section className='mb-5'>
 <div className="flex items-center gap-2 h-20"> {/* memastikan alignment vertikal */}
   {/* Container Teks */}
-  <div className="flex items-center justify-center min-w-max bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 h-[40px]">
+  <div className="flex items-center justify-center min-w-max bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 h-[40px] 2xl:text-2xl">
     {currentProduct.name}
   </div>
 
@@ -195,20 +195,20 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
 </div>
 
   
-          <div className="w-[63rem] max-h-[600px] overflow-y-auto rounded border border-gray-300">
+          <div className="w-[70rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
             <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
-  <tr className="bg-[#0B203F] text-white text-sm">
-    <th className="border border-gray-300 px-4 py-2 text-center w-60">Gambar</th>
+  <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">
+    <th className="border border-gray-300 px-4 py-2 text-center w-80 2xl:w-90">Gambar</th>
     <th className="border border-gray-300 px-4 py-2 text-center w-40">Produk</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Dimensi (cm)</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Berat (Kg)</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-30">Tebal (cm)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-50">Dimensi (cm)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40 2xl:w-40">Berat (Kg)</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-50 2xl:w-40">Tebal (cm)</th>
     <th className="border border-gray-300 px-4 py-2 text-center">Pemakaian (bh/m²)</th>
-    <th className="border border-gray-300 px-4 py-2 text-center w-40">Aplikasi</th>
+    <th className="border border-gray-300 px-4 py-2 text-center w-40 2xl:w-50">Aplikasi</th>
   </tr>
 </thead>
-<tbody className='text-sm'>
+<tbody className='text-sm  2xl:text-base'>
 {activeItems.map((product) => {
     const dimensions = product.specifications.find(spec => spec.label === 'Dimensi' || spec.label === 'Ukuran')?.value || '-';
     const weights = product.specifications.find(spec => spec.label === 'Berat')?.value.split('/').map(w => w.trim()) || ['-'];
@@ -224,7 +224,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
             {i === 0 ? (
               <>
                 <td rowSpan={weights.length} className="border border-gray-300 px-4 py-2">
-                  <div className="relative w-40 h-40 mx-auto">
+                  <div className="relative w-40 h-40 2xl:w-50 2xl:h-60 mx-auto">
                     <Image
                       src={product.thumbnails[0].thumbImage}
                       alt={product.name}
@@ -261,7 +261,7 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
             ) : null}
 <td className="border border-gray-300 px-4 py-2 text-center relative">
   {application ? (
-    <div className="flex gap-1 justify-center">
+    <div className="flex gap-1 2xl:gap-3 justify-center">
       {Array.isArray(application.icons?.[0]) 
         ? application.icons[i]?.map((icon, iconIndex) => (
             <div 
@@ -278,19 +278,19 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
               onMouseLeave={() => setHoveredIcon(null)}
             >
               {icon === 'pedestrian' ? (
-                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4 2xl:w-4 2xl:h-6" />
               ) : icon === 'car' ? (
-                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4 2xl:w-7 2xl:h-7" />
               ) : icon === 'garage' ? (
-                <img src="/icons/garage.png" alt="garage" className="w-4 h-4" />
+                <img src="/icons/garage.png" alt="garage" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ): icon === 'lorry' ? (
-                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4" />
+                <img src="/icons/lorry.png" alt="lorry" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'fuso' ? (
-                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4" />
+                <img src="/icons/fuso.png" alt="fuso" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'factory' ? (
-                <img src="/icons/factory.png" alt="factory" className="w-4 h-4" />
+                <img src="/icons/factory.png" alt="factory" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : icon === 'harbor' ? (
-                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4" />
+                <img src="/icons/harbor.png" alt="harbor" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : null}
               
               {hoveredIcon === icon && (
@@ -322,9 +322,9 @@ const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
               onMouseLeave={() => setHoveredIcon(null)}
             >
               {icon === 'pedestrian' ? (
-                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4" />
+                <img src="/icons/pedestrian.png" alt="Pedestrian" className="w-2 h-4 2xl:w-4 2xl:h-6" />
               ) : icon === 'car' ? (
-                <img src="/icons/car.png" alt="Car" className="w-4 h-4" />
+                <img src="/icons/car.png" alt="Car" className="w-4 h-4 2xl:w-6 2xl:h-6" />
               ) : null}
               
               {hoveredIcon === icon && (
