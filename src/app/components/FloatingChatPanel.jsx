@@ -226,7 +226,7 @@ export default function FloatingChatPanel() {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 2xl:h-11 2xl:w-11"
+            className="h-6 w-6 2xl:h-8 2xl:w-8"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
