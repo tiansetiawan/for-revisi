@@ -250,13 +250,14 @@ export default function FloatingChatPanel() {
           {/* Chat Header */}
           <div className="bg-[#2957A4] text-white p-3 flex justify-between items-center relative overflow-hidden h-25 2xl:h-32">
             <div className="flex items-center">
-<div className="relative w-20 2xl:w-26 2xl:h-36 2xl:mt-8 h-full rounded-none overflow-hidden mr-2">
+<div className="relative w-20 h-20 2xl:w-26 2xl:h-36 rounded-none overflow-hidden mr-2">
   <Image
-    src="/images/Victoria 2.png"
+    src="/images/Victoria-2.png" // Pastikan tidak ada spasi
     alt="Victoria"
-    fill  // Ini yang paling penting untuk scaling fleksibel
+    fill
     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    className="object-cover object-center"  // Hapus mt-10 karena tidak diperlukan dengan fill
+    className="object-cover object-center"
+    priority // Jika gambar penting (above the fold)
   />
 </div>
               <div>
