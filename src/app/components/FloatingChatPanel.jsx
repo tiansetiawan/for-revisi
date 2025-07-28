@@ -250,22 +250,23 @@ export default function FloatingChatPanel() {
           {/* Chat Header */}
           <div className="bg-[#2957A4] text-white p-3 flex justify-between items-center relative overflow-hidden h-25 2xl:h-32">
             <div className="flex items-center">
-<div className="relative w-20 h-20 2xl:w-26 2xl:h-36 rounded-none overflow-hidden mr-2">
-  <Image
-    src="/images/Victoria-2.png" // Pastikan tidak ada spasi
-    alt="Victoria"
-    fill
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    className="object-cover object-center"
-    priority // Jika gambar penting (above the fold)
-  />
+  <div className="relative min-w-[80px] w-20 h-28 2xl:min-w-[104px] 2xl:w-26 2xl:h-36 rounded-none overflow-hidden mr-2 mt-4">
+    <Image
+      src="/images/Victoria2.png" // Pastikan tidak ada spasi
+      alt="Victoria"
+      fill
+      sizes="(max-width: 1366px) 80px, (min-width: 1920px) 104px"
+      className="object-cover object-center"
+      priority
+      unoptimized={true} // Untuk testing, bisa dihapus setelah berhasil
+    />
+  </div>
+  <div>
+    <p className="font-normal text-[9px] 2xl:text-[11px]">Chat with</p>
+    <p className="text-sm 2xl:text-base font-semibold">Victoria</p>
+    <p className="text-[8px] 2xl:text-[10px]">Virtual Assistant</p>
+  </div>
 </div>
-              <div>
-                <p className="font-normal text-[9px] 2xl:text-[11px]">Chat with</p>
-                <p className="text-sm 2xl:text-base font-semibold">Victoria</p>
-                <p className="text-[8px] 2xl:text-[10px]">Virtual Assistant</p>
-              </div>
-            </div>
             
             {/* Wave Effect */}
             <div className="absolute bottom-0 left-0 right-0 h-15 2xl:h-19 mb-[-1em] overflow-hidden">
