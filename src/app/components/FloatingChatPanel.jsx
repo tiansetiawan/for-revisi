@@ -245,29 +245,29 @@ export default function FloatingChatPanel() {
       {isOpen && (
         <div 
           ref={chatPanelRef}
-          className="w-80 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200"
+          className="w-80 2xl:w-105 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-200"
         >
           {/* Chat Header */}
-          <div className="bg-[#2957A4] text-white p-3 flex justify-between items-center relative overflow-hidden h-25">
+          <div className="bg-[#2957A4] text-white p-3 flex justify-between items-center relative overflow-hidden h-25 2xl:h-32">
             <div className="flex items-center">
-              <div className="relative w-20 h-full rounded-none overflow-hidden mr-2">
-                <Image
-                  src="/images/Victoria 2.png"
-                  alt="Victoria"
-                  width={80}
-                  height={70}
-                  className="object-cover mt-10"
-                />
-              </div>
+<div className="relative w-20 2xl:w-26 2xl:h-36 2xl:mt-8 h-full rounded-none overflow-hidden mr-2">
+  <Image
+    src="/images/Victoria 2.png"
+    alt="Victoria"
+    fill  // Ini yang paling penting untuk scaling fleksibel
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+    className="object-cover object-center"  // Hapus mt-10 karena tidak diperlukan dengan fill
+  />
+</div>
               <div>
-                <p className="font-normal text-[9px]">Chat with</p>
-                <p className="text-sm font-semibold">Victoria</p>
-                <p className="text-[8px]">Virtual Assistant</p>
+                <p className="font-normal text-[9px] 2xl:text-[11px]">Chat with</p>
+                <p className="text-sm 2xl:text-base font-semibold">Victoria</p>
+                <p className="text-[8px] 2xl:text-[10px]">Virtual Assistant</p>
               </div>
             </div>
             
             {/* Wave Effect */}
-            <div className="absolute bottom-0 left-0 right-0 h-15 mb-[-1em] overflow-hidden">
+            <div className="absolute bottom-0 left-0 right-0 h-15 2xl:h-19 mb-[-1em] overflow-hidden">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#f9fafb" fillOpacity="1" d="M0,64L48,85.3C96,107,192,149,288,176C384,203,480,213,576,197.3C672,181,768,139,864,106.7C960,75,1056,53,1152,69.3C1248,85,1344,139,1392,165.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
               </svg>
@@ -275,8 +275,8 @@ export default function FloatingChatPanel() {
             
             <div className="flex items-center z-10">
               <div className="flex items-center mr-2 bg-white/20 rounded-full px-2 py-1">
-                <span className="w-1 h-1 bg-green-400 rounded-full mr-1 mb-0.5"></span>
-                <span className="text-[8px]">Online</span>
+                <span className="w-1 h-1 2xl:w-2 2xl:h-2 bg-green-400 rounded-full mr-1 mb-0.5"></span>
+                <span className="text-[8px] 2xl:text-[10px]">Online</span>
               </div>
               <button
                 onClick={toggleChat}
@@ -302,7 +302,7 @@ export default function FloatingChatPanel() {
           </div>
 
           {/* Chat Messages */}
-          <div className="h-60 p-3 overflow-y-auto bg-gray-50">
+          <div className="h-60 2xl:h-82 p-3 overflow-y-auto bg-gray-50">
             {messages.length === 0 ? (
               <div className="text-center text-sm text-gray-500 mt-16">
                 Victoria is online and ready to help
@@ -314,7 +314,7 @@ export default function FloatingChatPanel() {
                   className={`mb-3 flex ${msg.isUser ? 'justify-end' : 'justify-start'}`}
                 >
                   <div 
-                    className={`max-w-xs px-3 py-2 rounded-lg text-xs whitespace-pre-line ${msg.isUser 
+                    className={`max-w-xs px-3 py-2 rounded-lg text-xs 2xl:text-sm whitespace-pre-line ${msg.isUser 
                       ? 'bg-[#2957A4] text-white rounded-br-none' 
                       : 'bg-gray-200 text-gray-800 rounded-bl-none'}`}
                   >
@@ -372,12 +372,25 @@ export default function FloatingChatPanel() {
           </form>
 
           {/* Admin Info */}
-          <div className="text-center text-xs text-gray-500 p-2 bg-gray-100">
-            <a className='flex gap-2 justify-center items-center' href="https://wa.me/6281214983517" target="_blank" rel="noopener noreferrer">
-              <Image src="/icons/icons8-whatsapp.svg" alt="WhatsApp" width={15} height={15} />
-              <span>Hubungi Admin</span>
-            </a>
-          </div>
+<div className="text-center text-xs 2xl:text-sm text-gray-500 p-2 bg-gray-100">
+  <a 
+    className='flex gap-2 justify-center items-center' 
+    href="https://wa.me/6281214983517" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <div className="relative w-4 h-4 2xl:w-6 2xl:h-6"> {/* Container untuk gambar */}
+      <Image 
+        src="/icons/icons8-whatsapp.svg" 
+        alt="WhatsApp" 
+        fill
+        sizes="(max-width: 768px) 16px, 16px"
+        className="object-contain"
+      />
+    </div>
+    <span>Hubungi Admin</span>
+  </a>
+</div>
         </div>
       )}
     </div>
