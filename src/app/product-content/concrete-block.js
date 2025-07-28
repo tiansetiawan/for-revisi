@@ -101,7 +101,7 @@ export const ConcreteBlockContent = () => {
           CARA PEMASANGAN :
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 2xl:gap-y-5 2xl:gap-x-20 p-8">
           {installationSteps.map((step) => (
             <div
               key={step.id}
