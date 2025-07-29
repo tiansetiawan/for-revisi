@@ -126,3 +126,22 @@
   height: 100%;
 }
 }
+
+
+/* Mobile Styles (375px) */
+@media (max-width: 375px) {
+  .bannerImage {
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .locationOverlay {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.1rem 0.3rem;
+  }
+  
+  .locationText {
+    font-size: 0.6rem;
+  }
+}
