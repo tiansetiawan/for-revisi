@@ -18,7 +18,7 @@ const FadeBannerSlider = ({
   const sliderRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
 
   useEffect(() => {
     if (sliderRef.current) {

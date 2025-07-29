@@ -11,7 +11,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import '@/app/style/Beranda.css';
 
 // Hero Slides Data with URLs
-// Hero Slides Data with URLs
 const heroSlides = [
   {
     image: '/images/4.jpg',
