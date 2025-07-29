@@ -51,7 +51,7 @@
 
 
 /* Mobile Styles (375px) */
-@media only screen and (max-width: 378px) {
+@media only screen and (max-width: 440px) {
   .parent-container {
     height: 300px !important;
     margin-top: 2rem !important;
