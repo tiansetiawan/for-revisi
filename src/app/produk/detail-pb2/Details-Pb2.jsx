@@ -192,7 +192,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
       ))}
     </ul>
   </section>
-<div className="w-[70rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
+<div className="w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
   <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
   <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">
