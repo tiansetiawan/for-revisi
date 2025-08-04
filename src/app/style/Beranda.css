@@ -218,13 +218,10 @@ gap: 3rem;
 .icon-categories {
 width: 4rem;
 }
-  .title-vid {
-    color: brown;
-  }
 }
 
 /* Additional small mobile adjustments (375px and below) */
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 430px) {
   .video-slider-container {
     grid-auto-columns: calc(100% / 1.2) !important;
   }
