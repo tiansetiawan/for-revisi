@@ -18,7 +18,7 @@ const FadeBannerSlider = ({
   const sliderRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 430px)' });
 
   useEffect(() => {
     if (sliderRef.current) {
@@ -63,14 +63,14 @@ const FadeBannerSlider = ({
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
             >
-              <Image 
-                src={isMobile && slide.mobileImage ? slide.mobileImage : slide.image}
-                alt={slide.alt || slide.title || 'Banner'} 
-                width={isMobile ? 430 : 1765}
-                height={isMobile ? 621 : 823}
-                className={`${styles.bannerImage} cursor-pointer`}
-                priority={index === 0}
-              />
+<Image 
+  src={isMobile && slide.mobileImage ? slide.mobileImage : slide.image}
+  alt={slide.alt || slide.title || 'Banner'} 
+  width={isMobile ? 430 : 1765}
+  height={isMobile ? 621 : 823}
+  className={`${styles.bannerImage} cursor-pointer`}
+  priority={index === 0}
+/>
               
               {/* Location Overlay */}
               {slide.location && (

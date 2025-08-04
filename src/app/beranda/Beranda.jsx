@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '@/app/style/Beranda.css';
 
+
 // Hero Slides Data with URLs
 const heroSlides = [
   {
@@ -435,7 +436,7 @@ useEffect(() => {
    // Check mobile device
    useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
+      setIsMobile(window.innerWidth < 430);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -709,7 +710,7 @@ return (
     
     {/* Kiri: Judul */}
     <div className="pl-4 border-l-4 border-[#0B203F]">
-      <h2 className="title-vid text-left text-xl sm:text-2xl 2xl:text-[2rem] font-medium leading-tight uppercase">
+      <h2 className="text-left text-xl sm:text-2xl 2xl:text-[2rem] font-medium leading-tight uppercase">
         VIDEO TESTIMONIAL PRODUK
       </h2>
     </div>

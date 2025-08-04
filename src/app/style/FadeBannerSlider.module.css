@@ -128,8 +128,8 @@
 }
 
 
-/* Mobile Styles (375px) */
-@media (max-width: 375px) {
+/* Mobile Styles (430px) */
+@media (max-width: 430px) {
   .bannerImage {
     object-fit: cover;
     object-position: center;
