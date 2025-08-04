@@ -144,4 +144,7 @@
   .locationText {
     font-size: 0.6rem;
   }
+   .bannerImage {
+    object-position: center top;
+   }
 }

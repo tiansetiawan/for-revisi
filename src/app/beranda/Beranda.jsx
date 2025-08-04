@@ -21,19 +21,19 @@ const heroSlides = [
   },
   {
     image: '/images/2.jpg',
-    mobileImage: '/images/beranda-mb2.png',
+    mobileImage: '/images/mobile/beranda-mb2.png',
     url: '/blog/artikel/detail-a',
     location: ''
   },
   {
     image: '/images/1.jpg',
-    mobileImage: '/images/beranda-mb1.png',
+    mobileImage: '/images/mobile/beranda-mb1.png',
     url: '/produk?category=Concrete Roof',
     location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
-    mobileImage: '/images/beranda-mb3.png',
+    mobileImage: '/images/mobile/beranda-mb3.png',
     url: '/produk?category=Paving Block',
     location: 'Tag location'
   },
