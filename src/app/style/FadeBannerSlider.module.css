@@ -132,9 +132,15 @@
 
 /* Mobile Styles (430px) */
 @media (max-width: 430px) {
-  .bannerImage {
+.bannerImage {
     object-fit: cover;
     object-position: center;
+    width: 100%;
+    height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
+  }
+  
+  .imageContainer {
+    height: 400px; /* Sesuaikan dengan tinggi yang diinginkan */
   }
   
   .locationOverlay {
@@ -146,12 +152,4 @@
   .locationText {
     font-size: 0.6rem;
   }
-   .bannerImage {
-    object-position: center top;
-  }
-   .imageContainer {
-  position: relative;
-  width: 100%;
-  height: 25rem;
-}
 }

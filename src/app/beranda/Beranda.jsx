@@ -15,25 +15,25 @@ import '@/app/style/Beranda.css';
 const heroSlides = [
   {
     image: '/images/4.jpg',
-    mobileImage: '/images/mobile/4-mobile.jpg', // Tambahkan path untuk mobile
+    mobileImage: '/images/mobile/hero-mobile-1.jpg', // Tambahkan ini
     url: '/blog/artikel/detail-b',
     location: ''
   },
   {
     image: '/images/2.jpg',
-    mobileImage: '/images/mobile/beranda-mb2.png',
+    mobileImage: '/images/mobile/KBP-mb.jpg', // Tambahkan ini
     url: '/blog/artikel/detail-a',
     location: ''
   },
   {
     image: '/images/1.jpg',
-    mobileImage: '/images/mobile/beranda-mb1.png',
+    mobileImage: '/images/mobile/hero-mobile-3.jpg', // Tambahkan ini
     url: '/produk?category=Concrete Roof',
     location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
-    mobileImage: '/images/mobile/beranda-mb3.png',
+    mobileImage: '/images/mobile/hero-mobile-4.jpg', // Tambahkan ini
     url: '/produk?category=Paving Block',
     location: 'Tag location'
   },
