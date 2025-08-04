@@ -100,9 +100,11 @@
     font-size: 0.8rem;
     max-width: 100%;
   }
-  .imageContainer {
-    width: 100%;
-  }
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
   
   .bannerImage {
     object-fit: fill;
@@ -146,5 +148,10 @@
   }
    .bannerImage {
     object-position: center top;
-   }
+  }
+   .imageContainer {
+  position: relative;
+  width: 100%;
+  height: 25rem;
+}
 }
