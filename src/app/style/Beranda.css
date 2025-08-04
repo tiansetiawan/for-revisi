@@ -218,6 +218,9 @@ gap: 3rem;
 .icon-categories {
 width: 4rem;
 }
+  .title-vid {
+    color: brown;
+  }
 }
 
 /* Additional small mobile adjustments (375px and below) */
