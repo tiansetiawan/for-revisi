@@ -234,6 +234,9 @@ width: 4rem;
   .hero-slide-indicators button.active {
     width: 30px !important;
   }
+  .title-vid {
+    color: brown;
+  }
 }
 
 @media only screen and (min-width: 1920px) {
