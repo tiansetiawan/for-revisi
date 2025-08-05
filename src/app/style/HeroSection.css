@@ -38,12 +38,13 @@
     margin-top: 3rem !important;
     margin-bottom: -4rem !important;
   }
-      .parent-container {
-    height: 400px;
+.parent-container {
+    height: 85vh;             /* Sedikit lebih kecil di mobile */
+    max-height: 600px;
+    min-height: 450px;
     margin-top: 3rem;
-    margin-bottom: -4rem;
   }
-  
+
   .hero-navigation {
     display: none !important;
   }
@@ -68,17 +69,22 @@
 
 /* Mobile Styles (430px) */
 @media (max-width: 430px) {
-  .parent-container {
-    height: 582px;
-    margin-top: 5rem;
-    margin-bottom: -2rem;
-  }
+.parent-container {
+  position: relative;
+  width: 100%;              /* Gunakan tinggi viewport agar proporsional */        /* Batasi tinggi maksimum untuk layar besar */
+  min-height: 500px;          /* Tinggi minimum agar tidak terlalu kecil */
+  margin-top: 5rem;           /* Spasi atas yang stabil */
+  margin-bottom: 0;           /* Hindari margin-bottom negatif */
+  overflow: hidden;
+}
   
   .hero-slide-indicators {
     bottom: 1rem !important;
   }
-  .hero-section {
-        height: 100vh;
-        min-height: 400px;
-    }
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
 }
