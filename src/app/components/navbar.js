@@ -182,7 +182,7 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-4 text-gray-700 text-sm font-medium">
             <li>
               <Link href="/">
-                <button onClick={scrollToTop} className={`px-4 py-2 rounded-full inline-block w-fit ${isActive("/") ? "bg-[#0F1E3E] text-white" : "hover:bg-gray-100"}`}>
+                <button onClick={scrollToTop} className={`rounded-full inline-block w-fit ${isActive("/") ? "bg-[#0F1E3E] text-white" : "hover:bg-gray-100"}`}>
                   Beranda
                 </button>
               </Link>
@@ -196,24 +196,33 @@ export default function Navbar() {
               {mobileDropdownOpen && (
                 <ul className="ml-4 mt-2 space-y-2">
                   <li onClick={closeMobileDropdown}>
-                    <Link href="/produk?expand=true" className={`block ${isActive("/produk") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
+                    <Link href="/produk?category=Concrete Roof" onClick={() => sessionStorage.setItem("autoExpand", "true")} className={`block ${isActive("/produk?category=Concrete Roof") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
                       Concrete Roof
                     </Link>
                   </li>
                   <li onClick={closeMobileDropdown}>
-                    <a href="#" className={`block ${isActive("/paving-block") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
+                      <Link 
+    href="/produk/produk-pv?category=Paving Block" 
+    onClick={() => sessionStorage.setItem("autoExpand", "true")} 
+    className={`block ${isActive("/produk/produk-pv?category=Paving Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
                       Paving Block
-                    </a>
+                    </Link>
                   </li>
                   <li onClick={closeMobileDropdown}>
-                    <a href="#" className={`block ${isActive("/concrete-block") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
+                    <Link 
+    href="/produk/produk-pv?category=Concrete Block" 
+    onClick={() => sessionStorage.setItem("autoExpand", "true")} 
+    className={`block ${isActive("/produk/produk-pv?category=Concrete Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
                       Concrete Block
-                    </a>
+                    </Link>
                   </li>
                   <li onClick={closeMobileDropdown}>
-                    <a href="#" className={`block ${isActive("/concrete-pipe") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
+                    <Link 
+    href="/produk/produk-pv?category=Utility" 
+    onClick={() => sessionStorage.setItem("autoExpand", "true")} 
+    className={`block ${isActive("/produk/produk-pv?category=Utility") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
                       Concrete Pipe
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               )}
@@ -240,7 +249,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link href="/kontak" className={`block ${isActive("/kontak") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
+              <Link href="/kontak/store" className={`block ${isActive("/kontak") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
                 Kontak Kami
               </Link>
             </li>

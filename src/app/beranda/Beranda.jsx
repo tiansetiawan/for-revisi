@@ -663,7 +663,7 @@ return (
         }}
       >
         <div className="flex flex-col items-center group text-[#333333] cursor-pointer">
-          <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-45 2xl:h-45 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
+          <div className="icon-rounded-product relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 2xl:w-45 2xl:h-45 border border-black rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:bg-[#0B203F] hover:border-white hover:border-2">
             <Image
               src={category.icon}
               alt={category.name}

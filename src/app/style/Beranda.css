@@ -253,6 +253,14 @@ width: 4rem;
   .container-shortcut {
     gap: 3rem;
   }
+  .icon-rounded-product {
+    width: 7rem;
+    height: 7rem;
+  }
+  .icon-categories {
+width: 5rem;
+height: 4rem;
+}
 }
 
 @media only screen and (min-width: 1920px) {
