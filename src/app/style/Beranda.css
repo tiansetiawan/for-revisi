@@ -241,6 +241,9 @@ width: 4rem;
     text-align: justify;
     padding-right: 1rem;
   }
+  .product-categories-section {
+    margin-top: -2rem;
+  }
 }
 
 @media only screen and (min-width: 1920px) {
