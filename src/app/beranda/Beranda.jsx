@@ -869,7 +869,7 @@ return (
        {/* E-Commerce Section */}
         <section className="py-20 text-center">
         <h2 className="xl:text-2xl font-semibold mb-4 2xl:text-3xl 2xl:mt-5">CISANGKAN OFFICIAL E-COMMERCE</h2>
-        <div className="flex justify-center mb-20">
+        <div className="logo-ecommerce flex justify-center mb-20">
   <a 
     href="https://www.tokopedia.com/cisangkan" 
     target="_blank" 

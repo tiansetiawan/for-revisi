@@ -244,6 +244,15 @@ width: 4rem;
   .product-categories-section {
     margin-top: -5rem;
   }
+  .logo-ecommerce {
+    padding-inline: 5rem;
+  }
+  .section-container {
+    height: 14rem;
+  }
+  .container-shortcut {
+    gap: 3rem;
+  }
 }
 
 @media only screen and (min-width: 1920px) {

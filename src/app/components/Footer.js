@@ -12,8 +12,8 @@ export default function Footer() {
         <footer className="bg-[#0B203F] text-white px-6 py-8">
             {/* Mobile View */}
              <div className="md:hidden flex flex-col items-center text-center">
-                <div className="flex-col flex justify-center gap-3 mb-6">
-                    <div className="relative h-40 w-full">
+                <div className="flex-col flex items-center justify-center gap-3 mb-6">
+                    <div className="relative h-40 w-80">
                         <Image 
                             src="/logo50.png" 
                             alt="50th Anniversary" 
@@ -22,7 +22,7 @@ export default function Footer() {
                             priority
                         />
                     </div>
-                    <div className="relative h-8 w-24">
+                    <div className="relative h-8 w-40">
                         <Image 
                             src="/logo-sertifikasi.png" 
                             alt="Sertifikasi" 
