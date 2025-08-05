@@ -6,7 +6,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from '../style/FadeBannerSlider.module.css';
-import { useMediaQuery } from 'react-responsive';
 
 const FadeBannerSlider = ({ 
   slides = [], 
@@ -18,19 +17,30 @@ const FadeBannerSlider = ({
   const sliderRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const isMobile = useMediaQuery({ query: '(max-width: 430px)' });
+  const [isMobile, setIsMobile] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    if (sliderRef.current) {
+    setHasMounted(true);
+    const checkMobile = () => {
+      // Gunakan breakpoint yang sama dengan CSS Anda (640px)
+      setIsMobile(window.innerWidth <= 640);
+    };
+    
+    checkMobile(); // Set initial value
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (sliderRef.current && hasMounted) {
       sliderRef.current.slickGoTo(currentSlide);
     }
-  }, [currentSlide]);
+  }, [currentSlide, hasMounted]);
 
   const handleSlideClick = (url) => {
     setIsPlaying(false);
-    if (onSlideClick) {
-      onSlideClick(url);
-    }
+    onSlideClick?.(url);
     setTimeout(() => setIsPlaying(true), 3000);
   };
 
@@ -47,59 +57,70 @@ const FadeBannerSlider = ({
     cssEase: 'linear',
     arrows: false,
     pauseOnHover: true,
-    afterChange: (index) => onSlideChange(index),
+    afterChange: onSlideChange,
   };
 
-  if (!slides.length) return null;
+  if (!slides.length || !hasMounted) return null;
 
-   return (
+  return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div key={slide.id || slide.image} className={styles.slide}>
-            <div 
-              className={styles.imageContainer}
-              onClick={() => handleSlideClick(slide.url)}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-<Image 
-  src={isMobile && slide.mobileImage ? slide.mobileImage : slide.image}
-  alt={slide.alt || slide.title || 'Banner'} 
-  width={isMobile ? 430 : 1765}
-  height={isMobile ? 621 : 823}
-  className={`${styles.bannerImage} cursor-pointer`}
-  priority={index === 0}
-/>
-              
-              {/* Location Overlay */}
-              {slide.location && (
-                <motion.div 
-                  className={styles.locationOverlay}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
-                    opacity: 1, 
-                    y: 0,
-                    scale: isHovered ? 1.05 : 1 
-                  }}
-                  transition={{ 
-                    type: 'spring',
-                    stiffness: 300,
-                    damping: 20
-                  }}
-                >
-                  <motion.p
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: 'spring', stiffness: 400, damping: 10 }}
-                    className={styles.locationText}
+        {slides.map((slide, index) => {
+          // Gunakan mobileImage HANYA jika isMobile=true DAN mobileImage tersedia
+          // Jika tidak mobile atau tidak ada mobileImage, gunakan image desktop
+          const imageSrc = isMobile && slide.mobileImage 
+            ? slide.mobileImage 
+            : slide.image;
+          
+          const imageWidth = 1920;
+          const imageHeight = isMobile ? 400 : 823; // Sesuaikan dengan kebutuhan
+
+          return (
+            <div key={`${slide.id || slide.image}-${index}`} className={styles.slide}>
+              <div 
+                className={styles.imageContainer}
+                onClick={() => handleSlideClick(slide.url)}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <Image 
+                  src={imageSrc}
+                  alt={slide.alt || slide.title || 'Banner'} 
+                  width={imageWidth}
+                  height={imageHeight}
+                  className={`${styles.bannerImage} cursor-pointer`}
+                  priority={index === 0}
+                  sizes="100vw"
+                />
+                
+                {slide.location && (
+                  <motion.div 
+                    className={styles.locationOverlay}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: 0,
+                      scale: isHovered ? 1.05 : 1 
+                    }}
+                    transition={{ 
+                      type: 'spring',
+                      stiffness: 300,
+                      damping: 20
+                    }}
                   >
-                    {slide.location}
-                  </motion.p>
-                </motion.div>
-              )}
+                    <motion.p
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                      className={styles.locationText}
+                    >
+                      {slide.location}
+                    </motion.p>
+                  </motion.div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </Slider>
     </div>
   );

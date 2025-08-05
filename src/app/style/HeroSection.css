@@ -1,8 +1,34 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+}
+
 .parent-container {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
+
+/* Desktop Styles - default */
+.parent-container {
+  height: 823px;
+  margin-top: 5.8rem;
+  margin-bottom: -14rem;
+}
+
+/* Mobile Styles - override desktop styles */
+@media (max-width: 640px) {
+  .parent-container {
+    height: 400px;
+    margin-top: 3rem;
+    margin-bottom: -4rem;
+  }
+  
+  .hero-navigation {
+    display: none !important;
+  }
+}
+
 
 
 /* Mobile Styles (430px - 640px) */
@@ -12,14 +38,14 @@
     margin-top: 3rem !important;
     margin-bottom: -4rem !important;
   }
-    .parent-container {
+      .parent-container {
     height: 400px;
     margin-top: 3rem;
     margin-bottom: -4rem;
   }
-
+  
   .hero-navigation {
-    display: none !important; /* Hide arrows on mobile */
+    display: none !important;
   }
 
   .hero-slide-indicators {
@@ -41,7 +67,7 @@
 
 
 /* Desktop Styles */
-@media only screen and (min-width: 641px) {
+@media (min-width: 641px) {
   .parent-container {
     height: 823px;
     margin-top: 5.8rem;
@@ -49,13 +75,12 @@
   }
 }
 
-
 /* Mobile Styles (430px) */
-@media only screen and (max-width: 430px) {
- .parent-container {
-    height: 400px !important;
-    margin-top: 2rem !important;
-    margin-bottom: -2rem !important;
+@media (max-width: 430px) {
+  .parent-container {
+    height: 400px;
+    margin-top: 2rem;
+    margin-bottom: -2rem;
   }
   
   .hero-slide-indicators {
