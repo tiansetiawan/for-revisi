@@ -234,6 +234,13 @@ width: 4rem;
   .hero-slide-indicators button.active {
     width: 30px !important;
   }
+  .title-vid1 {
+    padding-inline: 1rem;
+  }
+    .title-vid1 p {
+    text-align: justify;
+    padding-right: 1rem;
+  }
 }
 
 @media only screen and (min-width: 1920px) {

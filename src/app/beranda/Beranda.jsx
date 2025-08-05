@@ -15,25 +15,25 @@ import '@/app/style/Beranda.css';
 const heroSlides = [
   {
     image: '/images/4.jpg',
-    mobileImage: '/images/mobile/hero-mobile-1.jpg', // Tambahkan ini
+    mobileImage: '/images/mobile/banner-mb1.png', // Tambahkan ini
     url: '/blog/artikel/detail-b',
     location: ''
   },
   {
     image: '/images/2.jpg',
-    mobileImage: '/images/mobile/KBP-mb.jpg', // Tambahkan ini
+    mobileImage: '/images/mobile/banner-mb2.png', // Tambahkan ini
     url: '/blog/artikel/detail-a',
     location: ''
   },
   {
     image: '/images/1.jpg',
-    mobileImage: '/images/mobile/hero-mobile-3.jpg', // Tambahkan ini
+    mobileImage: '/images/mobile/banner-mb2.png', // Tambahkan ini
     url: '/produk?category=Concrete Roof',
     location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
-    mobileImage: '/images/mobile/hero-mobile-4.jpg', // Tambahkan ini
+    mobileImage: '/images/mobile/banner-mb2.png', // Tambahkan ini
     url: '/produk?category=Paving Block',
     location: 'Tag location'
   },
@@ -706,7 +706,7 @@ return (
     <section className="py-6 sm:py-10 relative mt-10 mb-6">
   <div className="w-full">
     {/* Video Utama */}
-    <div className="max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
+    <div className="title-vid1 max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
     
     {/* Kiri: Judul */}
     <div className="pl-4 border-l-4 border-[#0B203F]">

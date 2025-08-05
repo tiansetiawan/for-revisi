@@ -63,11 +63,11 @@
 /* Specific mobile breakpoint */
 @media (max-width: 430px) {
   .imageContainer {
-    height: 400px;
+    height: 582px;
   }
   
   .bannerImage {
-    height: 400px;
+    height: 582px;
     object-position: center;
   }
   
