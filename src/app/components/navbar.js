@@ -203,7 +203,7 @@ export default function Navbar() {
       <li>
         <button 
           onClick={toggleMobileDropdown} 
-          className={`flex items-center gap-2 rounded-full ${isActive("/produk") ? "bg-[#0F1E3E] text-white w-20 px-2" : "hover:bg-[#0F1E3E] hover:text-black text-black"}`}
+          className={`flex items-center gap-2 rounded-full ${isActive("/produk") ? "bg-[#0F1E3E] text-white w-20 px-2" : "hover:bg-[#0F1E3E] hover:text-black text-white"}`}
         >
           Produk <FaChevronDown size={10} className={`transform transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
         </button>
