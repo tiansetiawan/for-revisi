@@ -28,6 +28,11 @@ export default function Navbar() {
     return pathname === href || pathname.startsWith(`${href}/`);
   };
 
+  const closeMenu = () => {
+  setMenuOpen(false);
+  setMobileDropdownOpen(false);
+};
+
   const reloadHome = () => {
     if (window.location.pathname === "/") {
       window.location.reload();
@@ -178,97 +183,157 @@ export default function Navbar() {
 
       {/* Mobile Menu - Tetap menggunakan behavior klik */}
       {menuOpen && (
-        <div className="lg:hidden px-6 pb-4">
-          <ul className="flex flex-col space-y-4 text-gray-700 text-sm font-medium">
-            <li>
-              <Link href="/">
-                <button onClick={scrollToTop} className={`rounded-full inline-block w-fit ${isActive("/") ? "bg-[#0F1E3E] text-white" : "hover:bg-gray-100"}`}>
-                  Beranda
-                </button>
-              </Link>
-            </li>
+  <div className="lg:hidden px-6 pb-4">
+    <ul className="flex flex-col space-y-4 text-gray-700 text-sm font-medium">
+      <li>
+        <Link href="/">
+          <button 
+            onClick={() => {
+              scrollToTop();
+              closeMenu();
+            }} 
+            className={`rounded-full inline-block ${isActive("/") ? "bg-[#0F1E3E] text-white w-fit px-2" : "hover:bg-gray-100"}`}
+          >
+            Beranda
+          </button>
+        </Link>
+      </li>
 
-            {/* Dropdown Produk di Mobile */}
+      {/* Dropdown Produk di Mobile */}
+      <li>
+        <button 
+          onClick={toggleMobileDropdown} 
+          className={`flex items-center gap-2 rounded-full ${isActive("/produk") ? "bg-[#0F1E3E] text-white w-20 px-2" : "hover:bg-[#0F1E3E] hover:text-black"}`}
+        >
+          Produk <FaChevronDown size={10} className={`transform transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
+        </button>
+        {mobileDropdownOpen && (
+          <ul className="ml-4 mt-2 space-y-2">
             <li>
-              <button onClick={toggleMobileDropdown} className={`flex items-center gap-2 ${isActive("/produk") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
-                Produk <FaChevronDown size={10} className={`transform transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
-              </button>
-              {mobileDropdownOpen && (
-                <ul className="ml-4 mt-2 space-y-2">
-                  <li onClick={closeMobileDropdown}>
-                    <Link href="/produk?category=Concrete Roof" onClick={() => sessionStorage.setItem("autoExpand", "true")} className={`block ${isActive("/produk?category=Concrete Roof") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
-                      Concrete Roof
-                    </Link>
-                  </li>
-                  <li onClick={closeMobileDropdown}>
-                      <Link 
-    href="/produk/produk-pv?category=Paving Block" 
-    onClick={() => sessionStorage.setItem("autoExpand", "true")} 
-    className={`block ${isActive("/produk/produk-pv?category=Paving Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
-                      Paving Block
-                    </Link>
-                  </li>
-                  <li onClick={closeMobileDropdown}>
-                    <Link 
-    href="/produk/produk-pv?category=Concrete Block" 
-    onClick={() => sessionStorage.setItem("autoExpand", "true")} 
-    className={`block ${isActive("/produk/produk-pv?category=Concrete Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
-                      Concrete Block
-                    </Link>
-                  </li>
-                  <li onClick={closeMobileDropdown}>
-                    <Link 
-    href="/produk/produk-pv?category=Utility" 
-    onClick={() => sessionStorage.setItem("autoExpand", "true")} 
-    className={`block ${isActive("/produk/produk-pv?category=Utility") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}>
-                      Concrete Pipe
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-
-            <li>
-              <Link href="/perusahaan/tentang" className={`block ${isActive("/perusahaan") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
-                Perusahaan
+              <Link 
+                href="/produk?category=Concrete Roof" 
+                onClick={() => {
+                  sessionStorage.setItem("autoExpand", "true");
+                  closeMenu();
+                }} 
+                className={`block ${isActive("/produk?category=Concrete Roof") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}
+              >
+                Concrete Roof
               </Link>
             </li>
             <li>
-              <Link href="/showroom/store" className={`block ${isActive("/showroom") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
-                Showroom
+              <Link 
+                href="/produk/produk-pv?category=Paving Block" 
+                onClick={() => {
+                  sessionStorage.setItem("autoExpand", "true");
+                  closeMenu();
+                }} 
+                className={`block ${isActive("/produk/produk-pv?category=Paving Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}
+              >
+                Paving Block
               </Link>
             </li>
             <li>
-              <Link href="/proyek" className={`block ${isActive("/proyek") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
-                Galeri
+              <Link 
+                href="/produk/produk-pv?category=Concrete Block" 
+                onClick={() => {
+                  sessionStorage.setItem("autoExpand", "true");
+                  closeMenu();
+                }} 
+                className={`block ${isActive("/produk/produk-pv?category=Concrete Block") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}
+              >
+                Concrete Block
               </Link>
             </li>
             <li>
-              <Link href="/blog/artikel" className={`block ${isActive("/blog") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
-                Blog
+              <Link 
+                href="/produk/produk-pv?category=Utility" 
+                onClick={() => {
+                  sessionStorage.setItem("autoExpand", "true");
+                  closeMenu();
+                }} 
+                className={`block ${isActive("/produk/produk-pv?category=Utility") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}
+              >
+                Concrete Pipe
               </Link>
             </li>
-            <li>
-              <Link href="/kontak/store" className={`block ${isActive("/kontak") ? "text-[#0F1E3E] font-medium" : "hover:text-black"}`} onClick={closeMobileDropdown}>
-                Kontak Kami
-              </Link>
-            </li>
-
-            <div className="flex items-center space-x-4 mt-4 text-gray-600">
-              <FaSearch className="cursor-pointer" />
-            </div>
-<div className="pt-2">
-            <span className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} onClick={() => setLanguage("Eng")}>
-              Eng
-            </span>
-            {" / "}
-            <span className={`cursor-pointer ${language === "Ind" ? "text-black font-bold" : "text-gray-400"}`} onClick={() => setLanguage("Ind")}>
-              Ind
-            </span>
-          </div>
           </ul>
-        </div>
-      )}
+        )}
+      </li>
+
+      <li>
+        <Link 
+          href="/perusahaan/tentang" 
+          onClick={closeMenu}
+          className={`block rounded-full ${isActive("/perusahaan") ? "bg-[#0F1E3E] text-white w-fit px-1 font-medium" : "hover:text-black"}`}
+        >
+          Perusahaan
+        </Link>
+      </li>
+      <li>
+        <Link 
+          href="/informasi/sertifikasi" 
+          onClick={closeMenu}
+          className={`block rounded-full ${isActive("/informasi") ? "bg-[#0F1E3E] text-white w-fit px-2 font-medium" : "hover:text-black"}`}
+        >
+          Informasi
+        </Link>
+      </li>
+      <li>
+        <Link 
+          href="/proyek" 
+          onClick={closeMenu}
+          className={`block rounded-full ${isActive("/proyek") ? "bg-[#0F1E3E] text-white w-fit px-2 font-medium" : "hover:text-black"}`}
+        >
+          Galeri
+        </Link>
+      </li>
+      <li>
+        <Link 
+          href="/blog/artikel" 
+          onClick={closeMenu}
+          className={`block rounded-full ${isActive("/blog") ? "bg-[#0F1E3E] text-white w-fit px-2 font-medium" : "hover:text-black"}`}
+        >
+          Blog
+        </Link>
+      </li>
+      <li>
+        <Link 
+          href="/kontak/store" 
+          onClick={closeMenu}
+          className={`block rounded-full ${isActive("/kontak") ? "bg-[#0F1E3E] text-white w-fit px-2 font-medium" : "hover:text-black"}`}
+        >
+          Kontak
+        </Link>
+      </li>
+
+      <div className="flex items-center space-x-4 mt-4 text-gray-600">
+        <FaSearch className="cursor-pointer" onClick={closeMenu} />
+      </div>
+      <div className="pt-2">
+        <span 
+          className={`cursor-pointer ${language === "Eng" ? "text-black font-normal" : "text-gray-400"}`} 
+          onClick={() => {
+            setLanguage("Eng");
+            closeMenu();
+          }}
+        >
+          Eng
+        </span>
+        {" / "}
+        <span 
+          className={`cursor-pointer ${language === "Ind" ? "text-black font-bold" : "text-gray-400"}`} 
+          onClick={() => {
+            setLanguage("Ind");
+            closeMenu();
+          }}
+        >
+          Ind
+        </span>
+      </div>
+    </ul>
+  </div>
+)}
     </nav>
   );
 }
