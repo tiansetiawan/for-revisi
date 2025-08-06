@@ -261,6 +261,15 @@ width: 4rem;
 width: 5rem;
 height: 4rem;
 }
+.title-vidtesti {
+  padding-left: 0.5em;
+}
+.cover-video {
+  width: 20.1rem;
+}
+.container-slider-vd {
+  padding: 0 1.9rem 30.4px;
+}
 }
 
 @media only screen and (min-width: 1920px) {

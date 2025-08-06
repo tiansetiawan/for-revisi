@@ -71,9 +71,9 @@
 @media (max-width: 430px) {
 .parent-container {
   position: relative;
-  width: 100%;              /* Gunakan tinggi viewport agar proporsional */        /* Batasi tinggi maksimum untuk layar besar */
+  width: 100%;              /* Gunakan tinggi viewport agar proporsional */     
   min-height: 500px;          /* Tinggi minimum agar tidak terlalu kecil */
-  margin-top: 5rem;           /* Spasi atas yang stabil */
+  margin-top: 5.2rem;           /* Spasi atas yang stabil */
   margin-bottom: 0;           /* Hindari margin-bottom negatif */
   overflow: hidden;
 }

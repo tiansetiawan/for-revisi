@@ -709,7 +709,7 @@ return (
     <div className="title-vid1 max-w-6xl flex flex-col sm:flex-col sm:items-left gap-3">
     
     {/* Kiri: Judul */}
-    <div className="pl-4 border-l-4 border-[#0B203F]">
+    <div className="title-vidtesti pl-4 border-l-4 border-[#0B203F]">
       <h2 className="text-left text-xl sm:text-2xl 2xl:text-[2rem] font-medium leading-tight uppercase">
         VIDEO TESTIMONIAL PRODUK
       </h2>
