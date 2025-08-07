@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { FaBell, FaShoppingCart, FaUser, FaSearch, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import SearchBar from "./SearchBar";
+import '@/app/style/navbar.css';
 
 
 export default function Navbar() {
@@ -73,7 +74,7 @@ export default function Navbar() {
 
   return (
     <nav className={`bg-white fixed top-0 w-full z-[50] transition-all duration-300 ${scrolled ? "shadow-md border-b border-gray-200" : "shadow-none"}`}>
-      <div className="flex items-center justify-between px-10 py-4 2xl:px-14">
+      <div className="navbar-title flex items-center justify-between px-10 py-4 2xl:px-14">
         {/* Logo dengan fungsi reload */}
         <div className="flex items-center space-x-3 cursor-pointer" onClick={reloadHome}>
           <Image src="/logo.png" alt="Cisangkan Logo" width={200} height={200} className="hover:opacity-80 transition-opacity 2xl:w-60" />
