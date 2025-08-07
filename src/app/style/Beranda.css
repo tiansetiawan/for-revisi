@@ -199,9 +199,10 @@ padding: 0 1.8rem;
 }
 
 
-.cover-video{
-width: 22rem;
-}
+  .cover-video {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
 
   .grid-vd {
     grid-auto-columns: calc(100% / 2) !important; /* Tampilkan 2 item per layar */
@@ -294,18 +295,20 @@ height: 4rem;
 .title-vidtesti {
   padding-left: 0.5em;
 }
-.cover-video {
-  width: 21.2rem;
-}
-.container-slider-vd {
-  padding: 0px 31px 30.4px;
-}
+  .cover-video {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .container-slider-vd {
+    padding: 0 12px !important;
+  }
 .link-allvideo {
   padding-inline: 1rem;
 }
   .grid-vd {
-    grid-auto-columns: 100% !important; /* 1 item per layar untuk layar sangat kecil */
-    gap: 45px !important;
+        grid-auto-columns: 100% !important;
+        gap: 25px !important;
+        margin-left: 1.5rem;
   }
  .video-title p {
     font-size: 12px !important;
@@ -318,7 +321,7 @@ height: 4rem;
   .prevVideoSlide,
   .nextVideoSlide {
     width: 26px !important;
-    height: 90px !important;
+    height: 59px !important;
   }
 
   .prevVideoSlide svg,
@@ -327,8 +330,9 @@ height: 4rem;
     height: 14px !important;
   }
   .cover-video2 {
-        height: 192px !important;
-    }
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important; /* Alternatif responsif */
+  }
 }
 
 @media only screen and (min-width: 1920px) {
