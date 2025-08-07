@@ -85,6 +85,15 @@
     padding-left: 0.5rem !important;
   }
 
+  .video-title p {
+    font-size: 13px !important;
+  }
+
+  .video-title a {
+    font-size: 11px !important;
+  }
+
+
   .hline {
     font-size: 1.3rem !important;
     line-height: 1.3 !important;
@@ -194,21 +203,42 @@ padding: 0 1.8rem;
 width: 22rem;
 }
 
-.grid-vd {
- gap: 13rem;
- width: 22rem;
-}
+  .grid-vd {
+    grid-auto-columns: calc(100% / 2) !important; /* Tampilkan 2 item per layar */
+    gap: 16px !important; /* Kurangi jarak antar item */
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 
-.cover-video2{
-width:20rem
-}
+
+  .cover-video2 {
+    height: 130px !important;
+  }
+
+
 .prevVideoSlide {
 margin-left: 1.5rem;
+    width: 30px !important;
+    height: 30px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+
 }
 
 .nextVideoSlide {
 margin-right: 1.5rem;
+    width: 30px !important;
+    height: 30px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
 }
+
+  .prevVideoSlide svg,
+  .nextVideoSlide svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
 .section-container {
 width: 14rem;
 }
@@ -265,7 +295,7 @@ height: 4rem;
   padding-left: 0.5em;
 }
 .cover-video {
-  width: 20.2rem;
+  width: 21.2rem;
 }
 .container-slider-vd {
   padding: 0px 31px 30.4px;
@@ -273,6 +303,32 @@ height: 4rem;
 .link-allvideo {
   padding-inline: 1rem;
 }
+  .grid-vd {
+    grid-auto-columns: 100% !important; /* 1 item per layar untuk layar sangat kecil */
+    gap: 45px !important;
+  }
+ .video-title p {
+    font-size: 12px !important;
+  }
+
+  .video-title a {
+    font-size: 10px !important;
+  }
+
+  .prevVideoSlide,
+  .nextVideoSlide {
+    width: 26px !important;
+    height: 90px !important;
+  }
+
+  .prevVideoSlide svg,
+  .nextVideoSlide svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .cover-video2 {
+        height: 192px !important;
+    }
 }
 
 @media only screen and (min-width: 1920px) {
