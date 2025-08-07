@@ -178,13 +178,13 @@ const videoTestimonials = [
     watchText: '',
     watchLink: '/testimonial/4'
   },
-  {
-    id: 5,
-    title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    youtubeId: '725AGp2ou1Y',
-    watchText: '',
-    watchLink: '/testimonial/5'
-  },
+  // {
+  //   id: 5,
+  //   title: 'Testimoni Customer di Pameran Building Technology EXPO',
+  //   youtubeId: '725AGp2ou1Y',
+  //   watchText: '',
+  //   watchLink: '/testimonial/5'
+  // },
   // {
   //   id: 6,
   //   title: 'Testimoni Customer di Pameran Building Technology EXPO',
