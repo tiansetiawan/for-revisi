@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
+import '@/app/style/Sejarah.css';
 
 export default function Sejarah() {
   // State untuk panel unduh
@@ -82,9 +83,9 @@ export default function Sejarah() {
 
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/sejarah.jpg"
           alt="Sejarah Cisangkan"
