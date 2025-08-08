@@ -12,6 +12,7 @@ import {
   FaWhatsapp,
   FaTiktok,
 } from 'react-icons/fa';
+import '@/app/style/Kontak.css';
 
 
 export default function Store() {
@@ -637,9 +638,9 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
   
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-25">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/kontak.jpg"
           alt="Produk Genteng Cisangkan"
