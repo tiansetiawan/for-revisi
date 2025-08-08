@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import '@/app/style/Tentang.css';
+
 
 const LocationMap = dynamic(() => import('@/app/components/LocationMap'), {
   ssr: false,
@@ -124,9 +126,9 @@ export default function Tentang() {
   }
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/Banner Perusahaan.jpg"
           alt="Banner Perusahaan"
