@@ -279,10 +279,17 @@ width: 4rem;
     padding-inline: 5rem;
   }
   .section-container {
-    height: 14rem;
+        height: 8rem;
+        width: 9rem;
+        position: relative;
+        right: -30%;
   }
   .container-shortcut {
-    gap: 3rem;
+        gap: 3rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-inline: 1.1rem;
   }
   .icon-rounded-product {
     width: 7rem;

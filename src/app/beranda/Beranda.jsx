@@ -44,7 +44,7 @@ const heroSlides = [
 const defaultCategories = [
   { 
     name: 'Concrete Roof', 
-    icon: '/icons/cr-trace.png',
+    icon: '/icons/cr-traces.png',
     link: '/produk?category=Concrete Roof' // Tambahkan properti link
   },
   { name: 'Paving Block', icon: '/icons/pv-trace.png',  link: '/produk/produk-pv?category=Paving Block' },
@@ -74,14 +74,14 @@ const proyekData = [
     namaProduk: 'Concrete Tile Sandstein, Tactile',
     namaProyek: 'Gedung Sate',
     tempatProyek: 'Bandung',
-    gambar: '/images/proyek/Paving Block/Gedung Sate.jpg'
+    gambar: '/images/proyek/Paving Block/Gedung-Sate.jpg'
   },
   {
     id: 4,
     namaProduk: 'Truepave',
     namaProyek: 'Alun-alun Wado',
     tempatProyek: 'Jawa Barat',
-    gambar: '/images/proyek/Paving Block/Alun-Alun Wado.jpg'
+    gambar: '/images/proyek/Paving Block/Alun-Alun-Wado.jpg'
   },
   {
     id: 5,
@@ -174,7 +174,7 @@ const videoTestimonials = [
   {
     id: 4,
     title: 'Testimoni Customer di Pameran Building Technology EXPO',
-    youtubeId: 'KfRpNP59QmU',
+    youtubeId: 'Win66lulRJA',
     watchText: '',
     watchLink: '/testimonial/4'
   },
