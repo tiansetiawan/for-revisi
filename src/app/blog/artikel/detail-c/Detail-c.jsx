@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import { FaPlay, FaTimes } from 'react-icons/fa';
+import '@/app/style/Blog.css';
 
 // Video Data
 const mainArticleVideo = {
@@ -86,9 +87,9 @@ export default function DetailC() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/artikel-4.jpg"
           alt="Banner Artikel"
@@ -114,7 +115,7 @@ export default function DetailC() {
         </nav>
       </div>
 
- <section className="xl:px-24 mx-auto mt-12 sm:px-12 text-justify text-sm sm:text-base mb-16">
+ <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
   {/* Judul */}
       <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
         {data.judul}
@@ -142,7 +143,7 @@ export default function DetailC() {
                 src={data.videoThumbnail}
                 alt={data.judul}
                 fill
-                className="object-contain transition-transform duration-500 hover:scale-110 rounded-2xl"
+                className="thumb-blog object-contain transition-transform duration-500 hover:scale-110 rounded-2xl"
               />
             </div>
           </div>

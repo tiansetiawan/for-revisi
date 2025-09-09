@@ -669,64 +669,66 @@ const [slopeAngle, setSlopeAngle] = useState('');
 
       <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-sm sm:text-base mb-10 border-b border-[#CCCCCC]">
         {/* Header Section */}
-        <div className="flex items-center gap-6 border-b border-[#CCCCCC] pb-6 mx-auto px-4 md:px-0">
-          <div className="flex items-center w-full md:w-1/2 gap-10">
-            <div className="leading-snug">
-              <h1 className="text-xl sm:text-2xl font-semibold text-[#0B203F] border-l-4 border-[#0B203F] pl-4 uppercase leading-tight">
-                Temukan<br />Store Kami<br />di Kota Anda
-              </h1>
-            </div>
-            <div className="flex flex-col items-center">
+{/* Versi Mobile */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6 border-b border-[#CCCCCC] pb-6 mx-auto px-4 md:px-0">
+  {/* Kiri: Judul + Icon */}
+  <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start w-full md:w-1/2 gap-6 text-center md:text-left">
+    <div className="leading-snug">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-semibold text-[#0B203F] border-l-0 md:border-l-4 border-[#0B203F] md:pl-4 uppercase leading-tight">
+        Temukan<br />Store Kami<br />di Kota Anda
+      </h1>
+    </div>
+    <div className="flex flex-col items-center">
               <Image
                 src="/images/STORE.png"
                 alt="Store Icon"
                 width={140}
                 height={140}
-                className="mb-1"
-              />
-            </div>
-          </div>
+        className="mb-1"
+      />
+    </div>
+  </div>
 
-        {/* Kanan: Logo + Dropdowns */}
-          <div className="w-full md:w-1/2">
-            <p className="text-gray-600 text-sm 2xl:text-base mb-4">
-              Pilih wilayah untuk melihat informasi STORE kami terdekat
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <div className="flex flex-col w-full sm:w-1/2">
-                <label className="text-sm 2xl:text-base font-semibold mb-1">Propinsi</label>
-                <select
-                  className="border border-gray-300 rounded px-3 py-2"
-                  value={selectedProvince}
-                  onChange={(e) => {
-                    setSelectedProvince(e.target.value);
-                    setSelectedCityId('');
-                    setSelectedCityName('');
-                  }}
-                >
-                  <option value="">Pilih Propinsi</option>
-                  {provinces.map((provinsi) => (
-                    <option key={provinsi.id} value={provinsi.id}>{provinsi.name}</option>
-                  ))}
-                </select>
-              </div>
-              <div className="flex flex-col w-full sm:w-1/2">
-                <label className="text-sm 2xl:text-base font-semibold mb-1">Kota/Kabupaten</label>
-                <select 
-                  className="border border-gray-300 rounded px-3 py-2"
-                  value={selectedCityId}
-                  onChange={handleCityChange}
-                  disabled={!selectedProvince}
-                >
-                  <option value="">Pilih Kota</option>
-                  {cityOptions.map((city) => (
-                    <option key={city.id} value={city.id}>{city.name}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
+  {/* Kanan: Logo + Dropdowns */}
+  <div className="w-full md:w-1/2">
+    <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-4 text-center md:text-left">
+      Pilih wilayah untuk melihat informasi STORE kami terdekat
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4">
+      <div className="flex flex-col w-full sm:w-1/2">
+        <label className="text-xs sm:text-sm md:text-base font-semibold mb-1">Propinsi</label>
+        <select
+          className="border border-gray-300 rounded px-3 py-2 text-sm"
+          value={selectedProvince}
+          onChange={(e) => {
+            setSelectedProvince(e.target.value);
+            setSelectedCityId('');
+            setSelectedCityName('');
+          }}
+        >
+          <option value="">Pilih Propinsi</option>
+          {provinces.map((provinsi) => (
+            <option key={provinsi.id} value={provinsi.id}>{provinsi.name}</option>
+          ))}
+        </select>
+      </div>
+      <div className="flex flex-col w-full sm:w-1/2">
+        <label className="text-xs sm:text-sm md:text-base font-semibold mb-1">Kota/Kabupaten</label>
+        <select
+          className="border border-gray-300 rounded px-3 py-2 text-sm"
+          value={selectedCityId}
+          onChange={handleCityChange}
+          disabled={!selectedProvince}
+        >
+          <option value="">Pilih Kota</option>
+          {cityOptions.map((city) => (
+            <option key={city.id} value={city.id}>{city.name}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
 
         {/* Grid Store */}
         <div className="min-h-screen p-10">

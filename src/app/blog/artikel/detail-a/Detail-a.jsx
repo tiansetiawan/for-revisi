@@ -2,6 +2,8 @@
 import Image from 'next/image';
 import Link from "next/link";
 import { useState, useRef, useEffect } from 'react';
+import '@/app/style/Blog.css';
+
 const inovasiList = [
   {
     id: 1,
@@ -108,9 +110,9 @@ export default function DetailA() {
 
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/artikel-4.jpg"
           alt="Banner Artikel"
@@ -138,7 +140,7 @@ export default function DetailA() {
   </nav>
 </div>
 
-    <section className="xl:px-24 mx-auto mt-12 sm:px-12 text-justify text-sm sm:text-base mb-16">
+    <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
   {/* Judul */}
       <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
         {data.judul}
@@ -153,7 +155,7 @@ export default function DetailA() {
 {/* Gambar */}
   <div className="h-[240px] w-full xl:px-40 xl:h-[320px] 2xl:h-[600px] mx-auto flex items-center justify-center mb-8">
     {data?.gambar ? (
-      <img src={data.gambar} alt={data.judul} className="w-full h-full object-cover" />
+      <img src={data.gambar} alt={data.judul} className="thumb-blog w-full h-full object-cover" />
     ) : (
       <svg className="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
         <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm10 2a1 1 0 110 2 1 1 0 010-2zm-4 3a3 3 0 11-6 0 3 3 0 016 0zm-3 4a5 5 0 00-5 5h10a5 5 0 00-5-5z" />

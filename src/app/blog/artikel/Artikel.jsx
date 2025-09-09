@@ -150,7 +150,7 @@ export default function Artikel() {
                     <img
                       src={item.gambar}
                       alt={item.judul}
-                      className="w-full h-full object-cover"
+                      className="thumb-artikel w-full h-full object-cover"
                     />
                   ) : (
                     <svg
