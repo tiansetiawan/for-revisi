@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useEffect, useCallback } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
-export default function ProductSidebar({ onItemChange }) {
+export default function ProductSidebarMobile({ onItemChange }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const [activeItem, setActiveItem] = useState("Concrete Roof");
@@ -27,7 +27,7 @@ export default function ProductSidebar({ onItemChange }) {
       "Concrete Pipe": false,
     },
   });
-  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   // Definisikan productConfig
   const productConfig = {
@@ -192,7 +192,7 @@ export default function ProductSidebar({ onItemChange }) {
       ...Object.fromEntries(Object.keys(prev).map(key => [key, false])),
       [item]: true,
     }));
-    setIsMobileDropdownOpen(false); // Tutup dropdown mobile setelah memilih
+    setIsDropdownOpen(false); // Tutup dropdown setelah memilih
     navigateTo(url);
   }, [getMainProductUrl, navigateTo]);
 
@@ -200,7 +200,7 @@ export default function ProductSidebar({ onItemChange }) {
     e.preventDefault();
     const url = getSubProductUrl(category, subItem);
     setActiveSubItem(subItem);
-    setIsMobileDropdownOpen(false); // Tutup dropdown mobile setelah memilih
+    setIsDropdownOpen(false); // Tutup dropdown setelah memilih
     navigateTo(url);
   }, [getSubProductUrl, navigateTo]);
 
@@ -213,7 +213,7 @@ export default function ProductSidebar({ onItemChange }) {
         : expandedSubItems[category]?.[item.name];
 
       return (
-        <li key={item.name} className={parentName ? "ml-4" : ""}>
+        <li key={item.name} className="ml-4">
           {hasSubItems ? (
             <>
               <div
@@ -249,7 +249,7 @@ export default function ProductSidebar({ onItemChange }) {
               </div>
 
               {isExpanded && hasSubItems && (
-                <ul className="ml-4 mt-1">
+                <ul className="ml-4 mt-1 space-y-2">
                   {renderSubItems(item.subItems, category, item.name)}
                 </ul>
               )}
@@ -274,64 +274,19 @@ export default function ProductSidebar({ onItemChange }) {
     });
   }, [activeSubItem, expandedSubItems, navigateTo]);
 
-  // Render Desktop Sidebar
-  const renderDesktopSidebar = () => (
-    <aside className="hidden lg:block w-full lg:w-1/6 lg:sticky lg:top-[6.5rem] lg:h-[calc(100vh-6.5rem)] lg:overflow-y-auto pr-5">
-      <h1 className="text-lg font-medium mb-4 pb-2 2xl:text-xl">Produk</h1>
-      <ul className="space-y-2 text-sm 2xl:text-base">
-        {getMainProducts().map((item) => (
-          <li key={item}>
-            <div className="flex items-center justify-between">
-              <a
-                href={getMainProductUrl(item)}
-                onClick={(e) => handleMainItemClick(item, e)}
-                className={`w-full text-left px-2 cursor-pointer ${
-                  activeItem === item 
-                    ? "text-[#2957A4] border-l-2 border-[#2957A4] font-semibold" 
-                    : "text-gray-700 hover:text-[#3a4557]"
-                }`}
-              >
-                {item}
-              </a>
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  setExpandedItems(prev => ({
-                    ...prev,
-                    [item]: !prev[item],
-                  }));
-                }}
-                className="px-2 text-gray-500 hover:text-gray-700"
-              >
-                <span style={{ fontSize: "0.6rem" }}>{expandedItems[item] ? "▼" : "▶"}</span>
-              </button>
-            </div>
-
-            {expandedItems[item] && (
-              <ul className="ml-4 mt-2 text-gray-600 text-xs border-l border-gray-300 pl-2 mb-4">
-                {renderSubItems(productConfig.subProducts[item], item)}
-              </ul>
-            )}
-          </li>
-        ))}
-      </ul>
-    </aside>
-  );
-
-  // Render Mobile Dropdown
-  const renderMobileDropdown = () => (
+  return (
     <div className="lg:hidden mb-4">
       {/* Dropdown Trigger */}
       <div 
         className="flex items-center justify-between p-3 bg-white border border-gray-300 rounded-md shadow-sm cursor-pointer"
-        onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
+        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
       >
         <span className="font-medium">{activeItem}</span>
-        <span>{isMobileDropdownOpen ? "▲" : "▼"}</span>
+        <span>{isDropdownOpen ? "▲" : "▼"}</span>
       </div>
 
       {/* Dropdown Content */}
-      {isMobileDropdownOpen && (
+      {isDropdownOpen && (
         <div className="mt-1 bg-white border border-gray-300 rounded-md shadow-md overflow-hidden">
           <ul className="py-2">
             {getMainProducts().map((item) => (
@@ -374,12 +329,5 @@ export default function ProductSidebar({ onItemChange }) {
         </div>
       )}
     </div>
-  );
-
-  return (
-    <>
-      {renderMobileDropdown()}
-      {renderDesktopSidebar()}
-    </>
   );
 }

@@ -12,6 +12,7 @@ import Image from 'next/image';
 import BannerProduk from "../components/BannerProduk";
 import ProductSidebar from "../components/ProductSidebar";
 import { useSearchParams } from "next/navigation";
+import '@/app/style/Produk.css';
 
 export default function Product() {
   const searchParams = useSearchParams();
@@ -119,7 +120,7 @@ export default function Product() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       <BannerProduk kategori={activeItem} />
 
       <div className="bg-[#0B203F] text-white text-center py-2 font-light text-[1.5rem] tracking-wide">{activeItem.toUpperCase()}</div>

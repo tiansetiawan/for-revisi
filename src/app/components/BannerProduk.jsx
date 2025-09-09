@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import styles from '../style/styles.module.css';
+import '@/app/style/BannerProduk.css';
+
 
 export default function BannerProduk({ kategori }) {
   const searchParams = useSearchParams();
@@ -245,7 +247,7 @@ export default function BannerProduk({ kategori }) {
 
   return (
     <div 
-      className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden"
+      className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
