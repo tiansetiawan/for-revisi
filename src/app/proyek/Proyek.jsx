@@ -74,7 +74,7 @@ const getFilteredProyek = () => {
               </nav>
             </div>
 
-      <div className="flex flex-col lg:flex-row mx-auto ps-6 pe-1 py-8">
+      <div className="header-proyek flex flex-col lg:flex-row mx-auto ps-6 pe-1 py-8">
         <SidebarProyek
           activeItem={activeItem}
           setActiveItem={setActiveItem}

@@ -5,4 +5,7 @@
     .image-container {
         min-height: 0;
     }
+    .header-proyek {
+        padding-left: 0;
+    }
 }
