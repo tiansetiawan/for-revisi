@@ -62,6 +62,7 @@ export default function Inovasi() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const modalRef = useRef(null);
+    const [open, setOpen] = useState(false);
 
   // Konfigurasi pagination
   const itemsPerPage = 5;
@@ -147,13 +148,59 @@ export default function Inovasi() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-        <nav className="flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
-          <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">Tentang Kami</Link>
-          <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">Sejarah</Link>
-          <Link href="/perusahaan/inovasi" className="text-[#2D5DA6] font-bold">Inovasi</Link>
-          <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">Karir</Link>
-        </nav>
+      {/* Desktop Navbar */}
+      <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
+        <Link href="/perusahaan/tentang" className="text-[#2D5DA6] font-bold hover:underline">
+          Tentang Kami
+        </Link>
+        <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+          Sejarah
+        </Link>
+        <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">
+          Inovasi
+        </Link>
+        <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+          Karir
+        </Link>
+      </nav>
+
+      {/* Mobile Navbar */}
+      <div className="sm:hidden flex flex-col text-[1rem] font-light tracking-wide">
+        {/* Judul utama menu */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex justify-between items-center px-4 py-3 bg-[#F2F2F2] text-[#2D5DA6] font-bold hover:underline border-b"
+        >
+          <span>Inovasi</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={`w-6 h-6 transform transition-transform ${
+              open ? "rotate-180 text-[#2D5DA6]" : "rotate-0 text-[#2D5DA6]"
+            }`}
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+
+        {/* Dropdown list */}
+        {open && (
+          <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
+            <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+              Tentang Kami
+            </Link>
+            <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+              Sejarah
+            </Link>
+            <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+              Karir
+            </Link>
+          </div>
+        )}
       </div>
+    </div>
 
       {/* Main Content */}
       <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
