@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import '@/app/style/ProductContent.css';
 
 export const PavingBlockContent = () => (
   <>
     {/* Spesifikasi Teknis */}
     <section className="mb-10">
       <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">SPESIFIKASI TEKNIS :</h2>
-      <ul className="text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-none">
+      <ul className="padding-pv text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-none">
         <li className="ps-3 list-disc">Bahan dasar campuran Beton</li>
         <li className="ps-3 list-disc">Toleransi dimensi mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">B56717-1 : 1993</Link></li>
         <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
@@ -58,15 +59,15 @@ export const PavingBlockContent = () => (
     {/* Ketentuan Pemasangan */}
     <section className="mb-10">
       <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">KETENTUAN PEMASANGAN :</h2>
-      <ul className="text-sm leading-relaxed space-y-1 ps-9 list-none 2xl:text-base">
+      <ul className="padding-pv text-sm leading-relaxed space-y-1 ps-9 list-none 2xl:text-base">
         <li className="ps-3 list-disc">Pasir alas harus lolos saringan 5mm</li>
         <li className="ps-3 list-disc">Pasir pengisi harus lolos saringan 4mm</li>
       </ul>
     </section>
 
     {/* Gambar */}
-    <section className="flex justify-center overflow-x-auto mb-20">
-      <table className="table-auto text-sm 2xl:text-base border border-collapse border-gray-400">
+<section className="responsive-table mb-20">
+  <table>
         <thead className="bg-[#0B203F] text-white text-sm 2xl:text-base text-center">
           <tr>
             <th className="border border-gray-400 px-4 2xl:px-8 py-2 2xl:py-4 align-middle" rowSpan={2}>

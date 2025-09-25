@@ -9,8 +9,60 @@ export default function FloatingChatPanel() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
+  const [userData, setUserData] = useState(null);
+  const [conversationContext, setConversationContext] = useState('');
   const chatPanelRef = useRef(null);
   const messagesEndRef = useRef(null);
+
+  // Initialize user data from localStorage or create new
+  useEffect(() => {
+    const storedUserData = localStorage.getItem('chatUserData');
+    const storedMessages = localStorage.getItem('chatMessages');
+    
+    if (storedUserData) {
+      const parsedData = JSON.parse(storedUserData);
+      setUserData(parsedData);
+      
+      // Set messages hanya jika ada
+      if (storedMessages) {
+        setMessages(JSON.parse(storedMessages));
+      }
+      
+      // Jika chat dibuka dan ada nama user, sapa kembali
+      if (isOpen && parsedData.firstName) {
+        // Cek apakah pesan sambutan sudah ada untuk menghindari duplikasi
+        const hasGreeting = JSON.parse(storedMessages || '[]').some(msg => 
+          msg.text && msg.text.includes(`Halo kembali ${parsedData.firstName}`)
+        );
+        
+        if (!hasGreeting) {
+          addBotMessage(`Halo kembali ${parsedData.firstName}! Ada yang bisa saya bantu?`);
+        }
+      }
+    } else {
+      const newUserData = {
+        id: generateUserId(),
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        interests: [],
+        conversationHistory: [],
+        firstSeen: new Date().toISOString(),
+        lastSeen: new Date().toISOString(),
+        status: 'new',
+        pageViews: 1,
+        awaitingInput: null
+      };
+      setUserData(newUserData);
+      localStorage.setItem('chatUserData', JSON.stringify(newUserData));
+    }
+  }, [isOpen]);
+
+  // Generate unique user ID
+  const generateUserId = () => {
+    return 'user_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+  };
 
   // Enhanced bot responses with more detailed product information
   const botResponses = {
@@ -25,7 +77,6 @@ export default function FloatingChatPanel() {
     products: {
       general: "Kami menyediakan produk dalam beberapa kategori utama:\n\n1. Concrete Roof (Genteng Beton)\n2. Paving Block\n3. Concrete Block (Batako)\n4. Utility Products (Pipa Beton, dll)\n\nKategori mana yang ingin Anda ketahui lebih detail?",
       
-      // Enhanced Concrete Roof section
       concreteRoof: {
         types: "Concrete Roof kami terdiri dari:\n\n1. Genteng Neo (Premium)\n   - Flat Tile\n   - Dual Slate\n   - Floral\n\n2. Victoria Series\n   - Onyx\n   - Multiline\n   - Slate\n   - Pine\n   - Classic\n\n3. Genteng Gelombang\n   - New Royal\n   - Oriental\n   - Majestic\n\n4. Solusi Bocor\n   - Dry System\n   - CIS Flashing\n\n5. Cat Genteng\n   - Water Base\n   - Solvent Base\n\n6. Panel Surya\n\nTipe mana yang ingin Anda ketahui?",
         neo: {
@@ -57,7 +108,6 @@ export default function FloatingChatPanel() {
         solarPanel: "Panel Surya:\n- Daya: 100Wp - 300Wp\n- Garansi: 25 tahun\n- Harga: Rp 1.500.000 - Rp 4.000.000/unit\n- Cocok dipasang dengan genteng beton kami"
       },
       
-      // Enhanced Paving Block section
       pavingBlock: {
         types: "Paving Block kami terdiri dari:\n\n1. Square Set\n2. Classic Set\n3. Altstadt\n4. Others\n5. Guiding Pave\n6. Grass Block\n7. Concrete Tile\n8. Guiding Tiles\n9. Kanstein Wet Process\n10. Kanstein Dry Process\n11. Tali Air\n\nTipe mana yang Anda butuhkan?",
         squareSet: "Square Set:\n- Dimensi: 200x100x60mm\n- Kekuatan: K300-K400\n- Warna: Grey, Red, Brown\n- Harga: Rp 12.000/m² (min. order 50m²)",
@@ -69,7 +119,6 @@ export default function FloatingChatPanel() {
         }
       },
       
-      // Enhanced Concrete Block section
       concreteBlock: {
         types: "Concrete Block (Batako) kami terdiri dari:\n\n1. Standard\n2. Hollow\n3. Press\n4. Ventilation Block\n5. Ventilation Block 3D\n\nTipe mana yang Anda cari?",
         standard: "Batako Standard:\n- Dimensi: 40x20x10cm\n- Kekuatan: K175\n- Harga: Rp 5.000/pcs (min. order 100pcs)",
@@ -80,7 +129,6 @@ export default function FloatingChatPanel() {
         }
       },
       
-      // Enhanced Utility Products section
       utility: {
         types: "Utility Products kami meliputi:\n\n1. Concrete Pipe\n   - High Pressure\n   - Low Pressure\n\n2. U-Ditch\n3. Tutup\n4. Box Culvert\n5. Sumur Resapan\n\nProduk mana yang Anda butuhkan?",
         pipe: {
@@ -98,14 +146,14 @@ export default function FloatingChatPanel() {
       "Saya akan menghubungkan Anda dengan tim penjualan kami. Silahkan hubungi:\n\n📞 0812-1498-3517 (WhatsApp)\n\nTim kami siap membantu proses pemesanan Anda."
     ],
     stock: [
-      "Untuk informasi stok terkini, silahkan hubungi Admin kami via WhatsApp:\n\n📞 0812-1498-3517\n\nMohon sebutkan produk dan jumlah yang dibutuhkan.",
+      "Untuk informasi stok terkini, silahkan hubungi Admin kami via WhatsApp:\n\n📞 0812-1498-3517\n\nMohon seputkan produk dan jumlah yang dibutuhkan.",
       "Stok produk kami selalu berubah. Untuk info stok real-time, silahkan hubungi:\n\n📞 0812-1498-3517 (WhatsApp)\n\nKami akan berikan update stok terbaru."
     ],
     contacts: [
       "Kantor Pusat:\nJl. Haji Alpi No 107, Cijerah\nKota Bandung, Jawa Barat\n\n📞 (022) 6031588 (hunting)",
       "Email kami: info@cisangkan.com\n\nJam Operasional:\nSenin-Jumat: 08.00-17.00 WIB"
     ],
-    pricing: "Harga dapat berubah sesuai:\n- Lokasi pengiriman\n- Jumlah pemesanan\n- Waktu pemesanan\n\nUntuk info harga terupdate, mohon sebutkan:\n1. Produk yang diminta\n2. Jumlah yang dibutuhkan\n3. Alamat pengiriman",
+    pricing: "Harga dapat berubah sesuai:\n- Lokasi pengiriman\n- Jumlah pemesanan\n- Waktu pemesanan\n\nUntuk info harga terupdate, mohon seputkan:\n1. Produk yang diminta\n2. Jumlah yang dibutuhkan\n3. Alamat pengiriman",
     delivery: "Kami melayani pengiriman ke seluruh Indonesia dengan ketentuan:\n- Minimal order berbeda per produk\n- Ongkir ditanggung pembeli\n- Waktu pengiriman 3-14 hari kerja tergantung lokasi\n- Untuk area Jabodetabek biasanya 3-5 hari kerja",
     payment: "Metode Pembayaran:\n- Transfer Bank (BCA, Mandiri, BRI)\n- Cash On Delivery (COD) khusus area tertentu\n- Pembayaran 50% saat order, 50% sebelum pengiriman\n- Pembayaran lunas mendapat diskon 2%",
     default: [
@@ -114,209 +162,433 @@ export default function FloatingChatPanel() {
     ]
   };
 
+  // Save messages to localStorage
+  useEffect(() => {
+    if (messages.length > 0) {
+      localStorage.setItem('chatMessages', JSON.stringify(messages));
+      
+      // Update user data with conversation history
+      if (userData) {
+        const updatedUserData = {
+          ...userData,
+          conversationHistory: messages,
+          lastSeen: new Date().toISOString(),
+          interests: extractInterests(messages)
+        };
+        setUserData(updatedUserData);
+        localStorage.setItem('chatUserData', JSON.stringify(updatedUserData));
+        
+        // Send data to CRM (simulated)
+        sendToCRM(updatedUserData);
+      }
+    }
+  }, [messages]);
+
+  // Extract user interests from conversation
+  const extractInterests = (messages) => {
+    const interests = [];
+    const productKeywords = {
+      concreteRoof: ['atap', 'genteng', 'roof', 'neo', 'victoria', 'gelombang'],
+      pavingBlock: ['paving', 'block', 'konblok', 'jalan'],
+      concreteBlock: ['batako', 'blok', 'ventilasi'],
+      utility: ['pipa', 'uditch', 'culvert', 'sumur', 'resapan']
+    };
+    
+    messages.forEach(msg => {
+      if (msg.isUser) {
+        const text = msg.text.toLowerCase();
+        Object.keys(productKeywords).forEach(key => {
+          if (productKeywords[key].some(word => text.includes(word)) && !interests.includes(key)) {
+            interests.push(key);
+          }
+        });
+      }
+    });
+    
+    return interests;
+  };
+
+  // Simulate sending data to CRM
+  const sendToCRM = (userData) => {
+    console.log('Sending to CRM:', userData);
+  };
+
+  // Request user information if not available
+  const requestUserInfo = (type) => {
+    setIsTyping(true);
+    
+    setTimeout(() => {
+      let question;
+      switch(type) {
+        case 'name':
+          question = "Sebelum melanjutkan, boleh saya tahu nama Anda?";
+          break;
+        case 'email':
+          question = "Boleh saya tahu alamat email Anda untuk mengirim informasi detail?";
+          break;
+        case 'phone':
+          question = "Untuk konsultasi lebih lanjut, boleh saya tahu nomor WhatsApp Anda?";
+          break;
+        default:
+          question = "Boleh saya tahu nama Anda?";
+      }
+      
+      addBotMessage(question);
+      setUserData(prev => ({
+        ...prev, 
+        awaitingInput: type
+      }));
+    }, 1000);
+  };
+
+  // Process user information response
+  const processUserInfo = (type, value) => {
+    const updatedUserData = {...userData};
+    
+    switch(type) {
+      case 'name':
+        updatedUserData.firstName = value;
+        const nameParts = value.split(' ');
+        if (nameParts.length > 1) {
+          updatedUserData.firstName = nameParts[0];
+          updatedUserData.lastName = nameParts.slice(1).join(' ');
+        }
+        addBotMessage(`Senang berkenalan dengan Anda, ${updatedUserData.firstName}!`);
+        break;
+      case 'email':
+        updatedUserData.email = value;
+        addBotMessage("Terima kasih! Email Anda telah tersimpan.");
+        break;
+      case 'phone':
+        updatedUserData.phone = value;
+        addBotMessage("Terima kasih! Nomer WhatsApp Anda telah tersimpan.");
+        break;
+    }
+    
+    updatedUserData.awaitingInput = null;
+    setUserData(updatedUserData);
+    localStorage.setItem('chatUserData', JSON.stringify(updatedUserData));
+    sendToCRM(updatedUserData);
+  };
+
   const toggleChat = () => {
     setIsOpen(!isOpen);
     if (!isOpen && messages.length === 0) {
       setTimeout(() => {
-        addBotMessage(botResponses.greetings[0]);
+        if (!userData?.firstName) {
+          requestUserInfo('name');
+        } else {
+          addBotMessage(`Halo kembali ${userData.firstName}! Ada yang bisa saya bantu?`);
+        }
       }, 500);
+    }
+    
+    if (userData) {
+      const updatedUserData = {
+        ...userData,
+        pageViews: (userData.pageViews || 0) + 1,
+        lastSeen: new Date().toISOString()
+      };
+      setUserData(updatedUserData);
+      localStorage.setItem('chatUserData', JSON.stringify(updatedUserData));
     }
   };
 
   const addBotMessage = (text) => {
-    setMessages(prev => [...prev, { text, isUser: false }]);
+    const newMessage = { text, isUser: false, timestamp: new Date().toISOString() };
+    setMessages(prev => [...prev, newMessage]);
     setIsTyping(false);
   };
 
   const handleSendMessage = (e) => {
     e.preventDefault();
     if (message.trim()) {
-      // Add user message
-      const userMessage = { text: message, isUser: true };
+      if (userData?.awaitingInput) {
+        const userMessage = { text: message, isUser: true, timestamp: new Date().toISOString() };
+        setMessages(prev => [...prev, userMessage]);
+        setMessage('');
+        processUserInfo(userData.awaitingInput, message);
+        return;
+      }
+      
+      const userMessage = { text: message, isUser: true, timestamp: new Date().toISOString() };
       setMessages(prev => [...prev, userMessage]);
       setMessage('');
       setIsTyping(true);
 
-      // Simulate bot typing and response
       setTimeout(() => {
         generateBotResponse(message);
       }, 1000 + Math.random() * 2000);
     }
   };
 
-  // Enhanced response generation with more detailed keyword matching
+  // Enhanced response generation with lead qualification
   const generateBotResponse = (userMessage) => {
     const lowerCaseMsg = userMessage.toLowerCase();
     let response;
 
-    // Greetings
+    // Check if this might be a lead and request contact info
+    const isPotentialLead = /(pesan|order|beli|pemesanan|pembelian|purchase|buy|butuh|memesan|membutuhkan).*(untuk|project|proyek|rumah|perumahan|kantor|gedung)|(project|proyek|rumah|perumahan|kantor|gedung).*(pesan|order|beli|pembelian)/i.test(lowerCaseMsg);
+
+    // Berikan respons terlebih dahulu
     if (/halo|hai|hi|hello|selamat|pagi|siang|sore|malam/.test(lowerCaseMsg)) {
       response = botResponses.greetings[Math.floor(Math.random() * botResponses.greetings.length)];
     } 
-    // Help
     else if (/bantuan|help|tolong|info|informasi|menu|option/.test(lowerCaseMsg)) {
       response = botResponses.help[Math.floor(Math.random() * botResponses.help.length)];
     }
-    // Products - Concrete Roof
     else if (/produk|barang|item|jenis|tipe|atap|roof|genteng/.test(lowerCaseMsg)) {
       if (/neo|premium/.test(lowerCaseMsg)) {
         if (/flat|datar/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.neo.flatTile;
+          setConversationContext('genteng_neo_flat');
         } else if (/dual|slate/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.neo.dualSlate;
+          setConversationContext('genteng_neo_dual');
         } else if (/floral/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.neo.floral;
+          setConversationContext('genteng_neo_floral');
         } else {
           response = botResponses.products.concreteRoof.neo.general;
+          setConversationContext('genteng_neo');
         }
       } 
       else if (/victoria|series/.test(lowerCaseMsg)) {
         if (/onyx/i.test(lowerCaseMsg)) {
            response = botResponses.products.concreteRoof.victoria.onyx;
+           setConversationContext('genteng_victoria_onyx');
         } else if (/multiline/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.victoria.multiline;
+          setConversationContext('genteng_victoria_multiline');
         } else if (/slate/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.victoria.slate;
+          setConversationContext('genteng_victoria_slate');
         } else if (/pine/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.victoria.pine;
+          setConversationContext('genteng_victoria_pine');
         } else if (/classic/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.victoria.classic;
+          setConversationContext('genteng_victoria_classic');
         } else {
           response = botResponses.products.concreteRoof.victoria.general;
+          setConversationContext('genteng_victoria');
         }
       }
       else if (/gelombang|wave|royal|oriental|majestic/.test(lowerCaseMsg)) {
         if (/royal/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.wave.newRoyal;
+          setConversationContext('genteng_gelombang_royal');
         } else if (/oriental/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.wave.oriental;
+          setConversationContext('genteng_gelombang_oriental');
         } else if (/majestic/.test(lowerCaseMsg)) {
           response = botResponses.products.concreteRoof.wave.majestic;
+          setConversationContext('genteng_gelombang_majestic');
         } else {
           response = botResponses.products.concreteRoof.wave.general;
+          setConversationContext('genteng_gelombang');
         }
       }
       else if (/bocor|leak|solusi bocor/.test(lowerCaseMsg)) {
         response = botResponses.products.concreteRoof.leakSolution.general;
+        setConversationContext('solusi_bocor');
       }
       else if (/cat|paint/.test(lowerCaseMsg)) {
         response = botResponses.products.concreteRoof.roofPaint.general;
+        setConversationContext('cat_genteng');
       }
       else if (/surya|panel|solar/.test(lowerCaseMsg)) {
         response = botResponses.products.concreteRoof.solarPanel;
+        setConversationContext('panel_surya');
       }
       else {
         response = botResponses.products.concreteRoof.types;
+        setConversationContext('genteng');
       }
     }
-    // Products - Paving Block
     else if (/paving|block|konblok|jalan|lantai/.test(lowerCaseMsg)) {
-      if (/square|set/.test(lowerCaseMsg)) {
+      if (isPotentialLead) {
+        response = "Untuk pemesanan paving block, saya dapat membantu!";
+        setTimeout(() => {
+          if (!userData.phone) {
+            addBotMessage("Boleh saya tahu nomor WhatsApp Anda untuk konsultasi lebih lanjut?");
+            setUserData(prev => ({...prev, awaitingInput: 'phone'}));
+          }
+        }, 1500);
+      } else if (/square|set/.test(lowerCaseMsg)) {
         response = botResponses.products.pavingBlock.squareSet;
+        setConversationContext('paving_square');
       } else if (/classic/.test(lowerCaseMsg)) {
         response = botResponses.products.pavingBlock.classicSet;
+        setConversationContext('paving_classic');
       } else if (/altstadt/.test(lowerCaseMsg)) {
         response = botResponses.products.pavingBlock.altstadt;
+        setConversationContext('paving_altstadt');
       } else if (/grass|rumput/.test(lowerCaseMsg)) {
         response = botResponses.products.pavingBlock.grassBlock;
+        setConversationContext('paving_grass');
       } else if (/kanstein/.test(lowerCaseMsg)) {
         if (/wet/.test(lowerCaseMsg)) {
           response = "Kanstein Wet Process:\n- Kekuatan: K400\n- Harga: Rp 20.000/m²";
+          setConversationContext('kanstein_wet');
         } else if (/dry/.test(lowerCaseMsg)) {
           response = "Kanstein Dry Process:\n- Kekuatan: K350\n- Harga: Rp 18.000/m²";
+          setConversationContext('kanstein_dry');
         } else {
           response = botResponses.products.pavingBlock.kanstein.general;
+          setConversationContext('kanstein');
         }
       } else {
         response = botResponses.products.pavingBlock.types;
+        setConversationContext('paving');
       }
     }
-    // Products - Concrete Block
     else if (/batako|concrete block|blok|ventilasi|ventilation/.test(lowerCaseMsg)) {
       if (/standard/.test(lowerCaseMsg)) {
         response = botResponses.products.concreteBlock.standard;
+        setConversationContext('batako_standard');
       } else if (/hollow/.test(lowerCaseMsg)) {
         response = botResponses.products.concreteBlock.hollow;
+        setConversationContext('batako_hollow');
       } else if (/press/.test(lowerCaseMsg)) {
         response = botResponses.products.concreteBlock.press;
+        setConversationContext('batako_press');
       } else if (/ventilasi|ventilation/.test(lowerCaseMsg)) {
         if (/3d/.test(lowerCaseMsg)) {
           response = "Ventilation Block 3D:\n- Dimensi: 40x20x15cm\n- Desain modern\n- Harga: Rp 10.000/pcs";
+          setConversationContext('ventilation_3d');
         } else {
           response = botResponses.products.concreteBlock.ventilation.general;
+          setConversationContext('ventilation');
         }
       } else {
         response = botResponses.products.concreteBlock.types;
+        setConversationContext('batako');
       }
     }
-    // Products - Utility
     else if (/utility|pipa|pipe|drainase|uditch|culvert|sumur|resapan/.test(lowerCaseMsg)) {
       if (/pipa|pipe/.test(lowerCaseMsg)) {
         if (/high|pressure|tinggi/.test(lowerCaseMsg)) {
           if (/30|tiga puluh/.test(lowerCaseMsg)) {
             response = "High Pressure Pipe Ø30cm:\n- Harga: Rp 150.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_high_30');
           } else if (/50|lima puluh/.test(lowerCaseMsg)) {
             response = "High Pressure Pipe Ø50cm:\n- Harga: Rp 250.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_high_50');
           } else if (/80|delapan puluh/.test(lowerCaseMsg)) {
             response = "High Pressure Pipe Ø80cm:\n- Harga: Rp 400.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_high_80');
           } else if (/100|seratus/.test(lowerCaseMsg)) {
             response = "High Pressure Pipe Ø100cm:\n- Harga: Rp 500.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_high_100');
           } else {
             response = botResponses.products.utility.pipe.highPressure;
+            setConversationContext('pipe_high');
           }
         } else if (/low|pressure|rendah/.test(lowerCaseMsg)) {
           if (/30|tiga puluh/.test(lowerCaseMsg)) {
             response = "Low Pressure Pipe Ø30cm:\n- Harga: Rp 120.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_low_30');
           } else if (/50|lima puluh/.test(lowerCaseMsg)) {
             response = "Low Pressure Pipe Ø50cm:\n- Harga: Rp 200.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_low_50');
           } else if (/80|delapan puluh/.test(lowerCaseMsg)) {
             response = "Low Pressure Pipe Ø80cm:\n- Harga: Rp 350.000/pcs\n- Min. order: 10pcs";
+            setConversationContext('pipe_low_80');
           } else {
             response = botResponses.products.utility.pipe.lowPressure;
+            setConversationContext('pipe_low');
           }
         } else {
           response = botResponses.products.utility.pipe.general;
+          setConversationContext('pipe');
         }
       } else if (/uditch|ditch/.test(lowerCaseMsg)) {
         response = botResponses.products.utility.uDitch;
+        setConversationContext('uditch');
       } else if (/culvert|box/.test(lowerCaseMsg)) {
         response = botResponses.products.utility.boxCulvert;
+        setConversationContext('box_culvert');
       } else if (/sumur|resapan/.test(lowerCaseMsg)) {
         response = botResponses.products.utility.sumurResapan;
+        setConversationContext('sumur_resapan');
       } else {
         response = botResponses.products.utility.types;
+        setConversationContext('utility');
       }
     }
-    // Order
     else if (/pesan|order|beli|pemesanan|pembelian|purchase|buy/.test(lowerCaseMsg)) {
       response = botResponses.order[Math.floor(Math.random() * botResponses.order.length)];
     }
-    // Stock
     else if (/stok|stock|tersedia|ready/.test(lowerCaseMsg)) {
       response = botResponses.stock[Math.floor(Math.random() * botResponses.stock.length)];
     }
-    // Contacts
     else if (/kontak|alamat|kantor|telpon|telepon|email|lokasi/.test(lowerCaseMsg)) {
       response = botResponses.contacts[Math.floor(Math.random() * botResponses.contacts.length)];
     }
-    // Pricing
     else if (/harga|price|biaya|cost|berapa|rp|rupiah/.test(lowerCaseMsg)) {
-      response = botResponses.pricing;
+      // Handle harga berdasarkan konteks
+      if (conversationContext === 'genteng_neo_flat') {
+        response = botResponses.products.concreteRoof.neo.flatTile;
+      } else if (conversationContext === 'genteng_neo_dual') {
+        response = botResponses.products.concreteRoof.neo.dualSlate;
+      } else if (conversationContext === 'genteng_neo_floral') {
+        response = botResponses.products.concreteRoof.neo.floral;
+      } else {
+        response = botResponses.pricing;
+      }
     }
-    // Delivery
     else if (/kirim|pengiriman|ongkos|ongkir|delivery|pengantaran|jasa|ekspedisi/.test(lowerCaseMsg)) {
       response = botResponses.delivery;
     }
-    // Payment
     else if (/bayar|pembayaran|payment|dp|uang muka|cash|transfer|cod/.test(lowerCaseMsg)) {
       response = botResponses.payment;
     }
-    // Default
+    else if (/warna|varian|color/.test(lowerCaseMsg)) {
+      // Handle pertanyaan warna berdasarkan konteks
+      if (conversationContext === 'genteng_neo_flat') {
+        response = "Genteng Neo Flat Tile tersedia dalam 8 pilihan warna: Merah, Hitam, Coklat, Hijau, Biru, Abu-abu, Terakota, dan Mixed";
+      } else if (conversationContext === 'genteng_neo_dual') {
+        response = "Genteng Neo Dual Slate tersedia dalam 6 pilihan warna: Merah, Coklat, Hijau, Biru, Abu-abu, Terakota";
+      } else if (conversationContext === 'genteng_neo_floral') {
+        response = "Genteng Neo Floral tersedia dalam 5 pilihan warna: Merah, Coklat, Hijau, Abu-abu, Terakota";
+      } else {
+        response = botResponses.default[Math.floor(Math.random() * botResponses.default.length)];
+      }
+    }
     else {
       response = botResponses.default[Math.floor(Math.random() * botResponses.default.length)];
     }
 
-    addBotMessage(response);
+    // Kirim respons
+    if (response) {
+      addBotMessage(response);
+    }
+
+    // Setelah memberikan respons, check jika perlu meminta informasi kontak
+    if (isPotentialLead && !userData.phone && !userData?.awaitingInput) {
+      setTimeout(() => {
+        if (!userData.firstName) {
+          addBotMessage("Untuk informasi yang lebih akurat, boleh saya tahu nama Anda?");
+          setUserData(prev => ({...prev, awaitingInput: 'name'}));
+        } else if (!userData.phone) {
+          addBotMessage("Terima kasih! Untuk konsultasi lebih lanjut, boleh saya tahu nomor WhatsApp Anda?");
+          setUserData(prev => ({...prev, awaitingInput: 'phone'}));
+        }
+      }, 1500);
+    }
+
+    // Follow-up question for engagement
+    if (Math.random() > 0.5 && !isTyping) {
+      setTimeout(() => {
+        const followUps = [
+          "Apakah ada hal lain yang ingin Anda ketahui?",
+          "Bisa saya bantu dengan informasi lainnya?",
+          "Apakah informasi yang saya berikan sudah jelas?"
+        ];
+        addBotMessage(followUps[Math.floor(Math.random() * followUps.length)]);
+      }, 2000);
+    }
   };
 
   // Auto-scroll to bottom when new messages arrive
@@ -345,7 +617,7 @@ export default function FloatingChatPanel() {
       {!isOpen && (
         <button
           onClick={toggleChat}
-          className="bg-[#2957A4] sm-125:bg-amber-50 text-white p-3 2xl:p-4 rounded-full shadow-lg hover:bg-[#0B1F3A] hover:scale-105 transition-transform duration-300"
+          className="bg-[#2957A4] text-white p-3 2xl:p-4 rounded-full shadow-lg hover:bg-[#0B1F3A] hover:scale-105 transition-transform duration-300"
           aria-label="Open chat"
         >
           <svg
@@ -362,6 +634,12 @@ export default function FloatingChatPanel() {
               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
             />
           </svg>
+          {/* Notification badge if user has interests */}
+          {userData?.interests && userData.interests.length > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-xs">
+              {userData.interests.length}
+            </span>
+          )}
         </button>
       )}
 

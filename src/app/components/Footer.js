@@ -37,7 +37,7 @@ export default function Footer() {
                     </div>
                 </div>
                 
-                <div className="flex justify-center gap-10 text-xs mb-6">
+                <div className="flex justify-center gap-5 text-xs mb-6">
                     <FaInstagram className="bg-white text-black rounded-full box-border size-6 p-1" />
                     <FaFacebookF className="bg-white text-black rounded-full box-border size-6 p-1" />
                     <FaTiktok className="bg-white text-black rounded-full box-border size-6 p-1" />
@@ -55,7 +55,7 @@ export default function Footer() {
             <div className="hidden md:block max-w-8xl mx-auto px-15 ">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
                     {/* Logo & Sertifikasi */}
-                    <div className="md:w-1/3">
+                    <div className="md:w-1/3 mt-[-1rem]">
 <div className="relative w-40 2xl:w-60 h-auto" style={{ height: 'auto' }}>
                             <Image 
                                 src="/logo50.png" 
