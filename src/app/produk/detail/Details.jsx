@@ -367,7 +367,7 @@ const calculateRequirement = () => {
                                
                                <div
                                  ref={sliderRef}
-                                 className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5 2xl:gap-5 2xl:ml-2"
+                                 className="slider-mobile grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5 2xl:gap-5 2xl:ml-2"
                                >
                                  {currentProduct.accessories.map((product) => (
                                    <div key={product.name} className="snap-start min-w-0 ps-11 2xl:ps-22 group">

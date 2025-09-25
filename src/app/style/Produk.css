@@ -55,4 +55,9 @@
     .aksesoris-container {
         margin-top: -1rem;
     }
+    .slider-mobile {
+        gap: 11rem;
+        padding-inline-start: 4rem;
+        margin-left: -8px;
+    }
 }
