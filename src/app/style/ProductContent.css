@@ -69,4 +69,10 @@
     .padding-pv{
         padding-left: 1rem;
     }
+    .padding-cb {
+        padding-left: 1rem;
+    }
+    .padding-cb2 {
+        padding-inline: 0;
+    }
 }

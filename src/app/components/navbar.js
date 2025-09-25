@@ -255,7 +255,7 @@ export default function Navbar() {
                 }} 
                 className={`block ${isActive("/produk/produk-pv?category=Utility") ? "bg-gray-100 text-[#0F1E3E] font-medium" : "hover:text-black"}`}
               >
-                Concrete Pipe
+                Utility
               </Link>
             </li>
           </ul>

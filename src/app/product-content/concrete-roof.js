@@ -31,7 +31,7 @@ export const ConcreteRoofContent = () => (
         <li>Ketebalan cat 70 mikron dan 100 mikron (tipe premium)</li>
         <li>Prosedur dan hasil pengujian cat mengacu pada ASTM Section 6, Volume 06.01</li>
         <li>Terdiri dari banyak varian warna :</li>
-                <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
+        <ul className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 ps-3">
           <li className="contents">
             <span>- Warna Regular</span>
             <span>: Hitam, Abu-abu, Kopi, Coklat dan Merah</span>

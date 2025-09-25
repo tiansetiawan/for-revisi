@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import '@/app/style/ProductContent.css';
 
 export const ConcreteBlockContent = () => {
   // Data array untuk langkah-langkah pemasangan
@@ -55,7 +56,7 @@ export const ConcreteBlockContent = () => {
         <h2 className="text-xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4 2xl:text-2xl">
           SPESIFIKASI TEKNIS :
         </h2>
-        <ul className="text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-disc">
+        <ul className="padding-cb text-sm 2xl:text-base leading-relaxed space-y-1 ps-9 list-disc">
           <li className="ps-3">Bahan dasar campuran beton</li>
           <li className="ps-3">
             Mutu Produk mengacu pada <Link href="/informasi/sertifikasi" className="font-semibold hover:cursor-pointer hover:underline">SNI 03 - 0349 - 1989</Link> Kategori peringkat I
@@ -101,7 +102,7 @@ export const ConcreteBlockContent = () => {
           CARA PEMASANGAN :
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 2xl:gap-y-5 2xl:gap-x-20 p-8">
+        <div className="padding-cb2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 2xl:gap-y-5 2xl:gap-x-20 p-8">
           {installationSteps.map((step) => (
             <div
               key={step.id}
