@@ -8,4 +8,13 @@
         .thumb-blog {
         object-fit: fill;
     }
+    .sponsor {
+        height: 7em;
+    }
+    .sponsor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
 }

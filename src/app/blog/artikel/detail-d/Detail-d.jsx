@@ -369,10 +369,10 @@ export default function DetailD() {
         <div className="mb-10">
           <h3 className="text-md font-semibold mb-6 text-center">Ucapan Terima Kasih kepada para Sponsor</h3>
           
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="sponsor-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
   {projectList.map((project) => (
     <div key={project.id} className="border-b-black shadow-blue-300 rounded-lg p-3 flex flex-col items-center text-center hover:shadow-md transition-shadow">
-      <div className="w-full h-16 mb-2 flex items-center justify-center overflow-hidden">
+      <div className="sponsor w-full h-16 mb-2 flex items-center justify-center overflow-hidden">
         {project.logo ? (
           <img 
             src={project.logo} 
