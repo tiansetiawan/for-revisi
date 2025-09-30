@@ -8,6 +8,7 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import '@/app/style/Blog.css';
 
 
 const landscapeImages = [
@@ -214,9 +215,9 @@ export default function DetailD() {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
       {/* Hero Section */}
-      <div className="relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
+      <div className="image-container relative w-full aspect-[1764/460] min-h-[180px] sm:min-h-[300px] overflow-hidden">
         <Image
           src="/images/artikel-4.jpg"
           alt="Banner Artikel"
