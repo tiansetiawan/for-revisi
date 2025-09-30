@@ -15,25 +15,25 @@ import '@/app/style/Beranda.css';
 const heroSlides = [
   {
     image: '/images/4.jpg',
-    mobileImage: '/images/mobile/banner-mb1.png', // Tambahkan ini
+    mobileImage: '/images/mobile/50-hut.jpg', // Tambahkan ini
     url: '/blog/artikel/detail-b',
     location: ''
   },
-  {
-    image: '/images/2.jpg',
-    mobileImage: '/images/mobile/banner-mb2.png', // Tambahkan ini
-    url: '/blog/artikel/detail-a',
+    {
+    image: '/images/Banner-TO.jpg',
+    mobileImage: '/images/mobile/TO-mb.jpg', // Tambahkan ini
+    url: '/blog/artikel/detail-e',
     location: ''
   },
   {
     image: '/images/1.jpg',
-    mobileImage: '/images/mobile/banner-mb2.png', // Tambahkan ini
+    mobileImage: '/images/mobile/banner-mb1.png', // Tambahkan ini
     url: '/produk?category=Concrete Roof',
     location: 'Tag location'
   },
   {
     image: '/images/5.jpg',
-    mobileImage: '/images/mobile/banner-mb2.png', // Tambahkan ini
+    mobileImage: '/images/mobile/banner-mb3.png', // Tambahkan ini
     url: '/produk?category=Paving Block',
     location: 'Tag location'
   },
@@ -144,7 +144,7 @@ const proyekData = [
 // Video Testimonial Data
 const mainTestimonialVideo = {
   title: "Testimonial Utama",
-  youtubeId: "ee86Me6eOx4",
+  youtubeId: "gCicPleRDaw",
   description: "Testimonial pelanggan utama kami"
 };
 
@@ -274,26 +274,26 @@ const getYoutubeThumbnail = (youtubeId, quality = 'hqdefault') => {
 
 const terbaruList = [
     {
+    id: 3,
+    image: "/images/top-werk-square.jpg",
+    title: "Factory Visit - TOPWERK ASIA GATHERING 2025 di CISANGKAN",
+    desc: "Sebagai bagian dari perayaan HUT ke-50 kami, PT Cisangkan mendapat kehormatan untuk menyambut mitra..",
+    link: "/blog/artikel/detail-e"
+  },
+      {
+    id: 2,
+    image: "/images/KBP/landscape/IMG_1293.JPG",
+    title: "[RECAP] CISANGKAN KBP CITY RUN 2025",
+    desc: "Cisangkan KBP City Run & Cisangkan KBP Speedy Kids 2025, telah sukses menggelar event olahraga khususnya..",
+    link: "/blog/artikel/detail-d"
+  },
+  {
     id: 1,
     image: "/images/thumbnail-visit.jpg",
     title: "Factory Visit Team Alam Sutera Group to Cisangkan Purwakarta",
     desc: "Team Alam Sutera Group mengadakan kunjungan pabrik/factory visit ke pabrik Cisangkan Purwakarta untuk ...",
     link: "/blog/artikel/detail-c"
   },
-  {
-    id: 2,
-    image: "/images/KBP CityRun.jpg",
-    title: "CISANGKAN KBP CITY RUN 2025",
-    desc: "Merayakan 50 Tahun PT Cisangkan dan 25 Tahun Kota Baru Parahyangan. Sebagai bagian dari perjalanan panjang kami, PT Cisangkan dengan...",
-    link: "/blog/artikel/detail-a"
-  },
-  {
-    id: 3,
-    image: "/images/ultah50.jpg",
-    title: "PT. Cisangkan: 50 Tahun Berkarya untuk Indonesia",
-    desc: "Bandung, 2025 – Tahun ini menjadi momen istimewa bagi PT. Cisangkan, yang merayakan 50 tahun..",
-    link: "/blog/artikel/detail-b"
-  }
 ];
 
 
@@ -734,7 +734,7 @@ return (
     className="absolute inset-0 cursor-pointer"
     onClick={() => handleVideoSelect(mainTestimonialVideo.youtubeId)}
   >
-    <div className="absolute inset-0 flex items-center justify-center bg-black/20 z-10">
+    <div className="absolute inset-0 flex items-center justify-center z-10">
       <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center shadow-md">
         <svg className="w-8 h-8 text-[#0B1F3A]" fill="currentColor" viewBox="0 0 20 20">
           <path d="M6.3 2.841A1.5 1.5 0 004 4.11v11.78a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
@@ -744,7 +744,7 @@ return (
     
     {/* Image dengan zoom dan center tanpa crop */}
     <Image 
-      src="/images/factory Visit.png"
+      src="/images/top-werk.jpg"
       alt={mainTestimonialVideo.title}
       fill
       className="object-contain transition-transform duration-500 hover:scale-110"
