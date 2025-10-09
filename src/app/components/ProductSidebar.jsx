@@ -68,23 +68,23 @@ export default function ProductSidebar({ onItemChange }) {
             { name: "Majestic", url: "/produk/detail-cr?product=Majestic&category=Concrete Roof" },
           ],
         },
-        {
-          name: "Solusi Bocor",
-          url: "#",
-          subItems: [
-        { name: "Dry System", url: "/produk/detail-cr?product=Dry System&category=Concrete Roof" },
-        { name: "CIS Flashing", url: "/produk/detail-cr?product=CIS Flashing&category=Concrete Roof" },
-          ],
-        },
-                {
-          name: "Cat Genteng",
-          url: "#",
-          subItems: [
-        { name: "Water Base", url: "/produk/detail-cr?product=Water Base&category=Concrete Roof" },
-        { name: "Solvent Base", url: "/produk/detail-cr?product=Solvent Base&category=Concrete Roof" },
-          ],
-        },
-        { name: "Panel Surya", url: "/produk/detail-cr?product=Panel Surya&category=Concrete Roof" },
+        // {
+        //   name: "Solusi Bocor",
+        //   url: "#",
+        //   subItems: [
+        // { name: "Dry System", url: "/produk/detail-cr?product=Dry System&category=Concrete Roof" },
+        // { name: "CIS Flashing", url: "/produk/detail-cr?product=CIS Flashing&category=Concrete Roof" },
+        //   ],
+        // },
+        //         {
+        //   name: "Cat Genteng",
+        //   url: "#",
+        //   subItems: [
+        // { name: "Water Base", url: "/produk/detail-cr?product=Water Base&category=Concrete Roof" },
+        // { name: "Solvent Base", url: "/produk/detail-cr?product=Solvent Base&category=Concrete Roof" },
+        //   ],
+        // },
+        // { name: "Panel Surya", url: "/produk/detail-cr?product=Panel Surya&category=Concrete Roof" },
       ],
       "Paving Block": [
         { name: "Square Set", url: "/produk/detail-pb?product=Square Set&category=Paving Block" },
@@ -113,10 +113,10 @@ export default function ProductSidebar({ onItemChange }) {
         { name: "Low Pressure", url: "/produk/detail-ut1?product=Low Pressure&category=Utility" },
           ],
         },
-        { name: "U-Ditch", url: "/produk/detail-ut1?product=U-Ditch&category=Utility" },
-        { name: "Tutup", url: "/produk/detail-ut1?product=Tutup&category=Utility" },
-        { name: "Box Culvert", url: "/produk/detail-ut1?product=Box Culvert&category=Utility" },
-        { name: "Sumur Resapan", url: "/produk/detail-ut2?product=Sumur Resapan&category=Utility" },
+        // { name: "U-Ditch", url: "/produk/detail-ut1?product=U-Ditch&category=Utility" },
+        // { name: "Tutup", url: "/produk/detail-ut1?product=Tutup&category=Utility" },
+        // { name: "Box Culvert", url: "/produk/detail-ut1?product=Box Culvert&category=Utility" },
+        // { name: "Sumur Resapan", url: "/produk/detail-ut2?product=Sumur Resapan&category=Utility" },
       ],
     },
   };

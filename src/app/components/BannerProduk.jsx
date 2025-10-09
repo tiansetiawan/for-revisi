@@ -23,73 +23,73 @@ export default function BannerProduk({ kategori }) {
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Banner Neo.mp4",
-            location: 'Tag location' 
+            location: 'Neo Solar System' 
           };
         case "Dual Slate":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Dual Slate' 
           };
         case "Floral":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Floral' 
           };
         case "Victoria Series":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Victoria Series' 
           };
         case "Onyx":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Onyx' 
           };
         case "Multiline":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Multiline' 
           };
         case "Slate":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Slate' 
           };
         case "Pine":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.mp4",
-            location: 'Tag location' 
+            location: 'Pine' 
           };
         case "Classic":
           return { 
             type: "image", 
             src: "/images/banners/sub-products/Spanduk web Cisangkan.png",
-            location: 'Tag location' 
+            location: 'Classic' 
           };
         case "New Royal":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/banner genteng gelombang.mp4",
-            location: 'Tag location' 
+            location: 'New Royal' 
           };
         case "Oriental":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/banner genteng gelombang.mp4",
-            location: 'Tag location' 
+            location: 'Oriental' 
           };
         case "Majestic":
           return { 
             type: "video", 
             src: "/images/banners/sub-products/banner genteng gelombang.mp4",
-            location: 'Tag location' 
+            location: 'Majestic' 
           };
 
         // Paving Block Products
@@ -97,67 +97,67 @@ export default function BannerProduk({ kategori }) {
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Square Set' 
           };
         case "Classic Set":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Classic Set' 
           };
         case "Altstadt":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Altstadt' 
           };
         case "Others":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Others' 
           };
         case "Guiding Pave":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Guiding Pave' 
           };
         case "Grass Block":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Grass Block' 
           };
         case "Concrete Tile":
           return { 
             type: "image", 
             src: "/images/BannerPb.jpg",
-            location: 'Tag location' 
+            location: 'Concrete Tile' 
           };
         case "Guiding Tiles":
           return { 
             type: "image", 
             src: "/images/BannerPb.jpg",
-            location: 'Tag location' 
+            location: 'Guiding Tiles' 
           };
         case "Kanstein Wet Process":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Kanstein Wet Process' 
           };
         case "Kanstein Dry Process":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Kanstein Dry Process' 
           };
         case "Tali Air":
           return { 
             type: "image", 
             src: "/images/banner pavingblock.jpg",
-            location: 'Tag location' 
+            location: 'Tali Air' 
           };
 
         // Concrete Block Products
@@ -165,19 +165,19 @@ export default function BannerProduk({ kategori }) {
           return { 
             type: "image", 
             src: "/images/BannerCb.jpg",
-            location: 'Tag location' 
+            location: 'Concrete Block' 
           };
         case "Ventilation Block":
           return { 
             type: "image", 
             src: "/images/banner roster.jpg",
-            location: 'Tag location' 
+            location: 'Ventilation Block' 
           };
         case "Ventilation Block 3D":
           return { 
             type: "image", 
             src: "/images/banner roster.jpg",
-            location: 'Tag location' 
+            location: 'Ventilation Block 3D' 
           };
 
         // Utility Products
@@ -185,13 +185,13 @@ export default function BannerProduk({ kategori }) {
           return { 
             type: "image", 
             src: "/images/banner concrete pipe.jpg",
-            location: 'Tag location' 
+            location: 'Concrete Pipe' 
           };
         case "Ciswell":
           return { 
             type: "image", 
             src: "/images/banner ciswell.png",
-            location: 'Tag location' 
+            location: 'Ciswell' 
           };
 
         // Fallback untuk sub produk yang tidak memiliki banner khusus
@@ -199,7 +199,7 @@ export default function BannerProduk({ kategori }) {
           const mainBanner = getMainProductBanner(kategori);
           return {
             ...mainBanner,
-            location: 'Tag location'
+            location: ''
           };
       }
     }
@@ -208,7 +208,7 @@ export default function BannerProduk({ kategori }) {
     const mainBanner = getMainProductBanner(kategori);
     return {
       ...mainBanner,
-      location: 'Tag location'
+      location: ''
     };
   };
 

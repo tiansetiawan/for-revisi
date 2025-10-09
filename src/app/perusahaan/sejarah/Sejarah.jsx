@@ -108,10 +108,10 @@ export default function Sejarah() {
       <div className="bg-[#F2F2F2] py-4">
       {/* Desktop Navbar */}
       <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
-        <Link href="/perusahaan/tentang" className="text-[#2D5DA6] font-bold hover:underline">
+        <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
           Tentang Kami
         </Link>
-        <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+        <Link href="/perusahaan/sejarah" className="text-[#2D5DA6] font-bold hover:underline">
           Sejarah
         </Link>
         <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">

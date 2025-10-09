@@ -62,7 +62,7 @@ export default function SidebarProyek({
       </div>
 
 
-      <div className="bg-[#F2F2F2] py-4 mt-[-4rem] mb-[2rem]">
+      <div className="py-4 mt-[-4rem] mb-[2rem]">
       {/* ===== Mobile Dropdown ===== */}
       <div className="lg:hidden flex flex-col text-[1rem] font-light tracking-wide">
   {/* Judul utama menu */}
@@ -92,7 +92,7 @@ export default function SidebarProyek({
 
   {/* Dropdown list */}
   {open && (
-    <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
+    <div className="flex flex-col px-6 py-2 space-y-2">
       {mainProducts.map((item) =>
         item.value === "Semua Produk" ? (
           <Link
