@@ -3,6 +3,7 @@ import {
     FaFacebookF,
     FaTiktok,
     FaYoutube,
+    FaLinkedin,
 } from 'react-icons/fa';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -38,10 +39,19 @@ export default function Footer() {
                 </div>
                 
                 <div className="flex justify-center gap-5 text-xs mb-6">
+                    <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                     <FaInstagram className="bg-white text-black rounded-full box-border size-6 p-1" />
-                    <FaFacebookF className="bg-white text-black rounded-full box-border size-6 p-1" />
-                    <FaTiktok className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/pt-cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white"
+                    ><FaLinkedin className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer" className="hover:text-white">   <FaFacebookF className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.tiktok.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer" className="hover:text-white">   <FaTiktok className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
+                    <a href="https://www.youtube.com/@pt_cisangkan" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                     <FaYoutube className="bg-white text-black rounded-full box-border size-6 p-1" />
+                    </a>
                 </div>
                 
                 <div className="text-xs mb-4">
@@ -178,6 +188,9 @@ export default function Footer() {
                         <div className="flex gap-4 2xl:gap-6 text-xs">
                             <a href="https://www.instagram.com/pt_cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaInstagram className="cursor-pointer bg-white text-black rounded-full box-border size-5 p-1 2xl:size-7 hover:bg-blue-100 transition-colors" />
+                            </a>
+                            <a href="https://www.linkedin.com/company/pt-cisangkan/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                                <FaLinkedin className="cursor-pointer bg-white text-black rounded-full box-border size-5 p-1 2xl:size-7 hover:bg-blue-100 transition-colors" />
                             </a>
                             <a href="https://www.facebook.com/cisangkan#" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                                 <FaFacebookF className="cursor-pointer bg-white text-black rounded-full box-border size-5 p-1 2xl:size-7 hover:bg-blue-100 transition-colors" />
