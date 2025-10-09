@@ -7,6 +7,14 @@ import '@/app/style/Artikel.css';
 
 const artikelList = [
    {
+    id: 6,
+    judul: "Kerja Sama Strategis: Cisangkan & Maxxi",
+    tanggal: "08 Oktober 2025",
+    url: "/blog/artikel/detail-f",
+    deskripsi: "Selasa, 7 Oktober 2025 menjadi momen penting bagi kami, di mana secara resmi memulai kolaborasi dengan Maxxi melalui acara Kick Off Kerja Sama Strategis, bertempat di Pabrik Cisangkan..",
+    gambar: "/images/cismax.png",
+  },
+   {
     id: 5,
     judul: "Factory Visit - TOPWERK ASIA GATHERING 2025 di CISANGKAN",
     tanggal: "16 September 2025",
