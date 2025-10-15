@@ -15,7 +15,7 @@ import '@/app/style/Beranda.css';
 const heroSlides = [
   {
     image: '/images/banners/Banner Bitumen.jpg',
-    mobileImage: '/images/mobile/', // Tambahkan ini
+    mobileImage: '/images/mobile/maxxi.jpg', // Tambahkan ini
     url: '/informasi/katalog',
     location: ''
   },
