@@ -14,6 +14,12 @@ import '@/app/style/Beranda.css';
 // Hero Slides Data with URLs
 const heroSlides = [
   {
+    image: '/images/banners/Banner Bitumen.jpg',
+    mobileImage: '/images/mobile/', // Tambahkan ini
+    url: '/informasi/katalog',
+    location: ''
+  },
+  {
     image: '/images/4.jpg',
     mobileImage: '/images/mobile/50-hut.jpg', // Tambahkan ini
     url: '/blog/artikel/detail-b',

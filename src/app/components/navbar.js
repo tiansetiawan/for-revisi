@@ -295,7 +295,7 @@ export default function Navbar() {
           onClick={closeMenu}
           className={`block rounded-full ${isActive("/blog") ? "bg-[#0F1E3E] text-white w-fit px-2 font-medium" : "hover:text-black"}`}
         >
-          Blog
+          Berita
         </Link>
       </li>
       <li>
