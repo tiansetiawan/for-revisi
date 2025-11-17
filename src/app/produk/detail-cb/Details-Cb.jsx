@@ -9,6 +9,7 @@ import Link from "next/link";
 import ProductSidebar from "../../components/ProductSidebar";
 import { useRouter } from "next/navigation";
 import BannerProduk from '../../components/BannerProduk';
+import '@/app/style/Produk.css';
 
 export default function DetailsCb() {
   const searchParams = useSearchParams();
@@ -116,7 +117,7 @@ export default function DetailsCb() {
   };
 
   return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section */}
 <BannerProduk kategori={currentProduct.category} />
 
@@ -133,7 +134,7 @@ export default function DetailsCb() {
             <div className="w-auto lg:w-1/2 space-y-6 px-6">
               <section className="mb-5 mt-4">
                 <div className="w-fit bg-[#d5def4] rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] px-4 py-2 mb-4 2xl:text-2xl">{currentProduct.name}</div>
-                <div className="w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
+                <div className="responsive-table w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
                   <table className="w-full border-collapse">
                     <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
                       <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">

@@ -82,7 +82,7 @@ const verifyEmailActive = async (email) => {
     { id: 1, nama: "Katalog Concrete Roof", image: "/images/katalog-concrete-roof.png", file: "/downloads/katalog/Katalog Concrete Roof Cisangkan.pdf" },
     { id: 2, nama: "Katalog Paving Block", image: "/images/katalog-paving-block.png", file: "/downloads/katalog/Katalog Paving Block Cisangkan.pdf" },
     { id: 3, nama: "Katalog Concrete Block", image: "/images/katalog-concrete-block.png", file: "/downloads/katalog/Katalog Concrete Block Cisangkan.pdf" },
-    { id: 4, nama: "Katalog Concrete Pipe", image: "/images/Katalog cp.png", file: "/downloads/katalog/Katalog Concrete Pipe Baru.pdf" },
+    // { id: 4, nama: "Katalog Concrete Pipe", image: "/images/Katalog cp.png", file: "/downloads/katalog/Katalog Concrete Pipe Baru.pdf" },
   ];
 
   const brosurList = [

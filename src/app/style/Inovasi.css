@@ -1,11 +1,12 @@
 @media only screen and (max-width: 430px) {
-    .body-container {
-        padding-inline: 0;
-    }
-    .image-container {
-        min-height: 0;
-    }
-    .thumb-inovasi {
-        object-fit: fill;
-    }
+  .body-container {
+    padding-inline: 0;
+  }
+  .image-container {
+    min-height: 0;
+  }
+  .thumb-inovasi,
+  video {
+    object-fit: fill;
+  }
 }

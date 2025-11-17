@@ -9,6 +9,7 @@ import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
 import ApplicationModal from '../../components/ApplicationModal';
 import BannerProduk from '../../components/BannerProduk';
+import '@/app/style/Produk.css';
 
 
 export default function DetailsPb2() {
@@ -131,7 +132,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
 
 
  return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section */}
       <BannerProduk kategori={currentProduct.category} />
 
@@ -192,7 +193,7 @@ const handleThumbnailClick = (productId, thumbIndex) => {
       ))}
     </ul>
   </section>
-<div className="w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
+<div className="responsive-table w-[63rem] 2xl:w-[90rem] max-h-[600px] 2xl:max-h-[723px] overflow-y-auto rounded border border-gray-300">
   <table className="w-full border-collapse">
      <thead className="sticky top-0 bg-[#0B203F] z-20 text-white">
   <tr className="bg-[#0B203F] text-white text-sm 2xl:text-base">

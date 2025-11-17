@@ -1,119 +1,62 @@
-'use client';;
+'use client';
 import Image from 'next/image';
 import Link from "next/link";
 import '@/app/style/Inovasi.css';
 import { useState, useRef, useEffect } from 'react';
+
 const inovasiList = [
   {
     id: 1,
     judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
+    deskripsi: "Lorem ipsum sed in egestas eget amet tristique...",
     gambar: "/images/inovasi1.jpg",
   },
   {
     id: 2,
     judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
+    deskripsi: "Lorem ipsum sed in egestas eget amet tristique...",
     gambar: "/images/inovasi2.jpg",
   },
   {
     id: 3,
     judul: "Lorem ipsum",
-    deskripsi:
-      "Lorem ipsum sed in egestas eget amet tristique in integer convallis massa imperdiet enim enim id augue lorem pharetra lacus tincidunt quisque auctor adipiscing in cursus praesent scelerisque amet duis cras mauris orci feugiat diam in urna non vitae id semper ac ac cras senectus ut nam a cras nunc pharetra ac elit eget pharetra turpis a orci eu semper est arcu tempus ultrices lectus morbi id eu pretium urna sit ut donec sed tristique viverra sollicitudin et purus ut semper lobortis quisque posuere nulla aliquet in nunc mi tellus pellentesque amet tempus sit eu nibh ac amet dui lectus id nisi elit neque purus commodo faucibus et lacus neque amet faucibus purus aliquet elementum non lorem lobortis aliquam donec.",
+    deskripsi: "Lorem ipsum sed in egestas eget amet tristique...",
     gambar: "/images/inovasi3.jpg",
   },
 ];
 
-
-
 export default function Details() {
-  // State untuk panel unduh
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
   const [data, setData] = useState(null);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const modalRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const modalRef = useRef(null);
 
-
-   // Handle click outside modal
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
         setShowDownloadPanel(false);
       }
     };
-
     if (showDownloadPanel) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [showDownloadPanel]);
 
-  const handleDownload = (e) => {
-    e.preventDefault();
-    if (!name || !email) {
-      alert('Harap isi nama dan email terlebih dahulu');
-      return;
-    }
-    console.log(`Download katalog oleh ${name} (${email})`);
-    setName('');
-    setEmail('');
-    setShowDownloadPanel(false);
-  };
-
-  // Variants untuk animasi
-  const backdropVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 }
-  };
-
-  const modalVariants = {
-    hidden: { 
-      opacity: 0,
-      y: -50,
-      scale: 0.95
-    },
-    visible: { 
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        type: 'spring',
-        damping: 25,
-        stiffness: 500
-      }
-    },
-    exit: {
-      opacity: 0,
-      y: 50,
-      scale: 0.95,
-      transition: { duration: 0.2 }
-    }
-  };
-
   useEffect(() => {
-    // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
       judul: "Genteng Neo Solar: Inovasi Atap Beton Flat Premium dari PT Cisangkan",
       tanggal: "16 Mei 2025",
-      gambar: "/images/gentengneo1.jpg",
+      video: "1Tx9cRBShnmuQDLt7cWSkvrCcSKNT8iXN",
+      thumbnail: "/images/inovasi-thumb.jpg",
       deskripsi: ""
     };
-
     setData(sampleData);
   }, []);
 
   if (!data) return <div>Loading...</div>;
-
-
 
   return (
     <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800 mb-8">
@@ -138,89 +81,102 @@ export default function Details() {
 
       {/* Header Section */}
       <div className="bg-[#F2F2F2] py-4">
-      {/* Desktop Navbar */}
-      <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
-        <Link href="/perusahaan/tentang" className="text-[#2D5DA6] font-bold hover:underline">
-          Tentang Kami
-        </Link>
-        <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
-          Sejarah
-        </Link>
-        <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">
-          Inovasi
-        </Link>
-        <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
-          Karir
-        </Link>
-      </nav>
+        <nav className="hidden sm:flex 2xl:text-lg justify-center space-x-10 text-[1rem] font-light tracking-wide">
+          <Link href="/perusahaan/tentang" className="text-[#2D5DA6] font-bold hover:underline">
+            Tentang Kami
+          </Link>
+          <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+            Sejarah
+          </Link>
+          <Link href="/perusahaan/inovasi" className="text-[#333] hover:text-[#2D5DA6]">
+            Inovasi
+          </Link>
+          <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+            Karir
+          </Link>
+        </nav>
 
-      {/* Mobile Navbar */}
-      <div className="sm:hidden flex flex-col text-[1rem] font-light tracking-wide">
-        {/* Judul utama menu */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="flex justify-between items-center px-4 py-3 bg-[#F2F2F2] text-[#2D5DA6] font-bold hover:underline border-b"
-        >
-          <span>Inovasi</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`w-6 h-6 transform transition-transform ${
-              open ? "rotate-180 text-[#2D5DA6]" : "rotate-0 text-[#2D5DA6]"
-            }`}
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
+        {/* Mobile Navbar */}
+        <div className="sm:hidden flex flex-col text-[1rem] font-light tracking-wide">
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex justify-between items-center px-4 py-3 bg-[#F2F2F2] text-[#2D5DA6] font-bold hover:underline border-b"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </button>
-
-        {/* Dropdown list */}
-        {open && (
-          <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
-            <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
-              Tentang Kami
-            </Link>
-            <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
-              Sejarah
-            </Link>
-            <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
-              Karir
-            </Link>
-          </div>
-        )}
+            <span>Inovasi</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className={`w-6 h-6 transform transition-transform ${open ? "rotate-180" : "rotate-0"} text-[#2D5DA6]`}
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {open && (
+            <div className="flex flex-col bg-[#F2F2F2] px-6 py-2 space-y-2">
+              <Link href="/perusahaan/tentang" className="text-[#333] hover:text-[#2D5DA6]">
+                Tentang Kami
+              </Link>
+              <Link href="/perusahaan/sejarah" className="text-[#333] hover:text-[#2D5DA6]">
+                Sejarah
+              </Link>
+              <Link href="/perusahaan/karir" className="text-[#333] hover:text-[#2D5DA6]">
+                Karir
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
+
+      {/* Konten Utama */}
+      <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
+        <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
+          {data.judul}
+        </h1>
+
+        <p className="text-blue-600 text-sm 2xl:text-base mb-6">
+          {data?.tanggal || 'DD Month Years'}
+        </p>
+
+        {/* Video / Gambar */}
+<div className="flex justify-center items-center w-full xl:px-40 mx-auto mb-8">
+  <div className="relative w-full max-w-[420px] aspect-[3/4] rounded-lg overflow-hidden shadow-md group">
+    {/* Iframe Google Drive Video */}
+    <iframe
+      src={`https://drive.google.com/file/d/${data.video}/preview`}
+      className="w-full h-full rounded-lg"
+      allow="autoplay"
+      allowFullScreen
+    ></iframe>
+
+    {/* Play Icon Overlay */}
+    <div
+      className="absolute inset-0 flex items-center justify-center cursor-pointer"
+      onClick={(e) => e.currentTarget.style.display = 'none'}
+    >
+      {/* <div className="bg-black/40 rounded-full p-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-12 h-12 text-white opacity-90"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div> */}
     </div>
-
-    <section className="mx-auto mt-12 px-6 xl:px-26 sm:px-12 text-justify text-sm sm:text-base mb-10 2xl:px-30">
-  {/* Judul */}
-      <h1 className="justify-center text-black font-semibold text-lg sm:text-lg 2xl:text-2xl uppercase mb-2">
-        {data.judul}
-      </h1>
-
-
-  {/* Tanggal */}
-  <p className="text-blue-600 text-sm 2xl:text-base mb-6">
-    {data?.tanggal || 'DD Month Years'}
-  </p>
-
-  {/* Gambar */}
-  <div className="h-[240px] w-full xl:px-40 xl:h-[320px] 2xl:h-[450px] mx-auto flex items-center justify-center mb-8">
-    {data?.gambar ? (
-      <img src={data.gambar} alt={data.judul} className="thumb-inovasi w-full h-full object-cover" />
-    ) : (
-      <svg className="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm10 2a1 1 0 110 2 1 1 0 010-2zm-4 3a3 3 0 11-6 0 3 3 0 016 0zm-3 4a5 5 0 00-5 5h10a5 5 0 00-5-5z" />
-      </svg>
-    )}
   </div>
+</div>
 
-  {/* Konten Deskripsi */}
-  <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b 2xl:text-base">
-    {data?.deskripsi ? (
-      <p>{data.deskripsi}</p>
-    ) : (
-      <>
+
+
+        {/* Deskripsi */}
+        <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b 2xl:text-base">
+          {data?.deskripsi ? (
+            <p>{data.deskripsi}</p>
+          ) : (
+            <>
 <p>
   Dalam era arsitektur modern dan berkelanjutan, kebutuhan akan produk bangunan yang tidak hanya fungsional namun juga estetis semakin meningkat. PT Cisangkan, sebagai pionir produsen Genteng Beton di Indonesia, memperkenalkan Genteng Neo, sebuah inovasi genteng beton flat premium yang dirancang untuk masa depan.
 </p>
@@ -265,13 +221,13 @@ export default function Details() {
     )}
   </div>
 
-  {/* Tombol Kembali */}
-  <div className="mt-10">
-    <a href="/perusahaan/inovasi" className="text-sm 2xl:text-base text-blue-800 font-medium hover:underline">
-      &lt;&lt; Kembali ke Halaman Inovasi
-    </a>
-  </div>
-</section>
+{/* Tombol Kembali */}
+        <div className="mt-10">
+          <a href="/perusahaan/inovasi" className="text-sm 2xl:text-base text-blue-800 font-medium hover:underline">
+            &lt;&lt; Kembali ke Halaman Inovasi
+          </a>
+        </div>
+      </section>
     </div>
   );
 }

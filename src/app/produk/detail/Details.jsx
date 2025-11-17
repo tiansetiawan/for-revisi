@@ -147,7 +147,7 @@ const calculateRequirement = () => {
         <ProductSidebar />
         
         {/* Main Content */}
-        <main className="w-full lg:w-5/6 flex flex-col">
+        <main className="w-full lg:w-5/6 flex flex-col pl-2">
           {/* Gambar dan Thumbnail */}
           <div className="pic-container flex flex-col lg:flex-row gap-8 2xl:gap-[21rem] mb-22">
             {/* Ribbon */}

@@ -8,6 +8,7 @@ import Link from 'next/link';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
 import BannerProduk from '../../components/BannerProduk';
+import '@/app/style/Produk.css';
 
 export default function DetailsUt1() {
   const router = useRouter();
@@ -123,7 +124,7 @@ export default function DetailsUt1() {
 
 
  return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section */}
      <BannerProduk kategori={currentProduct.category} />
 
@@ -137,13 +138,13 @@ export default function DetailsUt1() {
         
         <main className="w-full lg:w-5/6 flex flex-col">
           {/* Product Images and Details */}
-          <div className="flex flex-col lg:flex-row gap-8 mb-22 2xl:gap-[14rem]">
-            <div className="relative w-full max-w-md">
-              <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10 2xl:text-2xl">
+          <div className="pic-container flex flex-col lg:flex-row gap-8 mb-22 2xl:gap-[14rem]">
+            <div className="ribbon-container relative w-full max-w-md">
+              <div className="ribbon-container2 absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10 2xl:text-2xl">
                 {currentProduct.name}
               </div>
               
-              <div className="relative aspect-square bg-white w-full flex items-center justify-center 2xl:w-160">
+              <div className="max-image-container relative aspect-square bg-white w-full flex items-center justify-center 2xl:w-160">
                 <Image 
                   src={activeThumbnail.largeImage}
                   alt={`Produk ${currentProduct.name}`} 
@@ -153,7 +154,7 @@ export default function DetailsUt1() {
                 />
               </div>
               
-              <div className="mt-4">
+              <div className="thumbnail-container mt-4">
                 <div className="flex space-x-3 2xl:gap-1">
                   {currentProduct.thumbnails.map((thumbnail) => (
                     <div 
@@ -170,7 +171,11 @@ export default function DetailsUt1() {
                         alt={`Thumbnail ${thumbnail.id}`}
                         fill
                         className="object-cover"
+                        sizes="64px"
                       />
+                                            {activeThumbnail.id === thumbnail.id && (
+                        <div className="absolute inset-0 bg-transparent bg-opacity-10"></div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -180,9 +185,9 @@ export default function DetailsUt1() {
             {/* Product Specifications */}
             <div className="w-full lg:w-1/2 space-y-6 px-6">
              {currentProduct.tables && (
-  <section className="mb-14">
+  <section className="spek-container mb-14">
     {Object.values(currentProduct.tables).map((table, idx) => (
-      <div key={idx} className="mb-8 overflow-x-auto">
+      <div key={idx} className="responsive-table mb-8 overflow-x-auto">
         <h2 className="text-lg font-semibold border-l-4 border-[#0B203F] pl-4 mb-2 2xl:text-2xl">{table.title}</h2>
         <table className="min-w-full table-auto border border-gray-300 text-sm">
           <thead>

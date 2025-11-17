@@ -8,6 +8,7 @@ import Link from 'next/link';
 import ProductSidebar from '../../components/ProductSidebar';
 import { useRouter } from 'next/navigation';
 import BannerProduk from '../../components/BannerProduk';
+import '@/app/style/Produk.css';
 
 export default function DetailsVS() {
   const router = useRouter();
@@ -191,7 +192,7 @@ const calculateRequirement = () => {
 };
 
  return (
-    <div className="mt-[5.8rem] px-11 bg-white text-slate-800">
+    <div className="body-container mt-[5.8rem] px-11 bg-white text-slate-800">
       {/* Hero Section */}
       <BannerProduk kategori={currentProduct.category} />
       
@@ -205,31 +206,32 @@ const calculateRequirement = () => {
         
         <main className="w-full lg:w-5/6 flex flex-col">
           {/* Product Images and Details */}
-          <div className="flex flex-col lg:flex-row gap-8 2xl:gap-[21rem] mb-22">
-            <div className="relative w-full max-w-md">
-              <div className="absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10 2xl:text-2xl">
+          <div className="pic-container flex flex-col lg:flex-row gap-8 2xl:gap-[21rem] mb-22">
+            <div className="ribbon-container relative w-full max-w-md">
+              <div className="ribbon-container2 absolute top-0 left-0 bg-[#d5def4] px-4 py-2 rounded-br-lg shadow text-xl italic font-semibold text-[#0B203F] z-10 2xl:text-2xl">
                 {currentProduct.name}
               </div>
               
-              <div className="relative aspect-square bg-white w-full 2xl:w-180 flex items-center justify-center">
+              <div className="max-image-container relative aspect-square bg-white w-full 2xl:w-180 flex items-center justify-center">
                 <Image 
                   src={activeThumbnail.largeImage}
                   alt={`Produk ${currentProduct.name}`} 
                   fill
-                  className="object-cover"
+                  className="object-cover transition-opacity duration-300"
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               
-              <div className="mt-4">
+              <div className="thumbnail-container mt-4">
                 <div className="flex space-x-3 2xl:gap-1">
                   {currentProduct.thumbnails.map((thumbnail) => (
                     <div 
                       key={thumbnail.id}
-                      className={`relative w-16 h-16 2xl:w-30 2xl:h-30 rounded-xs overflow-hidden cursor-pointer ${
+                      className={`relative w-16 h-16 2xl:w-30 2xl:h-30 rounded-xs overflow-hidden transition-all duration-200 cursor-pointer ${
                         activeThumbnail.id === thumbnail.id 
-                          ? 'ring-4 ring-blue-500' 
-                          : 'border border-gray-300'
+                          ? 'ring-4 ring-blue-500 border-blue-300 scale-95' 
+                          : 'border border-gray-300 hover:border-blue-300'
                       }`}
                       onClick={() => handleThumbnailClick(thumbnail)}
                     >
@@ -238,7 +240,11 @@ const calculateRequirement = () => {
                         alt={`Thumbnail ${thumbnail.id}`}
                         fill
                         className="object-cover"
+                        sizes="64px"
                       />
+                                            {activeThumbnail.id === thumbnail.id && (
+                        <div className="absolute inset-0 bg-transparent bg-opacity-10"></div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -247,12 +253,12 @@ const calculateRequirement = () => {
 
             {/* Product Specifications */}
             <div className="w-full lg:w-1/2 space-y-6 px-6">
-              <section className='mb-14'>
+              <section className='spek-container mb-14'>
                 <h2 className="text-xl 2xl:text-2xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-4">SPESIFIKASI :</h2>
                 <div className="space-y-3 pl-4">
                   {currentProduct.specifications.map((item, index) => (
                     <div key={index} className="flex 2xl:text-lg">
-                      <p className="w-65  font-medium">{item.label}</p>
+                      <p className="list-spek w-65  font-medium">{item.label}</p>
                       <p className="mr-2">:</p>
                       <p>{item.value}</p>
                     </div>
@@ -280,7 +286,7 @@ const calculateRequirement = () => {
               </section> */}
 
               {/* Calculator and Brochure Buttons */}
-              <div className='pl-4 px-44'>
+              <div className='button-count pl-4 px-44'>
                 <button 
                   onClick={toggleCalculator}
                   className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full 2xl:justify-center"
@@ -289,7 +295,7 @@ const calculateRequirement = () => {
                   Hitung Kebutuhan Genteng
                 </button>
               </div>
-              <div className='pl-4 px-44'>
+              <div className='button-count pl-4 px-44'>
                 <a
                   href="/informasi/katalog#brosur-section"
                   className="bg-[#0B203F] text-white py-2 px-4 rounded hover:bg-[#1c355f] flex items-center gap-2 w-full justify-center"
@@ -451,7 +457,7 @@ const calculateRequirement = () => {
 
 
           {/* Product Accesories */}
-         <section className="mt-12">
+         <section className="aksesoris-container mt-12">
                      <h2 className="text-xl 2xl:text-2xl sm:text-xl font-semibold border-l-4 border-[#0B203F] pl-4 mb-2">AKSESORIS :</h2>
                      
                      <div className="relative">
@@ -465,7 +471,7 @@ const calculateRequirement = () => {
                        
                        <div
                          ref={sliderRef}
-                         className="grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5 2xl:gap-5 2xl:ml-2"
+                         className="slider-mobile grid grid-flow-col auto-cols-[calc(100%/2)] sm:auto-cols-[calc(100%/3)] md:auto-cols-[calc(100%/4)] overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-4 px-20 gap-7.5 2xl:gap-5 2xl:ml-2"
                        >
                          {currentProduct.accessories.map((product) => (
                            <div key={product.name} className="snap-start min-w-0 ps-11 2xl:ps-22 group">
