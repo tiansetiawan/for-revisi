@@ -8,6 +8,14 @@ import '@/app/style/Artikel.css';
 const artikelList = [
    {
     id: 6,
+    judul: "DUKUNGAN TEKNIS YANG ANDAL",
+    tanggal: "20 November 2025",
+    url: "/blog/artikel/detail-j",
+    deskripsi: "Dalam setiap proyek yang menggunakan produk Cisangkan, keberhasilan tidak hanya bergantung pada kualitas material, tetapi juga pada dukungan teknis...",
+    gambar: "/images/tim-QHSE.jpg",
+  },
+   {
+    id: 6,
     judul: "Kerja Sama Strategis: Cisangkan & Maxxi",
     tanggal: "08 Oktober 2025",
     url: "/blog/artikel/detail-f",

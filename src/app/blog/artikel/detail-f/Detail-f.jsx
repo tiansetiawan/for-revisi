@@ -117,14 +117,58 @@ export default function DetailF() {
         {/* Grid Kolase + Video */}
      <div className="flex flex-col md:flex-row gap-6 justify-center items-start mb-10 custom-kolase-video">
   {/* Kolase Gambar Kiri */}
-  <div className="grid grid-cols-2 gap-3 flex-1 max-w-lg kolase-wrapper">
-    <Image src="/images/cis max8.jpeg" alt="Kolase 1" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
-    <Image src="/images/cis max3.jpeg" alt="Kolase 2" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
-    <Image src="/images/cismaxx.jpg" alt="Kolase 3" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
-    <Image src="/images/cis max4.jpeg" alt="Kolase 4" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
-    <Image src="/images/cis max5.jpeg" alt="Kolase 5" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
-    <Image src="/images/cis max6.jpeg" alt="Kolase 6" width={400} height={300} className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img" />
-  </div>
+  
+{/* Kolase Gambar Kiri */}
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1 max-w-lg kolase-wrapper">
+  <Image
+    src="/images/cis max8.jpeg"
+    alt="Kolase 1"
+    width={400}
+    height={300}
+    className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img"
+  />
+
+  <Image
+    src="/images/cis max3.jpeg"
+    alt="Kolase 2"
+    width={400}
+    height={300}
+    className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img"
+  />
+
+  <Image
+    src="/images/cismaxx.jpg"
+    alt="Kolase 3"
+    width={400}
+    height={300}
+    className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img"
+  />
+
+  <Image
+    src="/images/cis max4.jpeg"
+    alt="Kolase 4"
+    width={400}
+    height={300}
+    className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img"
+  />
+
+  <Image
+    src="/images/cis max5.jpeg"
+    alt="Kolase 5"
+    width={400}
+    height={300}
+    className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img"
+  />
+
+  <Image
+    src="/images/cis max6.jpeg"
+    alt="Kolase 6"
+    width={400}
+    height={300}
+    className="rounded-lg object-cover w-full h-40 sm:h-48 kolase-img"
+  />
+</div>
+
 
   {/* Video Thumbnail Kanan */}
   <div className="flex-1 max-w-md mx-auto video-wrapper">

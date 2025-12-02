@@ -93,6 +93,8 @@ const verifyEmailActive = async (email) => {
     { id: 5, nama: "Flyer Truepave", image: "/images/Flyer Truepave.png", file: "/downloads/brosur/Flyer Truepave 3.pdf" },
     { id: 6, nama: "Flyer Victoria & Dual Slate", image: "/images/Flyer-Victoria&Dual-Slate.png", file: "/downloads/brosur/FLYER VICTORIA & DUAL SLATE.pdf" },
     { id: 7, nama: "Flyer Neo Solar System", image: "/images/Flyer Neo Solar System-1.png", file: "/downloads/brosur/Flyer Neo Solar System.pdf" },
+    { id: 8, nama: "Flyer CisWell", image: "/images/Flyer CisWell.jpg", file: "/downloads/brosur/Flyer CisWell.pdf" },
+    { id: 9, nama: "Flyer Gutter Block", image: "/images/Flyer Gutter Block.jpeg", file: "/downloads/brosur/Flyer Gutter Block.pdf" },
   ];
 
   // Handle click outside modal

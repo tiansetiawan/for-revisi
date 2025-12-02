@@ -5,6 +5,11 @@ import { useState, useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import '@/app/style/Tentang.css';
 
+import BarBandung from '/public/icon-CS-Bandung.png';
+import BarCisangkan from '/public/icon CS Jabodetabek.png';
+import BarPurwakarta from '/public/icon CS Purwakarta.png';
+import BarPasuruan from '/public/icon CS Jatim.png';
+
 
 const LocationMap = dynamic(() => import('@/app/components/LocationMap'), {
   ssr: false,
@@ -255,67 +260,171 @@ export default function Tentang() {
         </div>
 
         {/* Lokasi Fisik */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 text-center px-2 2xl:items-baseline 2xl:justify-items-center">
-          <div className="group 2xl:w-80">
-            <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
-              <Image 
-                src="/images/bandung.jpg" 
-                alt="Head Office" 
-                fill
-                className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
-              />
-            </div>
-            <p className="mt-2 font-bold text-sm/8 2xl:text-lg">HEAD OFFICE & FACTORY</p>
-            <p className="text-xs/5 2xl:text-sm">Jl. Haji Alpi No 107, Cijerah, <br/>Bandung 40221</p>
-            <p className="text-xs/5 2xl:text-sm">Telp. (022) 6031588 (hunting)</p>
-            <p className="text-xs/5 2xl:text-sm">Fax. (022) 6030467</p>
-          </div>
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mt-10 text-center px-2 2xl:items-baseline 2xl:justify-items-center">
 
-          <div className="group 2xl:w-80">
-            <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
-              <Image 
-                src="/images/jakarta.jpg" 
-                alt="House of Cisangkan"  
-                fill
-                className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
-              />
-            </div>
-            <p className="mt-2 font-bold text-sm/8 2xl:text-lg">HOUSE OF CISANGKAN</p>
-            <p className="text-xs/5 2xl:text-sm">Kompleks Perkantoran<br/>Intercon Plaza E-16,</p>
-            <p className="text-xs/5 2xl:text-sm">Jl. Meruya Ilir - Jakarta Barat 11630</p>
-            <p className="text-xs/5 2xl:text-sm">Telp. (021) 5853305 (hunting)</p>
-            <p className="text-xs/5 2xl:text-sm">Fax. (021) 5307452</p>
-          </div>
+  {/* Bandung */}
+  <div className="group 2xl:w-80 flex flex-col justify-between h-full">
 
-          <div className="group 2xl:w-80">
-            <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
-              <Image 
-                src="/images/purwakarta.jpg" 
-                alt="Purwakarta Factory" 
-                fill
-                className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
-              />
-            </div>
-            <p className="mt-2 font-bold text-sm/8 2xl:text-lg">PURWAKARTA FACTORY</p>
-            <p className="text-xs/5 2xl:text-sm">JL. Raya Cibatu Km.14,2 <br/>Campaka - Purwakarta 41115</p>
-            <p className="text-xs/5 2xl:text-sm">Telp. (0264) 208143, 2018146, 209630</p>
-            <p className="text-xs/5 2xl:text-sm">Fax. (0264) 209654</p>
-          </div>
+    {/* BAGIAN ATAS */}
+    <div>
+      <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
+        <Image 
+          src="/images/bandung.jpg" 
+          alt="Head Office" 
+          fill
+          className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+        />
+      </div>
 
-          <div className="group 2xl:w-80">
-            <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
-              <Image 
-                src="/images/pasuruan.jpeg" 
-                alt="Pasuruan Factory"   
-                fill
-                className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
-              />
-            </div>
-            <p className="mt-2 font-bold text-sm/8 2xl:text-lg">PASURUAN FACTORY</p>
-            <p className="text-xs/5 2xl:text-sm">Jl. Raya Sedarum KM 19, No 8A<br/> Nguling, Kab. Pasuruan<br/>Jawa Timur 67185</p>
-            <p className="text-xs/5 2xl:text-sm">Telp. (0343) 4507786, 4508802, 4507778</p>
-          </div>
-        </div>
+      <p className="mt-2 font-bold text-sm/8 2xl:text-lg">HEAD OFFICE & FACTORY</p>
+      <p className="text-xs/5 2xl:text-sm">Jl. Haji Alpi No 107, Cijerah,<br/>Bandung 40221</p>
+      <p className="text-xs/5 2xl:text-sm">Telp. (022) 6031588 (hunting)</p>
+      <p className="text-xs/5 2xl:text-sm">Fax. (022) 6030467</p>
+    </div>
+
+    {/* BAGIAN BAWAH */}
+    <div className="mt-4 relative w-full max-w-[230px] mx-auto">
+      <Image
+        src={BarBandung}
+        alt="Customer Care Bandung"
+        className="w-full"
+      />
+
+      <a 
+        href="https://wa.me/6281214983517" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="absolute inset-0 flex ml-14 items-center justify-center"
+      >
+        <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+          0812-1498-3517
+        </h3>
+      </a>
+    </div>
+  </div>
+
+
+  {/* House of Cisangkan */}
+  <div className="group 2xl:w-80 flex flex-col justify-between h-full">
+    
+    <div>
+      <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
+        <Image 
+          src="/images/jakarta.jpg" 
+          alt="House of Cisangkan" 
+          fill
+          className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+        />
+      </div>
+
+      <p className="mt-2 font-bold text-sm/8 2xl:text-lg">HOUSE OF CISANGKAN</p>
+      <p className="text-xs/5 2xl:text-sm">Kompleks Perkantoran<br/>Intercon Plaza E-16,</p>
+      <p className="text-xs/5 2xl:text-sm">Jl. Meruya Ilir - Jakarta Barat 11630</p>
+      <p className="text-xs/5 2xl:text-sm">Telp. (021) 5853305 (hunting)</p>
+      <p className="text-xs/5 2xl:text-sm">Fax. (021) 5307452</p>
+    </div>
+
+    <div className="mt-4 relative w-full max-w-[230px] mx-auto">
+      <Image
+        src={BarCisangkan}
+        alt="Customer Care Cisangkan"
+        className="w-full"
+      />
+
+      <a 
+        href="https://wa.me/6282110314388" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="absolute inset-0 flex ml-14 items-center justify-center"
+      >
+        <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+          0821-1031-4388
+        </h3>
+      </a>
+    </div>
+  </div>
+
+
+  {/* Purwakarta */}
+  <div className="group 2xl:w-80 flex flex-col justify-between h-full">
+
+    <div>
+      <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
+        <Image 
+          src="/images/purwakarta.jpg" 
+          alt="Purwakarta Factory" 
+          fill
+          className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+        />
+      </div>
+
+      <p className="mt-2 font-bold text-sm/8 2xl:text-lg">PURWAKARTA FACTORY</p>
+      <p className="text-xs/5 2xl:text-sm">JL. Raya Cibatu Km.14,2<br/>Campaka - Purwakarta 41115</p>
+      <p className="text-xs/5 2xl:text-sm">Telp. (0264) 208143, 2018146, 209630</p>
+      <p className="text-xs/5 2xl:text-sm">Fax. (0264) 209654</p>
+    </div>
+
+    <div className="mt-4 relative w-full max-w-[230px] mx-auto">
+      <Image
+        src={BarPurwakarta}
+        alt="Customer Care Purwakarta"
+        className="w-full"
+      />
+
+      <a 
+        href="https://wa.me/6282110314388" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="absolute inset-0 flex ml-14 items-center justify-center"
+      >
+        <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+          0821-1031-4388
+        </h3>
+      </a>
+    </div>
+  </div>
+
+
+  {/* Pasuruan */}
+  <div className="group 2xl:w-80 flex flex-col justify-between h-full">
+
+    <div>
+      <div className="overflow-hidden rounded-md relative w-full pb-[100%]">
+        <Image 
+          src="/images/pasuruan.jpeg" 
+          alt="Pasuruan Factory"   
+          fill
+          className="object-cover rounded-md group-hover:scale-105 transition-transform duration-300 ease-in-out"
+        />
+      </div>
+
+      <p className="mt-2 font-bold text-sm/8 2xl:text-lg">PASURUAN FACTORY</p>
+      <p className="text-xs/5 2xl:text-sm">Jl. Raya Sedarum KM 19, No 8A<br/>Nguling, Kab. Pasuruan</p>
+      <p className="text-xs/5 2xl:text-sm">Jawa Timur 67185</p>
+      <p className="text-xs/5 2xl:text-sm">Telp. (0343) 4507786, 4508802, 4507778</p>
+    </div>
+
+    <div className="mt-4 relative w-full max-w-[230px] mx-auto">
+      <Image
+        src={BarPasuruan}
+        alt="Customer Care Pasuruan"
+        className="w-full"
+      />
+
+      <a 
+        href="https://wa.me/6281230279135" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="absolute inset-0 flex ml-14 items-center justify-center"
+      >
+        <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+          0812-3027-9135
+        </h3>
+      </a>
+    </div>
+  </div>
+
+</div>
       </div>
     </div>
   );

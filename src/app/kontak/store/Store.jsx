@@ -12,6 +12,12 @@ import {
   FaWhatsapp,
   FaTiktok,
 } from 'react-icons/fa';
+
+import BarBandung from '/public/icon-CS-Bandung.png';
+import BarCisangkan from '/public/icon CS Jabodetabek.png';
+import BarPurwakarta from '/public/icon CS Purwakarta.png';
+import BarPasuruan from '/public/icon CS Jatim.png';
+
 import '@/app/style/Kontak.css';
 
 
@@ -436,6 +442,32 @@ const [slopeAngle, setSlopeAngle] = useState('');
           telp: '(021) 82491388',
           hp: '0811 1666 478, 0811 8230 18',
           maps: 'https://maps.app.goo.gl/3yM4PfYYKZAQsfvc6'
+        },
+      ],
+    },
+    {
+      city: 'BOGOR',
+      stores: [
+        {
+          name: 'MAESTRO ATAP CIBUBUR',
+          address: 'Jl. Alternatif Cibubur No. 633b',
+          address2: 'Nagrak Kec. Gn Putri, Kab. Bogor',
+          // telp: '',
+          hp: '0852 1881 8442',
+          maps: 'https://maps.app.goo.gl/mhnm3fgcGi9HnHd57'
+        },
+      ],
+    },
+    {
+      city: 'BOGOR',
+      stores: [
+        {
+          name: 'TB KARANGGAN JAYA',
+          address: 'Jl. Raya Karanggan Np. 108',
+          address2: 'Desa Puspasari, Citeureup - Bogor 16810',
+          // telp: '',
+          hp: '087 877 121115',
+          maps: 'https://maps.app.goo.gl/gL6CAeEbCh97wFpDA'
         },
       ],
     },
@@ -917,6 +949,177 @@ const [slopeAngle, setSlopeAngle] = useState('');
 </form>
       </div>
     </section>
+
+{/* ======================== SECTION CUSTOMER CARE ======================== */}
+<section className="w-full mt-20 px-6 xl:px-24">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+    {/* Bandung */}
+    <div className="
+      border-r-0 pr-0
+      sm:border-r-2 sm:border-black sm:pr-6
+      lg:pr-8
+      flex flex-col justify-between h-full
+    ">
+      <div>
+        <h3 className="font-bold text-md mb-2">
+          Bandung<br />Head Office & Factory
+        </h3>
+
+        <p className="text-sm leading-relaxed">
+          Jl. Haji Alpi No 107, Cijerah<br />
+          Bandung 40212<br />
+          Telp. (022) 6031588 (hunting)<br />
+          Fax. (022) 6030467
+        </p>
+      </div>
+
+      {/* Icon + Nomor */}
+      <div className="mt-4 relative w-full max-w-[230px]">
+        <Image src={BarBandung} alt="Customer Care Bandung" className="w-full" />
+
+        <a
+          href="https://wa.me/6281214983517"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            absolute inset-0 flex items-center 
+            justify-start sm:justify-center
+            pl-[80px] sm:pl-[45px]
+          "
+        >
+          <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+            0812-1498-3517
+          </h3>
+        </a>
+      </div>
+    </div>
+
+
+    {/* House of Cisangkan */}
+    <div className="
+      border-r-0 pr-0
+      sm:border-r-2 sm:border-black sm:pr-6
+      lg:pr-8
+      flex flex-col justify-between h-full
+    ">
+      <div>
+        <h3 className="font-bold text-md mb-2">House of Cisangkan</h3>
+
+        <p className="text-sm leading-relaxed">
+          Kompleks Perkantoran Intercon Plaza block E - 16,<br />
+          Jl. Meruya Ilir – Jakarta Barat 11630<br />
+          Telp. (021) 5853305 (hunting)<br />
+          Fax. (021) 5307452
+        </p>
+      </div>
+
+      {/* Icon + Nomor */}
+      <div className="mt-4 relative w-full max-w-[230px]">
+        <Image src={BarCisangkan} alt="Customer Care Cisangkan" className="w-full" />
+
+        <a
+          href="https://wa.me/6282110314388"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            absolute inset-0 flex items-center 
+            justify-start sm:justify-center
+            pl-[80px] sm:pl-[45px]
+          "
+        >
+          <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+            0821-1031-4388
+          </h3>
+        </a>
+      </div>
+    </div>
+
+
+    {/* Purwakarta */}
+    <div className="
+      border-r-0 pr-0
+      sm:border-r-2 sm:border-black sm:pr-6
+      lg:pr-8
+      flex flex-col justify-between h-full
+    ">
+      <div>
+        <h3 className="font-bold text-md mb-2">Purwakarta Factory</h3>
+
+        <p className="text-sm leading-relaxed">
+          Jl. Raya Cibatu Km 14,2<br />
+          Campaka – Purwakarta 41115<br />
+          Telp. (0264) 208143, 208146, 209630<br />
+          Fax. (0264) 209654
+        </p>
+      </div>
+
+      {/* Icon + Nomor */}
+      <div className="mt-4 relative w-full max-w-[230px]">
+        <Image src={BarPurwakarta} alt="Customer Care Purwakarta" className="w-full" />
+
+        <a
+          href="https://wa.me/6282110314388"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            absolute inset-0 flex items-center 
+            justify-start sm:justify-center
+            pl-[80px] sm:pl-[45px]
+          "
+        >
+          <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+            0821-1031-4388
+          </h3>
+        </a>
+      </div>
+    </div>
+
+
+    {/* Pasuruan */}
+    <div className="
+      border-r-0 pr-0
+      sm:border-r-2 sm:border-none sm:pr-6
+      lg:pr-8
+      flex flex-col justify-between h-full
+    ">
+      <div>
+        <h3 className="font-bold text-md mb-2">Pasuruan Factory</h3>
+
+        <p className="text-sm leading-relaxed">
+          Jl. Raya Sedarum Km 19, No 8A<br />
+          Nguling, Kab. Pasuruan<br />
+          Jawa Timur 67185<br />
+          Telp. (0343) 4507786, 4508802, 4507778
+        </p>
+      </div>
+
+      {/* Icon + Nomor */}
+      <div className="mt-4 relative w-full max-w-[230px]">
+        <Image src={BarPasuruan} alt="Customer Care Pasuruan" className="w-full" />
+
+        <a
+          href="https://wa.me/6281230279135"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            absolute inset-0 flex items-center 
+            justify-start sm:justify-center
+            pl-[80px] sm:pl-[45px]
+          "
+        >
+          <h3 className="text-black font-bold text-md drop-shadow-lg cursor-pointer">
+            0812-3027-9135
+          </h3>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{/* ====================== END SECTION CUSTOMER CARE ===================== */}
+
 
     </div>
   );

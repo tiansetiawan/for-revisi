@@ -22,14 +22,14 @@ const inovasiList = [
       "Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.",
     gambar: "/images/cis flashing.png",
   },
-  // {
-  //   id: 3,
-  //   judul: "Inovasi Ketiga: Solusi Terbaru untuk Konstruksi Modern",
-  //   url: "/perusahaan/inovasi/detail-c",
-  //   deskripsi:
-  //     "Inovasi terbaru kami menghadirkan solusi konstruksi yang lebih efisien dan ramah lingkungan. Dengan teknologi mutakhir, produk ini dirancang untuk memenuhi kebutuhan pasar yang terus berkembang.",
-  //   gambar: "/images/inovasi3.jpg",
-  // },
+  {
+    id: 3,
+    judul: "Atap Mansard Kini Hadir dengan Genteng Beton dari Cisangkan",
+    url: "/perusahaan/inovasi/detail-d",
+    deskripsi:
+      "Atap mansard dikenal sebagai salah satu gaya atap klasik khas arsitektur Eropa. Bentuknya yang memiliki dua kemiringan pada setiap sisi memberikan kesan elegan sekaligus memaksimalkan ruang di bawah..",
+    gambar: "/images/mansard-1.jpg",
+  },
   // {
   //   id: 4,
   //   judul: "Inovasi Keempat: Material Bangunan Masa Depan",

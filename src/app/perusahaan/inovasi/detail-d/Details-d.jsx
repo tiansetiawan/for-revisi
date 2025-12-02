@@ -30,7 +30,7 @@ const inovasiList = [
 
 
 
-export default function Detailsb() {
+export default function Detailsd() {
   // State untuk panel unduh
   const [showDownloadPanel, setShowDownloadPanel] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -102,9 +102,9 @@ export default function Detailsb() {
   useEffect(() => {
     // Ganti ini dengan API call atau ambil dari context/router
     const sampleData = {
-      judul: "CIS Flashing: Solusi Flashing Modern, Anti Bocor, dan Tanpa Semen untuk Atap Rumah Anda",
-      tanggal: "16 Mei 2025",
-      gambar: "/images/cis.jpg",
+      judul: "Atap Mansard Kini Hadir dengan Genteng Beton dari Cisangkan",
+      tanggal: "20 November 2025",
+      gambar: "/images/mansard-1.png",
       deskripsi: ""
     };
 
@@ -205,7 +205,7 @@ export default function Detailsb() {
   </p>
 
   {/* Gambar */}
-  <div className="h-[240px] w-full xl:px-40 xl:h-[320px] 2xl:h-[450px] mx-auto flex items-center justify-center mb-8">
+  <div className="h-[240px] w-full xl:px-40 xl:h-[470px] 2xl:h-[650px] mx-auto flex items-center justify-center mb-8">
     {data?.gambar ? (
       <img src={data.gambar} alt={data.judul} className="thumb-inovasi w-full h-full object-cover" />
     ) : (
@@ -217,94 +217,183 @@ export default function Detailsb() {
 
   {/* Konten Deskripsi */}
   <div className="text-justify text-sm leading-relaxed text-[#333] space-y-4 pb-10 border-b 2xl:text-base">
-    {data?.deskripsi ? (
-      <p>{data.deskripsi}</p>
-    ) : (
-      <>
- <p>
-    Dalam dunia konstruksi atap, salah satu tantangan paling umum adalah memastikan tidak ada kebocoran air di area sambungan antara atap dan dinding vertikal. Di sinilah peran sistem flashing sangat penting. Namun, metode konvensional yang menggunakan semen sering kali tidak memberikan hasil yang rapi dan mudah mengalami keretakan seiring waktu.
-  </p>
+
   <p>
-    Kini hadir solusi modern: <strong>CIS Flashing</strong>. Sebuah sistem flashing cerdas yang dirancang untuk menyelesaikan masalah klasik dengan pendekatan yang lebih praktis, kuat, dan estetis.
+    Atap mansard dikenal sebagai salah satu gaya atap klasik khas arsitektur Eropa.
+    Bentuknya yang memiliki dua kemiringan pada setiap sisi memberikan kesan elegan 
+    sekaligus memaksimalkan ruang di bawah atap—sering dimanfaatkan sebagai loteng 
+    atau ruang tambahan.
   </p>
 
-  <h2 className="text-lg font-semibold mt-6 mb-2">Apa Itu CIS Flashing?</h2>
   <p>
-    <strong>CIS Flashing</strong> adalah sistem flashing inovatif yang dirancang untuk melindungi sambungan antara atap dan dinding agar bebas dari risiko kebocoran. Berbeda dari metode konvensional, CIS Flashing tidak menggunakan adukan semen. Sistem ini mengandalkan metode <em>Dry System</em> yang bersih, cepat, dan mudah dipasang.
-  </p>
-  <p>
-    CIS Flashing juga memungkinkan finishing yang jauh lebih rapi dan profesional, membuatnya cocok untuk rumah tinggal, bangunan komersial, hingga proyek properti berskala besar.
+    Selama ini, atap mansard identik dengan penggunaan genteng bitumen karena fleksibilitasnya 
+    dalam mengikuti bentuk lengkung atau sudut curam. Namun kini, Cisangkan menghadirkan 
+    inovasi baru: <strong>atap mansard dengan genteng beton</strong>. Inovasi ini membuktikan bahwa 
+    keindahan arsitektur klasik dapat diwujudkan dengan material modern yang lebih kuat, 
+    ekonomis, dan tahan lama.
   </p>
 
-  <h2 className="text-lg font-semibold mt-6 mb-2">Keunggulan CIS Flashing Dibandingkan Metode Konvensional</h2>
-  <table className="w-full border border-gray-300 text-sm mb-4">
-    <thead>
-      <tr className="bg-gray-100">
-        <th className="border p-2">CIS Flashing</th>
-        <th className="border p-2">Metode Konvensional</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td className="border p-2">✔ Tanpa semen</td>
-        <td className="border p-2">❌ Butuh adukan semen</td>
-      </tr>
-      <tr>
-        <td className="border p-2">✔ Tahan lama</td>
-        <td className="border p-2">❌ Mudah retak & bocor</td>
-      </tr>
-      <tr>
-        <td className="border p-2">✔ Finishing rapi</td>
-        <td className="border p-2">❌ Tampilan berantakan</td>
-      </tr>
-      <tr>
-        <td className="border p-2">✔ Mudah dipasang</td>
-        <td className="border p-2">❌ Perlu tukang ahli</td>
-      </tr>
-      <tr>
-        <td className="border p-2">✔ Komponen fleksibel</td>
-        <td className="border p-2">❌ Material kaku dan sulit dibentuk</td>
-      </tr>
-    </tbody>
-  </table>
+  <h2 className="text-lg font-semibold mt-6">Keunggulan Atap Mansard dengan Genteng Beton Cisangkan</h2>
 
-  <h2 className="text-lg font-semibold mt-6 mb-2">Komponen-Komponen Utama dalam Sistem CIS Gutter Flash</h2>
-
-  <h3 className="font-semibold mt-4 mb-1">1. Weatherblock</h3>
+  <h3 className="font-semibold mt-4">1. Lebih Ekonomis</h3>
   <p>
-    Weatherblock adalah lembaran pelindung berbahan tahan air dan fleksibel. Fungsinya sebagai lapisan pelindung utama yang menutupi celah sambungan antara dinding dan genteng.
+    Dibandingkan dengan genteng bitumen impor, genteng beton Cisangkan jauh lebih terjangkau 
+    tanpa mengorbankan estetika. Desain mansard kini bisa diaplikasikan mulai dari hunian 
+    pribadi hingga bangunan komersial.
   </p>
-  <p><strong>Keunggulan:</strong></p>
-  <ul className="list-disc ml-5 mb-4">
-    <li>Tahan terhadap air, jamur, dan lumut</li>
-    <li>Mudah dipotong dan dibentuk</li>
-    <li>Ringan namun kuat</li>
+
+  <h3 className="font-semibold mt-4">2. Daya Tahan Cuaca Lebih Kuat</h3>
+  <p>
+    Genteng beton memiliki ketahanan tinggi terhadap panas, hujan, dan perubahan cuaca ekstrem. 
+    Dengan lapisan coating berkualitas, warna dan kekuatannya tetap terjaga dalam jangka panjang.
+  </p>
+
+  <h3 className="font-semibold mt-4">3. Sistem Nok Kering Tanpa Adukan</h3>
+  <p>
+    Sistem nok menggunakan <strong>Weatherblock</strong>, yaitu membran fleksibel yang berfungsi sebagai perekat 
+    dan pelindung dari rembesan air. Hasil pemasangan menjadi:
+  </p>
+
+  <ul className="list-disc ml-5">
+    <li>lebih rapi</li>
+    <li>aman dari kebocoran</li>
+    <li>bebas noda semen seperti metode konvensional</li>
   </ul>
 
-  <h3 className="font-semibold mt-4 mb-1">2. Z Profile</h3>
+  <h3 className="font-semibold mt-4">4. Estetika Klasik dengan Material Modern</h3>
   <p>
-    Komponen ini merupakan profil aluminium berbentuk huruf Z yang berfungsi sebagai penjepit dan penguat sistem flashing.
+    Dengan teknik pemasangan yang presisi, bentuk khas mansard dapat dicapai dengan sempurna 
+    menggunakan genteng beton. Hasilnya adalah kombinasi antara keanggunan klasik dan kekuatan 
+    material modern.
   </p>
-  <p><strong>Keunggulan:</strong></p>
-  <ul className="list-disc ml-5 mb-4">
-    <li>Meningkatkan estetika visual</li>
-    <li>Memastikan Weatherblock tertahan dengan kokoh</li>
-    <li>Memperkuat struktur sambungan</li>
-  </ul>
 
-  <h3 className="font-semibold mt-4 mb-1">3. Sealant (Tube)</h3>
-  <p>
-    Sealant adalah lem kedap air berbentuk tube yang digunakan untuk menutup celah dan memperkuat sistem.
+  <p className="mt-6">
+    Melalui inovasi ini, Cisangkan memperluas kemungkinan desain arsitektur dengan menghadirkan 
+    solusi atap yang indah, kuat, dan efisien.
   </p>
-  <p><strong>Keunggulan:</strong></p>
-  <ul className="list-disc ml-5 mb-4">
-    <li>Daya rekat tinggi</li>
-    <li>Tahan terhadap air dan cuaca ekstrem</li>
-    <li>Mudah diaplikasikan</li>
-  </ul>
-      </>
-    )}
+
+  <p>
+    Kini, gaya atap mansard yang dahulu identik dengan genteng bitumen dapat dinikmati dalam versi 
+    lebih ekonomis dan tahan lama — hanya dari Cisangkan.
+  </p>
+
+  {/* =============================
+      AREA KOLOSE GAMBAR (1 - 1 - 2)
+      GANTI src= "/images/..." sesuai file
+  ============================== */}
+
+
+  {/* Gambar 3 & 4 (Kolase 2 grid seperti contoh kamu) */}
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
+    <img
+      src="/images/mansard-2.jpg"
+      alt="Proyek Mansard"
+      className="w-full h-60 object-cover rounded-lg"
+    />
+
+    <img
+      src="/images/mansard-3.jpg"
+      alt="Proyek Mansard 3"
+      className="w-full h-60 object-cover rounded-lg"
+    />
   </div>
+
+  {/* Gambar 3 & 4 (Kolase 2 grid seperti contoh kamu) */}
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
+  {/* Gambar 1 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-4.jpg"
+      alt="Cluster Ebony, Summarecon Serpong"
+      className="w-full h-70 object-cover rounded-lg"
+    />
+    <p className="text-center text-sm mt-2 font-medium text-gray-700">
+      Overlap genteng pada sisi patahan sepanjang 5cm
+    </p>
+  </div>
+
+  {/* Gambar 2 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-5.jpg"
+      alt="Citra CBD, Cibubur"
+      className="w-full h-70 object-cover rounded-lg"
+    />
+    <p className="text-left text-sm mt-2 font-medium text-gray-700">
+      Detail pada ujung patahan menggunakan aksesoris nok ujung. 
+Nok ujung juga maju 5cm menyesuaikan dengan overlap genteng pada sisi patahan
+    </p>
+  </div>
+</div>
+
+  {/* Gambar 3 & 4 (Kolase 2 grid seperti contoh kamu) */}
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-10">
+  {/* Gambar 1 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-6.jpg"
+      alt="Cluster Ebony, Summarecon Serpong"
+      className="w-full h-70 object-cover rounded-lg"
+    />
+    <p className="text-center text-sm mt-2 font-medium text-gray-700">
+      Cluster Ebony, Summarecon Serpong
+    </p>
+  </div>
+
+  {/* Gambar 2 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-7.jpg"
+      alt="Citra CBD, Cibubur"
+      className="w-full h-70 object-cover rounded-lg"
+    />
+    <p className="text-center text-sm mt-2 font-medium text-gray-700">
+      Citra CBD, Cibubur
+    </p>
+  </div>
+</div>
+
+
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+  {/* Gambar 1 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-8.jpg"
+      alt="Cluster Ebony, Summarecon Serpong"
+      className="w-full h-64 object-cover rounded-lg"
+    />
+    <p className="text-center text-sm mt-2 font-medium text-gray-700">
+      Cluster Tresor, BSD City
+    </p>
+  </div>
+
+  {/* Gambar 2 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-9.jpg"
+      alt="Citra CBD, Cibubur"
+      className="w-full h-64 object-cover rounded-lg"
+    />
+    <p className="text-center text-sm mt-2 font-medium text-gray-700">
+      Citra Sampali, Medan
+    </p>
+  </div>
+
+  {/* Gambar 3 */}
+  <div className="flex flex-col">
+    <img
+      src="/images/mansard-10.jpg"
+      alt="Cluster Tresor, BSD City"
+      className="w-full h-64 object-cover rounded-lg"
+    />
+    <p className="text-center text-sm mt-2 font-medium text-gray-700">
+      Citra Garden Serpong
+    </p>
+  </div>
+</div>
+
+
+</div>
 
   {/* Tombol Kembali */}
   <div className="mt-10">

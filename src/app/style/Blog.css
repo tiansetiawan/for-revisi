@@ -48,13 +48,13 @@
     /* Kolase di bawah video */
     .kolase-wrapper {
       order: 2;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr !important; /* 1 kolom */
       gap: 0.5rem;
       max-width: 100%;
     }
 
     .kolase-img {
-      height: 7rem; /* lebih kecil biar pas di layar kecil */
+      height: 11rem !important; /* Tinggi lebih ideal di mobile */
       border-radius: 0.75rem;
     }
 }
