@@ -1,15 +1,15 @@
 'use client';
-import DetailJ from './Detail-j';
+import DetailI from './Detail-i';
 import FloatingChatPanel from '@/app/components/FloatingChatPanel';
 import LoadingWrapperF from '@/app/components/LoadingWrapperFade';
 
-export default function DetailJPage() {
+export default function DetailIPage() {
   return (
     <>
     <main>
       <LoadingWrapperF>
     <FloatingChatPanel />
-    <DetailJ/>
+    <DetailI/>
     </LoadingWrapperF>
     </main>
     </>

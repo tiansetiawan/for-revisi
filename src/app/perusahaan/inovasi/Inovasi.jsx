@@ -7,6 +7,14 @@ import '@/app/style/Inovasi.css';
 
 const inovasiList = [
   {
+    id: 4,
+    judul: "Teknologi berkelanjutan",
+    url: "/perusahaan/inovasi/detail-c",
+    deskripsi:
+      "Atap mansard dikenal sebagai salah satu gaya atap klasik khas arsitektur Eropa. Bentuknya yang memiliki dua kemiringan pada setiap sisi memberikan kesan elegan sekaligus memaksimalkan ruang di bawah,Teknologi berkelanjutan kini menjadi fondasi dalam pengembangan produk konstruksi modern.Salah satu inovasi ramah lingkungan yang kami hadirkan adalah..",
+    gambar: "/images/mansard-1.jpg",
+  },
+  {
     id: 1,
     judul: "Genteng Neo Solar: Inovasi Atap Beton Flat Premium dari PT Cisangkan",
     url: "/perusahaan/inovasi/detail",
